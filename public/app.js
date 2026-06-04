@@ -572,6 +572,7 @@ async function apiPost(endpoint, body) {
 
 // Host Creates Room
 async function createRoom() {
+    const auctionNameVal = document.getElementById('auction-name').value.trim() || "Cricket Premier League";
     const hostNameVal = document.getElementById('host-name').value.trim();
     const budgetVal = parseInt(document.getElementById('starting-budget').value);
     const incrementVal = parseInt(document.getElementById('bid-increment').value);
@@ -651,6 +652,7 @@ async function createRoom() {
     try {
         const res = await apiPost('/api/create', {
             host_name: hostNameVal,
+            auction_name: auctionNameVal,
             settings: settings,
             preset: presetChoice,
             players: playersList
@@ -880,6 +882,12 @@ function renderState() {
 function renderLobby() {
     document.getElementById('lobby-room-code').innerText = roomCode;
     
+    if (roomState && roomState.auction_name) {
+        document.getElementById('lobby-auction-name').innerText = roomState.auction_name;
+    } else {
+        document.getElementById('lobby-auction-name').innerText = "Franchise Waiting Room";
+    }
+    
     const statusText = document.getElementById('lobby-status-text');
     if (role === 'host') {
         statusText.innerText = "You are the Host. Wait for managers to join, then start.";
@@ -933,6 +941,12 @@ async function startAuction() {
 // Render Auction Section
 function renderAuctionDashboard() {
     document.getElementById('dash-room-info').innerText = "ROOM: " + roomCode;
+    
+    if (roomState && roomState.auction_name) {
+        document.getElementById('dash-auction-name').innerText = roomState.auction_name;
+    } else {
+        document.getElementById('dash-auction-name').innerText = "Cricket Premier League";
+    }
     
     // Header panel managers statistics
     const idBanner = document.getElementById('manager-identity-banner');

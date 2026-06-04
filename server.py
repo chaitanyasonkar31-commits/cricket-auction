@@ -300,6 +300,7 @@ class AuctionHTTPHandler(SimpleHTTPRequestHandler):
 
     def handle_create(self, data):
         host_name = data.get('host_name', 'Host')
+        auction_name = data.get('auction_name', 'Cricket Auction')
         settings = data.get('settings', {})
         custom_players = data.get('players', [])
         preset_key = data.get('preset', 'ipl_legends')
@@ -337,6 +338,7 @@ class AuctionHTTPHandler(SimpleHTTPRequestHandler):
             host_id = ''.join(random.choices(string.ascii_lowercase + string.digits, k=12))
             
             rooms[room_code] = {
+                "auction_name": auction_name,
                 "host_name": host_name,
                 "host_id": host_id,
                 "settings": {

@@ -67,6 +67,11 @@
                 
                 <div class="form-grid">
                     <div class="form-group">
+                        <label for="auction-name"><i class="fa-solid fa-trophy text-gold"></i> Auction League Name</label>
+                        <input type="text" id="auction-name" value="Cricket Premier League" placeholder="e.g., IPL 2026 Draft">
+                    </div>
+
+                    <div class="form-group">
                         <label for="host-name"><i class="fa-solid fa-user"></i> Host / Auctioneer Name</label>
                         <input type="text" id="host-name" value="Captain Auctioneer" placeholder="e.g., Richie Benaud">
                     </div>
@@ -253,7 +258,7 @@ Yashasvi Jaiswal, Batsman, 91, 10000000, Runs: 720 Avg: 41.2, , false" style="fo
                         <button class="btn btn-icon" onclick="copyRoomCode()" title="Copy Room Code"><i class="fa-solid fa-copy"></i> Copy</button>
                     </div>
                     <div class="lobby-info">
-                        <h2>Franchise Waiting Room</h2>
+                        <h2 id="lobby-auction-name">Franchise Waiting Room</h2>
                         <p id="lobby-status-text">Waiting for teams to enter...</p>
                     </div>
                 </div>
@@ -283,7 +288,7 @@ Yashasvi Jaiswal, Batsman, 91, 10000000, Runs: 720 Avg: 41.2, , false" style="fo
                 <div class="header-branding">
                     <i class="fa-solid fa-trophy logo-small"></i>
                     <div>
-                        <h2>Cricket Premier League</h2>
+                        <h2 id="dash-auction-name">Cricket Premier League</h2>
                         <span id="dash-room-info" class="text-glow">ROOM: XXXX</span>
                     </div>
                 </div>
