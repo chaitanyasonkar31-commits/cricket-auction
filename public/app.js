@@ -279,6 +279,11 @@ function showSection(id) {
         activePanel.classList.remove('hidden');
         activePanel.classList.add('active');
     }
+    
+    // Custom Hooks
+    if (id === 'host-config') {
+        checkSavedDraft();
+    }
 }
 
 // CSV/Preset Toggle Helper
@@ -1728,4 +1733,183 @@ function deleteScheduledAuction(rCode) {
     localStorage.setItem('scheduled_auctions', JSON.stringify(scheduled));
     
     renderScheduledAuctions();
+}
+
+// --- Player List / Roster Draft Saving & Loading ---
+function savePlayerDraft() {
+    const presetChoice = document.querySelector('input[name="preset-choice"]:checked').value;
+    const draft = {
+        presetChoice: presetChoice,
+        excludeRetired: document.getElementById('exclude-retired')?.checked || false,
+        checkedIds: [],
+        customRatings: {},
+        customRows: [],
+        csvText: document.getElementById('custom-csv')?.value || ''
+    };
+    
+    // Save Custom Roster checklist selections & ratings
+    if (presetChoice === 'custom') {
+        const checkedBoxes = document.querySelectorAll('.checklist-item input[type="checkbox"]:checked');
+        checkedBoxes.forEach(input => {
+            draft.checkedIds.push(parseInt(input.value));
+        });
+        
+        const ratingInputs = document.querySelectorAll('.checklist-rating-input input');
+        ratingInputs.forEach(input => {
+            const pId = input.id.replace('rating-p-', '');
+            if (input.value.trim() !== '') {
+                draft.customRatings[pId] = input.value.trim();
+            }
+        });
+        
+        const customRows = document.querySelectorAll('#custom-players-rows tr');
+        customRows.forEach(row => {
+            const nameEl = row.querySelector('.cp-name');
+            const roleEl = row.querySelector('.cp-role');
+            const styleEl = row.querySelector('.cp-style');
+            const ratingEl = row.querySelector('.cp-rating');
+            const priceEl = row.querySelector('.cp-price');
+            const overseasEl = row.querySelector('.cp-overseas');
+            
+            const name = nameEl ? nameEl.value.trim() : '';
+            if (name) {
+                draft.customRows.push({
+                    name: name,
+                    role: roleEl ? roleEl.value : 'Batsman',
+                    style: styleEl ? styleEl.value.trim() : '',
+                    rating: ratingEl ? ratingEl.value.trim() : '',
+                    price: priceEl ? priceEl.value : '10000000',
+                    overseas: overseasEl ? overseasEl.checked : false
+                });
+            }
+        });
+    }
+    
+    localStorage.setItem('saved_player_draft', JSON.stringify(draft));
+    showNotification("Roster draft saved successfully!", "success");
+    checkSavedDraft();
+}
+
+function loadPlayerDraft() {
+    const raw = localStorage.getItem('saved_player_draft');
+    if (!raw) {
+        showNotification("No saved roster draft found", "warning");
+        return;
+    }
+    
+    try {
+        const draft = JSON.parse(raw);
+        
+        // 1. Restore preset Choice radio
+        const radio = document.querySelector(`input[name="preset-choice"][value="${draft.presetChoice}"]`);
+        if (radio) {
+            radio.checked = true;
+            toggleCustomPlayers(draft.presetChoice === 'custom');
+        }
+        
+        if (draft.presetChoice === 'custom') {
+            // Restore Exclude Retired checkbox
+            const excludeRetiredCb = document.getElementById('exclude-retired');
+            if (excludeRetiredCb) {
+                excludeRetiredCb.checked = draft.excludeRetired;
+                filterRetiredPlayers(draft.excludeRetired);
+            }
+            
+            // Restore checklist checkboxes
+            const checklistItems = document.querySelectorAll('.checklist-item input[type="checkbox"]');
+            checklistItems.forEach(cb => {
+                const id = parseInt(cb.value);
+                cb.checked = draft.checkedIds.includes(id);
+            });
+            
+            // Restore custom ratings inputs
+            const ratingInputs = document.querySelectorAll('.checklist-rating-input input');
+            ratingInputs.forEach(input => {
+                const pId = input.id.replace('rating-p-', '');
+                if (draft.customRatings[pId] !== undefined) {
+                    input.value = draft.customRatings[pId];
+                } else {
+                    input.value = '';
+                }
+            });
+            
+            // Restore CSV text area
+            const csvArea = document.getElementById('custom-csv');
+            if (csvArea) {
+                csvArea.value = draft.csvText || '';
+            }
+            
+            // Restore interactive custom table rows
+            const rowsContainer = document.getElementById('custom-players-rows');
+            if (rowsContainer) {
+                rowsContainer.innerHTML = ''; // clear all rows
+                if (draft.customRows && draft.customRows.length > 0) {
+                    draft.customRows.forEach(r => {
+                        addCustomPlayerRowWithData(r.name, r.role, r.style, r.rating, r.price, r.overseas);
+                    });
+                } else {
+                    // pre-populate 5 empty rows
+                    for (let i = 0; i < 5; i++) {
+                        addCustomPlayerRow();
+                    }
+                }
+            }
+        }
+        
+        showNotification("Roster draft loaded successfully!", "success");
+    } catch (e) {
+        console.error("Failed to load roster draft:", e);
+        showNotification("Error loading roster draft: " + e.message, "danger");
+    }
+}
+
+function checkSavedDraft() {
+    const btn = document.getElementById('btn-load-draft');
+    if (!btn) return;
+    
+    if (localStorage.getItem('saved_player_draft')) {
+        btn.style.display = 'inline-flex';
+    } else {
+        btn.style.display = 'none';
+    }
+}
+
+function addCustomPlayerRowWithData(name, role, style, rating, price, overseas) {
+    const rowsContainer = document.getElementById('custom-players-rows');
+    if (!rowsContainer) return;
+    
+    const nextSNo = rowsContainer.children.length + 1;
+    const tr = document.createElement('tr');
+    tr.innerHTML = `
+        <td class="s-no" style="font-weight: bold; text-align: center; color: var(--text-secondary);">${nextSNo}</td>
+        <td><input type="text" class="cp-name" value="${name}" placeholder="e.g. Shreyas Iyer" style="text-align: left;"></td>
+        <td>
+            <select class="cp-role">
+                <option value="Batsman" ${role === 'Batsman' ? 'selected' : ''}>Batsman</option>
+                <option value="Bowler" ${role === 'Bowler' ? 'selected' : ''}>Bowler</option>
+                <option value="All-Rounder" ${role === 'All-Rounder' ? 'selected' : ''}>All-Rounder</option>
+                <option value="Wicket-Keeper" ${role === 'Wicket-Keeper' ? 'selected' : ''}>Wicket-Keeper</option>
+            </select>
+        </td>
+        <td><input type="text" class="cp-style" value="${style}" placeholder="e.g. Right-hand bat / Right-arm fast"></td>
+        <td><input type="number" class="cp-rating" value="${rating}" placeholder="85" min="50" max="99"></td>
+        <td>
+            <select class="cp-price">
+                <option value="20000000" ${price == 20000000 ? 'selected' : ''}>₹2 Crore (₹2 Cr)</option>
+                <option value="15000000" ${price == 15000000 ? 'selected' : ''}>₹1.5 Crore (₹1.5 Cr)</option>
+                <option value="10000000" ${price == 10000000 ? 'selected' : ''}>₹1 Crore (₹1 Cr)</option>
+                <option value="8000000" ${price == 8000000 ? 'selected' : ''}>₹80 Lakhs (₹80 L)</option>
+                <option value="5000000" ${price == 5000000 ? 'selected' : ''}>₹50 Lakhs (₹50 L)</option>
+                <option value="3000000" ${price == 3000000 ? 'selected' : ''}>₹30 Lakhs (₹30 L)</option>
+                <option value="2000000" ${price == 2000000 ? 'selected' : ''}>₹20 Lakhs (₹20 L)</option>
+            </select>
+        </td>
+        <td><input type="checkbox" class="cp-overseas" ${overseas ? 'checked' : ''}></td>
+        <td style="text-align: center;">
+            <button type="button" class="btn-remove-row" onclick="removeCustomPlayerRow(this)" title="Remove Player">
+                <i class="fa-solid fa-trash-can"></i>
+            </button>
+        </td>
+    `;
+    rowsContainer.appendChild(tr);
 }

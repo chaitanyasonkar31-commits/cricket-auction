@@ -261,7 +261,9 @@ Yashasvi Jaiswal, Batsman, 91, 10000000, Runs: 720 Avg: 41.2, , false" style="fo
                     </div>
                 </div>
 
-                <div class="form-actions">
+                <div class="form-actions" style="display: flex; gap: 1rem; justify-content: flex-end; flex-wrap: wrap; margin-top: 2rem;">
+                    <button type="button" class="btn btn-secondary" onclick="savePlayerDraft()"><i class="fa-solid fa-floppy-disk"></i> Save Roster Draft</button>
+                    <button type="button" class="btn btn-secondary" id="btn-load-draft" onclick="loadPlayerDraft()" style="background: rgba(0, 242, 254, 0.05); border: 1px solid var(--accent-cyan); color: var(--accent-cyan); display: none;"><i class="fa-solid fa-folder-open"></i> Load Roster Draft</button>
                     <button class="btn btn-primary btn-large" onclick="createRoom()"><i class="fa-solid fa-circle-check"></i> Create Auction Room</button>
                 </div>
             </div>
