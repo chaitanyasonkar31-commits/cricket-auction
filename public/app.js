@@ -1118,12 +1118,18 @@ function renderAuctionDashboard() {
             nextBtn.classList.add('hidden');
             pauseBtn.classList.add('hidden');
             resumeBtn.classList.add('hidden');
+            document.getElementById('host-btn-sell').disabled = true;
+            document.getElementById('host-btn-unsold').disabled = true;
+            document.getElementById('host-btn-reset').disabled = true;
         } else if (roomState.status === 'sold_pause' || roomState.status === 'unsold_pause') {
             // Brief pause state after sold/unsold
             startBtn.classList.add('hidden');
             nextBtn.classList.remove('hidden');
             pauseBtn.classList.add('hidden');
             resumeBtn.classList.add('hidden');
+            document.getElementById('host-btn-sell').disabled = true;
+            document.getElementById('host-btn-unsold').disabled = true;
+            document.getElementById('host-btn-reset').disabled = false; // Allow reopening the bid if needed
         } else if (roomState.status === 'finished') {
             // Completed drafting
             startBtn.classList.add('hidden');
@@ -1148,6 +1154,8 @@ function renderAuctionDashboard() {
             
             // Disable force-sell button if no one bid yet
             document.getElementById('host-btn-sell').disabled = roomState.current_bid === 0;
+            document.getElementById('host-btn-unsold').disabled = false;
+            document.getElementById('host-btn-reset').disabled = false;
         }
     } else {
         hostConsole.classList.add('hidden');
