@@ -1070,9 +1070,9 @@ function renderAuctionDashboard() {
         // Check overseas limits (disabled)
         const exceedsOS = false;
         
-        // Check squad capacity limit (max 24 players)
+        // Check squad capacity limit (max 16 players)
         const teamPlayers = roomState.teams[teamName] ? roomState.teams[teamName].players : [];
-        const isSquadFull = teamPlayers.length >= 24;
+        const isSquadFull = teamPlayers.length >= 16;
         
         // Apply enable/disable criteria
         const minBtn = document.getElementById('btn-bid-min');
@@ -1274,13 +1274,13 @@ function openRosterModal(tName) {
     countEl.innerText = pCount;
     if (pCount < 16) {
         countEl.style.color = 'var(--accent-gold)';
-        countEl.title = "Under minimum squad limit of 16 players";
-    } else if (pCount > 24) {
+        countEl.title = "Under squad limit of 16 players";
+    } else if (pCount > 16) {
         countEl.style.color = 'var(--accent-red)';
-        countEl.title = "Over maximum squad limit of 24 players";
+        countEl.title = "Over maximum squad limit of 16 players";
     } else {
         countEl.style.color = 'var(--accent-green)';
-        countEl.title = "Squad size is within correct range (16 - 24)";
+        countEl.title = "Squad is complete (Exactly 16 players)";
     }
     
     // Reset category slot text numbers
