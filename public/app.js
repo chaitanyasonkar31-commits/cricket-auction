@@ -82,10 +82,75 @@ function toggleCustomPlayers(show) {
     if (customDiv) {
         if (show) {
             customDiv.classList.remove('hidden');
+            // Pre-populate custom players table if empty
+            const rowsContainer = document.getElementById('custom-players-rows');
+            if (rowsContainer && rowsContainer.children.length === 0) {
+                for (let i = 0; i < 5; i++) {
+                    addCustomPlayerRow();
+                }
+            }
         } else {
             customDiv.classList.add('hidden');
         }
     }
+}
+
+// Interactive Custom Player Table Helpers
+function addCustomPlayerRow() {
+    const rowsContainer = document.getElementById('custom-players-rows');
+    if (!rowsContainer) return;
+    
+    const nextSNo = rowsContainer.children.length + 1;
+    const tr = document.createElement('tr');
+    tr.innerHTML = `
+        <td class="s-no" style="font-weight: bold; text-align: center; color: var(--text-secondary);">${nextSNo}</td>
+        <td><input type="text" class="cp-name" placeholder="e.g. Shreyas Iyer" style="text-align: left;"></td>
+        <td>
+            <select class="cp-role">
+                <option value="Batsman">Batsman</option>
+                <option value="Bowler">Bowler</option>
+                <option value="All-Rounder">All-Rounder</option>
+                <option value="Wicket-Keeper">Wicket-Keeper</option>
+            </select>
+        </td>
+        <td><input type="text" class="cp-style" placeholder="e.g. Right-hand bat / Right-arm fast"></td>
+        <td><input type="number" class="cp-rating" placeholder="85" min="50" max="99"></td>
+        <td>
+            <select class="cp-price">
+                <option value="20000000">₹2 Crore (₹2 Cr)</option>
+                <option value="15000000">₹1.5 Crore (₹1.5 Cr)</option>
+                <option value="10000000" selected>₹1 Crore (₹1 Cr)</option>
+                <option value="7500000">₹75 Lakhs (₹75 L)</option>
+                <option value="5000000">₹50 Lakhs (₹50 L)</option>
+                <option value="3000000">₹30 Lakhs (₹30 L)</option>
+                <option value="2000000">₹20 Lakhs (₹20 L)</option>
+            </select>
+        </td>
+        <td><input type="checkbox" class="cp-overseas"></td>
+        <td style="text-align: center;">
+            <button type="button" class="btn-remove-row" onclick="removeCustomPlayerRow(this)" title="Remove Player">
+                <i class="fa-solid fa-trash-can"></i>
+            </button>
+        </td>
+    `;
+    rowsContainer.appendChild(tr);
+}
+
+function removeCustomPlayerRow(button) {
+    const tr = button.closest('tr');
+    if (tr) {
+        tr.remove();
+        updateCustomSerialNumbers();
+    }
+}
+
+function updateCustomSerialNumbers() {
+    const rowsContainer = document.getElementById('custom-players-rows');
+    if (!rowsContainer) return;
+    const rows = rowsContainer.querySelectorAll('tr');
+    rows.forEach((row, index) => {
+        row.querySelector('.s-no').innerText = index + 1;
+    });
 }
 
 // Format Currency to Lakhs / Crores
@@ -371,12 +436,39 @@ async function createRoom() {
             }
         });
         
-        // 2. Append additional custom CSV entries
-        const csvText = document.getElementById('custom-csv').value.trim();
-        if (csvText) {
-            const parsedCsv = parseCSV(csvText);
-            playersList = playersList.concat(parsedCsv);
-        }
+        // 2. Read custom players from the interactive table
+        const customRows = document.querySelectorAll('#custom-players-rows tr');
+        let customIndex = 1;
+        customRows.forEach(row => {
+            const nameEl = row.querySelector('.cp-name');
+            const roleEl = row.querySelector('.cp-role');
+            const styleEl = row.querySelector('.cp-style');
+            const ratingEl = row.querySelector('.cp-rating');
+            const priceEl = row.querySelector('.cp-price');
+            const overseasEl = row.querySelector('.cp-overseas');
+            
+            const name = nameEl ? nameEl.value.trim() : '';
+            const role = roleEl ? roleEl.value : 'Batsman';
+            const style = styleEl && styleEl.value.trim() !== '' ? styleEl.value.trim() : (role === 'Bowler' ? 'Right-arm fast' : 'Right-hand bat');
+            const rating = ratingEl && ratingEl.value.trim() !== '' ? parseInt(ratingEl.value.trim()) : 85;
+            const basePrice = priceEl ? parseInt(priceEl.value) : 10000000;
+            const overseas = overseasEl ? overseasEl.checked : false;
+            
+            if (name) {
+                playersList.push({
+                    id: 2000 + customIndex,
+                    name: name,
+                    role: role,
+                    rating: rating,
+                    base_price: basePrice,
+                    stats: style,
+                    img: "",
+                    overseas: overseas,
+                    country: overseas ? "Overseas" : "India"
+                });
+                customIndex++;
+            }
+        });
         
         if (playersList.length === 0) {
             showNotification("No players selected or entered! Select at least one player.", "warning");

@@ -153,13 +153,33 @@
                         </div>
                     </div>
 
-                    <label for="custom-csv">
-                        <i class="fa-solid fa-file-csv text-cyan"></i> Add Additional Custom Players (CSV Format)
-                        <span class="help-text">Format: Name, Role, Rating, BasePrice, Stats, ImageUrl, Overseas(true/false)</span>
-                    </label>
-                    <textarea id="custom-csv" rows="5" placeholder="Format: Name, Role, Rating, BasePrice, Stats, ImageUrl, Overseas
-Mitchell Marsh, All-Rounder, 90, 15000000, Runs: 320 Wkts: 12, , true
-Yashasvi Jaiswal, Batsman, 91, 10000000, Runs: 720 Avg: 41.2, , false"></textarea>
+                    <!-- Interactive Custom Players Form Table -->
+                    <div id="custom-players-table-container" class="form-group" style="width: 100%; margin-top: 1.5rem;">
+                        <label><i class="fa-solid fa-user-plus text-cyan"></i> Add Additional Custom Players</label>
+                        <span class="help-text" style="display: block; margin-bottom: 0.5rem;">Specify player names, roles, batting/bowling style (e.g. LHB, OB), ratings and base prices directly.</span>
+                        <div class="custom-players-table-wrapper">
+                            <table class="custom-players-table">
+                                <thead>
+                                    <tr>
+                                        <th style="width: 50px;">S.No</th>
+                                        <th>Player Name</th>
+                                        <th style="width: 140px;">Role</th>
+                                        <th>Style (Batting/Bowling Hand)</th>
+                                        <th style="width: 80px;">Rating</th>
+                                        <th style="width: 150px;">Base Price (₹)</th>
+                                        <th style="width: 80px; text-align: center;">Overseas?</th>
+                                        <th style="width: 40px;"></th>
+                                    </tr>
+                                </thead>
+                                <tbody id="custom-players-rows">
+                                    <!-- Rows added dynamically via JavaScript -->
+                                </tbody>
+                            </table>
+                        </div>
+                        <button type="button" class="btn btn-secondary" onclick="addCustomPlayerRow()" style="margin-top: 0.75rem; padding: 0.45rem 1rem; font-size: 0.8rem; height: auto;">
+                            <i class="fa-solid fa-plus"></i> Add Player Row
+                        </button>
+                    </div>
                 </div>
 
                 <div class="form-actions">
