@@ -153,6 +153,123 @@ function updateCustomSerialNumbers() {
     });
 }
 
+function importCSVToTable() {
+    const csvTextarea = document.getElementById('custom-csv');
+    if (!csvTextarea) return;
+    const text = csvTextarea.value.trim();
+    if (!text) {
+        showNotification("Please paste some CSV data first", "warning");
+        return;
+    }
+    
+    // Parse the CSV
+    const parsedPlayers = parseCSV(text);
+    if (parsedPlayers.length === 0) {
+        showNotification("No players could be parsed from the CSV. Check format.", "warning");
+        return;
+    }
+    
+    const rowsContainer = document.getElementById('custom-players-rows');
+    if (!rowsContainer) return;
+    
+    // Check if the existing rows are all empty (i.e. name is empty).
+    const existingRows = rowsContainer.querySelectorAll('tr');
+    let allEmpty = true;
+    existingRows.forEach(row => {
+        const nameVal = row.querySelector('.cp-name').value.trim();
+        if (nameVal !== '') {
+            allEmpty = false;
+        }
+    });
+    
+    if (allEmpty) {
+        rowsContainer.innerHTML = '';
+    }
+    
+    parsedPlayers.forEach(player => {
+        const nextSNo = rowsContainer.children.length + 1;
+        const tr = document.createElement('tr');
+        
+        // Match role options: Batsman, Bowler, All-Rounder, Wicket-Keeper
+        let roleVal = "Batsman";
+        const roleLower = player.role.toLowerCase();
+        if (roleLower.includes('keeper') || roleLower.includes('wk')) {
+            roleVal = "Wicket-Keeper";
+        } else if (roleLower.includes('all-rounder') || roleLower.includes('allrounder') || roleLower.includes('ar')) {
+            roleVal = "All-Rounder";
+        } else if (roleLower.includes('bowler') || roleLower.includes('bowl')) {
+            roleVal = "Bowler";
+        }
+        
+        // Base Price match: 20000000, 15000000, 10000000, 7500000, 5000000, 3000000, 2000000
+        let basePriceVal = "10000000"; // default 1Cr
+        const validPrices = ["20000000", "15000000", "10000000", "7500000", "5000000", "3000000", "2000000"];
+        const playerPriceStr = String(player.base_price);
+        if (validPrices.includes(playerPriceStr)) {
+            basePriceVal = playerPriceStr;
+        } else {
+            // Find closest price
+            let closest = validPrices[0];
+            let minDiff = Math.abs(parseInt(closest) - player.base_price);
+            for (let i = 1; i < validPrices.length; i++) {
+                const diff = Math.abs(parseInt(validPrices[i]) - player.base_price);
+                if (diff < minDiff) {
+                    minDiff = diff;
+                    closest = validPrices[i];
+                }
+            }
+            basePriceVal = closest;
+        }
+        
+        tr.innerHTML = `
+            <td class="s-no" style="font-weight: bold; text-align: center; color: var(--text-secondary);">${nextSNo}</td>
+            <td><input type="text" class="cp-name" value="${escapeHtml(player.name)}" placeholder="e.g. Shreyas Iyer" style="text-align: left;"></td>
+            <td>
+                <select class="cp-role">
+                    <option value="Batsman" ${roleVal === "Batsman" ? "selected" : ""}>Batsman</option>
+                    <option value="Bowler" ${roleVal === "Bowler" ? "selected" : ""}>Bowler</option>
+                    <option value="All-Rounder" ${roleVal === "All-Rounder" ? "selected" : ""}>All-Rounder</option>
+                    <option value="Wicket-Keeper" ${roleVal === "Wicket-Keeper" ? "selected" : ""}>Wicket-Keeper</option>
+                </select>
+            </td>
+            <td><input type="text" class="cp-style" value="${escapeHtml(player.stats)}" placeholder="e.g. Right-hand bat / Right-arm fast"></td>
+            <td><input type="number" class="cp-rating" value="${player.rating}" placeholder="85" min="50" max="99"></td>
+            <td>
+                <select class="cp-price">
+                    <option value="20000000" ${basePriceVal === "20000000" ? "selected" : ""}>₹2 Crore (₹2 Cr)</option>
+                    <option value="15000000" ${basePriceVal === "15000000" ? "selected" : ""}>₹1.5 Crore (₹1.5 Cr)</option>
+                    <option value="10000000" ${basePriceVal === "10000000" ? "selected" : ""}>₹1 Crore (₹1 Cr)</option>
+                    <option value="7500000" ${basePriceVal === "7500000" ? "selected" : ""}>₹75 Lakhs (₹75 L)</option>
+                    <option value="5000000" ${basePriceVal === "5000000" ? "selected" : ""}>₹50 Lakhs (₹50 L)</option>
+                    <option value="3000000" ${basePriceVal === "3000000" ? "selected" : ""}>₹30 Lakhs (₹30 L)</option>
+                    <option value="2000000" ${basePriceVal === "2000000" ? "selected" : ""}>₹20 Lakhs (₹20 L)</option>
+                </select>
+            </td>
+            <td><input type="checkbox" class="cp-overseas" ${player.overseas ? "checked" : ""}></td>
+            <td style="text-align: center;">
+                <button type="button" class="btn-remove-row" onclick="removeCustomPlayerRow(this)" title="Remove Player">
+                    <i class="fa-solid fa-trash-can"></i>
+                </button>
+            </td>
+        `;
+        rowsContainer.appendChild(tr);
+    });
+    
+    updateCustomSerialNumbers();
+    csvTextarea.value = ''; // clear the textarea
+    showNotification(`Successfully imported ${parsedPlayers.length} players into the table!`, "success");
+}
+
+function escapeHtml(text) {
+    if (!text) return '';
+    return text
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#039;");
+}
+
 // Format Currency to Lakhs / Crores
 function formatCurrency(val) {
     if (val >= 10000000) {

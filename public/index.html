@@ -157,6 +157,20 @@
                     <div id="custom-players-table-container" class="form-group" style="width: 100%; margin-top: 1.5rem;">
                         <label><i class="fa-solid fa-user-plus text-cyan"></i> Add Additional Custom Players</label>
                         <span class="help-text" style="display: block; margin-bottom: 0.5rem;">Specify player names, roles, batting/bowling style (e.g. LHB, OB), ratings and base prices directly.</span>
+                        
+                        <!-- CSV Bulk Import Section -->
+                        <div class="csv-import-box" style="margin-bottom: 1.25rem; padding: 1rem; background: rgba(255, 255, 255, 0.02); border: 1px dashed rgba(255, 255, 255, 0.1); border-radius: 8px;">
+                            <label for="custom-csv" style="font-size: 0.8rem; color: var(--text-secondary); display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.25rem;">
+                                <i class="fa-solid fa-file-import text-cyan"></i> Bulk Import via CSV Format (Optional)
+                            </label>
+                            <span class="help-text" style="display: block; margin-bottom: 0.5rem; font-size: 0.75rem;">Paste custom player CSV text here to load them into the grid. Format: Name, Role, Rating, BasePrice, Style, ImageUrl, Overseas(true/false)</span>
+                            <textarea id="custom-csv" rows="3" placeholder="Mitchell Marsh, All-Rounder, 90, 15000000, Runs: 320 Wkts: 12, , true
+Yashasvi Jaiswal, Batsman, 91, 10000000, Runs: 720 Avg: 41.2, , false" style="font-size: 0.75rem; width: 100%; background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.15); border-radius: 6px; color: white; padding: 0.5rem; font-family: monospace; resize: vertical; margin-bottom: 0.5rem;"></textarea>
+                            <button type="button" class="btn btn-secondary" onclick="importCSVToTable()" style="padding: 0.4rem 0.85rem; font-size: 0.75rem; height: auto; background: rgba(0, 242, 254, 0.12); border: 1px solid var(--accent-cyan); color: var(--accent-cyan);">
+                                <i class="fa-solid fa-file-circle-plus"></i> Parse & Import to Table
+                            </button>
+                        </div>
+
                         <div class="custom-players-table-wrapper">
                             <table class="custom-players-table">
                                 <thead>
