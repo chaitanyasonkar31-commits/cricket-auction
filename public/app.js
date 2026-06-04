@@ -154,6 +154,27 @@ function signOutGoogle() {
     location.reload();
 }
 
+function continueAsGuest() {
+    const randomStr = Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
+    const guestToken = "guest_" + randomStr;
+    
+    sessionStorage.setItem('google_credential', guestToken);
+    sessionStorage.setItem('google_user_name', "Guest Manager");
+    sessionStorage.setItem('google_user_pic', "");
+    
+    renderUserProfile("Guest Manager", "");
+    showNotification("Logged in as Guest User!", "success");
+    
+    document.getElementById('login-overlay').classList.add('hidden');
+    
+    if (roomCode) {
+        connectEvents(roomCode);
+    } else {
+        showSection('home-view');
+        loadPresets();
+    }
+}
+
 function decodeJwt(token) {
     try {
         const base64Url = token.split('.')[1];
