@@ -7,8 +7,11 @@ import string
 import threading
 import queue
 import base64
+import hashlib
+import uuid
 from urllib.parse import urlparse, parse_qs
 from http.server import SimpleHTTPRequestHandler, ThreadingHTTPServer
+
 
 # Global room state store and lock
 rooms = {}
@@ -56,43 +59,54 @@ if os.path.exists(players_json_path):
     except Exception as e:
         print(f"Error loading players.json: {e}")
 
-# Load Google client configuration
-google_client_id = os.environ.get('GOOGLE_CLIENT_ID', '')
-config_json_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'config.json')
-if not google_client_id and os.path.exists(config_json_path):
+# User Account Registry Database
+users_file_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'users.json')
+users = {}
+users_lock = threading.Lock()
+
+def load_users():
+    global users
+    if os.path.exists(users_file_path):
+        try:
+            with open(users_file_path, 'r', encoding='utf-8') as f:
+                users = json.load(f)
+            print(f"Loaded {len(users)} registered user accounts.")
+        except Exception as e:
+            print(f"Error loading users.json: {e}")
+            users = {}
+
+def save_users():
     try:
-        with open(config_json_path, 'r', encoding='utf-8') as f:
-            config_data = json.load(f)
-            google_client_id = config_data.get('google_client_id', '')
+        with open(users_file_path, 'w', encoding='utf-8') as f:
+            json.dump(users, f, indent=2)
     except Exception as e:
-        print(f"Error loading config.json: {e}")
+        print(f"Error saving users.json: {e}")
 
-if google_client_id:
-    print(f"Google Client ID loaded: {google_client_id[:12]}...")
-else:
-    print("Google Client ID not configured. Manual entry will be available on the client side.")
+load_users()
 
-def decode_google_token(token):
+# Session Management (Token -> Username)
+sessions = {}
+sessions_lock = threading.Lock()
+
+def hash_password(password, salt=None):
+    if salt is None:
+        salt = os.urandom(16).hex()
+    hashed = hashlib.pbkdf2_hmac('sha256', password.encode('utf-8'), salt.encode('utf-8'), 100000).hex()
+    return hashed, salt
+
+def get_user_from_token(token):
     if not token:
         return None
     if token.startswith("guest_"):
-        return {
-            "sub": token,
-            "name": "Guest Manager",
-            "email": "guest@example.com"
-        }
-    try:
-        parts = token.split('.')
-        if len(parts) != 3:
-            return None
-        payload = parts[1]
-        # Pad base64url if needed
-        payload += '=' * (4 - len(payload) % 4)
-        decoded_bytes = base64.urlsafe_b64decode(payload)
-        return json.loads(decoded_bytes.decode('utf-8'))
-    except Exception as e:
-        print(f"Error decoding Google ID Token: {e}")
-        return None
+        return "Guest_" + token[6:12]
+    with sessions_lock:
+        return sessions.get(token)
+
+def create_session(username):
+    token = "auth_" + uuid.uuid4().hex
+    with sessions_lock:
+        sessions[token] = username
+    return token
 
 def format_currency_python(val):
     if val >= 10000000:
@@ -240,9 +254,7 @@ class AuctionHTTPHandler(SimpleHTTPRequestHandler):
             return
             
         if path == '/api/config':
-            self.send_json_response(200, {
-                "google_client_id": google_client_id
-            })
+            self.send_json_response(200, {})
             return
             
         # Real-time event stream via Server-Sent Events (SSE)
@@ -332,6 +344,10 @@ class AuctionHTTPHandler(SimpleHTTPRequestHandler):
                 self.handle_control(data)
             elif path == '/api/presets':
                 self.send_json_response(200, PRESETS)
+            elif path == '/api/auth/register':
+                self.handle_register(data)
+            elif path == '/api/auth/login':
+                self.handle_login(data)
             else:
                 self.send_json_response(404, {"error": "Not Found"})
         else:
@@ -343,11 +359,72 @@ class AuctionHTTPHandler(SimpleHTTPRequestHandler):
         self.end_headers()
         self.wfile.write(json.dumps(payload).encode('utf-8'))
 
+    def handle_register(self, data):
+        username = data.get('username', '').strip()
+        password = data.get('password', '').strip()
+        
+        if not username or not password:
+            self.send_json_response(400, {"error": "Username and password are required"})
+            return
+            
+        if len(username) < 3 or len(username) > 20:
+            self.send_json_response(400, {"error": "Username must be between 3 and 20 characters"})
+            return
+            
+        if not all(c.isalnum() or c in '_-' for c in username):
+            self.send_json_response(400, {"error": "Username can only contain alphanumeric characters, dashes, and underscores"})
+            return
+
+        with users_lock:
+            if username in users:
+                self.send_json_response(400, {"error": "Username is already taken"})
+                return
+                
+            hashed, salt = hash_password(password)
+            users[username] = {
+                "password_hash": hashed,
+                "salt": salt
+            }
+            save_users()
+            
+        token = create_session(username)
+        self.send_json_response(200, {
+            "success": True, 
+            "auth_token": token,
+            "username": username
+        })
+
+    def handle_login(self, data):
+        username = data.get('username', '').strip()
+        password = data.get('password', '').strip()
+        
+        if not username or not password:
+            self.send_json_response(400, {"error": "Username and password are required"})
+            return
+            
+        with users_lock:
+            if username not in users:
+                self.send_json_response(400, {"error": "Invalid username or password"})
+                return
+                
+            user_data = users[username]
+            hashed, _ = hash_password(password, user_data["salt"])
+            if hashed != user_data["password_hash"]:
+                self.send_json_response(400, {"error": "Invalid username or password"})
+                return
+                
+        token = create_session(username)
+        self.send_json_response(200, {
+            "success": True,
+            "auth_token": token,
+            "username": username
+        })
+
     def handle_create(self, data):
-        google_token = data.get('credential')
-        google_profile = decode_google_token(google_token)
-        if not google_profile:
-            self.send_json_response(400, {"error": "Google Sign-In is required to host an auction."})
+        auth_token = data.get('auth_token')
+        username = get_user_from_token(auth_token)
+        if not username:
+            self.send_json_response(401, {"error": "Authentication is required to host an auction."})
             return
             
         host_name = data.get('host_name', 'Host')
@@ -389,7 +466,7 @@ class AuctionHTTPHandler(SimpleHTTPRequestHandler):
             host_id = ''.join(random.choices(string.ascii_lowercase + string.digits, k=12))
             
             rooms[room_code] = {
-                "host_google_id": google_profile.get('sub'),
+                "host_username": username,
                 "auction_name": auction_name,
                 "host_name": host_name,
                 "host_id": host_id,
@@ -421,7 +498,7 @@ class AuctionHTTPHandler(SimpleHTTPRequestHandler):
         room_code = data.get('room_code', '').upper()
         team_name = data.get('team_name', '').strip()
         manager_name = data.get('manager_name', '').strip()
-        google_token = data.get('credential')
+        auth_token = data.get('auth_token')
         
         if not room_code or room_code not in rooms:
             self.send_json_response(404, {"error": "Room not found"})
@@ -431,28 +508,26 @@ class AuctionHTTPHandler(SimpleHTTPRequestHandler):
             self.send_json_response(400, {"error": "Team and Manager name are required"})
             return
             
-        google_profile = decode_google_token(google_token)
-        if not google_profile:
-            self.send_json_response(400, {"error": "Google Sign-In is required to join rooms."})
+        username = get_user_from_token(auth_token)
+        if not username:
+            self.send_json_response(401, {"error": "Authentication is required to join rooms."})
             return
             
-        google_id = google_profile.get('sub')
-        
         with rooms_lock:
             room = rooms[room_code]
             
-            # Enforce unique Google ID per room code (prevent one user from creating multiple franchises)
+            # Enforce unique Username per room code (prevent one user from creating multiple franchises)
             for existing_team_name, existing_team in room["teams"].items():
-                if existing_team.get("google_id") == google_id:
+                if existing_team.get("username") == username:
                     if existing_team_name != team_name:
                         self.send_json_response(400, {
                             "error": f"You have already joined this room as team '{existing_team_name}'."
                         })
                         return
             
-            # Allow reconnecting if details and Google ID match
+            # Allow reconnecting if details and Username match
             if team_name in room["teams"]:
-                if room["teams"][team_name].get("google_id") != google_id:
+                if room["teams"][team_name].get("username") != username:
                     self.send_json_response(400, {"error": "Team Name is already taken!"})
                     return
             else:
@@ -462,7 +537,7 @@ class AuctionHTTPHandler(SimpleHTTPRequestHandler):
                     return
                 # Setup new team structure
                 room["teams"][team_name] = {
-                    "google_id": google_id,
+                    "username": username,
                     "manager": manager_name,
                     "budget": room["settings"]["budget"],
                     "players": [],

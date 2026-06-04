@@ -12,43 +12,63 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Custom CSS Stylesheet -->
     <link rel="stylesheet" href="style.css">
-    <!-- Google Identity Services SDK -->
-    <script src="https://accounts.google.com/gsi/client" async defer></script>
 </head>
 <body>
     <!-- Persistent User Badge at Top-Right -->
     <div id="user-profile-badge" class="user-profile-badge hidden">
-        <img id="user-profile-pic" src="" alt="Google Profile Pic">
+        <div id="user-profile-avatar" class="profile-avatar-circle">U</div>
         <div class="user-profile-info">
             <span id="user-profile-name">Name</span>
-            <button class="btn-signout" onclick="signOutGoogle()"><i class="fa-solid fa-right-from-bracket"></i> Sign Out</button>
+            <button class="btn-signout" onclick="signOut()"><i class="fa-solid fa-right-from-bracket"></i> Sign Out</button>
         </div>
     </div>
 
-    <!-- Fullscreen Google Sign-In Wall -->
+    <!-- Fullscreen Auth Wall -->
     <div id="login-overlay" class="login-overlay hidden">
         <div class="login-card">
-            <i class="fa-solid fa-lock text-purple logo-medium"></i>
-            <h2>Authentication Required</h2>
-            <p class="text-secondary" style="margin-bottom: 1.5rem; font-size: 0.9rem;">Please sign in with Google to use Cricket Auction.</p>
+            <i class="fa-solid fa-circle-user text-purple logo-medium"></i>
+            <h2>Cricket Auction Authentication</h2>
             
-            <div class="google-btn-wrapper" style="flex-direction: column; align-items: center; gap: 0.75rem; margin: 1.5rem 0;">
-                <div id="google-login-btn-container"></div>
-                <div style="color: var(--text-secondary); font-size: 0.8rem; margin: 0.25rem 0;">— OR —</div>
-                <button class="btn btn-secondary" onclick="continueAsGuest()" style="width: 100%; border-radius: 50px; font-size: 0.85rem; height: 40px; display: flex; align-items: center; justify-content: center; gap: 0.5rem; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);">
-                    <i class="fa-solid fa-user-secret"></i> Continue as Guest
-                </button>
+            <div class="auth-tabs" style="display: flex; border-bottom: 1px solid var(--border-color); margin-bottom: 1.5rem; justify-content: center; gap: 1.5rem;">
+                <button id="tab-login" class="auth-tab active" onclick="switchAuthTab('login')" style="background: none; border: none; border-bottom: 2px solid var(--accent-purple); color: white; padding: 0.5rem 1rem; font-weight: 600; cursor: pointer; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 0.5px;">Login</button>
+                <button id="tab-register" class="auth-tab" onclick="switchAuthTab('register')" style="background: none; border: none; border-bottom: 2px solid transparent; color: var(--text-secondary); padding: 0.5rem 1rem; font-weight: 600; cursor: pointer; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 0.5px;">Register</button>
             </div>
-            
-            <!-- Manual Config Client ID Form (Shown only if GOOGLE_CLIENT_ID env is missing) -->
-            <div id="client-id-setup" class="client-id-setup hidden">
-                <label for="input-client-id"><i class="fa-solid fa-key"></i> Google Client ID</label>
-                <input type="text" id="input-client-id" placeholder="e.g., 12345-abcde.apps.googleusercontent.com">
-                <button class="btn btn-secondary btn-sm" onclick="saveClientId()" style="width: 100%; border-radius: 8px;">Save Client ID & Reload</button>
-                <p class="helper-text">
-                    You can set your own Google Client ID here if it is not configured on the server.
-                </p>
+
+            <!-- Login Form -->
+            <form id="login-form" onsubmit="handleLoginSubmit(event)" style="text-align: left; display: flex; flex-direction: column; gap: 1rem;">
+                <div class="form-group" style="display: flex; flex-direction: column; gap: 0.35rem;">
+                    <label for="login-username" style="font-size: 0.8rem; color: var(--text-secondary);"><i class="fa-solid fa-user"></i> Username</label>
+                    <input type="text" id="login-username" required placeholder="Enter username" style="height: 38px; padding: 0.25rem 0.75rem; background: rgba(0,0,0,0.3); border: 1px solid var(--border-color); border-radius: 6px; color: white;">
+                </div>
+                <div class="form-group" style="display: flex; flex-direction: column; gap: 0.35rem;">
+                    <label for="login-password" style="font-size: 0.8rem; color: var(--text-secondary);"><i class="fa-solid fa-lock"></i> Password</label>
+                    <input type="password" id="login-password" required placeholder="Enter password" style="height: 38px; padding: 0.25rem 0.75rem; background: rgba(0,0,0,0.3); border: 1px solid var(--border-color); border-radius: 6px; color: white;">
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%; border-radius: 8px; margin-top: 0.5rem; height: 40px;">Login</button>
+            </form>
+
+            <!-- Register Form -->
+            <form id="register-form" class="hidden" onsubmit="handleRegisterSubmit(event)" style="text-align: left; display: flex; flex-direction: column; gap: 1rem;">
+                <div class="form-group" style="display: flex; flex-direction: column; gap: 0.35rem;">
+                    <label for="register-username" style="font-size: 0.8rem; color: var(--text-secondary);"><i class="fa-solid fa-user"></i> Choose Username</label>
+                    <input type="text" id="register-username" required placeholder="Min 3 characters" style="height: 38px; padding: 0.25rem 0.75rem; background: rgba(0,0,0,0.3); border: 1px solid var(--border-color); border-radius: 6px; color: white;">
+                </div>
+                <div class="form-group" style="display: flex; flex-direction: column; gap: 0.35rem;">
+                    <label for="register-password" style="font-size: 0.8rem; color: var(--text-secondary);"><i class="fa-solid fa-lock"></i> Choose Password</label>
+                    <input type="password" id="register-password" required placeholder="Enter password" style="height: 38px; padding: 0.25rem 0.75rem; background: rgba(0,0,0,0.3); border: 1px solid var(--border-color); border-radius: 6px; color: white;">
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%; border-radius: 8px; margin-top: 0.5rem; height: 40px;">Register Account</button>
+            </form>
+
+            <div style="color: var(--text-secondary); font-size: 0.8rem; margin: 1.25rem 0; display: flex; align-items: center; justify-content: center; gap: 0.5rem;">
+                <span style="flex-grow: 1; height: 1px; background: rgba(255,255,255,0.08);"></span>
+                <span>OR</span>
+                <span style="flex-grow: 1; height: 1px; background: rgba(255,255,255,0.08);"></span>
             </div>
+
+            <button class="btn btn-secondary" onclick="continueAsGuest()" style="width: 100%; border-radius: 8px; font-size: 0.85rem; height: 40px; display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1); color: white;">
+                <i class="fa-solid fa-user-secret"></i> Continue as Guest
+            </button>
         </div>
     </div>
 

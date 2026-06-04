@@ -43,72 +43,108 @@ let allPresetPlayers = [
     {"id": 108, "name": "Glenn McGrath", "role": "Bowler", "rating": 97, "base_price": 15000000, "stats": "Wickets: 563 (Test), Econ: 2.49, Wickets: 381 (ODI)", "img": "https://img1.hscicdn.com/image/upload/f_auto,t_ds_square_w_320,q_50/lsci/db/PICTURES/CMS/319000/319058.png", "overseas": true, "country": "Australia"}
 ];
 
-let googleClientId = '';
-
-// Google Sign-In helper functions
-async function initGoogleAuth() {
-    try {
-        const res = await fetch('/api/config');
-        const config = await res.json();
-        googleClientId = config.google_client_id;
-    } catch (err) {
-        console.error("Error fetching config:", err);
-    }
+// Tab switching for Authentication overlay
+function switchAuthTab(tab) {
+    const tabLogin = document.getElementById('tab-login');
+    const tabRegister = document.getElementById('tab-register');
+    const formLogin = document.getElementById('login-form');
+    const formRegister = document.getElementById('register-form');
     
-    if (!googleClientId) {
-        googleClientId = localStorage.getItem('google_client_id') || '';
-    }
+    if (!tabLogin || !tabRegister || !formLogin || !formRegister) return;
     
-    if (!googleClientId) {
-        document.getElementById('login-overlay').classList.remove('hidden');
-        document.getElementById('client-id-setup').classList.remove('hidden');
-        return;
-    }
-    
-    try {
-        google.accounts.id.initialize({
-            client_id: googleClientId,
-            callback: handleCredentialResponse
-        });
-        google.accounts.id.renderButton(
-            document.getElementById("google-login-btn-container"),
-            { theme: "outline", size: "large", type: "standard", shape: "pill" }
-        );
-        google.accounts.id.prompt();
-    } catch (err) {
-        console.error("Error initializing Google GIS SDK:", err);
-        showNotification("Google SDK failed to load. Check console/origins.", "danger");
-        document.getElementById('client-id-setup').classList.remove('hidden');
+    if (tab === 'login') {
+        tabLogin.classList.add('active');
+        tabRegister.classList.remove('active');
+        formLogin.classList.remove('hidden');
+        formRegister.classList.add('hidden');
+    } else {
+        tabLogin.classList.remove('active');
+        tabRegister.classList.add('active');
+        formLogin.classList.add('hidden');
+        formRegister.classList.remove('hidden');
     }
 }
 
-function saveClientId() {
-    const val = document.getElementById('input-client-id').value.trim();
-    if (!val) {
-        showNotification("Please enter a valid Client ID", "warning");
-        return;
+async function handleLoginSubmit(event) {
+    event.preventDefault();
+    const usernameInput = document.getElementById('login-username');
+    const passwordInput = document.getElementById('login-password');
+    if (!usernameInput || !passwordInput) return;
+    
+    const username = usernameInput.value.trim();
+    const password = passwordInput.value;
+    
+    try {
+        const res = await apiPost('/api/auth/login', { username, password });
+        localStorage.setItem('auth_token', res.auth_token);
+        localStorage.setItem('auth_username', res.username);
+        
+        renderUserProfile(res.username);
+        showNotification(`Welcome back, ${res.username}!`, "success");
+        
+        document.getElementById('login-overlay').classList.add('hidden');
+        
+        // Clear inputs
+        usernameInput.value = '';
+        passwordInput.value = '';
+        
+        if (roomCode) {
+            connectEvents(roomCode);
+        } else {
+            showSection('home-view');
+            loadPresets();
+            renderScheduledAuctions();
+        }
+    } catch (err) {
+        console.error("Login failed:", err);
     }
-    localStorage.setItem('google_client_id', val);
-    showNotification("Client ID saved! Reloading...", "success");
-    setTimeout(() => location.reload(), 1000);
 }
 
-function handleCredentialResponse(response) {
-    if (!response || !response.credential) {
-        showNotification("Authentication failed.", "danger");
-        return;
-    }
+async function handleRegisterSubmit(event) {
+    event.preventDefault();
+    const usernameInput = document.getElementById('register-username');
+    const passwordInput = document.getElementById('register-password');
+    if (!usernameInput || !passwordInput) return;
     
-    const token = response.credential;
-    localStorage.setItem('google_credential', token);
+    const username = usernameInput.value.trim();
+    const password = passwordInput.value;
     
-    const profile = decodeJwt(token);
-    if (profile) {
-        localStorage.setItem('google_user_name', profile.name);
-        localStorage.setItem('google_user_pic', profile.picture);
-        renderUserProfile(profile.name, profile.picture);
-        showNotification(`Welcome, ${profile.name}!`, "success");
+    try {
+        const res = await apiPost('/api/auth/register', { username, password });
+        localStorage.setItem('auth_token', res.auth_token);
+        localStorage.setItem('auth_username', res.username);
+        
+        renderUserProfile(res.username);
+        showNotification(`Account registered successfully! Welcome, ${res.username}!`, "success");
+        
+        document.getElementById('login-overlay').classList.add('hidden');
+        
+        // Clear inputs
+        usernameInput.value = '';
+        passwordInput.value = '';
+        
+        if (roomCode) {
+            connectEvents(roomCode);
+        } else {
+            showSection('home-view');
+            loadPresets();
+            renderScheduledAuctions();
+        }
+    } catch (err) {
+        console.error("Registration failed:", err);
     }
+}
+
+function continueAsGuest() {
+    const randomStr = Math.random().toString(36).substring(2, 8);
+    const guestToken = "guest_" + randomStr;
+    const guestName = "Guest_" + randomStr;
+    
+    localStorage.setItem('auth_token', guestToken);
+    localStorage.setItem('auth_username', guestName);
+    
+    renderUserProfile(guestName);
+    showNotification("Logged in as Guest User!", "success");
     
     document.getElementById('login-overlay').classList.add('hidden');
     
@@ -116,27 +152,28 @@ function handleCredentialResponse(response) {
         connectEvents(roomCode);
     } else {
         showSection('home-view');
-            loadPresets();
-            renderScheduledAuctions();
+        loadPresets();
+        renderScheduledAuctions();
     }
 }
 
-function renderUserProfile(name, pic) {
+function renderUserProfile(username) {
     const badge = document.getElementById('user-profile-badge');
     const nameEl = document.getElementById('user-profile-name');
-    const picEl = document.getElementById('user-profile-pic');
+    const avatarEl = document.getElementById('user-profile-avatar');
     
-    if (badge && nameEl && picEl) {
-        nameEl.innerText = name;
-        picEl.src = pic || "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'><circle cx='50' cy='40' r='25' fill='%23555'/><path d='M15 85 C15 65 30 55 50 55 C70 55 85 65 85 85' fill='%23555'/></svg>";
+    if (badge && nameEl) {
+        nameEl.innerText = username;
+        if (avatarEl) {
+            avatarEl.innerText = username.charAt(0).toUpperCase();
+        }
         badge.classList.remove('hidden');
     }
 }
 
-function signOutGoogle() {
-    localStorage.removeItem('google_credential');
-    localStorage.removeItem('google_user_name');
-    localStorage.removeItem('google_user_pic');
+function signOut() {
+    localStorage.removeItem('auth_token');
+    localStorage.removeItem('auth_username');
     
     localStorage.removeItem('auction_role');
     localStorage.removeItem('auction_room_code');
@@ -153,42 +190,6 @@ function signOutGoogle() {
     
     document.getElementById('user-profile-badge').classList.add('hidden');
     location.reload();
-}
-
-function continueAsGuest() {
-    const randomStr = Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
-    const guestToken = "guest_" + randomStr;
-    
-    localStorage.setItem('google_credential', guestToken);
-    localStorage.setItem('google_user_name', "Guest Manager");
-    localStorage.setItem('google_user_pic', "");
-    
-    renderUserProfile("Guest Manager", "");
-    showNotification("Logged in as Guest User!", "success");
-    
-    document.getElementById('login-overlay').classList.add('hidden');
-    
-    if (roomCode) {
-        connectEvents(roomCode);
-    } else {
-        showSection('home-view');
-            loadPresets();
-            renderScheduledAuctions();
-    }
-}
-
-function decodeJwt(token) {
-    try {
-        const base64Url = token.split('.')[1];
-        const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
-        const jsonPayload = decodeURIComponent(window.atob(base64).split('').map(function(c) {
-            return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
-        }).join(''));
-        return JSON.parse(jsonPayload);
-    } catch (e) {
-        console.error("JWT Decode error:", e);
-        return null;
-    }
 }
 
 function leaveRoom() {
@@ -242,25 +243,22 @@ window.addEventListener('DOMContentLoaded', async () => {
         });
     }
 
-    await initGoogleAuth();
+    const authToken = localStorage.getItem('auth_token');
+    const authUsername = localStorage.getItem('auth_username');
 
     if (roomCode) {
-        if (!localStorage.getItem('google_credential')) {
+        if (!authToken) {
             document.getElementById('login-overlay').classList.remove('hidden');
         } else {
-            const googleName = localStorage.getItem('google_user_name');
-            const googlePic = localStorage.getItem('google_user_pic');
-            renderUserProfile(googleName, googlePic);
+            renderUserProfile(authUsername);
             showNotification("Restoring active session...", "success");
             connectEvents(roomCode);
         }
     } else {
-        if (!localStorage.getItem('google_credential')) {
+        if (!authToken) {
             document.getElementById('login-overlay').classList.remove('hidden');
         } else {
-            const googleName = localStorage.getItem('google_user_name');
-            const googlePic = localStorage.getItem('google_user_pic');
-            renderUserProfile(googleName, googlePic);
+            renderUserProfile(authUsername);
             showSection('home-view');
             loadPresets();
             renderScheduledAuctions();
@@ -861,7 +859,7 @@ async function createRoom() {
     
     try {
         const res = await apiPost('/api/create', {
-            credential: localStorage.getItem('google_credential'),
+            auth_token: localStorage.getItem('auth_token'),
             host_name: hostNameVal,
             auction_name: auctionNameVal,
             settings: settings,
@@ -917,7 +915,7 @@ async function joinRoom() {
     
     try {
         const res = await apiPost('/api/join', {
-            credential: localStorage.getItem('google_credential'),
+            auth_token: localStorage.getItem('auth_token'),
             room_code: codeVal,
             team_name: teamVal,
             manager_name: managerVal
