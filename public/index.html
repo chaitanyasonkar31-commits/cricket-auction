@@ -236,6 +236,22 @@ Yashasvi Jaiswal, Batsman, 91, 10000000, Runs: 720 Avg: 41.2, , false" style="fo
                             </button>
                         </div>
 
+                        <!-- Image Import Section (OCR) -->
+                        <div class="image-import-box" style="margin-bottom: 1.25rem; padding: 1rem; background: rgba(255, 255, 255, 0.02); border: 1px dashed rgba(255, 255, 255, 0.1); border-radius: 8px;">
+                            <label style="font-size: 0.8rem; color: var(--text-secondary); display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.25rem;">
+                                <i class="fa-solid fa-file-image text-cyan"></i> Import Player Roster via Image Screenshot (OCR)
+                            </label>
+                            <span class="help-text" style="display: block; margin-bottom: 0.5rem; font-size: 0.75rem;">Upload an image (screenshot or photo of a player roster). The system will automatically read and extract player names, roles, and ratings to fill the table.</span>
+                            
+                            <div style="display: flex; align-items: center; gap: 1rem; flex-wrap: wrap;">
+                                <input type="file" id="ocr-image-input" accept="image/*" style="display: none;" onchange="handleOCRImage(this)">
+                                <button type="button" class="btn btn-secondary" onclick="document.getElementById('ocr-image-input').click()" style="padding: 0.4rem 0.85rem; font-size: 0.75rem; height: auto; background: rgba(0, 242, 254, 0.05); border: 1px solid var(--accent-cyan); color: var(--accent-cyan);">
+                                    <i class="fa-solid fa-camera-retro"></i> Select Player List Image
+                                </button>
+                                <span id="ocr-status" class="help-text" style="font-size: 0.75rem; color: var(--text-secondary);">No image selected.</span>
+                            </div>
+                        </div>
+
                         <div class="custom-players-table-wrapper">
                             <table class="custom-players-table">
                                 <thead>

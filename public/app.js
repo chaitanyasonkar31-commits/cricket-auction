@@ -1882,7 +1882,7 @@ function addCustomPlayerRowWithData(name, role, style, rating, price, overseas) 
     const tr = document.createElement('tr');
     tr.innerHTML = `
         <td class="s-no" style="font-weight: bold; text-align: center; color: var(--text-secondary);">${nextSNo}</td>
-        <td><input type="text" class="cp-name" value="${name}" placeholder="e.g. Shreyas Iyer" style="text-align: left;"></td>
+        <td><input type="text" class="cp-name" value="${name || ''}" placeholder="e.g. Shreyas Iyer" style="text-align: left;"></td>
         <td>
             <select class="cp-role">
                 <option value="Batsman" ${role === 'Batsman' ? 'selected' : ''}>Batsman</option>
@@ -1891,13 +1891,13 @@ function addCustomPlayerRowWithData(name, role, style, rating, price, overseas) 
                 <option value="Wicket-Keeper" ${role === 'Wicket-Keeper' ? 'selected' : ''}>Wicket-Keeper</option>
             </select>
         </td>
-        <td><input type="text" class="cp-style" value="${style}" placeholder="e.g. Right-hand bat / Right-arm fast"></td>
-        <td><input type="number" class="cp-rating" value="${rating}" placeholder="85" min="50" max="99"></td>
+        <td><input type="text" class="cp-style" value="${style || ''}" placeholder="e.g. Right-hand bat / Right-arm fast"></td>
+        <td><input type="number" class="cp-rating" value="${rating || ''}" placeholder="85" min="50" max="99"></td>
         <td>
             <select class="cp-price">
                 <option value="20000000" ${price == 20000000 ? 'selected' : ''}>₹2 Crore (₹2 Cr)</option>
                 <option value="15000000" ${price == 15000000 ? 'selected' : ''}>₹1.5 Crore (₹1.5 Cr)</option>
-                <option value="10000000" ${price == 10000000 ? 'selected' : ''}>₹1 Crore (₹1 Cr)</option>
+                <option value="10000000" ${price == 10000000 || !price ? 'selected' : ''}>₹1 Crore (₹1 Cr)</option>
                 <option value="8000000" ${price == 8000000 ? 'selected' : ''}>₹80 Lakhs (₹80 L)</option>
                 <option value="5000000" ${price == 5000000 ? 'selected' : ''}>₹50 Lakhs (₹50 L)</option>
                 <option value="3000000" ${price == 3000000 ? 'selected' : ''}>₹30 Lakhs (₹30 L)</option>
@@ -1912,4 +1912,186 @@ function addCustomPlayerRowWithData(name, role, style, rating, price, overseas) 
         </td>
     `;
     rowsContainer.appendChild(tr);
+}
+
+// --- Dynamic OCR Roster Upload ---
+function loadScript(src) {
+    return new Promise((resolve, reject) => {
+        const script = document.createElement('script');
+        script.src = src;
+        script.onload = resolve;
+        script.onerror = reject;
+        document.head.appendChild(script);
+    });
+}
+
+async function handleOCRImage(input) {
+    const file = input.files[0];
+    if (!file) return;
+    
+    const statusText = document.getElementById('ocr-status');
+    if (!statusText) return;
+    
+    statusText.innerText = "Initializing OCR Engine...";
+    statusText.style.color = "var(--accent-cyan)";
+    
+    // Lazy load Tesseract.js only when the user selects a file
+    if (typeof Tesseract === 'undefined') {
+        statusText.innerText = "Loading OCR library (Tesseract.js)...";
+        try {
+            await loadScript("https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js");
+        } catch (e) {
+            statusText.innerText = "Failed to load OCR library. Check internet connection.";
+            statusText.style.color = "var(--accent-red)";
+            return;
+        }
+    }
+    
+    statusText.innerText = "Reading text from image (this may take a few seconds)...";
+    
+    try {
+        const result = await Tesseract.recognize(
+            file,
+            'eng',
+            { logger: m => {
+                if (m.status === 'recognizing') {
+                    statusText.innerText = `OCR Progress: ${Math.round(m.progress * 100)}%`;
+                }
+            } }
+        );
+        
+        const text = result.data.text;
+        console.log("OCR Extracted Text:\n", text);
+        
+        const players = parseOCRText(text);
+        
+        if (players.length === 0) {
+            statusText.innerText = "OCR finished, but no players could be parsed. Make sure names are clear.";
+            statusText.style.color = "var(--accent-yellow)";
+            return;
+        }
+        
+        const rowsContainer = document.getElementById('custom-players-rows');
+        if (rowsContainer) {
+            // Remove empty template rows first
+            const rows = rowsContainer.querySelectorAll('tr');
+            rows.forEach(r => {
+                const nameInput = r.querySelector('.cp-name');
+                if (nameInput && nameInput.value.trim() === '') {
+                    r.remove();
+                }
+            });
+            
+            // Insert parsed players to table
+            players.forEach(p => {
+                addCustomPlayerRowWithData(p.name, p.role, "", p.rating, p.basePrice, p.overseas);
+            });
+            
+            updateCustomSerialNumbers();
+        }
+        
+        statusText.innerText = `Successfully parsed and loaded ${players.length} players!`;
+        statusText.style.color = "#00ff88";
+        showNotification(`Successfully loaded ${players.length} players from image!`, "success");
+        
+    } catch (err) {
+        console.error("OCR Parse Error:", err);
+        statusText.innerText = "Error parsing image: " + err.message;
+        statusText.style.color = "var(--accent-red)";
+        showNotification("OCR Processing failed: " + err.message, "danger");
+    }
+}
+
+function parseOCRText(text) {
+    const lines = text.split('\n');
+    const players = [];
+    const roles = ['Batsman', 'Bowler', 'All-Rounder', 'Wicket-Keeper'];
+    
+    lines.forEach(line => {
+        line = line.trim();
+        if (!line) return;
+        
+        let name = '';
+        let role = 'Batsman';
+        let rating = 85;
+        let basePrice = 10000000; // 1 Crore default
+        let overseas = false;
+        
+        // 1. Match rating (number between 50 and 99, or 100)
+        const ratingMatch = line.match(/\b(100|[5-9][0-9])\b/);
+        if (ratingMatch) {
+            rating = parseInt(ratingMatch[1]);
+            line = line.replace(ratingMatch[0], ' ');
+        }
+        
+        // 2. Match role
+        let foundRole = false;
+        for (const r of roles) {
+            const rRegex = new RegExp('\\b' + r.replace('-', '\\-?') + '\\b', 'i');
+            if (rRegex.test(line)) {
+                role = r;
+                foundRole = true;
+                line = line.replace(rRegex, ' ');
+                break;
+            }
+        }
+        
+        if (!foundRole) {
+            if (/\b(bat|batsman|lhb|rhb)\b/i.test(line)) {
+                role = 'Batsman';
+            } else if (/\b(bowl|bowler|fast|spin)\b/i.test(line)) {
+                role = 'Bowler';
+            } else if (/\b(ar|allround|all-rounder|allrounder)\b/i.test(line)) {
+                role = 'All-Rounder';
+            } else if (/\b(wk|keeper|wicket-keeper|wicketkeeper|w-keeper)\b/i.test(line)) {
+                role = 'Wicket-Keeper';
+            }
+        }
+        
+        // 3. Match base price in Cr / L / lakhs or raw number
+        const priceMatch = line.match(/\b(\d+(?:\.\d+)?)\s*(cr|crore|l|lakh|lakhs)\b/i);
+        if (priceMatch) {
+            const val = parseFloat(priceMatch[1]);
+            const unit = priceMatch[2].toLowerCase();
+            if (unit.startsWith('cr')) {
+                basePrice = val * 10000000;
+            } else {
+                basePrice = val * 100000;
+            }
+            line = line.replace(priceMatch[0], ' ');
+        } else {
+            const rawNumMatch = line.match(/\b(\d{6,8})\b/);
+            if (rawNumMatch) {
+                basePrice = parseInt(rawNumMatch[1]);
+                line = line.replace(rawNumMatch[0], ' ');
+            }
+        }
+        
+        // 4. Match overseas
+        if (/\b(overseas|intl|international|yes|true)\b/i.test(line)) {
+            overseas = true;
+        }
+        
+        // Clean remaining string for name (strip table borders, special chars)
+        name = line.replace(/[|,\-_+[\]():;/\\]+/g, ' ')
+                   .replace(/\s+/g, ' ')
+                   .trim();
+                   
+        // Convert name to title case
+        name = name.split(' ')
+                   .map(w => w.charAt(0).toUpperCase() + w.slice(1).toLowerCase())
+                   .join(' ');
+                   
+        if (name && name.length > 2) {
+            players.push({
+                name: name,
+                role: role,
+                rating: rating,
+                basePrice: basePrice,
+                overseas: overseas
+            });
+        }
+    });
+    
+    return players;
 }
