@@ -1,0 +1,6 @@
+# Ignore logs and temporary files
+*.log
+.gemini/
+.system_generated/
+__pycache__/
+*.zip

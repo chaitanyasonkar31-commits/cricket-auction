@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cricket League Multiplayer Auction</title>
+    <!-- Google Fonts: Outfit & Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Inter:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Premium Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app">
+        <!-- Floating Ambient Background Circles -->
+        <div class="bg-glow bg-glow-1"></div>
+        <div class="bg-glow bg-glow-2"></div>
+
+        <!-- NOTIFICATION BANNER -->
+        <div id="notification-banner" class="hidden">
+            <span id="notification-text">Notification message</span>
+        </div>
+
+        <!-- 1. HOME VIEW (HOST OR JOIN) -->
+        <section id="home-view" class="view-panel active">
+            <div class="logo-container">
+                <i class="fa-solid fa-trophy trophy-icon"></i>
+                <h1>CRICKET LEAGUE</h1>
+                <h2>MULTIPLAYER AUCTION</h2>
+                <p class="subtitle">Experience real-time bidding with your friends</p>
+            </div>
+
+            <div class="card-grid">
+                <!-- Host Card -->
+                <div class="card glass-card hover-glow" onclick="showSection('host-config')">
+                    <div class="card-icon-circle accent-purple">
+                        <i class="fa-solid fa-gavel"></i>
+                    </div>
+                    <h3>Host an Auction</h3>
+                    <p>Create a room, load players, set budgets, and act as the auctioneer.</p>
+                    <button class="btn btn-primary">Start Host Setup</button>
+                </div>
+
+                <!-- Join Card -->
+                <div class="card glass-card hover-glow" onclick="showSection('join-form')">
+                    <div class="card-icon-circle accent-cyan">
+                        <i class="fa-solid fa-users"></i>
+                    </div>
+                    <h3>Join as Manager</h3>
+                    <p>Enter a room code, name your franchise, and bid on players.</p>
+                    <button class="btn btn-secondary">Join Existing Room</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- 1A. HOST CONFIGURATION SECTION -->
+        <section id="host-config" class="view-panel hidden">
+            <div class="back-link" onclick="showSection('home-view')">
+                <i class="fa-solid fa-arrow-left"></i> Back to Home
+            </div>
+            
+            <div class="glass-card config-form">
+                <h2><i class="fa-solid fa-sliders text-purple"></i> Configure Host Settings</h2>
+                
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="host-name"><i class="fa-solid fa-user"></i> Host / Auctioneer Name</label>
+                        <input type="text" id="host-name" value="Captain Auctioneer" placeholder="e.g., Richie Benaud">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="starting-budget"><i class="fa-solid fa-wallet"></i> Team Starting Budget (₹)</label>
+                        <select id="starting-budget">
+                            <option value="1500000000" selected>150 Crore (₹150 Cr)</option>
+                            <option value="1200000000">120 Crore (₹120 Cr)</option>
+                            <option value="1000000000">100 Crore (₹100 Cr)</option>
+                            <option value="800000000">80 Crore (₹80 Cr)</option>
+                            <option value="500000000">50 Crore (₹50 Cr)</option>
+                            <option value="10000000">1 Crore (₹1 Cr - mini-league)</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="bid-increment"><i class="fa-solid fa-arrow-up-right-dots"></i> Min Bid Increment (₹)</label>
+                        <select id="bid-increment">
+                            <option value="10000000">1 Crore (₹1 Cr)</option>
+                            <option value="5000000">50 Lakhs (₹50 L)</option>
+                            <option value="2000000" selected>20 Lakhs (₹20 L)</option>
+                            <option value="1000000">10 Lakhs (₹10 L)</option>
+                            <option value="500000">5 Lakhs (₹5 L)</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="bid-timer"><i class="fa-solid fa-stopwatch"></i> Bidding Timer (Seconds)</label>
+                        <select id="bid-timer">
+                            <option value="30">30 seconds</option>
+                            <option value="20">20 seconds</option>
+                            <option value="15" selected>15 seconds (Recommended)</option>
+                            <option value="10">10 seconds (Fast)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group preset-selector">
+                    <label><i class="fa-solid fa-database"></i> Choose Player Database Preset</label>
+                    <div class="preset-options">
+                        <label class="preset-label active">
+                            <input type="radio" name="preset-choice" value="ipl_legends" checked onchange="toggleCustomPlayers(false)">
+                            <div class="preset-box">
+                                <strong>IPL Legends</strong>
+                                <span>Virat Kohli, MS Dhoni, Jasprit Bumrah...</span>
+                            </div>
+                        </label>
+                        <label class="preset-label">
+                            <input type="radio" name="preset-choice" value="all_time_legends" onchange="toggleCustomPlayers(false)">
+                            <div class="preset-box">
+                                <strong>All-Time Legends</strong>
+                                <span>Sachin Tendulkar, Viv Richards, Shane Warne...</span>
+                            </div>
+                        </label>
+                        <label class="preset-label">
+                            <input type="radio" name="preset-choice" value="full_pool" onchange="toggleCustomPlayers(false)">
+                            <div class="preset-box">
+                                <strong>Full Pool (500+ Players)</strong>
+                                <span>Includes all 500+ Indian & Overseas players</span>
+                            </div>
+                        </label>
+                        <label class="preset-label">
+                            <input type="radio" name="preset-choice" value="custom" onchange="toggleCustomPlayers(true)">
+                            <div class="preset-box">
+                                <strong>Custom Players</strong>
+                                <span>Upload or enter your own squad list CSV</span>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Custom CSV Textarea -->
+                <div id="custom-players-input" class="form-group hidden">
+                    <!-- Checkbox list of existing presets -->
+                    <div id="preset-players-checklist-container" class="form-group" style="margin-bottom: 1.5rem; width: 100%;">
+                        <label><i class="fa-solid fa-square-check text-purple"></i> Select Players from Presets</label>
+                        <div class="preset-checklist-actions">
+                            <button type="button" class="btn btn-icon" onclick="toggleAllChecklist(true)" style="padding: 0.35rem 0.75rem; font-size: 0.75rem;">Select All</button>
+                            <button type="button" class="btn btn-icon" onclick="toggleAllChecklist(false)" style="padding: 0.35rem 0.75rem; font-size: 0.75rem;">Deselect All</button>
+                        </div>
+                        <div id="players-checklist" class="players-checklist-grid">
+                            <span class="help-text">Loading preset player lists...</span>
+                        </div>
+                    </div>
+
+                    <label for="custom-csv">
+                        <i class="fa-solid fa-file-csv text-cyan"></i> Add Additional Custom Players (CSV Format)
+                        <span class="help-text">Format: Name, Role, Rating, BasePrice, Stats, ImageUrl, Overseas(true/false)</span>
+                    </label>
+                    <textarea id="custom-csv" rows="5" placeholder="Format: Name, Role, Rating, BasePrice, Stats, ImageUrl, Overseas
+Mitchell Marsh, All-Rounder, 90, 15000000, Runs: 320 Wkts: 12, , true
+Yashasvi Jaiswal, Batsman, 91, 10000000, Runs: 720 Avg: 41.2, , false"></textarea>
+                </div>
+
+                <div class="form-actions">
+                    <button class="btn btn-primary btn-large" onclick="createRoom()"><i class="fa-solid fa-circle-check"></i> Create Auction Room</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- 1B. JOIN ROOM SECTION -->
+        <section id="join-form" class="view-panel hidden">
+            <div class="back-link" onclick="showSection('home-view')">
+                <i class="fa-solid fa-arrow-left"></i> Back to Home
+            </div>
+
+            <div class="glass-card join-container">
+                <h2><i class="fa-solid fa-right-to-bracket text-cyan"></i> Join an Auction Room</h2>
+                
+                <div class="form-group">
+                    <label for="join-room-code"><i class="fa-solid fa-key"></i> 4-Letter Room Code</label>
+                    <input type="text" id="join-room-code" placeholder="e.g. K7RT" maxlength="4" style="text-transform: uppercase;">
+                </div>
+
+                <div class="form-group">
+                    <label for="join-team-name"><i class="fa-solid fa-shield-halved"></i> Team / Franchise Name</label>
+                    <input type="text" id="join-team-name" placeholder="e.g. Mumbai Indians">
+                </div>
+
+                <div class="form-group">
+                    <label for="join-manager-name"><i class="fa-solid fa-address-card"></i> Manager Name</label>
+                    <input type="text" id="join-manager-name" placeholder="e.g. Rohit">
+                </div>
+
+                <button class="btn btn-secondary btn-large" onclick="joinRoom()"><i class="fa-solid fa-door-open"></i> Join Franchise Lobby</button>
+            </div>
+        </section>
+
+        <!-- 2. LOBBY SCREEN -->
+        <section id="lobby-view" class="view-panel hidden">
+            <div class="lobby-layout glass-card">
+                <div class="lobby-header">
+                    <div class="room-indicator">
+                        <span>ROOM CODE</span>
+                        <h1 id="lobby-room-code">XXXX</h1>
+                        <button class="btn btn-icon" onclick="copyRoomCode()" title="Copy Room Code"><i class="fa-solid fa-copy"></i> Copy</button>
+                    </div>
+                    <div class="lobby-info">
+                        <h2>Franchise Waiting Room</h2>
+                        <p id="lobby-status-text">Waiting for teams to enter...</p>
+                    </div>
+                </div>
+
+                <hr>
+
+                <div class="lobby-content">
+                    <div class="teams-list-section">
+                        <h3>Connected Franchises (<span id="connected-count">0</span>)</h3>
+                        <div id="lobby-teams-grid" class="lobby-teams-grid">
+                            <!-- Dynamically loaded joined teams -->
+                        </div>
+                    </div>
+
+                    <div class="host-start-panel" id="host-start-panel" class="hidden">
+                        <h3>Host Administration</h3>
+                        <p>When all managers are connected to the room, initiate the draft.</p>
+                        <button class="btn btn-primary btn-large" onclick="startAuction()"><i class="fa-solid fa-play"></i> Start Player Auction</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. MAIN AUCTION DASHBOARD -->
+        <section id="auction-view" class="view-panel hidden">
+            <div class="dashboard-header glass-panel">
+                <div class="header-branding">
+                    <i class="fa-solid fa-trophy logo-small"></i>
+                    <div>
+                        <h2>Cricket Premier League</h2>
+                        <span id="dash-room-info" class="text-glow">ROOM: XXXX</span>
+                    </div>
+                </div>
+
+                <!-- Manager Info Stats Banner (Only shown to joining players) -->
+                <div id="manager-identity-banner" class="manager-banner hidden">
+                    <span class="banner-team-name"><i class="fa-solid fa-shield-halved"></i> <span id="my-team-name-val">-</span></span>
+                    <span class="banner-budget"><i class="fa-solid fa-wallet"></i> Budget Remaining: <span id="my-budget-val" class="budget-highlight">-</span></span>
+                </div>
+
+                <div class="connection-status">
+                    <span class="status-indicator online"></span>
+                    <span id="connection-status-text">Connected</span>
+                </div>
+            </div>
+
+            <div class="dashboard-grid">
+                <!-- LEFT COLUMN: ACTIVE PLAYER & BIDDING CONSOLE -->
+                <div class="col-left">
+                    
+                    <!-- Timer countdown bar -->
+                    <div class="timer-section glass-panel">
+                        <div class="timer-meta">
+                            <span>COUNTDOWN TIMER</span>
+                            <span id="timer-text" class="timer-number">--</span>
+                        </div>
+                        <div class="timer-progress-bg">
+                            <div id="timer-progress-bar" class="timer-progress-bar" style="width: 100%;"></div>
+                        </div>
+                    </div>
+
+                    <!-- Active Player Card -->
+                    <div id="active-player-card" class="player-card glass-panel unsold">
+                        <div id="player-sale-stamp" class="sale-stamp hidden">SOLD</div>
+                        
+                        <div class="player-card-header">
+                            <div style="display: flex; gap: 0.5rem; align-items: center;">
+                                <span id="player-card-role" class="role-badge">ROLE</span>
+                                <span id="player-card-nationality" class="badge overseas-badge hidden">OVERSEAS ✈️</span>
+                            </div>
+                            <div class="rating-badge">
+                                <span class="rating-label">RATING</span>
+                                <span id="player-card-rating" class="rating-num">--</span>
+                            </div>
+                        </div>
+
+                        <div class="player-card-body">
+                            <div class="player-image-container">
+                                <img id="player-card-img" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'><circle cx='50' cy='40' r='25' fill='%23555'/><path d='M15 85 C15 65 30 55 50 55 C70 55 85 65 85 85' fill='%23555'/></svg>" alt="Player Image">
+                            </div>
+                            <div class="player-details">
+                                <h1 id="player-card-name">No Active Player</h1>
+                                <p id="player-card-stats" class="player-stats">Stats will appear here when the auction begins.</p>
+                            </div>
+                        </div>
+
+                        <div class="player-card-footer">
+                            <div class="price-box">
+                                <span class="price-label">BASE PRICE</span>
+                                <span id="player-card-base" class="price-value">--</span>
+                            </div>
+                            <div class="price-box current-bid-glow">
+                                <span class="price-label" id="current-bid-label">CURRENT BID</span>
+                                <span id="player-card-current" class="price-value text-glow">--</span>
+                            </div>
+                            <div class="price-box">
+                                <span class="price-label">HIGH BIDDER</span>
+                                <span id="player-card-bidder" class="price-value bidder-name">None</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Bidding Controls Panel -->
+                    <div id="bidding-controls-panel" class="bidding-panel glass-panel">
+                        <h3>Place Real-Time Bid</h3>
+                        <div class="bid-buttons-grid">
+                            <button id="btn-bid-min" class="btn btn-primary btn-bid" onclick="placeBid('min')">
+                                <span class="btn-subtext">MINIMUM BID</span>
+                                <span id="label-bid-min">₹0</span>
+                            </button>
+                            <button id="btn-bid-20l" class="btn btn-secondary btn-bid" onclick="placeBid('add', 2000000)">
+                                +20 Lakhs
+                            </button>
+                            <button id="btn-bid-50l" class="btn btn-secondary btn-bid" onclick="placeBid('add', 5000000)">
+                                +50 Lakhs
+                            </button>
+                            <button id="btn-bid-1cr" class="btn btn-secondary btn-bid" onclick="placeBid('add', 10000000)">
+                                +1 Crore
+                            </button>
+                        </div>
+                        <div class="custom-bid-input-container">
+                            <div class="input-wrapper">
+                                <span class="currency-symbol">₹</span>
+                                <input type="number" id="custom-bid-amount" placeholder="Enter custom bid (e.g. 5,00,00,000)">
+                            </div>
+                            <button id="btn-bid-custom" class="btn btn-accent" onclick="placeBid('custom')">Submit Custom Bid</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- RIGHT COLUMN: LEADERBOARD, LIVE FEED & ROSTERS -->
+                <div class="col-right">
+                    
+                    <!-- Host Console (Only visible to the Host) -->
+                    <div id="host-admin-panel" class="host-console glass-panel hidden">
+                        <h3><i class="fa-solid fa-toolbox"></i> Host Auctioneer Desk</h3>
+                        <div class="console-buttons">
+                            <!-- Start / Next -->
+                            <button id="host-btn-start" class="btn btn-primary" onclick="hostAction('start')"><i class="fa-solid fa-play"></i> Start Auction</button>
+                            <button id="host-btn-next" class="btn btn-primary hidden" onclick="hostAction('next')"><i class="fa-solid fa-forward"></i> Next Player</button>
+                            
+                            <!-- Bidding timer control -->
+                            <button id="host-btn-pause" class="btn btn-secondary" onclick="hostAction('pause')"><i class="fa-solid fa-pause"></i> Pause Timer</button>
+                            <button id="host-btn-resume" class="btn btn-secondary hidden" onclick="hostAction('resume')"><i class="fa-solid fa-play"></i> Resume Timer</button>
+                            
+                            <!-- Instant Sold / Skip -->
+                            <button id="host-btn-sell" class="btn btn-accent" onclick="hostAction('sell')"><i class="fa-solid fa-gavel"></i> Declare Sold</button>
+                            <button id="host-btn-unsold" class="btn btn-danger" onclick="hostAction('unsold')"><i class="fa-solid fa-xmark"></i> Unsold (Skip)</button>
+                            
+                            <!-- Reset Bidding -->
+                            <button id="host-btn-reset" class="btn btn-warning" onclick="hostAction('reset_player')"><i class="fa-solid fa-rotate-left"></i> Re-open Bid</button>
+                        </div>
+                    </div>
+
+                    <!-- Tabbed Teams and Player Queue Panel -->
+                    <div class="glass-panel tabbed-panel">
+                        <div class="panel-tabs">
+                            <button id="tab-leaderboard" class="panel-tab-btn active" onclick="switchDashboardTab('leaderboard')">
+                                <i class="fa-solid fa-ranking-star text-cyan"></i> Team Budgets & Squads
+                            </button>
+                            <button id="tab-players" class="panel-tab-btn" onclick="switchDashboardTab('players')">
+                                <i class="fa-solid fa-users text-purple"></i> Player Queue
+                            </button>
+                        </div>
+                        
+                        <!-- Teams / Leaderboard Tab Content -->
+                        <div id="tab-content-leaderboard" class="tab-content">
+                            <div id="leaderboard-container" class="leaderboard-container">
+                                <!-- Loaded dynamically -->
+                            </div>
+                            <span class="help-text" style="display: block; margin-top: 0.75rem; text-align: center; width: 100%;">
+                                <i class="fa-solid fa-circle-info"></i> Click any team card to inspect their detailed roster & balance slots
+                            </span>
+                        </div>
+                        
+                        <!-- Player Queue Tab Content -->
+                        <div id="tab-content-players" class="tab-content hidden">
+                            <div class="queue-filters">
+                                <button id="filter-btn-upcoming" class="filter-btn active" onclick="filterQueue('upcoming')">Upcoming</button>
+                                <button id="filter-btn-sold" class="filter-btn" onclick="filterQueue('sold')">Sold</button>
+                                <button id="filter-btn-unsold" class="filter-btn" onclick="filterQueue('unsold')">Unsold</button>
+                            </div>
+                            <div id="queue-container" class="queue-container">
+                                <!-- Loaded dynamically -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Live Feed Log -->
+                    <div class="feed-section glass-panel">
+                        <h3><i class="fa-solid fa-comment-dots"></i> Live Auction Activity Feed</h3>
+                        <div id="log-feed" class="log-feed">
+                            <!-- Dynamic log feed messages -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. ROSTER OVERLAY MODAL -->
+        <div id="roster-modal" class="modal-overlay hidden" onclick="closeRosterModal()">
+            <div class="modal-content glass-card" onclick="event.stopPropagation()">
+                <div class="modal-header">
+                    <h2><i class="fa-solid fa-shield-halved text-purple"></i> Team Roster: <span id="modal-team-name">-</span></h2>
+                    <button class="btn-close" onclick="closeRosterModal()">&times;</button>
+                </div>
+                <div class="modal-stats">
+                    <div>
+                        <span class="m-label">BUDGET REMAINING</span>
+                        <span class="m-val" id="modal-team-budget">-</span>
+                    </div>
+                    <div>
+                        <span class="m-label">PLAYERS BOUGHT</span>
+                        <span class="m-val" id="modal-player-count">0</span>
+                    </div>
+                    <div class="slots-bar">
+                        <span class="slot-count badge Batsman">BAT: <span id="slot-bat">0</span></span>
+                        <span class="slot-count badge Bowler">BOWL: <span id="slot-bowl">0</span></span>
+                        <span class="slot-count badge All-Rounder">AR: <span id="slot-ar">0</span></span>
+                        <span class="slot-count badge Wicket-Keeper">WK: <span id="slot-wk">0</span></span>
+                        <span class="slot-count badge overseas-badge" style="margin-left: auto;">OVERSEAS: <span id="slot-os">0</span></span>
+                    </div>
+                </div>
+                <div class="roster-table-container">
+                    <table class="roster-table">
+                        <thead>
+                            <tr>
+                                <th>Player Name</th>
+                                <th>Category</th>
+                                <th>Rating</th>
+                                <th style="text-align: right;">Price Paid</th>
+                            </tr>
+                        </thead>
+                        <tbody id="modal-roster-rows">
+                            <!-- Dynamic roster rows -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Canvas Confetti Library from jsDelivr -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+    <!-- Players Fallback Database -->
+    <script src="players-data.js"></script>
+    <!-- Frontend JS logic script -->
+    <script src="app.js"></script>
+</body>
+</html>
