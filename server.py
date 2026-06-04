@@ -6,6 +6,7 @@ import random
 import string
 import threading
 import queue
+import base64
 from urllib.parse import urlparse, parse_qs
 from http.server import SimpleHTTPRequestHandler, ThreadingHTTPServer
 
@@ -54,6 +55,38 @@ if os.path.exists(players_json_path):
             print(f"Loaded players dynamically. Pools: {list(PRESETS.keys())}, Full Pool contains {len(PRESETS.get('full_pool', []))} players.")
     except Exception as e:
         print(f"Error loading players.json: {e}")
+
+# Load Google client configuration
+google_client_id = os.environ.get('GOOGLE_CLIENT_ID', '')
+config_json_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'config.json')
+if not google_client_id and os.path.exists(config_json_path):
+    try:
+        with open(config_json_path, 'r', encoding='utf-8') as f:
+            config_data = json.load(f)
+            google_client_id = config_data.get('google_client_id', '')
+    except Exception as e:
+        print(f"Error loading config.json: {e}")
+
+if google_client_id:
+    print(f"Google Client ID loaded: {google_client_id[:12]}...")
+else:
+    print("Google Client ID not configured. Manual entry will be available on the client side.")
+
+def decode_google_token(token):
+    if not token:
+        return None
+    try:
+        parts = token.split('.')
+        if len(parts) != 3:
+            return None
+        payload = parts[1]
+        # Pad base64url if needed
+        payload += '=' * (4 - len(payload) % 4)
+        decoded_bytes = base64.urlsafe_b64decode(payload)
+        return json.loads(decoded_bytes.decode('utf-8'))
+    except Exception as e:
+        print(f"Error decoding Google ID Token: {e}")
+        return None
 
 def format_currency_python(val):
     if val >= 10000000:
@@ -200,6 +233,12 @@ class AuctionHTTPHandler(SimpleHTTPRequestHandler):
             self.send_json_response(200, PRESETS)
             return
             
+        if path == '/api/config':
+            self.send_json_response(200, {
+                "google_client_id": google_client_id
+            })
+            return
+            
         # Real-time event stream via Server-Sent Events (SSE)
         if path == '/events':
             query = parse_qs(url_parsed.query)
@@ -299,6 +338,12 @@ class AuctionHTTPHandler(SimpleHTTPRequestHandler):
         self.wfile.write(json.dumps(payload).encode('utf-8'))
 
     def handle_create(self, data):
+        google_token = data.get('credential')
+        google_profile = decode_google_token(google_token)
+        if not google_profile:
+            self.send_json_response(400, {"error": "Google Sign-In is required to host an auction."})
+            return
+            
         host_name = data.get('host_name', 'Host')
         auction_name = data.get('auction_name', 'Cricket Auction')
         settings = data.get('settings', {})
@@ -338,6 +383,7 @@ class AuctionHTTPHandler(SimpleHTTPRequestHandler):
             host_id = ''.join(random.choices(string.ascii_lowercase + string.digits, k=12))
             
             rooms[room_code] = {
+                "host_google_id": google_profile.get('sub'),
                 "auction_name": auction_name,
                 "host_name": host_name,
                 "host_id": host_id,
@@ -369,6 +415,7 @@ class AuctionHTTPHandler(SimpleHTTPRequestHandler):
         room_code = data.get('room_code', '').upper()
         team_name = data.get('team_name', '').strip()
         manager_name = data.get('manager_name', '').strip()
+        google_token = data.get('credential')
         
         if not room_code or room_code not in rooms:
             self.send_json_response(404, {"error": "Room not found"})
@@ -378,13 +425,28 @@ class AuctionHTTPHandler(SimpleHTTPRequestHandler):
             self.send_json_response(400, {"error": "Team and Manager name are required"})
             return
             
+        google_profile = decode_google_token(google_token)
+        if not google_profile:
+            self.send_json_response(400, {"error": "Google Sign-In is required to join rooms."})
+            return
+            
+        google_id = google_profile.get('sub')
+        
         with rooms_lock:
             room = rooms[room_code]
             
-            # Check duplicates
+            # Enforce unique Google ID per room code (prevent one user from creating multiple franchises)
+            for existing_team_name, existing_team in room["teams"].items():
+                if existing_team.get("google_id") == google_id:
+                    if existing_team_name != team_name:
+                        self.send_json_response(400, {
+                            "error": f"You have already joined this room as team '{existing_team_name}'."
+                        })
+                        return
+            
+            # Allow reconnecting if details and Google ID match
             if team_name in room["teams"]:
-                # If details match, allow rejoining, else error
-                if room["teams"][team_name]["manager"] != manager_name:
+                if room["teams"][team_name].get("google_id") != google_id:
                     self.send_json_response(400, {"error": "Team Name is already taken!"})
                     return
             else:
@@ -394,6 +456,7 @@ class AuctionHTTPHandler(SimpleHTTPRequestHandler):
                     return
                 # Setup new team structure
                 room["teams"][team_name] = {
+                    "google_id": google_id,
                     "manager": manager_name,
                     "budget": room["settings"]["budget"],
                     "players": [],
@@ -609,6 +672,23 @@ class AuctionHTTPHandler(SimpleHTTPRequestHandler):
                     
                     reset_msg = f"🔄 Bidding restarted for {player['name']}."
                     room["logs"].append(reset_msg)
+                    
+            elif action == "kick":
+                team_to_kick = data.get('team_name', '').strip()
+                if team_to_kick in room["teams"]:
+                    del room["teams"][team_to_kick]
+                    kick_msg = f"🚫 Team '{team_to_kick}' was kicked by the Host."
+                    room["logs"].append(kick_msg)
+                    
+                    # If this team holds the highest bid, reset bid
+                    if room["current_bidder"] == team_to_kick:
+                        room["current_bid"] = 0
+                        room["current_bidder"] = None
+                        room["timer"] = room["settings"]["timer_duration"]
+                        room["logs"].append(f"🔄 Bidding reset because highest bidder '{team_to_kick}' was kicked.")
+                else:
+                    self.send_json_response(400, {"error": f"Team '{team_to_kick}' not found to kick."})
+                    return
                     
             broadcast(room_code, "state_update", get_serializable_room(room))
             

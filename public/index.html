@@ -12,8 +12,42 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Custom CSS Stylesheet -->
     <link rel="stylesheet" href="style.css">
+    <!-- Google Identity Services SDK -->
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
 </head>
 <body>
+    <!-- Persistent User Badge at Top-Right -->
+    <div id="user-profile-badge" class="user-profile-badge hidden">
+        <img id="user-profile-pic" src="" alt="Google Profile Pic">
+        <div class="user-profile-info">
+            <span id="user-profile-name">Name</span>
+            <button class="btn-signout" onclick="signOutGoogle()"><i class="fa-solid fa-right-from-bracket"></i> Sign Out</button>
+        </div>
+    </div>
+
+    <!-- Fullscreen Google Sign-In Wall -->
+    <div id="login-overlay" class="login-overlay hidden">
+        <div class="login-card">
+            <i class="fa-solid fa-lock text-purple logo-medium"></i>
+            <h2>Authentication Required</h2>
+            <p class="text-secondary" style="margin-bottom: 1.5rem; font-size: 0.9rem;">Please sign in with Google to use Cricket Auction.</p>
+            
+            <div class="google-btn-wrapper">
+                <div id="google-login-btn-container"></div>
+            </div>
+            
+            <!-- Manual Config Client ID Form (Shown only if GOOGLE_CLIENT_ID env is missing) -->
+            <div id="client-id-setup" class="client-id-setup hidden">
+                <label for="input-client-id"><i class="fa-solid fa-key"></i> Google Client ID</label>
+                <input type="text" id="input-client-id" placeholder="e.g., 12345-abcde.apps.googleusercontent.com">
+                <button class="btn btn-secondary btn-sm" onclick="saveClientId()" style="width: 100%; border-radius: 8px;">Save Client ID & Reload</button>
+                <p class="helper-text">
+                    You can set your own Google Client ID here if it is not configured on the server.
+                </p>
+            </div>
+        </div>
+    </div>
+
     <div id="app">
         <!-- Floating Ambient Background Circles -->
         <div class="bg-glow bg-glow-1"></div>

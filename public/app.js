@@ -43,8 +43,173 @@ let allPresetPlayers = [
     {"id": 108, "name": "Glenn McGrath", "role": "Bowler", "rating": 97, "base_price": 15000000, "stats": "Wickets: 563 (Test), Econ: 2.49, Wickets: 381 (ODI)", "img": "https://img1.hscicdn.com/image/upload/f_auto,t_ds_square_w_320,q_50/lsci/db/PICTURES/CMS/319000/319058.png", "overseas": true, "country": "Australia"}
 ];
 
+let googleClientId = '';
+
+// Google Sign-In helper functions
+async function initGoogleAuth() {
+    try {
+        const res = await fetch('/api/config');
+        const config = await res.json();
+        googleClientId = config.google_client_id;
+    } catch (err) {
+        console.error("Error fetching config:", err);
+    }
+    
+    if (!googleClientId) {
+        googleClientId = localStorage.getItem('google_client_id') || '';
+    }
+    
+    if (!googleClientId) {
+        document.getElementById('login-overlay').classList.remove('hidden');
+        document.getElementById('client-id-setup').classList.remove('hidden');
+        return;
+    }
+    
+    try {
+        google.accounts.id.initialize({
+            client_id: googleClientId,
+            callback: handleCredentialResponse
+        });
+        google.accounts.id.renderButton(
+            document.getElementById("google-login-btn-container"),
+            { theme: "outline", size: "large", type: "standard", shape: "pill" }
+        );
+        google.accounts.id.prompt();
+    } catch (err) {
+        console.error("Error initializing Google GIS SDK:", err);
+        showNotification("Google SDK failed to load. Check console/origins.", "danger");
+        document.getElementById('client-id-setup').classList.remove('hidden');
+    }
+}
+
+function saveClientId() {
+    const val = document.getElementById('input-client-id').value.trim();
+    if (!val) {
+        showNotification("Please enter a valid Client ID", "warning");
+        return;
+    }
+    localStorage.setItem('google_client_id', val);
+    showNotification("Client ID saved! Reloading...", "success");
+    setTimeout(() => location.reload(), 1000);
+}
+
+function handleCredentialResponse(response) {
+    if (!response || !response.credential) {
+        showNotification("Authentication failed.", "danger");
+        return;
+    }
+    
+    const token = response.credential;
+    sessionStorage.setItem('google_credential', token);
+    
+    const profile = decodeJwt(token);
+    if (profile) {
+        sessionStorage.setItem('google_user_name', profile.name);
+        sessionStorage.setItem('google_user_pic', profile.picture);
+        renderUserProfile(profile.name, profile.picture);
+        showNotification(`Welcome, ${profile.name}!`, "success");
+    }
+    
+    document.getElementById('login-overlay').classList.add('hidden');
+    
+    if (roomCode) {
+        connectEvents(roomCode);
+    } else {
+        showSection('home-view');
+        loadPresets();
+    }
+}
+
+function renderUserProfile(name, pic) {
+    const badge = document.getElementById('user-profile-badge');
+    const nameEl = document.getElementById('user-profile-name');
+    const picEl = document.getElementById('user-profile-pic');
+    
+    if (badge && nameEl && picEl) {
+        nameEl.innerText = name;
+        picEl.src = pic || "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'><circle cx='50' cy='40' r='25' fill='%23555'/><path d='M15 85 C15 65 30 55 50 55 C70 55 85 65 85 85' fill='%23555'/></svg>";
+        badge.classList.remove('hidden');
+    }
+}
+
+function signOutGoogle() {
+    sessionStorage.removeItem('google_credential');
+    sessionStorage.removeItem('google_user_name');
+    sessionStorage.removeItem('google_user_pic');
+    
+    sessionStorage.removeItem('auction_role');
+    sessionStorage.removeItem('auction_room_code');
+    sessionStorage.removeItem('auction_team_name');
+    sessionStorage.removeItem('auction_manager_name');
+    sessionStorage.removeItem('auction_host_id');
+    
+    role = '';
+    roomCode = '';
+    teamName = '';
+    managerName = '';
+    hostId = '';
+    roomState = null;
+    
+    document.getElementById('user-profile-badge').classList.add('hidden');
+    location.reload();
+}
+
+function decodeJwt(token) {
+    try {
+        const base64Url = token.split('.')[1];
+        const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+        const jsonPayload = decodeURIComponent(window.atob(base64).split('').map(function(c) {
+            return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+        }).join(''));
+        return JSON.parse(jsonPayload);
+    } catch (e) {
+        console.error("JWT Decode error:", e);
+        return null;
+    }
+}
+
+function leaveRoom() {
+    sessionStorage.removeItem('auction_role');
+    sessionStorage.removeItem('auction_room_code');
+    sessionStorage.removeItem('auction_team_name');
+    sessionStorage.removeItem('auction_manager_name');
+    sessionStorage.removeItem('auction_host_id');
+    
+    role = '';
+    roomCode = '';
+    teamName = '';
+    managerName = '';
+    hostId = '';
+    roomState = null;
+    
+    if (eventSource) {
+        eventSource.close();
+        eventSource = null;
+    }
+    
+    showSection('home-view');
+}
+
+async function kickTeam(tName) {
+    if (role !== 'host') return;
+    if (!confirm(`Are you sure you want to kick team '${tName}'?`)) return;
+    
+    try {
+        await apiPost('/api/control', {
+            room_code: roomCode,
+            host_id: hostId,
+            action: 'kick',
+            team_name: tName
+        });
+        showNotification(`Franchise '${tName}' has been kicked.`, "success");
+    } catch (err) {
+        console.error(err);
+        showNotification("Failed to kick team: " + err.message, "danger");
+    }
+}
+
 // On page load, try to restore session if roomCode exists
-window.addEventListener('DOMContentLoaded', () => {
+window.addEventListener('DOMContentLoaded', async () => {
     // Intercept room code input
     const roomInput = document.getElementById('join-room-code');
     if (roomInput) {
@@ -53,13 +218,28 @@ window.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    await initGoogleAuth();
+
     if (roomCode) {
-        showNotification("Restoring active session...", "success");
-        connectEvents(roomCode);
+        if (!sessionStorage.getItem('google_credential')) {
+            document.getElementById('login-overlay').classList.remove('hidden');
+        } else {
+            const googleName = sessionStorage.getItem('google_user_name');
+            const googlePic = sessionStorage.getItem('google_user_pic');
+            renderUserProfile(googleName, googlePic);
+            showNotification("Restoring active session...", "success");
+            connectEvents(roomCode);
+        }
     } else {
-        showSection('home-view');
-        // Fetch preset players checklist
-        loadPresets();
+        if (!sessionStorage.getItem('google_credential')) {
+            document.getElementById('login-overlay').classList.remove('hidden');
+        } else {
+            const googleName = sessionStorage.getItem('google_user_name');
+            const googlePic = sessionStorage.getItem('google_user_pic');
+            renderUserProfile(googleName, googlePic);
+            showSection('home-view');
+            loadPresets();
+        }
     }
 });
 
@@ -651,6 +831,7 @@ async function createRoom() {
     
     try {
         const res = await apiPost('/api/create', {
+            credential: sessionStorage.getItem('google_credential'),
             host_name: hostNameVal,
             auction_name: auctionNameVal,
             settings: settings,
@@ -688,6 +869,7 @@ async function joinRoom() {
     
     try {
         const res = await apiPost('/api/join', {
+            credential: sessionStorage.getItem('google_credential'),
             room_code: codeVal,
             team_name: teamVal,
             manager_name: managerVal
@@ -868,6 +1050,13 @@ function updateTimerProgressBar(val) {
 function renderState() {
     if (!roomState) return;
     
+    // Check if we are a manager and have been kicked by the host
+    if (role === 'manager' && roomState.teams && !roomState.teams[teamName]) {
+        showNotification("You have been kicked by the host.", "danger");
+        leaveRoom();
+        return;
+    }
+    
     // 1. Manage visible section transitions
     if (roomState.status === 'lobby') {
         showSection('lobby-view');
@@ -912,11 +1101,26 @@ function renderLobby() {
             const team = roomState.teams[tName];
             const div = document.createElement('div');
             div.className = "lobby-team-card";
+            
+            let kickBtnHtml = '';
+            if (role === 'host') {
+                kickBtnHtml = `
+                    <button class="btn-kick" onclick="kickTeam('${tName}')" title="Kick Team" style="margin-left: auto;">
+                        <i class="fa-solid fa-user-slash"></i>
+                    </button>
+                `;
+            }
+            
             div.innerHTML = `
-                <div class="lobby-team-icon"><i class="fa-solid fa-shield-halved"></i></div>
-                <div class="lobby-team-info">
-                    <h4>${tName}</h4>
-                    <span>Mgr: ${team.manager}</span>
+                <div class="lobby-team-row">
+                    <div style="display: flex; align-items: center; gap: 0.75rem;">
+                        <div class="lobby-team-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                        <div class="lobby-team-info">
+                            <h4>${tName}</h4>
+                            <span>Mgr: ${team.manager}</span>
+                        </div>
+                    </div>
+                    ${kickBtnHtml}
                 </div>
             `;
             grid.appendChild(div);
@@ -1175,6 +1379,16 @@ function renderAuctionDashboard() {
         const row = document.createElement('div');
         row.className = "leaderboard-row";
         row.onclick = () => openRosterModal(tName);
+        
+        let kickBtnHtml = '';
+        if (role === 'host') {
+            kickBtnHtml = `
+                <button class="btn-kick" onclick="event.stopPropagation(); kickTeam('${tName}')" title="Kick Team">
+                    <i class="fa-solid fa-user-slash"></i>
+                </button>
+            `;
+        }
+        
         row.innerHTML = `
             <div class="leader-team-info">
                 <div class="leader-team-icon"><i class="fa-solid fa-shield-halved"></i></div>
@@ -1187,6 +1401,7 @@ function renderAuctionDashboard() {
                 <span class="leader-team-count">${team.players.length} Players</span>
                 <span class="leader-team-budget">${formatCurrency(team.budget)}</span>
                 <i class="fa-solid fa-eye" title="View Squad Roster" style="margin-left: 0.5rem; color: var(--text-secondary); opacity: 0.7;"></i>
+                ${kickBtnHtml}
             </div>
         `;
         leaderboardGrid.appendChild(row);
