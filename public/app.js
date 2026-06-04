@@ -799,6 +799,10 @@ function renderAuctionDashboard() {
         // Check overseas limits (disabled)
         const exceedsOS = false;
         
+        // Check squad capacity limit (max 24 players)
+        const teamPlayers = roomState.teams[teamName] ? roomState.teams[teamName].players : [];
+        const isSquadFull = teamPlayers.length >= 24;
+        
         // Apply enable/disable criteria
         const minBtn = document.getElementById('btn-bid-min');
         const add20L = document.getElementById('btn-bid-20l');
@@ -808,7 +812,7 @@ function renderAuctionDashboard() {
         
         document.getElementById('label-bid-min').innerText = minRequired > 0 ? formatCurrency(minRequired) : "₹0";
         
-        const disableBidding = !isEligible || isHighBidder || budget < minRequired || exceedsOS;
+        const disableBidding = !isEligible || isHighBidder || budget < minRequired || exceedsOS || isSquadFull;
         
         minBtn.disabled = disableBidding;
         add20L.disabled = disableBidding || (roomState.current_bid === 0 && budget < (activePlayer.base_price + 2000000));
@@ -820,9 +824,9 @@ function renderAuctionDashboard() {
         if (isHighBidder && isEligible) {
             minBtn.disabled = true;
             document.getElementById('label-bid-min').innerText = "HIGH BIDDER";
-        } else if (exceedsOS && isEligible) {
+        } else if (isSquadFull && isEligible) {
             minBtn.disabled = true;
-            document.getElementById('label-bid-min').innerText = "OS LIMIT REACHED";
+            document.getElementById('label-bid-min').innerText = "SQUAD FULL";
         }
     }
     
@@ -986,7 +990,19 @@ function openRosterModal(tName) {
     const team = roomState.teams[tName];
     document.getElementById('modal-team-name').innerText = tName;
     document.getElementById('modal-team-budget').innerText = formatCurrency(team.budget);
-    document.getElementById('modal-player-count').innerText = team.players.length;
+    const countEl = document.getElementById('modal-player-count');
+    const pCount = team.players.length;
+    countEl.innerText = pCount;
+    if (pCount < 16) {
+        countEl.style.color = 'var(--accent-gold)';
+        countEl.title = "Under minimum squad limit of 16 players";
+    } else if (pCount > 24) {
+        countEl.style.color = 'var(--accent-red)';
+        countEl.title = "Over maximum squad limit of 24 players";
+    } else {
+        countEl.style.color = 'var(--accent-green)';
+        countEl.title = "Squad size is within correct range (16 - 24)";
+    }
     
     // Reset category slot text numbers
     document.getElementById('slot-bat').innerText = team.slots.Batsman || 0;

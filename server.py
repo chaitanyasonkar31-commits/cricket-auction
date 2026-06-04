@@ -439,6 +439,11 @@ class AuctionHTTPHandler(SimpleHTTPRequestHandler):
                 
             team = room["teams"][team_name]
             
+            # Check maximum squad size
+            if len(team["players"]) >= 24:
+                self.send_json_response(400, {"error": "Squad is full! Maximum 24 players allowed per team."})
+                return
+                
             # Check budget
             if amount > team["budget"]:
                 self.send_json_response(400, {"error": f"Insufficient budget! Your budget is {format_currency_python(team['budget'])}."})
