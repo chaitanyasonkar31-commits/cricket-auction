@@ -751,6 +751,33 @@ RETIRED_PLAYERS_SET = {
     "Mashrafe Mortaza", "Abdur Razzak", "Mohammad Ashraful"
 }
 
+DOMESTIC_AND_LEAGUE_PLAYERS = {
+    # Indian Uncapped / Domestic / Bench Players
+    "Abhimanyu Easwaran", "Akash Deep", "Rasikh Salam", "Vaibhav Arora", "Kartik Tyagi", "Kamlesh Nagarkoti",
+    "Shivam Mavi", "Sandeep Warrier", "Siddarth Kaul", "Suyash Sharma", "Mayank Dagar", "Vijaykumar Vyshak",
+    "Anukul Roy", "Harpreet Brar", "Prabhsimran Singh", "Atharva Taide", "Vidwath Kaverappa", "Ashutosh Sharma",
+    "Shashank Singh", "Tanay Thyagarajan", "Sameer Rizvi", "Kumar Kushagra", "Robin Minz", "Swastik Chikara",
+    "Sumit Kumar", "Vishnu Vinod", "Shams Mulani", "Shivalik Sharma", "Naman Dhir", "Saurabh Gopal",
+    "Anshul Kamboj", "Vicky Ostwal", "Lalit Yadav", "Pravin Dubey", "Abishek Porel", "Ricky Bhui",
+    "Sakib Hussain", "M Siddharth", "Shreyas Gopal", "Arjun Tendulkar", "Akash Madhwal", "Kumar Kartikeya",
+    "Krishnappa Gowtham", "Karun Nair", "Sheldon Jackson", "Jagadeesan Narayan", "Ravisrinivasan Sai Kishore",
+    "Simarjeet Singh", "Prashant Solanki", "Rajvardhan Hangargekar", "Mukesh Choudhary", "Tushar Deshpande",
+    "Mayank Markande", "Umran Malik", "Priyam Garg", "Virat Singh", "Shahbaz Nadeem", "Murugan Ashwin",
+    "Ankit Rajpoot", "Basil Thampi", "Barinder Sran", "Rishi Dhawan", "Karn Sharma", "Saurabh Tiwary",
+    "Abhishek Nayar", "Manpreet Gony", "Sreenath Aravind", "Pawan Negi", "Stuart Binny", "Iqbal Abdulla",
+    "Abu Nechim", "Harshit Rana", "Yash Dayal", "Mayank Yadav", "Ramandeep Singh", "Nitish Kumar Reddy",
+    "Shahrukh Khan", "Rahul Tewatia", "Vijay Shankar", "Krunal Pandya", "Venkatesh Iyer", "Prithvi Shaw",
+    # Overseas T20 League Globetrotters & Non-Marquee Internationals
+    "Daniel Sams", "Daniel Christian", "Brad Hodge", "Brad Hogg", "Shaun Tait", "George Bailey",
+    "David Hussey", "Matt Short", "Aaron Hardie", "Lance Morris", "Xavier Bartlett", "Cooper Connolly",
+    "Riley Meredith", "Donovan Ferreira", "Kwena Maphaka", "Ryan Rickelton", "Lizaad Williams",
+    "Patrick Kruger", "Tony de Zorzi", "Wiaan Mulder", "Allah Ghazanfar", "Vijayakanth Viyaskanth",
+    "Jamie Smith", "Jacob Bethell", "Luke Wood", "Brydon Carse", "William O'Rourke", "Ben Sears",
+    "Matthew Forde", "Tanzim Hasan Sakib", "Rishad Hossain", "Dewald Brevis", "Sherfane Rutherford",
+    "Romario Shepherd", "Odean Smith", "Keemo Paul", "Dominic Drakes", "Fabian Allen", "Obed McCoy",
+    "Gus Atkinson", "Tom Hartley", "Reece Topley"
+}
+
 def generate_full_pool():
     pool = []
     seen_names = set()
@@ -781,6 +808,9 @@ def generate_full_pool():
             
         stats = generate_stats(role, rating)
         
+        if name in DOMESTIC_AND_LEAGUE_PLAYERS:
+            base_price = min(base_price, 8000000) # cap at ₹80 Lakhs
+            
         pool.append({
             "id": player_id,
             "name": name,
@@ -813,6 +843,9 @@ def generate_full_pool():
             
         stats = generate_stats(role, rating)
         
+        if name in DOMESTIC_AND_LEAGUE_PLAYERS:
+            base_price = min(base_price, 8000000) # cap at ₹80 Lakhs
+            
         pool.append({
             "id": player_id,
             "name": name,
@@ -854,7 +887,7 @@ def generate_full_pool():
         rating = 75
         if tier == "star":
             rating = random.randint(83, 89)
-            base_price = random.choice([5000000, 7500000])
+            base_price = random.choice([5000000, 8000000]) # cap at ₹80 Lakhs
         elif tier == "solid":
             rating = random.randint(73, 82)
             base_price = random.choice([3000000, 5000000])

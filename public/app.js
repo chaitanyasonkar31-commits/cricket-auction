@@ -120,7 +120,7 @@ function addCustomPlayerRow() {
                 <option value="20000000">₹2 Crore (₹2 Cr)</option>
                 <option value="15000000">₹1.5 Crore (₹1.5 Cr)</option>
                 <option value="10000000" selected>₹1 Crore (₹1 Cr)</option>
-                <option value="7500000">₹75 Lakhs (₹75 L)</option>
+                <option value="8000000">₹80 Lakhs (₹80 L)</option>
                 <option value="5000000">₹50 Lakhs (₹50 L)</option>
                 <option value="3000000">₹30 Lakhs (₹30 L)</option>
                 <option value="2000000">₹20 Lakhs (₹20 L)</option>
@@ -201,9 +201,9 @@ function importCSVToTable() {
             roleVal = "Bowler";
         }
         
-        // Base Price match: 20000000, 15000000, 10000000, 7500000, 5000000, 3000000, 2000000
+        // Base Price match: 20000000, 15000000, 10000000, 8000000, 5000000, 3000000, 2000000
         let basePriceVal = "10000000"; // default 1Cr
-        const validPrices = ["20000000", "15000000", "10000000", "7500000", "5000000", "3000000", "2000000"];
+        const validPrices = ["20000000", "15000000", "10000000", "8000000", "5000000", "3000000", "2000000"];
         const playerPriceStr = String(player.base_price);
         if (validPrices.includes(playerPriceStr)) {
             basePriceVal = playerPriceStr;
@@ -239,7 +239,7 @@ function importCSVToTable() {
                     <option value="20000000" ${basePriceVal === "20000000" ? "selected" : ""}>₹2 Crore (₹2 Cr)</option>
                     <option value="15000000" ${basePriceVal === "15000000" ? "selected" : ""}>₹1.5 Crore (₹1.5 Cr)</option>
                     <option value="10000000" ${basePriceVal === "10000000" ? "selected" : ""}>₹1 Crore (₹1 Cr)</option>
-                    <option value="7500000" ${basePriceVal === "7500000" ? "selected" : ""}>₹75 Lakhs (₹75 L)</option>
+                    <option value="8000000" ${basePriceVal === "8000000" ? "selected" : ""}>₹80 Lakhs (₹80 L)</option>
                     <option value="5000000" ${basePriceVal === "5000000" ? "selected" : ""}>₹50 Lakhs (₹50 L)</option>
                     <option value="3000000" ${basePriceVal === "3000000" ? "selected" : ""}>₹30 Lakhs (₹30 L)</option>
                     <option value="2000000" ${basePriceVal === "2000000" ? "selected" : ""}>₹20 Lakhs (₹20 L)</option>
