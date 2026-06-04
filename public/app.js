@@ -8,11 +8,11 @@ if (!clientId) {
 }
 
 // Global App State
-let role = sessionStorage.getItem('auction_role') || ''; // 'host' or 'manager'
-let roomCode = sessionStorage.getItem('auction_room_code') || '';
-let hostId = sessionStorage.getItem('auction_host_id') || '';
-let teamName = sessionStorage.getItem('auction_team_name') || '';
-let managerName = sessionStorage.getItem('auction_manager_name') || '';
+let role = localStorage.getItem('auction_role') || ''; // 'host' or 'manager'
+let roomCode = localStorage.getItem('auction_room_code') || '';
+let hostId = localStorage.getItem('auction_host_id') || '';
+let teamName = localStorage.getItem('auction_team_name') || '';
+let managerName = localStorage.getItem('auction_manager_name') || '';
 let roomState = null;
 let eventSource = null;
 let currentTimerVal = 0;
@@ -100,12 +100,12 @@ function handleCredentialResponse(response) {
     }
     
     const token = response.credential;
-    sessionStorage.setItem('google_credential', token);
+    localStorage.setItem('google_credential', token);
     
     const profile = decodeJwt(token);
     if (profile) {
-        sessionStorage.setItem('google_user_name', profile.name);
-        sessionStorage.setItem('google_user_pic', profile.picture);
+        localStorage.setItem('google_user_name', profile.name);
+        localStorage.setItem('google_user_pic', profile.picture);
         renderUserProfile(profile.name, profile.picture);
         showNotification(`Welcome, ${profile.name}!`, "success");
     }
@@ -116,7 +116,8 @@ function handleCredentialResponse(response) {
         connectEvents(roomCode);
     } else {
         showSection('home-view');
-        loadPresets();
+            loadPresets();
+            renderScheduledAuctions();
     }
 }
 
@@ -133,15 +134,15 @@ function renderUserProfile(name, pic) {
 }
 
 function signOutGoogle() {
-    sessionStorage.removeItem('google_credential');
-    sessionStorage.removeItem('google_user_name');
-    sessionStorage.removeItem('google_user_pic');
+    localStorage.removeItem('google_credential');
+    localStorage.removeItem('google_user_name');
+    localStorage.removeItem('google_user_pic');
     
-    sessionStorage.removeItem('auction_role');
-    sessionStorage.removeItem('auction_room_code');
-    sessionStorage.removeItem('auction_team_name');
-    sessionStorage.removeItem('auction_manager_name');
-    sessionStorage.removeItem('auction_host_id');
+    localStorage.removeItem('auction_role');
+    localStorage.removeItem('auction_room_code');
+    localStorage.removeItem('auction_team_name');
+    localStorage.removeItem('auction_manager_name');
+    localStorage.removeItem('auction_host_id');
     
     role = '';
     roomCode = '';
@@ -158,9 +159,9 @@ function continueAsGuest() {
     const randomStr = Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
     const guestToken = "guest_" + randomStr;
     
-    sessionStorage.setItem('google_credential', guestToken);
-    sessionStorage.setItem('google_user_name', "Guest Manager");
-    sessionStorage.setItem('google_user_pic', "");
+    localStorage.setItem('google_credential', guestToken);
+    localStorage.setItem('google_user_name', "Guest Manager");
+    localStorage.setItem('google_user_pic', "");
     
     renderUserProfile("Guest Manager", "");
     showNotification("Logged in as Guest User!", "success");
@@ -171,7 +172,8 @@ function continueAsGuest() {
         connectEvents(roomCode);
     } else {
         showSection('home-view');
-        loadPresets();
+            loadPresets();
+            renderScheduledAuctions();
     }
 }
 
@@ -190,11 +192,11 @@ function decodeJwt(token) {
 }
 
 function leaveRoom() {
-    sessionStorage.removeItem('auction_role');
-    sessionStorage.removeItem('auction_room_code');
-    sessionStorage.removeItem('auction_team_name');
-    sessionStorage.removeItem('auction_manager_name');
-    sessionStorage.removeItem('auction_host_id');
+    localStorage.removeItem('auction_role');
+    localStorage.removeItem('auction_room_code');
+    localStorage.removeItem('auction_team_name');
+    localStorage.removeItem('auction_manager_name');
+    localStorage.removeItem('auction_host_id');
     
     role = '';
     roomCode = '';
@@ -209,6 +211,7 @@ function leaveRoom() {
     }
     
     showSection('home-view');
+    renderScheduledAuctions();
 }
 
 async function kickTeam(tName) {
@@ -242,24 +245,25 @@ window.addEventListener('DOMContentLoaded', async () => {
     await initGoogleAuth();
 
     if (roomCode) {
-        if (!sessionStorage.getItem('google_credential')) {
+        if (!localStorage.getItem('google_credential')) {
             document.getElementById('login-overlay').classList.remove('hidden');
         } else {
-            const googleName = sessionStorage.getItem('google_user_name');
-            const googlePic = sessionStorage.getItem('google_user_pic');
+            const googleName = localStorage.getItem('google_user_name');
+            const googlePic = localStorage.getItem('google_user_pic');
             renderUserProfile(googleName, googlePic);
             showNotification("Restoring active session...", "success");
             connectEvents(roomCode);
         }
     } else {
-        if (!sessionStorage.getItem('google_credential')) {
+        if (!localStorage.getItem('google_credential')) {
             document.getElementById('login-overlay').classList.remove('hidden');
         } else {
-            const googleName = sessionStorage.getItem('google_user_name');
-            const googlePic = sessionStorage.getItem('google_user_pic');
+            const googleName = localStorage.getItem('google_user_name');
+            const googlePic = localStorage.getItem('google_user_pic');
             renderUserProfile(googleName, googlePic);
             showSection('home-view');
             loadPresets();
+            renderScheduledAuctions();
         }
     }
 });
@@ -852,7 +856,7 @@ async function createRoom() {
     
     try {
         const res = await apiPost('/api/create', {
-            credential: sessionStorage.getItem('google_credential'),
+            credential: localStorage.getItem('google_credential'),
             host_name: hostNameVal,
             auction_name: auctionNameVal,
             settings: settings,
@@ -861,14 +865,32 @@ async function createRoom() {
         });
         
         // Save state variables
+        
         role = 'host';
         roomCode = res.room_code;
         hostId = res.host_id;
         roomState = res.room_state;
+
+        // Save to scheduled auctions in localStorage so host can host/rejoin later
+        try {
+            let scheduled = JSON.parse(localStorage.getItem('scheduled_auctions') || '[]');
+            if (!scheduled.some(item => item.roomCode === roomCode)) {
+                scheduled.push({
+                    roomCode: roomCode,
+                    hostId: hostId,
+                    auctionName: roomState.auction_name || auctionNameVal || 'Cricket Auction',
+                    createdAt: new Date().toLocaleDateString()
+                });
+                localStorage.setItem('scheduled_auctions', JSON.stringify(scheduled));
+            }
+        } catch (e) {
+            console.error("Failed to save scheduled auction:", e);
+        }
+
         
-        sessionStorage.setItem('auction_role', 'host');
-        sessionStorage.setItem('auction_room_code', roomCode);
-        sessionStorage.setItem('auction_host_id', hostId);
+        localStorage.setItem('auction_role', 'host');
+        localStorage.setItem('auction_room_code', roomCode);
+        localStorage.setItem('auction_host_id', hostId);
         
         showNotification("Lobby successfully created!", "success");
         connectEvents(roomCode);
@@ -890,7 +912,7 @@ async function joinRoom() {
     
     try {
         const res = await apiPost('/api/join', {
-            credential: sessionStorage.getItem('google_credential'),
+            credential: localStorage.getItem('google_credential'),
             room_code: codeVal,
             team_name: teamVal,
             manager_name: managerVal
@@ -903,10 +925,10 @@ async function joinRoom() {
         managerName = res.manager_name;
         roomState = res.room_state;
         
-        sessionStorage.setItem('auction_role', 'manager');
-        sessionStorage.setItem('auction_room_code', roomCode);
-        sessionStorage.setItem('auction_team_name', teamName);
-        sessionStorage.setItem('auction_manager_name', managerName);
+        localStorage.setItem('auction_role', 'manager');
+        localStorage.setItem('auction_room_code', roomCode);
+        localStorage.setItem('auction_team_name', teamName);
+        localStorage.setItem('auction_manager_name', managerName);
         
         showNotification("Joined franchise lobby!", "success");
         connectEvents(roomCode);
@@ -1644,4 +1666,66 @@ function renderQueueList() {
         `;
         container.appendChild(row);
     });
+}
+
+
+// --- Scheduled/Active Auction Handlers ---
+function renderScheduledAuctions() {
+    const scheduled = JSON.parse(localStorage.getItem('scheduled_auctions') || '[]');
+    const container = document.getElementById('scheduled-auctions-section');
+    const list = document.getElementById('scheduled-auctions-list');
+    
+    if (!container || !list) return;
+    
+    if (scheduled.length === 0) {
+        container.classList.add('hidden');
+        return;
+    }
+    
+    container.classList.remove('hidden');
+    list.innerHTML = '';
+    
+    scheduled.forEach(item => {
+        const row = document.createElement('div');
+        row.className = 'scheduled-auction-item';
+        
+        row.innerHTML = `
+            <div style="display: flex; flex-direction: column;">
+                <strong style="color: white; font-size: 1rem;">${item.auctionName}</strong>
+                <span style="font-size: 0.8rem; color: var(--text-secondary);">Room Code: <strong style="color: var(--accent-purple); font-size: 0.9rem;">${item.roomCode}</strong> &bull; Created: ${item.createdAt || 'N/A'}</span>
+            </div>
+            <div style="display: flex; gap: 0.5rem;">
+                <button class="btn btn-primary" onclick="hostScheduledAuction('${item.roomCode}', '${item.hostId}')" style="padding: 0.45rem 1rem; font-size: 0.8rem; height: auto;">
+                    <i class="fa-solid fa-play"></i> Host / Go Live
+                </button>
+                <button class="btn btn-secondary" onclick="deleteScheduledAuction('${item.roomCode}')" style="padding: 0.45rem 0.6rem; font-size: 0.8rem; height: auto; background: rgba(255, 51, 102, 0.15); border-color: rgba(255, 51, 102, 0.3); color: var(--accent-red);">
+                    <i class="fa-solid fa-trash-can"></i>
+                </button>
+            </div>
+        `;
+        list.appendChild(row);
+    });
+}
+
+function hostScheduledAuction(rCode, hId) {
+    role = 'host';
+    roomCode = rCode;
+    hostId = hId;
+    
+    localStorage.setItem('auction_role', 'host');
+    localStorage.setItem('auction_room_code', rCode);
+    localStorage.setItem('auction_host_id', hId);
+    
+    showNotification("Loading scheduled auction lobby...", "success");
+    connectEvents(rCode);
+}
+
+function deleteScheduledAuction(rCode) {
+    if (!confirm("Are you sure you want to remove this scheduled auction? This will remove it from your shortcuts list, but the room itself will remain on the server.")) return;
+    
+    let scheduled = JSON.parse(localStorage.getItem('scheduled_auctions') || '[]');
+    scheduled = scheduled.filter(item => item.roomCode !== rCode);
+    localStorage.setItem('scheduled_auctions', JSON.stringify(scheduled));
+    
+    renderScheduledAuctions();
 }

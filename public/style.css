@@ -1652,4 +1652,35 @@ h1, h2, h3, h4 {
     width: 100%;
 }
 
+/* Scheduled / Active Auctions Styling */
+.scheduled-section {
+    margin-top: 2rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1.75rem;
+    text-align: left;
+}
+.scheduled-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+    margin-top: 1rem;
+}
+.scheduled-auction-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.9rem 1.25rem;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 10px;
+    gap: 1rem;
+    transition: all 0.2s ease;
+}
+.scheduled-auction-item:hover {
+    background: rgba(255, 255, 255, 0.06);
+    border-color: rgba(255, 255, 255, 0.15);
+}
+
 
