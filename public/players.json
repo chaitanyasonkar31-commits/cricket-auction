@@ -9,7 +9,8 @@
       "stats": "Wkts: 251, Econ: 6.55, Avg: 22.0",
       "img": "",
       "overseas": true,
-      "country": "Australia"
+      "country": "Australia",
+      "retired": true
     },
     {
       "id": 279,
@@ -20,7 +21,8 @@
       "stats": "Runs: 5140 (SR 158.8), Wkts: 134 (Econ 7.24)",
       "img": "",
       "overseas": true,
-      "country": "England"
+      "country": "England",
+      "retired": true
     },
     {
       "id": 286,
@@ -31,7 +33,8 @@
       "stats": "Wkts: 251, Econ: 6.55, Avg: 22.0",
       "img": "",
       "overseas": true,
-      "country": "South Africa"
+      "country": "South Africa",
+      "retired": false
     },
     {
       "id": 300,
@@ -42,7 +45,8 @@
       "stats": "Wkts: 251, Econ: 6.55, Avg: 22.0",
       "img": "",
       "overseas": true,
-      "country": "South Africa"
+      "country": "South Africa",
+      "retired": true
     },
     {
       "id": 321,
@@ -53,7 +57,8 @@
       "stats": "Runs: 7580 (SR 153.8), Dismissals: 188",
       "img": "",
       "overseas": true,
-      "country": "West Indies"
+      "country": "West Indies",
+      "retired": false
     },
     {
       "id": 440,
@@ -64,7 +69,8 @@
       "stats": "Runs: 9920, Avg: 51.4, SR: 155.4",
       "img": "",
       "overseas": true,
-      "country": "Sri Lanka"
+      "country": "Sri Lanka",
+      "retired": true
     },
     {
       "id": 1,
@@ -75,7 +81,8 @@
       "stats": "Runs: 9640, Avg: 50.4, SR: 153.4",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 124,
@@ -86,7 +93,8 @@
       "stats": "Runs: 9640, Avg: 50.4, SR: 153.4",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": true
     },
     {
       "id": 173,
@@ -97,7 +105,8 @@
       "stats": "Runs: 9640, Avg: 50.4, SR: 153.4",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": true
     },
     {
       "id": 229,
@@ -108,7 +117,8 @@
       "stats": "Wkts: 242, Econ: 6.79, Avg: 21.9",
       "img": "",
       "overseas": true,
-      "country": "Australia"
+      "country": "Australia",
+      "retired": true
     },
     {
       "id": 278,
@@ -119,7 +129,8 @@
       "stats": "Runs: 9640, Avg: 50.4, SR: 153.4",
       "img": "",
       "overseas": true,
-      "country": "England"
+      "country": "England",
+      "retired": true
     },
     {
       "id": 390,
@@ -130,7 +141,8 @@
       "stats": "Wkts: 242, Econ: 6.79, Avg: 21.9",
       "img": "",
       "overseas": true,
-      "country": "Afghanistan"
+      "country": "Afghanistan",
+      "retired": false
     },
     {
       "id": 418,
@@ -141,7 +153,8 @@
       "stats": "Wkts: 242, Econ: 6.79, Avg: 21.9",
       "img": "",
       "overseas": true,
-      "country": "Sri Lanka"
+      "country": "Sri Lanka",
+      "retired": false
     },
     {
       "id": 439,
@@ -152,7 +165,8 @@
       "stats": "Runs: 7360 (SR 152.0), Dismissals: 181",
       "img": "",
       "overseas": true,
-      "country": "Sri Lanka"
+      "country": "Sri Lanka",
+      "retired": true
     },
     {
       "id": 467,
@@ -163,7 +177,8 @@
       "stats": "Runs: 4980 (SR 156.6), Wkts: 129 (Econ 7.58)",
       "img": "",
       "overseas": true,
-      "country": "Pakistan"
+      "country": "Pakistan",
+      "retired": true
     },
     {
       "id": 172,
@@ -174,7 +189,8 @@
       "stats": "Runs: 9360, Avg: 49.3, SR: 159.8",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": true
     },
     {
       "id": 228,
@@ -185,7 +201,8 @@
       "stats": "Runs: 7140 (SR 150.3), Dismissals: 174",
       "img": "",
       "overseas": true,
-      "country": "Australia"
+      "country": "Australia",
+      "retired": true
     },
     {
       "id": 235,
@@ -196,7 +213,8 @@
       "stats": "Runs: 7140 (SR 150.3), Dismissals: 174",
       "img": "",
       "overseas": true,
-      "country": "England"
+      "country": "England",
+      "retired": false
     },
     {
       "id": 326,
@@ -207,7 +225,8 @@
       "stats": "Runs: 9360, Avg: 49.3, SR: 159.8",
       "img": "",
       "overseas": true,
-      "country": "West Indies"
+      "country": "West Indies",
+      "retired": true
     },
     {
       "id": 389,
@@ -218,7 +237,8 @@
       "stats": "Runs: 9360, Avg: 49.3, SR: 159.8",
       "img": "",
       "overseas": true,
-      "country": "New Zealand"
+      "country": "New Zealand",
+      "retired": true
     },
     {
       "id": 438,
@@ -229,7 +249,8 @@
       "stats": "Wkts: 234, Econ: 6.74, Avg: 21.9",
       "img": "",
       "overseas": true,
-      "country": "Sri Lanka"
+      "country": "Sri Lanka",
+      "retired": true
     },
     {
       "id": 466,
@@ -240,7 +261,8 @@
       "stats": "Wkts: 234, Econ: 6.74, Avg: 21.9",
       "img": "",
       "overseas": true,
-      "country": "Pakistan"
+      "country": "Pakistan",
+      "retired": true
     },
     {
       "id": 3,
@@ -251,7 +273,8 @@
       "stats": "Wkts: 225, Econ: 6.68, Avg: 21.9",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 4,
@@ -262,7 +285,8 @@
       "stats": "Runs: 9080, Avg: 48.3, SR: 157.8",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 136,
@@ -273,7 +297,8 @@
       "stats": "Runs: 9080, Avg: 48.3, SR: 157.8",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": true
     },
     {
       "id": 171,
@@ -284,7 +309,8 @@
       "stats": "Runs: 9080, Avg: 48.3, SR: 157.8",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": true
     },
     {
       "id": 178,
@@ -295,7 +321,8 @@
       "stats": "Wkts: 225, Econ: 6.68, Avg: 21.9",
       "img": "",
       "overseas": true,
-      "country": "Australia"
+      "country": "Australia",
+      "retired": false
     },
     {
       "id": 227,
@@ -306,7 +333,8 @@
       "stats": "Wkts: 225, Econ: 6.68, Avg: 21.9",
       "img": "",
       "overseas": true,
-      "country": "Australia"
+      "country": "Australia",
+      "retired": true
     },
     {
       "id": 388,
@@ -317,7 +345,8 @@
       "stats": "Runs: 4660 (SR 152.2), Wkts: 119 (Econ 7.36)",
       "img": "",
       "overseas": true,
-      "country": "New Zealand"
+      "country": "New Zealand",
+      "retired": true
     },
     {
       "id": 437,
@@ -328,7 +357,8 @@
       "stats": "Wkts: 225, Econ: 6.68, Avg: 21.9",
       "img": "",
       "overseas": true,
-      "country": "Sri Lanka"
+      "country": "Sri Lanka",
+      "retired": true
     },
     {
       "id": 465,
@@ -339,7 +369,8 @@
       "stats": "Wkts: 225, Econ: 6.68, Avg: 21.9",
       "img": "",
       "overseas": true,
-      "country": "Pakistan"
+      "country": "Pakistan",
+      "retired": true
     },
     {
       "id": 2,
@@ -350,7 +381,8 @@
       "stats": "Runs: 6700 (SR 146.8), Dismissals: 161",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 177,
@@ -361,7 +393,8 @@
       "stats": "Wkts: 217, Econ: 6.93, Avg: 21.9",
       "img": "",
       "overseas": true,
-      "country": "Australia"
+      "country": "Australia",
+      "retired": false
     },
     {
       "id": 233,
@@ -372,7 +405,8 @@
       "stats": "Runs: 8800, Avg: 47.2, SR: 155.8",
       "img": "",
       "overseas": true,
-      "country": "Australia"
+      "country": "Australia",
+      "retired": true
     },
     {
       "id": 282,
@@ -383,7 +417,8 @@
       "stats": "Runs: 6700 (SR 146.8), Dismissals: 161",
       "img": "",
       "overseas": true,
-      "country": "South Africa"
+      "country": "South Africa",
+      "retired": false
     },
     {
       "id": 443,
@@ -394,7 +429,8 @@
       "stats": "Runs: 6700 (SR 146.8), Dismissals: 161",
       "img": "",
       "overseas": true,
-      "country": "Pakistan"
+      "country": "Pakistan",
+      "retired": false
     },
     {
       "id": 464,
@@ -405,7 +441,8 @@
       "stats": "Wkts: 217, Econ: 6.93, Avg: 21.9",
       "img": "",
       "overseas": true,
-      "country": "Pakistan"
+      "country": "Pakistan",
+      "retired": true
     },
     {
       "id": 176,
@@ -416,7 +453,8 @@
       "stats": "Wkts: 208, Econ: 6.88, Avg: 22.8",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": true
     },
     {
       "id": 185,
@@ -427,7 +465,8 @@
       "stats": "Runs: 8520, Avg: 48.6, SR: 153.8",
       "img": "",
       "overseas": true,
-      "country": "Australia"
+      "country": "Australia",
+      "retired": false
     },
     {
       "id": 232,
@@ -438,7 +477,8 @@
       "stats": "Runs: 8520, Avg: 48.6, SR: 153.8",
       "img": "",
       "overseas": true,
-      "country": "Australia"
+      "country": "Australia",
+      "retired": true
     },
     {
       "id": 302,
@@ -449,7 +489,8 @@
       "stats": "Runs: 4340 (SR 153.8), Wkts: 123 (Econ 7.59)",
       "img": "",
       "overseas": true,
-      "country": "South Africa"
+      "country": "South Africa",
+      "retired": true
     },
     {
       "id": 442,
@@ -460,7 +501,8 @@
       "stats": "Wkts: 208, Econ: 6.88, Avg: 22.8",
       "img": "",
       "overseas": true,
-      "country": "Pakistan"
+      "country": "Pakistan",
+      "retired": false
     },
     {
       "id": 7,
@@ -471,7 +513,8 @@
       "stats": "Runs: 6260 (SR 148.8), Dismissals: 147",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 8,
@@ -482,7 +525,8 @@
       "stats": "Runs: 8240, Avg: 47.6, SR: 151.8",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 126,
@@ -493,7 +537,8 @@
       "stats": "Runs: 4180 (SR 151.6), Wkts: 118 (Econ 7.48)",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": true
     },
     {
       "id": 175,
@@ -504,7 +549,8 @@
       "stats": "Runs: 8240, Avg: 47.6, SR: 151.8",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": true
     },
     {
       "id": 231,
@@ -515,7 +561,8 @@
       "stats": "Runs: 8240, Avg: 47.6, SR: 151.8",
       "img": "",
       "overseas": true,
-      "country": "Australia"
+      "country": "Australia",
+      "retired": true
     },
     {
       "id": 280,
@@ -526,7 +573,8 @@
       "stats": "Wkts: 199, Econ: 6.82, Avg: 22.8",
       "img": "",
       "overseas": true,
-      "country": "England"
+      "country": "England",
+      "retired": true
     },
     {
       "id": 301,
@@ -537,7 +585,8 @@
       "stats": "Runs: 8240, Avg: 47.6, SR: 151.8",
       "img": "",
       "overseas": true,
-      "country": "South Africa"
+      "country": "South Africa",
+      "retired": true
     },
     {
       "id": 357,
@@ -548,7 +597,8 @@
       "stats": "Runs: 8240, Avg: 47.6, SR: 151.8",
       "img": "",
       "overseas": true,
-      "country": "West Indies"
+      "country": "West Indies",
+      "retired": true
     },
     {
       "id": 364,
@@ -559,7 +609,8 @@
       "stats": "Wkts: 199, Econ: 6.82, Avg: 22.8",
       "img": "",
       "overseas": true,
-      "country": "New Zealand"
+      "country": "New Zealand",
+      "retired": false
     },
     {
       "id": 469,
@@ -570,7 +621,8 @@
       "stats": "Runs: 4180 (SR 151.6), Wkts: 118 (Econ 7.48)",
       "img": "",
       "overseas": true,
-      "country": "Bangladesh"
+      "country": "Bangladesh",
+      "retired": false
     },
     {
       "id": 5,
@@ -581,7 +633,8 @@
       "stats": "Runs: 4020 (SR 149.4), Wkts: 113 (Econ 7.82)",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 9,
@@ -592,7 +645,8 @@
       "stats": "Runs: 7960, Avg: 46.5, SR: 149.8",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 15,
@@ -603,7 +657,8 @@
       "stats": "Wkts: 191, Econ: 7.07, Avg: 22.8",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 23,
@@ -614,7 +669,8 @@
       "stats": "Runs: 4020 (SR 149.4), Wkts: 113 (Econ 7.82)",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 55,
@@ -625,7 +681,8 @@
       "stats": "Wkts: 191, Econ: 7.07, Avg: 22.8",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 127,
@@ -636,7 +693,8 @@
       "stats": "Runs: 4020 (SR 149.4), Wkts: 113 (Econ 7.82)",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": true
     },
     {
       "id": 191,
@@ -647,7 +705,8 @@
       "stats": "Wkts: 191, Econ: 7.07, Avg: 22.8",
       "img": "",
       "overseas": true,
-      "country": "Australia"
+      "country": "Australia",
+      "retired": false
     },
     {
       "id": 239,
@@ -658,7 +717,8 @@
       "stats": "Runs: 7960, Avg: 46.5, SR: 149.8",
       "img": "",
       "overseas": true,
-      "country": "England"
+      "country": "England",
+      "retired": false
     }
   ],
   "all_time_legends": [
@@ -671,7 +731,8 @@
       "stats": "Wkts: 251, Econ: 6.55, Avg: 22.0",
       "img": "",
       "overseas": true,
-      "country": "Australia"
+      "country": "Australia",
+      "retired": true
     },
     {
       "id": 279,
@@ -682,7 +743,8 @@
       "stats": "Runs: 5140 (SR 158.8), Wkts: 134 (Econ 7.24)",
       "img": "",
       "overseas": true,
-      "country": "England"
+      "country": "England",
+      "retired": true
     },
     {
       "id": 286,
@@ -693,7 +755,8 @@
       "stats": "Wkts: 251, Econ: 6.55, Avg: 22.0",
       "img": "",
       "overseas": true,
-      "country": "South Africa"
+      "country": "South Africa",
+      "retired": false
     },
     {
       "id": 300,
@@ -704,7 +767,8 @@
       "stats": "Wkts: 251, Econ: 6.55, Avg: 22.0",
       "img": "",
       "overseas": true,
-      "country": "South Africa"
+      "country": "South Africa",
+      "retired": true
     },
     {
       "id": 321,
@@ -715,7 +779,8 @@
       "stats": "Runs: 7580 (SR 153.8), Dismissals: 188",
       "img": "",
       "overseas": true,
-      "country": "West Indies"
+      "country": "West Indies",
+      "retired": false
     },
     {
       "id": 440,
@@ -726,7 +791,8 @@
       "stats": "Runs: 9920, Avg: 51.4, SR: 155.4",
       "img": "",
       "overseas": true,
-      "country": "Sri Lanka"
+      "country": "Sri Lanka",
+      "retired": true
     },
     {
       "id": 1,
@@ -737,7 +803,8 @@
       "stats": "Runs: 9640, Avg: 50.4, SR: 153.4",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 124,
@@ -748,7 +815,8 @@
       "stats": "Runs: 9640, Avg: 50.4, SR: 153.4",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": true
     },
     {
       "id": 173,
@@ -759,7 +827,8 @@
       "stats": "Runs: 9640, Avg: 50.4, SR: 153.4",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": true
     },
     {
       "id": 229,
@@ -770,7 +839,8 @@
       "stats": "Wkts: 242, Econ: 6.79, Avg: 21.9",
       "img": "",
       "overseas": true,
-      "country": "Australia"
+      "country": "Australia",
+      "retired": true
     },
     {
       "id": 278,
@@ -781,7 +851,8 @@
       "stats": "Runs: 9640, Avg: 50.4, SR: 153.4",
       "img": "",
       "overseas": true,
-      "country": "England"
+      "country": "England",
+      "retired": true
     },
     {
       "id": 390,
@@ -792,7 +863,8 @@
       "stats": "Wkts: 242, Econ: 6.79, Avg: 21.9",
       "img": "",
       "overseas": true,
-      "country": "Afghanistan"
+      "country": "Afghanistan",
+      "retired": false
     },
     {
       "id": 418,
@@ -803,7 +875,8 @@
       "stats": "Wkts: 242, Econ: 6.79, Avg: 21.9",
       "img": "",
       "overseas": true,
-      "country": "Sri Lanka"
+      "country": "Sri Lanka",
+      "retired": false
     },
     {
       "id": 439,
@@ -814,7 +887,8 @@
       "stats": "Runs: 7360 (SR 152.0), Dismissals: 181",
       "img": "",
       "overseas": true,
-      "country": "Sri Lanka"
+      "country": "Sri Lanka",
+      "retired": true
     },
     {
       "id": 467,
@@ -825,7 +899,8 @@
       "stats": "Runs: 4980 (SR 156.6), Wkts: 129 (Econ 7.58)",
       "img": "",
       "overseas": true,
-      "country": "Pakistan"
+      "country": "Pakistan",
+      "retired": true
     },
     {
       "id": 172,
@@ -836,7 +911,8 @@
       "stats": "Runs: 9360, Avg: 49.3, SR: 159.8",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": true
     },
     {
       "id": 228,
@@ -847,7 +923,8 @@
       "stats": "Runs: 7140 (SR 150.3), Dismissals: 174",
       "img": "",
       "overseas": true,
-      "country": "Australia"
+      "country": "Australia",
+      "retired": true
     },
     {
       "id": 235,
@@ -858,7 +935,8 @@
       "stats": "Runs: 7140 (SR 150.3), Dismissals: 174",
       "img": "",
       "overseas": true,
-      "country": "England"
+      "country": "England",
+      "retired": false
     },
     {
       "id": 326,
@@ -869,7 +947,8 @@
       "stats": "Runs: 9360, Avg: 49.3, SR: 159.8",
       "img": "",
       "overseas": true,
-      "country": "West Indies"
+      "country": "West Indies",
+      "retired": true
     },
     {
       "id": 389,
@@ -880,7 +959,8 @@
       "stats": "Runs: 9360, Avg: 49.3, SR: 159.8",
       "img": "",
       "overseas": true,
-      "country": "New Zealand"
+      "country": "New Zealand",
+      "retired": true
     },
     {
       "id": 438,
@@ -891,7 +971,8 @@
       "stats": "Wkts: 234, Econ: 6.74, Avg: 21.9",
       "img": "",
       "overseas": true,
-      "country": "Sri Lanka"
+      "country": "Sri Lanka",
+      "retired": true
     },
     {
       "id": 466,
@@ -902,7 +983,8 @@
       "stats": "Wkts: 234, Econ: 6.74, Avg: 21.9",
       "img": "",
       "overseas": true,
-      "country": "Pakistan"
+      "country": "Pakistan",
+      "retired": true
     },
     {
       "id": 3,
@@ -913,7 +995,8 @@
       "stats": "Wkts: 225, Econ: 6.68, Avg: 21.9",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 4,
@@ -924,7 +1007,8 @@
       "stats": "Runs: 9080, Avg: 48.3, SR: 157.8",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 136,
@@ -935,7 +1019,8 @@
       "stats": "Runs: 9080, Avg: 48.3, SR: 157.8",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": true
     },
     {
       "id": 171,
@@ -946,7 +1031,8 @@
       "stats": "Runs: 9080, Avg: 48.3, SR: 157.8",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": true
     },
     {
       "id": 178,
@@ -957,7 +1043,8 @@
       "stats": "Wkts: 225, Econ: 6.68, Avg: 21.9",
       "img": "",
       "overseas": true,
-      "country": "Australia"
+      "country": "Australia",
+      "retired": false
     },
     {
       "id": 227,
@@ -968,7 +1055,8 @@
       "stats": "Wkts: 225, Econ: 6.68, Avg: 21.9",
       "img": "",
       "overseas": true,
-      "country": "Australia"
+      "country": "Australia",
+      "retired": true
     },
     {
       "id": 388,
@@ -979,7 +1067,8 @@
       "stats": "Runs: 4660 (SR 152.2), Wkts: 119 (Econ 7.36)",
       "img": "",
       "overseas": true,
-      "country": "New Zealand"
+      "country": "New Zealand",
+      "retired": true
     },
     {
       "id": 437,
@@ -990,7 +1079,8 @@
       "stats": "Wkts: 225, Econ: 6.68, Avg: 21.9",
       "img": "",
       "overseas": true,
-      "country": "Sri Lanka"
+      "country": "Sri Lanka",
+      "retired": true
     }
   ],
   "full_pool": [
@@ -1003,7 +1093,8 @@
       "stats": "Wkts: 251, Econ: 6.55, Avg: 22.0",
       "img": "",
       "overseas": true,
-      "country": "Australia"
+      "country": "Australia",
+      "retired": true
     },
     {
       "id": 279,
@@ -1014,7 +1105,8 @@
       "stats": "Runs: 5140 (SR 158.8), Wkts: 134 (Econ 7.24)",
       "img": "",
       "overseas": true,
-      "country": "England"
+      "country": "England",
+      "retired": true
     },
     {
       "id": 286,
@@ -1025,7 +1117,8 @@
       "stats": "Wkts: 251, Econ: 6.55, Avg: 22.0",
       "img": "",
       "overseas": true,
-      "country": "South Africa"
+      "country": "South Africa",
+      "retired": false
     },
     {
       "id": 300,
@@ -1036,7 +1129,8 @@
       "stats": "Wkts: 251, Econ: 6.55, Avg: 22.0",
       "img": "",
       "overseas": true,
-      "country": "South Africa"
+      "country": "South Africa",
+      "retired": true
     },
     {
       "id": 321,
@@ -1047,7 +1141,8 @@
       "stats": "Runs: 7580 (SR 153.8), Dismissals: 188",
       "img": "",
       "overseas": true,
-      "country": "West Indies"
+      "country": "West Indies",
+      "retired": false
     },
     {
       "id": 440,
@@ -1058,7 +1153,8 @@
       "stats": "Runs: 9920, Avg: 51.4, SR: 155.4",
       "img": "",
       "overseas": true,
-      "country": "Sri Lanka"
+      "country": "Sri Lanka",
+      "retired": true
     },
     {
       "id": 1,
@@ -1069,7 +1165,8 @@
       "stats": "Runs: 9640, Avg: 50.4, SR: 153.4",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 124,
@@ -1080,7 +1177,8 @@
       "stats": "Runs: 9640, Avg: 50.4, SR: 153.4",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": true
     },
     {
       "id": 173,
@@ -1091,7 +1189,8 @@
       "stats": "Runs: 9640, Avg: 50.4, SR: 153.4",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": true
     },
     {
       "id": 229,
@@ -1102,7 +1201,8 @@
       "stats": "Wkts: 242, Econ: 6.79, Avg: 21.9",
       "img": "",
       "overseas": true,
-      "country": "Australia"
+      "country": "Australia",
+      "retired": true
     },
     {
       "id": 278,
@@ -1113,7 +1213,8 @@
       "stats": "Runs: 9640, Avg: 50.4, SR: 153.4",
       "img": "",
       "overseas": true,
-      "country": "England"
+      "country": "England",
+      "retired": true
     },
     {
       "id": 390,
@@ -1124,7 +1225,8 @@
       "stats": "Wkts: 242, Econ: 6.79, Avg: 21.9",
       "img": "",
       "overseas": true,
-      "country": "Afghanistan"
+      "country": "Afghanistan",
+      "retired": false
     },
     {
       "id": 418,
@@ -1135,7 +1237,8 @@
       "stats": "Wkts: 242, Econ: 6.79, Avg: 21.9",
       "img": "",
       "overseas": true,
-      "country": "Sri Lanka"
+      "country": "Sri Lanka",
+      "retired": false
     },
     {
       "id": 439,
@@ -1146,7 +1249,8 @@
       "stats": "Runs: 7360 (SR 152.0), Dismissals: 181",
       "img": "",
       "overseas": true,
-      "country": "Sri Lanka"
+      "country": "Sri Lanka",
+      "retired": true
     },
     {
       "id": 467,
@@ -1157,7 +1261,8 @@
       "stats": "Runs: 4980 (SR 156.6), Wkts: 129 (Econ 7.58)",
       "img": "",
       "overseas": true,
-      "country": "Pakistan"
+      "country": "Pakistan",
+      "retired": true
     },
     {
       "id": 172,
@@ -1168,7 +1273,8 @@
       "stats": "Runs: 9360, Avg: 49.3, SR: 159.8",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": true
     },
     {
       "id": 228,
@@ -1179,7 +1285,8 @@
       "stats": "Runs: 7140 (SR 150.3), Dismissals: 174",
       "img": "",
       "overseas": true,
-      "country": "Australia"
+      "country": "Australia",
+      "retired": true
     },
     {
       "id": 235,
@@ -1190,7 +1297,8 @@
       "stats": "Runs: 7140 (SR 150.3), Dismissals: 174",
       "img": "",
       "overseas": true,
-      "country": "England"
+      "country": "England",
+      "retired": false
     },
     {
       "id": 326,
@@ -1201,7 +1309,8 @@
       "stats": "Runs: 9360, Avg: 49.3, SR: 159.8",
       "img": "",
       "overseas": true,
-      "country": "West Indies"
+      "country": "West Indies",
+      "retired": true
     },
     {
       "id": 389,
@@ -1212,7 +1321,8 @@
       "stats": "Runs: 9360, Avg: 49.3, SR: 159.8",
       "img": "",
       "overseas": true,
-      "country": "New Zealand"
+      "country": "New Zealand",
+      "retired": true
     },
     {
       "id": 438,
@@ -1223,7 +1333,8 @@
       "stats": "Wkts: 234, Econ: 6.74, Avg: 21.9",
       "img": "",
       "overseas": true,
-      "country": "Sri Lanka"
+      "country": "Sri Lanka",
+      "retired": true
     },
     {
       "id": 466,
@@ -1234,7 +1345,8 @@
       "stats": "Wkts: 234, Econ: 6.74, Avg: 21.9",
       "img": "",
       "overseas": true,
-      "country": "Pakistan"
+      "country": "Pakistan",
+      "retired": true
     },
     {
       "id": 3,
@@ -1245,7 +1357,8 @@
       "stats": "Wkts: 225, Econ: 6.68, Avg: 21.9",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 4,
@@ -1256,7 +1369,8 @@
       "stats": "Runs: 9080, Avg: 48.3, SR: 157.8",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 136,
@@ -1267,7 +1381,8 @@
       "stats": "Runs: 9080, Avg: 48.3, SR: 157.8",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": true
     },
     {
       "id": 171,
@@ -1278,7 +1393,8 @@
       "stats": "Runs: 9080, Avg: 48.3, SR: 157.8",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": true
     },
     {
       "id": 178,
@@ -1289,7 +1405,8 @@
       "stats": "Wkts: 225, Econ: 6.68, Avg: 21.9",
       "img": "",
       "overseas": true,
-      "country": "Australia"
+      "country": "Australia",
+      "retired": false
     },
     {
       "id": 227,
@@ -1300,7 +1417,8 @@
       "stats": "Wkts: 225, Econ: 6.68, Avg: 21.9",
       "img": "",
       "overseas": true,
-      "country": "Australia"
+      "country": "Australia",
+      "retired": true
     },
     {
       "id": 388,
@@ -1311,7 +1429,8 @@
       "stats": "Runs: 4660 (SR 152.2), Wkts: 119 (Econ 7.36)",
       "img": "",
       "overseas": true,
-      "country": "New Zealand"
+      "country": "New Zealand",
+      "retired": true
     },
     {
       "id": 437,
@@ -1322,7 +1441,8 @@
       "stats": "Wkts: 225, Econ: 6.68, Avg: 21.9",
       "img": "",
       "overseas": true,
-      "country": "Sri Lanka"
+      "country": "Sri Lanka",
+      "retired": true
     },
     {
       "id": 465,
@@ -1333,7 +1453,8 @@
       "stats": "Wkts: 225, Econ: 6.68, Avg: 21.9",
       "img": "",
       "overseas": true,
-      "country": "Pakistan"
+      "country": "Pakistan",
+      "retired": true
     },
     {
       "id": 2,
@@ -1344,7 +1465,8 @@
       "stats": "Runs: 6700 (SR 146.8), Dismissals: 161",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 177,
@@ -1355,7 +1477,8 @@
       "stats": "Wkts: 217, Econ: 6.93, Avg: 21.9",
       "img": "",
       "overseas": true,
-      "country": "Australia"
+      "country": "Australia",
+      "retired": false
     },
     {
       "id": 233,
@@ -1366,7 +1489,8 @@
       "stats": "Runs: 8800, Avg: 47.2, SR: 155.8",
       "img": "",
       "overseas": true,
-      "country": "Australia"
+      "country": "Australia",
+      "retired": true
     },
     {
       "id": 282,
@@ -1377,7 +1501,8 @@
       "stats": "Runs: 6700 (SR 146.8), Dismissals: 161",
       "img": "",
       "overseas": true,
-      "country": "South Africa"
+      "country": "South Africa",
+      "retired": false
     },
     {
       "id": 443,
@@ -1388,7 +1513,8 @@
       "stats": "Runs: 6700 (SR 146.8), Dismissals: 161",
       "img": "",
       "overseas": true,
-      "country": "Pakistan"
+      "country": "Pakistan",
+      "retired": false
     },
     {
       "id": 464,
@@ -1399,7 +1525,8 @@
       "stats": "Wkts: 217, Econ: 6.93, Avg: 21.9",
       "img": "",
       "overseas": true,
-      "country": "Pakistan"
+      "country": "Pakistan",
+      "retired": true
     },
     {
       "id": 176,
@@ -1410,7 +1537,8 @@
       "stats": "Wkts: 208, Econ: 6.88, Avg: 22.8",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": true
     },
     {
       "id": 185,
@@ -1421,7 +1549,8 @@
       "stats": "Runs: 8520, Avg: 48.6, SR: 153.8",
       "img": "",
       "overseas": true,
-      "country": "Australia"
+      "country": "Australia",
+      "retired": false
     },
     {
       "id": 232,
@@ -1432,7 +1561,8 @@
       "stats": "Runs: 8520, Avg: 48.6, SR: 153.8",
       "img": "",
       "overseas": true,
-      "country": "Australia"
+      "country": "Australia",
+      "retired": true
     },
     {
       "id": 302,
@@ -1443,7 +1573,8 @@
       "stats": "Runs: 4340 (SR 153.8), Wkts: 123 (Econ 7.59)",
       "img": "",
       "overseas": true,
-      "country": "South Africa"
+      "country": "South Africa",
+      "retired": true
     },
     {
       "id": 442,
@@ -1454,7 +1585,8 @@
       "stats": "Wkts: 208, Econ: 6.88, Avg: 22.8",
       "img": "",
       "overseas": true,
-      "country": "Pakistan"
+      "country": "Pakistan",
+      "retired": false
     },
     {
       "id": 7,
@@ -1465,7 +1597,8 @@
       "stats": "Runs: 6260 (SR 148.8), Dismissals: 147",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 8,
@@ -1476,7 +1609,8 @@
       "stats": "Runs: 8240, Avg: 47.6, SR: 151.8",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 126,
@@ -1487,7 +1621,8 @@
       "stats": "Runs: 4180 (SR 151.6), Wkts: 118 (Econ 7.48)",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": true
     },
     {
       "id": 175,
@@ -1498,7 +1633,8 @@
       "stats": "Runs: 8240, Avg: 47.6, SR: 151.8",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": true
     },
     {
       "id": 231,
@@ -1509,7 +1645,8 @@
       "stats": "Runs: 8240, Avg: 47.6, SR: 151.8",
       "img": "",
       "overseas": true,
-      "country": "Australia"
+      "country": "Australia",
+      "retired": true
     },
     {
       "id": 280,
@@ -1520,7 +1657,8 @@
       "stats": "Wkts: 199, Econ: 6.82, Avg: 22.8",
       "img": "",
       "overseas": true,
-      "country": "England"
+      "country": "England",
+      "retired": true
     },
     {
       "id": 301,
@@ -1531,7 +1669,8 @@
       "stats": "Runs: 8240, Avg: 47.6, SR: 151.8",
       "img": "",
       "overseas": true,
-      "country": "South Africa"
+      "country": "South Africa",
+      "retired": true
     },
     {
       "id": 357,
@@ -1542,7 +1681,8 @@
       "stats": "Runs: 8240, Avg: 47.6, SR: 151.8",
       "img": "",
       "overseas": true,
-      "country": "West Indies"
+      "country": "West Indies",
+      "retired": true
     },
     {
       "id": 364,
@@ -1553,7 +1693,8 @@
       "stats": "Wkts: 199, Econ: 6.82, Avg: 22.8",
       "img": "",
       "overseas": true,
-      "country": "New Zealand"
+      "country": "New Zealand",
+      "retired": false
     },
     {
       "id": 469,
@@ -1564,7 +1705,8 @@
       "stats": "Runs: 4180 (SR 151.6), Wkts: 118 (Econ 7.48)",
       "img": "",
       "overseas": true,
-      "country": "Bangladesh"
+      "country": "Bangladesh",
+      "retired": false
     },
     {
       "id": 5,
@@ -1575,7 +1717,8 @@
       "stats": "Runs: 4020 (SR 149.4), Wkts: 113 (Econ 7.82)",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 9,
@@ -1586,7 +1729,8 @@
       "stats": "Runs: 7960, Avg: 46.5, SR: 149.8",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 15,
@@ -1597,7 +1741,8 @@
       "stats": "Wkts: 191, Econ: 7.07, Avg: 22.8",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 23,
@@ -1608,7 +1753,8 @@
       "stats": "Runs: 4020 (SR 149.4), Wkts: 113 (Econ 7.82)",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 55,
@@ -1619,7 +1765,8 @@
       "stats": "Wkts: 191, Econ: 7.07, Avg: 22.8",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 127,
@@ -1630,7 +1777,8 @@
       "stats": "Runs: 4020 (SR 149.4), Wkts: 113 (Econ 7.82)",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": true
     },
     {
       "id": 191,
@@ -1641,7 +1789,8 @@
       "stats": "Wkts: 191, Econ: 7.07, Avg: 22.8",
       "img": "",
       "overseas": true,
-      "country": "Australia"
+      "country": "Australia",
+      "retired": false
     },
     {
       "id": 239,
@@ -1652,7 +1801,8 @@
       "stats": "Runs: 7960, Avg: 46.5, SR: 149.8",
       "img": "",
       "overseas": true,
-      "country": "England"
+      "country": "England",
+      "retired": false
     },
     {
       "id": 247,
@@ -1663,7 +1813,8 @@
       "stats": "Wkts: 191, Econ: 7.07, Avg: 22.8",
       "img": "",
       "overseas": true,
-      "country": "England"
+      "country": "England",
+      "retired": false
     },
     {
       "id": 287,
@@ -1674,7 +1825,8 @@
       "stats": "Wkts: 191, Econ: 7.07, Avg: 22.8",
       "img": "",
       "overseas": true,
-      "country": "South Africa"
+      "country": "South Africa",
+      "retired": false
     },
     {
       "id": 319,
@@ -1685,7 +1837,8 @@
       "stats": "Wkts: 191, Econ: 7.07, Avg: 22.8",
       "img": "",
       "overseas": true,
-      "country": "South Africa"
+      "country": "South Africa",
+      "retired": false
     },
     {
       "id": 359,
@@ -1696,7 +1849,8 @@
       "stats": "Runs: 6040 (SR 147.1), Dismissals: 140",
       "img": "",
       "overseas": true,
-      "country": "New Zealand"
+      "country": "New Zealand",
+      "retired": false
     },
     {
       "id": 375,
@@ -1707,7 +1861,8 @@
       "stats": "Runs: 7960, Avg: 46.5, SR: 149.8",
       "img": "",
       "overseas": true,
-      "country": "New Zealand"
+      "country": "New Zealand",
+      "retired": false
     },
     {
       "id": 391,
@@ -1718,7 +1873,8 @@
       "stats": "Runs: 4020 (SR 149.4), Wkts: 113 (Econ 7.82)",
       "img": "",
       "overseas": true,
-      "country": "Afghanistan"
+      "country": "Afghanistan",
+      "retired": false
     },
     {
       "id": 415,
@@ -1729,7 +1885,8 @@
       "stats": "Runs: 6040 (SR 147.1), Dismissals: 140",
       "img": "",
       "overseas": true,
-      "country": "Sri Lanka"
+      "country": "Sri Lanka",
+      "retired": false
     },
     {
       "id": 447,
@@ -1740,7 +1897,8 @@
       "stats": "Runs: 7960, Avg: 46.5, SR: 149.8",
       "img": "",
       "overseas": true,
-      "country": "Pakistan"
+      "country": "Pakistan",
+      "retired": false
     },
     {
       "id": 14,
@@ -1751,7 +1909,8 @@
       "stats": "Wkts: 182, Econ: 7.01, Avg: 22.7",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 134,
@@ -1762,7 +1921,8 @@
       "stats": "Wkts: 182, Econ: 7.01, Avg: 22.7",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": true
     },
     {
       "id": 166,
@@ -1773,7 +1933,8 @@
       "stats": "Wkts: 182, Econ: 7.01, Avg: 22.7",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 174,
@@ -1784,7 +1945,8 @@
       "stats": "Runs: 7680, Avg: 45.5, SR: 147.8",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": true
     },
     {
       "id": 240,
@@ -1795,7 +1957,8 @@
       "stats": "Runs: 3860 (SR 153.2), Wkts: 108 (Econ 7.71)",
       "img": "",
       "overseas": true,
-      "country": "England"
+      "country": "England",
+      "retired": false
     },
     {
       "id": 246,
@@ -1806,7 +1969,8 @@
       "stats": "Wkts: 182, Econ: 7.01, Avg: 22.7",
       "img": "",
       "overseas": true,
-      "country": "England"
+      "country": "England",
+      "retired": false
     },
     {
       "id": 342,
@@ -1817,7 +1981,8 @@
       "stats": "Runs: 7680, Avg: 45.5, SR: 147.8",
       "img": "",
       "overseas": true,
-      "country": "West Indies"
+      "country": "West Indies",
+      "retired": true
     },
     {
       "id": 414,
@@ -1828,7 +1993,8 @@
       "stats": "Runs: 7680, Avg: 45.5, SR: 147.8",
       "img": "",
       "overseas": true,
-      "country": "Sri Lanka"
+      "country": "Sri Lanka",
+      "retired": false
     },
     {
       "id": 422,
@@ -1839,7 +2005,8 @@
       "stats": "Wkts: 182, Econ: 7.01, Avg: 22.7",
       "img": "",
       "overseas": true,
-      "country": "Sri Lanka"
+      "country": "Sri Lanka",
+      "retired": false
     },
     {
       "id": 446,
@@ -1850,7 +2017,8 @@
       "stats": "Wkts: 182, Econ: 7.01, Avg: 22.7",
       "img": "",
       "overseas": true,
-      "country": "Pakistan"
+      "country": "Pakistan",
+      "retired": false
     },
     {
       "id": 470,
@@ -1861,7 +2029,8 @@
       "stats": "Wkts: 182, Econ: 7.01, Avg: 22.7",
       "img": "",
       "overseas": true,
-      "country": "Bangladesh"
+      "country": "Bangladesh",
+      "retired": false
     },
     {
       "id": 13,
@@ -1872,7 +2041,8 @@
       "stats": "Runs: 5600 (SR 143.6), Dismissals: 127",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 69,
@@ -1883,7 +2053,8 @@
       "stats": "Runs: 5600 (SR 143.6), Dismissals: 127",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 117,
@@ -1894,7 +2065,8 @@
       "stats": "Wkts: 174, Econ: 6.96, Avg: 22.7",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 125,
@@ -1905,7 +2077,8 @@
       "stats": "Wkts: 174, Econ: 6.96, Avg: 22.7",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": true
     },
     {
       "id": 197,
@@ -1916,7 +2089,8 @@
       "stats": "Runs: 7400, Avg: 44.4, SR: 154.2",
       "img": "",
       "overseas": true,
-      "country": "Australia"
+      "country": "Australia",
+      "retired": false
     },
     {
       "id": 277,
@@ -1927,7 +2101,8 @@
       "stats": "Runs: 7400, Avg: 44.4, SR: 154.2",
       "img": "",
       "overseas": true,
-      "country": "England"
+      "country": "England",
+      "retired": true
     },
     {
       "id": 293,
@@ -1938,7 +2113,8 @@
       "stats": "Runs: 5600 (SR 143.6), Dismissals: 127",
       "img": "",
       "overseas": true,
-      "country": "South Africa"
+      "country": "South Africa",
+      "retired": false
     },
     {
       "id": 365,
@@ -1949,7 +2125,8 @@
       "stats": "Wkts: 174, Econ: 6.96, Avg: 22.7",
       "img": "",
       "overseas": true,
-      "country": "New Zealand"
+      "country": "New Zealand",
+      "retired": false
     },
     {
       "id": 397,
@@ -1960,7 +2137,8 @@
       "stats": "Runs: 3700 (SR 151.0), Wkts: 103 (Econ 7.6)",
       "img": "",
       "overseas": true,
-      "country": "Afghanistan"
+      "country": "Afghanistan",
+      "retired": false
     },
     {
       "id": 413,
@@ -1971,7 +2149,8 @@
       "stats": "Runs: 7400, Avg: 44.4, SR: 154.2",
       "img": "",
       "overseas": true,
-      "country": "Sri Lanka"
+      "country": "Sri Lanka",
+      "retired": false
     },
     {
       "id": 445,
@@ -1982,7 +2161,8 @@
       "stats": "Wkts: 174, Econ: 6.96, Avg: 22.7",
       "img": "",
       "overseas": true,
-      "country": "Pakistan"
+      "country": "Pakistan",
+      "retired": false
     },
     {
       "id": 20,
@@ -1993,7 +2173,8 @@
       "stats": "Wkts: 215, Econ: 7.21, Avg: 23.7",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 188,
@@ -2004,7 +2185,8 @@
       "stats": "Wkts: 215, Econ: 7.21, Avg: 23.7",
       "img": "",
       "overseas": true,
-      "country": "Australia"
+      "country": "Australia",
+      "retired": false
     },
     {
       "id": 196,
@@ -2015,7 +2197,8 @@
       "stats": "Runs: 8320, Avg: 45.8, SR: 152.2",
       "img": "",
       "overseas": true,
-      "country": "Australia"
+      "country": "Australia",
+      "retired": false
     },
     {
       "id": 236,
@@ -2026,7 +2209,8 @@
       "stats": "Runs: 6380 (SR 147.4), Dismissals: 160",
       "img": "",
       "overseas": true,
-      "country": "England"
+      "country": "England",
+      "retired": false
     },
     {
       "id": 356,
@@ -2037,7 +2221,8 @@
       "stats": "Runs: 4340 (SR 148.8), Wkts: 112 (Econ 7.94)",
       "img": "",
       "overseas": true,
-      "country": "West Indies"
+      "country": "West Indies",
+      "retired": true
     },
     {
       "id": 396,
@@ -2048,7 +2233,8 @@
       "stats": "Wkts: 215, Econ: 7.21, Avg: 23.7",
       "img": "",
       "overseas": true,
-      "country": "Afghanistan"
+      "country": "Afghanistan",
+      "retired": false
     },
     {
       "id": 444,
@@ -2059,7 +2245,8 @@
       "stats": "Runs: 4340 (SR 148.8), Wkts: 112 (Econ 7.94)",
       "img": "",
       "overseas": true,
-      "country": "Pakistan"
+      "country": "Pakistan",
+      "retired": false
     },
     {
       "id": 468,
@@ -2070,7 +2257,8 @@
       "stats": "Wkts: 215, Econ: 7.21, Avg: 23.7",
       "img": "",
       "overseas": true,
-      "country": "Pakistan"
+      "country": "Pakistan",
+      "retired": false
     },
     {
       "id": 494,
@@ -2081,7 +2269,8 @@
       "stats": "Runs: 8320, Avg: 45.8, SR: 152.2",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 505,
@@ -2092,7 +2281,8 @@
       "stats": "Runs: 6380 (SR 147.4), Dismissals: 160",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 11,
@@ -2103,7 +2293,8 @@
       "stats": "Runs: 8040, Avg: 44.8, SR: 150.2",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 19,
@@ -2114,7 +2305,8 @@
       "stats": "Wkts: 206, Econ: 7.15, Avg: 23.6",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 123,
@@ -2125,7 +2317,8 @@
       "stats": "Runs: 8040, Avg: 44.8, SR: 150.2",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": true
     },
     {
       "id": 187,
@@ -2136,7 +2329,8 @@
       "stats": "Wkts: 206, Econ: 7.15, Avg: 23.6",
       "img": "",
       "overseas": true,
-      "country": "Australia"
+      "country": "Australia",
+      "retired": false
     },
     {
       "id": 211,
@@ -2147,7 +2341,8 @@
       "stats": "Runs: 6160 (SR 145.6), Dismissals: 153",
       "img": "",
       "overseas": true,
-      "country": "Australia"
+      "country": "Australia",
+      "retired": false
     },
     {
       "id": 283,
@@ -2158,7 +2353,8 @@
       "stats": "Runs: 6160 (SR 145.6), Dismissals: 153",
       "img": "",
       "overseas": true,
-      "country": "South Africa"
+      "country": "South Africa",
+      "retired": false
     },
     {
       "id": 299,
@@ -2169,7 +2365,8 @@
       "stats": "Runs: 8040, Avg: 44.8, SR: 150.2",
       "img": "",
       "overseas": true,
-      "country": "South Africa"
+      "country": "South Africa",
+      "retired": false
     },
     {
       "id": 395,
@@ -2180,7 +2377,8 @@
       "stats": "Wkts: 206, Econ: 7.15, Avg: 23.6",
       "img": "",
       "overseas": true,
-      "country": "Afghanistan"
+      "country": "Afghanistan",
+      "retired": false
     },
     {
       "id": 403,
@@ -2191,7 +2389,8 @@
       "stats": "Wkts: 206, Econ: 7.15, Avg: 23.6",
       "img": "",
       "overseas": true,
-      "country": "Afghanistan"
+      "country": "Afghanistan",
+      "retired": false
     },
     {
       "id": 419,
@@ -2202,7 +2401,8 @@
       "stats": "Wkts: 206, Econ: 7.15, Avg: 23.6",
       "img": "",
       "overseas": true,
-      "country": "Sri Lanka"
+      "country": "Sri Lanka",
+      "retired": false
     },
     {
       "id": 427,
@@ -2213,7 +2413,8 @@
       "stats": "Runs: 4180 (SR 146.6), Wkts: 107 (Econ 7.83)",
       "img": "",
       "overseas": true,
-      "country": "Sri Lanka"
+      "country": "Sri Lanka",
+      "retired": false
     },
     {
       "id": 10,
@@ -2224,7 +2425,8 @@
       "stats": "Runs: 7760, Avg: 43.7, SR: 148.2",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 18,
@@ -2235,7 +2437,8 @@
       "stats": "Wkts: 198, Econ: 7.1, Avg: 23.6",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 130,
@@ -2246,7 +2449,8 @@
       "stats": "Wkts: 198, Econ: 7.1, Avg: 23.6",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": true
     },
     {
       "id": 138,
@@ -2257,7 +2461,8 @@
       "stats": "Runs: 7760, Avg: 43.7, SR: 148.2",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": true
     },
     {
       "id": 202,
@@ -2268,7 +2473,8 @@
       "stats": "Runs: 7760, Avg: 43.7, SR: 148.2",
       "img": "",
       "overseas": true,
-      "country": "Australia"
+      "country": "Australia",
+      "retired": false
     },
     {
       "id": 234,
@@ -2279,7 +2485,8 @@
       "stats": "Wkts: 198, Econ: 7.1, Avg: 23.6",
       "img": "",
       "overseas": true,
-      "country": "Australia"
+      "country": "Australia",
+      "retired": true
     },
     {
       "id": 242,
@@ -2290,7 +2497,8 @@
       "stats": "Runs: 5940 (SR 143.9), Dismissals: 146",
       "img": "",
       "overseas": true,
-      "country": "England"
+      "country": "England",
+      "retired": false
     },
     {
       "id": 362,
@@ -2301,7 +2509,8 @@
       "stats": "Runs: 7760, Avg: 43.7, SR: 148.2",
       "img": "",
       "overseas": true,
-      "country": "New Zealand"
+      "country": "New Zealand",
+      "retired": false
     },
     {
       "id": 394,
@@ -2312,7 +2521,8 @@
       "stats": "Wkts: 198, Econ: 7.1, Avg: 23.6",
       "img": "",
       "overseas": true,
-      "country": "Afghanistan"
+      "country": "Afghanistan",
+      "retired": false
     },
     {
       "id": 489,
@@ -2323,7 +2533,8 @@
       "stats": "Runs: 7760, Avg: 43.7, SR: 148.2",
       "img": "",
       "overseas": true,
-      "country": "England"
+      "country": "England",
+      "retired": false
     },
     {
       "id": 508,
@@ -2334,7 +2545,8 @@
       "stats": "Runs: 7760, Avg: 43.7, SR: 148.2",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 179,
@@ -2345,7 +2557,8 @@
       "stats": "Runs: 7480, Avg: 42.7, SR: 146.2",
       "img": "",
       "overseas": true,
-      "country": "Australia"
+      "country": "Australia",
+      "retired": false
     },
     {
       "id": 281,
@@ -2356,7 +2569,8 @@
       "stats": "Wkts: 189, Econ: 7.34, Avg: 23.6",
       "img": "",
       "overseas": true,
-      "country": "England"
+      "country": "England",
+      "retired": true
     },
     {
       "id": 361,
@@ -2367,7 +2581,8 @@
       "stats": "Runs: 3860 (SR 148.2), Wkts: 97 (Econ 8.06)",
       "img": "",
       "overseas": true,
-      "country": "New Zealand"
+      "country": "New Zealand",
+      "retired": false
     },
     {
       "id": 393,
@@ -2378,7 +2593,8 @@
       "stats": "Runs: 7480, Avg: 42.7, SR: 146.2",
       "img": "",
       "overseas": true,
-      "country": "Afghanistan"
+      "country": "Afghanistan",
+      "retired": false
     },
     {
       "id": 417,
@@ -2389,7 +2605,8 @@
       "stats": "Wkts: 189, Econ: 7.34, Avg: 23.6",
       "img": "",
       "overseas": true,
-      "country": "Sri Lanka"
+      "country": "Sri Lanka",
+      "retired": false
     },
     {
       "id": 449,
@@ -2400,7 +2617,8 @@
       "stats": "Wkts: 189, Econ: 7.34, Avg: 23.6",
       "img": "",
       "overseas": true,
-      "country": "Pakistan"
+      "country": "Pakistan",
+      "retired": false
     },
     {
       "id": 481,
@@ -2411,7 +2629,8 @@
       "stats": "Runs: 7480, Avg: 42.7, SR: 146.2",
       "img": "",
       "overseas": true,
-      "country": "Bangladesh"
+      "country": "Bangladesh",
+      "retired": false
     },
     {
       "id": 490,
@@ -2422,7 +2641,8 @@
       "stats": "Wkts: 189, Econ: 7.34, Avg: 23.6",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 512,
@@ -2433,7 +2653,8 @@
       "stats": "Runs: 5720 (SR 142.1), Dismissals: 139",
       "img": "",
       "overseas": true,
-      "country": "South Africa"
+      "country": "South Africa",
+      "retired": false
     },
     {
       "id": 12,
@@ -2444,7 +2665,8 @@
       "stats": "Runs: 7200, Avg: 41.6, SR: 144.2",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 16,
@@ -2455,7 +2677,8 @@
       "stats": "Runs: 3700 (SR 146.0), Wkts: 92 (Econ 7.95)",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 24,
@@ -2466,7 +2689,8 @@
       "stats": "Runs: 5500 (SR 140.4), Dismissals: 133",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 56,
@@ -2477,7 +2701,8 @@
       "stats": "Runs: 7200, Avg: 41.6, SR: 144.2",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 128,
@@ -2488,7 +2713,8 @@
       "stats": "Runs: 3700 (SR 146.0), Wkts: 92 (Econ 7.95)",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": true
     },
     {
       "id": 144,
@@ -2499,7 +2725,8 @@
       "stats": "Wkts: 181, Econ: 7.29, Avg: 23.6",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": true
     },
     {
       "id": 168,
@@ -2510,7 +2737,8 @@
       "stats": "Wkts: 181, Econ: 7.29, Avg: 23.6",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 248,
@@ -2521,7 +2749,8 @@
       "stats": "Wkts: 181, Econ: 7.29, Avg: 23.6",
       "img": "",
       "overseas": true,
-      "country": "England"
+      "country": "England",
+      "retired": false
     },
     {
       "id": 284,
@@ -2532,7 +2761,8 @@
       "stats": "Runs: 3700 (SR 146.0), Wkts: 92 (Econ 7.95)",
       "img": "",
       "overseas": true,
-      "country": "South Africa"
+      "country": "South Africa",
+      "retired": false
     },
     {
       "id": 328,
@@ -2543,7 +2773,8 @@
       "stats": "Runs: 3700 (SR 146.0), Wkts: 92 (Econ 7.95)",
       "img": "",
       "overseas": true,
-      "country": "West Indies"
+      "country": "West Indies",
+      "retired": false
     },
     {
       "id": 344,
@@ -2554,7 +2785,8 @@
       "stats": "Runs: 7200, Avg: 41.6, SR: 144.2",
       "img": "",
       "overseas": true,
-      "country": "West Indies"
+      "country": "West Indies",
+      "retired": true
     },
     {
       "id": 358,
@@ -2565,7 +2797,8 @@
       "stats": "Runs: 7200, Avg: 41.6, SR: 144.2",
       "img": "",
       "overseas": true,
-      "country": "New Zealand"
+      "country": "New Zealand",
+      "retired": false
     },
     {
       "id": 392,
@@ -2576,7 +2809,8 @@
       "stats": "Runs: 5500 (SR 140.4), Dismissals: 133",
       "img": "",
       "overseas": true,
-      "country": "Afghanistan"
+      "country": "Afghanistan",
+      "retired": false
     },
     {
       "id": 424,
@@ -2587,7 +2821,8 @@
       "stats": "Runs: 3700 (SR 146.0), Wkts: 92 (Econ 7.95)",
       "img": "",
       "overseas": true,
-      "country": "Sri Lanka"
+      "country": "Sri Lanka",
+      "retired": false
     },
     {
       "id": 39,
@@ -2598,7 +2833,8 @@
       "stats": "Wkts: 172, Econ: 7.24, Avg: 24.5",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 59,
@@ -2609,7 +2845,8 @@
       "stats": "Runs: 5280 (SR 144.2), Dismissals: 126",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 79,
@@ -2620,7 +2857,8 @@
       "stats": "Runs: 3540 (SR 143.8), Wkts: 101 (Econ 7.84)",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 99,
@@ -2631,7 +2869,8 @@
       "stats": "Runs: 5280 (SR 144.2), Dismissals: 126",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 109,
@@ -2642,7 +2881,8 @@
       "stats": "Runs: 6920, Avg: 43.0, SR: 142.2",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 119,
@@ -2653,7 +2893,8 @@
       "stats": "Wkts: 172, Econ: 7.24, Avg: 24.5",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 129,
@@ -2664,7 +2905,8 @@
       "stats": "Wkts: 172, Econ: 7.24, Avg: 24.5",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": true
     },
     {
       "id": 139,
@@ -2675,7 +2917,8 @@
       "stats": "Runs: 5280 (SR 144.2), Dismissals: 126",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": true
     },
     {
       "id": 149,
@@ -2686,7 +2929,8 @@
       "stats": "Runs: 3540 (SR 143.8), Wkts: 101 (Econ 7.84)",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": true
     },
     {
       "id": 159,
@@ -2697,7 +2941,8 @@
       "stats": "Runs: 5280 (SR 144.2), Dismissals: 126",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 169,
@@ -2708,7 +2953,8 @@
       "stats": "Runs: 6920, Avg: 43.0, SR: 142.2",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 189,
@@ -2719,7 +2965,8 @@
       "stats": "Runs: 5280 (SR 144.2), Dismissals: 126",
       "img": "",
       "overseas": true,
-      "country": "Australia"
+      "country": "Australia",
+      "retired": false
     },
     {
       "id": 199,
@@ -2730,7 +2977,8 @@
       "stats": "Wkts: 172, Econ: 7.24, Avg: 24.5",
       "img": "",
       "overseas": true,
-      "country": "Australia"
+      "country": "Australia",
+      "retired": false
     },
     {
       "id": 209,
@@ -2741,7 +2989,8 @@
       "stats": "Runs: 6920, Avg: 43.0, SR: 142.2",
       "img": "",
       "overseas": true,
-      "country": "Australia"
+      "country": "Australia",
+      "retired": false
     },
     {
       "id": 219,
@@ -2752,7 +3001,8 @@
       "stats": "Runs: 6920, Avg: 43.0, SR: 142.2",
       "img": "",
       "overseas": true,
-      "country": "Australia"
+      "country": "Australia",
+      "retired": false
     },
     {
       "id": 249,
@@ -2763,7 +3013,8 @@
       "stats": "Wkts: 172, Econ: 7.24, Avg: 24.5",
       "img": "",
       "overseas": true,
-      "country": "England"
+      "country": "England",
+      "retired": false
     },
     {
       "id": 259,
@@ -2774,7 +3025,8 @@
       "stats": "Runs: 3540 (SR 143.8), Wkts: 101 (Econ 7.84)",
       "img": "",
       "overseas": true,
-      "country": "England"
+      "country": "England",
+      "retired": false
     },
     {
       "id": 269,
@@ -2785,7 +3037,8 @@
       "stats": "Wkts: 172, Econ: 7.24, Avg: 24.5",
       "img": "",
       "overseas": true,
-      "country": "England"
+      "country": "England",
+      "retired": false
     },
     {
       "id": 289,
@@ -2796,7 +3049,8 @@
       "stats": "Wkts: 172, Econ: 7.24, Avg: 24.5",
       "img": "",
       "overseas": true,
-      "country": "South Africa"
+      "country": "South Africa",
+      "retired": false
     },
     {
       "id": 295,
@@ -2807,7 +3061,8 @@
       "stats": "Runs: 6920, Avg: 43.0, SR: 142.2",
       "img": "",
       "overseas": true,
-      "country": "South Africa"
+      "country": "South Africa",
+      "retired": false
     },
     {
       "id": 329,
@@ -2818,7 +3073,8 @@
       "stats": "Runs: 5280 (SR 144.2), Dismissals: 126",
       "img": "",
       "overseas": true,
-      "country": "West Indies"
+      "country": "West Indies",
+      "retired": false
     },
     {
       "id": 339,
@@ -2829,7 +3085,8 @@
       "stats": "Runs: 3540 (SR 143.8), Wkts: 101 (Econ 7.84)",
       "img": "",
       "overseas": true,
-      "country": "West Indies"
+      "country": "West Indies",
+      "retired": false
     },
     {
       "id": 349,
@@ -2840,7 +3097,8 @@
       "stats": "Wkts: 172, Econ: 7.24, Avg: 24.5",
       "img": "",
       "overseas": true,
-      "country": "West Indies"
+      "country": "West Indies",
+      "retired": false
     },
     {
       "id": 369,
@@ -2851,7 +3109,8 @@
       "stats": "Runs: 6920, Avg: 43.0, SR: 142.2",
       "img": "",
       "overseas": true,
-      "country": "New Zealand"
+      "country": "New Zealand",
+      "retired": false
     },
     {
       "id": 379,
@@ -2862,7 +3121,8 @@
       "stats": "Runs: 3540 (SR 143.8), Wkts: 101 (Econ 7.84)",
       "img": "",
       "overseas": true,
-      "country": "New Zealand"
+      "country": "New Zealand",
+      "retired": false
     },
     {
       "id": 399,
@@ -2873,7 +3133,8 @@
       "stats": "Runs: 6920, Avg: 43.0, SR: 142.2",
       "img": "",
       "overseas": true,
-      "country": "Afghanistan"
+      "country": "Afghanistan",
+      "retired": false
     },
     {
       "id": 409,
@@ -2884,7 +3145,8 @@
       "stats": "Runs: 5280 (SR 144.2), Dismissals: 126",
       "img": "",
       "overseas": true,
-      "country": "Afghanistan"
+      "country": "Afghanistan",
+      "retired": false
     },
     {
       "id": 429,
@@ -2895,7 +3157,8 @@
       "stats": "Runs: 5280 (SR 144.2), Dismissals: 126",
       "img": "",
       "overseas": true,
-      "country": "Sri Lanka"
+      "country": "Sri Lanka",
+      "retired": false
     },
     {
       "id": 441,
@@ -2906,7 +3169,8 @@
       "stats": "Runs: 6920, Avg: 43.0, SR: 142.2",
       "img": "",
       "overseas": true,
-      "country": "Pakistan"
+      "country": "Pakistan",
+      "retired": false
     },
     {
       "id": 459,
@@ -2917,7 +3181,8 @@
       "stats": "Wkts: 172, Econ: 7.24, Avg: 24.5",
       "img": "",
       "overseas": true,
-      "country": "Pakistan"
+      "country": "Pakistan",
+      "retired": false
     },
     {
       "id": 479,
@@ -2928,7 +3193,8 @@
       "stats": "Runs: 3540 (SR 143.8), Wkts: 101 (Econ 7.84)",
       "img": "",
       "overseas": true,
-      "country": "Bangladesh"
+      "country": "Bangladesh",
+      "retired": false
     },
     {
       "id": 28,
@@ -2939,7 +3205,8 @@
       "stats": "Wkts: 163, Econ: 7.48, Avg: 24.5",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 38,
@@ -2950,7 +3217,8 @@
       "stats": "Wkts: 163, Econ: 7.48, Avg: 24.5",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 48,
@@ -2961,7 +3229,8 @@
       "stats": "Runs: 3380 (SR 147.6), Wkts: 96 (Econ 8.18)",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 58,
@@ -2972,7 +3241,8 @@
       "stats": "Runs: 5060 (SR 142.4), Dismissals: 119",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 88,
@@ -2983,7 +3253,8 @@
       "stats": "Runs: 5060 (SR 142.4), Dismissals: 119",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 108,
@@ -2994,7 +3265,8 @@
       "stats": "Runs: 5060 (SR 142.4), Dismissals: 119",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 118,
@@ -3005,7 +3277,8 @@
       "stats": "Runs: 3380 (SR 147.6), Wkts: 96 (Econ 8.18)",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 148,
@@ -3016,7 +3289,8 @@
       "stats": "Runs: 3380 (SR 147.6), Wkts: 96 (Econ 8.18)",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": true
     },
     {
       "id": 158,
@@ -3027,7 +3301,8 @@
       "stats": "Wkts: 163, Econ: 7.48, Avg: 24.5",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 180,
@@ -3038,7 +3313,8 @@
       "stats": "Runs: 3380 (SR 147.6), Wkts: 96 (Econ 8.18)",
       "img": "",
       "overseas": true,
-      "country": "Australia"
+      "country": "Australia",
+      "retired": false
     },
     {
       "id": 198,
@@ -3049,7 +3325,8 @@
       "stats": "Wkts: 163, Econ: 7.48, Avg: 24.5",
       "img": "",
       "overseas": true,
-      "country": "Australia"
+      "country": "Australia",
+      "retired": false
     },
     {
       "id": 208,
@@ -3060,7 +3337,8 @@
       "stats": "Runs: 5060 (SR 142.4), Dismissals: 119",
       "img": "",
       "overseas": true,
-      "country": "Australia"
+      "country": "Australia",
+      "retired": false
     },
     {
       "id": 218,
@@ -3071,7 +3349,8 @@
       "stats": "Wkts: 163, Econ: 7.48, Avg: 24.5",
       "img": "",
       "overseas": true,
-      "country": "Australia"
+      "country": "Australia",
+      "retired": false
     },
     {
       "id": 258,
@@ -3082,7 +3361,8 @@
       "stats": "Wkts: 163, Econ: 7.48, Avg: 24.5",
       "img": "",
       "overseas": true,
-      "country": "England"
+      "country": "England",
+      "retired": false
     },
     {
       "id": 268,
@@ -3093,7 +3373,8 @@
       "stats": "Wkts: 163, Econ: 7.48, Avg: 24.5",
       "img": "",
       "overseas": true,
-      "country": "England"
+      "country": "England",
+      "retired": false
     },
     {
       "id": 285,
@@ -3104,7 +3385,8 @@
       "stats": "Runs: 6640, Avg: 42.0, SR: 148.6",
       "img": "",
       "overseas": true,
-      "country": "South Africa"
+      "country": "South Africa",
+      "retired": false
     },
     {
       "id": 298,
@@ -3115,7 +3397,8 @@
       "stats": "Runs: 6640, Avg: 42.0, SR: 148.6",
       "img": "",
       "overseas": true,
-      "country": "South Africa"
+      "country": "South Africa",
+      "retired": false
     },
     {
       "id": 308,
@@ -3126,7 +3409,8 @@
       "stats": "Runs: 6640, Avg: 42.0, SR: 148.6",
       "img": "",
       "overseas": true,
-      "country": "South Africa"
+      "country": "South Africa",
+      "retired": false
     },
     {
       "id": 318,
@@ -3137,7 +3421,8 @@
       "stats": "Runs: 6640, Avg: 42.0, SR: 148.6",
       "img": "",
       "overseas": true,
-      "country": "South Africa"
+      "country": "South Africa",
+      "retired": false
     },
     {
       "id": 338,
@@ -3148,7 +3433,8 @@
       "stats": "Wkts: 163, Econ: 7.48, Avg: 24.5",
       "img": "",
       "overseas": true,
-      "country": "West Indies"
+      "country": "West Indies",
+      "retired": false
     },
     {
       "id": 348,
@@ -3159,7 +3445,8 @@
       "stats": "Wkts: 163, Econ: 7.48, Avg: 24.5",
       "img": "",
       "overseas": true,
-      "country": "West Indies"
+      "country": "West Indies",
+      "retired": false
     },
     {
       "id": 368,
@@ -3170,7 +3457,8 @@
       "stats": "Wkts: 163, Econ: 7.48, Avg: 24.5",
       "img": "",
       "overseas": true,
-      "country": "New Zealand"
+      "country": "New Zealand",
+      "retired": false
     },
     {
       "id": 378,
@@ -3181,7 +3469,8 @@
       "stats": "Runs: 6640, Avg: 42.0, SR: 148.6",
       "img": "",
       "overseas": true,
-      "country": "New Zealand"
+      "country": "New Zealand",
+      "retired": false
     },
     {
       "id": 398,
@@ -3192,7 +3481,8 @@
       "stats": "Runs: 6640, Avg: 42.0, SR: 148.6",
       "img": "",
       "overseas": true,
-      "country": "Afghanistan"
+      "country": "Afghanistan",
+      "retired": false
     },
     {
       "id": 408,
@@ -3203,7 +3493,8 @@
       "stats": "Runs: 6640, Avg: 42.0, SR: 148.6",
       "img": "",
       "overseas": true,
-      "country": "Afghanistan"
+      "country": "Afghanistan",
+      "retired": false
     },
     {
       "id": 412,
@@ -3214,7 +3505,8 @@
       "stats": "Runs: 3380 (SR 147.6), Wkts: 96 (Econ 8.18)",
       "img": "",
       "overseas": true,
-      "country": "Sri Lanka"
+      "country": "Sri Lanka",
+      "retired": false
     },
     {
       "id": 428,
@@ -3225,7 +3517,8 @@
       "stats": "Runs: 5060 (SR 142.4), Dismissals: 119",
       "img": "",
       "overseas": true,
-      "country": "Sri Lanka"
+      "country": "Sri Lanka",
+      "retired": false
     },
     {
       "id": 448,
@@ -3236,7 +3529,8 @@
       "stats": "Runs: 3380 (SR 147.6), Wkts: 96 (Econ 8.18)",
       "img": "",
       "overseas": true,
-      "country": "Pakistan"
+      "country": "Pakistan",
+      "retired": false
     },
     {
       "id": 458,
@@ -3247,7 +3541,8 @@
       "stats": "Wkts: 163, Econ: 7.48, Avg: 24.5",
       "img": "",
       "overseas": true,
-      "country": "Pakistan"
+      "country": "Pakistan",
+      "retired": false
     },
     {
       "id": 478,
@@ -3258,7 +3553,8 @@
       "stats": "Runs: 3380 (SR 147.6), Wkts: 96 (Econ 8.18)",
       "img": "",
       "overseas": true,
-      "country": "Bangladesh"
+      "country": "Bangladesh",
+      "retired": false
     },
     {
       "id": 31,
@@ -3269,7 +3565,8 @@
       "stats": "Runs: 3220 (SR 145.4), Wkts: 91 (Econ 8.07)",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 37,
@@ -3280,7 +3577,8 @@
       "stats": "Wkts: 155, Econ: 7.43, Avg: 24.5",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 47,
@@ -3291,7 +3589,8 @@
       "stats": "Runs: 6360, Avg: 40.9, SR: 146.6",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 57,
@@ -3302,7 +3601,8 @@
       "stats": "Runs: 6360, Avg: 40.9, SR: 146.6",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 67,
@@ -3313,7 +3613,8 @@
       "stats": "Runs: 4840 (SR 140.7), Dismissals: 112",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 77,
@@ -3324,7 +3625,8 @@
       "stats": "Wkts: 155, Econ: 7.43, Avg: 24.5",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 87,
@@ -3335,7 +3637,8 @@
       "stats": "Wkts: 155, Econ: 7.43, Avg: 24.5",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 107,
@@ -3346,7 +3649,8 @@
       "stats": "Wkts: 155, Econ: 7.43, Avg: 24.5",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 137,
@@ -3357,7 +3661,8 @@
       "stats": "Runs: 4840 (SR 140.7), Dismissals: 112",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": true
     },
     {
       "id": 147,
@@ -3368,7 +3673,8 @@
       "stats": "Runs: 6360, Avg: 40.9, SR: 146.6",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 157,
@@ -3379,7 +3685,8 @@
       "stats": "Wkts: 155, Econ: 7.43, Avg: 24.5",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 167,
@@ -3390,7 +3697,8 @@
       "stats": "Wkts: 155, Econ: 7.43, Avg: 24.5",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 207,
@@ -3401,7 +3709,8 @@
       "stats": "Wkts: 155, Econ: 7.43, Avg: 24.5",
       "img": "",
       "overseas": true,
-      "country": "Australia"
+      "country": "Australia",
+      "retired": false
     },
     {
       "id": 241,
@@ -3412,7 +3721,8 @@
       "stats": "Runs: 6360, Avg: 40.9, SR: 146.6",
       "img": "",
       "overseas": true,
-      "country": "England"
+      "country": "England",
+      "retired": false
     },
     {
       "id": 257,
@@ -3423,7 +3733,8 @@
       "stats": "Runs: 6360, Avg: 40.9, SR: 146.6",
       "img": "",
       "overseas": true,
-      "country": "England"
+      "country": "England",
+      "retired": false
     },
     {
       "id": 267,
@@ -3434,7 +3745,8 @@
       "stats": "Wkts: 155, Econ: 7.43, Avg: 24.5",
       "img": "",
       "overseas": true,
-      "country": "England"
+      "country": "England",
+      "retired": false
     },
     {
       "id": 288,
@@ -3445,7 +3757,8 @@
       "stats": "Runs: 3220 (SR 145.4), Wkts: 91 (Econ 8.07)",
       "img": "",
       "overseas": true,
-      "country": "South Africa"
+      "country": "South Africa",
+      "retired": false
     },
     {
       "id": 297,
@@ -3456,7 +3769,8 @@
       "stats": "Runs: 6360, Avg: 40.9, SR: 146.6",
       "img": "",
       "overseas": true,
-      "country": "South Africa"
+      "country": "South Africa",
+      "retired": false
     },
     {
       "id": 307,
@@ -3467,7 +3781,8 @@
       "stats": "Runs: 6360, Avg: 40.9, SR: 146.6",
       "img": "",
       "overseas": true,
-      "country": "South Africa"
+      "country": "South Africa",
+      "retired": false
     },
     {
       "id": 317,
@@ -3478,7 +3793,8 @@
       "stats": "Runs: 6360, Avg: 40.9, SR: 146.6",
       "img": "",
       "overseas": true,
-      "country": "South Africa"
+      "country": "South Africa",
+      "retired": false
     },
     {
       "id": 337,
@@ -3489,7 +3805,8 @@
       "stats": "Wkts: 155, Econ: 7.43, Avg: 24.5",
       "img": "",
       "overseas": true,
-      "country": "West Indies"
+      "country": "West Indies",
+      "retired": false
     },
     {
       "id": 347,
@@ -3500,7 +3817,8 @@
       "stats": "Wkts: 155, Econ: 7.43, Avg: 24.5",
       "img": "",
       "overseas": true,
-      "country": "West Indies"
+      "country": "West Indies",
+      "retired": false
     },
     {
       "id": 367,
@@ -3511,7 +3829,8 @@
       "stats": "Wkts: 155, Econ: 7.43, Avg: 24.5",
       "img": "",
       "overseas": true,
-      "country": "New Zealand"
+      "country": "New Zealand",
+      "retired": false
     },
     {
       "id": 377,
@@ -3522,7 +3841,8 @@
       "stats": "Wkts: 155, Econ: 7.43, Avg: 24.5",
       "img": "",
       "overseas": true,
-      "country": "New Zealand"
+      "country": "New Zealand",
+      "retired": false
     },
     {
       "id": 387,
@@ -3533,7 +3853,8 @@
       "stats": "Runs: 4840 (SR 140.7), Dismissals: 112",
       "img": "",
       "overseas": true,
-      "country": "New Zealand"
+      "country": "New Zealand",
+      "retired": false
     },
     {
       "id": 407,
@@ -3544,7 +3865,8 @@
       "stats": "Runs: 6360, Avg: 40.9, SR: 146.6",
       "img": "",
       "overseas": true,
-      "country": "Afghanistan"
+      "country": "Afghanistan",
+      "retired": false
     },
     {
       "id": 457,
@@ -3555,7 +3877,8 @@
       "stats": "Runs: 6360, Avg: 40.9, SR: 146.6",
       "img": "",
       "overseas": true,
-      "country": "Pakistan"
+      "country": "Pakistan",
+      "retired": false
     },
     {
       "id": 477,
@@ -3566,7 +3889,8 @@
       "stats": "Wkts: 155, Econ: 7.43, Avg: 24.5",
       "img": "",
       "overseas": true,
-      "country": "Bangladesh"
+      "country": "Bangladesh",
+      "retired": false
     },
     {
       "id": 488,
@@ -3577,7 +3901,8 @@
       "stats": "Runs: 6360, Avg: 40.9, SR: 146.6",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 497,
@@ -3588,7 +3913,8 @@
       "stats": "Runs: 3220 (SR 145.4), Wkts: 91 (Econ 8.07)",
       "img": "",
       "overseas": true,
-      "country": "Afghanistan"
+      "country": "Afghanistan",
+      "retired": false
     },
     {
       "id": 500,
@@ -3599,7 +3925,8 @@
       "stats": "Runs: 4840 (SR 140.7), Dismissals: 112",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 509,
@@ -3610,7 +3937,8 @@
       "stats": "Runs: 3220 (SR 145.4), Wkts: 91 (Econ 8.07)",
       "img": "",
       "overseas": true,
-      "country": "South Africa"
+      "country": "South Africa",
+      "retired": false
     },
     {
       "id": 21,
@@ -3621,7 +3949,8 @@
       "stats": "Runs: 6080, Avg: 39.9, SR: 144.6",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 36,
@@ -3632,7 +3961,8 @@
       "stats": "Wkts: 146, Econ: 7.37, Avg: 24.4",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 46,
@@ -3643,7 +3973,8 @@
       "stats": "Runs: 6080, Avg: 39.9, SR: 144.6",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 66,
@@ -3654,7 +3985,8 @@
       "stats": "Wkts: 146, Econ: 7.37, Avg: 24.4",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 76,
@@ -3665,7 +3997,8 @@
       "stats": "Wkts: 146, Econ: 7.37, Avg: 24.4",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 86,
@@ -3676,7 +4009,8 @@
       "stats": "Runs: 3060 (SR 143.2), Wkts: 86 (Econ 7.96)",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 106,
@@ -3687,7 +4021,8 @@
       "stats": "Runs: 3060 (SR 143.2), Wkts: 86 (Econ 7.96)",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 116,
@@ -3698,7 +4033,8 @@
       "stats": "Wkts: 146, Econ: 7.37, Avg: 24.4",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 146,
@@ -3709,7 +4045,8 @@
       "stats": "Runs: 6080, Avg: 39.9, SR: 144.6",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 156,
@@ -3720,7 +4057,8 @@
       "stats": "Wkts: 146, Econ: 7.37, Avg: 24.4",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 206,
@@ -3731,7 +4069,8 @@
       "stats": "Runs: 3060 (SR 143.2), Wkts: 86 (Econ 7.96)",
       "img": "",
       "overseas": true,
-      "country": "Australia"
+      "country": "Australia",
+      "retired": false
     },
     {
       "id": 216,
@@ -3742,7 +4081,8 @@
       "stats": "Wkts: 146, Econ: 7.37, Avg: 24.4",
       "img": "",
       "overseas": true,
-      "country": "Australia"
+      "country": "Australia",
+      "retired": false
     },
     {
       "id": 226,
@@ -3753,7 +4093,8 @@
       "stats": "Wkts: 146, Econ: 7.37, Avg: 24.4",
       "img": "",
       "overseas": true,
-      "country": "Australia"
+      "country": "Australia",
+      "retired": false
     },
     {
       "id": 256,
@@ -3764,7 +4105,8 @@
       "stats": "Runs: 6080, Avg: 39.9, SR: 144.6",
       "img": "",
       "overseas": true,
-      "country": "England"
+      "country": "England",
+      "retired": true
     },
     {
       "id": 266,
@@ -3775,7 +4117,8 @@
       "stats": "Wkts: 146, Econ: 7.37, Avg: 24.4",
       "img": "",
       "overseas": true,
-      "country": "England"
+      "country": "England",
+      "retired": false
     },
     {
       "id": 296,
@@ -3786,7 +4129,8 @@
       "stats": "Runs: 6080, Avg: 39.9, SR: 144.6",
       "img": "",
       "overseas": true,
-      "country": "South Africa"
+      "country": "South Africa",
+      "retired": false
     },
     {
       "id": 306,
@@ -3797,7 +4141,8 @@
       "stats": "Wkts: 146, Econ: 7.37, Avg: 24.4",
       "img": "",
       "overseas": true,
-      "country": "South Africa"
+      "country": "South Africa",
+      "retired": false
     },
     {
       "id": 316,
@@ -3808,7 +4153,8 @@
       "stats": "Runs: 3060 (SR 143.2), Wkts: 86 (Econ 7.96)",
       "img": "",
       "overseas": true,
-      "country": "South Africa"
+      "country": "South Africa",
+      "retired": false
     },
     {
       "id": 336,
@@ -3819,7 +4165,8 @@
       "stats": "Wkts: 146, Econ: 7.37, Avg: 24.4",
       "img": "",
       "overseas": true,
-      "country": "West Indies"
+      "country": "West Indies",
+      "retired": false
     },
     {
       "id": 346,
@@ -3830,7 +4177,8 @@
       "stats": "Runs: 3060 (SR 143.2), Wkts: 86 (Econ 7.96)",
       "img": "",
       "overseas": true,
-      "country": "West Indies"
+      "country": "West Indies",
+      "retired": false
     },
     {
       "id": 366,
@@ -3841,7 +4189,8 @@
       "stats": "Wkts: 146, Econ: 7.37, Avg: 24.4",
       "img": "",
       "overseas": true,
-      "country": "New Zealand"
+      "country": "New Zealand",
+      "retired": false
     },
     {
       "id": 376,
@@ -3852,7 +4201,8 @@
       "stats": "Runs: 3060 (SR 143.2), Wkts: 86 (Econ 7.96)",
       "img": "",
       "overseas": true,
-      "country": "New Zealand"
+      "country": "New Zealand",
+      "retired": false
     },
     {
       "id": 406,
@@ -3863,7 +4213,8 @@
       "stats": "Runs: 3060 (SR 143.2), Wkts: 86 (Econ 7.96)",
       "img": "",
       "overseas": true,
-      "country": "Afghanistan"
+      "country": "Afghanistan",
+      "retired": false
     },
     {
       "id": 416,
@@ -3874,7 +4225,8 @@
       "stats": "Runs: 4620 (SR 138.9), Dismissals: 105",
       "img": "",
       "overseas": true,
-      "country": "Sri Lanka"
+      "country": "Sri Lanka",
+      "retired": false
     },
     {
       "id": 426,
@@ -3885,7 +4237,8 @@
       "stats": "Runs: 3060 (SR 143.2), Wkts: 86 (Econ 7.96)",
       "img": "",
       "overseas": true,
-      "country": "Sri Lanka"
+      "country": "Sri Lanka",
+      "retired": false
     },
     {
       "id": 436,
@@ -3896,7 +4249,8 @@
       "stats": "Wkts: 146, Econ: 7.37, Avg: 24.4",
       "img": "",
       "overseas": true,
-      "country": "Sri Lanka"
+      "country": "Sri Lanka",
+      "retired": false
     },
     {
       "id": 456,
@@ -3907,7 +4261,8 @@
       "stats": "Runs: 6080, Avg: 39.9, SR: 144.6",
       "img": "",
       "overseas": true,
-      "country": "Pakistan"
+      "country": "Pakistan",
+      "retired": false
     },
     {
       "id": 476,
@@ -3918,7 +4273,8 @@
       "stats": "Wkts: 146, Econ: 7.37, Avg: 24.4",
       "img": "",
       "overseas": true,
-      "country": "Bangladesh"
+      "country": "Bangladesh",
+      "retired": false
     },
     {
       "id": 511,
@@ -3929,7 +4285,8 @@
       "stats": "Wkts: 146, Econ: 7.37, Avg: 24.4",
       "img": "",
       "overseas": true,
-      "country": "England"
+      "country": "England",
+      "retired": false
     },
     {
       "id": 6,
@@ -3940,7 +4297,8 @@
       "stats": "Runs: 2900 (SR 141.0), Wkts: 81 (Econ 8.3)",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 17,
@@ -3951,7 +4309,8 @@
       "stats": "Runs: 2900 (SR 141.0), Wkts: 81 (Econ 8.3)",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 22,
@@ -3962,7 +4321,8 @@
       "stats": "Runs: 2900 (SR 141.0), Wkts: 81 (Econ 8.3)",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 25,
@@ -3973,7 +4333,8 @@
       "stats": "Runs: 5800, Avg: 38.8, SR: 142.6",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 29,
@@ -3984,7 +4345,8 @@
       "stats": "Runs: 2900 (SR 141.0), Wkts: 81 (Econ 8.3)",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 35,
@@ -3995,7 +4357,8 @@
       "stats": "Wkts: 138, Econ: 7.62, Avg: 24.4",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 45,
@@ -4006,7 +4369,8 @@
       "stats": "Runs: 5800, Avg: 38.8, SR: 142.6",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 51,
@@ -4017,7 +4381,8 @@
       "stats": "Runs: 2900 (SR 141.0), Wkts: 81 (Econ 8.3)",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 65,
@@ -4028,7 +4393,8 @@
       "stats": "Wkts: 138, Econ: 7.62, Avg: 24.4",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 85,
@@ -4039,7 +4405,8 @@
       "stats": "Wkts: 138, Econ: 7.62, Avg: 24.4",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 115,
@@ -4050,7 +4417,8 @@
       "stats": "Wkts: 138, Econ: 7.62, Avg: 24.4",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 135,
@@ -4061,7 +4429,8 @@
       "stats": "Runs: 5800, Avg: 38.8, SR: 142.6",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": true
     },
     {
       "id": 145,
@@ -4072,7 +4441,8 @@
       "stats": "Wkts: 138, Econ: 7.62, Avg: 24.4",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": true
     },
     {
       "id": 155,
@@ -4083,7 +4453,8 @@
       "stats": "Wkts: 138, Econ: 7.62, Avg: 24.4",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 165,
@@ -4094,7 +4465,8 @@
       "stats": "Wkts: 138, Econ: 7.62, Avg: 24.4",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 195,
@@ -4105,7 +4477,8 @@
       "stats": "Runs: 5800, Avg: 38.8, SR: 142.6",
       "img": "",
       "overseas": true,
-      "country": "Australia"
+      "country": "Australia",
+      "retired": false
     },
     {
       "id": 205,
@@ -4116,7 +4489,8 @@
       "stats": "Wkts: 138, Econ: 7.62, Avg: 24.4",
       "img": "",
       "overseas": true,
-      "country": "Australia"
+      "country": "Australia",
+      "retired": false
     },
     {
       "id": 215,
@@ -4127,7 +4501,8 @@
       "stats": "Wkts: 138, Econ: 7.62, Avg: 24.4",
       "img": "",
       "overseas": true,
-      "country": "Australia"
+      "country": "Australia",
+      "retired": false
     },
     {
       "id": 225,
@@ -4138,7 +4513,8 @@
       "stats": "Wkts: 138, Econ: 7.62, Avg: 24.4",
       "img": "",
       "overseas": true,
-      "country": "Australia"
+      "country": "Australia",
+      "retired": false
     },
     {
       "id": 245,
@@ -4149,7 +4525,8 @@
       "stats": "Runs: 2900 (SR 141.0), Wkts: 81 (Econ 8.3)",
       "img": "",
       "overseas": true,
-      "country": "England"
+      "country": "England",
+      "retired": false
     },
     {
       "id": 255,
@@ -4160,7 +4537,8 @@
       "stats": "Runs: 5800, Avg: 38.8, SR: 142.6",
       "img": "",
       "overseas": true,
-      "country": "England"
+      "country": "England",
+      "retired": false
     },
     {
       "id": 265,
@@ -4171,7 +4549,8 @@
       "stats": "Runs: 5800, Avg: 38.8, SR: 142.6",
       "img": "",
       "overseas": true,
-      "country": "England"
+      "country": "England",
+      "retired": false
     },
     {
       "id": 305,
@@ -4182,7 +4561,8 @@
       "stats": "Runs: 2900 (SR 141.0), Wkts: 81 (Econ 8.3)",
       "img": "",
       "overseas": true,
-      "country": "South Africa"
+      "country": "South Africa",
+      "retired": false
     },
     {
       "id": 315,
@@ -4193,7 +4573,8 @@
       "stats": "Wkts: 138, Econ: 7.62, Avg: 24.4",
       "img": "",
       "overseas": true,
-      "country": "South Africa"
+      "country": "South Africa",
+      "retired": false
     },
     {
       "id": 345,
@@ -4204,7 +4585,8 @@
       "stats": "Runs: 4400 (SR 137.2), Dismissals: 99",
       "img": "",
       "overseas": true,
-      "country": "West Indies"
+      "country": "West Indies",
+      "retired": false
     },
     {
       "id": 355,
@@ -4215,7 +4597,8 @@
       "stats": "Runs: 2900 (SR 141.0), Wkts: 81 (Econ 8.3)",
       "img": "",
       "overseas": true,
-      "country": "West Indies"
+      "country": "West Indies",
+      "retired": false
     },
     {
       "id": 385,
@@ -4226,7 +4609,8 @@
       "stats": "Runs: 4400 (SR 137.2), Dismissals: 99",
       "img": "",
       "overseas": true,
-      "country": "New Zealand"
+      "country": "New Zealand",
+      "retired": false
     },
     {
       "id": 405,
@@ -4237,7 +4621,8 @@
       "stats": "Wkts: 138, Econ: 7.62, Avg: 24.4",
       "img": "",
       "overseas": true,
-      "country": "Afghanistan"
+      "country": "Afghanistan",
+      "retired": false
     },
     {
       "id": 425,
@@ -4248,7 +4633,8 @@
       "stats": "Runs: 5800, Avg: 38.8, SR: 142.6",
       "img": "",
       "overseas": true,
-      "country": "Sri Lanka"
+      "country": "Sri Lanka",
+      "retired": false
     },
     {
       "id": 435,
@@ -4259,7 +4645,8 @@
       "stats": "Wkts: 138, Econ: 7.62, Avg: 24.4",
       "img": "",
       "overseas": true,
-      "country": "Sri Lanka"
+      "country": "Sri Lanka",
+      "retired": false
     },
     {
       "id": 455,
@@ -4270,7 +4657,8 @@
       "stats": "Wkts: 138, Econ: 7.62, Avg: 24.4",
       "img": "",
       "overseas": true,
-      "country": "Pakistan"
+      "country": "Pakistan",
+      "retired": false
     },
     {
       "id": 475,
@@ -4281,7 +4669,8 @@
       "stats": "Wkts: 138, Econ: 7.62, Avg: 24.4",
       "img": "",
       "overseas": true,
-      "country": "Bangladesh"
+      "country": "Bangladesh",
+      "retired": false
     },
     {
       "id": 485,
@@ -4292,7 +4681,8 @@
       "stats": "Wkts: 138, Econ: 7.62, Avg: 24.4",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 493,
@@ -4303,7 +4693,8 @@
       "stats": "Runs: 2900 (SR 141.0), Wkts: 81 (Econ 8.3)",
       "img": "",
       "overseas": true,
-      "country": "Afghanistan"
+      "country": "Afghanistan",
+      "retired": false
     },
     {
       "id": 26,
@@ -4314,7 +4705,8 @@
       "stats": "Runs: 3540 (SR 144.8), Wkts: 90 (Econ 8.19)",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 34,
@@ -4325,7 +4717,8 @@
       "stats": "Wkts: 179, Econ: 7.57, Avg: 25.4",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 54,
@@ -4336,7 +4729,8 @@
       "stats": "Runs: 3540 (SR 144.8), Wkts: 90 (Econ 8.19)",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 64,
@@ -4347,7 +4741,8 @@
       "stats": "Runs: 6720, Avg: 40.2, SR: 140.6",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 74,
@@ -4358,7 +4753,8 @@
       "stats": "Wkts: 179, Econ: 7.57, Avg: 25.4",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 84,
@@ -4369,7 +4765,8 @@
       "stats": "Runs: 3540 (SR 144.8), Wkts: 90 (Econ 8.19)",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 154,
@@ -4380,7 +4777,8 @@
       "stats": "Wkts: 179, Econ: 7.57, Avg: 25.4",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 184,
@@ -4391,7 +4789,8 @@
       "stats": "Runs: 6720, Avg: 40.2, SR: 140.6",
       "img": "",
       "overseas": true,
-      "country": "Australia"
+      "country": "Australia",
+      "retired": false
     },
     {
       "id": 194,
@@ -4402,7 +4801,8 @@
       "stats": "Runs: 3540 (SR 144.8), Wkts: 90 (Econ 8.19)",
       "img": "",
       "overseas": true,
-      "country": "Australia"
+      "country": "Australia",
+      "retired": false
     },
     {
       "id": 204,
@@ -4413,7 +4813,8 @@
       "stats": "Wkts: 179, Econ: 7.57, Avg: 25.4",
       "img": "",
       "overseas": true,
-      "country": "Australia"
+      "country": "Australia",
+      "retired": false
     },
     {
       "id": 214,
@@ -4424,7 +4825,8 @@
       "stats": "Runs: 6720, Avg: 40.2, SR: 140.6",
       "img": "",
       "overseas": true,
-      "country": "Australia"
+      "country": "Australia",
+      "retired": false
     },
     {
       "id": 224,
@@ -4435,7 +4837,8 @@
       "stats": "Runs: 3540 (SR 144.8), Wkts: 90 (Econ 8.19)",
       "img": "",
       "overseas": true,
-      "country": "Australia"
+      "country": "Australia",
+      "retired": false
     },
     {
       "id": 254,
@@ -4446,7 +4849,8 @@
       "stats": "Runs: 6720, Avg: 40.2, SR: 140.6",
       "img": "",
       "overseas": true,
-      "country": "England"
+      "country": "England",
+      "retired": false
     },
     {
       "id": 264,
@@ -4457,7 +4861,8 @@
       "stats": "Wkts: 179, Econ: 7.57, Avg: 25.4",
       "img": "",
       "overseas": true,
-      "country": "England"
+      "country": "England",
+      "retired": false
     },
     {
       "id": 274,
@@ -4468,7 +4873,8 @@
       "stats": "Runs: 3540 (SR 144.8), Wkts: 90 (Econ 8.19)",
       "img": "",
       "overseas": true,
-      "country": "England"
+      "country": "England",
+      "retired": false
     },
     {
       "id": 304,
@@ -4479,7 +4885,8 @@
       "stats": "Wkts: 179, Econ: 7.57, Avg: 25.4",
       "img": "",
       "overseas": true,
-      "country": "South Africa"
+      "country": "South Africa",
+      "retired": false
     },
     {
       "id": 314,
@@ -4490,7 +4897,8 @@
       "stats": "Runs: 3540 (SR 144.8), Wkts: 90 (Econ 8.19)",
       "img": "",
       "overseas": true,
-      "country": "South Africa"
+      "country": "South Africa",
+      "retired": false
     },
     {
       "id": 334,
@@ -4501,7 +4909,8 @@
       "stats": "Runs: 3540 (SR 144.8), Wkts: 90 (Econ 8.19)",
       "img": "",
       "overseas": true,
-      "country": "West Indies"
+      "country": "West Indies",
+      "retired": false
     },
     {
       "id": 354,
@@ -4512,7 +4921,8 @@
       "stats": "Runs: 3540 (SR 144.8), Wkts: 90 (Econ 8.19)",
       "img": "",
       "overseas": true,
-      "country": "West Indies"
+      "country": "West Indies",
+      "retired": false
     },
     {
       "id": 374,
@@ -4523,7 +4933,8 @@
       "stats": "Runs: 6720, Avg: 40.2, SR: 140.6",
       "img": "",
       "overseas": true,
-      "country": "New Zealand"
+      "country": "New Zealand",
+      "retired": false
     },
     {
       "id": 384,
@@ -4534,7 +4945,8 @@
       "stats": "Wkts: 179, Econ: 7.57, Avg: 25.4",
       "img": "",
       "overseas": true,
-      "country": "New Zealand"
+      "country": "New Zealand",
+      "retired": false
     },
     {
       "id": 404,
@@ -4545,7 +4957,8 @@
       "stats": "Wkts: 179, Econ: 7.57, Avg: 25.4",
       "img": "",
       "overseas": true,
-      "country": "Afghanistan"
+      "country": "Afghanistan",
+      "retired": false
     },
     {
       "id": 434,
@@ -4556,7 +4969,8 @@
       "stats": "Wkts: 179, Econ: 7.57, Avg: 25.4",
       "img": "",
       "overseas": true,
-      "country": "Sri Lanka"
+      "country": "Sri Lanka",
+      "retired": false
     },
     {
       "id": 454,
@@ -4567,7 +4981,8 @@
       "stats": "Wkts: 179, Econ: 7.57, Avg: 25.4",
       "img": "",
       "overseas": true,
-      "country": "Pakistan"
+      "country": "Pakistan",
+      "retired": false
     },
     {
       "id": 474,
@@ -4578,7 +4993,8 @@
       "stats": "Wkts: 179, Econ: 7.57, Avg: 25.4",
       "img": "",
       "overseas": true,
-      "country": "Bangladesh"
+      "country": "Bangladesh",
+      "retired": false
     },
     {
       "id": 33,
@@ -4589,7 +5005,8 @@
       "stats": "Wkts: 170, Econ: 7.51, Avg: 25.3",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 42,
@@ -4600,7 +5017,8 @@
       "stats": "Runs: 3380 (SR 142.6), Wkts: 85 (Econ 8.08)",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 43,
@@ -4611,7 +5029,8 @@
       "stats": "Runs: 3380 (SR 142.6), Wkts: 85 (Econ 8.08)",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 53,
@@ -4622,7 +5041,8 @@
       "stats": "Runs: 3380 (SR 142.6), Wkts: 85 (Econ 8.08)",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 68,
@@ -4633,7 +5053,8 @@
       "stats": "Runs: 6440, Avg: 39.2, SR: 138.6",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 73,
@@ -4644,7 +5065,8 @@
       "stats": "Wkts: 170, Econ: 7.51, Avg: 25.3",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 83,
@@ -4655,7 +5077,8 @@
       "stats": "Wkts: 170, Econ: 7.51, Avg: 25.3",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 113,
@@ -4666,7 +5089,8 @@
       "stats": "Wkts: 170, Econ: 7.51, Avg: 25.3",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 133,
@@ -4677,7 +5101,8 @@
       "stats": "Wkts: 170, Econ: 7.51, Avg: 25.3",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": true
     },
     {
       "id": 143,
@@ -4688,7 +5113,8 @@
       "stats": "Wkts: 170, Econ: 7.51, Avg: 25.3",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": true
     },
     {
       "id": 153,
@@ -4699,7 +5125,8 @@
       "stats": "Runs: 3380 (SR 142.6), Wkts: 85 (Econ 8.08)",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 193,
@@ -4710,7 +5137,8 @@
       "stats": "Wkts: 170, Econ: 7.51, Avg: 25.3",
       "img": "",
       "overseas": true,
-      "country": "Australia"
+      "country": "Australia",
+      "retired": false
     },
     {
       "id": 213,
@@ -4721,7 +5149,8 @@
       "stats": "Runs: 3380 (SR 142.6), Wkts: 85 (Econ 8.08)",
       "img": "",
       "overseas": true,
-      "country": "Australia"
+      "country": "Australia",
+      "retired": false
     },
     {
       "id": 223,
@@ -4732,7 +5161,8 @@
       "stats": "Wkts: 170, Econ: 7.51, Avg: 25.3",
       "img": "",
       "overseas": true,
-      "country": "Australia"
+      "country": "Australia",
+      "retired": false
     },
     {
       "id": 238,
@@ -4743,7 +5173,8 @@
       "stats": "Runs: 3380 (SR 142.6), Wkts: 85 (Econ 8.08)",
       "img": "",
       "overseas": true,
-      "country": "England"
+      "country": "England",
+      "retired": false
     },
     {
       "id": 253,
@@ -4754,7 +5185,8 @@
       "stats": "Runs: 6440, Avg: 39.2, SR: 138.6",
       "img": "",
       "overseas": true,
-      "country": "England"
+      "country": "England",
+      "retired": false
     },
     {
       "id": 263,
@@ -4765,7 +5197,8 @@
       "stats": "Wkts: 170, Econ: 7.51, Avg: 25.3",
       "img": "",
       "overseas": true,
-      "country": "England"
+      "country": "England",
+      "retired": false
     },
     {
       "id": 273,
@@ -4776,7 +5209,8 @@
       "stats": "Runs: 3380 (SR 142.6), Wkts: 85 (Econ 8.08)",
       "img": "",
       "overseas": true,
-      "country": "England"
+      "country": "England",
+      "retired": false
     },
     {
       "id": 294,
@@ -4787,7 +5221,8 @@
       "stats": "Runs: 6440, Avg: 39.2, SR: 138.6",
       "img": "",
       "overseas": true,
-      "country": "South Africa"
+      "country": "South Africa",
+      "retired": false
     },
     {
       "id": 303,
@@ -4798,7 +5233,8 @@
       "stats": "Runs: 4960 (SR 139.2), Dismissals: 125",
       "img": "",
       "overseas": true,
-      "country": "South Africa"
+      "country": "South Africa",
+      "retired": false
     },
     {
       "id": 313,
@@ -4809,7 +5245,8 @@
       "stats": "Runs: 3380 (SR 142.6), Wkts: 85 (Econ 8.08)",
       "img": "",
       "overseas": true,
-      "country": "South Africa"
+      "country": "South Africa",
+      "retired": false
     },
     {
       "id": 323,
@@ -4820,7 +5257,8 @@
       "stats": "Runs: 3380 (SR 142.6), Wkts: 85 (Econ 8.08)",
       "img": "",
       "overseas": true,
-      "country": "West Indies"
+      "country": "West Indies",
+      "retired": false
     },
     {
       "id": 327,
@@ -4831,7 +5269,8 @@
       "stats": "Runs: 3380 (SR 142.6), Wkts: 85 (Econ 8.08)",
       "img": "",
       "overseas": true,
-      "country": "West Indies"
+      "country": "West Indies",
+      "retired": false
     },
     {
       "id": 343,
@@ -4842,7 +5281,8 @@
       "stats": "Runs: 6440, Avg: 39.2, SR: 138.6",
       "img": "",
       "overseas": true,
-      "country": "West Indies"
+      "country": "West Indies",
+      "retired": false
     },
     {
       "id": 353,
@@ -4853,7 +5293,8 @@
       "stats": "Runs: 3380 (SR 142.6), Wkts: 85 (Econ 8.08)",
       "img": "",
       "overseas": true,
-      "country": "West Indies"
+      "country": "West Indies",
+      "retired": false
     },
     {
       "id": 373,
@@ -4864,7 +5305,8 @@
       "stats": "Runs: 6440, Avg: 39.2, SR: 138.6",
       "img": "",
       "overseas": true,
-      "country": "New Zealand"
+      "country": "New Zealand",
+      "retired": false
     },
     {
       "id": 383,
@@ -4875,7 +5317,8 @@
       "stats": "Wkts: 170, Econ: 7.51, Avg: 25.3",
       "img": "",
       "overseas": true,
-      "country": "New Zealand"
+      "country": "New Zealand",
+      "retired": false
     },
     {
       "id": 423,
@@ -4886,7 +5329,8 @@
       "stats": "Runs: 3380 (SR 142.6), Wkts: 85 (Econ 8.08)",
       "img": "",
       "overseas": true,
-      "country": "Sri Lanka"
+      "country": "Sri Lanka",
+      "retired": false
     },
     {
       "id": 433,
@@ -4897,7 +5341,8 @@
       "stats": "Wkts: 170, Econ: 7.51, Avg: 25.3",
       "img": "",
       "overseas": true,
-      "country": "Sri Lanka"
+      "country": "Sri Lanka",
+      "retired": false
     },
     {
       "id": 453,
@@ -4908,7 +5353,8 @@
       "stats": "Runs: 6440, Avg: 39.2, SR: 138.6",
       "img": "",
       "overseas": true,
-      "country": "Pakistan"
+      "country": "Pakistan",
+      "retired": false
     },
     {
       "id": 463,
@@ -4919,7 +5365,8 @@
       "stats": "Runs: 3380 (SR 142.6), Wkts: 85 (Econ 8.08)",
       "img": "",
       "overseas": true,
-      "country": "Pakistan"
+      "country": "Pakistan",
+      "retired": false
     },
     {
       "id": 473,
@@ -4930,7 +5377,8 @@
       "stats": "Runs: 6440, Avg: 39.2, SR: 138.6",
       "img": "",
       "overseas": true,
-      "country": "Bangladesh"
+      "country": "Bangladesh",
+      "retired": false
     },
     {
       "id": 483,
@@ -4941,7 +5389,8 @@
       "stats": "Wkts: 170, Econ: 7.51, Avg: 25.3",
       "img": "",
       "overseas": true,
-      "country": "Bangladesh"
+      "country": "Bangladesh",
+      "retired": false
     },
     {
       "id": 32,
@@ -4952,7 +5401,8 @@
       "stats": "Wkts: 162, Econ: 7.76, Avg: 25.3",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 52,
@@ -4963,7 +5413,8 @@
       "stats": "Runs: 6160, Avg: 38.1, SR: 136.6",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 62,
@@ -4974,7 +5425,8 @@
       "stats": "Runs: 6160, Avg: 38.1, SR: 136.6",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 72,
@@ -4985,7 +5437,8 @@
       "stats": "Runs: 6160, Avg: 38.1, SR: 136.6",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 82,
@@ -4996,7 +5449,8 @@
       "stats": "Wkts: 162, Econ: 7.76, Avg: 25.3",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 92,
@@ -5007,7 +5461,8 @@
       "stats": "Runs: 6160, Avg: 38.1, SR: 136.6",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 102,
@@ -5018,7 +5473,8 @@
       "stats": "Runs: 3220 (SR 140.4), Wkts: 80 (Econ 8.42)",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 112,
@@ -5029,7 +5485,8 @@
       "stats": "Wkts: 162, Econ: 7.76, Avg: 25.3",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 122,
@@ -5040,7 +5497,8 @@
       "stats": "Runs: 3220 (SR 140.4), Wkts: 80 (Econ 8.42)",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 132,
@@ -5051,7 +5509,8 @@
       "stats": "Wkts: 162, Econ: 7.76, Avg: 25.3",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": true
     },
     {
       "id": 142,
@@ -5062,7 +5521,8 @@
       "stats": "Wkts: 162, Econ: 7.76, Avg: 25.3",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": true
     },
     {
       "id": 152,
@@ -5073,7 +5533,8 @@
       "stats": "Wkts: 162, Econ: 7.76, Avg: 25.3",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 162,
@@ -5084,7 +5545,8 @@
       "stats": "Wkts: 162, Econ: 7.76, Avg: 25.3",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 182,
@@ -5095,7 +5557,8 @@
       "stats": "Runs: 3220 (SR 140.4), Wkts: 80 (Econ 8.42)",
       "img": "",
       "overseas": true,
-      "country": "Australia"
+      "country": "Australia",
+      "retired": false
     },
     {
       "id": 186,
@@ -5106,7 +5569,8 @@
       "stats": "Runs: 3220 (SR 140.4), Wkts: 80 (Econ 8.42)",
       "img": "",
       "overseas": true,
-      "country": "Australia"
+      "country": "Australia",
+      "retired": false
     },
     {
       "id": 192,
@@ -5117,7 +5581,8 @@
       "stats": "Wkts: 162, Econ: 7.76, Avg: 25.3",
       "img": "",
       "overseas": true,
-      "country": "Australia"
+      "country": "Australia",
+      "retired": false
     },
     {
       "id": 212,
@@ -5128,7 +5593,8 @@
       "stats": "Runs: 3220 (SR 140.4), Wkts: 80 (Econ 8.42)",
       "img": "",
       "overseas": true,
-      "country": "Australia"
+      "country": "Australia",
+      "retired": false
     },
     {
       "id": 222,
@@ -5139,7 +5605,8 @@
       "stats": "Wkts: 162, Econ: 7.76, Avg: 25.3",
       "img": "",
       "overseas": true,
-      "country": "Australia"
+      "country": "Australia",
+      "retired": false
     },
     {
       "id": 252,
@@ -5150,7 +5617,8 @@
       "stats": "Runs: 6160, Avg: 38.1, SR: 136.6",
       "img": "",
       "overseas": true,
-      "country": "England"
+      "country": "England",
+      "retired": false
     },
     {
       "id": 262,
@@ -5161,7 +5629,8 @@
       "stats": "Runs: 4740 (SR 137.5), Dismissals: 118",
       "img": "",
       "overseas": true,
-      "country": "England"
+      "country": "England",
+      "retired": false
     },
     {
       "id": 272,
@@ -5172,7 +5641,8 @@
       "stats": "Runs: 6160, Avg: 38.1, SR: 136.6",
       "img": "",
       "overseas": true,
-      "country": "England"
+      "country": "England",
+      "retired": false
     },
     {
       "id": 292,
@@ -5183,7 +5653,8 @@
       "stats": "Wkts: 162, Econ: 7.76, Avg: 25.3",
       "img": "",
       "overseas": true,
-      "country": "South Africa"
+      "country": "South Africa",
+      "retired": false
     },
     {
       "id": 332,
@@ -5194,7 +5665,8 @@
       "stats": "Wkts: 162, Econ: 7.76, Avg: 25.3",
       "img": "",
       "overseas": true,
-      "country": "West Indies"
+      "country": "West Indies",
+      "retired": false
     },
     {
       "id": 352,
@@ -5205,7 +5677,8 @@
       "stats": "Runs: 3220 (SR 140.4), Wkts: 80 (Econ 8.42)",
       "img": "",
       "overseas": true,
-      "country": "West Indies"
+      "country": "West Indies",
+      "retired": false
     },
     {
       "id": 372,
@@ -5216,7 +5689,8 @@
       "stats": "Runs: 6160, Avg: 38.1, SR: 136.6",
       "img": "",
       "overseas": true,
-      "country": "New Zealand"
+      "country": "New Zealand",
+      "retired": false
     },
     {
       "id": 382,
@@ -5227,7 +5701,8 @@
       "stats": "Wkts: 162, Econ: 7.76, Avg: 25.3",
       "img": "",
       "overseas": true,
-      "country": "New Zealand"
+      "country": "New Zealand",
+      "retired": false
     },
     {
       "id": 402,
@@ -5238,7 +5713,8 @@
       "stats": "Runs: 3220 (SR 140.4), Wkts: 80 (Econ 8.42)",
       "img": "",
       "overseas": true,
-      "country": "Afghanistan"
+      "country": "Afghanistan",
+      "retired": false
     },
     {
       "id": 432,
@@ -5249,7 +5725,8 @@
       "stats": "Wkts: 162, Econ: 7.76, Avg: 25.3",
       "img": "",
       "overseas": true,
-      "country": "Sri Lanka"
+      "country": "Sri Lanka",
+      "retired": false
     },
     {
       "id": 452,
@@ -5260,7 +5737,8 @@
       "stats": "Runs: 4740 (SR 137.5), Dismissals: 118",
       "img": "",
       "overseas": true,
-      "country": "Pakistan"
+      "country": "Pakistan",
+      "retired": false
     },
     {
       "id": 462,
@@ -5271,7 +5749,8 @@
       "stats": "Runs: 3220 (SR 140.4), Wkts: 80 (Econ 8.42)",
       "img": "",
       "overseas": true,
-      "country": "Pakistan"
+      "country": "Pakistan",
+      "retired": false
     },
     {
       "id": 472,
@@ -5282,7 +5761,8 @@
       "stats": "Runs: 6160, Avg: 38.1, SR: 136.6",
       "img": "",
       "overseas": true,
-      "country": "Bangladesh"
+      "country": "Bangladesh",
+      "retired": false
     },
     {
       "id": 482,
@@ -5293,7 +5773,8 @@
       "stats": "Runs: 3220 (SR 140.4), Wkts: 80 (Econ 8.42)",
       "img": "",
       "overseas": true,
-      "country": "Bangladesh"
+      "country": "Bangladesh",
+      "retired": false
     },
     {
       "id": 501,
@@ -5304,7 +5785,8 @@
       "stats": "Runs: 4740 (SR 137.5), Dismissals: 118",
       "img": "",
       "overseas": true,
-      "country": "Sri Lanka"
+      "country": "Sri Lanka",
+      "retired": false
     },
     {
       "id": 507,
@@ -5315,7 +5797,8 @@
       "stats": "Runs: 3220 (SR 140.4), Wkts: 80 (Econ 8.42)",
       "img": "",
       "overseas": true,
-      "country": "Sri Lanka"
+      "country": "Sri Lanka",
+      "retired": false
     },
     {
       "id": 41,
@@ -5326,7 +5809,8 @@
       "stats": "Wkts: 153, Econ: 7.7, Avg: 25.3",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 61,
@@ -5337,7 +5821,8 @@
       "stats": "Runs: 5880, Avg: 37.1, SR: 143.0",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 71,
@@ -5348,7 +5833,8 @@
       "stats": "Runs: 5880, Avg: 37.1, SR: 143.0",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 81,
@@ -5359,7 +5845,8 @@
       "stats": "Wkts: 153, Econ: 7.7, Avg: 25.3",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 91,
@@ -5370,7 +5857,8 @@
       "stats": "Runs: 5880, Avg: 37.1, SR: 143.0",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 111,
@@ -5381,7 +5869,8 @@
       "stats": "Runs: 5880, Avg: 37.1, SR: 143.0",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 121,
@@ -5392,7 +5881,8 @@
       "stats": "Runs: 5880, Avg: 37.1, SR: 143.0",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 131,
@@ -5403,7 +5893,8 @@
       "stats": "Wkts: 153, Econ: 7.7, Avg: 25.3",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": true
     },
     {
       "id": 141,
@@ -5414,7 +5905,8 @@
       "stats": "Runs: 3060 (SR 138.2), Wkts: 75 (Econ 8.31)",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": true
     },
     {
       "id": 151,
@@ -5425,7 +5917,8 @@
       "stats": "Wkts: 153, Econ: 7.7, Avg: 25.3",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": true
     },
     {
       "id": 161,
@@ -5436,7 +5929,8 @@
       "stats": "Wkts: 153, Econ: 7.7, Avg: 25.3",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 183,
@@ -5447,7 +5941,8 @@
       "stats": "Runs: 5880, Avg: 37.1, SR: 143.0",
       "img": "",
       "overseas": true,
-      "country": "Australia"
+      "country": "Australia",
+      "retired": false
     },
     {
       "id": 201,
@@ -5458,7 +5953,8 @@
       "stats": "Wkts: 153, Econ: 7.7, Avg: 25.3",
       "img": "",
       "overseas": true,
-      "country": "Australia"
+      "country": "Australia",
+      "retired": false
     },
     {
       "id": 221,
@@ -5469,7 +5965,8 @@
       "stats": "Runs: 3060 (SR 138.2), Wkts: 75 (Econ 8.31)",
       "img": "",
       "overseas": true,
-      "country": "Australia"
+      "country": "Australia",
+      "retired": false
     },
     {
       "id": 251,
@@ -5480,7 +5977,8 @@
       "stats": "Wkts: 153, Econ: 7.7, Avg: 25.3",
       "img": "",
       "overseas": true,
-      "country": "England"
+      "country": "England",
+      "retired": false
     },
     {
       "id": 261,
@@ -5491,7 +5989,8 @@
       "stats": "Wkts: 153, Econ: 7.7, Avg: 25.3",
       "img": "",
       "overseas": true,
-      "country": "England"
+      "country": "England",
+      "retired": false
     },
     {
       "id": 271,
@@ -5502,7 +6001,8 @@
       "stats": "Runs: 4520 (SR 135.7), Dismissals: 111",
       "img": "",
       "overseas": true,
-      "country": "England"
+      "country": "England",
+      "retired": false
     },
     {
       "id": 291,
@@ -5513,7 +6013,8 @@
       "stats": "Wkts: 153, Econ: 7.7, Avg: 25.3",
       "img": "",
       "overseas": true,
-      "country": "South Africa"
+      "country": "South Africa",
+      "retired": false
     },
     {
       "id": 311,
@@ -5524,7 +6025,8 @@
       "stats": "Wkts: 153, Econ: 7.7, Avg: 25.3",
       "img": "",
       "overseas": true,
-      "country": "South Africa"
+      "country": "South Africa",
+      "retired": false
     },
     {
       "id": 322,
@@ -5535,7 +6037,8 @@
       "stats": "Runs: 3060 (SR 138.2), Wkts: 75 (Econ 8.31)",
       "img": "",
       "overseas": true,
-      "country": "West Indies"
+      "country": "West Indies",
+      "retired": false
     },
     {
       "id": 325,
@@ -5546,7 +6049,8 @@
       "stats": "Runs: 3060 (SR 138.2), Wkts: 75 (Econ 8.31)",
       "img": "",
       "overseas": true,
-      "country": "West Indies"
+      "country": "West Indies",
+      "retired": true
     },
     {
       "id": 331,
@@ -5557,7 +6061,8 @@
       "stats": "Runs: 3060 (SR 138.2), Wkts: 75 (Econ 8.31)",
       "img": "",
       "overseas": true,
-      "country": "West Indies"
+      "country": "West Indies",
+      "retired": false
     },
     {
       "id": 341,
@@ -5568,7 +6073,8 @@
       "stats": "Runs: 5880, Avg: 37.1, SR: 143.0",
       "img": "",
       "overseas": true,
-      "country": "West Indies"
+      "country": "West Indies",
+      "retired": false
     },
     {
       "id": 401,
@@ -5579,7 +6085,8 @@
       "stats": "Runs: 4520 (SR 135.7), Dismissals: 111",
       "img": "",
       "overseas": true,
-      "country": "Afghanistan"
+      "country": "Afghanistan",
+      "retired": false
     },
     {
       "id": 421,
@@ -5590,7 +6097,8 @@
       "stats": "Wkts: 153, Econ: 7.7, Avg: 25.3",
       "img": "",
       "overseas": true,
-      "country": "Sri Lanka"
+      "country": "Sri Lanka",
+      "retired": false
     },
     {
       "id": 431,
@@ -5601,7 +6109,8 @@
       "stats": "Runs: 3060 (SR 138.2), Wkts: 75 (Econ 8.31)",
       "img": "",
       "overseas": true,
-      "country": "Sri Lanka"
+      "country": "Sri Lanka",
+      "retired": false
     },
     {
       "id": 451,
@@ -5612,7 +6121,8 @@
       "stats": "Runs: 5880, Avg: 37.1, SR: 143.0",
       "img": "",
       "overseas": true,
-      "country": "Pakistan"
+      "country": "Pakistan",
+      "retired": false
     },
     {
       "id": 461,
@@ -5623,7 +6133,8 @@
       "stats": "Runs: 5880, Avg: 37.1, SR: 143.0",
       "img": "",
       "overseas": true,
-      "country": "Pakistan"
+      "country": "Pakistan",
+      "retired": false
     },
     {
       "id": 471,
@@ -5634,7 +6145,8 @@
       "stats": "Runs: 4520 (SR 135.7), Dismissals: 111",
       "img": "",
       "overseas": true,
-      "country": "Bangladesh"
+      "country": "Bangladesh",
+      "retired": false
     },
     {
       "id": 487,
@@ -5645,7 +6157,8 @@
       "stats": "Runs: 5880, Avg: 37.1, SR: 143.0",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 495,
@@ -5656,7 +6169,8 @@
       "stats": "Wkts: 153, Econ: 7.7, Avg: 25.3",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 499,
@@ -5667,7 +6181,8 @@
       "stats": "Wkts: 153, Econ: 7.7, Avg: 25.3",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 515,
@@ -5678,7 +6193,8 @@
       "stats": "Wkts: 153, Econ: 7.7, Avg: 25.3",
       "img": "",
       "overseas": true,
-      "country": "West Indies"
+      "country": "West Indies",
+      "retired": false
     },
     {
       "id": 30,
@@ -5689,7 +6205,8 @@
       "stats": "Wkts: 145, Econ: 7.65, Avg: 25.2",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 40,
@@ -5700,7 +6217,8 @@
       "stats": "Wkts: 145, Econ: 7.65, Avg: 25.2",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 50,
@@ -5711,7 +6229,8 @@
       "stats": "Runs: 2900 (SR 142.0), Wkts: 70 (Econ 8.2)",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 60,
@@ -5722,7 +6241,8 @@
       "stats": "Runs: 5600, Avg: 36.0, SR: 141.0",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 63,
@@ -5733,7 +6253,8 @@
       "stats": "Runs: 5600, Avg: 36.0, SR: 141.0",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 70,
@@ -5744,7 +6265,8 @@
       "stats": "Runs: 5600, Avg: 36.0, SR: 141.0",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 80,
@@ -5755,7 +6277,8 @@
       "stats": "Wkts: 145, Econ: 7.65, Avg: 25.2",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 100,
@@ -5766,7 +6289,8 @@
       "stats": "Runs: 2900 (SR 142.0), Wkts: 70 (Econ 8.2)",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 120,
@@ -5777,7 +6301,8 @@
       "stats": "Runs: 5600, Avg: 36.0, SR: 141.0",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 140,
@@ -5788,7 +6313,8 @@
       "stats": "Runs: 5600, Avg: 36.0, SR: 141.0",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": true
     },
     {
       "id": 150,
@@ -5799,7 +6325,8 @@
       "stats": "Runs: 2900 (SR 142.0), Wkts: 70 (Econ 8.2)",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": true
     },
     {
       "id": 160,
@@ -5810,7 +6337,8 @@
       "stats": "Runs: 4300 (SR 134.0), Dismissals: 105",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 190,
@@ -5821,7 +6349,8 @@
       "stats": "Runs: 4300 (SR 134.0), Dismissals: 105",
       "img": "",
       "overseas": true,
-      "country": "Australia"
+      "country": "Australia",
+      "retired": false
     },
     {
       "id": 200,
@@ -5832,7 +6361,8 @@
       "stats": "Wkts: 145, Econ: 7.65, Avg: 25.2",
       "img": "",
       "overseas": true,
-      "country": "Australia"
+      "country": "Australia",
+      "retired": false
     },
     {
       "id": 210,
@@ -5843,7 +6373,8 @@
       "stats": "Runs: 2900 (SR 142.0), Wkts: 70 (Econ 8.2)",
       "img": "",
       "overseas": true,
-      "country": "Australia"
+      "country": "Australia",
+      "retired": false
     },
     {
       "id": 220,
@@ -5854,7 +6385,8 @@
       "stats": "Wkts: 145, Econ: 7.65, Avg: 25.2",
       "img": "",
       "overseas": true,
-      "country": "Australia"
+      "country": "Australia",
+      "retired": false
     },
     {
       "id": 250,
@@ -5865,7 +6397,8 @@
       "stats": "Wkts: 145, Econ: 7.65, Avg: 25.2",
       "img": "",
       "overseas": true,
-      "country": "England"
+      "country": "England",
+      "retired": false
     },
     {
       "id": 260,
@@ -5876,7 +6409,8 @@
       "stats": "Wkts: 145, Econ: 7.65, Avg: 25.2",
       "img": "",
       "overseas": true,
-      "country": "England"
+      "country": "England",
+      "retired": false
     },
     {
       "id": 270,
@@ -5887,7 +6421,8 @@
       "stats": "Runs: 2900 (SR 142.0), Wkts: 70 (Econ 8.2)",
       "img": "",
       "overseas": true,
-      "country": "England"
+      "country": "England",
+      "retired": false
     },
     {
       "id": 290,
@@ -5898,7 +6433,8 @@
       "stats": "Wkts: 145, Econ: 7.65, Avg: 25.2",
       "img": "",
       "overseas": true,
-      "country": "South Africa"
+      "country": "South Africa",
+      "retired": false
     },
     {
       "id": 310,
@@ -5909,7 +6445,8 @@
       "stats": "Wkts: 145, Econ: 7.65, Avg: 25.2",
       "img": "",
       "overseas": true,
-      "country": "South Africa"
+      "country": "South Africa",
+      "retired": false
     },
     {
       "id": 320,
@@ -5920,7 +6457,8 @@
       "stats": "Runs: 2900 (SR 142.0), Wkts: 70 (Econ 8.2)",
       "img": "",
       "overseas": true,
-      "country": "South Africa"
+      "country": "South Africa",
+      "retired": false
     },
     {
       "id": 330,
@@ -5931,7 +6469,8 @@
       "stats": "Runs: 5600, Avg: 36.0, SR: 141.0",
       "img": "",
       "overseas": true,
-      "country": "West Indies"
+      "country": "West Indies",
+      "retired": false
     },
     {
       "id": 340,
@@ -5942,7 +6481,8 @@
       "stats": "Runs: 5600, Avg: 36.0, SR: 141.0",
       "img": "",
       "overseas": true,
-      "country": "West Indies"
+      "country": "West Indies",
+      "retired": false
     },
     {
       "id": 350,
@@ -5953,7 +6493,8 @@
       "stats": "Wkts: 145, Econ: 7.65, Avg: 25.2",
       "img": "",
       "overseas": true,
-      "country": "West Indies"
+      "country": "West Indies",
+      "retired": false
     },
     {
       "id": 370,
@@ -5964,7 +6505,8 @@
       "stats": "Runs: 4300 (SR 134.0), Dismissals: 105",
       "img": "",
       "overseas": true,
-      "country": "New Zealand"
+      "country": "New Zealand",
+      "retired": false
     },
     {
       "id": 400,
@@ -5975,7 +6517,8 @@
       "stats": "Runs: 2900 (SR 142.0), Wkts: 70 (Econ 8.2)",
       "img": "",
       "overseas": true,
-      "country": "Afghanistan"
+      "country": "Afghanistan",
+      "retired": false
     },
     {
       "id": 420,
@@ -5986,7 +6529,8 @@
       "stats": "Wkts: 145, Econ: 7.65, Avg: 25.2",
       "img": "",
       "overseas": true,
-      "country": "Sri Lanka"
+      "country": "Sri Lanka",
+      "retired": false
     },
     {
       "id": 430,
@@ -5997,7 +6541,8 @@
       "stats": "Runs: 5600, Avg: 36.0, SR: 141.0",
       "img": "",
       "overseas": true,
-      "country": "Sri Lanka"
+      "country": "Sri Lanka",
+      "retired": false
     },
     {
       "id": 450,
@@ -6008,7 +6553,8 @@
       "stats": "Runs: 2900 (SR 142.0), Wkts: 70 (Econ 8.2)",
       "img": "",
       "overseas": true,
-      "country": "Pakistan"
+      "country": "Pakistan",
+      "retired": false
     },
     {
       "id": 460,
@@ -6019,7 +6565,8 @@
       "stats": "Runs: 2900 (SR 142.0), Wkts: 70 (Econ 8.2)",
       "img": "",
       "overseas": true,
-      "country": "Pakistan"
+      "country": "Pakistan",
+      "retired": false
     },
     {
       "id": 480,
@@ -6030,7 +6577,8 @@
       "stats": "Runs: 4300 (SR 134.0), Dismissals: 105",
       "img": "",
       "overseas": true,
-      "country": "Bangladesh"
+      "country": "Bangladesh",
+      "retired": false
     },
     {
       "id": 503,
@@ -6041,7 +6589,8 @@
       "stats": "Runs: 4300 (SR 134.0), Dismissals: 105",
       "img": "",
       "overseas": true,
-      "country": "England"
+      "country": "England",
+      "retired": false
     },
     {
       "id": 27,
@@ -6052,7 +6601,8 @@
       "stats": "Runs: 5320, Avg: 37.4, SR: 139.0",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 89,
@@ -6063,7 +6613,8 @@
       "stats": "Runs: 5320, Avg: 37.4, SR: 139.0",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 309,
@@ -6074,7 +6625,8 @@
       "stats": "Runs: 2740 (SR 139.8), Wkts: 79 (Econ 8.54)",
       "img": "",
       "overseas": true,
-      "country": "South Africa"
+      "country": "South Africa",
+      "retired": false
     },
     {
       "id": 360,
@@ -6085,7 +6637,8 @@
       "stats": "Runs: 2740 (SR 139.8), Wkts: 79 (Econ 8.54)",
       "img": "",
       "overseas": true,
-      "country": "New Zealand"
+      "country": "New Zealand",
+      "retired": false
     },
     {
       "id": 492,
@@ -6096,7 +6649,8 @@
       "stats": "Wkts: 136, Econ: 7.9, Avg: 26.2",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 514,
@@ -6107,7 +6661,8 @@
       "stats": "Runs: 4080 (SR 137.8), Dismissals: 98",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 78,
@@ -6118,7 +6673,8 @@
       "stats": "Wkts: 127, Econ: 7.84, Avg: 26.2",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 98,
@@ -6129,7 +6685,8 @@
       "stats": "Runs: 2580 (SR 137.6), Wkts: 74 (Econ 8.43)",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 243,
@@ -6140,7 +6697,8 @@
       "stats": "Runs: 2580 (SR 137.6), Wkts: 74 (Econ 8.43)",
       "img": "",
       "overseas": true,
-      "country": "England"
+      "country": "England",
+      "retired": false
     },
     {
       "id": 335,
@@ -6151,7 +6709,8 @@
       "stats": "Runs: 2580 (SR 137.6), Wkts: 74 (Econ 8.43)",
       "img": "",
       "overseas": true,
-      "country": "West Indies"
+      "country": "West Indies",
+      "retired": false
     },
     {
       "id": 97,
@@ -6162,7 +6721,8 @@
       "stats": "Runs: 4760, Avg: 35.3, SR: 135.0",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 217,
@@ -6173,7 +6733,8 @@
       "stats": "Wkts: 119, Econ: 7.79, Avg: 26.2",
       "img": "",
       "overseas": true,
-      "country": "Australia"
+      "country": "Australia",
+      "retired": false
     },
     {
       "id": 237,
@@ -6184,7 +6745,8 @@
       "stats": "Runs: 2420 (SR 135.4), Wkts: 69 (Econ 8.32)",
       "img": "",
       "overseas": true,
-      "country": "England"
+      "country": "England",
+      "retired": false
     },
     {
       "id": 333,
@@ -6195,7 +6757,8 @@
       "stats": "Runs: 4760, Avg: 35.3, SR: 135.0",
       "img": "",
       "overseas": true,
-      "country": "West Indies"
+      "country": "West Indies",
+      "retired": false
     },
     {
       "id": 486,
@@ -6206,7 +6769,8 @@
       "stats": "Runs: 2420 (SR 135.4), Wkts: 69 (Econ 8.32)",
       "img": "",
       "overseas": true,
-      "country": "Zimbabwe"
+      "country": "Zimbabwe",
+      "retired": false
     },
     {
       "id": 96,
@@ -6217,7 +6781,8 @@
       "stats": "Runs: 3420 (SR 132.5), Dismissals: 77",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 276,
@@ -6228,7 +6793,8 @@
       "stats": "Wkts: 110, Econ: 8.03, Avg: 26.1",
       "img": "",
       "overseas": true,
-      "country": "England"
+      "country": "England",
+      "retired": false
     },
     {
       "id": 386,
@@ -6239,7 +6805,8 @@
       "stats": "Runs: 2260 (SR 139.2), Wkts: 64 (Econ 8.66)",
       "img": "",
       "overseas": true,
-      "country": "New Zealand"
+      "country": "New Zealand",
+      "retired": false
     },
     {
       "id": 504,
@@ -6250,7 +6817,8 @@
       "stats": "Runs: 3420 (SR 132.5), Dismissals: 77",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 75,
@@ -6261,7 +6829,8 @@
       "stats": "Wkts: 102, Econ: 7.98, Avg: 26.1",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 95,
@@ -6272,7 +6841,8 @@
       "stats": "Runs: 3200 (SR 130.8), Dismissals: 71",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 105,
@@ -6283,7 +6853,8 @@
       "stats": "Wkts: 102, Econ: 7.98, Avg: 26.1",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 181,
@@ -6294,7 +6865,8 @@
       "stats": "Runs: 2100 (SR 137.0), Wkts: 59 (Econ 8.55)",
       "img": "",
       "overseas": true,
-      "country": "Australia"
+      "country": "Australia",
+      "retired": false
     },
     {
       "id": 275,
@@ -6305,7 +6877,8 @@
       "stats": "Runs: 2100 (SR 137.0), Wkts: 59 (Econ 8.55)",
       "img": "",
       "overseas": true,
-      "country": "England"
+      "country": "England",
+      "retired": false
     },
     {
       "id": 363,
@@ -6316,7 +6889,8 @@
       "stats": "Runs: 2100 (SR 137.0), Wkts: 59 (Econ 8.55)",
       "img": "",
       "overseas": true,
-      "country": "New Zealand"
+      "country": "New Zealand",
+      "retired": false
     },
     {
       "id": 491,
@@ -6327,7 +6901,8 @@
       "stats": "Runs: 2100 (SR 137.0), Wkts: 59 (Econ 8.55)",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 496,
@@ -6338,7 +6913,8 @@
       "stats": "Wkts: 102, Econ: 7.98, Avg: 26.1",
       "img": "",
       "overseas": true,
-      "country": "England"
+      "country": "England",
+      "retired": false
     },
     {
       "id": 506,
@@ -6349,7 +6925,8 @@
       "stats": "Runs: 4200, Avg: 33.2, SR: 131.0",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 513,
@@ -6360,7 +6937,8 @@
       "stats": "Wkts: 102, Econ: 7.98, Avg: 26.1",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 44,
@@ -6371,7 +6949,8 @@
       "stats": "Runs: 5120, Avg: 34.6, SR: 137.4",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 94,
@@ -6382,7 +6961,8 @@
       "stats": "Runs: 5120, Avg: 34.6, SR: 137.4",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 104,
@@ -6393,7 +6973,8 @@
       "stats": "Wkts: 143, Econ: 7.93, Avg: 27.1",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 114,
@@ -6404,7 +6985,8 @@
       "stats": "Runs: 2740 (SR 134.8), Wkts: 68 (Econ 8.44)",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 164,
@@ -6415,7 +6997,8 @@
       "stats": "Wkts: 143, Econ: 7.93, Avg: 27.1",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 244,
@@ -6426,7 +7009,8 @@
       "stats": "Runs: 2740 (SR 134.8), Wkts: 68 (Econ 8.44)",
       "img": "",
       "overseas": true,
-      "country": "England"
+      "country": "England",
+      "retired": false
     },
     {
       "id": 484,
@@ -6437,7 +7021,8 @@
       "stats": "Runs: 5120, Avg: 34.6, SR: 137.4",
       "img": "",
       "overseas": true,
-      "country": "Bangladesh"
+      "country": "Bangladesh",
+      "retired": false
     },
     {
       "id": 498,
@@ -6448,7 +7033,8 @@
       "stats": "Wkts: 143, Econ: 7.93, Avg: 27.1",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 49,
@@ -6459,7 +7045,8 @@
       "stats": "Runs: 2580 (SR 132.6), Wkts: 63 (Econ 8.78)",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 93,
@@ -6470,7 +7057,8 @@
       "stats": "Runs: 2580 (SR 132.6), Wkts: 63 (Econ 8.78)",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 103,
@@ -6481,7 +7069,8 @@
       "stats": "Runs: 3760 (SR 132.8), Dismissals: 97",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 163,
@@ -6492,7 +7081,8 @@
       "stats": "Wkts: 134, Econ: 8.17, Avg: 27.0",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 203,
@@ -6503,7 +7093,8 @@
       "stats": "Runs: 2580 (SR 132.6), Wkts: 63 (Econ 8.78)",
       "img": "",
       "overseas": true,
-      "country": "Australia"
+      "country": "Australia",
+      "retired": false
     },
     {
       "id": 502,
@@ -6514,7 +7105,8 @@
       "stats": "Runs: 2580 (SR 132.6), Wkts: 63 (Econ 8.78)",
       "img": "",
       "overseas": true,
-      "country": "Sri Lanka"
+      "country": "Sri Lanka",
+      "retired": false
     },
     {
       "id": 510,
@@ -6525,7 +7117,8 @@
       "stats": "Runs: 4840, Avg: 33.6, SR: 135.4",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 312,
@@ -6536,7 +7129,8 @@
       "stats": "Wkts: 126, Econ: 8.12, Avg: 27.0",
       "img": "",
       "overseas": true,
-      "country": "South Africa"
+      "country": "South Africa",
+      "retired": false
     },
     {
       "id": 324,
@@ -6547,7 +7141,8 @@
       "stats": "Runs: 2420 (SR 136.4), Wkts: 58 (Econ 8.67)",
       "img": "",
       "overseas": true,
-      "country": "West Indies"
+      "country": "West Indies",
+      "retired": true
     },
     {
       "id": 371,
@@ -6558,7 +7153,8 @@
       "stats": "Runs: 2420 (SR 136.4), Wkts: 58 (Econ 8.67)",
       "img": "",
       "overseas": true,
-      "country": "New Zealand"
+      "country": "New Zealand",
+      "retired": false
     },
     {
       "id": 101,
@@ -6569,7 +7165,8 @@
       "stats": "Runs: 2260 (SR 134.2), Wkts: 53 (Econ 8.56)",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 351,
@@ -6580,7 +7177,8 @@
       "stats": "Runs: 2260 (SR 134.2), Wkts: 53 (Econ 8.56)",
       "img": "",
       "overseas": true,
-      "country": "West Indies"
+      "country": "West Indies",
+      "retired": false
     },
     {
       "id": 381,
@@ -6591,7 +7189,8 @@
       "stats": "Wkts: 117, Econ: 8.06, Avg: 27.0",
       "img": "",
       "overseas": true,
-      "country": "New Zealand"
+      "country": "New Zealand",
+      "retired": false
     },
     {
       "id": 411,
@@ -6602,7 +7201,8 @@
       "stats": "Wkts: 117, Econ: 8.06, Avg: 27.0",
       "img": "",
       "overseas": true,
-      "country": "Afghanistan"
+      "country": "Afghanistan",
+      "retired": false
     },
     {
       "id": 90,
@@ -6613,7 +7213,8 @@
       "stats": "Wkts: 109, Econ: 8.31, Avg: 26.9",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 110,
@@ -6624,7 +7225,8 @@
       "stats": "Wkts: 109, Econ: 8.31, Avg: 26.9",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 170,
@@ -6635,7 +7237,8 @@
       "stats": "Runs: 4000, Avg: 30.4, SR: 129.4",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 380,
@@ -6646,7 +7249,8 @@
       "stats": "Wkts: 109, Econ: 8.31, Avg: 26.9",
       "img": "",
       "overseas": true,
-      "country": "New Zealand"
+      "country": "New Zealand",
+      "retired": false
     },
     {
       "id": 410,
@@ -6657,7 +7261,8 @@
       "stats": "Runs: 2100 (SR 132.0), Wkts: 48 (Econ 8.9)",
       "img": "",
       "overseas": true,
-      "country": "Afghanistan"
+      "country": "Afghanistan",
+      "retired": false
     }
   ]
 }

@@ -474,12 +474,15 @@ function renderPlayersChecklist() {
         return;
     }
     
+    const excludeRetired = document.getElementById('exclude-retired')?.checked || false;
+    
     allPresetPlayers.forEach(p => {
         const label = document.createElement('div');
-        label.className = 'checklist-item';
+        label.className = 'checklist-item' + (p.retired && excludeRetired ? ' hidden-retired' : '');
         const countryLabel = p.country ? p.country : (p.overseas ? 'Overseas' : 'India');
+        const isChecked = p.retired && excludeRetired ? false : true;
         label.innerHTML = `
-            <input type="checkbox" id="check-p-${p.id}" value="${p.id}" checked>
+            <input type="checkbox" id="check-p-${p.id}" value="${p.id}" ${isChecked ? 'checked' : ''}>
             <div class="checklist-item-meta" style="flex-grow: 1;">
                 <span class="checklist-item-name">${p.name} <span class="flag-icon" style="font-size: 0.75rem; color: var(--text-secondary);">(${countryLabel})</span></span>
                 <div class="checklist-item-sub">
@@ -499,8 +502,26 @@ function renderPlayersChecklist() {
 
 // Helper to select/deselect all checklist checkboxes
 function toggleAllChecklist(checked) {
-    const checkboxes = document.querySelectorAll('.checklist-item input[type="checkbox"]');
+    const checkboxes = document.querySelectorAll('.checklist-item:not(.hidden-retired) input[type="checkbox"]');
     checkboxes.forEach(cb => cb.checked = checked);
+}
+
+// Helper to filter/hide retired players in the checklist
+function filterRetiredPlayers(exclude) {
+    allPresetPlayers.forEach(p => {
+        if (p.retired) {
+            const cb = document.getElementById(`check-p-${p.id}`);
+            const item = cb ? cb.closest('.checklist-item') : null;
+            if (item) {
+                if (exclude) {
+                    item.classList.add('hidden-retired');
+                    cb.checked = false; // automatically deselect
+                } else {
+                    item.classList.remove('hidden-retired');
+                }
+            }
+        }
+    });
 }
 
 // API Post Helper

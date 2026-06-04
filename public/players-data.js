@@ -10,7 +10,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 251, Econ: 6.55, Avg: 22.0",
       "img": "",
       "overseas": true,
-      "country": "Australia"
+      "country": "Australia",
+      "retired": true
     },
     {
       "id": 279,
@@ -21,7 +22,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 5140 (SR 158.8), Wkts: 134 (Econ 7.24)",
       "img": "",
       "overseas": true,
-      "country": "England"
+      "country": "England",
+      "retired": true
     },
     {
       "id": 286,
@@ -32,7 +34,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 251, Econ: 6.55, Avg: 22.0",
       "img": "",
       "overseas": true,
-      "country": "South Africa"
+      "country": "South Africa",
+      "retired": false
     },
     {
       "id": 300,
@@ -43,7 +46,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 251, Econ: 6.55, Avg: 22.0",
       "img": "",
       "overseas": true,
-      "country": "South Africa"
+      "country": "South Africa",
+      "retired": true
     },
     {
       "id": 321,
@@ -54,7 +58,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 7580 (SR 153.8), Dismissals: 188",
       "img": "",
       "overseas": true,
-      "country": "West Indies"
+      "country": "West Indies",
+      "retired": false
     },
     {
       "id": 440,
@@ -65,7 +70,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 9920, Avg: 51.4, SR: 155.4",
       "img": "",
       "overseas": true,
-      "country": "Sri Lanka"
+      "country": "Sri Lanka",
+      "retired": true
     },
     {
       "id": 1,
@@ -76,7 +82,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 9640, Avg: 50.4, SR: 153.4",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 124,
@@ -87,7 +94,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 9640, Avg: 50.4, SR: 153.4",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": true
     },
     {
       "id": 173,
@@ -98,7 +106,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 9640, Avg: 50.4, SR: 153.4",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": true
     },
     {
       "id": 229,
@@ -109,7 +118,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 242, Econ: 6.79, Avg: 21.9",
       "img": "",
       "overseas": true,
-      "country": "Australia"
+      "country": "Australia",
+      "retired": true
     },
     {
       "id": 278,
@@ -120,7 +130,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 9640, Avg: 50.4, SR: 153.4",
       "img": "",
       "overseas": true,
-      "country": "England"
+      "country": "England",
+      "retired": true
     },
     {
       "id": 390,
@@ -131,7 +142,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 242, Econ: 6.79, Avg: 21.9",
       "img": "",
       "overseas": true,
-      "country": "Afghanistan"
+      "country": "Afghanistan",
+      "retired": false
     },
     {
       "id": 418,
@@ -142,7 +154,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 242, Econ: 6.79, Avg: 21.9",
       "img": "",
       "overseas": true,
-      "country": "Sri Lanka"
+      "country": "Sri Lanka",
+      "retired": false
     },
     {
       "id": 439,
@@ -153,7 +166,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 7360 (SR 152.0), Dismissals: 181",
       "img": "",
       "overseas": true,
-      "country": "Sri Lanka"
+      "country": "Sri Lanka",
+      "retired": true
     },
     {
       "id": 467,
@@ -164,7 +178,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 4980 (SR 156.6), Wkts: 129 (Econ 7.58)",
       "img": "",
       "overseas": true,
-      "country": "Pakistan"
+      "country": "Pakistan",
+      "retired": true
     },
     {
       "id": 172,
@@ -175,7 +190,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 9360, Avg: 49.3, SR: 159.8",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": true
     },
     {
       "id": 228,
@@ -186,7 +202,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 7140 (SR 150.3), Dismissals: 174",
       "img": "",
       "overseas": true,
-      "country": "Australia"
+      "country": "Australia",
+      "retired": true
     },
     {
       "id": 235,
@@ -197,7 +214,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 7140 (SR 150.3), Dismissals: 174",
       "img": "",
       "overseas": true,
-      "country": "England"
+      "country": "England",
+      "retired": false
     },
     {
       "id": 326,
@@ -208,7 +226,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 9360, Avg: 49.3, SR: 159.8",
       "img": "",
       "overseas": true,
-      "country": "West Indies"
+      "country": "West Indies",
+      "retired": true
     },
     {
       "id": 389,
@@ -219,7 +238,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 9360, Avg: 49.3, SR: 159.8",
       "img": "",
       "overseas": true,
-      "country": "New Zealand"
+      "country": "New Zealand",
+      "retired": true
     },
     {
       "id": 438,
@@ -230,7 +250,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 234, Econ: 6.74, Avg: 21.9",
       "img": "",
       "overseas": true,
-      "country": "Sri Lanka"
+      "country": "Sri Lanka",
+      "retired": true
     },
     {
       "id": 466,
@@ -241,7 +262,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 234, Econ: 6.74, Avg: 21.9",
       "img": "",
       "overseas": true,
-      "country": "Pakistan"
+      "country": "Pakistan",
+      "retired": true
     },
     {
       "id": 3,
@@ -252,7 +274,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 225, Econ: 6.68, Avg: 21.9",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 4,
@@ -263,7 +286,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 9080, Avg: 48.3, SR: 157.8",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 136,
@@ -274,7 +298,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 9080, Avg: 48.3, SR: 157.8",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": true
     },
     {
       "id": 171,
@@ -285,7 +310,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 9080, Avg: 48.3, SR: 157.8",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": true
     },
     {
       "id": 178,
@@ -296,7 +322,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 225, Econ: 6.68, Avg: 21.9",
       "img": "",
       "overseas": true,
-      "country": "Australia"
+      "country": "Australia",
+      "retired": false
     },
     {
       "id": 227,
@@ -307,7 +334,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 225, Econ: 6.68, Avg: 21.9",
       "img": "",
       "overseas": true,
-      "country": "Australia"
+      "country": "Australia",
+      "retired": true
     },
     {
       "id": 388,
@@ -318,7 +346,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 4660 (SR 152.2), Wkts: 119 (Econ 7.36)",
       "img": "",
       "overseas": true,
-      "country": "New Zealand"
+      "country": "New Zealand",
+      "retired": true
     },
     {
       "id": 437,
@@ -329,7 +358,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 225, Econ: 6.68, Avg: 21.9",
       "img": "",
       "overseas": true,
-      "country": "Sri Lanka"
+      "country": "Sri Lanka",
+      "retired": true
     },
     {
       "id": 465,
@@ -340,7 +370,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 225, Econ: 6.68, Avg: 21.9",
       "img": "",
       "overseas": true,
-      "country": "Pakistan"
+      "country": "Pakistan",
+      "retired": true
     },
     {
       "id": 2,
@@ -351,7 +382,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 6700 (SR 146.8), Dismissals: 161",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 177,
@@ -362,7 +394,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 217, Econ: 6.93, Avg: 21.9",
       "img": "",
       "overseas": true,
-      "country": "Australia"
+      "country": "Australia",
+      "retired": false
     },
     {
       "id": 233,
@@ -373,7 +406,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 8800, Avg: 47.2, SR: 155.8",
       "img": "",
       "overseas": true,
-      "country": "Australia"
+      "country": "Australia",
+      "retired": true
     },
     {
       "id": 282,
@@ -384,7 +418,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 6700 (SR 146.8), Dismissals: 161",
       "img": "",
       "overseas": true,
-      "country": "South Africa"
+      "country": "South Africa",
+      "retired": false
     },
     {
       "id": 443,
@@ -395,7 +430,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 6700 (SR 146.8), Dismissals: 161",
       "img": "",
       "overseas": true,
-      "country": "Pakistan"
+      "country": "Pakistan",
+      "retired": false
     },
     {
       "id": 464,
@@ -406,7 +442,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 217, Econ: 6.93, Avg: 21.9",
       "img": "",
       "overseas": true,
-      "country": "Pakistan"
+      "country": "Pakistan",
+      "retired": true
     },
     {
       "id": 176,
@@ -417,7 +454,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 208, Econ: 6.88, Avg: 22.8",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": true
     },
     {
       "id": 185,
@@ -428,7 +466,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 8520, Avg: 48.6, SR: 153.8",
       "img": "",
       "overseas": true,
-      "country": "Australia"
+      "country": "Australia",
+      "retired": false
     },
     {
       "id": 232,
@@ -439,7 +478,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 8520, Avg: 48.6, SR: 153.8",
       "img": "",
       "overseas": true,
-      "country": "Australia"
+      "country": "Australia",
+      "retired": true
     },
     {
       "id": 302,
@@ -450,7 +490,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 4340 (SR 153.8), Wkts: 123 (Econ 7.59)",
       "img": "",
       "overseas": true,
-      "country": "South Africa"
+      "country": "South Africa",
+      "retired": true
     },
     {
       "id": 442,
@@ -461,7 +502,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 208, Econ: 6.88, Avg: 22.8",
       "img": "",
       "overseas": true,
-      "country": "Pakistan"
+      "country": "Pakistan",
+      "retired": false
     },
     {
       "id": 7,
@@ -472,7 +514,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 6260 (SR 148.8), Dismissals: 147",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 8,
@@ -483,7 +526,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 8240, Avg: 47.6, SR: 151.8",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 126,
@@ -494,7 +538,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 4180 (SR 151.6), Wkts: 118 (Econ 7.48)",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": true
     },
     {
       "id": 175,
@@ -505,7 +550,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 8240, Avg: 47.6, SR: 151.8",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": true
     },
     {
       "id": 231,
@@ -516,7 +562,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 8240, Avg: 47.6, SR: 151.8",
       "img": "",
       "overseas": true,
-      "country": "Australia"
+      "country": "Australia",
+      "retired": true
     },
     {
       "id": 280,
@@ -527,7 +574,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 199, Econ: 6.82, Avg: 22.8",
       "img": "",
       "overseas": true,
-      "country": "England"
+      "country": "England",
+      "retired": true
     },
     {
       "id": 301,
@@ -538,7 +586,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 8240, Avg: 47.6, SR: 151.8",
       "img": "",
       "overseas": true,
-      "country": "South Africa"
+      "country": "South Africa",
+      "retired": true
     },
     {
       "id": 357,
@@ -549,7 +598,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 8240, Avg: 47.6, SR: 151.8",
       "img": "",
       "overseas": true,
-      "country": "West Indies"
+      "country": "West Indies",
+      "retired": true
     },
     {
       "id": 364,
@@ -560,7 +610,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 199, Econ: 6.82, Avg: 22.8",
       "img": "",
       "overseas": true,
-      "country": "New Zealand"
+      "country": "New Zealand",
+      "retired": false
     },
     {
       "id": 469,
@@ -571,7 +622,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 4180 (SR 151.6), Wkts: 118 (Econ 7.48)",
       "img": "",
       "overseas": true,
-      "country": "Bangladesh"
+      "country": "Bangladesh",
+      "retired": false
     },
     {
       "id": 5,
@@ -582,7 +634,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 4020 (SR 149.4), Wkts: 113 (Econ 7.82)",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 9,
@@ -593,7 +646,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 7960, Avg: 46.5, SR: 149.8",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 15,
@@ -604,7 +658,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 191, Econ: 7.07, Avg: 22.8",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 23,
@@ -615,7 +670,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 4020 (SR 149.4), Wkts: 113 (Econ 7.82)",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 55,
@@ -626,7 +682,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 191, Econ: 7.07, Avg: 22.8",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 127,
@@ -637,7 +694,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 4020 (SR 149.4), Wkts: 113 (Econ 7.82)",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": true
     },
     {
       "id": 191,
@@ -648,7 +706,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 191, Econ: 7.07, Avg: 22.8",
       "img": "",
       "overseas": true,
-      "country": "Australia"
+      "country": "Australia",
+      "retired": false
     },
     {
       "id": 239,
@@ -659,7 +718,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 7960, Avg: 46.5, SR: 149.8",
       "img": "",
       "overseas": true,
-      "country": "England"
+      "country": "England",
+      "retired": false
     }
   ],
   "all_time_legends": [
@@ -672,7 +732,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 251, Econ: 6.55, Avg: 22.0",
       "img": "",
       "overseas": true,
-      "country": "Australia"
+      "country": "Australia",
+      "retired": true
     },
     {
       "id": 279,
@@ -683,7 +744,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 5140 (SR 158.8), Wkts: 134 (Econ 7.24)",
       "img": "",
       "overseas": true,
-      "country": "England"
+      "country": "England",
+      "retired": true
     },
     {
       "id": 286,
@@ -694,7 +756,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 251, Econ: 6.55, Avg: 22.0",
       "img": "",
       "overseas": true,
-      "country": "South Africa"
+      "country": "South Africa",
+      "retired": false
     },
     {
       "id": 300,
@@ -705,7 +768,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 251, Econ: 6.55, Avg: 22.0",
       "img": "",
       "overseas": true,
-      "country": "South Africa"
+      "country": "South Africa",
+      "retired": true
     },
     {
       "id": 321,
@@ -716,7 +780,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 7580 (SR 153.8), Dismissals: 188",
       "img": "",
       "overseas": true,
-      "country": "West Indies"
+      "country": "West Indies",
+      "retired": false
     },
     {
       "id": 440,
@@ -727,7 +792,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 9920, Avg: 51.4, SR: 155.4",
       "img": "",
       "overseas": true,
-      "country": "Sri Lanka"
+      "country": "Sri Lanka",
+      "retired": true
     },
     {
       "id": 1,
@@ -738,7 +804,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 9640, Avg: 50.4, SR: 153.4",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 124,
@@ -749,7 +816,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 9640, Avg: 50.4, SR: 153.4",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": true
     },
     {
       "id": 173,
@@ -760,7 +828,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 9640, Avg: 50.4, SR: 153.4",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": true
     },
     {
       "id": 229,
@@ -771,7 +840,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 242, Econ: 6.79, Avg: 21.9",
       "img": "",
       "overseas": true,
-      "country": "Australia"
+      "country": "Australia",
+      "retired": true
     },
     {
       "id": 278,
@@ -782,7 +852,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 9640, Avg: 50.4, SR: 153.4",
       "img": "",
       "overseas": true,
-      "country": "England"
+      "country": "England",
+      "retired": true
     },
     {
       "id": 390,
@@ -793,7 +864,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 242, Econ: 6.79, Avg: 21.9",
       "img": "",
       "overseas": true,
-      "country": "Afghanistan"
+      "country": "Afghanistan",
+      "retired": false
     },
     {
       "id": 418,
@@ -804,7 +876,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 242, Econ: 6.79, Avg: 21.9",
       "img": "",
       "overseas": true,
-      "country": "Sri Lanka"
+      "country": "Sri Lanka",
+      "retired": false
     },
     {
       "id": 439,
@@ -815,7 +888,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 7360 (SR 152.0), Dismissals: 181",
       "img": "",
       "overseas": true,
-      "country": "Sri Lanka"
+      "country": "Sri Lanka",
+      "retired": true
     },
     {
       "id": 467,
@@ -826,7 +900,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 4980 (SR 156.6), Wkts: 129 (Econ 7.58)",
       "img": "",
       "overseas": true,
-      "country": "Pakistan"
+      "country": "Pakistan",
+      "retired": true
     },
     {
       "id": 172,
@@ -837,7 +912,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 9360, Avg: 49.3, SR: 159.8",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": true
     },
     {
       "id": 228,
@@ -848,7 +924,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 7140 (SR 150.3), Dismissals: 174",
       "img": "",
       "overseas": true,
-      "country": "Australia"
+      "country": "Australia",
+      "retired": true
     },
     {
       "id": 235,
@@ -859,7 +936,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 7140 (SR 150.3), Dismissals: 174",
       "img": "",
       "overseas": true,
-      "country": "England"
+      "country": "England",
+      "retired": false
     },
     {
       "id": 326,
@@ -870,7 +948,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 9360, Avg: 49.3, SR: 159.8",
       "img": "",
       "overseas": true,
-      "country": "West Indies"
+      "country": "West Indies",
+      "retired": true
     },
     {
       "id": 389,
@@ -881,7 +960,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 9360, Avg: 49.3, SR: 159.8",
       "img": "",
       "overseas": true,
-      "country": "New Zealand"
+      "country": "New Zealand",
+      "retired": true
     },
     {
       "id": 438,
@@ -892,7 +972,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 234, Econ: 6.74, Avg: 21.9",
       "img": "",
       "overseas": true,
-      "country": "Sri Lanka"
+      "country": "Sri Lanka",
+      "retired": true
     },
     {
       "id": 466,
@@ -903,7 +984,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 234, Econ: 6.74, Avg: 21.9",
       "img": "",
       "overseas": true,
-      "country": "Pakistan"
+      "country": "Pakistan",
+      "retired": true
     },
     {
       "id": 3,
@@ -914,7 +996,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 225, Econ: 6.68, Avg: 21.9",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 4,
@@ -925,7 +1008,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 9080, Avg: 48.3, SR: 157.8",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 136,
@@ -936,7 +1020,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 9080, Avg: 48.3, SR: 157.8",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": true
     },
     {
       "id": 171,
@@ -947,7 +1032,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 9080, Avg: 48.3, SR: 157.8",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": true
     },
     {
       "id": 178,
@@ -958,7 +1044,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 225, Econ: 6.68, Avg: 21.9",
       "img": "",
       "overseas": true,
-      "country": "Australia"
+      "country": "Australia",
+      "retired": false
     },
     {
       "id": 227,
@@ -969,7 +1056,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 225, Econ: 6.68, Avg: 21.9",
       "img": "",
       "overseas": true,
-      "country": "Australia"
+      "country": "Australia",
+      "retired": true
     },
     {
       "id": 388,
@@ -980,7 +1068,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 4660 (SR 152.2), Wkts: 119 (Econ 7.36)",
       "img": "",
       "overseas": true,
-      "country": "New Zealand"
+      "country": "New Zealand",
+      "retired": true
     },
     {
       "id": 437,
@@ -991,7 +1080,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 225, Econ: 6.68, Avg: 21.9",
       "img": "",
       "overseas": true,
-      "country": "Sri Lanka"
+      "country": "Sri Lanka",
+      "retired": true
     }
   ],
   "full_pool": [
@@ -1004,7 +1094,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 251, Econ: 6.55, Avg: 22.0",
       "img": "",
       "overseas": true,
-      "country": "Australia"
+      "country": "Australia",
+      "retired": true
     },
     {
       "id": 279,
@@ -1015,7 +1106,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 5140 (SR 158.8), Wkts: 134 (Econ 7.24)",
       "img": "",
       "overseas": true,
-      "country": "England"
+      "country": "England",
+      "retired": true
     },
     {
       "id": 286,
@@ -1026,7 +1118,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 251, Econ: 6.55, Avg: 22.0",
       "img": "",
       "overseas": true,
-      "country": "South Africa"
+      "country": "South Africa",
+      "retired": false
     },
     {
       "id": 300,
@@ -1037,7 +1130,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 251, Econ: 6.55, Avg: 22.0",
       "img": "",
       "overseas": true,
-      "country": "South Africa"
+      "country": "South Africa",
+      "retired": true
     },
     {
       "id": 321,
@@ -1048,7 +1142,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 7580 (SR 153.8), Dismissals: 188",
       "img": "",
       "overseas": true,
-      "country": "West Indies"
+      "country": "West Indies",
+      "retired": false
     },
     {
       "id": 440,
@@ -1059,7 +1154,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 9920, Avg: 51.4, SR: 155.4",
       "img": "",
       "overseas": true,
-      "country": "Sri Lanka"
+      "country": "Sri Lanka",
+      "retired": true
     },
     {
       "id": 1,
@@ -1070,7 +1166,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 9640, Avg: 50.4, SR: 153.4",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 124,
@@ -1081,7 +1178,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 9640, Avg: 50.4, SR: 153.4",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": true
     },
     {
       "id": 173,
@@ -1092,7 +1190,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 9640, Avg: 50.4, SR: 153.4",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": true
     },
     {
       "id": 229,
@@ -1103,7 +1202,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 242, Econ: 6.79, Avg: 21.9",
       "img": "",
       "overseas": true,
-      "country": "Australia"
+      "country": "Australia",
+      "retired": true
     },
     {
       "id": 278,
@@ -1114,7 +1214,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 9640, Avg: 50.4, SR: 153.4",
       "img": "",
       "overseas": true,
-      "country": "England"
+      "country": "England",
+      "retired": true
     },
     {
       "id": 390,
@@ -1125,7 +1226,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 242, Econ: 6.79, Avg: 21.9",
       "img": "",
       "overseas": true,
-      "country": "Afghanistan"
+      "country": "Afghanistan",
+      "retired": false
     },
     {
       "id": 418,
@@ -1136,7 +1238,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 242, Econ: 6.79, Avg: 21.9",
       "img": "",
       "overseas": true,
-      "country": "Sri Lanka"
+      "country": "Sri Lanka",
+      "retired": false
     },
     {
       "id": 439,
@@ -1147,7 +1250,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 7360 (SR 152.0), Dismissals: 181",
       "img": "",
       "overseas": true,
-      "country": "Sri Lanka"
+      "country": "Sri Lanka",
+      "retired": true
     },
     {
       "id": 467,
@@ -1158,7 +1262,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 4980 (SR 156.6), Wkts: 129 (Econ 7.58)",
       "img": "",
       "overseas": true,
-      "country": "Pakistan"
+      "country": "Pakistan",
+      "retired": true
     },
     {
       "id": 172,
@@ -1169,7 +1274,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 9360, Avg: 49.3, SR: 159.8",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": true
     },
     {
       "id": 228,
@@ -1180,7 +1286,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 7140 (SR 150.3), Dismissals: 174",
       "img": "",
       "overseas": true,
-      "country": "Australia"
+      "country": "Australia",
+      "retired": true
     },
     {
       "id": 235,
@@ -1191,7 +1298,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 7140 (SR 150.3), Dismissals: 174",
       "img": "",
       "overseas": true,
-      "country": "England"
+      "country": "England",
+      "retired": false
     },
     {
       "id": 326,
@@ -1202,7 +1310,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 9360, Avg: 49.3, SR: 159.8",
       "img": "",
       "overseas": true,
-      "country": "West Indies"
+      "country": "West Indies",
+      "retired": true
     },
     {
       "id": 389,
@@ -1213,7 +1322,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 9360, Avg: 49.3, SR: 159.8",
       "img": "",
       "overseas": true,
-      "country": "New Zealand"
+      "country": "New Zealand",
+      "retired": true
     },
     {
       "id": 438,
@@ -1224,7 +1334,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 234, Econ: 6.74, Avg: 21.9",
       "img": "",
       "overseas": true,
-      "country": "Sri Lanka"
+      "country": "Sri Lanka",
+      "retired": true
     },
     {
       "id": 466,
@@ -1235,7 +1346,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 234, Econ: 6.74, Avg: 21.9",
       "img": "",
       "overseas": true,
-      "country": "Pakistan"
+      "country": "Pakistan",
+      "retired": true
     },
     {
       "id": 3,
@@ -1246,7 +1358,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 225, Econ: 6.68, Avg: 21.9",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 4,
@@ -1257,7 +1370,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 9080, Avg: 48.3, SR: 157.8",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 136,
@@ -1268,7 +1382,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 9080, Avg: 48.3, SR: 157.8",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": true
     },
     {
       "id": 171,
@@ -1279,7 +1394,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 9080, Avg: 48.3, SR: 157.8",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": true
     },
     {
       "id": 178,
@@ -1290,7 +1406,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 225, Econ: 6.68, Avg: 21.9",
       "img": "",
       "overseas": true,
-      "country": "Australia"
+      "country": "Australia",
+      "retired": false
     },
     {
       "id": 227,
@@ -1301,7 +1418,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 225, Econ: 6.68, Avg: 21.9",
       "img": "",
       "overseas": true,
-      "country": "Australia"
+      "country": "Australia",
+      "retired": true
     },
     {
       "id": 388,
@@ -1312,7 +1430,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 4660 (SR 152.2), Wkts: 119 (Econ 7.36)",
       "img": "",
       "overseas": true,
-      "country": "New Zealand"
+      "country": "New Zealand",
+      "retired": true
     },
     {
       "id": 437,
@@ -1323,7 +1442,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 225, Econ: 6.68, Avg: 21.9",
       "img": "",
       "overseas": true,
-      "country": "Sri Lanka"
+      "country": "Sri Lanka",
+      "retired": true
     },
     {
       "id": 465,
@@ -1334,7 +1454,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 225, Econ: 6.68, Avg: 21.9",
       "img": "",
       "overseas": true,
-      "country": "Pakistan"
+      "country": "Pakistan",
+      "retired": true
     },
     {
       "id": 2,
@@ -1345,7 +1466,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 6700 (SR 146.8), Dismissals: 161",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 177,
@@ -1356,7 +1478,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 217, Econ: 6.93, Avg: 21.9",
       "img": "",
       "overseas": true,
-      "country": "Australia"
+      "country": "Australia",
+      "retired": false
     },
     {
       "id": 233,
@@ -1367,7 +1490,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 8800, Avg: 47.2, SR: 155.8",
       "img": "",
       "overseas": true,
-      "country": "Australia"
+      "country": "Australia",
+      "retired": true
     },
     {
       "id": 282,
@@ -1378,7 +1502,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 6700 (SR 146.8), Dismissals: 161",
       "img": "",
       "overseas": true,
-      "country": "South Africa"
+      "country": "South Africa",
+      "retired": false
     },
     {
       "id": 443,
@@ -1389,7 +1514,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 6700 (SR 146.8), Dismissals: 161",
       "img": "",
       "overseas": true,
-      "country": "Pakistan"
+      "country": "Pakistan",
+      "retired": false
     },
     {
       "id": 464,
@@ -1400,7 +1526,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 217, Econ: 6.93, Avg: 21.9",
       "img": "",
       "overseas": true,
-      "country": "Pakistan"
+      "country": "Pakistan",
+      "retired": true
     },
     {
       "id": 176,
@@ -1411,7 +1538,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 208, Econ: 6.88, Avg: 22.8",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": true
     },
     {
       "id": 185,
@@ -1422,7 +1550,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 8520, Avg: 48.6, SR: 153.8",
       "img": "",
       "overseas": true,
-      "country": "Australia"
+      "country": "Australia",
+      "retired": false
     },
     {
       "id": 232,
@@ -1433,7 +1562,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 8520, Avg: 48.6, SR: 153.8",
       "img": "",
       "overseas": true,
-      "country": "Australia"
+      "country": "Australia",
+      "retired": true
     },
     {
       "id": 302,
@@ -1444,7 +1574,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 4340 (SR 153.8), Wkts: 123 (Econ 7.59)",
       "img": "",
       "overseas": true,
-      "country": "South Africa"
+      "country": "South Africa",
+      "retired": true
     },
     {
       "id": 442,
@@ -1455,7 +1586,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 208, Econ: 6.88, Avg: 22.8",
       "img": "",
       "overseas": true,
-      "country": "Pakistan"
+      "country": "Pakistan",
+      "retired": false
     },
     {
       "id": 7,
@@ -1466,7 +1598,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 6260 (SR 148.8), Dismissals: 147",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 8,
@@ -1477,7 +1610,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 8240, Avg: 47.6, SR: 151.8",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 126,
@@ -1488,7 +1622,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 4180 (SR 151.6), Wkts: 118 (Econ 7.48)",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": true
     },
     {
       "id": 175,
@@ -1499,7 +1634,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 8240, Avg: 47.6, SR: 151.8",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": true
     },
     {
       "id": 231,
@@ -1510,7 +1646,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 8240, Avg: 47.6, SR: 151.8",
       "img": "",
       "overseas": true,
-      "country": "Australia"
+      "country": "Australia",
+      "retired": true
     },
     {
       "id": 280,
@@ -1521,7 +1658,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 199, Econ: 6.82, Avg: 22.8",
       "img": "",
       "overseas": true,
-      "country": "England"
+      "country": "England",
+      "retired": true
     },
     {
       "id": 301,
@@ -1532,7 +1670,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 8240, Avg: 47.6, SR: 151.8",
       "img": "",
       "overseas": true,
-      "country": "South Africa"
+      "country": "South Africa",
+      "retired": true
     },
     {
       "id": 357,
@@ -1543,7 +1682,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 8240, Avg: 47.6, SR: 151.8",
       "img": "",
       "overseas": true,
-      "country": "West Indies"
+      "country": "West Indies",
+      "retired": true
     },
     {
       "id": 364,
@@ -1554,7 +1694,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 199, Econ: 6.82, Avg: 22.8",
       "img": "",
       "overseas": true,
-      "country": "New Zealand"
+      "country": "New Zealand",
+      "retired": false
     },
     {
       "id": 469,
@@ -1565,7 +1706,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 4180 (SR 151.6), Wkts: 118 (Econ 7.48)",
       "img": "",
       "overseas": true,
-      "country": "Bangladesh"
+      "country": "Bangladesh",
+      "retired": false
     },
     {
       "id": 5,
@@ -1576,7 +1718,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 4020 (SR 149.4), Wkts: 113 (Econ 7.82)",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 9,
@@ -1587,7 +1730,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 7960, Avg: 46.5, SR: 149.8",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 15,
@@ -1598,7 +1742,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 191, Econ: 7.07, Avg: 22.8",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 23,
@@ -1609,7 +1754,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 4020 (SR 149.4), Wkts: 113 (Econ 7.82)",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 55,
@@ -1620,7 +1766,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 191, Econ: 7.07, Avg: 22.8",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 127,
@@ -1631,7 +1778,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 4020 (SR 149.4), Wkts: 113 (Econ 7.82)",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": true
     },
     {
       "id": 191,
@@ -1642,7 +1790,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 191, Econ: 7.07, Avg: 22.8",
       "img": "",
       "overseas": true,
-      "country": "Australia"
+      "country": "Australia",
+      "retired": false
     },
     {
       "id": 239,
@@ -1653,7 +1802,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 7960, Avg: 46.5, SR: 149.8",
       "img": "",
       "overseas": true,
-      "country": "England"
+      "country": "England",
+      "retired": false
     },
     {
       "id": 247,
@@ -1664,7 +1814,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 191, Econ: 7.07, Avg: 22.8",
       "img": "",
       "overseas": true,
-      "country": "England"
+      "country": "England",
+      "retired": false
     },
     {
       "id": 287,
@@ -1675,7 +1826,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 191, Econ: 7.07, Avg: 22.8",
       "img": "",
       "overseas": true,
-      "country": "South Africa"
+      "country": "South Africa",
+      "retired": false
     },
     {
       "id": 319,
@@ -1686,7 +1838,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 191, Econ: 7.07, Avg: 22.8",
       "img": "",
       "overseas": true,
-      "country": "South Africa"
+      "country": "South Africa",
+      "retired": false
     },
     {
       "id": 359,
@@ -1697,7 +1850,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 6040 (SR 147.1), Dismissals: 140",
       "img": "",
       "overseas": true,
-      "country": "New Zealand"
+      "country": "New Zealand",
+      "retired": false
     },
     {
       "id": 375,
@@ -1708,7 +1862,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 7960, Avg: 46.5, SR: 149.8",
       "img": "",
       "overseas": true,
-      "country": "New Zealand"
+      "country": "New Zealand",
+      "retired": false
     },
     {
       "id": 391,
@@ -1719,7 +1874,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 4020 (SR 149.4), Wkts: 113 (Econ 7.82)",
       "img": "",
       "overseas": true,
-      "country": "Afghanistan"
+      "country": "Afghanistan",
+      "retired": false
     },
     {
       "id": 415,
@@ -1730,7 +1886,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 6040 (SR 147.1), Dismissals: 140",
       "img": "",
       "overseas": true,
-      "country": "Sri Lanka"
+      "country": "Sri Lanka",
+      "retired": false
     },
     {
       "id": 447,
@@ -1741,7 +1898,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 7960, Avg: 46.5, SR: 149.8",
       "img": "",
       "overseas": true,
-      "country": "Pakistan"
+      "country": "Pakistan",
+      "retired": false
     },
     {
       "id": 14,
@@ -1752,7 +1910,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 182, Econ: 7.01, Avg: 22.7",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 134,
@@ -1763,7 +1922,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 182, Econ: 7.01, Avg: 22.7",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": true
     },
     {
       "id": 166,
@@ -1774,7 +1934,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 182, Econ: 7.01, Avg: 22.7",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 174,
@@ -1785,7 +1946,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 7680, Avg: 45.5, SR: 147.8",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": true
     },
     {
       "id": 240,
@@ -1796,7 +1958,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 3860 (SR 153.2), Wkts: 108 (Econ 7.71)",
       "img": "",
       "overseas": true,
-      "country": "England"
+      "country": "England",
+      "retired": false
     },
     {
       "id": 246,
@@ -1807,7 +1970,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 182, Econ: 7.01, Avg: 22.7",
       "img": "",
       "overseas": true,
-      "country": "England"
+      "country": "England",
+      "retired": false
     },
     {
       "id": 342,
@@ -1818,7 +1982,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 7680, Avg: 45.5, SR: 147.8",
       "img": "",
       "overseas": true,
-      "country": "West Indies"
+      "country": "West Indies",
+      "retired": true
     },
     {
       "id": 414,
@@ -1829,7 +1994,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 7680, Avg: 45.5, SR: 147.8",
       "img": "",
       "overseas": true,
-      "country": "Sri Lanka"
+      "country": "Sri Lanka",
+      "retired": false
     },
     {
       "id": 422,
@@ -1840,7 +2006,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 182, Econ: 7.01, Avg: 22.7",
       "img": "",
       "overseas": true,
-      "country": "Sri Lanka"
+      "country": "Sri Lanka",
+      "retired": false
     },
     {
       "id": 446,
@@ -1851,7 +2018,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 182, Econ: 7.01, Avg: 22.7",
       "img": "",
       "overseas": true,
-      "country": "Pakistan"
+      "country": "Pakistan",
+      "retired": false
     },
     {
       "id": 470,
@@ -1862,7 +2030,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 182, Econ: 7.01, Avg: 22.7",
       "img": "",
       "overseas": true,
-      "country": "Bangladesh"
+      "country": "Bangladesh",
+      "retired": false
     },
     {
       "id": 13,
@@ -1873,7 +2042,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 5600 (SR 143.6), Dismissals: 127",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 69,
@@ -1884,7 +2054,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 5600 (SR 143.6), Dismissals: 127",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 117,
@@ -1895,7 +2066,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 174, Econ: 6.96, Avg: 22.7",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 125,
@@ -1906,7 +2078,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 174, Econ: 6.96, Avg: 22.7",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": true
     },
     {
       "id": 197,
@@ -1917,7 +2090,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 7400, Avg: 44.4, SR: 154.2",
       "img": "",
       "overseas": true,
-      "country": "Australia"
+      "country": "Australia",
+      "retired": false
     },
     {
       "id": 277,
@@ -1928,7 +2102,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 7400, Avg: 44.4, SR: 154.2",
       "img": "",
       "overseas": true,
-      "country": "England"
+      "country": "England",
+      "retired": true
     },
     {
       "id": 293,
@@ -1939,7 +2114,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 5600 (SR 143.6), Dismissals: 127",
       "img": "",
       "overseas": true,
-      "country": "South Africa"
+      "country": "South Africa",
+      "retired": false
     },
     {
       "id": 365,
@@ -1950,7 +2126,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 174, Econ: 6.96, Avg: 22.7",
       "img": "",
       "overseas": true,
-      "country": "New Zealand"
+      "country": "New Zealand",
+      "retired": false
     },
     {
       "id": 397,
@@ -1961,7 +2138,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 3700 (SR 151.0), Wkts: 103 (Econ 7.6)",
       "img": "",
       "overseas": true,
-      "country": "Afghanistan"
+      "country": "Afghanistan",
+      "retired": false
     },
     {
       "id": 413,
@@ -1972,7 +2150,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 7400, Avg: 44.4, SR: 154.2",
       "img": "",
       "overseas": true,
-      "country": "Sri Lanka"
+      "country": "Sri Lanka",
+      "retired": false
     },
     {
       "id": 445,
@@ -1983,7 +2162,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 174, Econ: 6.96, Avg: 22.7",
       "img": "",
       "overseas": true,
-      "country": "Pakistan"
+      "country": "Pakistan",
+      "retired": false
     },
     {
       "id": 20,
@@ -1994,7 +2174,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 215, Econ: 7.21, Avg: 23.7",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 188,
@@ -2005,7 +2186,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 215, Econ: 7.21, Avg: 23.7",
       "img": "",
       "overseas": true,
-      "country": "Australia"
+      "country": "Australia",
+      "retired": false
     },
     {
       "id": 196,
@@ -2016,7 +2198,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 8320, Avg: 45.8, SR: 152.2",
       "img": "",
       "overseas": true,
-      "country": "Australia"
+      "country": "Australia",
+      "retired": false
     },
     {
       "id": 236,
@@ -2027,7 +2210,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 6380 (SR 147.4), Dismissals: 160",
       "img": "",
       "overseas": true,
-      "country": "England"
+      "country": "England",
+      "retired": false
     },
     {
       "id": 356,
@@ -2038,7 +2222,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 4340 (SR 148.8), Wkts: 112 (Econ 7.94)",
       "img": "",
       "overseas": true,
-      "country": "West Indies"
+      "country": "West Indies",
+      "retired": true
     },
     {
       "id": 396,
@@ -2049,7 +2234,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 215, Econ: 7.21, Avg: 23.7",
       "img": "",
       "overseas": true,
-      "country": "Afghanistan"
+      "country": "Afghanistan",
+      "retired": false
     },
     {
       "id": 444,
@@ -2060,7 +2246,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 4340 (SR 148.8), Wkts: 112 (Econ 7.94)",
       "img": "",
       "overseas": true,
-      "country": "Pakistan"
+      "country": "Pakistan",
+      "retired": false
     },
     {
       "id": 468,
@@ -2071,7 +2258,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 215, Econ: 7.21, Avg: 23.7",
       "img": "",
       "overseas": true,
-      "country": "Pakistan"
+      "country": "Pakistan",
+      "retired": false
     },
     {
       "id": 494,
@@ -2082,7 +2270,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 8320, Avg: 45.8, SR: 152.2",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 505,
@@ -2093,7 +2282,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 6380 (SR 147.4), Dismissals: 160",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 11,
@@ -2104,7 +2294,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 8040, Avg: 44.8, SR: 150.2",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 19,
@@ -2115,7 +2306,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 206, Econ: 7.15, Avg: 23.6",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 123,
@@ -2126,7 +2318,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 8040, Avg: 44.8, SR: 150.2",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": true
     },
     {
       "id": 187,
@@ -2137,7 +2330,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 206, Econ: 7.15, Avg: 23.6",
       "img": "",
       "overseas": true,
-      "country": "Australia"
+      "country": "Australia",
+      "retired": false
     },
     {
       "id": 211,
@@ -2148,7 +2342,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 6160 (SR 145.6), Dismissals: 153",
       "img": "",
       "overseas": true,
-      "country": "Australia"
+      "country": "Australia",
+      "retired": false
     },
     {
       "id": 283,
@@ -2159,7 +2354,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 6160 (SR 145.6), Dismissals: 153",
       "img": "",
       "overseas": true,
-      "country": "South Africa"
+      "country": "South Africa",
+      "retired": false
     },
     {
       "id": 299,
@@ -2170,7 +2366,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 8040, Avg: 44.8, SR: 150.2",
       "img": "",
       "overseas": true,
-      "country": "South Africa"
+      "country": "South Africa",
+      "retired": false
     },
     {
       "id": 395,
@@ -2181,7 +2378,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 206, Econ: 7.15, Avg: 23.6",
       "img": "",
       "overseas": true,
-      "country": "Afghanistan"
+      "country": "Afghanistan",
+      "retired": false
     },
     {
       "id": 403,
@@ -2192,7 +2390,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 206, Econ: 7.15, Avg: 23.6",
       "img": "",
       "overseas": true,
-      "country": "Afghanistan"
+      "country": "Afghanistan",
+      "retired": false
     },
     {
       "id": 419,
@@ -2203,7 +2402,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 206, Econ: 7.15, Avg: 23.6",
       "img": "",
       "overseas": true,
-      "country": "Sri Lanka"
+      "country": "Sri Lanka",
+      "retired": false
     },
     {
       "id": 427,
@@ -2214,7 +2414,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 4180 (SR 146.6), Wkts: 107 (Econ 7.83)",
       "img": "",
       "overseas": true,
-      "country": "Sri Lanka"
+      "country": "Sri Lanka",
+      "retired": false
     },
     {
       "id": 10,
@@ -2225,7 +2426,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 7760, Avg: 43.7, SR: 148.2",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 18,
@@ -2236,7 +2438,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 198, Econ: 7.1, Avg: 23.6",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 130,
@@ -2247,7 +2450,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 198, Econ: 7.1, Avg: 23.6",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": true
     },
     {
       "id": 138,
@@ -2258,7 +2462,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 7760, Avg: 43.7, SR: 148.2",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": true
     },
     {
       "id": 202,
@@ -2269,7 +2474,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 7760, Avg: 43.7, SR: 148.2",
       "img": "",
       "overseas": true,
-      "country": "Australia"
+      "country": "Australia",
+      "retired": false
     },
     {
       "id": 234,
@@ -2280,7 +2486,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 198, Econ: 7.1, Avg: 23.6",
       "img": "",
       "overseas": true,
-      "country": "Australia"
+      "country": "Australia",
+      "retired": true
     },
     {
       "id": 242,
@@ -2291,7 +2498,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 5940 (SR 143.9), Dismissals: 146",
       "img": "",
       "overseas": true,
-      "country": "England"
+      "country": "England",
+      "retired": false
     },
     {
       "id": 362,
@@ -2302,7 +2510,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 7760, Avg: 43.7, SR: 148.2",
       "img": "",
       "overseas": true,
-      "country": "New Zealand"
+      "country": "New Zealand",
+      "retired": false
     },
     {
       "id": 394,
@@ -2313,7 +2522,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 198, Econ: 7.1, Avg: 23.6",
       "img": "",
       "overseas": true,
-      "country": "Afghanistan"
+      "country": "Afghanistan",
+      "retired": false
     },
     {
       "id": 489,
@@ -2324,7 +2534,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 7760, Avg: 43.7, SR: 148.2",
       "img": "",
       "overseas": true,
-      "country": "England"
+      "country": "England",
+      "retired": false
     },
     {
       "id": 508,
@@ -2335,7 +2546,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 7760, Avg: 43.7, SR: 148.2",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 179,
@@ -2346,7 +2558,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 7480, Avg: 42.7, SR: 146.2",
       "img": "",
       "overseas": true,
-      "country": "Australia"
+      "country": "Australia",
+      "retired": false
     },
     {
       "id": 281,
@@ -2357,7 +2570,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 189, Econ: 7.34, Avg: 23.6",
       "img": "",
       "overseas": true,
-      "country": "England"
+      "country": "England",
+      "retired": true
     },
     {
       "id": 361,
@@ -2368,7 +2582,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 3860 (SR 148.2), Wkts: 97 (Econ 8.06)",
       "img": "",
       "overseas": true,
-      "country": "New Zealand"
+      "country": "New Zealand",
+      "retired": false
     },
     {
       "id": 393,
@@ -2379,7 +2594,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 7480, Avg: 42.7, SR: 146.2",
       "img": "",
       "overseas": true,
-      "country": "Afghanistan"
+      "country": "Afghanistan",
+      "retired": false
     },
     {
       "id": 417,
@@ -2390,7 +2606,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 189, Econ: 7.34, Avg: 23.6",
       "img": "",
       "overseas": true,
-      "country": "Sri Lanka"
+      "country": "Sri Lanka",
+      "retired": false
     },
     {
       "id": 449,
@@ -2401,7 +2618,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 189, Econ: 7.34, Avg: 23.6",
       "img": "",
       "overseas": true,
-      "country": "Pakistan"
+      "country": "Pakistan",
+      "retired": false
     },
     {
       "id": 481,
@@ -2412,7 +2630,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 7480, Avg: 42.7, SR: 146.2",
       "img": "",
       "overseas": true,
-      "country": "Bangladesh"
+      "country": "Bangladesh",
+      "retired": false
     },
     {
       "id": 490,
@@ -2423,7 +2642,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 189, Econ: 7.34, Avg: 23.6",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 512,
@@ -2434,7 +2654,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 5720 (SR 142.1), Dismissals: 139",
       "img": "",
       "overseas": true,
-      "country": "South Africa"
+      "country": "South Africa",
+      "retired": false
     },
     {
       "id": 12,
@@ -2445,7 +2666,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 7200, Avg: 41.6, SR: 144.2",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 16,
@@ -2456,7 +2678,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 3700 (SR 146.0), Wkts: 92 (Econ 7.95)",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 24,
@@ -2467,7 +2690,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 5500 (SR 140.4), Dismissals: 133",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 56,
@@ -2478,7 +2702,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 7200, Avg: 41.6, SR: 144.2",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 128,
@@ -2489,7 +2714,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 3700 (SR 146.0), Wkts: 92 (Econ 7.95)",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": true
     },
     {
       "id": 144,
@@ -2500,7 +2726,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 181, Econ: 7.29, Avg: 23.6",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": true
     },
     {
       "id": 168,
@@ -2511,7 +2738,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 181, Econ: 7.29, Avg: 23.6",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 248,
@@ -2522,7 +2750,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 181, Econ: 7.29, Avg: 23.6",
       "img": "",
       "overseas": true,
-      "country": "England"
+      "country": "England",
+      "retired": false
     },
     {
       "id": 284,
@@ -2533,7 +2762,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 3700 (SR 146.0), Wkts: 92 (Econ 7.95)",
       "img": "",
       "overseas": true,
-      "country": "South Africa"
+      "country": "South Africa",
+      "retired": false
     },
     {
       "id": 328,
@@ -2544,7 +2774,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 3700 (SR 146.0), Wkts: 92 (Econ 7.95)",
       "img": "",
       "overseas": true,
-      "country": "West Indies"
+      "country": "West Indies",
+      "retired": false
     },
     {
       "id": 344,
@@ -2555,7 +2786,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 7200, Avg: 41.6, SR: 144.2",
       "img": "",
       "overseas": true,
-      "country": "West Indies"
+      "country": "West Indies",
+      "retired": true
     },
     {
       "id": 358,
@@ -2566,7 +2798,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 7200, Avg: 41.6, SR: 144.2",
       "img": "",
       "overseas": true,
-      "country": "New Zealand"
+      "country": "New Zealand",
+      "retired": false
     },
     {
       "id": 392,
@@ -2577,7 +2810,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 5500 (SR 140.4), Dismissals: 133",
       "img": "",
       "overseas": true,
-      "country": "Afghanistan"
+      "country": "Afghanistan",
+      "retired": false
     },
     {
       "id": 424,
@@ -2588,7 +2822,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 3700 (SR 146.0), Wkts: 92 (Econ 7.95)",
       "img": "",
       "overseas": true,
-      "country": "Sri Lanka"
+      "country": "Sri Lanka",
+      "retired": false
     },
     {
       "id": 39,
@@ -2599,7 +2834,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 172, Econ: 7.24, Avg: 24.5",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 59,
@@ -2610,7 +2846,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 5280 (SR 144.2), Dismissals: 126",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 79,
@@ -2621,7 +2858,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 3540 (SR 143.8), Wkts: 101 (Econ 7.84)",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 99,
@@ -2632,7 +2870,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 5280 (SR 144.2), Dismissals: 126",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 109,
@@ -2643,7 +2882,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 6920, Avg: 43.0, SR: 142.2",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 119,
@@ -2654,7 +2894,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 172, Econ: 7.24, Avg: 24.5",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 129,
@@ -2665,7 +2906,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 172, Econ: 7.24, Avg: 24.5",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": true
     },
     {
       "id": 139,
@@ -2676,7 +2918,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 5280 (SR 144.2), Dismissals: 126",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": true
     },
     {
       "id": 149,
@@ -2687,7 +2930,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 3540 (SR 143.8), Wkts: 101 (Econ 7.84)",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": true
     },
     {
       "id": 159,
@@ -2698,7 +2942,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 5280 (SR 144.2), Dismissals: 126",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 169,
@@ -2709,7 +2954,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 6920, Avg: 43.0, SR: 142.2",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 189,
@@ -2720,7 +2966,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 5280 (SR 144.2), Dismissals: 126",
       "img": "",
       "overseas": true,
-      "country": "Australia"
+      "country": "Australia",
+      "retired": false
     },
     {
       "id": 199,
@@ -2731,7 +2978,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 172, Econ: 7.24, Avg: 24.5",
       "img": "",
       "overseas": true,
-      "country": "Australia"
+      "country": "Australia",
+      "retired": false
     },
     {
       "id": 209,
@@ -2742,7 +2990,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 6920, Avg: 43.0, SR: 142.2",
       "img": "",
       "overseas": true,
-      "country": "Australia"
+      "country": "Australia",
+      "retired": false
     },
     {
       "id": 219,
@@ -2753,7 +3002,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 6920, Avg: 43.0, SR: 142.2",
       "img": "",
       "overseas": true,
-      "country": "Australia"
+      "country": "Australia",
+      "retired": false
     },
     {
       "id": 249,
@@ -2764,7 +3014,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 172, Econ: 7.24, Avg: 24.5",
       "img": "",
       "overseas": true,
-      "country": "England"
+      "country": "England",
+      "retired": false
     },
     {
       "id": 259,
@@ -2775,7 +3026,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 3540 (SR 143.8), Wkts: 101 (Econ 7.84)",
       "img": "",
       "overseas": true,
-      "country": "England"
+      "country": "England",
+      "retired": false
     },
     {
       "id": 269,
@@ -2786,7 +3038,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 172, Econ: 7.24, Avg: 24.5",
       "img": "",
       "overseas": true,
-      "country": "England"
+      "country": "England",
+      "retired": false
     },
     {
       "id": 289,
@@ -2797,7 +3050,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 172, Econ: 7.24, Avg: 24.5",
       "img": "",
       "overseas": true,
-      "country": "South Africa"
+      "country": "South Africa",
+      "retired": false
     },
     {
       "id": 295,
@@ -2808,7 +3062,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 6920, Avg: 43.0, SR: 142.2",
       "img": "",
       "overseas": true,
-      "country": "South Africa"
+      "country": "South Africa",
+      "retired": false
     },
     {
       "id": 329,
@@ -2819,7 +3074,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 5280 (SR 144.2), Dismissals: 126",
       "img": "",
       "overseas": true,
-      "country": "West Indies"
+      "country": "West Indies",
+      "retired": false
     },
     {
       "id": 339,
@@ -2830,7 +3086,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 3540 (SR 143.8), Wkts: 101 (Econ 7.84)",
       "img": "",
       "overseas": true,
-      "country": "West Indies"
+      "country": "West Indies",
+      "retired": false
     },
     {
       "id": 349,
@@ -2841,7 +3098,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 172, Econ: 7.24, Avg: 24.5",
       "img": "",
       "overseas": true,
-      "country": "West Indies"
+      "country": "West Indies",
+      "retired": false
     },
     {
       "id": 369,
@@ -2852,7 +3110,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 6920, Avg: 43.0, SR: 142.2",
       "img": "",
       "overseas": true,
-      "country": "New Zealand"
+      "country": "New Zealand",
+      "retired": false
     },
     {
       "id": 379,
@@ -2863,7 +3122,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 3540 (SR 143.8), Wkts: 101 (Econ 7.84)",
       "img": "",
       "overseas": true,
-      "country": "New Zealand"
+      "country": "New Zealand",
+      "retired": false
     },
     {
       "id": 399,
@@ -2874,7 +3134,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 6920, Avg: 43.0, SR: 142.2",
       "img": "",
       "overseas": true,
-      "country": "Afghanistan"
+      "country": "Afghanistan",
+      "retired": false
     },
     {
       "id": 409,
@@ -2885,7 +3146,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 5280 (SR 144.2), Dismissals: 126",
       "img": "",
       "overseas": true,
-      "country": "Afghanistan"
+      "country": "Afghanistan",
+      "retired": false
     },
     {
       "id": 429,
@@ -2896,7 +3158,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 5280 (SR 144.2), Dismissals: 126",
       "img": "",
       "overseas": true,
-      "country": "Sri Lanka"
+      "country": "Sri Lanka",
+      "retired": false
     },
     {
       "id": 441,
@@ -2907,7 +3170,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 6920, Avg: 43.0, SR: 142.2",
       "img": "",
       "overseas": true,
-      "country": "Pakistan"
+      "country": "Pakistan",
+      "retired": false
     },
     {
       "id": 459,
@@ -2918,7 +3182,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 172, Econ: 7.24, Avg: 24.5",
       "img": "",
       "overseas": true,
-      "country": "Pakistan"
+      "country": "Pakistan",
+      "retired": false
     },
     {
       "id": 479,
@@ -2929,7 +3194,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 3540 (SR 143.8), Wkts: 101 (Econ 7.84)",
       "img": "",
       "overseas": true,
-      "country": "Bangladesh"
+      "country": "Bangladesh",
+      "retired": false
     },
     {
       "id": 28,
@@ -2940,7 +3206,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 163, Econ: 7.48, Avg: 24.5",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 38,
@@ -2951,7 +3218,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 163, Econ: 7.48, Avg: 24.5",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 48,
@@ -2962,7 +3230,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 3380 (SR 147.6), Wkts: 96 (Econ 8.18)",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 58,
@@ -2973,7 +3242,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 5060 (SR 142.4), Dismissals: 119",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 88,
@@ -2984,7 +3254,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 5060 (SR 142.4), Dismissals: 119",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 108,
@@ -2995,7 +3266,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 5060 (SR 142.4), Dismissals: 119",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 118,
@@ -3006,7 +3278,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 3380 (SR 147.6), Wkts: 96 (Econ 8.18)",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 148,
@@ -3017,7 +3290,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 3380 (SR 147.6), Wkts: 96 (Econ 8.18)",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": true
     },
     {
       "id": 158,
@@ -3028,7 +3302,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 163, Econ: 7.48, Avg: 24.5",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 180,
@@ -3039,7 +3314,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 3380 (SR 147.6), Wkts: 96 (Econ 8.18)",
       "img": "",
       "overseas": true,
-      "country": "Australia"
+      "country": "Australia",
+      "retired": false
     },
     {
       "id": 198,
@@ -3050,7 +3326,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 163, Econ: 7.48, Avg: 24.5",
       "img": "",
       "overseas": true,
-      "country": "Australia"
+      "country": "Australia",
+      "retired": false
     },
     {
       "id": 208,
@@ -3061,7 +3338,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 5060 (SR 142.4), Dismissals: 119",
       "img": "",
       "overseas": true,
-      "country": "Australia"
+      "country": "Australia",
+      "retired": false
     },
     {
       "id": 218,
@@ -3072,7 +3350,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 163, Econ: 7.48, Avg: 24.5",
       "img": "",
       "overseas": true,
-      "country": "Australia"
+      "country": "Australia",
+      "retired": false
     },
     {
       "id": 258,
@@ -3083,7 +3362,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 163, Econ: 7.48, Avg: 24.5",
       "img": "",
       "overseas": true,
-      "country": "England"
+      "country": "England",
+      "retired": false
     },
     {
       "id": 268,
@@ -3094,7 +3374,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 163, Econ: 7.48, Avg: 24.5",
       "img": "",
       "overseas": true,
-      "country": "England"
+      "country": "England",
+      "retired": false
     },
     {
       "id": 285,
@@ -3105,7 +3386,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 6640, Avg: 42.0, SR: 148.6",
       "img": "",
       "overseas": true,
-      "country": "South Africa"
+      "country": "South Africa",
+      "retired": false
     },
     {
       "id": 298,
@@ -3116,7 +3398,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 6640, Avg: 42.0, SR: 148.6",
       "img": "",
       "overseas": true,
-      "country": "South Africa"
+      "country": "South Africa",
+      "retired": false
     },
     {
       "id": 308,
@@ -3127,7 +3410,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 6640, Avg: 42.0, SR: 148.6",
       "img": "",
       "overseas": true,
-      "country": "South Africa"
+      "country": "South Africa",
+      "retired": false
     },
     {
       "id": 318,
@@ -3138,7 +3422,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 6640, Avg: 42.0, SR: 148.6",
       "img": "",
       "overseas": true,
-      "country": "South Africa"
+      "country": "South Africa",
+      "retired": false
     },
     {
       "id": 338,
@@ -3149,7 +3434,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 163, Econ: 7.48, Avg: 24.5",
       "img": "",
       "overseas": true,
-      "country": "West Indies"
+      "country": "West Indies",
+      "retired": false
     },
     {
       "id": 348,
@@ -3160,7 +3446,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 163, Econ: 7.48, Avg: 24.5",
       "img": "",
       "overseas": true,
-      "country": "West Indies"
+      "country": "West Indies",
+      "retired": false
     },
     {
       "id": 368,
@@ -3171,7 +3458,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 163, Econ: 7.48, Avg: 24.5",
       "img": "",
       "overseas": true,
-      "country": "New Zealand"
+      "country": "New Zealand",
+      "retired": false
     },
     {
       "id": 378,
@@ -3182,7 +3470,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 6640, Avg: 42.0, SR: 148.6",
       "img": "",
       "overseas": true,
-      "country": "New Zealand"
+      "country": "New Zealand",
+      "retired": false
     },
     {
       "id": 398,
@@ -3193,7 +3482,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 6640, Avg: 42.0, SR: 148.6",
       "img": "",
       "overseas": true,
-      "country": "Afghanistan"
+      "country": "Afghanistan",
+      "retired": false
     },
     {
       "id": 408,
@@ -3204,7 +3494,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 6640, Avg: 42.0, SR: 148.6",
       "img": "",
       "overseas": true,
-      "country": "Afghanistan"
+      "country": "Afghanistan",
+      "retired": false
     },
     {
       "id": 412,
@@ -3215,7 +3506,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 3380 (SR 147.6), Wkts: 96 (Econ 8.18)",
       "img": "",
       "overseas": true,
-      "country": "Sri Lanka"
+      "country": "Sri Lanka",
+      "retired": false
     },
     {
       "id": 428,
@@ -3226,7 +3518,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 5060 (SR 142.4), Dismissals: 119",
       "img": "",
       "overseas": true,
-      "country": "Sri Lanka"
+      "country": "Sri Lanka",
+      "retired": false
     },
     {
       "id": 448,
@@ -3237,7 +3530,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 3380 (SR 147.6), Wkts: 96 (Econ 8.18)",
       "img": "",
       "overseas": true,
-      "country": "Pakistan"
+      "country": "Pakistan",
+      "retired": false
     },
     {
       "id": 458,
@@ -3248,7 +3542,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 163, Econ: 7.48, Avg: 24.5",
       "img": "",
       "overseas": true,
-      "country": "Pakistan"
+      "country": "Pakistan",
+      "retired": false
     },
     {
       "id": 478,
@@ -3259,7 +3554,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 3380 (SR 147.6), Wkts: 96 (Econ 8.18)",
       "img": "",
       "overseas": true,
-      "country": "Bangladesh"
+      "country": "Bangladesh",
+      "retired": false
     },
     {
       "id": 31,
@@ -3270,7 +3566,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 3220 (SR 145.4), Wkts: 91 (Econ 8.07)",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 37,
@@ -3281,7 +3578,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 155, Econ: 7.43, Avg: 24.5",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 47,
@@ -3292,7 +3590,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 6360, Avg: 40.9, SR: 146.6",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 57,
@@ -3303,7 +3602,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 6360, Avg: 40.9, SR: 146.6",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 67,
@@ -3314,7 +3614,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 4840 (SR 140.7), Dismissals: 112",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 77,
@@ -3325,7 +3626,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 155, Econ: 7.43, Avg: 24.5",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 87,
@@ -3336,7 +3638,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 155, Econ: 7.43, Avg: 24.5",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 107,
@@ -3347,7 +3650,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 155, Econ: 7.43, Avg: 24.5",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 137,
@@ -3358,7 +3662,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 4840 (SR 140.7), Dismissals: 112",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": true
     },
     {
       "id": 147,
@@ -3369,7 +3674,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 6360, Avg: 40.9, SR: 146.6",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 157,
@@ -3380,7 +3686,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 155, Econ: 7.43, Avg: 24.5",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 167,
@@ -3391,7 +3698,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 155, Econ: 7.43, Avg: 24.5",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 207,
@@ -3402,7 +3710,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 155, Econ: 7.43, Avg: 24.5",
       "img": "",
       "overseas": true,
-      "country": "Australia"
+      "country": "Australia",
+      "retired": false
     },
     {
       "id": 241,
@@ -3413,7 +3722,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 6360, Avg: 40.9, SR: 146.6",
       "img": "",
       "overseas": true,
-      "country": "England"
+      "country": "England",
+      "retired": false
     },
     {
       "id": 257,
@@ -3424,7 +3734,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 6360, Avg: 40.9, SR: 146.6",
       "img": "",
       "overseas": true,
-      "country": "England"
+      "country": "England",
+      "retired": false
     },
     {
       "id": 267,
@@ -3435,7 +3746,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 155, Econ: 7.43, Avg: 24.5",
       "img": "",
       "overseas": true,
-      "country": "England"
+      "country": "England",
+      "retired": false
     },
     {
       "id": 288,
@@ -3446,7 +3758,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 3220 (SR 145.4), Wkts: 91 (Econ 8.07)",
       "img": "",
       "overseas": true,
-      "country": "South Africa"
+      "country": "South Africa",
+      "retired": false
     },
     {
       "id": 297,
@@ -3457,7 +3770,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 6360, Avg: 40.9, SR: 146.6",
       "img": "",
       "overseas": true,
-      "country": "South Africa"
+      "country": "South Africa",
+      "retired": false
     },
     {
       "id": 307,
@@ -3468,7 +3782,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 6360, Avg: 40.9, SR: 146.6",
       "img": "",
       "overseas": true,
-      "country": "South Africa"
+      "country": "South Africa",
+      "retired": false
     },
     {
       "id": 317,
@@ -3479,7 +3794,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 6360, Avg: 40.9, SR: 146.6",
       "img": "",
       "overseas": true,
-      "country": "South Africa"
+      "country": "South Africa",
+      "retired": false
     },
     {
       "id": 337,
@@ -3490,7 +3806,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 155, Econ: 7.43, Avg: 24.5",
       "img": "",
       "overseas": true,
-      "country": "West Indies"
+      "country": "West Indies",
+      "retired": false
     },
     {
       "id": 347,
@@ -3501,7 +3818,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 155, Econ: 7.43, Avg: 24.5",
       "img": "",
       "overseas": true,
-      "country": "West Indies"
+      "country": "West Indies",
+      "retired": false
     },
     {
       "id": 367,
@@ -3512,7 +3830,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 155, Econ: 7.43, Avg: 24.5",
       "img": "",
       "overseas": true,
-      "country": "New Zealand"
+      "country": "New Zealand",
+      "retired": false
     },
     {
       "id": 377,
@@ -3523,7 +3842,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 155, Econ: 7.43, Avg: 24.5",
       "img": "",
       "overseas": true,
-      "country": "New Zealand"
+      "country": "New Zealand",
+      "retired": false
     },
     {
       "id": 387,
@@ -3534,7 +3854,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 4840 (SR 140.7), Dismissals: 112",
       "img": "",
       "overseas": true,
-      "country": "New Zealand"
+      "country": "New Zealand",
+      "retired": false
     },
     {
       "id": 407,
@@ -3545,7 +3866,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 6360, Avg: 40.9, SR: 146.6",
       "img": "",
       "overseas": true,
-      "country": "Afghanistan"
+      "country": "Afghanistan",
+      "retired": false
     },
     {
       "id": 457,
@@ -3556,7 +3878,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 6360, Avg: 40.9, SR: 146.6",
       "img": "",
       "overseas": true,
-      "country": "Pakistan"
+      "country": "Pakistan",
+      "retired": false
     },
     {
       "id": 477,
@@ -3567,7 +3890,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 155, Econ: 7.43, Avg: 24.5",
       "img": "",
       "overseas": true,
-      "country": "Bangladesh"
+      "country": "Bangladesh",
+      "retired": false
     },
     {
       "id": 488,
@@ -3578,7 +3902,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 6360, Avg: 40.9, SR: 146.6",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 497,
@@ -3589,7 +3914,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 3220 (SR 145.4), Wkts: 91 (Econ 8.07)",
       "img": "",
       "overseas": true,
-      "country": "Afghanistan"
+      "country": "Afghanistan",
+      "retired": false
     },
     {
       "id": 500,
@@ -3600,7 +3926,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 4840 (SR 140.7), Dismissals: 112",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 509,
@@ -3611,7 +3938,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 3220 (SR 145.4), Wkts: 91 (Econ 8.07)",
       "img": "",
       "overseas": true,
-      "country": "South Africa"
+      "country": "South Africa",
+      "retired": false
     },
     {
       "id": 21,
@@ -3622,7 +3950,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 6080, Avg: 39.9, SR: 144.6",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 36,
@@ -3633,7 +3962,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 146, Econ: 7.37, Avg: 24.4",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 46,
@@ -3644,7 +3974,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 6080, Avg: 39.9, SR: 144.6",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 66,
@@ -3655,7 +3986,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 146, Econ: 7.37, Avg: 24.4",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 76,
@@ -3666,7 +3998,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 146, Econ: 7.37, Avg: 24.4",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 86,
@@ -3677,7 +4010,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 3060 (SR 143.2), Wkts: 86 (Econ 7.96)",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 106,
@@ -3688,7 +4022,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 3060 (SR 143.2), Wkts: 86 (Econ 7.96)",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 116,
@@ -3699,7 +4034,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 146, Econ: 7.37, Avg: 24.4",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 146,
@@ -3710,7 +4046,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 6080, Avg: 39.9, SR: 144.6",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 156,
@@ -3721,7 +4058,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 146, Econ: 7.37, Avg: 24.4",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 206,
@@ -3732,7 +4070,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 3060 (SR 143.2), Wkts: 86 (Econ 7.96)",
       "img": "",
       "overseas": true,
-      "country": "Australia"
+      "country": "Australia",
+      "retired": false
     },
     {
       "id": 216,
@@ -3743,7 +4082,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 146, Econ: 7.37, Avg: 24.4",
       "img": "",
       "overseas": true,
-      "country": "Australia"
+      "country": "Australia",
+      "retired": false
     },
     {
       "id": 226,
@@ -3754,7 +4094,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 146, Econ: 7.37, Avg: 24.4",
       "img": "",
       "overseas": true,
-      "country": "Australia"
+      "country": "Australia",
+      "retired": false
     },
     {
       "id": 256,
@@ -3765,7 +4106,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 6080, Avg: 39.9, SR: 144.6",
       "img": "",
       "overseas": true,
-      "country": "England"
+      "country": "England",
+      "retired": true
     },
     {
       "id": 266,
@@ -3776,7 +4118,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 146, Econ: 7.37, Avg: 24.4",
       "img": "",
       "overseas": true,
-      "country": "England"
+      "country": "England",
+      "retired": false
     },
     {
       "id": 296,
@@ -3787,7 +4130,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 6080, Avg: 39.9, SR: 144.6",
       "img": "",
       "overseas": true,
-      "country": "South Africa"
+      "country": "South Africa",
+      "retired": false
     },
     {
       "id": 306,
@@ -3798,7 +4142,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 146, Econ: 7.37, Avg: 24.4",
       "img": "",
       "overseas": true,
-      "country": "South Africa"
+      "country": "South Africa",
+      "retired": false
     },
     {
       "id": 316,
@@ -3809,7 +4154,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 3060 (SR 143.2), Wkts: 86 (Econ 7.96)",
       "img": "",
       "overseas": true,
-      "country": "South Africa"
+      "country": "South Africa",
+      "retired": false
     },
     {
       "id": 336,
@@ -3820,7 +4166,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 146, Econ: 7.37, Avg: 24.4",
       "img": "",
       "overseas": true,
-      "country": "West Indies"
+      "country": "West Indies",
+      "retired": false
     },
     {
       "id": 346,
@@ -3831,7 +4178,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 3060 (SR 143.2), Wkts: 86 (Econ 7.96)",
       "img": "",
       "overseas": true,
-      "country": "West Indies"
+      "country": "West Indies",
+      "retired": false
     },
     {
       "id": 366,
@@ -3842,7 +4190,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 146, Econ: 7.37, Avg: 24.4",
       "img": "",
       "overseas": true,
-      "country": "New Zealand"
+      "country": "New Zealand",
+      "retired": false
     },
     {
       "id": 376,
@@ -3853,7 +4202,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 3060 (SR 143.2), Wkts: 86 (Econ 7.96)",
       "img": "",
       "overseas": true,
-      "country": "New Zealand"
+      "country": "New Zealand",
+      "retired": false
     },
     {
       "id": 406,
@@ -3864,7 +4214,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 3060 (SR 143.2), Wkts: 86 (Econ 7.96)",
       "img": "",
       "overseas": true,
-      "country": "Afghanistan"
+      "country": "Afghanistan",
+      "retired": false
     },
     {
       "id": 416,
@@ -3875,7 +4226,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 4620 (SR 138.9), Dismissals: 105",
       "img": "",
       "overseas": true,
-      "country": "Sri Lanka"
+      "country": "Sri Lanka",
+      "retired": false
     },
     {
       "id": 426,
@@ -3886,7 +4238,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 3060 (SR 143.2), Wkts: 86 (Econ 7.96)",
       "img": "",
       "overseas": true,
-      "country": "Sri Lanka"
+      "country": "Sri Lanka",
+      "retired": false
     },
     {
       "id": 436,
@@ -3897,7 +4250,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 146, Econ: 7.37, Avg: 24.4",
       "img": "",
       "overseas": true,
-      "country": "Sri Lanka"
+      "country": "Sri Lanka",
+      "retired": false
     },
     {
       "id": 456,
@@ -3908,7 +4262,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 6080, Avg: 39.9, SR: 144.6",
       "img": "",
       "overseas": true,
-      "country": "Pakistan"
+      "country": "Pakistan",
+      "retired": false
     },
     {
       "id": 476,
@@ -3919,7 +4274,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 146, Econ: 7.37, Avg: 24.4",
       "img": "",
       "overseas": true,
-      "country": "Bangladesh"
+      "country": "Bangladesh",
+      "retired": false
     },
     {
       "id": 511,
@@ -3930,7 +4286,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 146, Econ: 7.37, Avg: 24.4",
       "img": "",
       "overseas": true,
-      "country": "England"
+      "country": "England",
+      "retired": false
     },
     {
       "id": 6,
@@ -3941,7 +4298,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 2900 (SR 141.0), Wkts: 81 (Econ 8.3)",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 17,
@@ -3952,7 +4310,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 2900 (SR 141.0), Wkts: 81 (Econ 8.3)",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 22,
@@ -3963,7 +4322,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 2900 (SR 141.0), Wkts: 81 (Econ 8.3)",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 25,
@@ -3974,7 +4334,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 5800, Avg: 38.8, SR: 142.6",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 29,
@@ -3985,7 +4346,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 2900 (SR 141.0), Wkts: 81 (Econ 8.3)",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 35,
@@ -3996,7 +4358,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 138, Econ: 7.62, Avg: 24.4",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 45,
@@ -4007,7 +4370,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 5800, Avg: 38.8, SR: 142.6",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 51,
@@ -4018,7 +4382,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 2900 (SR 141.0), Wkts: 81 (Econ 8.3)",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 65,
@@ -4029,7 +4394,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 138, Econ: 7.62, Avg: 24.4",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 85,
@@ -4040,7 +4406,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 138, Econ: 7.62, Avg: 24.4",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 115,
@@ -4051,7 +4418,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 138, Econ: 7.62, Avg: 24.4",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 135,
@@ -4062,7 +4430,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 5800, Avg: 38.8, SR: 142.6",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": true
     },
     {
       "id": 145,
@@ -4073,7 +4442,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 138, Econ: 7.62, Avg: 24.4",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": true
     },
     {
       "id": 155,
@@ -4084,7 +4454,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 138, Econ: 7.62, Avg: 24.4",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 165,
@@ -4095,7 +4466,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 138, Econ: 7.62, Avg: 24.4",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 195,
@@ -4106,7 +4478,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 5800, Avg: 38.8, SR: 142.6",
       "img": "",
       "overseas": true,
-      "country": "Australia"
+      "country": "Australia",
+      "retired": false
     },
     {
       "id": 205,
@@ -4117,7 +4490,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 138, Econ: 7.62, Avg: 24.4",
       "img": "",
       "overseas": true,
-      "country": "Australia"
+      "country": "Australia",
+      "retired": false
     },
     {
       "id": 215,
@@ -4128,7 +4502,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 138, Econ: 7.62, Avg: 24.4",
       "img": "",
       "overseas": true,
-      "country": "Australia"
+      "country": "Australia",
+      "retired": false
     },
     {
       "id": 225,
@@ -4139,7 +4514,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 138, Econ: 7.62, Avg: 24.4",
       "img": "",
       "overseas": true,
-      "country": "Australia"
+      "country": "Australia",
+      "retired": false
     },
     {
       "id": 245,
@@ -4150,7 +4526,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 2900 (SR 141.0), Wkts: 81 (Econ 8.3)",
       "img": "",
       "overseas": true,
-      "country": "England"
+      "country": "England",
+      "retired": false
     },
     {
       "id": 255,
@@ -4161,7 +4538,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 5800, Avg: 38.8, SR: 142.6",
       "img": "",
       "overseas": true,
-      "country": "England"
+      "country": "England",
+      "retired": false
     },
     {
       "id": 265,
@@ -4172,7 +4550,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 5800, Avg: 38.8, SR: 142.6",
       "img": "",
       "overseas": true,
-      "country": "England"
+      "country": "England",
+      "retired": false
     },
     {
       "id": 305,
@@ -4183,7 +4562,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 2900 (SR 141.0), Wkts: 81 (Econ 8.3)",
       "img": "",
       "overseas": true,
-      "country": "South Africa"
+      "country": "South Africa",
+      "retired": false
     },
     {
       "id": 315,
@@ -4194,7 +4574,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 138, Econ: 7.62, Avg: 24.4",
       "img": "",
       "overseas": true,
-      "country": "South Africa"
+      "country": "South Africa",
+      "retired": false
     },
     {
       "id": 345,
@@ -4205,7 +4586,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 4400 (SR 137.2), Dismissals: 99",
       "img": "",
       "overseas": true,
-      "country": "West Indies"
+      "country": "West Indies",
+      "retired": false
     },
     {
       "id": 355,
@@ -4216,7 +4598,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 2900 (SR 141.0), Wkts: 81 (Econ 8.3)",
       "img": "",
       "overseas": true,
-      "country": "West Indies"
+      "country": "West Indies",
+      "retired": false
     },
     {
       "id": 385,
@@ -4227,7 +4610,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 4400 (SR 137.2), Dismissals: 99",
       "img": "",
       "overseas": true,
-      "country": "New Zealand"
+      "country": "New Zealand",
+      "retired": false
     },
     {
       "id": 405,
@@ -4238,7 +4622,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 138, Econ: 7.62, Avg: 24.4",
       "img": "",
       "overseas": true,
-      "country": "Afghanistan"
+      "country": "Afghanistan",
+      "retired": false
     },
     {
       "id": 425,
@@ -4249,7 +4634,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 5800, Avg: 38.8, SR: 142.6",
       "img": "",
       "overseas": true,
-      "country": "Sri Lanka"
+      "country": "Sri Lanka",
+      "retired": false
     },
     {
       "id": 435,
@@ -4260,7 +4646,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 138, Econ: 7.62, Avg: 24.4",
       "img": "",
       "overseas": true,
-      "country": "Sri Lanka"
+      "country": "Sri Lanka",
+      "retired": false
     },
     {
       "id": 455,
@@ -4271,7 +4658,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 138, Econ: 7.62, Avg: 24.4",
       "img": "",
       "overseas": true,
-      "country": "Pakistan"
+      "country": "Pakistan",
+      "retired": false
     },
     {
       "id": 475,
@@ -4282,7 +4670,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 138, Econ: 7.62, Avg: 24.4",
       "img": "",
       "overseas": true,
-      "country": "Bangladesh"
+      "country": "Bangladesh",
+      "retired": false
     },
     {
       "id": 485,
@@ -4293,7 +4682,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 138, Econ: 7.62, Avg: 24.4",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 493,
@@ -4304,7 +4694,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 2900 (SR 141.0), Wkts: 81 (Econ 8.3)",
       "img": "",
       "overseas": true,
-      "country": "Afghanistan"
+      "country": "Afghanistan",
+      "retired": false
     },
     {
       "id": 26,
@@ -4315,7 +4706,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 3540 (SR 144.8), Wkts: 90 (Econ 8.19)",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 34,
@@ -4326,7 +4718,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 179, Econ: 7.57, Avg: 25.4",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 54,
@@ -4337,7 +4730,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 3540 (SR 144.8), Wkts: 90 (Econ 8.19)",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 64,
@@ -4348,7 +4742,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 6720, Avg: 40.2, SR: 140.6",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 74,
@@ -4359,7 +4754,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 179, Econ: 7.57, Avg: 25.4",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 84,
@@ -4370,7 +4766,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 3540 (SR 144.8), Wkts: 90 (Econ 8.19)",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 154,
@@ -4381,7 +4778,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 179, Econ: 7.57, Avg: 25.4",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 184,
@@ -4392,7 +4790,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 6720, Avg: 40.2, SR: 140.6",
       "img": "",
       "overseas": true,
-      "country": "Australia"
+      "country": "Australia",
+      "retired": false
     },
     {
       "id": 194,
@@ -4403,7 +4802,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 3540 (SR 144.8), Wkts: 90 (Econ 8.19)",
       "img": "",
       "overseas": true,
-      "country": "Australia"
+      "country": "Australia",
+      "retired": false
     },
     {
       "id": 204,
@@ -4414,7 +4814,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 179, Econ: 7.57, Avg: 25.4",
       "img": "",
       "overseas": true,
-      "country": "Australia"
+      "country": "Australia",
+      "retired": false
     },
     {
       "id": 214,
@@ -4425,7 +4826,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 6720, Avg: 40.2, SR: 140.6",
       "img": "",
       "overseas": true,
-      "country": "Australia"
+      "country": "Australia",
+      "retired": false
     },
     {
       "id": 224,
@@ -4436,7 +4838,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 3540 (SR 144.8), Wkts: 90 (Econ 8.19)",
       "img": "",
       "overseas": true,
-      "country": "Australia"
+      "country": "Australia",
+      "retired": false
     },
     {
       "id": 254,
@@ -4447,7 +4850,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 6720, Avg: 40.2, SR: 140.6",
       "img": "",
       "overseas": true,
-      "country": "England"
+      "country": "England",
+      "retired": false
     },
     {
       "id": 264,
@@ -4458,7 +4862,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 179, Econ: 7.57, Avg: 25.4",
       "img": "",
       "overseas": true,
-      "country": "England"
+      "country": "England",
+      "retired": false
     },
     {
       "id": 274,
@@ -4469,7 +4874,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 3540 (SR 144.8), Wkts: 90 (Econ 8.19)",
       "img": "",
       "overseas": true,
-      "country": "England"
+      "country": "England",
+      "retired": false
     },
     {
       "id": 304,
@@ -4480,7 +4886,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 179, Econ: 7.57, Avg: 25.4",
       "img": "",
       "overseas": true,
-      "country": "South Africa"
+      "country": "South Africa",
+      "retired": false
     },
     {
       "id": 314,
@@ -4491,7 +4898,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 3540 (SR 144.8), Wkts: 90 (Econ 8.19)",
       "img": "",
       "overseas": true,
-      "country": "South Africa"
+      "country": "South Africa",
+      "retired": false
     },
     {
       "id": 334,
@@ -4502,7 +4910,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 3540 (SR 144.8), Wkts: 90 (Econ 8.19)",
       "img": "",
       "overseas": true,
-      "country": "West Indies"
+      "country": "West Indies",
+      "retired": false
     },
     {
       "id": 354,
@@ -4513,7 +4922,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 3540 (SR 144.8), Wkts: 90 (Econ 8.19)",
       "img": "",
       "overseas": true,
-      "country": "West Indies"
+      "country": "West Indies",
+      "retired": false
     },
     {
       "id": 374,
@@ -4524,7 +4934,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 6720, Avg: 40.2, SR: 140.6",
       "img": "",
       "overseas": true,
-      "country": "New Zealand"
+      "country": "New Zealand",
+      "retired": false
     },
     {
       "id": 384,
@@ -4535,7 +4946,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 179, Econ: 7.57, Avg: 25.4",
       "img": "",
       "overseas": true,
-      "country": "New Zealand"
+      "country": "New Zealand",
+      "retired": false
     },
     {
       "id": 404,
@@ -4546,7 +4958,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 179, Econ: 7.57, Avg: 25.4",
       "img": "",
       "overseas": true,
-      "country": "Afghanistan"
+      "country": "Afghanistan",
+      "retired": false
     },
     {
       "id": 434,
@@ -4557,7 +4970,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 179, Econ: 7.57, Avg: 25.4",
       "img": "",
       "overseas": true,
-      "country": "Sri Lanka"
+      "country": "Sri Lanka",
+      "retired": false
     },
     {
       "id": 454,
@@ -4568,7 +4982,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 179, Econ: 7.57, Avg: 25.4",
       "img": "",
       "overseas": true,
-      "country": "Pakistan"
+      "country": "Pakistan",
+      "retired": false
     },
     {
       "id": 474,
@@ -4579,7 +4994,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 179, Econ: 7.57, Avg: 25.4",
       "img": "",
       "overseas": true,
-      "country": "Bangladesh"
+      "country": "Bangladesh",
+      "retired": false
     },
     {
       "id": 33,
@@ -4590,7 +5006,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 170, Econ: 7.51, Avg: 25.3",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 42,
@@ -4601,7 +5018,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 3380 (SR 142.6), Wkts: 85 (Econ 8.08)",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 43,
@@ -4612,7 +5030,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 3380 (SR 142.6), Wkts: 85 (Econ 8.08)",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 53,
@@ -4623,7 +5042,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 3380 (SR 142.6), Wkts: 85 (Econ 8.08)",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 68,
@@ -4634,7 +5054,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 6440, Avg: 39.2, SR: 138.6",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 73,
@@ -4645,7 +5066,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 170, Econ: 7.51, Avg: 25.3",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 83,
@@ -4656,7 +5078,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 170, Econ: 7.51, Avg: 25.3",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 113,
@@ -4667,7 +5090,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 170, Econ: 7.51, Avg: 25.3",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 133,
@@ -4678,7 +5102,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 170, Econ: 7.51, Avg: 25.3",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": true
     },
     {
       "id": 143,
@@ -4689,7 +5114,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 170, Econ: 7.51, Avg: 25.3",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": true
     },
     {
       "id": 153,
@@ -4700,7 +5126,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 3380 (SR 142.6), Wkts: 85 (Econ 8.08)",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 193,
@@ -4711,7 +5138,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 170, Econ: 7.51, Avg: 25.3",
       "img": "",
       "overseas": true,
-      "country": "Australia"
+      "country": "Australia",
+      "retired": false
     },
     {
       "id": 213,
@@ -4722,7 +5150,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 3380 (SR 142.6), Wkts: 85 (Econ 8.08)",
       "img": "",
       "overseas": true,
-      "country": "Australia"
+      "country": "Australia",
+      "retired": false
     },
     {
       "id": 223,
@@ -4733,7 +5162,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 170, Econ: 7.51, Avg: 25.3",
       "img": "",
       "overseas": true,
-      "country": "Australia"
+      "country": "Australia",
+      "retired": false
     },
     {
       "id": 238,
@@ -4744,7 +5174,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 3380 (SR 142.6), Wkts: 85 (Econ 8.08)",
       "img": "",
       "overseas": true,
-      "country": "England"
+      "country": "England",
+      "retired": false
     },
     {
       "id": 253,
@@ -4755,7 +5186,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 6440, Avg: 39.2, SR: 138.6",
       "img": "",
       "overseas": true,
-      "country": "England"
+      "country": "England",
+      "retired": false
     },
     {
       "id": 263,
@@ -4766,7 +5198,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 170, Econ: 7.51, Avg: 25.3",
       "img": "",
       "overseas": true,
-      "country": "England"
+      "country": "England",
+      "retired": false
     },
     {
       "id": 273,
@@ -4777,7 +5210,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 3380 (SR 142.6), Wkts: 85 (Econ 8.08)",
       "img": "",
       "overseas": true,
-      "country": "England"
+      "country": "England",
+      "retired": false
     },
     {
       "id": 294,
@@ -4788,7 +5222,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 6440, Avg: 39.2, SR: 138.6",
       "img": "",
       "overseas": true,
-      "country": "South Africa"
+      "country": "South Africa",
+      "retired": false
     },
     {
       "id": 303,
@@ -4799,7 +5234,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 4960 (SR 139.2), Dismissals: 125",
       "img": "",
       "overseas": true,
-      "country": "South Africa"
+      "country": "South Africa",
+      "retired": false
     },
     {
       "id": 313,
@@ -4810,7 +5246,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 3380 (SR 142.6), Wkts: 85 (Econ 8.08)",
       "img": "",
       "overseas": true,
-      "country": "South Africa"
+      "country": "South Africa",
+      "retired": false
     },
     {
       "id": 323,
@@ -4821,7 +5258,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 3380 (SR 142.6), Wkts: 85 (Econ 8.08)",
       "img": "",
       "overseas": true,
-      "country": "West Indies"
+      "country": "West Indies",
+      "retired": false
     },
     {
       "id": 327,
@@ -4832,7 +5270,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 3380 (SR 142.6), Wkts: 85 (Econ 8.08)",
       "img": "",
       "overseas": true,
-      "country": "West Indies"
+      "country": "West Indies",
+      "retired": false
     },
     {
       "id": 343,
@@ -4843,7 +5282,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 6440, Avg: 39.2, SR: 138.6",
       "img": "",
       "overseas": true,
-      "country": "West Indies"
+      "country": "West Indies",
+      "retired": false
     },
     {
       "id": 353,
@@ -4854,7 +5294,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 3380 (SR 142.6), Wkts: 85 (Econ 8.08)",
       "img": "",
       "overseas": true,
-      "country": "West Indies"
+      "country": "West Indies",
+      "retired": false
     },
     {
       "id": 373,
@@ -4865,7 +5306,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 6440, Avg: 39.2, SR: 138.6",
       "img": "",
       "overseas": true,
-      "country": "New Zealand"
+      "country": "New Zealand",
+      "retired": false
     },
     {
       "id": 383,
@@ -4876,7 +5318,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 170, Econ: 7.51, Avg: 25.3",
       "img": "",
       "overseas": true,
-      "country": "New Zealand"
+      "country": "New Zealand",
+      "retired": false
     },
     {
       "id": 423,
@@ -4887,7 +5330,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 3380 (SR 142.6), Wkts: 85 (Econ 8.08)",
       "img": "",
       "overseas": true,
-      "country": "Sri Lanka"
+      "country": "Sri Lanka",
+      "retired": false
     },
     {
       "id": 433,
@@ -4898,7 +5342,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 170, Econ: 7.51, Avg: 25.3",
       "img": "",
       "overseas": true,
-      "country": "Sri Lanka"
+      "country": "Sri Lanka",
+      "retired": false
     },
     {
       "id": 453,
@@ -4909,7 +5354,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 6440, Avg: 39.2, SR: 138.6",
       "img": "",
       "overseas": true,
-      "country": "Pakistan"
+      "country": "Pakistan",
+      "retired": false
     },
     {
       "id": 463,
@@ -4920,7 +5366,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 3380 (SR 142.6), Wkts: 85 (Econ 8.08)",
       "img": "",
       "overseas": true,
-      "country": "Pakistan"
+      "country": "Pakistan",
+      "retired": false
     },
     {
       "id": 473,
@@ -4931,7 +5378,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 6440, Avg: 39.2, SR: 138.6",
       "img": "",
       "overseas": true,
-      "country": "Bangladesh"
+      "country": "Bangladesh",
+      "retired": false
     },
     {
       "id": 483,
@@ -4942,7 +5390,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 170, Econ: 7.51, Avg: 25.3",
       "img": "",
       "overseas": true,
-      "country": "Bangladesh"
+      "country": "Bangladesh",
+      "retired": false
     },
     {
       "id": 32,
@@ -4953,7 +5402,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 162, Econ: 7.76, Avg: 25.3",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 52,
@@ -4964,7 +5414,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 6160, Avg: 38.1, SR: 136.6",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 62,
@@ -4975,7 +5426,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 6160, Avg: 38.1, SR: 136.6",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 72,
@@ -4986,7 +5438,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 6160, Avg: 38.1, SR: 136.6",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 82,
@@ -4997,7 +5450,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 162, Econ: 7.76, Avg: 25.3",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 92,
@@ -5008,7 +5462,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 6160, Avg: 38.1, SR: 136.6",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 102,
@@ -5019,7 +5474,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 3220 (SR 140.4), Wkts: 80 (Econ 8.42)",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 112,
@@ -5030,7 +5486,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 162, Econ: 7.76, Avg: 25.3",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 122,
@@ -5041,7 +5498,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 3220 (SR 140.4), Wkts: 80 (Econ 8.42)",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 132,
@@ -5052,7 +5510,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 162, Econ: 7.76, Avg: 25.3",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": true
     },
     {
       "id": 142,
@@ -5063,7 +5522,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 162, Econ: 7.76, Avg: 25.3",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": true
     },
     {
       "id": 152,
@@ -5074,7 +5534,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 162, Econ: 7.76, Avg: 25.3",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 162,
@@ -5085,7 +5546,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 162, Econ: 7.76, Avg: 25.3",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 182,
@@ -5096,7 +5558,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 3220 (SR 140.4), Wkts: 80 (Econ 8.42)",
       "img": "",
       "overseas": true,
-      "country": "Australia"
+      "country": "Australia",
+      "retired": false
     },
     {
       "id": 186,
@@ -5107,7 +5570,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 3220 (SR 140.4), Wkts: 80 (Econ 8.42)",
       "img": "",
       "overseas": true,
-      "country": "Australia"
+      "country": "Australia",
+      "retired": false
     },
     {
       "id": 192,
@@ -5118,7 +5582,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 162, Econ: 7.76, Avg: 25.3",
       "img": "",
       "overseas": true,
-      "country": "Australia"
+      "country": "Australia",
+      "retired": false
     },
     {
       "id": 212,
@@ -5129,7 +5594,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 3220 (SR 140.4), Wkts: 80 (Econ 8.42)",
       "img": "",
       "overseas": true,
-      "country": "Australia"
+      "country": "Australia",
+      "retired": false
     },
     {
       "id": 222,
@@ -5140,7 +5606,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 162, Econ: 7.76, Avg: 25.3",
       "img": "",
       "overseas": true,
-      "country": "Australia"
+      "country": "Australia",
+      "retired": false
     },
     {
       "id": 252,
@@ -5151,7 +5618,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 6160, Avg: 38.1, SR: 136.6",
       "img": "",
       "overseas": true,
-      "country": "England"
+      "country": "England",
+      "retired": false
     },
     {
       "id": 262,
@@ -5162,7 +5630,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 4740 (SR 137.5), Dismissals: 118",
       "img": "",
       "overseas": true,
-      "country": "England"
+      "country": "England",
+      "retired": false
     },
     {
       "id": 272,
@@ -5173,7 +5642,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 6160, Avg: 38.1, SR: 136.6",
       "img": "",
       "overseas": true,
-      "country": "England"
+      "country": "England",
+      "retired": false
     },
     {
       "id": 292,
@@ -5184,7 +5654,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 162, Econ: 7.76, Avg: 25.3",
       "img": "",
       "overseas": true,
-      "country": "South Africa"
+      "country": "South Africa",
+      "retired": false
     },
     {
       "id": 332,
@@ -5195,7 +5666,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 162, Econ: 7.76, Avg: 25.3",
       "img": "",
       "overseas": true,
-      "country": "West Indies"
+      "country": "West Indies",
+      "retired": false
     },
     {
       "id": 352,
@@ -5206,7 +5678,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 3220 (SR 140.4), Wkts: 80 (Econ 8.42)",
       "img": "",
       "overseas": true,
-      "country": "West Indies"
+      "country": "West Indies",
+      "retired": false
     },
     {
       "id": 372,
@@ -5217,7 +5690,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 6160, Avg: 38.1, SR: 136.6",
       "img": "",
       "overseas": true,
-      "country": "New Zealand"
+      "country": "New Zealand",
+      "retired": false
     },
     {
       "id": 382,
@@ -5228,7 +5702,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 162, Econ: 7.76, Avg: 25.3",
       "img": "",
       "overseas": true,
-      "country": "New Zealand"
+      "country": "New Zealand",
+      "retired": false
     },
     {
       "id": 402,
@@ -5239,7 +5714,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 3220 (SR 140.4), Wkts: 80 (Econ 8.42)",
       "img": "",
       "overseas": true,
-      "country": "Afghanistan"
+      "country": "Afghanistan",
+      "retired": false
     },
     {
       "id": 432,
@@ -5250,7 +5726,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 162, Econ: 7.76, Avg: 25.3",
       "img": "",
       "overseas": true,
-      "country": "Sri Lanka"
+      "country": "Sri Lanka",
+      "retired": false
     },
     {
       "id": 452,
@@ -5261,7 +5738,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 4740 (SR 137.5), Dismissals: 118",
       "img": "",
       "overseas": true,
-      "country": "Pakistan"
+      "country": "Pakistan",
+      "retired": false
     },
     {
       "id": 462,
@@ -5272,7 +5750,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 3220 (SR 140.4), Wkts: 80 (Econ 8.42)",
       "img": "",
       "overseas": true,
-      "country": "Pakistan"
+      "country": "Pakistan",
+      "retired": false
     },
     {
       "id": 472,
@@ -5283,7 +5762,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 6160, Avg: 38.1, SR: 136.6",
       "img": "",
       "overseas": true,
-      "country": "Bangladesh"
+      "country": "Bangladesh",
+      "retired": false
     },
     {
       "id": 482,
@@ -5294,7 +5774,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 3220 (SR 140.4), Wkts: 80 (Econ 8.42)",
       "img": "",
       "overseas": true,
-      "country": "Bangladesh"
+      "country": "Bangladesh",
+      "retired": false
     },
     {
       "id": 501,
@@ -5305,7 +5786,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 4740 (SR 137.5), Dismissals: 118",
       "img": "",
       "overseas": true,
-      "country": "Sri Lanka"
+      "country": "Sri Lanka",
+      "retired": false
     },
     {
       "id": 507,
@@ -5316,7 +5798,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 3220 (SR 140.4), Wkts: 80 (Econ 8.42)",
       "img": "",
       "overseas": true,
-      "country": "Sri Lanka"
+      "country": "Sri Lanka",
+      "retired": false
     },
     {
       "id": 41,
@@ -5327,7 +5810,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 153, Econ: 7.7, Avg: 25.3",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 61,
@@ -5338,7 +5822,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 5880, Avg: 37.1, SR: 143.0",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 71,
@@ -5349,7 +5834,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 5880, Avg: 37.1, SR: 143.0",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 81,
@@ -5360,7 +5846,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 153, Econ: 7.7, Avg: 25.3",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 91,
@@ -5371,7 +5858,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 5880, Avg: 37.1, SR: 143.0",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 111,
@@ -5382,7 +5870,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 5880, Avg: 37.1, SR: 143.0",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 121,
@@ -5393,7 +5882,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 5880, Avg: 37.1, SR: 143.0",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 131,
@@ -5404,7 +5894,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 153, Econ: 7.7, Avg: 25.3",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": true
     },
     {
       "id": 141,
@@ -5415,7 +5906,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 3060 (SR 138.2), Wkts: 75 (Econ 8.31)",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": true
     },
     {
       "id": 151,
@@ -5426,7 +5918,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 153, Econ: 7.7, Avg: 25.3",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": true
     },
     {
       "id": 161,
@@ -5437,7 +5930,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 153, Econ: 7.7, Avg: 25.3",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 183,
@@ -5448,7 +5942,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 5880, Avg: 37.1, SR: 143.0",
       "img": "",
       "overseas": true,
-      "country": "Australia"
+      "country": "Australia",
+      "retired": false
     },
     {
       "id": 201,
@@ -5459,7 +5954,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 153, Econ: 7.7, Avg: 25.3",
       "img": "",
       "overseas": true,
-      "country": "Australia"
+      "country": "Australia",
+      "retired": false
     },
     {
       "id": 221,
@@ -5470,7 +5966,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 3060 (SR 138.2), Wkts: 75 (Econ 8.31)",
       "img": "",
       "overseas": true,
-      "country": "Australia"
+      "country": "Australia",
+      "retired": false
     },
     {
       "id": 251,
@@ -5481,7 +5978,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 153, Econ: 7.7, Avg: 25.3",
       "img": "",
       "overseas": true,
-      "country": "England"
+      "country": "England",
+      "retired": false
     },
     {
       "id": 261,
@@ -5492,7 +5990,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 153, Econ: 7.7, Avg: 25.3",
       "img": "",
       "overseas": true,
-      "country": "England"
+      "country": "England",
+      "retired": false
     },
     {
       "id": 271,
@@ -5503,7 +6002,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 4520 (SR 135.7), Dismissals: 111",
       "img": "",
       "overseas": true,
-      "country": "England"
+      "country": "England",
+      "retired": false
     },
     {
       "id": 291,
@@ -5514,7 +6014,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 153, Econ: 7.7, Avg: 25.3",
       "img": "",
       "overseas": true,
-      "country": "South Africa"
+      "country": "South Africa",
+      "retired": false
     },
     {
       "id": 311,
@@ -5525,7 +6026,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 153, Econ: 7.7, Avg: 25.3",
       "img": "",
       "overseas": true,
-      "country": "South Africa"
+      "country": "South Africa",
+      "retired": false
     },
     {
       "id": 322,
@@ -5536,7 +6038,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 3060 (SR 138.2), Wkts: 75 (Econ 8.31)",
       "img": "",
       "overseas": true,
-      "country": "West Indies"
+      "country": "West Indies",
+      "retired": false
     },
     {
       "id": 325,
@@ -5547,7 +6050,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 3060 (SR 138.2), Wkts: 75 (Econ 8.31)",
       "img": "",
       "overseas": true,
-      "country": "West Indies"
+      "country": "West Indies",
+      "retired": true
     },
     {
       "id": 331,
@@ -5558,7 +6062,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 3060 (SR 138.2), Wkts: 75 (Econ 8.31)",
       "img": "",
       "overseas": true,
-      "country": "West Indies"
+      "country": "West Indies",
+      "retired": false
     },
     {
       "id": 341,
@@ -5569,7 +6074,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 5880, Avg: 37.1, SR: 143.0",
       "img": "",
       "overseas": true,
-      "country": "West Indies"
+      "country": "West Indies",
+      "retired": false
     },
     {
       "id": 401,
@@ -5580,7 +6086,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 4520 (SR 135.7), Dismissals: 111",
       "img": "",
       "overseas": true,
-      "country": "Afghanistan"
+      "country": "Afghanistan",
+      "retired": false
     },
     {
       "id": 421,
@@ -5591,7 +6098,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 153, Econ: 7.7, Avg: 25.3",
       "img": "",
       "overseas": true,
-      "country": "Sri Lanka"
+      "country": "Sri Lanka",
+      "retired": false
     },
     {
       "id": 431,
@@ -5602,7 +6110,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 3060 (SR 138.2), Wkts: 75 (Econ 8.31)",
       "img": "",
       "overseas": true,
-      "country": "Sri Lanka"
+      "country": "Sri Lanka",
+      "retired": false
     },
     {
       "id": 451,
@@ -5613,7 +6122,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 5880, Avg: 37.1, SR: 143.0",
       "img": "",
       "overseas": true,
-      "country": "Pakistan"
+      "country": "Pakistan",
+      "retired": false
     },
     {
       "id": 461,
@@ -5624,7 +6134,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 5880, Avg: 37.1, SR: 143.0",
       "img": "",
       "overseas": true,
-      "country": "Pakistan"
+      "country": "Pakistan",
+      "retired": false
     },
     {
       "id": 471,
@@ -5635,7 +6146,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 4520 (SR 135.7), Dismissals: 111",
       "img": "",
       "overseas": true,
-      "country": "Bangladesh"
+      "country": "Bangladesh",
+      "retired": false
     },
     {
       "id": 487,
@@ -5646,7 +6158,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 5880, Avg: 37.1, SR: 143.0",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 495,
@@ -5657,7 +6170,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 153, Econ: 7.7, Avg: 25.3",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 499,
@@ -5668,7 +6182,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 153, Econ: 7.7, Avg: 25.3",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 515,
@@ -5679,7 +6194,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 153, Econ: 7.7, Avg: 25.3",
       "img": "",
       "overseas": true,
-      "country": "West Indies"
+      "country": "West Indies",
+      "retired": false
     },
     {
       "id": 30,
@@ -5690,7 +6206,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 145, Econ: 7.65, Avg: 25.2",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 40,
@@ -5701,7 +6218,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 145, Econ: 7.65, Avg: 25.2",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 50,
@@ -5712,7 +6230,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 2900 (SR 142.0), Wkts: 70 (Econ 8.2)",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 60,
@@ -5723,7 +6242,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 5600, Avg: 36.0, SR: 141.0",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 63,
@@ -5734,7 +6254,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 5600, Avg: 36.0, SR: 141.0",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 70,
@@ -5745,7 +6266,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 5600, Avg: 36.0, SR: 141.0",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 80,
@@ -5756,7 +6278,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 145, Econ: 7.65, Avg: 25.2",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 100,
@@ -5767,7 +6290,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 2900 (SR 142.0), Wkts: 70 (Econ 8.2)",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 120,
@@ -5778,7 +6302,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 5600, Avg: 36.0, SR: 141.0",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 140,
@@ -5789,7 +6314,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 5600, Avg: 36.0, SR: 141.0",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": true
     },
     {
       "id": 150,
@@ -5800,7 +6326,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 2900 (SR 142.0), Wkts: 70 (Econ 8.2)",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": true
     },
     {
       "id": 160,
@@ -5811,7 +6338,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 4300 (SR 134.0), Dismissals: 105",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 190,
@@ -5822,7 +6350,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 4300 (SR 134.0), Dismissals: 105",
       "img": "",
       "overseas": true,
-      "country": "Australia"
+      "country": "Australia",
+      "retired": false
     },
     {
       "id": 200,
@@ -5833,7 +6362,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 145, Econ: 7.65, Avg: 25.2",
       "img": "",
       "overseas": true,
-      "country": "Australia"
+      "country": "Australia",
+      "retired": false
     },
     {
       "id": 210,
@@ -5844,7 +6374,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 2900 (SR 142.0), Wkts: 70 (Econ 8.2)",
       "img": "",
       "overseas": true,
-      "country": "Australia"
+      "country": "Australia",
+      "retired": false
     },
     {
       "id": 220,
@@ -5855,7 +6386,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 145, Econ: 7.65, Avg: 25.2",
       "img": "",
       "overseas": true,
-      "country": "Australia"
+      "country": "Australia",
+      "retired": false
     },
     {
       "id": 250,
@@ -5866,7 +6398,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 145, Econ: 7.65, Avg: 25.2",
       "img": "",
       "overseas": true,
-      "country": "England"
+      "country": "England",
+      "retired": false
     },
     {
       "id": 260,
@@ -5877,7 +6410,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 145, Econ: 7.65, Avg: 25.2",
       "img": "",
       "overseas": true,
-      "country": "England"
+      "country": "England",
+      "retired": false
     },
     {
       "id": 270,
@@ -5888,7 +6422,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 2900 (SR 142.0), Wkts: 70 (Econ 8.2)",
       "img": "",
       "overseas": true,
-      "country": "England"
+      "country": "England",
+      "retired": false
     },
     {
       "id": 290,
@@ -5899,7 +6434,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 145, Econ: 7.65, Avg: 25.2",
       "img": "",
       "overseas": true,
-      "country": "South Africa"
+      "country": "South Africa",
+      "retired": false
     },
     {
       "id": 310,
@@ -5910,7 +6446,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 145, Econ: 7.65, Avg: 25.2",
       "img": "",
       "overseas": true,
-      "country": "South Africa"
+      "country": "South Africa",
+      "retired": false
     },
     {
       "id": 320,
@@ -5921,7 +6458,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 2900 (SR 142.0), Wkts: 70 (Econ 8.2)",
       "img": "",
       "overseas": true,
-      "country": "South Africa"
+      "country": "South Africa",
+      "retired": false
     },
     {
       "id": 330,
@@ -5932,7 +6470,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 5600, Avg: 36.0, SR: 141.0",
       "img": "",
       "overseas": true,
-      "country": "West Indies"
+      "country": "West Indies",
+      "retired": false
     },
     {
       "id": 340,
@@ -5943,7 +6482,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 5600, Avg: 36.0, SR: 141.0",
       "img": "",
       "overseas": true,
-      "country": "West Indies"
+      "country": "West Indies",
+      "retired": false
     },
     {
       "id": 350,
@@ -5954,7 +6494,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 145, Econ: 7.65, Avg: 25.2",
       "img": "",
       "overseas": true,
-      "country": "West Indies"
+      "country": "West Indies",
+      "retired": false
     },
     {
       "id": 370,
@@ -5965,7 +6506,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 4300 (SR 134.0), Dismissals: 105",
       "img": "",
       "overseas": true,
-      "country": "New Zealand"
+      "country": "New Zealand",
+      "retired": false
     },
     {
       "id": 400,
@@ -5976,7 +6518,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 2900 (SR 142.0), Wkts: 70 (Econ 8.2)",
       "img": "",
       "overseas": true,
-      "country": "Afghanistan"
+      "country": "Afghanistan",
+      "retired": false
     },
     {
       "id": 420,
@@ -5987,7 +6530,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 145, Econ: 7.65, Avg: 25.2",
       "img": "",
       "overseas": true,
-      "country": "Sri Lanka"
+      "country": "Sri Lanka",
+      "retired": false
     },
     {
       "id": 430,
@@ -5998,7 +6542,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 5600, Avg: 36.0, SR: 141.0",
       "img": "",
       "overseas": true,
-      "country": "Sri Lanka"
+      "country": "Sri Lanka",
+      "retired": false
     },
     {
       "id": 450,
@@ -6009,7 +6554,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 2900 (SR 142.0), Wkts: 70 (Econ 8.2)",
       "img": "",
       "overseas": true,
-      "country": "Pakistan"
+      "country": "Pakistan",
+      "retired": false
     },
     {
       "id": 460,
@@ -6020,7 +6566,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 2900 (SR 142.0), Wkts: 70 (Econ 8.2)",
       "img": "",
       "overseas": true,
-      "country": "Pakistan"
+      "country": "Pakistan",
+      "retired": false
     },
     {
       "id": 480,
@@ -6031,7 +6578,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 4300 (SR 134.0), Dismissals: 105",
       "img": "",
       "overseas": true,
-      "country": "Bangladesh"
+      "country": "Bangladesh",
+      "retired": false
     },
     {
       "id": 503,
@@ -6042,7 +6590,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 4300 (SR 134.0), Dismissals: 105",
       "img": "",
       "overseas": true,
-      "country": "England"
+      "country": "England",
+      "retired": false
     },
     {
       "id": 27,
@@ -6053,7 +6602,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 5320, Avg: 37.4, SR: 139.0",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 89,
@@ -6064,7 +6614,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 5320, Avg: 37.4, SR: 139.0",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 309,
@@ -6075,7 +6626,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 2740 (SR 139.8), Wkts: 79 (Econ 8.54)",
       "img": "",
       "overseas": true,
-      "country": "South Africa"
+      "country": "South Africa",
+      "retired": false
     },
     {
       "id": 360,
@@ -6086,7 +6638,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 2740 (SR 139.8), Wkts: 79 (Econ 8.54)",
       "img": "",
       "overseas": true,
-      "country": "New Zealand"
+      "country": "New Zealand",
+      "retired": false
     },
     {
       "id": 492,
@@ -6097,7 +6650,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 136, Econ: 7.9, Avg: 26.2",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 514,
@@ -6108,7 +6662,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 4080 (SR 137.8), Dismissals: 98",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 78,
@@ -6119,7 +6674,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 127, Econ: 7.84, Avg: 26.2",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 98,
@@ -6130,7 +6686,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 2580 (SR 137.6), Wkts: 74 (Econ 8.43)",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 243,
@@ -6141,7 +6698,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 2580 (SR 137.6), Wkts: 74 (Econ 8.43)",
       "img": "",
       "overseas": true,
-      "country": "England"
+      "country": "England",
+      "retired": false
     },
     {
       "id": 335,
@@ -6152,7 +6710,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 2580 (SR 137.6), Wkts: 74 (Econ 8.43)",
       "img": "",
       "overseas": true,
-      "country": "West Indies"
+      "country": "West Indies",
+      "retired": false
     },
     {
       "id": 97,
@@ -6163,7 +6722,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 4760, Avg: 35.3, SR: 135.0",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 217,
@@ -6174,7 +6734,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 119, Econ: 7.79, Avg: 26.2",
       "img": "",
       "overseas": true,
-      "country": "Australia"
+      "country": "Australia",
+      "retired": false
     },
     {
       "id": 237,
@@ -6185,7 +6746,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 2420 (SR 135.4), Wkts: 69 (Econ 8.32)",
       "img": "",
       "overseas": true,
-      "country": "England"
+      "country": "England",
+      "retired": false
     },
     {
       "id": 333,
@@ -6196,7 +6758,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 4760, Avg: 35.3, SR: 135.0",
       "img": "",
       "overseas": true,
-      "country": "West Indies"
+      "country": "West Indies",
+      "retired": false
     },
     {
       "id": 486,
@@ -6207,7 +6770,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 2420 (SR 135.4), Wkts: 69 (Econ 8.32)",
       "img": "",
       "overseas": true,
-      "country": "Zimbabwe"
+      "country": "Zimbabwe",
+      "retired": false
     },
     {
       "id": 96,
@@ -6218,7 +6782,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 3420 (SR 132.5), Dismissals: 77",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 276,
@@ -6229,7 +6794,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 110, Econ: 8.03, Avg: 26.1",
       "img": "",
       "overseas": true,
-      "country": "England"
+      "country": "England",
+      "retired": false
     },
     {
       "id": 386,
@@ -6240,7 +6806,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 2260 (SR 139.2), Wkts: 64 (Econ 8.66)",
       "img": "",
       "overseas": true,
-      "country": "New Zealand"
+      "country": "New Zealand",
+      "retired": false
     },
     {
       "id": 504,
@@ -6251,7 +6818,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 3420 (SR 132.5), Dismissals: 77",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 75,
@@ -6262,7 +6830,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 102, Econ: 7.98, Avg: 26.1",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 95,
@@ -6273,7 +6842,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 3200 (SR 130.8), Dismissals: 71",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 105,
@@ -6284,7 +6854,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 102, Econ: 7.98, Avg: 26.1",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 181,
@@ -6295,7 +6866,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 2100 (SR 137.0), Wkts: 59 (Econ 8.55)",
       "img": "",
       "overseas": true,
-      "country": "Australia"
+      "country": "Australia",
+      "retired": false
     },
     {
       "id": 275,
@@ -6306,7 +6878,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 2100 (SR 137.0), Wkts: 59 (Econ 8.55)",
       "img": "",
       "overseas": true,
-      "country": "England"
+      "country": "England",
+      "retired": false
     },
     {
       "id": 363,
@@ -6317,7 +6890,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 2100 (SR 137.0), Wkts: 59 (Econ 8.55)",
       "img": "",
       "overseas": true,
-      "country": "New Zealand"
+      "country": "New Zealand",
+      "retired": false
     },
     {
       "id": 491,
@@ -6328,7 +6902,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 2100 (SR 137.0), Wkts: 59 (Econ 8.55)",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 496,
@@ -6339,7 +6914,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 102, Econ: 7.98, Avg: 26.1",
       "img": "",
       "overseas": true,
-      "country": "England"
+      "country": "England",
+      "retired": false
     },
     {
       "id": 506,
@@ -6350,7 +6926,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 4200, Avg: 33.2, SR: 131.0",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 513,
@@ -6361,7 +6938,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 102, Econ: 7.98, Avg: 26.1",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 44,
@@ -6372,7 +6950,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 5120, Avg: 34.6, SR: 137.4",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 94,
@@ -6383,7 +6962,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 5120, Avg: 34.6, SR: 137.4",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 104,
@@ -6394,7 +6974,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 143, Econ: 7.93, Avg: 27.1",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 114,
@@ -6405,7 +6986,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 2740 (SR 134.8), Wkts: 68 (Econ 8.44)",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 164,
@@ -6416,7 +6998,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 143, Econ: 7.93, Avg: 27.1",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 244,
@@ -6427,7 +7010,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 2740 (SR 134.8), Wkts: 68 (Econ 8.44)",
       "img": "",
       "overseas": true,
-      "country": "England"
+      "country": "England",
+      "retired": false
     },
     {
       "id": 484,
@@ -6438,7 +7022,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 5120, Avg: 34.6, SR: 137.4",
       "img": "",
       "overseas": true,
-      "country": "Bangladesh"
+      "country": "Bangladesh",
+      "retired": false
     },
     {
       "id": 498,
@@ -6449,7 +7034,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 143, Econ: 7.93, Avg: 27.1",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 49,
@@ -6460,7 +7046,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 2580 (SR 132.6), Wkts: 63 (Econ 8.78)",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 93,
@@ -6471,7 +7058,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 2580 (SR 132.6), Wkts: 63 (Econ 8.78)",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 103,
@@ -6482,7 +7070,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 3760 (SR 132.8), Dismissals: 97",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 163,
@@ -6493,7 +7082,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 134, Econ: 8.17, Avg: 27.0",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 203,
@@ -6504,7 +7094,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 2580 (SR 132.6), Wkts: 63 (Econ 8.78)",
       "img": "",
       "overseas": true,
-      "country": "Australia"
+      "country": "Australia",
+      "retired": false
     },
     {
       "id": 502,
@@ -6515,7 +7106,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 2580 (SR 132.6), Wkts: 63 (Econ 8.78)",
       "img": "",
       "overseas": true,
-      "country": "Sri Lanka"
+      "country": "Sri Lanka",
+      "retired": false
     },
     {
       "id": 510,
@@ -6526,7 +7118,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 4840, Avg: 33.6, SR: 135.4",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 312,
@@ -6537,7 +7130,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 126, Econ: 8.12, Avg: 27.0",
       "img": "",
       "overseas": true,
-      "country": "South Africa"
+      "country": "South Africa",
+      "retired": false
     },
     {
       "id": 324,
@@ -6548,7 +7142,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 2420 (SR 136.4), Wkts: 58 (Econ 8.67)",
       "img": "",
       "overseas": true,
-      "country": "West Indies"
+      "country": "West Indies",
+      "retired": true
     },
     {
       "id": 371,
@@ -6559,7 +7154,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 2420 (SR 136.4), Wkts: 58 (Econ 8.67)",
       "img": "",
       "overseas": true,
-      "country": "New Zealand"
+      "country": "New Zealand",
+      "retired": false
     },
     {
       "id": 101,
@@ -6570,7 +7166,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 2260 (SR 134.2), Wkts: 53 (Econ 8.56)",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 351,
@@ -6581,7 +7178,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 2260 (SR 134.2), Wkts: 53 (Econ 8.56)",
       "img": "",
       "overseas": true,
-      "country": "West Indies"
+      "country": "West Indies",
+      "retired": false
     },
     {
       "id": 381,
@@ -6592,7 +7190,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 117, Econ: 8.06, Avg: 27.0",
       "img": "",
       "overseas": true,
-      "country": "New Zealand"
+      "country": "New Zealand",
+      "retired": false
     },
     {
       "id": 411,
@@ -6603,7 +7202,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 117, Econ: 8.06, Avg: 27.0",
       "img": "",
       "overseas": true,
-      "country": "Afghanistan"
+      "country": "Afghanistan",
+      "retired": false
     },
     {
       "id": 90,
@@ -6614,7 +7214,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 109, Econ: 8.31, Avg: 26.9",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 110,
@@ -6625,7 +7226,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 109, Econ: 8.31, Avg: 26.9",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 170,
@@ -6636,7 +7238,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 4000, Avg: 30.4, SR: 129.4",
       "img": "",
       "overseas": false,
-      "country": "India"
+      "country": "India",
+      "retired": false
     },
     {
       "id": 380,
@@ -6647,7 +7250,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Wkts: 109, Econ: 8.31, Avg: 26.9",
       "img": "",
       "overseas": true,
-      "country": "New Zealand"
+      "country": "New Zealand",
+      "retired": false
     },
     {
       "id": 410,
@@ -6658,7 +7262,8 @@ window.ALL_PLAYERS_DATA = {
       "stats": "Runs: 2100 (SR 132.0), Wkts: 48 (Econ 8.9)",
       "img": "",
       "overseas": true,
-      "country": "Afghanistan"
+      "country": "Afghanistan",
+      "retired": false
     }
   ]
 };

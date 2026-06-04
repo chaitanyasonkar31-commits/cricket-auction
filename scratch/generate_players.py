@@ -715,6 +715,42 @@ LAST_NAMES_INDIAN = ["Sharma", "Kohli", "Bumrah", "Pant", "Jadeja", "Gill", "Pan
 FIRST_NAMES_OS = ["Mitchell", "Pat", "Travis", "Glenn", "Marcus", "Cameron", "David", "Steven", "Adam", "Josh", "Matthew", "Alex", "Nathan", "Sean", "Jason", "Ashton", "Chris", "Aaron", "Shaun", "Kane", "Jhye", "Spencer", "Xavier", "Jake", "Cooper", "Ben", "Daniel", "Riley", "Peter", "Matt", "Hilton", "Billy", "Moises", "Andrew", "Michael", "Scott", "Todd", "Jos", "Jonny", "Liam", "Sam", "Harry", "Ben", "Joe", "Phil", "Will", "Moeen", "Chris", "Mark", "Jofra", "Adil", "Rehan", "Gus", "Tom", "Ollie", "Zak", "Dawid", "Reece", "David", "Luke", "Brydon", "Jamie", "Shoaib", "Tymal", "Richard", "Saqib", "Eoin", "Kevin", "Andrew", "James", "Stuart", "Heinrich", "Quinton", "Aiden", "David", "Kagiso", "Anrich", "Marco", "Keshav", "Gerald", "Lungi", "Tabraiz", "Tristan", "Dewald", "Temba", "Reeza", "Rassie", "Faf", "Hashim", "Dale", "AB", "Jacques", "Ryan", "Nandre", "Wiaan", "Bjorn", "Tony", "Patrick", "Ottneil", "Lizaad", "Kwena", "Donovan", "Corbin", "Wayne", "Dwaine", "Rilee", "Colin", "Imran", "Nicholas", "Andre", "Sunil", "Kieron", "Dwayne", "Chris", "Jason", "Rovman", "Shai", "Brandon", "Kyle", "Alzarri", "Shimron", "Sherfane", "Romario", "Akeal", "Gudakesh", "Shamar", "Roston", "Johnson", "Evin", "Lendl", "Darren", "Marlon", "Denesh", "Carlos", "Sheldon", "Oshane", "Obed", "Hayden", "Fabian", "Odean", "Keemo", "Darren", "Devon", "Rachin", "Daryl", "Glenn", "Mitchell", "Trent", "Tim", "Lockie", "Ish", "Finn", "Tom", "Michael", "Mark", "Henry", "Colin", "Martin", "James", "Adam", "Will", "Kyle", "Ben", "William", "Jacob", "Blair", "Ajaz", "Tim", "Daniel", "Brendon", "Rashid", "Mohammad", "Rahmanullah", "Ibrahim", "Fazalhaq", "Mujeeb", "Naveen", "Azmatullah", "Najibullah", "Hazratullah", "Gulbadin", "Noor", "Qais", "Fareed", "Sharafuddin", "Rahmat", "Hashmatullah", "Ikram", "Nangeyalia", "Allah", "Wanindu", "Charith", "Pathum", "Kusal", "Sadeera", "Maheesh", "Matheesha", "Dilshan", "Dushmantha", "Lahiru", "Nuwan", "Dunith", "Kamindu", "Bhanuka", "Dasun", "Angelo", "Dinesh", "Avishka", "Dhananjaya", "Jeffrey", "Akila", "Kasun", "Asitha", "Vijayakanth", "Lasith", "Kumar", "Mahela", "Shakib", "Mustafizur", "Litton", "Najmul", "Towhid", "Taskin", "Shoriful", "Hasan", "Tanzim", "Soumya", "Mahmudullah", "Mushfiqur", "Tamim", "Mehidy", "Rishad", "Tanzid"]
 LAST_NAMES_OS = ["Starc", "Cummins", "Head", "Maxwell", "Stoinis", "Green", "David", "Warner", "Smith", "Marsh", "Zampa", "Hazlewood", "Wade", "Carey", "Lyon", "Abbott", "Behrendorff", "Agar", "Lynn", "Finch", "Marsh", "Richardson", "Richardson", "Johnson", "Bartlett", "Fraser-McGurk", "Connolly", "Ellis", "Dwarshuis", "Sams", "Meredith", "Handscomb", "Harris", "Short", "Hardie", "Cartwright", "Turner", "Swepson", "Sangha", "Morris", "Paris", "Short", "Stanlake", "Henriques", "Sandhu", "Tye", "Neser", "Boland", "Murphy", "Lee", "Hayden", "Ponting", "Hussey", "Johnson", "Buttler", "Bairstow", "Livingstone", "Curran", "Brook", "Stokes", "Root", "Salt", "Jacks", "Ali", "Woakes", "Wood", "Archer", "Rashid", "Ahmed", "Atkinson", "Hartley", "Pope", "Crawley", "Duckett", "Malan", "Hales", "Roy", "Topley", "Willey", "Wood", "Carse", "Smith", "Bashir", "Potts", "Lawrence", "Jordan", "Mills", "Gleeson", "Mahmood", "Overton", "Billings", "Vince", "Dawson", "Curran", "Bethell", "Turner", "Morgan", "Pietersen", "Flintoff", "Anderson", "Broad", "Klaasen", "de Kock", "Markram", "Miller", "Rabada", "Nortje", "Jansen", "Maharaj", "Coetzee", "Ngidi", "Shamsi", "Stubbs", "Brevis", "Bavuma", "Hendricks", "van der Dussen", "du Plessis", "Amla", "Steyn", "de Villiers", "Kallis", "Rickelton", "Burger", "Mulder", "Fortuin", "de Zorzi", "Breetzke", "Kruger", "Baartman", "Williams", "Maphaka", "Ferreira", "Bosch", "Parnell", "Pretorius", "Rossouw", "Ingram", "Tahir", "Wiese", "Pooran", "Russell", "Narine", "Pollard", "Bravo", "Gayle", "Holder", "Powell", "Hope", "King", "Mayers", "Joseph", "Hetmyer", "Rutherford", "Shepherd", "Hosein", "Motie", "Joseph", "Chase", "Charles", "Lewis", "Simmons", "Bravo", "Samuels", "Ramdin", "Brathwaite", "Cottrell", "Thomas", "McCoy", "Walsh", "Forde", "Drakes", "Allen", "Smith", "Paul", "Sammy", "Richards", "Williamson", "Conway", "Ravindra", "Mitchell", "Phillips", "Santner", "Boult", "Southee", "Henry", "Ferguson", "Sodhi", "Allen", "Latham", "Bracewell", "Chapman", "Nicholls", "Munro", "Guptill", "Neesham", "Milne", "Young", "Jamieson", "Sears", "O'Rourke", "Duffy", "Tickner", "Patel", "Blundell", "Clarkson", "Seifert", "Vettori", "McCullum", "Khan", "Nabi", "Gurbaz", "Zadran", "Farooqi", "Rahman", "Haq", "Omarzai", "Zadran", "Zazai", "Naib", "Shahzad", "Janat", "Ahmad", "Ahmad", "Ahmad", "Ashraf", "Shah", "Shahidi", "Alikhil", "Kharote", "Ghazanfar", "Hasaranga", "Asalanka", "Nissanka", "Mendis", "Samarawickrama", "Theekshana", "Pathirana", "Madushanka", "Chameera", "Kumara", "Thushara", "Wellalage", "Mendis", "Rajapaksa", "Shanaka", "Mathews", "Chandimal", "Perera", "Fernando", "de Silva", "Vandersay", "Dananjaya", "Rajitha", "Fernando", "Viyaskanth", "Muralitharan", "Malinga", "Sangakkara", "Jayawardene", "Al Hasan", "Rahman", "Das", "Shanto", "Hridoy", "Ahmed", "Islam", "Mahmud", "Sakib", "Sarkar", "Mahmudullah", "Rahim", "Iqbal", "Miraz", "Hossain", "Hasan"]
 
+RETIRED_PLAYERS_SET = {
+    # India Legends
+    "Sachin Tendulkar", "Rahul Dravid", "Sourav Ganguly", "Virender Sehwag", "Anil Kumble", "VVS Laxman",
+    "Suresh Raina", "Yuvraj Singh", "Gautam Gambhir", "Robin Uthappa", "Ambati Rayudu", "Yusuf Pathan",
+    "Irfan Pathan", "Pragyan Ojha", "Munaf Patel", "RP Singh", "S Sreesanth", "Ashish Nehra",
+    "Murali Vijay", "Parthiv Patel", "Naman Ojha", "Saurabh Tiwary", "Abhishek Nayar", "Manpreet Gony",
+    "Sreenath Aravind", "Praveen Kumar", "Vinay Kumar", "Pawan Negi", "Stuart Binny", "Iqbal Abdulla",
+    "Abu Nechim", "Zaheer Khan", "Harbhajan Singh",
+    # Australia Legends
+    "Brett Lee", "Glenn McGrath", "Shane Warne", "Adam Gilchrist", "Michael Hussey", "Ricky Ponting",
+    "Matthew Hayden", "Shane Watson", "Mitchell Johnson", "Brad Hogg", "Brad Hodge", "Daniel Christian",
+    "George Bailey", "Shaun Tait", "Ryan Harris", "David Hussey",
+    # South Africa Legends
+    "Dale Steyn", "Jacques Kallis", "AB de Villiers", "Morné Morkel", "Albie Morkel", "Graeme Smith",
+    "Herschelle Gibbs", "Makhaya Ntini", "Shaun Pollock", "Mark Boucher", "JP Duminy",
+    # England Legends
+    "Andrew Flintoff", "Kevin Pietersen", "James Anderson", "Stuart Broad", "Eoin Morgan", "Alex Hales",
+    "Graeme Swann", "Paul Collingwood", "Ian Bell", "Andrew Strauss",
+    # West Indies Legends
+    "Chris Gayle", "Dwayne Bravo", "Kieron Pollard",
+    "Viv Richards", "Brian Lara", "Courtney Walsh", "Curtly Ambrose", "Carl Hooper", "Ramnaresh Sarwan",
+    "Shivnarine Chanderpaul", "Marlon Samuels", "Lendl Simmons", "Darren Sammy", "Dwayne Smith",
+    # Sri Lanka Legends
+    "Mahela Jayawardene", "Kumar Sangakkara", "Lasith Malinga", "Muralitharan", "Muttiah Muralitharan",
+    "Chaminda Vaas", "Sanath Jayasuriya", "Tillakaratne Dilshan", "Upul Tharanga", "Ajantha Mendis",
+    "Nuwan Kulasekara",
+    # New Zealand Legends
+    "Brendon McCullum", "Daniel Vettori", "Stephen Fleming", "Jacob Oram", "Scott Styris", "Shane Bond",
+    # Pakistan Legends
+    "Shahid Afridi", "Shoaib Akhtar", "Waqar Younis", "Wasim Akram", "Inzamam-ul-Haq", "Javed Miandad",
+    "Saqlain Mushtaq", "Mushtaq Ahmed", "Misbah-ul-Haq", "Younis Khan", "Mohammad Yousuf",
+    "Abdul Razzaq", "Shoaib Malik", "Mohammad Hafeez", "Kamran Akmal",
+    # Bangladesh Legends
+    "Mashrafe Mortaza", "Abdur Razzak", "Mohammad Ashraful"
+}
+
 def generate_full_pool():
     pool = []
     seen_names = set()
@@ -754,7 +790,8 @@ def generate_full_pool():
             "stats": stats,
             "img": "",
             "overseas": country != "India",
-            "country": country
+            "country": country,
+            "retired": name in RETIRED_PLAYERS_SET
         })
         player_id += 1
 
@@ -785,7 +822,8 @@ def generate_full_pool():
             "stats": stats,
             "img": "",
             "overseas": country != "India",
-            "country": country
+            "country": country,
+            "retired": name in RETIRED_PLAYERS_SET
         })
         player_id += 1
 
@@ -835,7 +873,8 @@ def generate_full_pool():
             "stats": stats,
             "img": "",
             "overseas": is_overseas,
-            "country": country
+            "country": country,
+            "retired": name in RETIRED_PLAYERS_SET
         })
         player_id += 1
 

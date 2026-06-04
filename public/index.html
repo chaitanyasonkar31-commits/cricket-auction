@@ -144,9 +144,15 @@
                     <!-- Checkbox list of existing presets -->
                     <div id="preset-players-checklist-container" class="form-group" style="margin-bottom: 1.5rem; width: 100%;">
                         <label><i class="fa-solid fa-square-check text-purple"></i> Select Players from Presets</label>
-                        <div class="preset-checklist-actions">
-                            <button type="button" class="btn btn-icon" onclick="toggleAllChecklist(true)" style="padding: 0.35rem 0.75rem; font-size: 0.75rem;">Select All</button>
-                            <button type="button" class="btn btn-icon" onclick="toggleAllChecklist(false)" style="padding: 0.35rem 0.75rem; font-size: 0.75rem;">Deselect All</button>
+                        <div class="preset-checklist-actions" style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.75rem;">
+                            <div style="display: flex; gap: 0.5rem;">
+                                <button type="button" class="btn btn-icon" onclick="toggleAllChecklist(true)" style="padding: 0.35rem 0.75rem; font-size: 0.75rem;">Select All</button>
+                                <button type="button" class="btn btn-icon" onclick="toggleAllChecklist(false)" style="padding: 0.35rem 0.75rem; font-size: 0.75rem;">Deselect All</button>
+                            </div>
+                            <label class="toggle-retired-label" style="display: flex; align-items: center; gap: 0.35rem; font-size: 0.75rem; color: var(--text-secondary); cursor: pointer; user-select: none;">
+                                <input type="checkbox" id="exclude-retired" onchange="filterRetiredPlayers(this.checked)" style="width: 15px; height: 15px; accent-color: var(--accent-purple); cursor: pointer;">
+                                Exclude Retired Players (not active in leagues)
+                            </label>
                         </div>
                         <div id="players-checklist" class="players-checklist-grid">
                             <span class="help-text">Loading preset player lists...</span>
