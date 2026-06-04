@@ -1,30 +1,6 @@
 {
   "ipl_legends": [
     {
-      "id": 230,
-      "name": "Brett Lee",
-      "role": "Bowler",
-      "rating": 99,
-      "base_price": 10000000,
-      "stats": "Wkts: 251, Econ: 6.55, Avg: 22.0",
-      "img": "",
-      "overseas": true,
-      "country": "Australia",
-      "retired": true
-    },
-    {
-      "id": 279,
-      "name": "Andrew Flintoff",
-      "role": "All-Rounder",
-      "rating": 99,
-      "base_price": 10000000,
-      "stats": "Runs: 5140 (SR 158.8), Wkts: 134 (Econ 7.24)",
-      "img": "",
-      "overseas": true,
-      "country": "England",
-      "retired": true
-    },
-    {
       "id": 286,
       "name": "Kagiso Rabada",
       "role": "Bowler",
@@ -35,18 +11,6 @@
       "overseas": true,
       "country": "South Africa",
       "retired": false
-    },
-    {
-      "id": 300,
-      "name": "Dale Steyn",
-      "role": "Bowler",
-      "rating": 99,
-      "base_price": 10000000,
-      "stats": "Wkts: 251, Econ: 6.55, Avg: 22.0",
-      "img": "",
-      "overseas": true,
-      "country": "South Africa",
-      "retired": true
     },
     {
       "id": 321,
@@ -61,18 +25,6 @@
       "retired": false
     },
     {
-      "id": 440,
-      "name": "Mahela Jayawardene",
-      "role": "Batsman",
-      "rating": 99,
-      "base_price": 10000000,
-      "stats": "Runs: 9920, Avg: 51.4, SR: 155.4",
-      "img": "",
-      "overseas": true,
-      "country": "Sri Lanka",
-      "retired": true
-    },
-    {
       "id": 1,
       "name": "Virat Kohli",
       "role": "Batsman",
@@ -83,54 +35,6 @@
       "overseas": false,
       "country": "India",
       "retired": false
-    },
-    {
-      "id": 124,
-      "name": "Suresh Raina",
-      "role": "Batsman",
-      "rating": 98,
-      "base_price": 10000000,
-      "stats": "Runs: 9640, Avg: 50.4, SR: 153.4",
-      "img": "",
-      "overseas": false,
-      "country": "India",
-      "retired": true
-    },
-    {
-      "id": 173,
-      "name": "Rahul Dravid",
-      "role": "Batsman",
-      "rating": 98,
-      "base_price": 10000000,
-      "stats": "Runs: 9640, Avg: 50.4, SR: 153.4",
-      "img": "",
-      "overseas": false,
-      "country": "India",
-      "retired": true
-    },
-    {
-      "id": 229,
-      "name": "Glenn McGrath",
-      "role": "Bowler",
-      "rating": 98,
-      "base_price": 15000000,
-      "stats": "Wkts: 242, Econ: 6.79, Avg: 21.9",
-      "img": "",
-      "overseas": true,
-      "country": "Australia",
-      "retired": true
-    },
-    {
-      "id": 278,
-      "name": "Kevin Pietersen",
-      "role": "Batsman",
-      "rating": 98,
-      "base_price": 10000000,
-      "stats": "Runs: 9640, Avg: 50.4, SR: 153.4",
-      "img": "",
-      "overseas": true,
-      "country": "England",
-      "retired": true
     },
     {
       "id": 390,
@@ -157,54 +61,6 @@
       "retired": false
     },
     {
-      "id": 439,
-      "name": "Kumar Sangakkara",
-      "role": "Wicket-Keeper",
-      "rating": 98,
-      "base_price": 15000000,
-      "stats": "Runs: 7360 (SR 152.0), Dismissals: 181",
-      "img": "",
-      "overseas": true,
-      "country": "Sri Lanka",
-      "retired": true
-    },
-    {
-      "id": 467,
-      "name": "Shahid Afridi",
-      "role": "All-Rounder",
-      "rating": 98,
-      "base_price": 15000000,
-      "stats": "Runs: 4980 (SR 156.6), Wkts: 129 (Econ 7.58)",
-      "img": "",
-      "overseas": true,
-      "country": "Pakistan",
-      "retired": true
-    },
-    {
-      "id": 172,
-      "name": "Sourav Ganguly",
-      "role": "Batsman",
-      "rating": 97,
-      "base_price": 10000000,
-      "stats": "Runs: 9360, Avg: 49.3, SR: 159.8",
-      "img": "",
-      "overseas": false,
-      "country": "India",
-      "retired": true
-    },
-    {
-      "id": 228,
-      "name": "Adam Gilchrist",
-      "role": "Wicket-Keeper",
-      "rating": 97,
-      "base_price": 20000000,
-      "stats": "Runs: 7140 (SR 150.3), Dismissals: 174",
-      "img": "",
-      "overseas": true,
-      "country": "Australia",
-      "retired": true
-    },
-    {
       "id": 235,
       "name": "Jos Buttler",
       "role": "Wicket-Keeper",
@@ -215,54 +71,6 @@
       "overseas": true,
       "country": "England",
       "retired": false
-    },
-    {
-      "id": 326,
-      "name": "Chris Gayle",
-      "role": "Batsman",
-      "rating": 97,
-      "base_price": 20000000,
-      "stats": "Runs: 9360, Avg: 49.3, SR: 159.8",
-      "img": "",
-      "overseas": true,
-      "country": "West Indies",
-      "retired": true
-    },
-    {
-      "id": 389,
-      "name": "Brendon McCullum",
-      "role": "Batsman",
-      "rating": 97,
-      "base_price": 15000000,
-      "stats": "Runs: 9360, Avg: 49.3, SR: 159.8",
-      "img": "",
-      "overseas": true,
-      "country": "New Zealand",
-      "retired": true
-    },
-    {
-      "id": 438,
-      "name": "Lasith Malinga",
-      "role": "Bowler",
-      "rating": 97,
-      "base_price": 20000000,
-      "stats": "Wkts: 234, Econ: 6.74, Avg: 21.9",
-      "img": "",
-      "overseas": true,
-      "country": "Sri Lanka",
-      "retired": true
-    },
-    {
-      "id": 466,
-      "name": "Shoaib Akhtar",
-      "role": "Bowler",
-      "rating": 97,
-      "base_price": 20000000,
-      "stats": "Wkts: 234, Econ: 6.74, Avg: 21.9",
-      "img": "",
-      "overseas": true,
-      "country": "Pakistan",
-      "retired": true
     },
     {
       "id": 3,
@@ -289,30 +97,6 @@
       "retired": false
     },
     {
-      "id": 136,
-      "name": "Gautam Gambhir",
-      "role": "Batsman",
-      "rating": 96,
-      "base_price": 10000000,
-      "stats": "Runs: 9080, Avg: 48.3, SR: 157.8",
-      "img": "",
-      "overseas": false,
-      "country": "India",
-      "retired": true
-    },
-    {
-      "id": 171,
-      "name": "Sachin Tendulkar",
-      "role": "Batsman",
-      "rating": 96,
-      "base_price": 20000000,
-      "stats": "Runs: 9080, Avg: 48.3, SR: 157.8",
-      "img": "",
-      "overseas": false,
-      "country": "India",
-      "retired": true
-    },
-    {
       "id": 178,
       "name": "Pat Cummins",
       "role": "Bowler",
@@ -323,54 +107,6 @@
       "overseas": true,
       "country": "Australia",
       "retired": false
-    },
-    {
-      "id": 227,
-      "name": "Shane Warne",
-      "role": "Bowler",
-      "rating": 96,
-      "base_price": 20000000,
-      "stats": "Wkts: 225, Econ: 6.68, Avg: 21.9",
-      "img": "",
-      "overseas": true,
-      "country": "Australia",
-      "retired": true
-    },
-    {
-      "id": 388,
-      "name": "Daniel Vettori",
-      "role": "All-Rounder",
-      "rating": 96,
-      "base_price": 10000000,
-      "stats": "Runs: 4660 (SR 152.2), Wkts: 119 (Econ 7.36)",
-      "img": "",
-      "overseas": true,
-      "country": "New Zealand",
-      "retired": true
-    },
-    {
-      "id": 437,
-      "name": "Muralitharan",
-      "role": "Bowler",
-      "rating": 96,
-      "base_price": 20000000,
-      "stats": "Wkts: 225, Econ: 6.68, Avg: 21.9",
-      "img": "",
-      "overseas": true,
-      "country": "Sri Lanka",
-      "retired": true
-    },
-    {
-      "id": 465,
-      "name": "Waqar Younis",
-      "role": "Bowler",
-      "rating": 96,
-      "base_price": 15000000,
-      "stats": "Wkts: 225, Econ: 6.68, Avg: 21.9",
-      "img": "",
-      "overseas": true,
-      "country": "Pakistan",
-      "retired": true
     },
     {
       "id": 2,
@@ -397,18 +133,6 @@
       "retired": false
     },
     {
-      "id": 233,
-      "name": "Michael Hussey",
-      "role": "Batsman",
-      "rating": 95,
-      "base_price": 10000000,
-      "stats": "Runs: 8800, Avg: 47.2, SR: 155.8",
-      "img": "",
-      "overseas": true,
-      "country": "Australia",
-      "retired": true
-    },
-    {
       "id": 282,
       "name": "Heinrich Klaasen",
       "role": "Wicket-Keeper",
@@ -433,30 +157,6 @@
       "retired": false
     },
     {
-      "id": 464,
-      "name": "Wasim Akram",
-      "role": "Bowler",
-      "rating": 95,
-      "base_price": 20000000,
-      "stats": "Wkts: 217, Econ: 6.93, Avg: 21.9",
-      "img": "",
-      "overseas": true,
-      "country": "Pakistan",
-      "retired": true
-    },
-    {
-      "id": 176,
-      "name": "Anil Kumble",
-      "role": "Bowler",
-      "rating": 94,
-      "base_price": 10000000,
-      "stats": "Wkts: 208, Econ: 6.88, Avg: 22.8",
-      "img": "",
-      "overseas": false,
-      "country": "India",
-      "retired": true
-    },
-    {
       "id": 185,
       "name": "Steven Smith",
       "role": "Batsman",
@@ -467,30 +167,6 @@
       "overseas": true,
       "country": "Australia",
       "retired": false
-    },
-    {
-      "id": 232,
-      "name": "Ricky Ponting",
-      "role": "Batsman",
-      "rating": 94,
-      "base_price": 10000000,
-      "stats": "Runs: 8520, Avg: 48.6, SR: 153.8",
-      "img": "",
-      "overseas": true,
-      "country": "Australia",
-      "retired": true
-    },
-    {
-      "id": 302,
-      "name": "Jacques Kallis",
-      "role": "All-Rounder",
-      "rating": 94,
-      "base_price": 20000000,
-      "stats": "Runs: 4340 (SR 153.8), Wkts: 123 (Econ 7.59)",
-      "img": "",
-      "overseas": true,
-      "country": "South Africa",
-      "retired": true
     },
     {
       "id": 442,
@@ -527,78 +203,6 @@
       "overseas": false,
       "country": "India",
       "retired": false
-    },
-    {
-      "id": 126,
-      "name": "Yuvraj Singh",
-      "role": "All-Rounder",
-      "rating": 93,
-      "base_price": 10000000,
-      "stats": "Runs: 4180 (SR 151.6), Wkts: 118 (Econ 7.48)",
-      "img": "",
-      "overseas": false,
-      "country": "India",
-      "retired": true
-    },
-    {
-      "id": 175,
-      "name": "Virender Sehwag",
-      "role": "Batsman",
-      "rating": 93,
-      "base_price": 15000000,
-      "stats": "Runs: 8240, Avg: 47.6, SR: 151.8",
-      "img": "",
-      "overseas": false,
-      "country": "India",
-      "retired": true
-    },
-    {
-      "id": 231,
-      "name": "Matthew Hayden",
-      "role": "Batsman",
-      "rating": 93,
-      "base_price": 10000000,
-      "stats": "Runs: 8240, Avg: 47.6, SR: 151.8",
-      "img": "",
-      "overseas": true,
-      "country": "Australia",
-      "retired": true
-    },
-    {
-      "id": 280,
-      "name": "James Anderson",
-      "role": "Bowler",
-      "rating": 93,
-      "base_price": 7500000,
-      "stats": "Wkts: 199, Econ: 6.82, Avg: 22.8",
-      "img": "",
-      "overseas": true,
-      "country": "England",
-      "retired": true
-    },
-    {
-      "id": 301,
-      "name": "AB de Villiers",
-      "role": "Batsman",
-      "rating": 93,
-      "base_price": 20000000,
-      "stats": "Runs: 8240, Avg: 47.6, SR: 151.8",
-      "img": "",
-      "overseas": true,
-      "country": "South Africa",
-      "retired": true
-    },
-    {
-      "id": 357,
-      "name": "Viv Richards",
-      "role": "Batsman",
-      "rating": 93,
-      "base_price": 20000000,
-      "stats": "Runs: 8240, Avg: 47.6, SR: 151.8",
-      "img": "",
-      "overseas": true,
-      "country": "West Indies",
-      "retired": true
     },
     {
       "id": 364,
@@ -683,18 +287,6 @@
       "overseas": false,
       "country": "India",
       "retired": false
-    },
-    {
-      "id": 127,
-      "name": "Irfan Pathan",
-      "role": "All-Rounder",
-      "rating": 92,
-      "base_price": 5000000,
-      "stats": "Runs: 4020 (SR 149.4), Wkts: 113 (Econ 7.82)",
-      "img": "",
-      "overseas": false,
-      "country": "India",
-      "retired": true
     },
     {
       "id": 191,
@@ -723,30 +315,6 @@
   ],
   "all_time_legends": [
     {
-      "id": 230,
-      "name": "Brett Lee",
-      "role": "Bowler",
-      "rating": 99,
-      "base_price": 10000000,
-      "stats": "Wkts: 251, Econ: 6.55, Avg: 22.0",
-      "img": "",
-      "overseas": true,
-      "country": "Australia",
-      "retired": true
-    },
-    {
-      "id": 279,
-      "name": "Andrew Flintoff",
-      "role": "All-Rounder",
-      "rating": 99,
-      "base_price": 10000000,
-      "stats": "Runs: 5140 (SR 158.8), Wkts: 134 (Econ 7.24)",
-      "img": "",
-      "overseas": true,
-      "country": "England",
-      "retired": true
-    },
-    {
       "id": 286,
       "name": "Kagiso Rabada",
       "role": "Bowler",
@@ -757,18 +325,6 @@
       "overseas": true,
       "country": "South Africa",
       "retired": false
-    },
-    {
-      "id": 300,
-      "name": "Dale Steyn",
-      "role": "Bowler",
-      "rating": 99,
-      "base_price": 10000000,
-      "stats": "Wkts: 251, Econ: 6.55, Avg: 22.0",
-      "img": "",
-      "overseas": true,
-      "country": "South Africa",
-      "retired": true
     },
     {
       "id": 321,
@@ -783,18 +339,6 @@
       "retired": false
     },
     {
-      "id": 440,
-      "name": "Mahela Jayawardene",
-      "role": "Batsman",
-      "rating": 99,
-      "base_price": 10000000,
-      "stats": "Runs: 9920, Avg: 51.4, SR: 155.4",
-      "img": "",
-      "overseas": true,
-      "country": "Sri Lanka",
-      "retired": true
-    },
-    {
       "id": 1,
       "name": "Virat Kohli",
       "role": "Batsman",
@@ -805,54 +349,6 @@
       "overseas": false,
       "country": "India",
       "retired": false
-    },
-    {
-      "id": 124,
-      "name": "Suresh Raina",
-      "role": "Batsman",
-      "rating": 98,
-      "base_price": 10000000,
-      "stats": "Runs: 9640, Avg: 50.4, SR: 153.4",
-      "img": "",
-      "overseas": false,
-      "country": "India",
-      "retired": true
-    },
-    {
-      "id": 173,
-      "name": "Rahul Dravid",
-      "role": "Batsman",
-      "rating": 98,
-      "base_price": 10000000,
-      "stats": "Runs: 9640, Avg: 50.4, SR: 153.4",
-      "img": "",
-      "overseas": false,
-      "country": "India",
-      "retired": true
-    },
-    {
-      "id": 229,
-      "name": "Glenn McGrath",
-      "role": "Bowler",
-      "rating": 98,
-      "base_price": 15000000,
-      "stats": "Wkts: 242, Econ: 6.79, Avg: 21.9",
-      "img": "",
-      "overseas": true,
-      "country": "Australia",
-      "retired": true
-    },
-    {
-      "id": 278,
-      "name": "Kevin Pietersen",
-      "role": "Batsman",
-      "rating": 98,
-      "base_price": 10000000,
-      "stats": "Runs: 9640, Avg: 50.4, SR: 153.4",
-      "img": "",
-      "overseas": true,
-      "country": "England",
-      "retired": true
     },
     {
       "id": 390,
@@ -879,54 +375,6 @@
       "retired": false
     },
     {
-      "id": 439,
-      "name": "Kumar Sangakkara",
-      "role": "Wicket-Keeper",
-      "rating": 98,
-      "base_price": 15000000,
-      "stats": "Runs: 7360 (SR 152.0), Dismissals: 181",
-      "img": "",
-      "overseas": true,
-      "country": "Sri Lanka",
-      "retired": true
-    },
-    {
-      "id": 467,
-      "name": "Shahid Afridi",
-      "role": "All-Rounder",
-      "rating": 98,
-      "base_price": 15000000,
-      "stats": "Runs: 4980 (SR 156.6), Wkts: 129 (Econ 7.58)",
-      "img": "",
-      "overseas": true,
-      "country": "Pakistan",
-      "retired": true
-    },
-    {
-      "id": 172,
-      "name": "Sourav Ganguly",
-      "role": "Batsman",
-      "rating": 97,
-      "base_price": 10000000,
-      "stats": "Runs: 9360, Avg: 49.3, SR: 159.8",
-      "img": "",
-      "overseas": false,
-      "country": "India",
-      "retired": true
-    },
-    {
-      "id": 228,
-      "name": "Adam Gilchrist",
-      "role": "Wicket-Keeper",
-      "rating": 97,
-      "base_price": 20000000,
-      "stats": "Runs: 7140 (SR 150.3), Dismissals: 174",
-      "img": "",
-      "overseas": true,
-      "country": "Australia",
-      "retired": true
-    },
-    {
       "id": 235,
       "name": "Jos Buttler",
       "role": "Wicket-Keeper",
@@ -937,54 +385,6 @@
       "overseas": true,
       "country": "England",
       "retired": false
-    },
-    {
-      "id": 326,
-      "name": "Chris Gayle",
-      "role": "Batsman",
-      "rating": 97,
-      "base_price": 20000000,
-      "stats": "Runs: 9360, Avg: 49.3, SR: 159.8",
-      "img": "",
-      "overseas": true,
-      "country": "West Indies",
-      "retired": true
-    },
-    {
-      "id": 389,
-      "name": "Brendon McCullum",
-      "role": "Batsman",
-      "rating": 97,
-      "base_price": 15000000,
-      "stats": "Runs: 9360, Avg: 49.3, SR: 159.8",
-      "img": "",
-      "overseas": true,
-      "country": "New Zealand",
-      "retired": true
-    },
-    {
-      "id": 438,
-      "name": "Lasith Malinga",
-      "role": "Bowler",
-      "rating": 97,
-      "base_price": 20000000,
-      "stats": "Wkts: 234, Econ: 6.74, Avg: 21.9",
-      "img": "",
-      "overseas": true,
-      "country": "Sri Lanka",
-      "retired": true
-    },
-    {
-      "id": 466,
-      "name": "Shoaib Akhtar",
-      "role": "Bowler",
-      "rating": 97,
-      "base_price": 20000000,
-      "stats": "Wkts: 234, Econ: 6.74, Avg: 21.9",
-      "img": "",
-      "overseas": true,
-      "country": "Pakistan",
-      "retired": true
     },
     {
       "id": 3,
@@ -1011,30 +411,6 @@
       "retired": false
     },
     {
-      "id": 136,
-      "name": "Gautam Gambhir",
-      "role": "Batsman",
-      "rating": 96,
-      "base_price": 10000000,
-      "stats": "Runs: 9080, Avg: 48.3, SR: 157.8",
-      "img": "",
-      "overseas": false,
-      "country": "India",
-      "retired": true
-    },
-    {
-      "id": 171,
-      "name": "Sachin Tendulkar",
-      "role": "Batsman",
-      "rating": 96,
-      "base_price": 20000000,
-      "stats": "Runs: 9080, Avg: 48.3, SR: 157.8",
-      "img": "",
-      "overseas": false,
-      "country": "India",
-      "retired": true
-    },
-    {
       "id": 178,
       "name": "Pat Cummins",
       "role": "Bowler",
@@ -1045,70 +421,10 @@
       "overseas": true,
       "country": "Australia",
       "retired": false
-    },
-    {
-      "id": 227,
-      "name": "Shane Warne",
-      "role": "Bowler",
-      "rating": 96,
-      "base_price": 20000000,
-      "stats": "Wkts: 225, Econ: 6.68, Avg: 21.9",
-      "img": "",
-      "overseas": true,
-      "country": "Australia",
-      "retired": true
-    },
-    {
-      "id": 388,
-      "name": "Daniel Vettori",
-      "role": "All-Rounder",
-      "rating": 96,
-      "base_price": 10000000,
-      "stats": "Runs: 4660 (SR 152.2), Wkts: 119 (Econ 7.36)",
-      "img": "",
-      "overseas": true,
-      "country": "New Zealand",
-      "retired": true
-    },
-    {
-      "id": 437,
-      "name": "Muralitharan",
-      "role": "Bowler",
-      "rating": 96,
-      "base_price": 20000000,
-      "stats": "Wkts: 225, Econ: 6.68, Avg: 21.9",
-      "img": "",
-      "overseas": true,
-      "country": "Sri Lanka",
-      "retired": true
     }
   ],
   "full_pool": [
     {
-      "id": 230,
-      "name": "Brett Lee",
-      "role": "Bowler",
-      "rating": 99,
-      "base_price": 10000000,
-      "stats": "Wkts: 251, Econ: 6.55, Avg: 22.0",
-      "img": "",
-      "overseas": true,
-      "country": "Australia",
-      "retired": true
-    },
-    {
-      "id": 279,
-      "name": "Andrew Flintoff",
-      "role": "All-Rounder",
-      "rating": 99,
-      "base_price": 10000000,
-      "stats": "Runs: 5140 (SR 158.8), Wkts: 134 (Econ 7.24)",
-      "img": "",
-      "overseas": true,
-      "country": "England",
-      "retired": true
-    },
-    {
       "id": 286,
       "name": "Kagiso Rabada",
       "role": "Bowler",
@@ -1119,18 +435,6 @@
       "overseas": true,
       "country": "South Africa",
       "retired": false
-    },
-    {
-      "id": 300,
-      "name": "Dale Steyn",
-      "role": "Bowler",
-      "rating": 99,
-      "base_price": 10000000,
-      "stats": "Wkts: 251, Econ: 6.55, Avg: 22.0",
-      "img": "",
-      "overseas": true,
-      "country": "South Africa",
-      "retired": true
     },
     {
       "id": 321,
@@ -1145,18 +449,6 @@
       "retired": false
     },
     {
-      "id": 440,
-      "name": "Mahela Jayawardene",
-      "role": "Batsman",
-      "rating": 99,
-      "base_price": 10000000,
-      "stats": "Runs: 9920, Avg: 51.4, SR: 155.4",
-      "img": "",
-      "overseas": true,
-      "country": "Sri Lanka",
-      "retired": true
-    },
-    {
       "id": 1,
       "name": "Virat Kohli",
       "role": "Batsman",
@@ -1167,54 +459,6 @@
       "overseas": false,
       "country": "India",
       "retired": false
-    },
-    {
-      "id": 124,
-      "name": "Suresh Raina",
-      "role": "Batsman",
-      "rating": 98,
-      "base_price": 10000000,
-      "stats": "Runs: 9640, Avg: 50.4, SR: 153.4",
-      "img": "",
-      "overseas": false,
-      "country": "India",
-      "retired": true
-    },
-    {
-      "id": 173,
-      "name": "Rahul Dravid",
-      "role": "Batsman",
-      "rating": 98,
-      "base_price": 10000000,
-      "stats": "Runs: 9640, Avg: 50.4, SR: 153.4",
-      "img": "",
-      "overseas": false,
-      "country": "India",
-      "retired": true
-    },
-    {
-      "id": 229,
-      "name": "Glenn McGrath",
-      "role": "Bowler",
-      "rating": 98,
-      "base_price": 15000000,
-      "stats": "Wkts: 242, Econ: 6.79, Avg: 21.9",
-      "img": "",
-      "overseas": true,
-      "country": "Australia",
-      "retired": true
-    },
-    {
-      "id": 278,
-      "name": "Kevin Pietersen",
-      "role": "Batsman",
-      "rating": 98,
-      "base_price": 10000000,
-      "stats": "Runs: 9640, Avg: 50.4, SR: 153.4",
-      "img": "",
-      "overseas": true,
-      "country": "England",
-      "retired": true
     },
     {
       "id": 390,
@@ -1241,54 +485,6 @@
       "retired": false
     },
     {
-      "id": 439,
-      "name": "Kumar Sangakkara",
-      "role": "Wicket-Keeper",
-      "rating": 98,
-      "base_price": 15000000,
-      "stats": "Runs: 7360 (SR 152.0), Dismissals: 181",
-      "img": "",
-      "overseas": true,
-      "country": "Sri Lanka",
-      "retired": true
-    },
-    {
-      "id": 467,
-      "name": "Shahid Afridi",
-      "role": "All-Rounder",
-      "rating": 98,
-      "base_price": 15000000,
-      "stats": "Runs: 4980 (SR 156.6), Wkts: 129 (Econ 7.58)",
-      "img": "",
-      "overseas": true,
-      "country": "Pakistan",
-      "retired": true
-    },
-    {
-      "id": 172,
-      "name": "Sourav Ganguly",
-      "role": "Batsman",
-      "rating": 97,
-      "base_price": 10000000,
-      "stats": "Runs: 9360, Avg: 49.3, SR: 159.8",
-      "img": "",
-      "overseas": false,
-      "country": "India",
-      "retired": true
-    },
-    {
-      "id": 228,
-      "name": "Adam Gilchrist",
-      "role": "Wicket-Keeper",
-      "rating": 97,
-      "base_price": 20000000,
-      "stats": "Runs: 7140 (SR 150.3), Dismissals: 174",
-      "img": "",
-      "overseas": true,
-      "country": "Australia",
-      "retired": true
-    },
-    {
       "id": 235,
       "name": "Jos Buttler",
       "role": "Wicket-Keeper",
@@ -1299,54 +495,6 @@
       "overseas": true,
       "country": "England",
       "retired": false
-    },
-    {
-      "id": 326,
-      "name": "Chris Gayle",
-      "role": "Batsman",
-      "rating": 97,
-      "base_price": 20000000,
-      "stats": "Runs: 9360, Avg: 49.3, SR: 159.8",
-      "img": "",
-      "overseas": true,
-      "country": "West Indies",
-      "retired": true
-    },
-    {
-      "id": 389,
-      "name": "Brendon McCullum",
-      "role": "Batsman",
-      "rating": 97,
-      "base_price": 15000000,
-      "stats": "Runs: 9360, Avg: 49.3, SR: 159.8",
-      "img": "",
-      "overseas": true,
-      "country": "New Zealand",
-      "retired": true
-    },
-    {
-      "id": 438,
-      "name": "Lasith Malinga",
-      "role": "Bowler",
-      "rating": 97,
-      "base_price": 20000000,
-      "stats": "Wkts: 234, Econ: 6.74, Avg: 21.9",
-      "img": "",
-      "overseas": true,
-      "country": "Sri Lanka",
-      "retired": true
-    },
-    {
-      "id": 466,
-      "name": "Shoaib Akhtar",
-      "role": "Bowler",
-      "rating": 97,
-      "base_price": 20000000,
-      "stats": "Wkts: 234, Econ: 6.74, Avg: 21.9",
-      "img": "",
-      "overseas": true,
-      "country": "Pakistan",
-      "retired": true
     },
     {
       "id": 3,
@@ -1373,30 +521,6 @@
       "retired": false
     },
     {
-      "id": 136,
-      "name": "Gautam Gambhir",
-      "role": "Batsman",
-      "rating": 96,
-      "base_price": 10000000,
-      "stats": "Runs: 9080, Avg: 48.3, SR: 157.8",
-      "img": "",
-      "overseas": false,
-      "country": "India",
-      "retired": true
-    },
-    {
-      "id": 171,
-      "name": "Sachin Tendulkar",
-      "role": "Batsman",
-      "rating": 96,
-      "base_price": 20000000,
-      "stats": "Runs: 9080, Avg: 48.3, SR: 157.8",
-      "img": "",
-      "overseas": false,
-      "country": "India",
-      "retired": true
-    },
-    {
       "id": 178,
       "name": "Pat Cummins",
       "role": "Bowler",
@@ -1407,54 +531,6 @@
       "overseas": true,
       "country": "Australia",
       "retired": false
-    },
-    {
-      "id": 227,
-      "name": "Shane Warne",
-      "role": "Bowler",
-      "rating": 96,
-      "base_price": 20000000,
-      "stats": "Wkts: 225, Econ: 6.68, Avg: 21.9",
-      "img": "",
-      "overseas": true,
-      "country": "Australia",
-      "retired": true
-    },
-    {
-      "id": 388,
-      "name": "Daniel Vettori",
-      "role": "All-Rounder",
-      "rating": 96,
-      "base_price": 10000000,
-      "stats": "Runs: 4660 (SR 152.2), Wkts: 119 (Econ 7.36)",
-      "img": "",
-      "overseas": true,
-      "country": "New Zealand",
-      "retired": true
-    },
-    {
-      "id": 437,
-      "name": "Muralitharan",
-      "role": "Bowler",
-      "rating": 96,
-      "base_price": 20000000,
-      "stats": "Wkts: 225, Econ: 6.68, Avg: 21.9",
-      "img": "",
-      "overseas": true,
-      "country": "Sri Lanka",
-      "retired": true
-    },
-    {
-      "id": 465,
-      "name": "Waqar Younis",
-      "role": "Bowler",
-      "rating": 96,
-      "base_price": 15000000,
-      "stats": "Wkts: 225, Econ: 6.68, Avg: 21.9",
-      "img": "",
-      "overseas": true,
-      "country": "Pakistan",
-      "retired": true
     },
     {
       "id": 2,
@@ -1481,18 +557,6 @@
       "retired": false
     },
     {
-      "id": 233,
-      "name": "Michael Hussey",
-      "role": "Batsman",
-      "rating": 95,
-      "base_price": 10000000,
-      "stats": "Runs: 8800, Avg: 47.2, SR: 155.8",
-      "img": "",
-      "overseas": true,
-      "country": "Australia",
-      "retired": true
-    },
-    {
       "id": 282,
       "name": "Heinrich Klaasen",
       "role": "Wicket-Keeper",
@@ -1517,30 +581,6 @@
       "retired": false
     },
     {
-      "id": 464,
-      "name": "Wasim Akram",
-      "role": "Bowler",
-      "rating": 95,
-      "base_price": 20000000,
-      "stats": "Wkts: 217, Econ: 6.93, Avg: 21.9",
-      "img": "",
-      "overseas": true,
-      "country": "Pakistan",
-      "retired": true
-    },
-    {
-      "id": 176,
-      "name": "Anil Kumble",
-      "role": "Bowler",
-      "rating": 94,
-      "base_price": 10000000,
-      "stats": "Wkts: 208, Econ: 6.88, Avg: 22.8",
-      "img": "",
-      "overseas": false,
-      "country": "India",
-      "retired": true
-    },
-    {
       "id": 185,
       "name": "Steven Smith",
       "role": "Batsman",
@@ -1551,30 +591,6 @@
       "overseas": true,
       "country": "Australia",
       "retired": false
-    },
-    {
-      "id": 232,
-      "name": "Ricky Ponting",
-      "role": "Batsman",
-      "rating": 94,
-      "base_price": 10000000,
-      "stats": "Runs: 8520, Avg: 48.6, SR: 153.8",
-      "img": "",
-      "overseas": true,
-      "country": "Australia",
-      "retired": true
-    },
-    {
-      "id": 302,
-      "name": "Jacques Kallis",
-      "role": "All-Rounder",
-      "rating": 94,
-      "base_price": 20000000,
-      "stats": "Runs: 4340 (SR 153.8), Wkts: 123 (Econ 7.59)",
-      "img": "",
-      "overseas": true,
-      "country": "South Africa",
-      "retired": true
     },
     {
       "id": 442,
@@ -1611,78 +627,6 @@
       "overseas": false,
       "country": "India",
       "retired": false
-    },
-    {
-      "id": 126,
-      "name": "Yuvraj Singh",
-      "role": "All-Rounder",
-      "rating": 93,
-      "base_price": 10000000,
-      "stats": "Runs: 4180 (SR 151.6), Wkts: 118 (Econ 7.48)",
-      "img": "",
-      "overseas": false,
-      "country": "India",
-      "retired": true
-    },
-    {
-      "id": 175,
-      "name": "Virender Sehwag",
-      "role": "Batsman",
-      "rating": 93,
-      "base_price": 15000000,
-      "stats": "Runs: 8240, Avg: 47.6, SR: 151.8",
-      "img": "",
-      "overseas": false,
-      "country": "India",
-      "retired": true
-    },
-    {
-      "id": 231,
-      "name": "Matthew Hayden",
-      "role": "Batsman",
-      "rating": 93,
-      "base_price": 10000000,
-      "stats": "Runs: 8240, Avg: 47.6, SR: 151.8",
-      "img": "",
-      "overseas": true,
-      "country": "Australia",
-      "retired": true
-    },
-    {
-      "id": 280,
-      "name": "James Anderson",
-      "role": "Bowler",
-      "rating": 93,
-      "base_price": 7500000,
-      "stats": "Wkts: 199, Econ: 6.82, Avg: 22.8",
-      "img": "",
-      "overseas": true,
-      "country": "England",
-      "retired": true
-    },
-    {
-      "id": 301,
-      "name": "AB de Villiers",
-      "role": "Batsman",
-      "rating": 93,
-      "base_price": 20000000,
-      "stats": "Runs: 8240, Avg: 47.6, SR: 151.8",
-      "img": "",
-      "overseas": true,
-      "country": "South Africa",
-      "retired": true
-    },
-    {
-      "id": 357,
-      "name": "Viv Richards",
-      "role": "Batsman",
-      "rating": 93,
-      "base_price": 20000000,
-      "stats": "Runs: 8240, Avg: 47.6, SR: 151.8",
-      "img": "",
-      "overseas": true,
-      "country": "West Indies",
-      "retired": true
     },
     {
       "id": 364,
@@ -1767,18 +711,6 @@
       "overseas": false,
       "country": "India",
       "retired": false
-    },
-    {
-      "id": 127,
-      "name": "Irfan Pathan",
-      "role": "All-Rounder",
-      "rating": 92,
-      "base_price": 5000000,
-      "stats": "Runs: 4020 (SR 149.4), Wkts: 113 (Econ 7.82)",
-      "img": "",
-      "overseas": false,
-      "country": "India",
-      "retired": true
     },
     {
       "id": 191,
@@ -1913,18 +845,6 @@
       "retired": false
     },
     {
-      "id": 134,
-      "name": "Ashish Nehra",
-      "role": "Bowler",
-      "rating": 91,
-      "base_price": 7500000,
-      "stats": "Wkts: 182, Econ: 7.01, Avg: 22.7",
-      "img": "",
-      "overseas": false,
-      "country": "India",
-      "retired": true
-    },
-    {
       "id": 166,
       "name": "Tushar Deshpande",
       "role": "Bowler",
@@ -1935,18 +855,6 @@
       "overseas": false,
       "country": "India",
       "retired": false
-    },
-    {
-      "id": 174,
-      "name": "VVS Laxman",
-      "role": "Batsman",
-      "rating": 91,
-      "base_price": 5000000,
-      "stats": "Runs: 7680, Avg: 45.5, SR: 147.8",
-      "img": "",
-      "overseas": false,
-      "country": "India",
-      "retired": true
     },
     {
       "id": 240,
@@ -1971,18 +879,6 @@
       "overseas": true,
       "country": "England",
       "retired": false
-    },
-    {
-      "id": 342,
-      "name": "Lendl Simmons",
-      "role": "Batsman",
-      "rating": 91,
-      "base_price": 3000000,
-      "stats": "Runs: 7680, Avg: 45.5, SR: 147.8",
-      "img": "",
-      "overseas": true,
-      "country": "West Indies",
-      "retired": true
     },
     {
       "id": 414,
@@ -2069,18 +965,6 @@
       "retired": false
     },
     {
-      "id": 125,
-      "name": "Harbhajan Singh",
-      "role": "Bowler",
-      "rating": 90,
-      "base_price": 7500000,
-      "stats": "Wkts: 174, Econ: 6.96, Avg: 22.7",
-      "img": "",
-      "overseas": false,
-      "country": "India",
-      "retired": true
-    },
-    {
       "id": 197,
       "name": "Shaun Marsh",
       "role": "Batsman",
@@ -2091,18 +975,6 @@
       "overseas": true,
       "country": "Australia",
       "retired": false
-    },
-    {
-      "id": 277,
-      "name": "Eoin Morgan",
-      "role": "Batsman",
-      "rating": 90,
-      "base_price": 7500000,
-      "stats": "Runs: 7400, Avg: 44.4, SR: 154.2",
-      "img": "",
-      "overseas": true,
-      "country": "England",
-      "retired": true
     },
     {
       "id": 293,
@@ -2213,18 +1085,6 @@
       "retired": false
     },
     {
-      "id": 356,
-      "name": "Darren Sammy",
-      "role": "All-Rounder",
-      "rating": 89,
-      "base_price": 3000000,
-      "stats": "Runs: 4340 (SR 148.8), Wkts: 112 (Econ 7.94)",
-      "img": "",
-      "overseas": true,
-      "country": "West Indies",
-      "retired": true
-    },
-    {
       "id": 396,
       "name": "Naveen-ul-Haq",
       "role": "Bowler",
@@ -2307,18 +1167,6 @@
       "overseas": false,
       "country": "India",
       "retired": false
-    },
-    {
-      "id": 123,
-      "name": "Robin Uthappa",
-      "role": "Batsman",
-      "rating": 88,
-      "base_price": 5000000,
-      "stats": "Runs: 8040, Avg: 44.8, SR: 150.2",
-      "img": "",
-      "overseas": false,
-      "country": "India",
-      "retired": true
     },
     {
       "id": 187,
@@ -2441,30 +1289,6 @@
       "retired": false
     },
     {
-      "id": 130,
-      "name": "Zaheer Khan",
-      "role": "Bowler",
-      "rating": 87,
-      "base_price": 10000000,
-      "stats": "Wkts: 198, Econ: 7.1, Avg: 23.6",
-      "img": "",
-      "overseas": false,
-      "country": "India",
-      "retired": true
-    },
-    {
-      "id": 138,
-      "name": "Ambati Rayudu",
-      "role": "Batsman",
-      "rating": 87,
-      "base_price": 7500000,
-      "stats": "Runs: 7760, Avg: 43.7, SR: 148.2",
-      "img": "",
-      "overseas": false,
-      "country": "India",
-      "retired": true
-    },
-    {
       "id": 202,
       "name": "Jake Fraser-McGurk",
       "role": "Batsman",
@@ -2475,18 +1299,6 @@
       "overseas": true,
       "country": "Australia",
       "retired": false
-    },
-    {
-      "id": 234,
-      "name": "Mitchell Johnson",
-      "role": "Bowler",
-      "rating": 87,
-      "base_price": 10000000,
-      "stats": "Wkts: 198, Econ: 7.1, Avg: 23.6",
-      "img": "",
-      "overseas": true,
-      "country": "Australia",
-      "retired": true
     },
     {
       "id": 242,
@@ -2559,18 +1371,6 @@
       "overseas": true,
       "country": "Australia",
       "retired": false
-    },
-    {
-      "id": 281,
-      "name": "Stuart Broad",
-      "role": "Bowler",
-      "rating": 86,
-      "base_price": 5000000,
-      "stats": "Wkts: 189, Econ: 7.34, Avg: 23.6",
-      "img": "",
-      "overseas": true,
-      "country": "England",
-      "retired": true
     },
     {
       "id": 361,
@@ -2705,30 +1505,6 @@
       "retired": false
     },
     {
-      "id": 128,
-      "name": "Yusuf Pathan",
-      "role": "All-Rounder",
-      "rating": 85,
-      "base_price": 5000000,
-      "stats": "Runs: 3700 (SR 146.0), Wkts: 92 (Econ 7.95)",
-      "img": "",
-      "overseas": false,
-      "country": "India",
-      "retired": true
-    },
-    {
-      "id": 144,
-      "name": "Praveen Kumar",
-      "role": "Bowler",
-      "rating": 85,
-      "base_price": 5000000,
-      "stats": "Wkts: 181, Econ: 7.29, Avg: 23.6",
-      "img": "",
-      "overseas": false,
-      "country": "India",
-      "retired": true
-    },
-    {
       "id": 168,
       "name": "Umran Malik",
       "role": "Bowler",
@@ -2775,18 +1551,6 @@
       "overseas": true,
       "country": "West Indies",
       "retired": false
-    },
-    {
-      "id": 344,
-      "name": "Marlon Samuels",
-      "role": "Batsman",
-      "rating": 85,
-      "base_price": 3000000,
-      "stats": "Runs: 7200, Avg: 41.6, SR: 144.2",
-      "img": "",
-      "overseas": true,
-      "country": "West Indies",
-      "retired": true
     },
     {
       "id": 358,
@@ -2895,42 +1659,6 @@
       "overseas": false,
       "country": "India",
       "retired": false
-    },
-    {
-      "id": 129,
-      "name": "Pragyan Ojha",
-      "role": "Bowler",
-      "rating": 84,
-      "base_price": 3000000,
-      "stats": "Wkts: 172, Econ: 7.24, Avg: 24.5",
-      "img": "",
-      "overseas": false,
-      "country": "India",
-      "retired": true
-    },
-    {
-      "id": 139,
-      "name": "Naman Ojha",
-      "role": "Wicket-Keeper",
-      "rating": 84,
-      "base_price": 2000000,
-      "stats": "Runs: 5280 (SR 144.2), Dismissals: 126",
-      "img": "",
-      "overseas": false,
-      "country": "India",
-      "retired": true
-    },
-    {
-      "id": 149,
-      "name": "Stuart Binny",
-      "role": "All-Rounder",
-      "rating": 84,
-      "base_price": 2000000,
-      "stats": "Runs: 3540 (SR 143.8), Wkts: 101 (Econ 7.84)",
-      "img": "",
-      "overseas": false,
-      "country": "India",
-      "retired": true
     },
     {
       "id": 159,
@@ -3279,18 +2007,6 @@
       "overseas": false,
       "country": "India",
       "retired": false
-    },
-    {
-      "id": 148,
-      "name": "Pawan Negi",
-      "role": "All-Rounder",
-      "rating": 83,
-      "base_price": 2000000,
-      "stats": "Runs: 3380 (SR 147.6), Wkts: 96 (Econ 8.18)",
-      "img": "",
-      "overseas": false,
-      "country": "India",
-      "retired": true
     },
     {
       "id": 158,
@@ -3651,18 +2367,6 @@
       "overseas": false,
       "country": "India",
       "retired": false
-    },
-    {
-      "id": 137,
-      "name": "Parthiv Patel",
-      "role": "Wicket-Keeper",
-      "rating": 82,
-      "base_price": 3000000,
-      "stats": "Runs: 4840 (SR 140.7), Dismissals: 112",
-      "img": "",
-      "overseas": false,
-      "country": "India",
-      "retired": true
     },
     {
       "id": 147,
@@ -4097,18 +2801,6 @@
       "retired": false
     },
     {
-      "id": 256,
-      "name": "Alex Hales",
-      "role": "Batsman",
-      "rating": 81,
-      "base_price": 5000000,
-      "stats": "Runs: 6080, Avg: 39.9, SR: 144.6",
-      "img": "",
-      "overseas": true,
-      "country": "England",
-      "retired": true
-    },
-    {
       "id": 266,
       "name": "Chris Jordan",
       "role": "Bowler",
@@ -4419,30 +3111,6 @@
       "overseas": false,
       "country": "India",
       "retired": false
-    },
-    {
-      "id": 135,
-      "name": "Murali Vijay",
-      "role": "Batsman",
-      "rating": 80,
-      "base_price": 5000000,
-      "stats": "Runs: 5800, Avg: 38.8, SR: 142.6",
-      "img": "",
-      "overseas": false,
-      "country": "India",
-      "retired": true
-    },
-    {
-      "id": 145,
-      "name": "Vinay Kumar",
-      "role": "Bowler",
-      "rating": 80,
-      "base_price": 3000000,
-      "stats": "Wkts: 138, Econ: 7.62, Avg: 24.4",
-      "img": "",
-      "overseas": false,
-      "country": "India",
-      "retired": true
     },
     {
       "id": 155,
@@ -5093,30 +3761,6 @@
       "retired": false
     },
     {
-      "id": 133,
-      "name": "S Sreesanth",
-      "role": "Bowler",
-      "rating": 78,
-      "base_price": 3000000,
-      "stats": "Wkts: 170, Econ: 7.51, Avg: 25.3",
-      "img": "",
-      "overseas": false,
-      "country": "India",
-      "retired": true
-    },
-    {
-      "id": 143,
-      "name": "Sreenath Aravind",
-      "role": "Bowler",
-      "rating": 78,
-      "base_price": 2000000,
-      "stats": "Wkts: 170, Econ: 7.51, Avg: 25.3",
-      "img": "",
-      "overseas": false,
-      "country": "India",
-      "retired": true
-    },
-    {
       "id": 153,
       "name": "Rishi Dhawan",
       "role": "All-Rounder",
@@ -5501,30 +4145,6 @@
       "retired": false
     },
     {
-      "id": 132,
-      "name": "RP Singh",
-      "role": "Bowler",
-      "rating": 77,
-      "base_price": 3000000,
-      "stats": "Wkts: 162, Econ: 7.76, Avg: 25.3",
-      "img": "",
-      "overseas": false,
-      "country": "India",
-      "retired": true
-    },
-    {
-      "id": 142,
-      "name": "Manpreet Gony",
-      "role": "Bowler",
-      "rating": 77,
-      "base_price": 2000000,
-      "stats": "Wkts: 162, Econ: 7.76, Avg: 25.3",
-      "img": "",
-      "overseas": false,
-      "country": "India",
-      "retired": true
-    },
-    {
       "id": 152,
       "name": "Karn Sharma",
       "role": "Bowler",
@@ -5885,42 +4505,6 @@
       "retired": false
     },
     {
-      "id": 131,
-      "name": "Munaf Patel",
-      "role": "Bowler",
-      "rating": 76,
-      "base_price": 3000000,
-      "stats": "Wkts: 153, Econ: 7.7, Avg: 25.3",
-      "img": "",
-      "overseas": false,
-      "country": "India",
-      "retired": true
-    },
-    {
-      "id": 141,
-      "name": "Abhishek Nayar",
-      "role": "All-Rounder",
-      "rating": 76,
-      "base_price": 2000000,
-      "stats": "Runs: 3060 (SR 138.2), Wkts: 75 (Econ 8.31)",
-      "img": "",
-      "overseas": false,
-      "country": "India",
-      "retired": true
-    },
-    {
-      "id": 151,
-      "name": "Abu Nechim",
-      "role": "Bowler",
-      "rating": 76,
-      "base_price": 2000000,
-      "stats": "Wkts: 153, Econ: 7.7, Avg: 25.3",
-      "img": "",
-      "overseas": false,
-      "country": "India",
-      "retired": true
-    },
-    {
       "id": 161,
       "name": "Ravisrinivasan Sai Kishore",
       "role": "Bowler",
@@ -6039,18 +4623,6 @@
       "overseas": true,
       "country": "West Indies",
       "retired": false
-    },
-    {
-      "id": 325,
-      "name": "Dwayne Bravo",
-      "role": "All-Rounder",
-      "rating": 76,
-      "base_price": 10000000,
-      "stats": "Runs: 3060 (SR 138.2), Wkts: 75 (Econ 8.31)",
-      "img": "",
-      "overseas": true,
-      "country": "West Indies",
-      "retired": true
     },
     {
       "id": 331,
@@ -6303,30 +4875,6 @@
       "overseas": false,
       "country": "India",
       "retired": false
-    },
-    {
-      "id": 140,
-      "name": "Saurabh Tiwary",
-      "role": "Batsman",
-      "rating": 75,
-      "base_price": 2000000,
-      "stats": "Runs: 5600, Avg: 36.0, SR: 141.0",
-      "img": "",
-      "overseas": false,
-      "country": "India",
-      "retired": true
-    },
-    {
-      "id": 150,
-      "name": "Iqbal Abdulla",
-      "role": "All-Rounder",
-      "rating": 75,
-      "base_price": 2000000,
-      "stats": "Runs: 2900 (SR 142.0), Wkts: 70 (Econ 8.2)",
-      "img": "",
-      "overseas": false,
-      "country": "India",
-      "retired": true
     },
     {
       "id": 160,
