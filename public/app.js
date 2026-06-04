@@ -475,12 +475,22 @@ function renderPlayersChecklist() {
     }
     
     const excludeRetired = document.getElementById('exclude-retired')?.checked || false;
+    const query = document.getElementById('checklist-search')?.value.trim().toLowerCase() || '';
     
     allPresetPlayers.forEach(p => {
         const label = document.createElement('div');
-        label.className = 'checklist-item' + (p.retired && excludeRetired ? ' hidden-retired' : '');
+        const isRetiredHidden = p.retired && excludeRetired;
+        const isSearchHidden = query !== '' && !p.name.toLowerCase().includes(query);
+        
+        let classes = ['checklist-item'];
+        if (isRetiredHidden) classes.push('hidden-retired');
+        if (isSearchHidden) classes.push('hidden-search');
+        
+        label.className = classes.join(' ');
+        
         const countryLabel = p.country ? p.country : (p.overseas ? 'Overseas' : 'India');
-        const isChecked = p.retired && excludeRetired ? false : true;
+        const isChecked = isRetiredHidden ? false : true;
+        
         label.innerHTML = `
             <input type="checkbox" id="check-p-${p.id}" value="${p.id}" ${isChecked ? 'checked' : ''}>
             <div class="checklist-item-meta" style="flex-grow: 1;">
@@ -502,7 +512,7 @@ function renderPlayersChecklist() {
 
 // Helper to select/deselect all checklist checkboxes
 function toggleAllChecklist(checked) {
-    const checkboxes = document.querySelectorAll('.checklist-item:not(.hidden-retired) input[type="checkbox"]');
+    const checkboxes = document.querySelectorAll('.checklist-item:not(.hidden-retired):not(.hidden-search) input[type="checkbox"]');
     checkboxes.forEach(cb => cb.checked = checked);
 }
 
@@ -519,6 +529,23 @@ function filterRetiredPlayers(exclude) {
                 } else {
                     item.classList.remove('hidden-retired');
                 }
+            }
+        }
+    });
+}
+
+// Helper to filter/hide players by search query
+function searchChecklistPlayers(query) {
+    const q = query.trim().toLowerCase();
+    allPresetPlayers.forEach(p => {
+        const cb = document.getElementById(`check-p-${p.id}`);
+        const item = cb ? cb.closest('.checklist-item') : null;
+        if (item) {
+            const matches = p.name.toLowerCase().includes(q);
+            if (matches) {
+                item.classList.remove('hidden-search');
+            } else {
+                item.classList.add('hidden-search');
             }
         }
     });

@@ -1480,7 +1480,8 @@ h1, h2, h3, h4 {
     color: #ff527c;
 }
 
-.hidden-retired {
+.hidden-retired,
+.hidden-search {
     display: none !important;
 }
 

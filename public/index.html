@@ -154,6 +154,13 @@
                                 Exclude Retired Players (not active in leagues)
                             </label>
                         </div>
+                        
+                        <!-- Checklist Search Bar -->
+                        <div class="checklist-search-container" style="margin-bottom: 1rem; position: relative;">
+                            <i class="fa-solid fa-magnifying-glass" style="position: absolute; left: 0.75rem; top: 50%; transform: translateY(-50%); color: var(--text-secondary); font-size: 0.85rem;"></i>
+                            <input type="text" id="checklist-search" oninput="searchChecklistPlayers(this.value)" placeholder="Search players by name (e.g. Virat Kohli, Mitchell Starc)..." style="width: 100%; height: 38px; padding: 0.25rem 0.75rem 0.25rem 2.2rem; background: rgba(0, 0, 0, 0.35); border: 1px solid var(--border-color); border-radius: 6px; color: white; font-size: 0.85rem; transition: border-color 0.2s ease;">
+                        </div>
+
                         <div id="players-checklist" class="players-checklist-grid">
                             <span class="help-text">Loading preset player lists...</span>
                         </div>
