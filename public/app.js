@@ -1519,11 +1519,14 @@ async function placeBid(type, value) {
 // Host Action Trigger POST
 async function hostAction(action) {
     if (role !== 'host') return;
+    const filterEl = document.getElementById('host-role-filter');
+    const roleFilter = filterEl ? filterEl.value : 'All';
     try {
         await apiPost('/api/control', {
             room_code: roomCode,
             host_id: hostId,
-            action: action
+            action: action,
+            role_filter: roleFilter
         });
     } catch (err) {
         console.error(err);

@@ -649,16 +649,20 @@ class AuctionHTTPHandler(SimpleHTTPRequestHandler):
                 return
                 
             # Host logic actions
+            role_filter = data.get('role_filter') # e.g. "Batsman", "Bowler", "All-Rounder", "Wicket-Keeper" or "All"
+            
             if action == "start":
-                # Find first unsold player
+                # Find first unsold player matching role_filter
                 first_unsold = -1
                 for i, p in enumerate(room["players"]):
                     if p.get("status", "unsold") == "unsold" and p.get("bought_by") is None:
-                        first_unsold = i
-                        break
-                        
+                        if not role_filter or role_filter == "All" or p.get("role") == role_filter:
+                            first_unsold = i
+                            break
+                            
                 if first_unsold == -1:
-                    self.send_json_response(400, {"error": "All players have already been auctioned!"})
+                    category_label = role_filter if role_filter != "All" else "any"
+                    self.send_json_response(400, {"error": f"No unsold players found for category: {category_label}!"})
                     return
                     
                 room["current_player_index"] = first_unsold
@@ -678,21 +682,27 @@ class AuctionHTTPHandler(SimpleHTTPRequestHandler):
                 for i in range(idx + 1, len(room["players"])):
                     p = room["players"][i]
                     if p.get("status", "unsold") == "unsold" and p.get("bought_by") is None:
-                        next_unsold = i
-                        break
-                        
-                # If not found in subsequent list, wrap around to search from start for any unsold skipped players
+                        if not role_filter or role_filter == "All" or p.get("role") == role_filter:
+                            next_unsold = i
+                            break
+                            
+                # If not found in subsequent list, wrap around to search from start for any unsold players matching role
                 if next_unsold == -1:
                     for i in range(0, idx + 1):
                         p = room["players"][i]
                         if p.get("status", "unsold") == "unsold" and p.get("bought_by") is None:
-                            next_unsold = i
-                            break
-                            
+                            if not role_filter or role_filter == "All" or p.get("role") == role_filter:
+                                next_unsold = i
+                                break
+                                
                 if next_unsold == -1:
-                    room["status"] = "finished"
-                    finish_msg = "🏆 Cricket Player Auction completed! All players auctioned."
-                    room["logs"].append(finish_msg)
+                    if role_filter and role_filter != "All":
+                        self.send_json_response(400, {"error": f"No unsold players left in category: {role_filter}!"})
+                        return
+                    else:
+                        room["status"] = "finished"
+                        finish_msg = "🏆 Cricket Player Auction completed! All players auctioned."
+                        room["logs"].append(finish_msg)
                 else:
                     room["current_player_index"] = next_unsold
                     room["status"] = "active"

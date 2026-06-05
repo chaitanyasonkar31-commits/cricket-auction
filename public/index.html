@@ -487,6 +487,18 @@ Yashasvi Jaiswal, Batsman, 91, 10000000, Runs: 720 Avg: 41.2, , false" style="fo
                     <!-- Host Console (Only visible to the Host) -->
                     <div id="host-admin-panel" class="host-console glass-panel hidden">
                         <h3><i class="fa-solid fa-toolbox"></i> Host Auctioneer Desk</h3>
+                        
+                        <div class="form-group" style="margin-bottom: 1rem; width: 100%;">
+                            <label for="host-role-filter" style="font-size: 0.8rem; color: var(--text-secondary); margin-bottom: 0.25rem; display: block;"><i class="fa-solid fa-filter"></i> Draft Category Set</label>
+                            <select id="host-role-filter" style="width: 100%; height: 38px; padding: 0.25rem 0.5rem; background: rgba(0,0,0,0.3); border: 1px solid var(--border-color); border-radius: 6px; color: white;">
+                                <option value="All">All Categories (Standard Queue)</option>
+                                <option value="Batsman">Batsmen Only</option>
+                                <option value="All-Rounder">All-Rounders Only</option>
+                                <option value="Bowler">Bowlers Only</option>
+                                <option value="Wicket-Keeper">Wicket-Keepers Only</option>
+                            </select>
+                        </div>
+
                         <div class="console-buttons">
                             <!-- Start / Next -->
                             <button id="host-btn-start" class="btn btn-primary" onclick="hostAction('start')"><i class="fa-solid fa-play"></i> Start Auction</button>
