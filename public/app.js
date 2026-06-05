@@ -597,48 +597,58 @@ function parseCSV(text) {
 
 // Load all presets from server
 async function loadPresets() {
-    let presetsData = null;
     try {
-        const response = await fetch('/api/presets');
-        if (response.ok) {
-            presetsData = await response.json();
-        } else {
-            throw new Error("HTTP error " + response.status);
+        let presetsData = null;
+        try {
+            const controller = new AbortController();
+            const timeoutId = setTimeout(() => controller.abort(), 3000); // 3 seconds timeout
+            const response = await fetch('/api/presets', { signal: controller.signal });
+            clearTimeout(timeoutId);
+            if (response.ok) {
+                presetsData = await response.json();
+            } else {
+                throw new Error("HTTP error " + response.status);
+            }
+        } catch (err) {
+            console.warn("Failed to fetch dynamic presets from server, using local fallback presets:", err);
+            if (window.ALL_PLAYERS_DATA) {
+                presetsData = window.ALL_PLAYERS_DATA;
+            }
         }
-    } catch (err) {
-        console.warn("Failed to fetch dynamic presets from server, using local fallback presets:", err);
-        if (window.ALL_PLAYERS_DATA) {
-            presetsData = window.ALL_PLAYERS_DATA;
-        }
-    }
-    
-    if (presetsData) {
-        allPresetPlayers = [];
-        Object.keys(presetsData).forEach(key => {
-            const list = presetsData[key];
-            list.forEach(p => {
-                const source = key === 'ipl_legends' ? 'IPL' : (key === 'all_time_legends' ? 'Legend' : (key === 'h_liga' ? 'H-LIGA' : 'Full Pool'));
-                let country = p.country || (p.overseas ? 'Overseas' : 'India');
-                if (!allPresetPlayers.some(item => item.name === p.name)) {
-                    const playerCopy = JSON.parse(JSON.stringify(p));
-                    playerCopy.source = source;
-                    playerCopy.country = country;
-                    allPresetPlayers.push(playerCopy);
+        
+        if (presetsData) {
+            allPresetPlayers = [];
+            Object.keys(presetsData).forEach(key => {
+                const list = presetsData[key];
+                if (Array.isArray(list)) {
+                    list.forEach(p => {
+                        const source = key === 'ipl_legends' ? 'IPL' : (key === 'all_time_legends' ? 'Legend' : (key === 'h_liga' ? 'H-LIGA' : 'Full Pool'));
+                        let country = p.country || (p.overseas ? 'Overseas' : 'India');
+                        if (!allPresetPlayers.some(item => item.name === p.name)) {
+                            const playerCopy = JSON.parse(JSON.stringify(p));
+                            playerCopy.source = source;
+                            playerCopy.country = country;
+                            allPresetPlayers.push(playerCopy);
+                        }
+                    });
                 }
             });
-        });
+        }
+        
+        if (allPresetPlayers.length < 500) {
+            generateRemainingPlayers();
+        }
+        
+        // Always render players list checklist
+        renderPlayersChecklist();
+        
+        // Initialize default preset filter
+        const activePreset = document.querySelector('input[name="preset-choice"]:checked')?.value || 'ipl_legends';
+        selectPreset(activePreset);
+    } catch (globalErr) {
+        console.error("Critical error in loadPresets:", globalErr);
+        showNotification("Critical error loading presets: " + globalErr.message, "danger");
     }
-    
-    if (allPresetPlayers.length < 500) {
-        generateRemainingPlayers();
-    }
-    
-    // Always render players list checklist
-    renderPlayersChecklist();
-    
-    // Initialize default preset filter
-    const activePreset = document.querySelector('input[name="preset-choice"]:checked')?.value || 'ipl_legends';
-    selectPreset(activePreset);
 }
 
 // Generate remaining players to reach 500+
