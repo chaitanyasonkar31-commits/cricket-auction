@@ -17,6 +17,7 @@ let roomState = null;
 let eventSource = null;
 let currentTimerVal = 0;
 let localTimerInterval = null;
+let presetsLoaded = false;
 let allPresetPlayers = [
     {"id": 1, "name": "Virat Kohli", "role": "Batsman", "rating": 96, "base_price": 20000000, "stats": "Runs: 7624, Avg: 38.7, SR: 130.7", "img": "https://img1.hscicdn.com/image/upload/f_auto,t_ds_square_w_320,q_50/lsci/db/PICTURES/CMS/316600/316605.png", "overseas": false, "country": "India"},
     {"id": 2, "name": "MS Dhoni", "role": "Wicket-Keeper", "rating": 95, "base_price": 20000000, "stats": "Runs: 5243, Avg: 39.1, SR: 137.5, Catch/Stump: 192", "img": "https://img1.hscicdn.com/image/upload/f_auto,t_ds_square_w_320,q_50/lsci/db/PICTURES/CMS/319900/319946.png", "overseas": false, "country": "India"},
@@ -288,6 +289,9 @@ function showSection(id) {
     // Custom Hooks
     if (id === 'host-config') {
         checkSavedDraft();
+        if (!presetsLoaded) {
+            loadPresets();
+        }
     }
 }
 
@@ -645,6 +649,7 @@ async function loadPresets() {
         // Initialize default preset filter
         const activePreset = document.querySelector('input[name="preset-choice"]:checked')?.value || 'ipl_legends';
         selectPreset(activePreset);
+        presetsLoaded = true;
     } catch (globalErr) {
         console.error("Critical error in loadPresets:", globalErr);
         showNotification("Critical error loading presets: " + globalErr.message, "danger");
