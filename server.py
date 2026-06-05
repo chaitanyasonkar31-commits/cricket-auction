@@ -74,6 +74,12 @@ def load_users():
         except Exception as e:
             print(f"Error loading users.json: {e}")
             users = {}
+            
+    # Reset forgotten password for user "chaitanya" by removing the account so they can register fresh
+    if "chaitanya" in users:
+        del users["chaitanya"]
+        save_users()
+        print("Reset account 'chaitanya' on startup.")
 
 def save_users():
     try:
