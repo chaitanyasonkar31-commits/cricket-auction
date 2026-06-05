@@ -845,6 +845,16 @@ async function apiPost(endpoint, body) {
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(body)
         });
+        
+        if (response.status === 401) {
+            localStorage.removeItem('auth_token');
+            localStorage.removeItem('auth_username');
+            document.getElementById('user-profile-badge')?.classList.add('hidden');
+            document.getElementById('login-overlay')?.classList.remove('hidden');
+            showNotification("Session expired. Please log in again.", "warning");
+            throw new Error("Session expired. Please log in again.");
+        }
+        
         const data = await response.json();
         if (!response.ok) {
             throw new Error(data.error || "Request failed");
