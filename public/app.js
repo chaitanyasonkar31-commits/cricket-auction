@@ -1084,6 +1084,16 @@ function triggerConfetti() {
 function updateTimerProgressBar(val) {
     const text = document.getElementById('timer-text');
     const bar = document.getElementById('timer-progress-bar');
+    
+    if (roomState && roomState.settings && roomState.settings.timer_duration === 0) {
+        if (text) text.innerText = "Unlimited";
+        if (bar) {
+            bar.style.width = "100%";
+            bar.classList.remove('warning');
+        }
+        return;
+    }
+    
     if (text) text.innerText = val;
     
     if (bar && roomState && roomState.settings) {
@@ -1401,12 +1411,17 @@ function renderAuctionDashboard() {
             startBtn.classList.add('hidden');
             nextBtn.classList.add('hidden');
             
-            if (roomState.timer_active) {
-                pauseBtn.classList.remove('hidden');
+            if (roomState.settings && roomState.settings.timer_duration === 0) {
+                pauseBtn.classList.add('hidden');
                 resumeBtn.classList.add('hidden');
             } else {
-                pauseBtn.classList.add('hidden');
-                resumeBtn.classList.remove('hidden');
+                if (roomState.timer_active) {
+                    pauseBtn.classList.remove('hidden');
+                    resumeBtn.classList.add('hidden');
+                } else {
+                    pauseBtn.classList.add('hidden');
+                    resumeBtn.classList.remove('hidden');
+                }
             }
             
             // Disable force-sell button if no one bid yet
