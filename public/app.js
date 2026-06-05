@@ -17,6 +17,7 @@ let roomState = null;
 let eventSource = null;
 let currentTimerVal = 0;
 let localTimerInterval = null;
+let allPresetsData = window.ALL_PLAYERS_DATA || {};
 let presetsLoaded = false;
 let allPresetPlayers = [
     {"id": 1, "name": "Virat Kohli", "role": "Batsman", "rating": 96, "base_price": 20000000, "stats": "Runs: 7624, Avg: 38.7, SR: 130.7", "img": "https://img1.hscicdn.com/image/upload/f_auto,t_ds_square_w_320,q_50/lsci/db/PICTURES/CMS/316600/316605.png", "overseas": false, "country": "India"},
@@ -323,46 +324,44 @@ function selectPreset(presetName) {
                 addCustomPlayerRow();
             }
         }
-        
-        // Show only Full Pool players in the checklist for custom preset to avoid duplicates
-        allPresetPlayers.forEach(p => {
-            const cb = document.getElementById(`check-p-${p.id}`);
-            const item = cb ? cb.closest('.checklist-item') : null;
-            if (item) {
-                if (p.source === 'Full Pool') {
-                    item.classList.remove('hidden-search');
-                } else {
-                    item.classList.add('hidden-search');
-                    cb.checked = false;
-                }
-            }
-        });
     } else {
         if (tableContainer) tableContainer.classList.add('hidden');
-        
-        // Filter the checklist to only show players belonging to the selected preset
-        const sourceMap = {
-            'ipl_legends': 'IPL',
-            'all_time_legends': 'Legend',
-            'h_liga': 'H-LIGA',
-            'full_pool': 'Full Pool'
-        };
-        
-        const targetSource = sourceMap[presetName];
-        
-        allPresetPlayers.forEach(p => {
-            const cb = document.getElementById(`check-p-${p.id}`);
-            const item = cb ? cb.closest('.checklist-item') : null;
-            if (item) {
-                if (presetName === 'full_pool' || p.source === targetSource) {
-                    item.classList.remove('hidden-search');
-                    cb.checked = true; // Auto check it
-                } else {
-                    item.classList.add('hidden-search');
-                    cb.checked = false; // Auto uncheck it
-                }
-            }
-        });
+    }
+
+    // Load players of the selected preset dynamically
+    const targetKey = presetName === 'custom' ? 'full_pool' : presetName;
+    const rawList = allPresetsData[targetKey] || [];
+    
+    allPresetPlayers = rawList.map(p => {
+        const playerCopy = JSON.parse(JSON.stringify(p));
+        playerCopy.source = presetName === 'ipl_legends' ? 'IPL' : (presetName === 'all_time_legends' ? 'Legend' : (presetName === 'h_liga' ? 'H-LIGA' : 'Full Pool'));
+        playerCopy.country = p.country || (p.overseas ? 'Overseas' : 'India');
+        return playerCopy;
+    });
+
+    // Re-generate remaining backup players if less than 500 (only for full_pool and custom)
+    if ((presetName === 'full_pool' || presetName === 'custom') && allPresetPlayers.length < 500) {
+        generateRemainingPlayers();
+    }
+
+    // Render players list checklist in DOM
+    renderPlayersChecklist();
+    
+    // Auto check/uncheck based on preset
+    const checkedBoxes = document.querySelectorAll('.checklist-item input[type="checkbox"]');
+    checkedBoxes.forEach(cb => {
+        cb.checked = true; // Auto-check by default
+    });
+    
+    // Trigger filters if active
+    const excludeRetired = document.getElementById('exclude-retired')?.checked || false;
+    if (excludeRetired) {
+        filterRetiredPlayers(true);
+    }
+    
+    const searchQuery = document.getElementById('checklist-search')?.value || '';
+    if (searchQuery.trim() !== '') {
+        searchChecklistPlayers(searchQuery);
     }
 }
 
@@ -626,30 +625,8 @@ async function loadPresets() {
         }
         
         if (presetsData) {
-            allPresetPlayers = [];
-            Object.keys(presetsData).forEach(key => {
-                const list = presetsData[key];
-                if (Array.isArray(list)) {
-                    list.forEach(p => {
-                        const source = key === 'ipl_legends' ? 'IPL' : (key === 'all_time_legends' ? 'Legend' : (key === 'h_liga' ? 'H-LIGA' : 'Full Pool'));
-                        let country = p.country || (p.overseas ? 'Overseas' : 'India');
-                        if (!allPresetPlayers.some(item => item.name === p.name && item.source === source)) {
-                            const playerCopy = JSON.parse(JSON.stringify(p));
-                            playerCopy.source = source;
-                            playerCopy.country = country;
-                            allPresetPlayers.push(playerCopy);
-                        }
-                    });
-                }
-            });
+            allPresetsData = presetsData;
         }
-        
-        if (allPresetPlayers.length < 500) {
-            generateRemainingPlayers();
-        }
-        
-        // Always render players list checklist
-        renderPlayersChecklist();
         
         // Initialize default preset filter
         const activePreset = document.querySelector('input[name="preset-choice"]:checked')?.value || 'ipl_legends';
