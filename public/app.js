@@ -1828,21 +1828,22 @@ function savePlayerDraft() {
         csvText: document.getElementById('custom-csv')?.value || ''
     };
     
-    // Save Custom Roster checklist selections & ratings
+    // Save checklist selections & ratings for ALL presets
+    const checkedBoxes = document.querySelectorAll('.checklist-item input[type="checkbox"]:checked');
+    checkedBoxes.forEach(input => {
+        draft.checkedIds.push(parseInt(input.value));
+    });
+    
+    const ratingInputs = document.querySelectorAll('.checklist-rating-input input');
+    ratingInputs.forEach(input => {
+        const pId = input.id.replace('rating-p-', '');
+        if (input.value.trim() !== '') {
+            draft.customRatings[pId] = input.value.trim();
+        }
+    });
+    
+    // Save interactive custom player table rows only if presetChoice is 'custom'
     if (presetChoice === 'custom') {
-        const checkedBoxes = document.querySelectorAll('.checklist-item input[type="checkbox"]:checked');
-        checkedBoxes.forEach(input => {
-            draft.checkedIds.push(parseInt(input.value));
-        });
-        
-        const ratingInputs = document.querySelectorAll('.checklist-rating-input input');
-        ratingInputs.forEach(input => {
-            const pId = input.id.replace('rating-p-', '');
-            if (input.value.trim() !== '') {
-                draft.customRatings[pId] = input.value.trim();
-            }
-        });
-        
         const customRows = document.querySelectorAll('#custom-players-rows tr');
         customRows.forEach(row => {
             const nameEl = row.querySelector('.cp-name');
@@ -1888,32 +1889,32 @@ function loadPlayerDraft() {
             selectPreset(draft.presetChoice);
         }
         
-        if (draft.presetChoice === 'custom') {
-            // Restore Exclude Retired checkbox
-            const excludeRetiredCb = document.getElementById('exclude-retired');
-            if (excludeRetiredCb) {
-                excludeRetiredCb.checked = draft.excludeRetired;
-                filterRetiredPlayers(draft.excludeRetired);
+        // Restore Exclude Retired checkbox
+        const excludeRetiredCb = document.getElementById('exclude-retired');
+        if (excludeRetiredCb) {
+            excludeRetiredCb.checked = draft.excludeRetired;
+            filterRetiredPlayers(draft.excludeRetired);
+        }
+        
+        // Restore checklist checkboxes
+        const checklistItems = document.querySelectorAll('.checklist-item input[type="checkbox"]');
+        checklistItems.forEach(cb => {
+            const id = parseInt(cb.value);
+            cb.checked = draft.checkedIds.includes(id);
+        });
+        
+        // Restore custom ratings inputs
+        const ratingInputs = document.querySelectorAll('.checklist-rating-input input');
+        ratingInputs.forEach(input => {
+            const pId = input.id.replace('rating-p-', '');
+            if (draft.customRatings[pId] !== undefined) {
+                input.value = draft.customRatings[pId];
+            } else {
+                input.value = '';
             }
-            
-            // Restore checklist checkboxes
-            const checklistItems = document.querySelectorAll('.checklist-item input[type="checkbox"]');
-            checklistItems.forEach(cb => {
-                const id = parseInt(cb.value);
-                cb.checked = draft.checkedIds.includes(id);
-            });
-            
-            // Restore custom ratings inputs
-            const ratingInputs = document.querySelectorAll('.checklist-rating-input input');
-            ratingInputs.forEach(input => {
-                const pId = input.id.replace('rating-p-', '');
-                if (draft.customRatings[pId] !== undefined) {
-                    input.value = draft.customRatings[pId];
-                } else {
-                    input.value = '';
-                }
-            });
-            
+        });
+        
+        if (draft.presetChoice === 'custom') {
             // Restore CSV text area
             const csvArea = document.getElementById('custom-csv');
             if (csvArea) {
