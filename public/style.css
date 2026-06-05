@@ -418,12 +418,9 @@ h1, h2, h3, h4 {
 }
 .preset-options {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     gap: 1rem;
     margin-top: 0.5rem;
-}
-@media (min-width: 600px) {
-    .preset-options { grid-template-columns: 1fr 1fr 1fr; }
 }
 
 .preset-label {

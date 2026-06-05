@@ -570,7 +570,7 @@ async function loadPresets() {
         Object.keys(presetsData).forEach(key => {
             const list = presetsData[key];
             list.forEach(p => {
-                const source = key === 'ipl_legends' ? 'IPL' : (key === 'all_time_legends' ? 'Legend' : 'Full Pool');
+                const source = key === 'ipl_legends' ? 'IPL' : (key === 'all_time_legends' ? 'Legend' : (key === 'h_liga' ? 'H-LIGA' : 'Full Pool'));
                 let country = p.country || (p.overseas ? 'Overseas' : 'India');
                 if (!allPresetPlayers.some(item => item.name === p.name)) {
                     const playerCopy = JSON.parse(JSON.stringify(p));
