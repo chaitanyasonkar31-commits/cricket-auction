@@ -105,6 +105,10 @@ def get_user_from_token(token):
 def create_session(username):
     token = "auth_" + uuid.uuid4().hex
     with sessions_lock:
+        # Invalidate any other active sessions for this user to ensure 1 active ID/session at any time
+        for t, u in list(sessions.items()):
+            if u == username:
+                del sessions[t]
         sessions[token] = username
     return token
 

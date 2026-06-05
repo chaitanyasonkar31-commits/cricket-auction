@@ -136,9 +136,16 @@ async function handleRegisterSubmit(event) {
 }
 
 function continueAsGuest() {
-    const randomStr = Math.random().toString(36).substring(2, 8);
-    const guestToken = "guest_" + randomStr;
-    const guestName = "Guest_" + randomStr;
+    let guestToken = localStorage.getItem('persistent_guest_token');
+    let guestName = localStorage.getItem('persistent_guest_username');
+    
+    if (!guestToken || !guestName) {
+        const randomStr = Math.random().toString(36).substring(2, 8);
+        guestToken = "guest_" + randomStr;
+        guestName = "Guest_" + randomStr;
+        localStorage.setItem('persistent_guest_token', guestToken);
+        localStorage.setItem('persistent_guest_username', guestName);
+    }
     
     localStorage.setItem('auth_token', guestToken);
     localStorage.setItem('auth_username', guestName);
