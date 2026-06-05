@@ -921,37 +921,47 @@ h1, h2, h3, h4 {
     display: block;
     margin-bottom: -2px;
 }
-.custom-bid-input-container {
+.chat-section-container {
+    margin-top: 1rem;
+    border-top: 1px solid var(--border-color);
+    padding-top: 1rem;
+}
+.chat-section-container h3 {
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+.chat-input-container {
     display: flex;
     gap: 0.75rem;
     align-items: center;
 }
-.custom-bid-input-container .input-wrapper {
-    position: relative;
+.chat-input-container input {
     flex-grow: 1;
-}
-.currency-symbol {
-    position: absolute;
-    left: 12px;
-    top: 50%;
-    transform: translateY(-50%);
-    color: var(--text-secondary);
-    font-family: var(--font-heading);
-    font-weight: 600;
-}
-.custom-bid-input-container input {
-    width: 100%;
-    padding-left: 26px;
-    height: 46px;
-    background: rgba(0, 0, 0, 0.2);
+    height: 40px;
+    padding: 0.25rem 0.75rem;
+    background: rgba(0, 0, 0, 0.25);
     border: 1px solid var(--border-color);
-    border-radius: 8px;
+    border-radius: 6px;
     color: white;
-    font-size: 0.95rem;
+    font-size: 0.85rem;
+    transition: border-color 0.2s;
 }
-.custom-bid-input-container input:focus {
+.chat-input-container input:focus {
     outline: none;
     border-color: var(--accent-cyan);
+}
+.chat-input-container button {
+    height: 40px;
+    padding: 0 1rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.35rem;
+    font-size: 0.85rem;
+    border-radius: 6px;
 }
 
 /* HOST ADMIN CONSOLE */

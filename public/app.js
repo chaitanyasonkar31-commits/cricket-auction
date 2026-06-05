@@ -1366,9 +1366,12 @@ function renderAuctionDashboard() {
     
     // 2. Bidding Buttons Controls Display
     const bidPanel = document.getElementById('bidding-controls-panel');
+    const bidButtonsSection = document.getElementById('bid-buttons-section');
     if (role === 'host') {
-        bidPanel.classList.add('hidden');
+        if (bidButtonsSection) bidButtonsSection.classList.add('hidden');
+        bidPanel.classList.remove('hidden');
     } else {
+        if (bidButtonsSection) bidButtonsSection.classList.remove('hidden');
         bidPanel.classList.remove('hidden');
         
         // Compute min required bid
@@ -1404,7 +1407,6 @@ function renderAuctionDashboard() {
         const add20L = document.getElementById('btn-bid-20l');
         const add50L = document.getElementById('btn-bid-50l');
         const add1Cr = document.getElementById('btn-bid-1cr');
-        const customBtn = document.getElementById('btn-bid-custom');
         
         document.getElementById('label-bid-min').innerText = minRequired > 0 ? formatCurrency(minRequired) : "₹0";
         
@@ -1414,7 +1416,6 @@ function renderAuctionDashboard() {
         add20L.disabled = disableBidding || (roomState.current_bid === 0 && budget < (activePlayer.base_price + 2000000));
         add50L.disabled = disableBidding || (roomState.current_bid === 0 && budget < (activePlayer.base_price + 5000000));
         add1Cr.disabled = disableBidding || (roomState.current_bid === 0 && budget < (activePlayer.base_price + 10000000));
-        customBtn.disabled = disableBidding;
         
         // Apply helper tips for managers
         if (isHighBidder && isEligible) {
@@ -1568,14 +1569,6 @@ async function placeBid(type, value) {
     } else if (type === 'add') {
         let base = roomState.current_bid === 0 ? activePlayer.base_price : roomState.current_bid;
         bidAmount = base + value;
-    } else if (type === 'custom') {
-        const customInput = document.getElementById('custom-bid-amount');
-        bidAmount = parseInt(customInput.value);
-        if (isNaN(bidAmount) || bidAmount <= 0) {
-            showNotification("Please enter a valid bid number", "warning");
-            return;
-        }
-        customInput.value = ''; // clear input
     }
     
     try {
@@ -1586,6 +1579,29 @@ async function placeBid(type, value) {
         });
     } catch (err) {
         console.error(err);
+    }
+}
+
+// Send Room Chat Message
+async function sendChatMessage() {
+    const input = document.getElementById('chat-message-input');
+    if (!input) return;
+    
+    const msg = input.value.trim();
+    if (msg === '') return;
+    
+    // Clear input instantly
+    input.value = '';
+    
+    try {
+        await apiPost('/api/chat', {
+            room_code: roomCode,
+            role: role,
+            sender_name: role === 'host' ? roomState.host_name : teamName,
+            message: msg
+        });
+    } catch (err) {
+        console.error("Failed to send chat message:", err);
     }
 }
 

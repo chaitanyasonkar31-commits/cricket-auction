@@ -456,28 +456,32 @@ Yashasvi Jaiswal, Batsman, 91, 10000000, Runs: 720 Avg: 41.2, , false" style="fo
 
                     <!-- Bidding Controls Panel -->
                     <div id="bidding-controls-panel" class="bidding-panel glass-panel">
-                        <h3>Place Real-Time Bid</h3>
-                        <div class="bid-buttons-grid">
-                            <button id="btn-bid-min" class="btn btn-primary btn-bid" onclick="placeBid('min')">
-                                <span class="btn-subtext">MINIMUM BID</span>
-                                <span id="label-bid-min">₹0</span>
-                            </button>
-                            <button id="btn-bid-20l" class="btn btn-secondary btn-bid" onclick="placeBid('add', 2000000)">
-                                +20 Lakhs
-                            </button>
-                            <button id="btn-bid-50l" class="btn btn-secondary btn-bid" onclick="placeBid('add', 5000000)">
-                                +50 Lakhs
-                            </button>
-                            <button id="btn-bid-1cr" class="btn btn-secondary btn-bid" onclick="placeBid('add', 10000000)">
-                                +1 Crore
-                            </button>
-                        </div>
-                        <div class="custom-bid-input-container">
-                            <div class="input-wrapper">
-                                <span class="currency-symbol">₹</span>
-                                <input type="number" id="custom-bid-amount" placeholder="Enter custom bid (e.g. 5,00,00,000)">
+                        <div id="bid-buttons-section">
+                            <h3>Place Real-Time Bid</h3>
+                            <div class="bid-buttons-grid">
+                                <button id="btn-bid-min" class="btn btn-primary btn-bid" onclick="placeBid('min')">
+                                    <span class="btn-subtext">MINIMUM BID</span>
+                                    <span id="label-bid-min">₹0</span>
+                                </button>
+                                <button id="btn-bid-20l" class="btn btn-secondary btn-bid" onclick="placeBid('add', 2000000)">
+                                    +20 Lakhs
+                                </button>
+                                <button id="btn-bid-50l" class="btn btn-secondary btn-bid" onclick="placeBid('add', 5000000)">
+                                    +50 Lakhs
+                                </button>
+                                <button id="btn-bid-1cr" class="btn btn-secondary btn-bid" onclick="placeBid('add', 10000000)">
+                                    +1 Crore
+                                </button>
                             </div>
-                            <button id="btn-bid-custom" class="btn btn-accent" onclick="placeBid('custom')">Submit Custom Bid</button>
+                        </div>
+                        <div class="chat-section-container">
+                            <h3><i class="fa-solid fa-comments text-cyan"></i> Live Room Chat</h3>
+                            <div class="chat-input-container">
+                                <input type="text" id="chat-message-input" placeholder="Type a message to the room..." onkeydown="if(event.key === 'Enter') sendChatMessage()">
+                                <button id="btn-send-chat" class="btn btn-accent" onclick="sendChatMessage()">
+                                    <i class="fa-solid fa-paper-plane"></i> Send
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>

@@ -353,6 +353,8 @@ class AuctionHTTPHandler(SimpleHTTPRequestHandler):
                 self.handle_register(data)
             elif path == '/api/auth/login':
                 self.handle_login(data)
+            elif path == '/api/chat':
+                self.handle_chat(data)
             else:
                 self.send_json_response(404, {"error": "Not Found"})
         else:
@@ -789,6 +791,32 @@ class AuctionHTTPHandler(SimpleHTTPRequestHandler):
             broadcast(room_code, "state_update", get_serializable_room(room))
             
         self.send_json_response(200, {"success": True, "room_state": get_serializable_room(room)})
+
+    def handle_chat(self, data):
+        room_code = data.get('room_code', '').upper()
+        role = data.get('role', '')
+        sender_name = data.get('sender_name', 'System')
+        message = data.get('message', '').strip()
+        
+        if room_code not in rooms:
+            self.send_json_response(404, {"error": "Room not found"})
+            return
+            
+        if not message:
+            self.send_json_response(400, {"error": "Message is empty"})
+            return
+            
+        with rooms_lock:
+            room = rooms[room_code]
+            if role == 'host':
+                chat_msg = f"💬 <strong style='color: var(--accent-cyan);'>[Host] {sender_name}</strong>: {message}"
+            else:
+                chat_msg = f"💬 <strong style='color: var(--accent-purple);'>[{sender_name}]</strong>: {message}"
+                
+            room["logs"].append(chat_msg)
+            broadcast(room_code, "state_update", get_serializable_room(room))
+            
+        self.send_json_response(200, {"success": True})
 
 def run_server():
     # If PORT is specified in env, we must bind to it exactly (Render/Heroku requirement)
