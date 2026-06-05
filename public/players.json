@@ -7937,6 +7937,18 @@
       "overseas": false,
       "country": "India",
       "retired": false
+    },
+    {
+      "id": 17,
+      "name": "Axar Patel",
+      "role": "All-Rounder",
+      "rating": 80,
+      "base_price": 10000000,
+      "stats": "Runs: 2900 (SR 141.0), Wkts: 81 (Econ 8.3)",
+      "img": "",
+      "overseas": false,
+      "country": "India",
+      "retired": false
     }
   ]
 }

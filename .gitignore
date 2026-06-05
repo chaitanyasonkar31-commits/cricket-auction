@@ -4,3 +4,6 @@
 .system_generated/
 __pycache__/
 *.zip
+*.pdf
+players_list.txt
+scratch/
