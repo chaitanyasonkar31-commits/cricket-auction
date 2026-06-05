@@ -7913,6 +7913,30 @@ window.ALL_PLAYERS_DATA = {
       "retired": false,
       "role": "Bowler",
       "rating": 75
+    },
+    {
+      "id": 15176,
+      "name": "Vaibhav Suryavanshi",
+      "role": "Batsman",
+      "rating": 75,
+      "base_price": 2000000,
+      "stats": "",
+      "img": "",
+      "overseas": false,
+      "country": "India",
+      "retired": false
+    },
+    {
+      "id": 15177,
+      "name": "Praful Hinge",
+      "role": "Bowler",
+      "rating": 75,
+      "base_price": 2000000,
+      "stats": "",
+      "img": "",
+      "overseas": false,
+      "country": "India",
+      "retired": false
     }
   ]
 };
