@@ -291,22 +291,69 @@ function showSection(id) {
     }
 }
 
-// CSV/Preset Toggle Helper
-function toggleCustomPlayers(show) {
+// CSV/Preset Selector and Filter Helper
+function selectPreset(presetName) {
+    const labels = document.querySelectorAll('.preset-label');
+    labels.forEach(label => {
+        const radio = label.querySelector('input[type="radio"]');
+        if (radio && radio.value === presetName) {
+            label.classList.add('active');
+        } else {
+            label.classList.remove('active');
+        }
+    });
+
     const customDiv = document.getElementById('custom-players-input');
+    const tableContainer = document.getElementById('custom-players-table-container');
+    
     if (customDiv) {
-        if (show) {
-            customDiv.classList.remove('hidden');
-            // Pre-populate custom players table if empty
-            const rowsContainer = document.getElementById('custom-players-rows');
-            if (rowsContainer && rowsContainer.children.length === 0) {
-                for (let i = 0; i < 5; i++) {
-                    addCustomPlayerRow();
+        customDiv.classList.remove('hidden'); // Always show the checklist input block
+    }
+    
+    if (presetName === 'custom') {
+        if (tableContainer) tableContainer.classList.remove('hidden');
+        // Pre-populate custom players table if empty
+        const rowsContainer = document.getElementById('custom-players-rows');
+        if (rowsContainer && rowsContainer.children.length === 0) {
+            for (let i = 0; i < 5; i++) {
+                addCustomPlayerRow();
+            }
+        }
+        
+        // Show all players in the checklist
+        allPresetPlayers.forEach(p => {
+            const cb = document.getElementById(`check-p-${p.id}`);
+            const item = cb ? cb.closest('.checklist-item') : null;
+            if (item) {
+                item.classList.remove('hidden-search');
+            }
+        });
+    } else {
+        if (tableContainer) tableContainer.classList.add('hidden');
+        
+        // Filter the checklist to only show players belonging to the selected preset
+        const sourceMap = {
+            'ipl_legends': 'IPL',
+            'all_time_legends': 'Legend',
+            'h_liga': 'H-LIGA',
+            'full_pool': 'Full Pool'
+        };
+        
+        const targetSource = sourceMap[presetName];
+        
+        allPresetPlayers.forEach(p => {
+            const cb = document.getElementById(`check-p-${p.id}`);
+            const item = cb ? cb.closest('.checklist-item') : null;
+            if (item) {
+                if (presetName === 'full_pool' || p.source === targetSource) {
+                    item.classList.remove('hidden-search');
+                    cb.checked = true; // Auto check it
+                } else {
+                    item.classList.add('hidden-search');
+                    cb.checked = false; // Auto uncheck it
                 }
             }
-        } else {
-            customDiv.classList.add('hidden');
-        }
+        });
     }
 }
 
@@ -588,6 +635,10 @@ async function loadPresets() {
     
     // Always render players list checklist
     renderPlayersChecklist();
+    
+    // Initialize default preset filter
+    const activePreset = document.querySelector('input[name="preset-choice"]:checked')?.value || 'ipl_legends';
+    selectPreset(activePreset);
 }
 
 // Generate remaining players to reach 500+
@@ -800,24 +851,24 @@ async function createRoom() {
     }
     
     let playersList = [];
-    if (presetChoice === 'custom') {
-        // 1. Add checked preset players
-        const checkedBoxes = document.querySelectorAll('.checklist-item input[type="checkbox"]:checked');
-        checkedBoxes.forEach(input => {
-            const pId = parseInt(input.value);
-            const playerObj = allPresetPlayers.find(p => p.id === pId);
-            if (playerObj) {
-                const playerCopy = JSON.parse(JSON.stringify(playerObj));
-                // Read custom rating input value
-                const ratingInput = document.getElementById(`rating-p-${pId}`);
-                if (ratingInput && ratingInput.value.trim() !== '') {
-                    playerCopy.rating = parseInt(ratingInput.value.trim()) || playerObj.rating;
-                }
-                playersList.push(playerCopy);
+    // 1. Add checked preset players (always read checked boxes from the checklist)
+    const checkedBoxes = document.querySelectorAll('.checklist-item input[type="checkbox"]:checked');
+    checkedBoxes.forEach(input => {
+        const pId = parseInt(input.value);
+        const playerObj = allPresetPlayers.find(p => p.id === pId);
+        if (playerObj) {
+            const playerCopy = JSON.parse(JSON.stringify(playerObj));
+            // Read custom rating input value
+            const ratingInput = document.getElementById(`rating-p-${pId}`);
+            if (ratingInput && ratingInput.value.trim() !== '') {
+                playerCopy.rating = parseInt(ratingInput.value.trim()) || playerObj.rating;
             }
-        });
-        
-        // 2. Read custom players from the interactive table
+            playersList.push(playerCopy);
+        }
+    });
+    
+    // 2. Read custom players from the interactive table (only if preset choice is custom)
+    if (presetChoice === 'custom') {
         const customRows = document.querySelectorAll('#custom-players-rows tr');
         let customIndex = 1;
         customRows.forEach(row => {
@@ -850,11 +901,11 @@ async function createRoom() {
                 customIndex++;
             }
         });
-        
-        if (playersList.length === 0) {
-            showNotification("No players selected or entered! Select at least one player.", "warning");
-            return;
-        }
+    }
+    
+    if (playersList.length === 0) {
+        showNotification("No players selected or entered! Select at least one player.", "warning");
+        return;
     }
     
     const settings = {
@@ -1827,7 +1878,7 @@ function loadPlayerDraft() {
         const radio = document.querySelector(`input[name="preset-choice"][value="${draft.presetChoice}"]`);
         if (radio) {
             radio.checked = true;
-            toggleCustomPlayers(draft.presetChoice === 'custom');
+            selectPreset(draft.presetChoice);
         }
         
         if (draft.presetChoice === 'custom') {

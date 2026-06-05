@@ -182,35 +182,35 @@
                     <label><i class="fa-solid fa-database"></i> Choose Player Database Preset</label>
                     <div class="preset-options">
                         <label class="preset-label active">
-                            <input type="radio" name="preset-choice" value="ipl_legends" checked onchange="toggleCustomPlayers(false)">
+                            <input type="radio" name="preset-choice" value="ipl_legends" checked onchange="selectPreset(this.value)">
                             <div class="preset-box">
                                 <strong>IPL Legends</strong>
                                 <span>Virat Kohli, MS Dhoni, Jasprit Bumrah...</span>
                             </div>
                         </label>
                         <label class="preset-label">
-                            <input type="radio" name="preset-choice" value="all_time_legends" onchange="toggleCustomPlayers(false)">
+                            <input type="radio" name="preset-choice" value="all_time_legends" onchange="selectPreset(this.value)">
                             <div class="preset-box">
                                 <strong>All-Time Legends</strong>
                                 <span>Sachin Tendulkar, Viv Richards, Shane Warne...</span>
                             </div>
                         </label>
                         <label class="preset-label">
-                            <input type="radio" name="preset-choice" value="h_liga" onchange="toggleCustomPlayers(false)">
+                            <input type="radio" name="preset-choice" value="h_liga" onchange="selectPreset(this.value)">
                             <div class="preset-box">
                                 <strong>H - LIGA</strong>
                                 <span>Custom League Draft Pool</span>
                             </div>
                         </label>
                         <label class="preset-label">
-                            <input type="radio" name="preset-choice" value="full_pool" onchange="toggleCustomPlayers(false)">
+                            <input type="radio" name="preset-choice" value="full_pool" onchange="selectPreset(this.value)">
                             <div class="preset-box">
                                 <strong>Full Pool (500+ Players)</strong>
                                 <span>Includes all 500+ Indian & Overseas players</span>
                             </div>
                         </label>
                         <label class="preset-label">
-                            <input type="radio" name="preset-choice" value="custom" onchange="toggleCustomPlayers(true)">
+                            <input type="radio" name="preset-choice" value="custom" onchange="selectPreset(this.value)">
                             <div class="preset-box">
                                 <strong>Custom Players</strong>
                                 <span>Upload or enter your own squad list CSV</span>
@@ -220,7 +220,7 @@
                 </div>
 
                 <!-- Custom CSV Textarea -->
-                <div id="custom-players-input" class="form-group hidden">
+                <div id="custom-players-input" class="form-group">
                     <!-- Checkbox list of existing presets -->
                     <div id="preset-players-checklist-container" class="form-group" style="margin-bottom: 1.5rem; width: 100%;">
                         <label><i class="fa-solid fa-square-check text-purple"></i> Select Players from Presets</label>
