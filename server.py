@@ -63,13 +63,16 @@ if os.path.exists(players_json_path):
 # Make users database persistent on local Windows, fallback to workspace for Render/Linux hosting
 if os.name == 'nt':
     persistent_dir = os.path.join(os.environ.get('USERPROFILE', 'C:\\Users\\Chaitanya'), '.cricket_auction')
-    if not os.path.exists(persistent_dir):
-        os.makedirs(persistent_dir)
-    users_file_path = os.path.join(persistent_dir, 'users.json')
 else:
-    persistent_dir = os.path.dirname(os.path.abspath(__file__))
-    users_file_path = os.path.join(persistent_dir, 'users.json')
+    persistent_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'data')
 
+if not os.path.exists(persistent_dir):
+    try:
+        os.makedirs(persistent_dir)
+    except Exception as e:
+        print(f"Error creating persistent directory: {e}")
+
+users_file_path = os.path.join(persistent_dir, 'users.json')
 rooms_dir = os.path.join(persistent_dir, 'rooms')
 if not os.path.exists(rooms_dir):
     try:

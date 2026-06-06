@@ -7,3 +7,4 @@ __pycache__/
 *.pdf
 players_list.txt
 scratch/
+data/
