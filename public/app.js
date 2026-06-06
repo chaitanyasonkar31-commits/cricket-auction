@@ -1531,6 +1531,12 @@ function renderAuctionDashboard() {
                     budgetTeamSelect.appendChild(opt);
                 });
             }
+            
+            // Toggle Undo button disabled status based on whether there's a last completed player
+            const undoBtn = document.getElementById('host-btn-undo');
+            if (undoBtn) {
+                undoBtn.disabled = roomState.last_completed_player_index === undefined || roomState.last_completed_player_index === null;
+            }
         }
     } else {
         hostConsole.classList.add('hidden');

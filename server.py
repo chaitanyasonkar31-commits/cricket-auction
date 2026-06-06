@@ -399,6 +399,7 @@ def sell_current_player(room_code):
     if idx < 0 or idx >= len(room["players"]):
         return
         
+    room["last_completed_player_index"] = idx
     player = room["players"][idx]
     bidder = room["current_bidder"]
     price = room["current_bid"]
@@ -446,6 +447,7 @@ def unsold_current_player(room_code):
     if idx < 0 or idx >= len(room["players"]):
         return
         
+    room["last_completed_player_index"] = idx
     player = room["players"][idx]
     player["status"] = "unsold"
     
@@ -824,7 +826,8 @@ class AuctionHTTPHandler(SimpleHTTPRequestHandler):
                 "clients": [],
                 "status": "lobby",
                 "current_role_filter": "All",
-                "bot_delay": 0
+                "bot_delay": 0,
+                "last_completed_player_index": None
             }
             save_room_to_disk(room_code)
             
@@ -1085,6 +1088,41 @@ class AuctionHTTPHandler(SimpleHTTPRequestHandler):
                     room["logs"].append(log_msg)
                 else:
                     self.send_json_response(400, {"error": f"Team '{team_to_adjust}' not found."})
+                    return
+                    
+            elif action == "undo":
+                idx = room.get("last_completed_player_index")
+                if idx is not None and 0 <= idx < len(room["players"]):
+                    player = room["players"][idx]
+                    
+                    # Revert sold details
+                    if player.get("status") == "sold":
+                        prev_bidder = player.get("bought_by")
+                        prev_price = player.get("price", 0)
+                        if prev_bidder and prev_bidder in room["teams"]:
+                            room["teams"][prev_bidder]["budget"] += prev_price
+                            room["teams"][prev_bidder]["players"] = [p for p in room["teams"][prev_bidder]["players"] if p["id"] != player["id"]]
+                            role = player["role"]
+                            if role in room["teams"][prev_bidder]["slots"] and room["teams"][prev_bidder]["slots"][role] > 0:
+                                room["teams"][prev_bidder]["slots"][role] -= 1
+                                
+                    player["status"] = "unsold"
+                    player["bought_by"] = None
+                    player["price"] = 0
+                    
+                    # Reopen bidding for this player
+                    room["current_player_index"] = idx
+                    room["status"] = "active"
+                    room["current_bid"] = 0
+                    room["current_bidder"] = None
+                    room["timer"] = room["settings"]["timer_duration"]
+                    room["timer_active"] = False
+                    
+                    undo_msg = f"🔄 UNDO: Host reverted the last action. Bidding reopened for {player['name']} (Base: {format_currency_python(player['base_price'])})."
+                    room["logs"].append(undo_msg)
+                    room["last_completed_player_index"] = None
+                else:
+                    self.send_json_response(400, {"error": "No recent sold/unsold action available to undo."})
                     return
                     
             save_room_to_disk(room_code)
