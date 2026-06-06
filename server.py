@@ -67,7 +67,16 @@ if os.name == 'nt':
         os.makedirs(persistent_dir)
     users_file_path = os.path.join(persistent_dir, 'users.json')
 else:
-    users_file_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'users.json')
+    persistent_dir = os.path.dirname(os.path.abspath(__file__))
+    users_file_path = os.path.join(persistent_dir, 'users.json')
+
+rooms_dir = os.path.join(persistent_dir, 'rooms')
+if not os.path.exists(rooms_dir):
+    try:
+        os.makedirs(rooms_dir)
+    except Exception as e:
+        print(f"Error creating rooms directory: {e}")
+
 users = {}
 users_lock = threading.Lock()
 
@@ -135,6 +144,48 @@ def get_serializable_room(room):
             serializable[k] = v
     return serializable
 
+def save_room_to_disk(room_code):
+    if room_code not in rooms:
+        return
+    try:
+        room_file = os.path.join(rooms_dir, f"{room_code}.json")
+        serializable = get_serializable_room(rooms[room_code])
+        with open(room_file, 'w', encoding='utf-8') as f:
+            json.dump(serializable, f, indent=2)
+    except Exception as e:
+        print(f"Error saving room {room_code} to disk: {e}")
+
+def load_all_rooms():
+    global rooms
+    if not os.path.exists(rooms_dir):
+        return
+    try:
+        files = os.listdir(rooms_dir)
+        loaded_count = 0
+        for file in files:
+            if file.endswith('.json'):
+                room_code = file[:-5].upper()
+                room_file = os.path.join(rooms_dir, file)
+                try:
+                    with open(room_file, 'r', encoding='utf-8') as f:
+                        room_data = json.load(f)
+                    
+                    # Initialize transient fields
+                    room_data["clients"] = []
+                    room_data["bot_delay"] = 0
+                    # Pause timers initially
+                    room_data["timer_active"] = False
+                    
+                    rooms[room_code] = room_data
+                    loaded_count += 1
+                except Exception as ex:
+                    print(f"Error loading room file {file}: {ex}")
+        print(f"Loaded {loaded_count} persistent auction rooms from disk.")
+    except Exception as e:
+        print(f"Error scanning rooms directory: {e}")
+
+load_all_rooms()
+
 def broadcast(room_code, event_type, data):
     """Pushes events to all client queues in a specific room."""
     if room_code not in rooms:
@@ -195,6 +246,7 @@ def sell_current_player(room_code):
     if room["settings"].get("bot_auctioneer"):
         room["bot_delay"] = 3
     
+    save_room_to_disk(room_code)
     broadcast(room_code, "player_sold", {
         "player": player,
         "bidder": bidder,
@@ -220,6 +272,7 @@ def unsold_current_player(room_code):
     if room["settings"].get("bot_auctioneer"):
         room["bot_delay"] = 3
     
+    save_room_to_disk(room_code)
     broadcast(room_code, "player_unsold", {
         "player": player,
         "log": log_msg,
@@ -266,6 +319,7 @@ def advance_to_next_player(room_code, role_filter="All"):
             room["status"] = "finished"
             finish_msg = "🏆 Cricket Player Auction completed! All players auctioned."
             room["logs"].append(finish_msg)
+            save_room_to_disk(room_code)
             return True, finish_msg
     else:
         room["current_player_index"] = next_unsold
@@ -279,6 +333,7 @@ def advance_to_next_player(room_code, role_filter="All"):
         player_name = player["name"]
         msg = f"{action_msg} {player_name} (Base: {format_currency_python(player['base_price'])})"
         room["logs"].append(msg)
+        save_room_to_disk(room_code)
         return True, msg
 
 # Global room countdown timer background thread
@@ -436,6 +491,12 @@ class AuctionHTTPHandler(SimpleHTTPRequestHandler):
                 self.handle_login(data)
             elif path == '/api/chat':
                 self.handle_chat(data)
+            elif path == '/api/history':
+                self.handle_history(data)
+            elif path == '/api/room':
+                self.handle_get_room(data)
+            elif path == '/api/delete_room':
+                self.handle_delete_room(data)
             else:
                 self.send_json_response(404, {"error": "Not Found"})
         else:
@@ -556,6 +617,7 @@ class AuctionHTTPHandler(SimpleHTTPRequestHandler):
             
             rooms[room_code] = {
                 "host_username": username,
+                "created_at": time.strftime("%Y-%m-%d %H:%M:%S"),
                 "auction_name": auction_name,
                 "host_name": host_name,
                 "host_id": host_id,
@@ -579,6 +641,7 @@ class AuctionHTTPHandler(SimpleHTTPRequestHandler):
                 "current_role_filter": "All",
                 "bot_delay": 0
             }
+            save_room_to_disk(room_code)
             
         self.send_json_response(200, {
             "room_code": room_code,
@@ -638,6 +701,7 @@ class AuctionHTTPHandler(SimpleHTTPRequestHandler):
                 join_msg = f"👋 {team_name} (Manager: {manager_name}) entered the lobby!"
                 room["logs"].append(join_msg)
                 
+            save_room_to_disk(room_code)
             broadcast(room_code, "state_update", get_serializable_room(room))
             
         self.send_json_response(200, {
@@ -710,7 +774,8 @@ class AuctionHTTPHandler(SimpleHTTPRequestHandler):
             bid_msg = f"⚡ {team_name} bid {format_currency_python(amount)}"
             room["logs"].append(bid_msg)
             
-            # Broadcast updates
+            # Save and Broadcast updates
+            save_room_to_disk(room_code)
             broadcast(room_code, "bid_placed", {
                 "bidder": team_name,
                 "amount": amount,
@@ -818,7 +883,11 @@ class AuctionHTTPHandler(SimpleHTTPRequestHandler):
                 else:
                     self.send_json_response(400, {"error": f"Team '{team_to_kick}' not found to kick."})
                     return
+            
+            elif action == "save":
+                room["logs"].append("💾 Auction state manually saved to server disk by Host.")
                     
+            save_room_to_disk(room_code)
             broadcast(room_code, "state_update", get_serializable_room(room))
             
         self.send_json_response(200, {"success": True, "room_state": get_serializable_room(room)})
@@ -845,8 +914,83 @@ class AuctionHTTPHandler(SimpleHTTPRequestHandler):
                 chat_msg = f"💬 <strong style='color: var(--accent-purple);'>[{sender_name}]</strong>: {message}"
                 
             room["logs"].append(chat_msg)
+            save_room_to_disk(room_code)
             broadcast(room_code, "state_update", get_serializable_room(room))
             
+        self.send_json_response(200, {"success": True})
+
+    def handle_history(self, data):
+        auth_token = data.get('auth_token')
+        username = get_user_from_token(auth_token)
+        if not username:
+            self.send_json_response(401, {"error": "Authentication is required to view history."})
+            return
+            
+        user_rooms = []
+        with rooms_lock:
+            for room_code, room in rooms.items():
+                if room.get("host_username") == username:
+                    # Calculate simple stats
+                    sold_count = sum(1 for p in room.get("players", []) if p.get("status") == "sold")
+                    unsold_count = sum(1 for p in room.get("players", []) if p.get("status") == "unsold")
+                    
+                    user_rooms.append({
+                        "room_code": room_code,
+                        "auction_name": room.get("auction_name", "Cricket Auction"),
+                        "host_name": room.get("host_name", "Host"),
+                        "host_id": room.get("host_id", ""),
+                        "created_at": room.get("created_at", "N/A"),
+                        "status": room.get("status", "lobby"),
+                        "team_count": len(room.get("teams", {})),
+                        "player_count": len(room.get("players", [])),
+                        "sold_count": sold_count,
+                        "unsold_count": unsold_count
+                    })
+        
+        # Sort history by created_at descending if possible, or room code
+        user_rooms.sort(key=lambda x: x.get("created_at", ""), reverse=True)
+        self.send_json_response(200, {"success": True, "auctions": user_rooms})
+
+    def handle_get_room(self, data):
+        room_code = data.get('room_code', '').upper()
+        if room_code not in rooms:
+            self.send_json_response(404, {"error": "Room not found"})
+            return
+            
+        with rooms_lock:
+            room = rooms[room_code]
+            self.send_json_response(200, {"success": True, "room_state": get_serializable_room(room)})
+
+    def handle_delete_room(self, data):
+        auth_token = data.get('auth_token')
+        room_code = data.get('room_code', '').upper()
+        
+        username = get_user_from_token(auth_token)
+        if not username:
+            self.send_json_response(401, {"error": "Authentication is required."})
+            return
+            
+        if room_code not in rooms:
+            self.send_json_response(404, {"error": "Room not found."})
+            return
+            
+        with rooms_lock:
+            room = rooms[room_code]
+            if room.get("host_username") != username:
+                self.send_json_response(403, {"error": "Only the host can delete this room."})
+                return
+                
+            # Remove from active rooms
+            del rooms[room_code]
+            
+            # Delete file if exists
+            try:
+                room_file = os.path.join(rooms_dir, f"{room_code}.json")
+                if os.path.exists(room_file):
+                    os.remove(room_file)
+            except Exception as e:
+                print(f"Error deleting room file {room_code}.json: {e}")
+                
         self.send_json_response(200, {"success": True})
 
 def run_server():

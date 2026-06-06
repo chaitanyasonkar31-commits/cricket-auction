@@ -1575,6 +1575,16 @@ function renderAuctionDashboard() {
     });
     // Auto Scroll Logs to Bottom
     logBox.scrollTop = logBox.scrollHeight;
+    
+    // Toggle Save Room button for host only
+    const saveBtn = document.getElementById('btn-save-auction');
+    if (saveBtn) {
+        if (role === 'host') {
+            saveBtn.style.display = 'inline-flex';
+        } else {
+            saveBtn.style.display = 'none';
+        }
+    }
 }
 
 // Bidding Trigger POST
@@ -1799,14 +1809,76 @@ function renderQueueList() {
 
 
 // --- Scheduled/Active Auction Handlers ---
-function renderScheduledAuctions() {
-    const scheduled = JSON.parse(localStorage.getItem('scheduled_auctions') || '[]');
+async function renderScheduledAuctions() {
     const container = document.getElementById('scheduled-auctions-section');
     const list = document.getElementById('scheduled-auctions-list');
-    
     if (!container || !list) return;
     
-    if (scheduled.length === 0) {
+    const token = localStorage.getItem('auth_token');
+    if (!token) {
+        container.classList.add('hidden');
+        return;
+    }
+    
+    // 1. Load local storage backups (to guarantee no past history is ever deleted)
+    const localAuctions = JSON.parse(localStorage.getItem('scheduled_auctions') || '[]');
+    
+    let serverAuctions = [];
+    try {
+        const res = await apiPost('/api/history', { auth_token: token });
+        if (res && res.success) {
+            serverAuctions = res.auctions || [];
+        }
+    } catch (e) {
+        console.error("Failed to fetch server history, using local backups:", e);
+    }
+    
+    // 2. Merge local storage and server history
+    const mergedMap = new Map();
+    
+    // Insert local items first
+    localAuctions.forEach(item => {
+        const code = (item.roomCode || "").toUpperCase();
+        if (code) {
+            mergedMap.set(code, {
+                room_code: code,
+                auction_name: item.auctionName,
+                host_name: "Local Shortcut",
+                host_id: item.hostId,
+                status: "local_only",
+                created_at: item.createdAt || "Previous Draft",
+                team_count: 0,
+                player_count: 0,
+                sold_count: 0,
+                unsold_count: 0,
+                is_local: true
+            });
+        }
+    });
+    
+    // Overwrite/update with server items
+    serverAuctions.forEach(item => {
+        const code = (item.room_code || "").toUpperCase();
+        if (code) {
+            mergedMap.set(code, {
+                room_code: code,
+                auction_name: item.auction_name,
+                host_name: item.host_name,
+                host_id: item.host_id || "",
+                status: item.status,
+                created_at: item.created_at || "N/A",
+                team_count: item.team_count,
+                player_count: item.player_count,
+                sold_count: item.sold_count || 0,
+                unsold_count: item.unsold_count || 0,
+                is_local: false
+            });
+        }
+    });
+    
+    const mergedList = Array.from(mergedMap.values());
+    
+    if (mergedList.length === 0) {
         container.classList.add('hidden');
         return;
     }
@@ -1814,20 +1886,56 @@ function renderScheduledAuctions() {
     container.classList.remove('hidden');
     list.innerHTML = '';
     
-    scheduled.forEach(item => {
+    mergedList.forEach(item => {
         const row = document.createElement('div');
         row.className = 'scheduled-auction-item';
+        row.style.display = 'flex';
+        row.style.justifyContent = 'space-between';
+        row.style.alignItems = 'center';
+        row.style.flexWrap = 'wrap';
+        row.style.gap = '1rem';
+        row.style.padding = '1rem';
+        
+        let statusLabel = (item.status || "lobby").toUpperCase();
+        let statusClass = "badge-lobby";
+        if (item.status === 'finished') {
+            statusLabel = "COMPLETED";
+            statusClass = "badge-sold";
+        } else if (item.status === 'active' || item.status === 'sold_pause' || item.status === 'unsold_pause') {
+            statusLabel = "LIVE";
+            statusClass = "badge-active";
+        } else if (item.status === 'local_only') {
+            statusLabel = "UNTRACKED";
+            statusClass = "badge-offline";
+        }
+        
+        let statusHtml = `<span class="badge ${statusClass}" style="margin-left: 0.5rem; font-size: 0.75rem; padding: 0.15rem 0.5rem; border-radius: 4px;">${statusLabel}</span>`;
+        
+        let metaDetails = `Room: <strong style="color: var(--accent-purple); font-size: 0.95rem;">${item.room_code}</strong> &bull; Created: ${item.created_at}`;
+        if (item.status !== 'local_only') {
+            metaDetails += ` &bull; Teams: ${item.team_count} &bull; Players: ${item.player_count} (Sold: ${item.sold_count}, Unsold: ${item.unsold_count})`;
+        }
         
         row.innerHTML = `
-            <div style="display: flex; flex-direction: column;">
-                <strong style="color: white; font-size: 1rem;">${item.auctionName}</strong>
-                <span style="font-size: 0.8rem; color: var(--text-secondary);">Room Code: <strong style="color: var(--accent-purple); font-size: 0.9rem;">${item.roomCode}</strong> &bull; Created: ${item.createdAt || 'N/A'}</span>
+            <div style="display: flex; flex-direction: column; gap: 0.25rem;">
+                <div style="display: flex; align-items: center; flex-wrap: wrap;">
+                    <strong style="color: white; font-size: 1.05rem;">${item.auction_name}</strong>
+                    ${statusHtml}
+                </div>
+                <span style="font-size: 0.8rem; color: var(--text-secondary);">${metaDetails}</span>
             </div>
-            <div style="display: flex; gap: 0.5rem;">
-                <button class="btn btn-primary" onclick="hostScheduledAuction('${item.roomCode}', '${item.hostId}')" style="padding: 0.45rem 1rem; font-size: 0.8rem; height: auto;">
-                    <i class="fa-solid fa-play"></i> Host / Go Live
-                </button>
-                <button class="btn btn-secondary" onclick="deleteScheduledAuction('${item.roomCode}')" style="padding: 0.45rem 0.6rem; font-size: 0.8rem; height: auto; background: rgba(255, 51, 102, 0.15); border-color: rgba(255, 51, 102, 0.3); color: var(--accent-red);">
+            <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+                ${item.status !== 'finished' && item.status !== 'local_only' ? `
+                    <button class="btn btn-primary" onclick="hostScheduledAuction('${item.room_code}', '${item.host_id}')" style="padding: 0.45rem 1rem; font-size: 0.8rem; height: auto;">
+                        <i class="fa-solid fa-play"></i> Host / Resume
+                    </button>
+                ` : ''}
+                ${item.status !== 'local_only' ? `
+                    <button class="btn btn-secondary" onclick="downloadServerRoomSummary('${item.room_code}')" title="Download CSV summary" style="padding: 0.45rem 0.75rem; font-size: 0.8rem; height: auto; background: rgba(0, 242, 254, 0.08); border-color: rgba(0, 242, 254, 0.3); color: var(--accent-cyan);">
+                        <i class="fa-solid fa-download"></i> CSV
+                    </button>
+                ` : ''}
+                <button class="btn btn-secondary" onclick="deleteServerRoom('${item.room_code}', ${item.is_local})" title="Delete Room" style="padding: 0.45rem 0.65rem; font-size: 0.8rem; height: auto; background: rgba(255, 51, 102, 0.15); border-color: rgba(255, 51, 102, 0.3); color: var(--accent-red);">
                     <i class="fa-solid fa-trash-can"></i>
                 </button>
             </div>
@@ -1849,14 +1957,111 @@ function hostScheduledAuction(rCode, hId) {
     connectEvents(rCode);
 }
 
-function deleteScheduledAuction(rCode) {
-    if (!confirm("Are you sure you want to remove this scheduled auction? This will remove it from your shortcuts list, but the room itself will remain on the server.")) return;
+// --- History, Persisted Rooms & CSV Download ---
+
+function downloadAuctionSummary(customPlayers = null, customRoomCode = null, customAuctionName = null) {
+    const players = customPlayers || (roomState ? roomState.players : null);
+    const code = customRoomCode || roomCode;
+    const name = customAuctionName || (roomState ? roomState.auction_name : "Cricket_Auction");
     
-    let scheduled = JSON.parse(localStorage.getItem('scheduled_auctions') || '[]');
-    scheduled = scheduled.filter(item => item.roomCode !== rCode);
-    localStorage.setItem('scheduled_auctions', JSON.stringify(scheduled));
+    if (!players) {
+        showNotification("No auction data available to download.", "error");
+        return;
+    }
     
-    renderScheduledAuctions();
+    // Create CSV content
+    let csv = "\uFEFF"; // UTF-8 BOM for Excel/Sheets compatibility
+    csv += "ID,Player Name,Role,Rating,Base Price (₹),Status,Bought By,Price Paid (₹),Overseas?\n";
+    players.forEach(p => {
+        const status = p.status || "unsold";
+        const boughtBy = p.bought_by || "";
+        const priceVal = p.price || (status === 'sold' ? p.base_price : 0);
+        const price = status === 'sold' ? priceVal : "";
+        const overseas = p.overseas ? "Yes" : "No";
+        csv += `"${p.id}","${p.name.replace(/"/g, '""')}","${p.role}","${p.rating}","${p.base_price}","${status}","${boughtBy.replace(/"/g, '""')}","${price}","${overseas}"\n`;
+    });
+    
+    // Create Blob and trigger download
+    const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement("a");
+    link.setAttribute("href", url);
+    link.setAttribute("download", `${name.replace(/[^a-z0-9]/gi, '_')}_summary_${code}.csv`);
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    showNotification("Draft summary CSV downloaded successfully!", "success");
+}
+
+async function manualSaveAuction() {
+    if (role !== 'host') return;
+    try {
+        const res = await apiPost('/api/control', {
+            room_code: roomCode,
+            host_id: hostId,
+            action: 'save'
+        });
+        if (res && res.success) {
+            showNotification("Auction state saved to server disk successfully!", "success");
+        } else {
+            showNotification(res.error || "Failed to save auction state.", "danger");
+        }
+    } catch (e) {
+        console.error("Save auction error:", e);
+        showNotification("Error connecting to server to save auction.", "danger");
+    }
+}
+
+function exitToLobby() {
+    if (confirm("Are you sure you want to exit to the home lobby? You can rejoin later using the room code.")) {
+        leaveRoom();
+    }
+}
+
+async function downloadServerRoomSummary(code) {
+    try {
+        const res = await apiPost('/api/room', { room_code: code });
+        if (res && res.success && res.room_state) {
+            downloadAuctionSummary(res.room_state.players, res.room_state.room_code || code, res.room_state.auction_name);
+        } else {
+            showNotification("Failed to fetch room details from server.", "danger");
+        }
+    } catch (e) {
+        console.error("Fetch room details error:", e);
+        showNotification("Error connecting to server.", "danger");
+    }
+}
+
+async function deleteServerRoom(code, isLocalOnly = false) {
+    if (!confirm(`Are you sure you want to delete room '${code}'? This will delete the draft state permanently.`)) return;
+    
+    if (isLocalOnly) {
+        let localAuctions = JSON.parse(localStorage.getItem('scheduled_auctions') || '[]');
+        localAuctions = localAuctions.filter(item => (item.roomCode || "").toUpperCase() !== code);
+        localStorage.setItem('scheduled_auctions', JSON.stringify(localAuctions));
+        showNotification("Local draft removed.", "success");
+        renderScheduledAuctions();
+        return;
+    }
+    
+    try {
+        const token = localStorage.getItem('auth_token');
+        const res = await apiPost('/api/delete_room', { auth_token: token, room_code: code });
+        if (res && res.success) {
+            showNotification(`Room '${code}' deleted successfully.`, "success");
+            
+            let localAuctions = JSON.parse(localStorage.getItem('scheduled_auctions') || '[]');
+            localAuctions = localAuctions.filter(item => (item.roomCode || "").toUpperCase() !== code);
+            localStorage.setItem('scheduled_auctions', JSON.stringify(localAuctions));
+            
+            renderScheduledAuctions();
+        } else {
+            showNotification(res.error || "Failed to delete room from server.", "danger");
+        }
+    } catch (e) {
+        console.error("Delete room error:", e);
+        showNotification("Error connecting to server.", "danger");
+    }
 }
 
 // --- Player List / Roster Draft Saving & Loading ---

@@ -114,9 +114,9 @@
             </div>
 
             <!-- Scheduled / Active Auctions Section -->
-            <div id="scheduled-auctions-section" class="scheduled-section glass-card hidden">
-                <h3><i class="fa-solid fa-clock text-purple"></i> Your Scheduled / Active Auctions</h3>
-                <p class="help-text" style="margin-bottom: 0.75rem;">Here are the rooms you created earlier. You can host/rejoin them at any time.</p>
+            <div id="scheduled-auctions-section" class="scheduled-section glass-card hidden" style="max-width: 900px;">
+                <h3><i class="fa-solid fa-clock text-purple"></i> Your Auction History & Active Rooms</h3>
+                <p class="help-text" style="margin-bottom: 0.75rem;">Here are your past and active drafts. You can resume active rooms or download draft summaries.</p>
                 <div id="scheduled-auctions-list" class="scheduled-list">
                     <!-- Dynamically populated scheduled auctions -->
                 </div>
@@ -377,8 +377,8 @@ Yashasvi Jaiswal, Batsman, 91, 10000000, Runs: 720 Avg: 41.2, , false" style="fo
 
         <!-- 3. MAIN AUCTION DASHBOARD -->
         <section id="auction-view" class="view-panel hidden">
-            <div class="dashboard-header glass-panel">
-                <div class="header-branding">
+            <div class="dashboard-header glass-panel" style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem;">
+                <div class="header-branding" style="display: flex; align-items: center; gap: 1rem;">
                     <i class="fa-solid fa-trophy logo-small"></i>
                     <div>
                         <h2 id="dash-auction-name">Cricket Premier League</h2>
@@ -390,6 +390,18 @@ Yashasvi Jaiswal, Batsman, 91, 10000000, Runs: 720 Avg: 41.2, , false" style="fo
                 <div id="manager-identity-banner" class="manager-banner hidden">
                     <span class="banner-team-name"><i class="fa-solid fa-shield-halved"></i> <span id="my-team-name-val">-</span></span>
                     <span class="banner-budget"><i class="fa-solid fa-wallet"></i> Budget Remaining: <span id="my-budget-val" class="budget-highlight">-</span></span>
+                </div>
+
+                <div class="header-actions" style="display: flex; gap: 0.75rem; align-items: center; margin-left: auto;">
+                    <button id="btn-download-summary" class="btn btn-secondary" onclick="downloadAuctionSummary()" style="padding: 0.45rem 0.85rem; font-size: 0.8rem; height: auto; display: flex; align-items: center; gap: 0.4rem; background: rgba(0, 242, 254, 0.08); border-color: rgba(0, 242, 254, 0.3); color: var(--accent-cyan);">
+                        <i class="fa-solid fa-download"></i> Download Draft
+                    </button>
+                    <button id="btn-save-auction" class="btn btn-primary" onclick="manualSaveAuction()" style="padding: 0.45rem 0.85rem; font-size: 0.8rem; height: auto; display: none; align-items: center; gap: 0.4rem;">
+                        <i class="fa-solid fa-floppy-disk"></i> Save Room
+                    </button>
+                    <button id="btn-exit-dashboard" class="btn btn-danger" onclick="exitToLobby()" style="padding: 0.45rem 0.85rem; font-size: 0.8rem; height: auto; display: flex; align-items: center; gap: 0.4rem; background: rgba(255, 51, 102, 0.08); border-color: rgba(255, 51, 102, 0.3); color: var(--accent-red);">
+                        <i class="fa-solid fa-door-open"></i> Exit
+                    </button>
                 </div>
 
                 <div class="connection-status">
