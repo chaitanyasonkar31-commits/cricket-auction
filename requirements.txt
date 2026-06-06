@@ -1,1 +1,1 @@
-# This project runs entirely on Python's standard library. No external pip modules are required.
+psycopg2-binary

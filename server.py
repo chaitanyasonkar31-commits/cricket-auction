@@ -10,6 +10,7 @@ import base64
 import hashlib
 import uuid
 from urllib.parse import urlparse, parse_qs
+import sqlite3
 from http.server import SimpleHTTPRequestHandler, ThreadingHTTPServer
 
 
@@ -72,37 +73,256 @@ if not os.path.exists(persistent_dir):
     except Exception as e:
         print(f"Error creating persistent directory: {e}")
 
-users_file_path = os.path.join(persistent_dir, 'users.json')
-rooms_dir = os.path.join(persistent_dir, 'rooms')
-if not os.path.exists(rooms_dir):
-    try:
-        os.makedirs(rooms_dir)
-    except Exception as e:
-        print(f"Error creating rooms directory: {e}")
+def get_serializable_room(room):
+    """Deep copies room state except clients list which has Queue objects."""
+    serializable = {}
+    for k, v in room.items():
+        if k != "clients":
+            serializable[k] = v
+    return serializable
 
-users = {}
-users_lock = threading.Lock()
+# Database class supporting local SQLite and cloud PostgreSQL
+class AuctionDB:
+    def __init__(self):
+        self.db_url = os.environ.get('DATABASE_URL')
+        self.is_postgres = False
+        
+        if self.db_url and (self.db_url.startswith('postgres://') or self.db_url.startswith('postgresql://')):
+            try:
+                import psycopg2
+                self.is_postgres = True
+                print("Connecting to cloud PostgreSQL database...")
+            except ImportError:
+                print("Warning: DATABASE_URL is set but 'psycopg2' is not installed. Falling back to local SQLite.")
+                
+        if not self.is_postgres:
+            self.sqlite_path = os.path.join(persistent_dir, 'auction.db')
+            print(f"Connecting to local SQLite database at: {self.sqlite_path}")
+            
+        self.init_db()
+        self.migrate_json_data()
 
-def load_users():
-    global users
-    if os.path.exists(users_file_path):
+    def migrate_json_data(self):
+        # 1. Migrate users.json
+        users_json = os.path.join(persistent_dir, 'users.json')
+        if os.path.exists(users_json):
+            try:
+                print("Migrating users.json to SQL database...")
+                with open(users_json, 'r', encoding='utf-8') as f:
+                    old_users = json.load(f)
+                
+                conn = self.get_connection()
+                cursor = conn.cursor()
+                migrated = 0
+                for username, info in old_users.items():
+                    password_hash = info.get("password_hash")
+                    salt = info.get("salt")
+                    if password_hash and salt:
+                        if self.is_postgres:
+                            cursor.execute(
+                                "INSERT INTO users (username, password_hash, salt) VALUES (%s, %s, %s) ON CONFLICT (username) DO NOTHING",
+                                (username, password_hash, salt)
+                            )
+                        else:
+                            cursor.execute(
+                                "INSERT OR IGNORE INTO users (username, password_hash, salt) VALUES (?, ?, ?)",
+                                (username, password_hash, salt)
+                            )
+                        migrated += 1
+                conn.commit()
+                conn.close()
+                print(f"Migrated {migrated} users to database.")
+                os.rename(users_json, users_json + ".bak")
+            except Exception as e:
+                print(f"Error migrating users.json: {e}")
+
+        # 2. Migrate rooms/*.json and *.json.bak
+        rooms_dir = os.path.join(persistent_dir, 'rooms')
+        if os.path.exists(rooms_dir):
+            try:
+                files = os.listdir(rooms_dir)
+                room_files = [f for f in files if f.endswith('.json') or f.endswith('.json.bak')]
+                if room_files:
+                    print(f"Migrating {len(room_files)} room JSON files to SQL database...")
+                    existing_rooms = self.load_rooms()
+                    for file in room_files:
+                        room_code = file[:4].upper()
+                        if room_code in existing_rooms:
+                            if file.endswith('.json'):
+                                try:
+                                    os.rename(os.path.join(rooms_dir, file), os.path.join(rooms_dir, room_code + '.json.bak'))
+                                except Exception:
+                                    pass
+                            continue
+                        
+                        room_file = os.path.join(rooms_dir, file)
+                        try:
+                            with open(room_file, 'r', encoding='utf-8') as f:
+                                room_data = json.load(f)
+                            self.save_room(room_code, room_data)
+                            if file.endswith('.json'):
+                                os.rename(room_file, room_file + ".bak")
+                        except Exception as ex:
+                            print(f"Error migrating room file {file}: {ex}")
+                    print("Rooms migration complete.")
+            except Exception as e:
+                print(f"Error migrating room files: {e}")
+
+    def get_connection(self):
+        if self.is_postgres:
+            import psycopg2
+            url = self.db_url
+            if url.startswith('postgres://'):
+                url = url.replace('postgres://', 'postgresql://', 1)
+            return psycopg2.connect(url)
+        else:
+            return sqlite3.connect(self.sqlite_path)
+
+    def init_db(self):
+        conn = self.get_connection()
+        cursor = conn.cursor()
         try:
-            with open(users_file_path, 'r', encoding='utf-8') as f:
-                users = json.load(f)
-            print(f"Loaded {len(users)} registered user accounts.")
+            if self.is_postgres:
+                cursor.execute("""
+                    CREATE TABLE IF NOT EXISTS users (
+                        username VARCHAR(255) PRIMARY KEY,
+                        password_hash TEXT NOT NULL,
+                        salt TEXT NOT NULL
+                    );
+                """)
+                cursor.execute("""
+                    CREATE TABLE IF NOT EXISTS rooms (
+                        room_code VARCHAR(10) PRIMARY KEY,
+                        host_username VARCHAR(255) NOT NULL,
+                        created_at VARCHAR(50) NOT NULL,
+                        status VARCHAR(50) NOT NULL,
+                        state_json TEXT NOT NULL
+                    );
+                """)
+            else:
+                cursor.execute("""
+                    CREATE TABLE IF NOT EXISTS users (
+                        username TEXT PRIMARY KEY,
+                        password_hash TEXT NOT NULL,
+                        salt TEXT NOT NULL
+                    );
+                """)
+                cursor.execute("""
+                    CREATE TABLE IF NOT EXISTS rooms (
+                        room_code TEXT PRIMARY KEY,
+                        host_username TEXT NOT NULL,
+                        created_at TEXT NOT NULL,
+                        status TEXT NOT NULL,
+                        state_json TEXT NOT NULL
+                    );
+                """)
+            conn.commit()
+        finally:
+            conn.close()
+
+    def load_users(self):
+        conn = self.get_connection()
+        cursor = conn.cursor()
+        users_dict = {}
+        try:
+            cursor.execute("SELECT username, password_hash, salt FROM users")
+            for row in cursor.fetchall():
+                users_dict[row[0]] = {
+                    "password_hash": row[1],
+                    "salt": row[2]
+                }
         except Exception as e:
-            print(f"Error loading users.json: {e}")
-            users = {}
+            print(f"Error loading users from database: {e}")
+        finally:
+            conn.close()
+        return users_dict
 
+    def save_user(self, username, password_hash, salt):
+        conn = self.get_connection()
+        cursor = conn.cursor()
+        try:
+            if self.is_postgres:
+                cursor.execute(
+                    "INSERT INTO users (username, password_hash, salt) VALUES (%s, %s, %s) ON CONFLICT (username) DO UPDATE SET password_hash = EXCLUDED.password_hash, salt = EXCLUDED.salt",
+                    (username, password_hash, salt)
+                )
+            else:
+                cursor.execute(
+                    "INSERT OR REPLACE INTO users (username, password_hash, salt) VALUES (?, ?, ?)",
+                    (username, password_hash, salt)
+                )
+            conn.commit()
+        except Exception as e:
+            print(f"Error saving user {username} to database: {e}")
+        finally:
+            conn.close()
 
-def save_users():
-    try:
-        with open(users_file_path, 'w', encoding='utf-8') as f:
-            json.dump(users, f, indent=2)
-    except Exception as e:
-        print(f"Error saving users.json: {e}")
+    def load_rooms(self):
+        conn = self.get_connection()
+        cursor = conn.cursor()
+        rooms_dict = {}
+        try:
+            cursor.execute("SELECT room_code, state_json FROM rooms")
+            for row in cursor.fetchall():
+                room_code = row[0].upper()
+                try:
+                    room_data = json.loads(row[1])
+                    room_data["clients"] = []
+                    room_data["bot_delay"] = 0
+                    room_data["timer_active"] = False
+                    rooms_dict[room_code] = room_data
+                except Exception as ex:
+                    print(f"Error parsing JSON for room {room_code}: {ex}")
+        except Exception as e:
+            print(f"Error loading rooms from database: {e}")
+        finally:
+            conn.close()
+        return rooms_dict
 
-load_users()
+    def save_room(self, room_code, room):
+        conn = self.get_connection()
+        cursor = conn.cursor()
+        try:
+            serializable = get_serializable_room(room)
+            state_json = json.dumps(serializable)
+            host_username = room.get("host_username", "")
+            created_at = room.get("created_at", "")
+            status = room.get("status", "lobby")
+            
+            if self.is_postgres:
+                cursor.execute(
+                    "INSERT INTO rooms (room_code, host_username, created_at, status, state_json) VALUES (%s, %s, %s, %s, %s) ON CONFLICT (room_code) DO UPDATE SET status = EXCLUDED.status, state_json = EXCLUDED.state_json",
+                    (room_code, host_username, created_at, status, state_json)
+                )
+            else:
+                cursor.execute(
+                    "INSERT OR REPLACE INTO rooms (room_code, host_username, created_at, status, state_json) VALUES (?, ?, ?, ?, ?)",
+                    (room_code, host_username, created_at, status, state_json)
+                )
+            conn.commit()
+        except Exception as e:
+            print(f"Error saving room {room_code} to database: {e}")
+        finally:
+            conn.close()
+
+    def delete_room(self, room_code):
+        conn = self.get_connection()
+        cursor = conn.cursor()
+        try:
+            if self.is_postgres:
+                cursor.execute("DELETE FROM rooms WHERE room_code = %s", (room_code,))
+            else:
+                cursor.execute("DELETE FROM rooms WHERE room_code = ?", (room_code,))
+            conn.commit()
+        except Exception as e:
+            print(f"Error deleting room {room_code} from database: {e}")
+        finally:
+            conn.close()
+
+db = AuctionDB()
+users = db.load_users()
+users_lock = threading.Lock()
+print(f"Loaded {len(users)} registered user accounts from database.")
 
 # Session Management (Token -> Username)
 sessions = {}
@@ -139,53 +359,15 @@ def format_currency_python(val):
         return f"{val / 100000:.2f} L"
     return f"{val:,}"
 
-def get_serializable_room(room):
-    """Deep copies room state except clients list which has Queue objects."""
-    serializable = {}
-    for k, v in room.items():
-        if k != "clients":
-            serializable[k] = v
-    return serializable
-
 def save_room_to_disk(room_code):
     if room_code not in rooms:
         return
-    try:
-        room_file = os.path.join(rooms_dir, f"{room_code}.json")
-        serializable = get_serializable_room(rooms[room_code])
-        with open(room_file, 'w', encoding='utf-8') as f:
-            json.dump(serializable, f, indent=2)
-    except Exception as e:
-        print(f"Error saving room {room_code} to disk: {e}")
+    db.save_room(room_code, rooms[room_code])
 
 def load_all_rooms():
     global rooms
-    if not os.path.exists(rooms_dir):
-        return
-    try:
-        files = os.listdir(rooms_dir)
-        loaded_count = 0
-        for file in files:
-            if file.endswith('.json'):
-                room_code = file[:-5].upper()
-                room_file = os.path.join(rooms_dir, file)
-                try:
-                    with open(room_file, 'r', encoding='utf-8') as f:
-                        room_data = json.load(f)
-                    
-                    # Initialize transient fields
-                    room_data["clients"] = []
-                    room_data["bot_delay"] = 0
-                    # Pause timers initially
-                    room_data["timer_active"] = False
-                    
-                    rooms[room_code] = room_data
-                    loaded_count += 1
-                except Exception as ex:
-                    print(f"Error loading room file {file}: {ex}")
-        print(f"Loaded {loaded_count} persistent auction rooms from disk.")
-    except Exception as e:
-        print(f"Error scanning rooms directory: {e}")
+    rooms = db.load_rooms()
+    print(f"Loaded {len(rooms)} persistent auction rooms from database.")
 
 load_all_rooms()
 
@@ -537,7 +719,7 @@ class AuctionHTTPHandler(SimpleHTTPRequestHandler):
                 "password_hash": hashed,
                 "salt": salt
             }
-            save_users()
+            db.save_user(username, hashed, salt)
             
         token = create_session(username)
         self.send_json_response(200, {
@@ -986,13 +1168,7 @@ class AuctionHTTPHandler(SimpleHTTPRequestHandler):
             # Remove from active rooms
             del rooms[room_code]
             
-            # Delete file if exists
-            try:
-                room_file = os.path.join(rooms_dir, f"{room_code}.json")
-                if os.path.exists(room_file):
-                    os.remove(room_file)
-            except Exception as e:
-                print(f"Error deleting room file {room_code}.json: {e}")
+            db.delete_room(room_code)
                 
         self.send_json_response(200, {"success": True})
 
