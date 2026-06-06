@@ -919,7 +919,8 @@ async function createRoom() {
         budget: budgetVal,
         min_increment: incrementVal,
         timer_duration: timerVal,
-        overseas_limit: 999
+        overseas_limit: 999,
+        bot_auctioneer: document.getElementById('auctioneer-mode').value === 'bot'
     };
     
     try {
@@ -1431,6 +1432,32 @@ function renderAuctionDashboard() {
     const hostConsole = document.getElementById('host-admin-panel');
     if (role === 'host') {
         hostConsole.classList.remove('hidden');
+        
+        let modeIndicator = document.getElementById('host-mode-indicator');
+        if (!modeIndicator) {
+            modeIndicator = document.createElement('div');
+            modeIndicator.id = 'host-mode-indicator';
+            modeIndicator.style.fontSize = '0.85rem';
+            modeIndicator.style.marginBottom = '1rem';
+            modeIndicator.style.padding = '0.5rem';
+            modeIndicator.style.borderRadius = '6px';
+            modeIndicator.style.textAlign = 'center';
+            modeIndicator.style.fontWeight = 'bold';
+            hostConsole.insertBefore(modeIndicator, hostConsole.querySelector('.form-group') || hostConsole.querySelector('.console-buttons'));
+        }
+        
+        const isBot = roomState.settings && roomState.settings.bot_auctioneer;
+        if (isBot) {
+            modeIndicator.innerHTML = `<i class="fa-solid fa-robot text-cyan"></i> Mode: Automatic Bot Auctioneer`;
+            modeIndicator.style.background = 'rgba(0, 242, 254, 0.1)';
+            modeIndicator.style.border = '1px solid rgba(0, 242, 254, 0.2)';
+            modeIndicator.style.color = 'var(--accent-cyan)';
+        } else {
+            modeIndicator.innerHTML = `<i class="fa-solid fa-user text-purple"></i> Mode: Manual Host Controls`;
+            modeIndicator.style.background = 'rgba(187, 134, 252, 0.1)';
+            modeIndicator.style.border = '1px solid rgba(187, 134, 252, 0.2)';
+            modeIndicator.style.color = 'var(--accent-purple)';
+        }
         
         // Toggle buttons depending on state
         const startBtn = document.getElementById('host-btn-start');

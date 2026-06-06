@@ -60,7 +60,14 @@ if os.path.exists(players_json_path):
         print(f"Error loading players.json: {e}")
 
 # User Account Registry Database
-users_file_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'users.json')
+# Make users database persistent on local Windows, fallback to workspace for Render/Linux hosting
+if os.name == 'nt':
+    persistent_dir = os.path.join(os.environ.get('USERPROFILE', 'C:\\Users\\Chaitanya'), '.cricket_auction')
+    if not os.path.exists(persistent_dir):
+        os.makedirs(persistent_dir)
+    users_file_path = os.path.join(persistent_dir, 'users.json')
+else:
+    users_file_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'users.json')
 users = {}
 users_lock = threading.Lock()
 
@@ -185,6 +192,8 @@ def sell_current_player(room_code):
     
     room["status"] = "sold_pause"
     room["timer_active"] = False
+    if room["settings"].get("bot_auctioneer"):
+        room["bot_delay"] = 3
     
     broadcast(room_code, "player_sold", {
         "player": player,
@@ -208,12 +217,69 @@ def unsold_current_player(room_code):
     
     room["status"] = "unsold_pause"
     room["timer_active"] = False
+    if room["settings"].get("bot_auctioneer"):
+        room["bot_delay"] = 3
     
     broadcast(room_code, "player_unsold", {
         "player": player,
         "log": log_msg,
         "room": get_serializable_room(room)
     })
+
+def advance_to_next_player(room_code, role_filter="All"):
+    room = rooms[room_code]
+    idx = room["current_player_index"]
+    next_unsold = -1
+    
+    # If starting for the first time
+    if idx == -1:
+        # Find first unsold player matching role_filter
+        for i, p in enumerate(room["players"]):
+            if p.get("status", "unsold") == "unsold" and p.get("bought_by") is None:
+                if not role_filter or role_filter == "All" or p.get("role") == role_filter:
+                    next_unsold = i
+                    break
+        action_msg = "🎬 Auction started!"
+    else:
+        # Search starting after current index
+        for i in range(idx + 1, len(room["players"])):
+            p = room["players"][i]
+            if p.get("status", "unsold") == "unsold" and p.get("bought_by") is None:
+                if not role_filter or role_filter == "All" or p.get("role") == role_filter:
+                    next_unsold = i
+                    break
+                    
+        # Wrap around if not found
+        if next_unsold == -1:
+            for i in range(0, idx + 1):
+                p = room["players"][i]
+                if p.get("status", "unsold") == "unsold" and p.get("bought_by") is None:
+                    if not role_filter or role_filter == "All" or p.get("role") == role_filter:
+                        next_unsold = i
+                        break
+        action_msg = "🏏 Next up:"
+
+    if next_unsold == -1:
+        if role_filter and role_filter != "All":
+            return False, f"No unsold players left in category: {role_filter}!"
+        else:
+            room["status"] = "finished"
+            finish_msg = "🏆 Cricket Player Auction completed! All players auctioned."
+            room["logs"].append(finish_msg)
+            return True, finish_msg
+    else:
+        room["current_player_index"] = next_unsold
+        room["status"] = "active"
+        room["current_bid"] = 0
+        room["current_bidder"] = None
+        room["timer"] = room["settings"]["timer_duration"]
+        room["timer_active"] = True
+        
+        player = room["players"][next_unsold]
+        player_name = player["name"]
+        msg = f"{action_msg} {player_name} (Base: {format_currency_python(player['base_price'])})"
+        room["logs"].append(msg)
+        return True, msg
 
 # Global room countdown timer background thread
 def timer_worker():
@@ -230,7 +296,22 @@ def timer_worker():
                             "timer_active": room["timer_active"]
                         })
                         if room["timer"] == 0:
-                            room["logs"].append("⏰ Timer reached 0! Awaiting Host action...")
+                            if room["settings"].get("bot_auctioneer"):
+                                if room["current_bidder"] is None:
+                                    unsold_current_player(room_code)
+                                else:
+                                    sell_current_player(room_code)
+                            else:
+                                room["logs"].append("⏰ Timer reached 0! Awaiting Host action...")
+                                broadcast(room_code, "state_update", get_serializable_room(room))
+                elif (room["status"] in ("sold_pause", "unsold_pause")) and room["settings"].get("bot_auctioneer"):
+                    if "bot_delay" not in room:
+                        room["bot_delay"] = 3
+                    if room["bot_delay"] > 0:
+                        room["bot_delay"] -= 1
+                        if room["bot_delay"] == 0:
+                            role_filter = room.get("current_role_filter", "All")
+                            advance_to_next_player(room_code, role_filter)
                             broadcast(room_code, "state_update", get_serializable_room(room))
 
 # Start background timer thread
@@ -456,6 +537,7 @@ class AuctionHTTPHandler(SimpleHTTPRequestHandler):
         min_increment = int(settings.get('min_increment', 500000))
         timer_duration = int(settings.get('timer_duration', 15))
         overseas_limit = int(settings.get('overseas_limit', 999))
+        bot_auctioneer = bool(settings.get('bot_auctioneer', False))
         
         # Generate clean Room Code
         with rooms_lock:
@@ -481,7 +563,8 @@ class AuctionHTTPHandler(SimpleHTTPRequestHandler):
                     "budget": budget,
                     "min_increment": min_increment,
                     "timer_duration": timer_duration,
-                    "overseas_limit": overseas_limit
+                    "overseas_limit": overseas_limit,
+                    "bot_auctioneer": bot_auctioneer
                 },
                 "players": players,
                 "current_player_index": -1,
@@ -492,7 +575,9 @@ class AuctionHTTPHandler(SimpleHTTPRequestHandler):
                 "teams": {},
                 "logs": [f"🏏 Room {room_code} created by {host_name}.", "🏏 Waiting for managers to join..."],
                 "clients": [],
-                "status": "lobby"
+                "status": "lobby",
+                "current_role_filter": "All",
+                "bot_delay": 0
             }
             
         self.send_json_response(200, {
@@ -653,70 +738,16 @@ class AuctionHTTPHandler(SimpleHTTPRequestHandler):
                 
             # Host logic actions
             role_filter = data.get('role_filter') # e.g. "Batsman", "Bowler", "All-Rounder", "Wicket-Keeper" or "All"
-            
-            if action == "start":
-                # Find first unsold player matching role_filter
-                first_unsold = -1
-                for i, p in enumerate(room["players"]):
-                    if p.get("status", "unsold") == "unsold" and p.get("bought_by") is None:
-                        if not role_filter or role_filter == "All" or p.get("role") == role_filter:
-                            first_unsold = i
-                            break
-                            
-                if first_unsold == -1:
-                    category_label = role_filter if role_filter != "All" else "any"
-                    self.send_json_response(400, {"error": f"No unsold players found for category: {category_label}!"})
+            if role_filter:
+                room["current_role_filter"] = role_filter
+            else:
+                role_filter = room.get("current_role_filter", "All")
+                
+            if action in ("start", "next"):
+                success, msg = advance_to_next_player(room_code, role_filter)
+                if not success:
+                    self.send_json_response(400, {"error": msg})
                     return
-                    
-                room["current_player_index"] = first_unsold
-                room["status"] = "active"
-                room["current_bid"] = 0
-                room["current_bidder"] = None
-                room["timer"] = room["settings"]["timer_duration"]
-                room["timer_active"] = True
-                
-                player_name = room["players"][first_unsold]["name"]
-                start_msg = f"🎬 Auction started! First up: {player_name} (Base: {format_currency_python(room['players'][first_unsold]['base_price'])})"
-                room["logs"].append(start_msg)
-                
-            elif action == "next":
-                idx = room["current_player_index"]
-                next_unsold = -1
-                for i in range(idx + 1, len(room["players"])):
-                    p = room["players"][i]
-                    if p.get("status", "unsold") == "unsold" and p.get("bought_by") is None:
-                        if not role_filter or role_filter == "All" or p.get("role") == role_filter:
-                            next_unsold = i
-                            break
-                            
-                # If not found in subsequent list, wrap around to search from start for any unsold players matching role
-                if next_unsold == -1:
-                    for i in range(0, idx + 1):
-                        p = room["players"][i]
-                        if p.get("status", "unsold") == "unsold" and p.get("bought_by") is None:
-                            if not role_filter or role_filter == "All" or p.get("role") == role_filter:
-                                next_unsold = i
-                                break
-                                
-                if next_unsold == -1:
-                    if role_filter and role_filter != "All":
-                        self.send_json_response(400, {"error": f"No unsold players left in category: {role_filter}!"})
-                        return
-                    else:
-                        room["status"] = "finished"
-                        finish_msg = "🏆 Cricket Player Auction completed! All players auctioned."
-                        room["logs"].append(finish_msg)
-                else:
-                    room["current_player_index"] = next_unsold
-                    room["status"] = "active"
-                    room["current_bid"] = 0
-                    room["current_bidder"] = None
-                    room["timer"] = room["settings"]["timer_duration"]
-                    room["timer_active"] = True
-                    
-                    player_name = room["players"][next_unsold]["name"]
-                    next_msg = f"🏏 Next up: {player_name} (Base: {format_currency_python(room['players'][next_unsold]['base_price'])})"
-                    room["logs"].append(next_msg)
                     
             elif action == "pause":
                 room["timer_active"] = False
