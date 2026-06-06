@@ -1618,17 +1618,20 @@ async function placeBid(type, value) {
     const activePlayer = roomState.players[idx];
     if (!activePlayer) return;
     
+    let currentBid = Number(roomState.current_bid || 0);
+    let basePrice = Number(activePlayer.base_price || 0);
+    let minIncrement = Number(roomState.settings.min_increment || 0);
     let bidAmount = 0;
     
     if (type === 'min') {
-        if (roomState.current_bid === 0) {
-            bidAmount = activePlayer.base_price;
+        if (currentBid === 0) {
+            bidAmount = basePrice;
         } else {
-            bidAmount = roomState.current_bid + roomState.settings.min_increment;
+            bidAmount = currentBid + minIncrement;
         }
     } else if (type === 'add') {
-        let base = roomState.current_bid === 0 ? activePlayer.base_price : roomState.current_bid;
-        bidAmount = base + value;
+        let base = currentBid === 0 ? basePrice : currentBid;
+        bidAmount = base + Number(value);
     }
     
     try {
@@ -1842,14 +1845,14 @@ function renderQueueList() {
     
     let filtered = [];
     if (activeQueueFilter === 'upcoming') {
-        // Upcoming: players at index > current_player_index that are not sold/unsold
-        filtered = players.filter((p, i) => i > idx && p.status !== 'sold' && !p.bought_by);
+        // Upcoming: players at index > current_player_index that are not sold/passed
+        filtered = players.filter((p, i) => i > idx && p.status !== 'sold' && p.status !== 'passed' && !p.bought_by);
     } else if (activeQueueFilter === 'sold') {
         // Sold: players who have been purchased
         filtered = players.filter(p => p.status === 'sold' || p.bought_by);
     } else if (activeQueueFilter === 'unsold') {
-        // Unsold: players that are marked unsold and have no buyer
-        filtered = players.filter(p => p.status === 'unsold' && !p.bought_by);
+        // Unsold: players that actually went unsold (passed) during drafting
+        filtered = players.filter(p => p.status === 'passed');
     }
     
     if (filtered.length === 0) {
@@ -2042,7 +2045,10 @@ function downloadAuctionSummary(customPlayers = null, customRoomCode = null, cus
     let csv = "\uFEFF"; // UTF-8 BOM for Excel/Sheets compatibility
     csv += "ID,Player Name,Role,Rating,Base Price (₹),Status,Bought By,Price Paid (₹),Overseas?\n";
     players.forEach(p => {
-        const status = p.status || "unsold";
+        let status = p.status || "unsold";
+        if (status === 'passed') {
+            status = 'unsold';
+        }
         const boughtBy = p.bought_by || "";
         const priceVal = p.price || (status === 'sold' ? p.base_price : 0);
         const price = status === 'sold' ? priceVal : "";

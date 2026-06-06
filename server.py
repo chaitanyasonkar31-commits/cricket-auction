@@ -449,7 +449,7 @@ def unsold_current_player(room_code):
         
     room["last_completed_player_index"] = idx
     player = room["players"][idx]
-    player["status"] = "unsold"
+    player["status"] = "passed"
     
     log_msg = f"❌ UNSOLD: {player['name']} went unsold at base price of {format_currency_python(player['base_price'])}."
     room["logs"].append(log_msg)
