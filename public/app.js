@@ -1514,6 +1514,23 @@ function renderAuctionDashboard() {
             document.getElementById('host-btn-sell').disabled = roomState.current_bid === 0;
             document.getElementById('host-btn-unsold').disabled = false;
             document.getElementById('host-btn-reset').disabled = false;
+            
+            // Populate the team select dropdown for budget adjustments
+            const budgetTeamSelect = document.getElementById('host-budget-team');
+            if (budgetTeamSelect) {
+                const currentSelected = budgetTeamSelect.value;
+                budgetTeamSelect.innerHTML = '<option value="">-- Select Team --</option>';
+                const sortedTeams = Object.keys(roomState.teams).sort();
+                sortedTeams.forEach(tName => {
+                    const opt = document.createElement('option');
+                    opt.value = tName;
+                    opt.textContent = tName;
+                    if (tName === currentSelected) {
+                        opt.selected = true;
+                    }
+                    budgetTeamSelect.appendChild(opt);
+                });
+            }
         }
     } else {
         hostConsole.classList.add('hidden');
@@ -1643,7 +1660,7 @@ async function sendChatMessage() {
 }
 
 // Host Action Trigger POST
-async function hostAction(action) {
+async function hostAction(action, extraParams = {}) {
     if (role !== 'host') return;
     const filterEl = document.getElementById('host-role-filter');
     const roleFilter = filterEl ? filterEl.value : 'All';
@@ -1652,11 +1669,57 @@ async function hostAction(action) {
             room_code: roomCode,
             host_id: hostId,
             action: action,
-            role_filter: roleFilter
+            role_filter: roleFilter,
+            ...extraParams
         });
     } catch (err) {
         console.error(err);
     }
+}
+
+// Adjust Team Budget by Host
+function adjustTeamBudget() {
+    const teamSelect = document.getElementById('host-budget-team');
+    const amountInput = document.getElementById('host-budget-amount');
+    const unitSelect = document.getElementById('host-budget-unit');
+    
+    if (!teamSelect || !amountInput || !unitSelect) return;
+    
+    const teamName = teamSelect.value;
+    const amountVal = parseFloat(amountInput.value);
+    const unit = unitSelect.value;
+    
+    if (!teamName) {
+        showNotification("Please select a team first.", "error");
+        return;
+    }
+    if (isNaN(amountVal) || amountVal === 0) {
+        showNotification("Please enter a non-zero amount.", "error");
+        return;
+    }
+    
+    // Convert amount according to unit
+    let rawAmount = 0;
+    if (unit === 'Lakh') {
+        rawAmount = amountVal * 100000;
+    } else if (unit === 'Crore') {
+        rawAmount = amountVal * 10000000;
+    } else {
+        rawAmount = amountVal;
+    }
+    
+    // Round to nearest integer
+    rawAmount = Math.round(rawAmount);
+    
+    // Send action to server
+    hostAction('adjust_budget', {
+        team_name: teamName,
+        amount: rawAmount
+    });
+    
+    // Clear input
+    amountInput.value = '';
+    showNotification(`Request sent to update ${teamName}'s budget.`, "success");
 }
 
 // ROSTERS MODAL MANAGER

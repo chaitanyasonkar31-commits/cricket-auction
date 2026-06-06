@@ -1071,6 +1071,21 @@ class AuctionHTTPHandler(SimpleHTTPRequestHandler):
             
             elif action == "save":
                 room["logs"].append("💾 Auction state manually saved to server disk by Host.")
+                
+            elif action == "adjust_budget":
+                team_to_adjust = data.get('team_name', '').strip()
+                amount = data.get('amount', 0)
+                if team_to_adjust in room["teams"]:
+                    room["teams"][team_to_adjust]["budget"] += amount
+                    friendly_amt = format_currency_python(abs(amount))
+                    if amount >= 0:
+                        log_msg = f"💰 Host added {friendly_amt} to {team_to_adjust}'s account."
+                    else:
+                        log_msg = f"💸 Host deducted {friendly_amt} from {team_to_adjust}'s account."
+                    room["logs"].append(log_msg)
+                else:
+                    self.send_json_response(400, {"error": f"Team '{team_to_adjust}' not found."})
+                    return
                     
             save_room_to_disk(room_code)
             broadcast(room_code, "state_update", get_serializable_room(room))
