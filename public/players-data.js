@@ -8189,6 +8189,42 @@ window.ALL_PLAYERS_DATA = {
       "overseas": true,
       "country": "Bangladesh",
       "retired": false
+    },
+    {
+      "id": 117,
+      "name": "Piyush Chawla",
+      "role": "Bowler",
+      "rating": 78,
+      "base_price": 5000000,
+      "stats": "Wkts: 174, Econ: 6.96, Avg: 22.7",
+      "img": "",
+      "overseas": false,
+      "country": "India",
+      "retired": false
+    },
+    {
+      "id": 113,
+      "name": "Shreyas Gopal",
+      "role": "Bowler",
+      "rating": 73,
+      "base_price": 3000000,
+      "stats": "Wkts: 170, Econ: 7.51, Avg: 25.3",
+      "img": "",
+      "overseas": false,
+      "country": "India",
+      "retired": false
+    },
+    {
+      "id": 104,
+      "name": "Anshul Kamboj",
+      "role": "Bowler",
+      "rating": 72,
+      "base_price": 2000000,
+      "stats": "Wkts: 143, Econ: 7.93, Avg: 27.1",
+      "img": "",
+      "overseas": false,
+      "country": "India",
+      "retired": false
     }
   ]
 };
