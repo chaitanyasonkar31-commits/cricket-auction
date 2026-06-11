@@ -374,6 +374,14 @@ function addCustomPlayerRow() {
     const tr = document.createElement('tr');
     tr.innerHTML = `
         <td class="s-no" style="font-weight: bold; text-align: center; color: var(--text-secondary);">${nextSNo}</td>
+        <td style="text-align: center; vertical-align: middle; position: relative;">
+            <div class="cp-img-wrapper" style="width: 40px; height: 40px; border-radius: 50%; overflow: hidden; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.15); display: inline-block; cursor: pointer; position: relative;" onclick="triggerRowImgInput(this)" title="Click to upload player photo">
+                <img class="cp-img-preview" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'><circle cx='50' cy='40' r='25' fill='%23555'/><path d='M15 85 C15 65 30 55 50 55 C70 55 85 65 85 85' fill='%23555'/></svg>" style="width: 100%; height: 100%; object-fit: cover;">
+                <div style="position: absolute; bottom: 0; left: 0; right: 0; background: rgba(0,0,0,0.6); font-size: 8px; color: white; text-align: center; padding: 2px 0; opacity: 0; transition: opacity 0.2s;" class="upload-hover">UP</div>
+            </div>
+            <input type="file" class="cp-img-file-input" accept="image/*" style="display: none;" onchange="handleRowImgUpload(this)">
+            <input type="hidden" class="cp-img-base64" value="">
+        </td>
         <td><input type="text" class="cp-name" placeholder="e.g. Shreyas Iyer" style="text-align: left;"></td>
         <td>
             <select class="cp-role">
@@ -885,6 +893,7 @@ async function createRoom() {
             const ratingEl = row.querySelector('.cp-rating');
             const priceEl = row.querySelector('.cp-price');
             const overseasEl = row.querySelector('.cp-overseas');
+            const imgEl = row.querySelector('.cp-img-base64');
             
             const name = nameEl ? nameEl.value.trim() : '';
             const role = roleEl ? roleEl.value : 'Batsman';
@@ -892,6 +901,7 @@ async function createRoom() {
             const rating = ratingEl && ratingEl.value.trim() !== '' ? parseInt(ratingEl.value.trim()) : 85;
             const basePrice = priceEl ? parseInt(priceEl.value) : 10000000;
             const overseas = overseasEl ? overseasEl.checked : false;
+            const img = imgEl ? imgEl.value.trim() : '';
             
             if (name) {
                 playersList.push({
@@ -901,7 +911,7 @@ async function createRoom() {
                     rating: rating,
                     base_price: basePrice,
                     stats: style,
-                    img: "",
+                    img: img,
                     overseas: overseas,
                     country: overseas ? "Overseas" : "India"
                 });
@@ -1540,6 +1550,15 @@ function renderAuctionDashboard() {
         }
     } else {
         hostConsole.classList.add('hidden');
+    }
+    
+    const hostImgOverlay = document.getElementById('host-img-upload-overlay');
+    if (hostImgOverlay) {
+        if (role === 'host' && roomState.current_player_index >= 0 && roomState.status !== 'finished') {
+            hostImgOverlay.classList.remove('hidden');
+        } else {
+            hostImgOverlay.classList.add('hidden');
+        }
     }
     
     // 4. Render Leaderboard List
@@ -2207,8 +2226,10 @@ function savePlayerDraft() {
             const ratingEl = row.querySelector('.cp-rating');
             const priceEl = row.querySelector('.cp-price');
             const overseasEl = row.querySelector('.cp-overseas');
+            const imgEl = row.querySelector('.cp-img-base64');
             
             const name = nameEl ? nameEl.value.trim() : '';
+            const img = imgEl ? imgEl.value.trim() : '';
             if (name) {
                 draft.customRows.push({
                     name: name,
@@ -2216,7 +2237,8 @@ function savePlayerDraft() {
                     style: styleEl ? styleEl.value.trim() : '',
                     rating: ratingEl ? ratingEl.value.trim() : '',
                     price: priceEl ? priceEl.value : '10000000',
-                    overseas: overseasEl ? overseasEl.checked : false
+                    overseas: overseasEl ? overseasEl.checked : false,
+                    img: img
                 });
             }
         });
@@ -2282,7 +2304,7 @@ function loadPlayerDraft() {
                 rowsContainer.innerHTML = ''; // clear all rows
                 if (draft.customRows && draft.customRows.length > 0) {
                     draft.customRows.forEach(r => {
-                        addCustomPlayerRowWithData(r.name, r.role, r.style, r.rating, r.price, r.overseas);
+                        addCustomPlayerRowWithData(r.name, r.role, r.style, r.rating, r.price, r.overseas, r.img);
                     });
                 } else {
                     // pre-populate 5 empty rows
@@ -2311,7 +2333,7 @@ function checkSavedDraft() {
     }
 }
 
-function addCustomPlayerRowWithData(name, role, style, rating, price, overseas) {
+function addCustomPlayerRowWithData(name, role, style, rating, price, overseas, img = "") {
     const rowsContainer = document.getElementById('custom-players-rows');
     if (!rowsContainer) return;
     
@@ -2319,6 +2341,14 @@ function addCustomPlayerRowWithData(name, role, style, rating, price, overseas) 
     const tr = document.createElement('tr');
     tr.innerHTML = `
         <td class="s-no" style="font-weight: bold; text-align: center; color: var(--text-secondary);">${nextSNo}</td>
+        <td style="text-align: center; vertical-align: middle; position: relative;">
+            <div class="cp-img-wrapper" style="width: 40px; height: 40px; border-radius: 50%; overflow: hidden; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.15); display: inline-block; cursor: pointer; position: relative;" onclick="triggerRowImgInput(this)" title="Click to upload player photo">
+                <img class="cp-img-preview" src="${img || "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'><circle cx='50' cy='40' r='25' fill='%23555'/><path d='M15 85 C15 65 30 55 50 55 C70 55 85 65 85 85' fill='%23555'/></svg>"}" style="width: 100%; height: 100%; object-fit: cover;">
+                <div style="position: absolute; bottom: 0; left: 0; right: 0; background: rgba(0,0,0,0.6); font-size: 8px; color: white; text-align: center; padding: 2px 0; opacity: 0; transition: opacity 0.2s;" class="upload-hover">UP</div>
+            </div>
+            <input type="file" class="cp-img-file-input" accept="image/*" style="display: none;" onchange="handleRowImgUpload(this)">
+            <input type="hidden" class="cp-img-base64" value="${img || ""}">
+        </td>
         <td><input type="text" class="cp-name" value="${name || ''}" placeholder="e.g. Shreyas Iyer" style="text-align: left;"></td>
         <td>
             <select class="cp-role">
@@ -2531,4 +2561,75 @@ function parseOCRText(text) {
     });
     
     return players;
+}
+
+// --- Player Image Upload Helpers ---
+function triggerRowImgInput(div) {
+    const parent = div.parentElement;
+    const fileInput = parent.querySelector('.cp-img-file-input');
+    if (fileInput) {
+        fileInput.click();
+    }
+}
+
+function handleRowImgUpload(input) {
+    const file = input.files[0];
+    if (!file) return;
+    
+    if (file.size > 500 * 1024) {
+        showNotification("Player photo must be less than 500KB", "warning");
+        input.value = "";
+        return;
+    }
+    
+    const reader = new FileReader();
+    reader.onload = function(e) {
+        const base64 = e.target.result;
+        const parent = input.parentElement;
+        const preview = parent.querySelector('.cp-img-preview');
+        const hidden = parent.querySelector('.cp-img-base64');
+        if (preview) preview.src = base64;
+        if (hidden) hidden.value = base64;
+    };
+    reader.readAsDataURL(file);
+}
+
+function triggerHostPlayerImgUpload() {
+    const input = document.getElementById('host-player-img-input');
+    if (input) {
+        input.click();
+    }
+}
+
+async function handleHostPlayerImgUpload(input) {
+    const file = input.files[0];
+    if (!file) return;
+    
+    if (file.size > 500 * 1024) {
+        showNotification("Player photo must be less than 500KB", "warning");
+        input.value = "";
+        return;
+    }
+    
+    const reader = new FileReader();
+    reader.onload = async function(e) {
+        const base64 = e.target.result;
+        
+        try {
+            const res = await apiPost('/api/control', {
+                auth_token: localStorage.getItem('auth_token'),
+                room_code: roomCode,
+                host_id: hostId,
+                action: 'update_player_image',
+                image_data: base64
+            });
+            if (res && res.success) {
+                showNotification("Player image updated successfully!", "success");
+            }
+        } catch (err) {
+            console.error("Failed to update player image:", err);
+            showNotification("Failed to update player image", "error");
+        }
+    };
+    reader.readAsDataURL(file);
 }

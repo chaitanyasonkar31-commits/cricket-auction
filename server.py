@@ -1125,6 +1125,17 @@ class AuctionHTTPHandler(SimpleHTTPRequestHandler):
                     self.send_json_response(400, {"error": "No recent sold/unsold action available to undo."})
                     return
                     
+            elif action == "update_player_image":
+                image_data = data.get('image_data', '')
+                idx = room.get("current_player_index", -1)
+                if 0 <= idx < len(room["players"]):
+                    player = room["players"][idx]
+                    player["img"] = image_data
+                    room["logs"].append(f"📸 Host updated the photo for {player['name']}.")
+                else:
+                    self.send_json_response(400, {"error": "No active player to update image."})
+                    return
+                    
             save_room_to_disk(room_code)
             broadcast(room_code, "state_update", get_serializable_room(room))
             
