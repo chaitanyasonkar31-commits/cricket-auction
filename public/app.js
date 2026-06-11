@@ -1943,7 +1943,10 @@ async function renderScheduledAuctions() {
                 player_count: item.player_count,
                 sold_count: item.sold_count || 0,
                 unsold_count: item.unsold_count || 0,
-                is_local: false
+                is_local: false,
+                user_role: item.user_role || "host",
+                team_name: item.team_name || "",
+                manager_name: item.manager_name || ""
             });
         }
     });
@@ -1997,19 +2000,33 @@ async function renderScheduledAuctions() {
                 <span style="font-size: 0.8rem; color: var(--text-secondary);">${metaDetails}</span>
             </div>
             <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
-                ${item.status !== 'finished' && item.status !== 'local_only' ? `
-                    <button class="btn btn-primary" onclick="hostScheduledAuction('${item.room_code}', '${item.host_id}')" style="padding: 0.45rem 1rem; font-size: 0.8rem; height: auto;">
-                        <i class="fa-solid fa-play"></i> Host / Resume
-                    </button>
-                ` : ''}
+                ${item.status !== 'local_only' ? (
+                    item.status === 'finished' ? `
+                        <button class="btn btn-primary" onclick="${(item.user_role || 'host') === 'host' ? `hostScheduledAuction('${item.room_code}', '${item.host_id}')` : `joinScheduledAuction('${item.room_code}', '${item.team_name}', '${item.manager_name}')`}" style="padding: 0.45rem 1rem; font-size: 0.8rem; height: auto; background: rgba(161, 0, 255, 0.15); border-color: rgba(161, 0, 255, 0.4); color: var(--accent-purple);">
+                            <i class="fa-solid fa-eye"></i> View Squads
+                        </button>
+                    ` : (
+                        (item.user_role || 'host') === 'host' ? `
+                            <button class="btn btn-primary" onclick="hostScheduledAuction('${item.room_code}', '${item.host_id}')" style="padding: 0.45rem 1rem; font-size: 0.8rem; height: auto;">
+                                <i class="fa-solid fa-play"></i> Host / Resume
+                            </button>
+                        ` : `
+                            <button class="btn btn-primary" onclick="joinScheduledAuction('${item.room_code}', '${item.team_name}', '${item.manager_name}')" style="padding: 0.45rem 1rem; font-size: 0.8rem; height: auto;">
+                                <i class="fa-solid fa-play"></i> Join / Resume
+                            </button>
+                        `
+                    )
+                ) : ''}
                 ${item.status !== 'local_only' ? `
                     <button class="btn btn-secondary" onclick="downloadServerRoomSummary('${item.room_code}')" title="Download CSV summary" style="padding: 0.45rem 0.75rem; font-size: 0.8rem; height: auto; background: rgba(0, 242, 254, 0.08); border-color: rgba(0, 242, 254, 0.3); color: var(--accent-cyan);">
                         <i class="fa-solid fa-download"></i> CSV
                     </button>
                 ` : ''}
-                <button class="btn btn-secondary" onclick="deleteServerRoom('${item.room_code}', ${item.is_local})" title="Delete Room" style="padding: 0.45rem 0.65rem; font-size: 0.8rem; height: auto; background: rgba(255, 51, 102, 0.15); border-color: rgba(255, 51, 102, 0.3); color: var(--accent-red);">
-                    <i class="fa-solid fa-trash-can"></i>
-                </button>
+                ${(item.user_role || 'host') === 'host' ? `
+                    <button class="btn btn-secondary" onclick="deleteServerRoom('${item.room_code}', ${item.is_local})" title="Delete Room" style="padding: 0.45rem 0.65rem; font-size: 0.8rem; height: auto; background: rgba(255, 51, 102, 0.15); border-color: rgba(255, 51, 102, 0.3); color: var(--accent-red);">
+                        <i class="fa-solid fa-trash-can"></i>
+                    </button>
+                ` : ''}
             </div>
         `;
         list.appendChild(row);
@@ -2024,6 +2041,21 @@ function hostScheduledAuction(rCode, hId) {
     localStorage.setItem('auction_role', 'host');
     localStorage.setItem('auction_room_code', rCode);
     localStorage.setItem('auction_host_id', hId);
+    
+    showNotification("Loading scheduled auction lobby...", "success");
+    connectEvents(rCode);
+}
+
+function joinScheduledAuction(rCode, tName, mName) {
+    role = 'manager';
+    roomCode = rCode;
+    teamName = tName;
+    managerName = mName;
+    
+    localStorage.setItem('auction_role', 'manager');
+    localStorage.setItem('auction_room_code', rCode);
+    localStorage.setItem('auction_team_name', tName);
+    localStorage.setItem('auction_manager_name', mName);
     
     showNotification("Loading scheduled auction lobby...", "success");
     connectEvents(rCode);

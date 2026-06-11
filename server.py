@@ -1167,22 +1167,37 @@ class AuctionHTTPHandler(SimpleHTTPRequestHandler):
         user_rooms = []
         with rooms_lock:
             for room_code, room in rooms.items():
-                if room.get("host_username") == username:
+                is_host = room.get("host_username") == username
+                
+                is_member = False
+                user_team_name = ""
+                user_manager_name = ""
+                for t_name, t_info in room.get("teams", {}).items():
+                    if t_info.get("username") == username:
+                        is_member = True
+                        user_team_name = t_name
+                        user_manager_name = t_info.get("manager", "")
+                        break
+                        
+                if is_host or is_member:
                     # Calculate simple stats
                     sold_count = sum(1 for p in room.get("players", []) if p.get("status") == "sold")
-                    unsold_count = sum(1 for p in room.get("players", []) if p.get("status") == "unsold")
+                    unsold_count = sum(1 for p in room.get("players", []) if p.get("status") in ["unsold", "passed"])
                     
                     user_rooms.append({
                         "room_code": room_code,
                         "auction_name": room.get("auction_name", "Cricket Auction"),
                         "host_name": room.get("host_name", "Host"),
-                        "host_id": room.get("host_id", ""),
+                        "host_id": room.get("host_id", "") if is_host else "",
                         "created_at": room.get("created_at", "N/A"),
                         "status": room.get("status", "lobby"),
                         "team_count": len(room.get("teams", {})),
                         "player_count": len(room.get("players", [])),
                         "sold_count": sold_count,
-                        "unsold_count": unsold_count
+                        "unsold_count": unsold_count,
+                        "user_role": "host" if is_host else "manager",
+                        "team_name": user_team_name,
+                        "manager_name": user_manager_name
                     })
         
         # Sort history by created_at descending if possible, or room code
