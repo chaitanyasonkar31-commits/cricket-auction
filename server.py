@@ -874,9 +874,9 @@ class AuctionHTTPHandler(SimpleHTTPRequestHandler):
                     self.send_json_response(400, {"error": "Team Name is already taken!"})
                     return
             else:
-                # Limit room to 10 users
-                if len(room["teams"]) >= 10:
-                    self.send_json_response(400, {"error": "Room is full! Maximum 10 teams allowed."})
+                # Limit room to 12 users
+                if len(room["teams"]) >= 12:
+                    self.send_json_response(400, {"error": "Room is full! Maximum 12 teams allowed."})
                     return
                 # Setup new team structure
                 room["teams"][team_name] = {
