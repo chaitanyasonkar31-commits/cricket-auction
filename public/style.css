@@ -1722,33 +1722,38 @@ h1, h2, h3, h4 {
    ========================================== */
 
 /* Checklist Filters */
-.filter-tag {
-    background: rgba(255, 255, 255, 0.04);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    color: var(--text-secondary);
-    padding: 0.35rem 0.85rem;
-    border-radius: 20px;
-    font-size: 0.75rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    display: inline-flex;
-    align-items: center;
-    gap: 0.25rem;
+button.filter-tag,
+.checklist-filters-container button.filter-tag {
+    background: rgba(255, 255, 255, 0.04) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    color: var(--text-secondary) !important;
+    padding: 0.35rem 0.85rem !important;
+    border-radius: 20px !important;
+    font-size: 0.75rem !important;
+    font-weight: 600 !important;
+    cursor: pointer !important;
+    transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 0.25rem !important;
+    outline: none !important;
+    box-shadow: none !important;
 }
 
-.filter-tag:hover {
-    background: rgba(255, 255, 255, 0.08);
-    border-color: rgba(255, 255, 255, 0.2);
-    color: white;
-    transform: translateY(-1px);
+button.filter-tag:hover,
+.checklist-filters-container button.filter-tag:hover {
+    background: rgba(255, 255, 255, 0.08) !important;
+    border-color: rgba(255, 255, 255, 0.2) !important;
+    color: white !important;
+    transform: translateY(-1px) !important;
 }
 
-.filter-tag.active {
-    background: linear-gradient(135deg, #a100ff, #7f00ff);
-    color: white;
-    border-color: transparent;
-    box-shadow: 0 0 10px rgba(161, 0, 255, 0.35);
+button.filter-tag.active,
+.checklist-filters-container button.filter-tag.active {
+    background: linear-gradient(135deg, var(--accent-purple), var(--accent-cyan)) !important;
+    color: white !important;
+    border-color: transparent !important;
+    box-shadow: 0 0 10px var(--accent-purple) !important;
 }
 
 /* Bid Timeline Wrapper */

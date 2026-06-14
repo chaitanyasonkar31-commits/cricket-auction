@@ -534,7 +534,7 @@ function addCustomPlayerRow() {
             <input type="file" class="cp-img-file-input" accept="image/*" style="display: none;" onchange="handleRowImgUpload(this)">
             <input type="hidden" class="cp-img-base64" value="">
         </td>
-        <td><input type="text" class="cp-name" placeholder="e.g. Shreyas Iyer" style="text-align: left;"></td>
+        <td><input type="text" class="cp-name" placeholder="e.g. Shreyas Iyer" style="text-align: left;" oninput="updateCustomPlayerAvatarPreview(this)"></td>
         <td>
             <select class="cp-role">
                 <option value="Batsman">Batsman</option>
@@ -925,8 +925,10 @@ function renderPlayersChecklist() {
         if (ratingVal >= 90) tierClass = 'tier-gold';
         else if (ratingVal >= 80) tierClass = 'tier-silver';
         
+        const avatarUrl = p.img || getPlayerAvatar(p.name);
         label.innerHTML = `
             <input type="checkbox" id="check-p-${p.id}" value="${p.id}" ${isChecked ? 'checked' : ''}>
+            <img src="${avatarUrl}" style="width: 32px; height: 32px; border-radius: 50%; object-fit: cover; border: 1px solid rgba(255,255,255,0.12); margin-left: 0.5rem; margin-right: 0.25rem; flex-shrink: 0;">
             <div class="checklist-item-meta" style="flex-grow: 1;">
                 <span class="checklist-item-name">${p.name} <span class="flag-icon" style="font-size: 0.75rem; color: var(--text-secondary);">(${countryLabel})</span></span>
                 <div class="checklist-item-sub">
@@ -1509,10 +1511,10 @@ function renderAuctionDashboard() {
         
         // Image source fallback
         const imgEl = document.getElementById('player-card-img');
-        if (player.img) {
+        if (player.img && player.img.trim() !== '') {
             imgEl.src = player.img;
         } else {
-            imgEl.src = "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'><circle cx='50' cy='40' r='25' fill='%23555'/><path d='M15 85 C15 65 30 55 50 55 C70 55 85 65 85 85' fill='%23555'/></svg>";
+            imgEl.src = getPlayerAvatar(player.name);
         }
         
         // Active bidding price formats
@@ -2071,8 +2073,14 @@ function openRosterModal(tName) {
     } else {
         team.players.forEach(p => {
             const tr = document.createElement('tr');
+            const avatarUrl = p.img || getPlayerAvatar(p.name);
             tr.innerHTML = `
-                <td><strong>${p.name} ${p.overseas ? '✈️' : ''}</strong></td>
+                <td>
+                    <div style="display: flex; align-items: center; gap: 0.5rem;">
+                        <img src="${avatarUrl}" style="width: 28px; height: 28px; border-radius: 50%; object-fit: cover; border: 1px solid rgba(255,255,255,0.15); flex-shrink: 0;">
+                        <strong>${p.name} ${p.overseas ? '✈️' : ''}</strong>
+                    </div>
+                </td>
                 <td><span class="badge ${p.role}">${p.role}</span></td>
                 <td>${p.rating}</td>
                 <td style="text-align: right; font-weight: 700; color: var(--accent-gold);">${formatCurrency(p.price)}</td>
@@ -2164,13 +2172,17 @@ function renderQueueList() {
     filtered.forEach(p => {
         const row = document.createElement('div');
         row.className = "queue-row";
+        const avatarUrl = p.img || getPlayerAvatar(p.name);
         let detailsHtml = p.status === 'sold' || p.bought_by
             ? `<span class="queue-sold-info">${p.bought_by} (${formatCurrency(p.price || p.base_price)})</span>`
             : `<span class="queue-price">Base: ${formatCurrency(p.base_price)}</span>`;
         row.innerHTML = `
-            <div class="queue-player-info">
-                <strong>${p.name} ${p.overseas ? '✈️' : ''}</strong>
-                <span>${p.role} • Rating: ${p.rating}</span>
+            <div class="queue-player-info" style="flex-direction: row; align-items: center; gap: 0.65rem;">
+                <img src="${avatarUrl}" style="width: 30px; height: 30px; border-radius: 50%; object-fit: cover; border: 1px solid rgba(255,255,255,0.12); flex-shrink: 0;">
+                <div style="display: flex; flex-direction: column; gap: 0.15rem;">
+                    <strong>${p.name} ${p.overseas ? '✈️' : ''}</strong>
+                    <span>${p.role} • Rating: ${p.rating}</span>
+                </div>
             </div>
             <div class="queue-player-meta">
                 ${detailsHtml}
@@ -2625,13 +2637,13 @@ function addCustomPlayerRowWithData(name, role, style, rating, price, overseas, 
         <td class="s-no" style="font-weight: bold; text-align: center; color: var(--text-secondary);">${nextSNo}</td>
         <td style="text-align: center; vertical-align: middle; position: relative;">
             <div class="cp-img-wrapper" style="width: 40px; height: 40px; border-radius: 50%; overflow: hidden; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.15); display: inline-block; cursor: pointer; position: relative;" onclick="triggerRowImgInput(this)" title="Click to upload player photo">
-                <img class="cp-img-preview" src="${img || "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'><circle cx='50' cy='40' r='25' fill='%23555'/><path d='M15 85 C15 65 30 55 50 55 C70 55 85 65 85 85' fill='%23555'/></svg>"}" style="width: 100%; height: 100%; object-fit: cover;">
+                <img class="cp-img-preview" src="${img || (name ? getPlayerAvatar(name) : "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'><circle cx='50' cy='40' r='25' fill='%23555'/><path d='M15 85 C15 65 30 55 50 55 C70 55 85 65 85 85' fill='%23555'/></svg>")}" style="width: 100%; height: 100%; object-fit: cover;">
                 <div style="position: absolute; bottom: 0; left: 0; right: 0; background: rgba(0,0,0,0.6); font-size: 8px; color: white; text-align: center; padding: 2px 0; opacity: 0; transition: opacity 0.2s;" class="upload-hover">UP</div>
             </div>
             <input type="file" class="cp-img-file-input" accept="image/*" style="display: none;" onchange="handleRowImgUpload(this)">
             <input type="hidden" class="cp-img-base64" value="${img || ""}">
         </td>
-        <td><input type="text" class="cp-name" value="${name || ''}" placeholder="e.g. Shreyas Iyer" style="text-align: left;"></td>
+        <td><input type="text" class="cp-name" value="${name || ''}" placeholder="e.g. Shreyas Iyer" style="text-align: left;" oninput="updateCustomPlayerAvatarPreview(this)"></td>
         <td>
             <select class="cp-role">
                 <option value="Batsman" ${role === 'Batsman' ? 'selected' : ''}>Batsman</option>
@@ -3156,4 +3168,68 @@ function changeTheme(theme) {
     }
     
     localStorage.setItem('auction_theme', theme);
+}
+
+// --- Dynamic SVG Initials-Based Avatar Generator ---
+function getPlayerAvatar(name) {
+    if (!name) {
+        return "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'><circle cx='50' cy='40' r='25' fill='%23555'/><path d='M15 85 C15 65 30 55 50 55 C70 55 85 65 85 85' fill='%23555'/></svg>";
+    }
+    
+    // Extract initials
+    const initials = name.split(' ')
+                         .filter(n => n.length > 0)
+                         .map(n => n.charAt(0))
+                         .slice(0, 2)
+                         .join('')
+                         .toUpperCase();
+                         
+    // Calculate deterministic hash code from name string
+    let hash = 0;
+    for (let i = 0; i < name.length; i++) {
+        hash = name.charCodeAt(i) + ((hash << 5) - hash);
+    }
+    
+    // Select base color hue from themes
+    const hues = [280, 205, 45, 145, 335, 18, 220, 165]; // Purple, Cyan, Gold, Green, Pink, Orange, Blue, Emerald
+    const hue = hues[Math.abs(hash) % hues.length];
+    
+    // Generate clean modern vector initials avatar matching the theme colors
+    const svg = `
+        <svg xmlns='http://www.w3.org/2000/svg' width='200' height='200' viewBox='0 0 200 200'>
+            <defs>
+                <linearGradient id='avatar-grad-${Math.abs(hash)}' x1='0%' y1='0%' x2='100%' y2='100%'>
+                    <stop offset='0%' stop-color='hsl(${hue}, 80%, 55%)' />
+                    <stop offset='100%' stop-color='hsl(${(hue + 45) % 360}, 85%, 40%)' />
+                </linearGradient>
+            </defs>
+            <rect width='200' height='200' rx='100' fill='url(#avatar-grad-${Math.abs(hash)})' />
+            <text x='50%' y='53%' dominant-baseline='middle' text-anchor='middle' fill='#ffffff' font-family='Outfit, Arial, sans-serif' font-weight='800' font-size='72' letter-spacing='-1px'>
+                ${initials}
+            </text>
+        </svg>
+    `.trim();
+    
+    return "data:image/svg+xml;utf8," + encodeURIComponent(svg);
+}
+
+function updateCustomPlayerAvatarPreview(input) {
+    const parent = input.closest('tr');
+    if (!parent) return;
+    const preview = parent.querySelector('.cp-img-preview');
+    const hiddenBase64 = parent.querySelector('.cp-img-base64');
+    
+    // If the user has already uploaded a custom file, do not override it
+    if (hiddenBase64 && hiddenBase64.value && hiddenBase64.value.startsWith('data:image')) {
+        return;
+    }
+    
+    if (preview) {
+        const nameVal = input.value.trim();
+        if (nameVal) {
+            preview.src = getPlayerAvatar(nameVal);
+        } else {
+            preview.src = "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'><circle cx='50' cy='40' r='25' fill='%23555'/><path d='M15 85 C15 65 30 55 50 55 C70 55 85 65 85 85' fill='%23555'/></svg>";
+        }
+    }
 }
