@@ -413,6 +413,15 @@ Yashasvi Jaiswal, Batsman, 91, 10000000, Runs: 720 Avg: 41.2, , false" style="fo
                 </div>
 
                 <div class="header-actions" style="display: flex; gap: 0.75rem; align-items: center; margin-left: auto;">
+                    <div class="theme-select-wrapper" style="position: relative; display: flex; align-items: center;">
+                        <i class="fa-solid fa-palette" style="position: absolute; left: 0.65rem; color: var(--accent-cyan); font-size: 0.8rem; pointer-events: none;"></i>
+                        <select id="theme-selector" onchange="changeTheme(this.value)" style="padding: 0.45rem 0.65rem 0.45rem 1.65rem; font-size: 0.8rem; height: 32px; background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.15); border-radius: 6px; color: white; outline: none; cursor: pointer; transition: all 0.2s; font-weight: 600; -webkit-appearance: none; -moz-appearance: none; appearance: none; padding-right: 1.5rem;">
+                            <option value="cyberpunk" style="background: #12121c; color: white;">Cyberpunk Theme</option>
+                            <option value="gold" style="background: #1c1c12; color: white;">Premier Gold</option>
+                            <option value="midnight" style="background: #0d121c; color: white;">Midnight Field</option>
+                        </select>
+                        <i class="fa-solid fa-chevron-down" style="position: absolute; right: 0.5rem; color: var(--text-secondary); font-size: 0.65rem; pointer-events: none;"></i>
+                    </div>
                     <button id="btn-toggle-audio" class="btn btn-secondary" onclick="toggleAudio()" style="padding: 0.45rem 0.85rem; font-size: 0.8rem; height: auto; display: flex; align-items: center; gap: 0.4rem; background: rgba(255, 215, 0, 0.08); border-color: rgba(255, 215, 0, 0.3); color: var(--accent-gold);">
                         <i class="fa-solid fa-volume-high"></i> <span id="audio-toggle-text">Sound: On</span>
                     </button>

@@ -2307,4 +2307,64 @@ h1, h2, h3, h4 {
     }
 }
 
+/* ==========================================
+   Theme Templates Overrides
+   ========================================== */
+
+/* Premier Gold (Championship Style) Theme */
+body.theme-gold {
+    --bg-dark: #0d0d0a;
+    --bg-card: rgba(26, 26, 20, 0.75);
+    --bg-card-hover: rgba(38, 38, 30, 0.9);
+    --border-color: rgba(255, 215, 0, 0.15);
+    
+    --accent-purple: #ffaa00; /* Amber Gold */
+    --accent-cyan: #ffc400;   /* Bright Gold */
+    --accent-gold: #ffffff;   /* Contrast Light */
+    --accent-green: #00e676;
+    --accent-red: #ff3366;
+    
+    --text-primary: #fdfdfa;
+    --text-secondary: #a0a094;
+    
+    --shadow-glow-purple: 0 0 20px rgba(255, 170, 0, 0.4);
+    --shadow-glow-cyan: 0 0 20px rgba(255, 196, 0, 0.45);
+    --shadow-glow-gold: 0 0 20px rgba(255, 255, 255, 0.35);
+}
+
+body.theme-gold .bg-glow-1 {
+    background: #ffaa00;
+}
+body.theme-gold .bg-glow-2 {
+    background: #ffc400;
+}
+
+/* Midnight Field (Sports Arena) Theme */
+body.theme-midnight {
+    --bg-dark: #040810;
+    --bg-card: rgba(12, 22, 38, 0.75);
+    --bg-card-hover: rgba(18, 32, 56, 0.9);
+    --border-color: rgba(0, 230, 118, 0.15);
+    
+    --accent-purple: #00e676; /* Emerald Green */
+    --accent-cyan: #00b0ff;   /* Field Blue */
+    --accent-gold: #ffea00;   /* Neon Yellow */
+    --accent-green: #00e676;
+    --accent-red: #ff1744;
+    
+    --text-primary: #f6f8fc;
+    --text-secondary: #8b9bb0;
+    
+    --shadow-glow-purple: 0 0 20px rgba(0, 230, 118, 0.4);
+    --shadow-glow-cyan: 0 0 20px rgba(0, 176, 255, 0.45);
+    --shadow-glow-gold: 0 0 20px rgba(255, 234, 0, 0.4);
+}
+
+body.theme-midnight .bg-glow-1 {
+    background: #00e676;
+}
+body.theme-midnight .bg-glow-2 {
+    background: #00b0ff;
+}
+
 

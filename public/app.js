@@ -396,6 +396,14 @@ window.addEventListener('DOMContentLoaded', async () => {
     // Initialize background music system (BGM) player
     initBgmPlayer();
 
+    // Initialize active template theme
+    const activeTheme = localStorage.getItem('auction_theme') || 'cyberpunk';
+    const themeSelector = document.getElementById('theme-selector');
+    if (themeSelector) {
+        themeSelector.value = activeTheme;
+    }
+    changeTheme(activeTheme);
+
     const authToken = localStorage.getItem('auth_token');
     const authUsername = localStorage.getItem('auth_username');
 
@@ -3134,4 +3142,18 @@ function formatBgmTime(secs) {
     const minutes = Math.floor(secs / 60);
     const seconds = Math.floor(secs % 60);
     return minutes + ":" + (seconds < 10 ? "0" : "") + seconds;
+}
+
+// --- Live Theme Switcher Logic ---
+function changeTheme(theme) {
+    const body = document.body;
+    body.classList.remove('theme-gold', 'theme-midnight');
+    
+    if (theme === 'gold') {
+        body.classList.add('theme-gold');
+    } else if (theme === 'midnight') {
+        body.classList.add('theme-midnight');
+    }
+    
+    localStorage.setItem('auction_theme', theme);
 }
