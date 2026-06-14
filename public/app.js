@@ -134,23 +134,31 @@ function setChecklistFilter(category) {
     }
     
     // Dynamically toggle class names to preserve checked/unchecked inputs and input ratings
-    allPresetPlayers.forEach(p => {
-        const cb = document.getElementById(`check-p-${p.id}`);
-        const item = cb ? cb.closest('.checklist-item') : null;
-        if (item) {
-            const isFilterHidden = category !== 'All' && (
-                category === 'Overseas' ? !p.overseas :
-                category === 'Indian' ? p.overseas :
-                p.role !== category
-            );
-            if (isFilterHidden) {
-                item.classList.add('hidden-filter');
-            } else {
-                item.classList.remove('hidden-filter');
-            }
+    try {
+        if (allPresetPlayers && Array.isArray(allPresetPlayers)) {
+            allPresetPlayers.forEach(p => {
+                if (!p || p.id === undefined) return;
+                const cb = document.getElementById(`check-p-${p.id}`);
+                const item = cb ? cb.closest('.checklist-item') : null;
+                if (item) {
+                    const isFilterHidden = category !== 'All' && (
+                        category === 'Overseas' ? !p.overseas :
+                        category === 'Indian' ? p.overseas :
+                        p.role !== category
+                    );
+                    if (isFilterHidden) {
+                        item.classList.add('hidden-filter');
+                    } else {
+                        item.classList.remove('hidden-filter');
+                    }
+                }
+            });
         }
-    });
+    } catch (err) {
+        console.error("Error filtering checklist items:", err);
+    }
 }
+
 let allPresetPlayers = [
     {"id": 1, "name": "Virat Kohli", "role": "Batsman", "rating": 96, "base_price": 20000000, "stats": "Runs: 7624, Avg: 38.7, SR: 130.7", "img": "https://img1.hscicdn.com/image/upload/f_auto,t_ds_square_w_320,q_50/lsci/db/PICTURES/CMS/316600/316605.png", "overseas": false, "country": "India"},
     {"id": 2, "name": "MS Dhoni", "role": "Wicket-Keeper", "rating": 95, "base_price": 20000000, "stats": "Runs: 5243, Avg: 39.1, SR: 137.5, Catch/Stump: 192", "img": "https://img1.hscicdn.com/image/upload/f_auto,t_ds_square_w_320,q_50/lsci/db/PICTURES/CMS/319900/319946.png", "overseas": false, "country": "India"},
