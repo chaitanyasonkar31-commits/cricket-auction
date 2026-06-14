@@ -7,7 +7,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 99,
       "base_price": 20000000,
       "stats": "Wkts: 251, Econ: 6.55, Avg: 22.0",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Kingdom_Kome_co-founders_Kagiso_Rabada_and_Cameron_Scott_at_the_first_private_screening_of_The_Ring_of_Beasts_%28cropped%29.jpg/330px-Kingdom_Kome_co-founders_Kagiso_Rabada_and_Cameron_Scott_at_the_first_private_screening_of_The_Ring_of_Beasts_%28cropped%29.jpg",
       "overseas": true,
       "country": "South Africa",
       "retired": false
@@ -19,7 +19,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 99,
       "base_price": 20000000,
       "stats": "Runs: 7580 (SR 153.8), Dismissals: 188",
-      "img": "",
+      "img": "https://static.cricbuzz.com/a/img/v1/i1/c244722/nicholas-pooran.jpg?d=low&p=gthumb",
       "overseas": true,
       "country": "West Indies",
       "retired": false
@@ -31,7 +31,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 98,
       "base_price": 20000000,
       "stats": "Runs: 9640, Avg: 50.4, SR: 153.4",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/Virat_Kohli_in_PMO_New_Delhi.jpg/330px-Virat_Kohli_in_PMO_New_Delhi.jpg",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -43,7 +43,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 98,
       "base_price": 15000000,
       "stats": "Wkts: 242, Econ: 6.79, Avg: 21.9",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Rashid_Khan.jpg/330px-Rashid_Khan.jpg",
       "overseas": true,
       "country": "Afghanistan",
       "retired": false
@@ -55,7 +55,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 98,
       "base_price": 15000000,
       "stats": "Wkts: 242, Econ: 6.79, Avg: 21.9",
-      "img": "",
+      "img": "https://static.cricbuzz.com/a/img/v1/i1/c847143/matheesha-pathirana.jpg?d=low&p=gthumb",
       "overseas": true,
       "country": "Sri Lanka",
       "retired": false
@@ -67,7 +67,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 97,
       "base_price": 20000000,
       "stats": "Runs: 7140 (SR 150.3), Dismissals: 174",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/Jos_Buttler_in_2023.jpg/330px-Jos_Buttler_in_2023.jpg",
       "overseas": true,
       "country": "England",
       "retired": false
@@ -79,7 +79,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 96,
       "base_price": 20000000,
       "stats": "Wkts: 225, Econ: 6.68, Avg: 21.9",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Jasprit_Bumrah_in_PMO_New_Delhi.jpg/330px-Jasprit_Bumrah_in_PMO_New_Delhi.jpg",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -91,7 +91,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 87,
       "base_price": 20000000,
       "stats": "Runs: 9080, Avg: 48.3, SR: 157.8",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Prime_Minister_Of_Bharat_Shri_Narendra_Damodardas_Modi_with_Shri_Rohit_Gurunath_Sharma_%28Cropped%29.jpg/330px-Prime_Minister_Of_Bharat_Shri_Narendra_Damodardas_Modi_with_Shri_Rohit_Gurunath_Sharma_%28Cropped%29.jpg",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -103,7 +103,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 96,
       "base_price": 20000000,
       "stats": "Wkts: 225, Econ: 6.68, Avg: 21.9",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Pat_Cummins_The_Test_clip.png/330px-Pat_Cummins_The_Test_clip.png",
       "overseas": true,
       "country": "Australia",
       "retired": false
@@ -115,7 +115,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 95,
       "base_price": 20000000,
       "stats": "Runs: 6700 (SR 146.8), Dismissals: 161",
-      "img": "",
+      "img": "https://static.cricbuzz.com/a/img/v1/i1/c170677/ms-dhoni.jpg?d=low&p=gthumb",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -127,7 +127,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 95,
       "base_price": 20000000,
       "stats": "Wkts: 217, Econ: 6.93, Avg: 21.9",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Mitchell_Starc_2023.jpg/330px-Mitchell_Starc_2023.jpg",
       "overseas": true,
       "country": "Australia",
       "retired": false
@@ -139,7 +139,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 95,
       "base_price": 20000000,
       "stats": "Runs: 6700 (SR 146.8), Dismissals: 161",
-      "img": "",
+      "img": "https://static.cricbuzz.com/a/img/v1/i1/c619866/heinrich-klaasen.jpg?d=low&p=gthumb",
       "overseas": true,
       "country": "South Africa",
       "retired": false
@@ -151,7 +151,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 95,
       "base_price": 15000000,
       "stats": "Runs: 6700 (SR 146.8), Dismissals: 161",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/M_Rizwan.jpg/330px-M_Rizwan.jpg",
       "overseas": true,
       "country": "Pakistan",
       "retired": false
@@ -163,7 +163,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 94,
       "base_price": 15000000,
       "stats": "Runs: 8520, Avg: 48.6, SR: 153.8",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/STEVE_SMITH_%2811705303043%29.jpg/330px-STEVE_SMITH_%2811705303043%29.jpg",
       "overseas": true,
       "country": "Australia",
       "retired": false
@@ -175,7 +175,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 94,
       "base_price": 20000000,
       "stats": "Wkts: 208, Econ: 6.88, Avg: 22.8",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Shaheen_Afridi_jogging_Sri_Lanka_vs_Pakistan_-_2nd_TEST_Match_-_SSC%2C_Colombo_%28cropped%29.jpg/330px-Shaheen_Afridi_jogging_Sri_Lanka_vs_Pakistan_-_2nd_TEST_Match_-_SSC%2C_Colombo_%28cropped%29.jpg",
       "overseas": true,
       "country": "Pakistan",
       "retired": false
@@ -187,7 +187,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 93,
       "base_price": 20000000,
       "stats": "Runs: 6260 (SR 148.8), Dismissals: 147",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Rishabh_Pant.jpg/330px-Rishabh_Pant.jpg",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -199,7 +199,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 93,
       "base_price": 15000000,
       "stats": "Runs: 8240, Avg: 47.6, SR: 151.8",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Suryakumar_Yadav_in_PMO_New_Delhi.jpg/330px-Suryakumar_Yadav_in_PMO_New_Delhi.jpg",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -211,7 +211,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 93,
       "base_price": 20000000,
       "stats": "Wkts: 199, Econ: 6.82, Avg: 22.8",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/2018.02.03.22.23.14-AUSvNZL_T20_AUS_innings%2C_SCG_%2839533156665%29.jpg/330px-2018.02.03.22.23.14-AUSvNZL_T20_AUS_innings%2C_SCG_%2839533156665%29.jpg",
       "overseas": true,
       "country": "New Zealand",
       "retired": false
@@ -223,7 +223,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 93,
       "base_price": 15000000,
       "stats": "Runs: 4180 (SR 151.6), Wkts: 118 (Econ 7.48)",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/Shakib_Al_Hasan_2023_03.jpg/330px-Shakib_Al_Hasan_2023_03.jpg",
       "overseas": true,
       "country": "Bangladesh",
       "retired": false
@@ -235,7 +235,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 92,
       "base_price": 20000000,
       "stats": "Runs: 4020 (SR 149.4), Wkts: 113 (Econ 7.82)",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Hardik_Pandya_in_PMO_New_Delhi.jpg/330px-Hardik_Pandya_in_PMO_New_Delhi.jpg",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -247,7 +247,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 92,
       "base_price": 15000000,
       "stats": "Runs: 7960, Avg: 46.5, SR: 149.8",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/3/34/Shubman_Gill_2023_%28cropped%29.jpg",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -259,7 +259,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 92,
       "base_price": 10000000,
       "stats": "Wkts: 191, Econ: 7.07, Avg: 22.8",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Prime_Minister_Of_Bharat_Shri_Narendra_Damodardas_Modi_with_Mohammad_Siraj_%28cropped%29.jpg/330px-Prime_Minister_Of_Bharat_Shri_Narendra_Damodardas_Modi_with_Mohammad_Siraj_%28cropped%29.jpg",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -271,7 +271,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 92,
       "base_price": 7500000,
       "stats": "Runs: 4020 (SR 149.4), Wkts: 113 (Econ 7.82)",
-      "img": "",
+      "img": "https://static.cricbuzz.com/a/img/v1/i1/c156160/riyan-parag.jpg?d=low&p=gthumb",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -283,7 +283,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 92,
       "base_price": 10000000,
       "stats": "Wkts: 191, Econ: 7.07, Avg: 22.8",
-      "img": "",
+      "img": "https://static.cricbuzz.com/a/img/v1/i1/c846040/varun-chakaravarthy.jpg?d=low&p=gthumb",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -295,7 +295,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 92,
       "base_price": 5000000,
       "stats": "Wkts: 191, Econ: 7.07, Avg: 22.8",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Nathan_Lyon_20251017.jpg/330px-Nathan_Lyon_20251017.jpg",
       "overseas": true,
       "country": "Australia",
       "retired": false
@@ -307,7 +307,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 92,
       "base_price": 15000000,
       "stats": "Runs: 7960, Avg: 46.5, SR: 149.8",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/63/Harry_Brook_County_cricket_cropped.jpg/330px-Harry_Brook_County_cricket_cropped.jpg",
       "overseas": true,
       "country": "England",
       "retired": false
@@ -321,7 +321,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 99,
       "base_price": 20000000,
       "stats": "Wkts: 251, Econ: 6.55, Avg: 22.0",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Kingdom_Kome_co-founders_Kagiso_Rabada_and_Cameron_Scott_at_the_first_private_screening_of_The_Ring_of_Beasts_%28cropped%29.jpg/330px-Kingdom_Kome_co-founders_Kagiso_Rabada_and_Cameron_Scott_at_the_first_private_screening_of_The_Ring_of_Beasts_%28cropped%29.jpg",
       "overseas": true,
       "country": "South Africa",
       "retired": false
@@ -333,7 +333,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 99,
       "base_price": 20000000,
       "stats": "Runs: 7580 (SR 153.8), Dismissals: 188",
-      "img": "",
+      "img": "https://static.cricbuzz.com/a/img/v1/i1/c244722/nicholas-pooran.jpg?d=low&p=gthumb",
       "overseas": true,
       "country": "West Indies",
       "retired": false
@@ -345,7 +345,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 98,
       "base_price": 20000000,
       "stats": "Runs: 9640, Avg: 50.4, SR: 153.4",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/Virat_Kohli_in_PMO_New_Delhi.jpg/330px-Virat_Kohli_in_PMO_New_Delhi.jpg",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -357,7 +357,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 98,
       "base_price": 15000000,
       "stats": "Wkts: 242, Econ: 6.79, Avg: 21.9",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Rashid_Khan.jpg/330px-Rashid_Khan.jpg",
       "overseas": true,
       "country": "Afghanistan",
       "retired": false
@@ -369,7 +369,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 98,
       "base_price": 15000000,
       "stats": "Wkts: 242, Econ: 6.79, Avg: 21.9",
-      "img": "",
+      "img": "https://static.cricbuzz.com/a/img/v1/i1/c847143/matheesha-pathirana.jpg?d=low&p=gthumb",
       "overseas": true,
       "country": "Sri Lanka",
       "retired": false
@@ -381,7 +381,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 97,
       "base_price": 20000000,
       "stats": "Runs: 7140 (SR 150.3), Dismissals: 174",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/Jos_Buttler_in_2023.jpg/330px-Jos_Buttler_in_2023.jpg",
       "overseas": true,
       "country": "England",
       "retired": false
@@ -393,7 +393,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 96,
       "base_price": 20000000,
       "stats": "Wkts: 225, Econ: 6.68, Avg: 21.9",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Jasprit_Bumrah_in_PMO_New_Delhi.jpg/330px-Jasprit_Bumrah_in_PMO_New_Delhi.jpg",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -405,7 +405,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 87,
       "base_price": 20000000,
       "stats": "Runs: 9080, Avg: 48.3, SR: 157.8",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Prime_Minister_Of_Bharat_Shri_Narendra_Damodardas_Modi_with_Shri_Rohit_Gurunath_Sharma_%28Cropped%29.jpg/330px-Prime_Minister_Of_Bharat_Shri_Narendra_Damodardas_Modi_with_Shri_Rohit_Gurunath_Sharma_%28Cropped%29.jpg",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -417,7 +417,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 96,
       "base_price": 20000000,
       "stats": "Wkts: 225, Econ: 6.68, Avg: 21.9",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Pat_Cummins_The_Test_clip.png/330px-Pat_Cummins_The_Test_clip.png",
       "overseas": true,
       "country": "Australia",
       "retired": false
@@ -431,7 +431,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 99,
       "base_price": 20000000,
       "stats": "Wkts: 251, Econ: 6.55, Avg: 22.0",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Kingdom_Kome_co-founders_Kagiso_Rabada_and_Cameron_Scott_at_the_first_private_screening_of_The_Ring_of_Beasts_%28cropped%29.jpg/330px-Kingdom_Kome_co-founders_Kagiso_Rabada_and_Cameron_Scott_at_the_first_private_screening_of_The_Ring_of_Beasts_%28cropped%29.jpg",
       "overseas": true,
       "country": "South Africa",
       "retired": false
@@ -443,7 +443,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 99,
       "base_price": 20000000,
       "stats": "Runs: 7580 (SR 153.8), Dismissals: 188",
-      "img": "",
+      "img": "https://static.cricbuzz.com/a/img/v1/i1/c244722/nicholas-pooran.jpg?d=low&p=gthumb",
       "overseas": true,
       "country": "West Indies",
       "retired": false
@@ -455,7 +455,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 98,
       "base_price": 20000000,
       "stats": "Runs: 9640, Avg: 50.4, SR: 153.4",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/Virat_Kohli_in_PMO_New_Delhi.jpg/330px-Virat_Kohli_in_PMO_New_Delhi.jpg",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -467,7 +467,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 98,
       "base_price": 15000000,
       "stats": "Wkts: 242, Econ: 6.79, Avg: 21.9",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Rashid_Khan.jpg/330px-Rashid_Khan.jpg",
       "overseas": true,
       "country": "Afghanistan",
       "retired": false
@@ -479,7 +479,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 98,
       "base_price": 15000000,
       "stats": "Wkts: 242, Econ: 6.79, Avg: 21.9",
-      "img": "",
+      "img": "https://static.cricbuzz.com/a/img/v1/i1/c847143/matheesha-pathirana.jpg?d=low&p=gthumb",
       "overseas": true,
       "country": "Sri Lanka",
       "retired": false
@@ -491,7 +491,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 97,
       "base_price": 20000000,
       "stats": "Runs: 7140 (SR 150.3), Dismissals: 174",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/Jos_Buttler_in_2023.jpg/330px-Jos_Buttler_in_2023.jpg",
       "overseas": true,
       "country": "England",
       "retired": false
@@ -503,7 +503,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 96,
       "base_price": 20000000,
       "stats": "Wkts: 225, Econ: 6.68, Avg: 21.9",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Jasprit_Bumrah_in_PMO_New_Delhi.jpg/330px-Jasprit_Bumrah_in_PMO_New_Delhi.jpg",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -515,7 +515,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 87,
       "base_price": 20000000,
       "stats": "Runs: 9080, Avg: 48.3, SR: 157.8",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Prime_Minister_Of_Bharat_Shri_Narendra_Damodardas_Modi_with_Shri_Rohit_Gurunath_Sharma_%28Cropped%29.jpg/330px-Prime_Minister_Of_Bharat_Shri_Narendra_Damodardas_Modi_with_Shri_Rohit_Gurunath_Sharma_%28Cropped%29.jpg",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -527,7 +527,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 96,
       "base_price": 20000000,
       "stats": "Wkts: 225, Econ: 6.68, Avg: 21.9",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Pat_Cummins_The_Test_clip.png/330px-Pat_Cummins_The_Test_clip.png",
       "overseas": true,
       "country": "Australia",
       "retired": false
@@ -539,7 +539,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 95,
       "base_price": 20000000,
       "stats": "Runs: 6700 (SR 146.8), Dismissals: 161",
-      "img": "",
+      "img": "https://static.cricbuzz.com/a/img/v1/i1/c170677/ms-dhoni.jpg?d=low&p=gthumb",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -551,7 +551,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 95,
       "base_price": 20000000,
       "stats": "Wkts: 217, Econ: 6.93, Avg: 21.9",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Mitchell_Starc_2023.jpg/330px-Mitchell_Starc_2023.jpg",
       "overseas": true,
       "country": "Australia",
       "retired": false
@@ -563,7 +563,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 95,
       "base_price": 20000000,
       "stats": "Runs: 6700 (SR 146.8), Dismissals: 161",
-      "img": "",
+      "img": "https://static.cricbuzz.com/a/img/v1/i1/c619866/heinrich-klaasen.jpg?d=low&p=gthumb",
       "overseas": true,
       "country": "South Africa",
       "retired": false
@@ -575,7 +575,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 95,
       "base_price": 15000000,
       "stats": "Runs: 6700 (SR 146.8), Dismissals: 161",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/M_Rizwan.jpg/330px-M_Rizwan.jpg",
       "overseas": true,
       "country": "Pakistan",
       "retired": false
@@ -587,7 +587,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 94,
       "base_price": 15000000,
       "stats": "Runs: 8520, Avg: 48.6, SR: 153.8",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/STEVE_SMITH_%2811705303043%29.jpg/330px-STEVE_SMITH_%2811705303043%29.jpg",
       "overseas": true,
       "country": "Australia",
       "retired": false
@@ -599,7 +599,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 94,
       "base_price": 20000000,
       "stats": "Wkts: 208, Econ: 6.88, Avg: 22.8",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Shaheen_Afridi_jogging_Sri_Lanka_vs_Pakistan_-_2nd_TEST_Match_-_SSC%2C_Colombo_%28cropped%29.jpg/330px-Shaheen_Afridi_jogging_Sri_Lanka_vs_Pakistan_-_2nd_TEST_Match_-_SSC%2C_Colombo_%28cropped%29.jpg",
       "overseas": true,
       "country": "Pakistan",
       "retired": false
@@ -611,7 +611,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 93,
       "base_price": 20000000,
       "stats": "Runs: 6260 (SR 148.8), Dismissals: 147",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Rishabh_Pant.jpg/330px-Rishabh_Pant.jpg",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -623,7 +623,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 93,
       "base_price": 15000000,
       "stats": "Runs: 8240, Avg: 47.6, SR: 151.8",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Suryakumar_Yadav_in_PMO_New_Delhi.jpg/330px-Suryakumar_Yadav_in_PMO_New_Delhi.jpg",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -635,7 +635,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 93,
       "base_price": 20000000,
       "stats": "Wkts: 199, Econ: 6.82, Avg: 22.8",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/2018.02.03.22.23.14-AUSvNZL_T20_AUS_innings%2C_SCG_%2839533156665%29.jpg/330px-2018.02.03.22.23.14-AUSvNZL_T20_AUS_innings%2C_SCG_%2839533156665%29.jpg",
       "overseas": true,
       "country": "New Zealand",
       "retired": false
@@ -647,7 +647,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 93,
       "base_price": 15000000,
       "stats": "Runs: 4180 (SR 151.6), Wkts: 118 (Econ 7.48)",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/Shakib_Al_Hasan_2023_03.jpg/330px-Shakib_Al_Hasan_2023_03.jpg",
       "overseas": true,
       "country": "Bangladesh",
       "retired": false
@@ -659,7 +659,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 92,
       "base_price": 20000000,
       "stats": "Runs: 4020 (SR 149.4), Wkts: 113 (Econ 7.82)",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Hardik_Pandya_in_PMO_New_Delhi.jpg/330px-Hardik_Pandya_in_PMO_New_Delhi.jpg",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -671,7 +671,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 92,
       "base_price": 15000000,
       "stats": "Runs: 7960, Avg: 46.5, SR: 149.8",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/3/34/Shubman_Gill_2023_%28cropped%29.jpg",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -683,7 +683,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 92,
       "base_price": 10000000,
       "stats": "Wkts: 191, Econ: 7.07, Avg: 22.8",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Prime_Minister_Of_Bharat_Shri_Narendra_Damodardas_Modi_with_Mohammad_Siraj_%28cropped%29.jpg/330px-Prime_Minister_Of_Bharat_Shri_Narendra_Damodardas_Modi_with_Mohammad_Siraj_%28cropped%29.jpg",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -695,7 +695,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 92,
       "base_price": 7500000,
       "stats": "Runs: 4020 (SR 149.4), Wkts: 113 (Econ 7.82)",
-      "img": "",
+      "img": "https://static.cricbuzz.com/a/img/v1/i1/c156160/riyan-parag.jpg?d=low&p=gthumb",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -707,7 +707,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 92,
       "base_price": 10000000,
       "stats": "Wkts: 191, Econ: 7.07, Avg: 22.8",
-      "img": "",
+      "img": "https://static.cricbuzz.com/a/img/v1/i1/c846040/varun-chakaravarthy.jpg?d=low&p=gthumb",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -719,7 +719,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 92,
       "base_price": 5000000,
       "stats": "Wkts: 191, Econ: 7.07, Avg: 22.8",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Nathan_Lyon_20251017.jpg/330px-Nathan_Lyon_20251017.jpg",
       "overseas": true,
       "country": "Australia",
       "retired": false
@@ -731,7 +731,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 92,
       "base_price": 15000000,
       "stats": "Runs: 7960, Avg: 46.5, SR: 149.8",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/63/Harry_Brook_County_cricket_cropped.jpg/330px-Harry_Brook_County_cricket_cropped.jpg",
       "overseas": true,
       "country": "England",
       "retired": false
@@ -743,7 +743,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 92,
       "base_price": 20000000,
       "stats": "Wkts: 191, Econ: 7.07, Avg: 22.8",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/d/de/Jofra_Archer_%283%29.jpg",
       "overseas": true,
       "country": "England",
       "retired": false
@@ -755,7 +755,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 92,
       "base_price": 15000000,
       "stats": "Wkts: 191, Econ: 7.07, Avg: 22.8",
-      "img": "",
+      "img": "https://static.cricbuzz.com/a/img/v1/i1/c846100/anrich-nortje.jpg?d=low&p=gthumb",
       "overseas": true,
       "country": "South Africa",
       "retired": false
@@ -767,7 +767,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 92,
       "base_price": 5000000,
       "stats": "Wkts: 191, Econ: 7.07, Avg: 22.8",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Imran_Tahir.jpg/330px-Imran_Tahir.jpg",
       "overseas": true,
       "country": "South Africa",
       "retired": false
@@ -779,7 +779,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 92,
       "base_price": 15000000,
       "stats": "Runs: 6040 (SR 147.1), Dismissals: 140",
-      "img": "",
+      "img": "https://static.cricbuzz.com/a/img/v1/i1/c845526/devon-conway.jpg?d=low&p=gthumb",
       "overseas": true,
       "country": "New Zealand",
       "retired": false
@@ -791,7 +791,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 92,
       "base_price": 5000000,
       "stats": "Runs: 7960, Avg: 46.5, SR: 149.8",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/Martin_Guptill_MNZM_%28cropped%29.jpg/330px-Martin_Guptill_MNZM_%28cropped%29.jpg",
       "overseas": true,
       "country": "New Zealand",
       "retired": false
@@ -803,7 +803,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 92,
       "base_price": 10000000,
       "stats": "Runs: 4020 (SR 149.4), Wkts: 113 (Econ 7.82)",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/4/49/Mohammad_Nabi-Australia.jpg",
       "overseas": true,
       "country": "Afghanistan",
       "retired": false
@@ -815,7 +815,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 92,
       "base_price": 7500000,
       "stats": "Runs: 6040 (SR 147.1), Dismissals: 140",
-      "img": "",
+      "img": "https://static.cricbuzz.com/a/img/v1/i1/c847148/kusal-mendis.jpg?d=low&p=gthumb",
       "overseas": true,
       "country": "Sri Lanka",
       "retired": false
@@ -827,7 +827,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 92,
       "base_price": 10000000,
       "stats": "Runs: 7960, Avg: 46.5, SR: 149.8",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Fakhar_Zaman%2C_Pakistan_vs_Sri_Lanka%2C_1st_ODI%2C_2017.jpg/330px-Fakhar_Zaman%2C_Pakistan_vs_Sri_Lanka%2C_1st_ODI%2C_2017.jpg",
       "overseas": true,
       "country": "Pakistan",
       "retired": false
@@ -839,7 +839,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 91,
       "base_price": 15000000,
       "stats": "Wkts: 182, Econ: 7.01, Avg: 22.7",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/Mohammed_Shami_Arjuna_Award_%28cropped%29.jpg/330px-Mohammed_Shami_Arjuna_Award_%28cropped%29.jpg",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -851,7 +851,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 91,
       "base_price": 7500000,
       "stats": "Wkts: 182, Econ: 7.01, Avg: 22.7",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Tushar_Deshpande.jpg/330px-Tushar_Deshpande.jpg",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -863,7 +863,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 91,
       "base_price": 20000000,
       "stats": "Runs: 3860 (SR 153.2), Wkts: 108 (Econ 7.71)",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/3_14_Captain_Ben_%28cropped%29_%28cropped%29.jpg/330px-3_14_Captain_Ben_%28cropped%29_%28cropped%29.jpg",
       "overseas": true,
       "country": "England",
       "retired": false
@@ -875,7 +875,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 91,
       "base_price": 15000000,
       "stats": "Wkts: 182, Econ: 7.01, Avg: 22.7",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/Mark_wood_bowling_boxing_day_test.jpg/330px-Mark_wood_bowling_boxing_day_test.jpg",
       "overseas": true,
       "country": "England",
       "retired": false
@@ -887,7 +887,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 91,
       "base_price": 7500000,
       "stats": "Runs: 7680, Avg: 45.5, SR: 147.8",
-      "img": "",
+      "img": "https://static.cricbuzz.com/a/img/v1/i1/c847160/pathum-nissanka.jpg?d=low&p=gthumb",
       "overseas": true,
       "country": "Sri Lanka",
       "retired": false
@@ -899,7 +899,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 91,
       "base_price": 7500000,
       "stats": "Wkts: 182, Econ: 7.01, Avg: 22.7",
-      "img": "",
+      "img": "https://static.cricbuzz.com/a/img/v1/i1/c226338/nuwan-thushara.jpg?d=low&p=gthumb",
       "overseas": true,
       "country": "Sri Lanka",
       "retired": false
@@ -911,7 +911,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 91,
       "base_price": 15000000,
       "stats": "Wkts: 182, Econ: 7.01, Avg: 22.7",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Naseem_Shah%2C_Sri_Lanka_vs_Pakistan_-_2nd_TEST_Match_-_SSC%2C_Colombo_%28cropped%29.jpg/330px-Naseem_Shah%2C_Sri_Lanka_vs_Pakistan_-_2nd_TEST_Match_-_SSC%2C_Colombo_%28cropped%29.jpg",
       "overseas": true,
       "country": "Pakistan",
       "retired": false
@@ -923,7 +923,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 91,
       "base_price": 10000000,
       "stats": "Wkts: 182, Econ: 7.01, Avg: 22.7",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Mustafizur_Rahman_%284%29_%28cropped%29.jpg/330px-Mustafizur_Rahman_%284%29_%28cropped%29.jpg",
       "overseas": true,
       "country": "Bangladesh",
       "retired": false
@@ -935,7 +935,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 90,
       "base_price": 15000000,
       "stats": "Runs: 5600 (SR 143.6), Dismissals: 127",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/Sanju_Samson_in_PMO_New_Delhi.jpg/330px-Sanju_Samson_in_PMO_New_Delhi.jpg",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -947,7 +947,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 90,
       "base_price": 10000000,
       "stats": "Runs: 5600 (SR 143.6), Dismissals: 127",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Dinesh.Karthik.jpg/330px-Dinesh.Karthik.jpg",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -959,7 +959,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 90,
       "base_price": 5000000,
       "stats": "Wkts: 174, Econ: 6.96, Avg: 22.7",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Piyush_Chawla_2019.jpg/330px-Piyush_Chawla_2019.jpg",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -971,7 +971,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 90,
       "base_price": 5000000,
       "stats": "Runs: 7400, Avg: 44.4, SR: 154.2",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Shaun_Marsh.jpg/330px-Shaun_Marsh.jpg",
       "overseas": true,
       "country": "Australia",
       "retired": false
@@ -983,7 +983,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 90,
       "base_price": 15000000,
       "stats": "Runs: 5600 (SR 143.6), Dismissals: 127",
-      "img": "",
+      "img": "https://static.cricbuzz.com/a/img/v1/i1/c846116/tristan-stubbs.jpg?d=low&p=gthumb",
       "overseas": true,
       "country": "South Africa",
       "retired": false
@@ -995,7 +995,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 90,
       "base_price": 15000000,
       "stats": "Wkts: 174, Econ: 6.96, Avg: 22.7",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Tim_Southee_ONZM_%28cropped%29.jpg/330px-Tim_Southee_ONZM_%28cropped%29.jpg",
       "overseas": true,
       "country": "New Zealand",
       "retired": false
@@ -1007,7 +1007,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 90,
       "base_price": 10000000,
       "stats": "Runs: 3700 (SR 151.0), Wkts: 103 (Econ 7.6)",
-      "img": "",
+      "img": "https://static.cricbuzz.com/a/img/v1/i1/c845424/azmatullah-omarzai.jpg?d=low&p=gthumb",
       "overseas": true,
       "country": "Afghanistan",
       "retired": false
@@ -1019,7 +1019,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 90,
       "base_price": 10000000,
       "stats": "Runs: 7400, Avg: 44.4, SR: 154.2",
-      "img": "",
+      "img": "https://static.cricbuzz.com/a/img/v1/i1/c847180/charith-asalanka.jpg?d=low&p=gthumb",
       "overseas": true,
       "country": "Sri Lanka",
       "retired": false
@@ -1031,7 +1031,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 90,
       "base_price": 10000000,
       "stats": "Wkts: 174, Econ: 6.96, Avg: 22.7",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/1_53_Haris_Rauf.jpg/330px-1_53_Haris_Rauf.jpg",
       "overseas": true,
       "country": "Pakistan",
       "retired": false
@@ -1043,7 +1043,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 89,
       "base_price": 10000000,
       "stats": "Wkts: 215, Econ: 7.21, Avg: 23.7",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Prime_Minister_Of_Bharat_Shri_Narendra_Damodardas_Modi_with_Arshdeep_Singh_Family_%28Cropped%29.jpg/330px-Prime_Minister_Of_Bharat_Shri_Narendra_Damodardas_Modi_with_Arshdeep_Singh_Family_%28Cropped%29.jpg",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -1055,7 +1055,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 89,
       "base_price": 15000000,
       "stats": "Wkts: 215, Econ: 7.21, Avg: 23.7",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/2018_Josh_Hazlewood_%28cropped%29.jpg/330px-2018_Josh_Hazlewood_%28cropped%29.jpg",
       "overseas": true,
       "country": "Australia",
       "retired": false
@@ -1067,7 +1067,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 89,
       "base_price": 7500000,
       "stats": "Runs: 8320, Avg: 45.8, SR: 152.2",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/AARON_FINCH_%286299558883%29.jpg/330px-AARON_FINCH_%286299558883%29.jpg",
       "overseas": true,
       "country": "Australia",
       "retired": false
@@ -1079,7 +1079,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 89,
       "base_price": 15000000,
       "stats": "Runs: 6380 (SR 147.4), Dismissals: 160",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/2_05_Bairstow_out.jpg/330px-2_05_Bairstow_out.jpg",
       "overseas": true,
       "country": "England",
       "retired": false
@@ -1091,7 +1091,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 89,
       "base_price": 10000000,
       "stats": "Wkts: 215, Econ: 7.21, Avg: 23.7",
-      "img": "",
+      "img": "https://static.cricbuzz.com/a/img/v1/i1/c352447/naveen-ul-haq.jpg?d=low&p=gthumb",
       "overseas": true,
       "country": "Afghanistan",
       "retired": false
@@ -1103,7 +1103,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 89,
       "base_price": 10000000,
       "stats": "Runs: 4340 (SR 148.8), Wkts: 112 (Econ 7.94)",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Shadab_Khan.png/330px-Shadab_Khan.png",
       "overseas": true,
       "country": "Pakistan",
       "retired": false
@@ -1115,7 +1115,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 89,
       "base_price": 5000000,
       "stats": "Wkts: 215, Econ: 7.21, Avg: 23.7",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/5/5a/Farid_with_Saeed_%28cropped%29.jpg",
       "overseas": true,
       "country": "Pakistan",
       "retired": false
@@ -1127,7 +1127,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 89,
       "base_price": 8000000,
       "stats": "Runs: 8320, Avg: 45.8, SR: 152.2",
-      "img": "",
+      "img": "https://static.cricbuzz.com/a/img/v1/i1/c182026/piyush-singh.jpg?d=low&p=gthumb",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -1139,7 +1139,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 89,
       "base_price": 5000000,
       "stats": "Runs: 6380 (SR 147.4), Dismissals: 160",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/en/thumb/8/81/IDFC_Ranji_trophy_logo.png/330px-IDFC_Ranji_trophy_logo.png",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -1151,7 +1151,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 88,
       "base_price": 15000000,
       "stats": "Runs: 8040, Avg: 44.8, SR: 150.2",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/6/69/KL_Rahul_at_Femina_Miss_India_2018_Grand_Finale_%28cropped%29.jpg",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -1163,7 +1163,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 88,
       "base_price": 10000000,
       "stats": "Wkts: 206, Econ: 7.15, Avg: 23.6",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/Yuzvendra_Chahal_in_PMO_New_Delhi.jpg/330px-Yuzvendra_Chahal_in_PMO_New_Delhi.jpg",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -1175,7 +1175,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 88,
       "base_price": 10000000,
       "stats": "Wkts: 206, Econ: 7.15, Avg: 23.6",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Adam_Zampa_2023.jpg/330px-Adam_Zampa_2023.jpg",
       "overseas": true,
       "country": "Australia",
       "retired": false
@@ -1187,7 +1187,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 88,
       "base_price": 7500000,
       "stats": "Runs: 6160 (SR 145.6), Dismissals: 153",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Josh_Inglis_The_Test_clip.png/330px-Josh_Inglis_The_Test_clip.png",
       "overseas": true,
       "country": "Australia",
       "retired": false
@@ -1199,7 +1199,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 88,
       "base_price": 15000000,
       "stats": "Runs: 6160 (SR 145.6), Dismissals: 153",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/QUINTON_DE_KOCK_%2815681398316%29.jpg/330px-QUINTON_DE_KOCK_%2815681398316%29.jpg",
       "overseas": true,
       "country": "South Africa",
       "retired": false
@@ -1211,7 +1211,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 88,
       "base_price": 5000000,
       "stats": "Runs: 8040, Avg: 44.8, SR: 150.2",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Hashim_Amla.jpg/330px-Hashim_Amla.jpg",
       "overseas": true,
       "country": "South Africa",
       "retired": false
@@ -1223,7 +1223,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 88,
       "base_price": 10000000,
       "stats": "Wkts: 206, Econ: 7.15, Avg: 23.6",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Mujeeb_Ur_Rahman_celebrating.jpg/330px-Mujeeb_Ur_Rahman_celebrating.jpg",
       "overseas": true,
       "country": "Afghanistan",
       "retired": false
@@ -1235,7 +1235,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 88,
       "base_price": 10000000,
       "stats": "Wkts: 206, Econ: 7.15, Avg: 23.6",
-      "img": "",
+      "img": "https://static.cricbuzz.com/a/img/v1/i1/c616569/noor-ahmad.jpg?d=low&p=gthumb",
       "overseas": true,
       "country": "Afghanistan",
       "retired": false
@@ -1247,7 +1247,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 88,
       "base_price": 10000000,
       "stats": "Wkts: 206, Econ: 7.15, Avg: 23.6",
-      "img": "",
+      "img": "https://static.cricbuzz.com/a/img/v1/i1/c351880/dilshan-madushanka.jpg?d=low&p=gthumb",
       "overseas": true,
       "country": "Sri Lanka",
       "retired": false
@@ -1259,7 +1259,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 88,
       "base_price": 7500000,
       "stats": "Runs: 4180 (SR 146.6), Wkts: 107 (Econ 7.83)",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Cricketers_chatting_during_Sri_Lanka_vs_Pakistan_-_2nd_TEST_Match_-_SSC%2C_Colombo%2C_2023_%28cropped_-_Mathews%29.jpg/330px-Cricketers_chatting_during_Sri_Lanka_vs_Pakistan_-_2nd_TEST_Match_-_SSC%2C_Colombo%2C_2023_%28cropped_-_Mathews%29.jpg",
       "overseas": true,
       "country": "Sri Lanka",
       "retired": false
@@ -1271,7 +1271,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 87,
       "base_price": 15000000,
       "stats": "Runs: 7760, Avg: 43.7, SR: 148.2",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Yashasvi_Jaiswal_in_PMO_New_Delhi.jpg/330px-Yashasvi_Jaiswal_in_PMO_New_Delhi.jpg",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -1283,7 +1283,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 87,
       "base_price": 10000000,
       "stats": "Wkts: 198, Econ: 7.1, Avg: 23.6",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Kuldeep_Yadav_in_PMO_New_Delhi.jpg/330px-Kuldeep_Yadav_in_PMO_New_Delhi.jpg",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -1295,7 +1295,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 87,
       "base_price": 15000000,
       "stats": "Runs: 7760, Avg: 43.7, SR: 148.2",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/260328_D3_Jake_Fraser-McGurk_01.jpg/330px-260328_D3_Jake_Fraser-McGurk_01.jpg",
       "overseas": true,
       "country": "Australia",
       "retired": false
@@ -1307,7 +1307,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 87,
       "base_price": 15000000,
       "stats": "Runs: 5940 (SR 143.9), Dismissals: 146",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/2_02_Phil_Salt.jpg/330px-2_02_Phil_Salt.jpg",
       "overseas": true,
       "country": "England",
       "retired": false
@@ -1319,7 +1319,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 87,
       "base_price": 10000000,
       "stats": "Runs: 7760, Avg: 43.7, SR: 148.2",
-      "img": "",
+      "img": "https://static.cricbuzz.com/a/img/v1/i1/c845521/glenn-phillips.jpg?d=low&p=gthumb",
       "overseas": true,
       "country": "New Zealand",
       "retired": false
@@ -1331,7 +1331,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 87,
       "base_price": 10000000,
       "stats": "Wkts: 198, Econ: 7.1, Avg: 23.6",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Fazalhaq_Farooqi.jpg/330px-Fazalhaq_Farooqi.jpg",
       "overseas": true,
       "country": "Afghanistan",
       "retired": false
@@ -1343,7 +1343,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 87,
       "base_price": 5000000,
       "stats": "Runs: 7760, Avg: 43.7, SR: 148.2",
-      "img": "",
+      "img": "https://static.cricbuzz.com/a/img/v1/i1/c170769/dale-steyn.jpg?d=low&p=gthumb",
       "overseas": true,
       "country": "England",
       "retired": false
@@ -1355,7 +1355,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 87,
       "base_price": 5000000,
       "stats": "Runs: 7760, Avg: 43.7, SR: 148.2",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Murali_kartik_bowling.jpg/330px-Murali_kartik_bowling.jpg",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -1367,7 +1367,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 86,
       "base_price": 15000000,
       "stats": "Runs: 7480, Avg: 42.7, SR: 146.2",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Travis_Head_bowling_at_Perth_Stadium%2C_First_Test_Australia_versus_West_Indies%2C_2_December_2022_03_%28cropped%29.jpg/330px-Travis_Head_bowling_at_Perth_Stadium%2C_First_Test_Australia_versus_West_Indies%2C_2_December_2022_03_%28cropped%29.jpg",
       "overseas": true,
       "country": "Australia",
       "retired": false
@@ -1379,7 +1379,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 86,
       "base_price": 20000000,
       "stats": "Runs: 3860 (SR 148.2), Wkts: 97 (Econ 8.06)",
-      "img": "",
+      "img": "https://static.cricbuzz.com/a/img/v1/i1/c845511/daryl-mitchell.jpg?d=low&p=gthumb",
       "overseas": true,
       "country": "New Zealand",
       "retired": false
@@ -1391,7 +1391,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 86,
       "base_price": 7500000,
       "stats": "Runs: 7480, Avg: 42.7, SR: 146.2",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Ibrahim_Zadran.jpg/330px-Ibrahim_Zadran.jpg",
       "overseas": true,
       "country": "Afghanistan",
       "retired": false
@@ -1403,7 +1403,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 86,
       "base_price": 10000000,
       "stats": "Wkts: 189, Econ: 7.34, Avg: 23.6",
-      "img": "",
+      "img": "https://static.cricbuzz.com/a/img/v1/i1/c847197/maheesh-theekshana.jpg?d=low&p=gthumb",
       "overseas": true,
       "country": "Sri Lanka",
       "retired": false
@@ -1415,7 +1415,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 86,
       "base_price": 10000000,
       "stats": "Wkts: 189, Econ: 7.34, Avg: 23.6",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/0/06/Mohammad_Amir.png",
       "overseas": true,
       "country": "Pakistan",
       "retired": false
@@ -1427,7 +1427,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 86,
       "base_price": 7500000,
       "stats": "Runs: 7480, Avg: 42.7, SR: 146.2",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/Tamim_Iqbal_Khan.jpg/330px-Tamim_Iqbal_Khan.jpg",
       "overseas": true,
       "country": "Bangladesh",
       "retired": false
@@ -1439,7 +1439,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 86,
       "base_price": 5000000,
       "stats": "Wkts: 189, Econ: 7.34, Avg: 23.6",
-      "img": "",
+      "img": "https://static.cricbuzz.com/a/img/v1/i1/c171012/ambati-rayudu.jpg?d=low&p=gthumb",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -1463,7 +1463,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 85,
       "base_price": 10000000,
       "stats": "Runs: 7200, Avg: 41.6, SR: 144.2",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Shreyas_Iyer_snapped_at_the_airport_%28Cropped%29.jpg/330px-Shreyas_Iyer_snapped_at_the_airport_%28Cropped%29.jpg",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -1475,7 +1475,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 85,
       "base_price": 10000000,
       "stats": "Runs: 3700 (SR 146.0), Wkts: 92 (Econ 7.95)",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/The_Minister_of_State_for_Youth_Affairs_and_Sports_%28Independent_Charge%29%2C_Shri_Sarbananda_Sonowal_conferring_the_Arjuna_Award_on_cricketer_Ravichandran_Ashwin%2C_in_New_Delhi_on_July_31%2C_2015_cropped.jpg/330px-thumbnail.jpg",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -1487,7 +1487,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 85,
       "base_price": 10000000,
       "stats": "Runs: 5500 (SR 140.4), Dismissals: 133",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Ishan_Kishan.jpg/330px-Ishan_Kishan.jpg",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -1499,7 +1499,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 85,
       "base_price": 7500000,
       "stats": "Runs: 7200, Avg: 41.6, SR: 144.2",
-      "img": "",
+      "img": "https://static.cricbuzz.com/a/img/v1/i1/c717782/sai-sudharsan.jpg?d=low&p=gthumb",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -1511,7 +1511,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 85,
       "base_price": 5000000,
       "stats": "Wkts: 181, Econ: 7.29, Avg: 23.6",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/9/93/Umran_Malik_in_GGM.jpg",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -1523,7 +1523,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 85,
       "base_price": 7500000,
       "stats": "Wkts: 181, Econ: 7.29, Avg: 23.6",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/1_13_Adil_Rashid_%28cropped%29.jpg/330px-1_13_Adil_Rashid_%28cropped%29.jpg",
       "overseas": true,
       "country": "England",
       "retired": false
@@ -1535,7 +1535,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 85,
       "base_price": 15000000,
       "stats": "Runs: 3700 (SR 146.0), Wkts: 92 (Econ 7.95)",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Aiden_Markram_interview_after_WTC_final_2025_%28cropped%29.png/330px-Aiden_Markram_interview_after_WTC_final_2025_%28cropped%29.png",
       "overseas": true,
       "country": "South Africa",
       "retired": false
@@ -1547,7 +1547,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 85,
       "base_price": 15000000,
       "stats": "Runs: 3700 (SR 146.0), Wkts: 92 (Econ 7.95)",
-      "img": "",
+      "img": "https://static.cricbuzz.com/a/img/v1/i1/c845516/rovman-powell.jpg?d=low&p=gthumb",
       "overseas": true,
       "country": "West Indies",
       "retired": false
@@ -1559,7 +1559,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 85,
       "base_price": 20000000,
       "stats": "Runs: 7200, Avg: 41.6, SR: 144.2",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Kane_Williamson_in_2019.jpg/330px-Kane_Williamson_in_2019.jpg",
       "overseas": true,
       "country": "New Zealand",
       "retired": false
@@ -1571,7 +1571,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 85,
       "base_price": 10000000,
       "stats": "Runs: 5500 (SR 140.4), Dismissals: 133",
-      "img": "",
+      "img": "https://static.cricbuzz.com/a/img/v1/i1/c616556/rahmanullah-gurbaz.jpg?d=low&p=gthumb",
       "overseas": true,
       "country": "Afghanistan",
       "retired": false
@@ -1583,7 +1583,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 85,
       "base_price": 10000000,
       "stats": "Runs: 3700 (SR 146.0), Wkts: 92 (Econ 7.95)",
-      "img": "",
+      "img": "https://static.cricbuzz.com/a/img/v1/i1/c847173/kamindu-mendis.jpg?d=low&p=gthumb",
       "overseas": true,
       "country": "Sri Lanka",
       "retired": false
@@ -1595,7 +1595,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 84,
       "base_price": 5000000,
       "stats": "Wkts: 172, Econ: 7.24, Avg: 24.5",
-      "img": "",
+      "img": "https://static.cricbuzz.com/a/img/v1/i1/c182026/yash-dayal.jpg?d=low&p=gthumb",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -1607,7 +1607,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 84,
       "base_price": 5000000,
       "stats": "Runs: 5280 (SR 144.2), Dismissals: 126",
-      "img": "",
+      "img": "https://static.cricbuzz.com/a/img/v1/i1/c226474/jitesh-sharma.jpg?d=low&p=gthumb",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -1619,7 +1619,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 84,
       "base_price": 3000000,
       "stats": "Runs: 3540 (SR 143.8), Wkts: 101 (Econ 7.84)",
-      "img": "",
+      "img": "https://static.cricbuzz.com/a/img/v1/i1/c155147/shivam-mavi.jpg?d=low&p=gthumb",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -1631,7 +1631,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 84,
       "base_price": 2000000,
       "stats": "Runs: 5280 (SR 144.2), Dismissals: 126",
-      "img": "",
+      "img": "https://static.cricbuzz.com/a/img/v1/i1/c182026/vishnu-vinod.jpg?d=low&p=gthumb",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -1643,7 +1643,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 84,
       "base_price": 2000000,
       "stats": "Runs: 6920, Avg: 43.0, SR: 142.2",
-      "img": "",
+      "img": "https://static.cricbuzz.com/a/img/v1/i1/c593802/ricky-bhui.jpg?d=low&p=gthumb",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -1655,7 +1655,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 84,
       "base_price": 5000000,
       "stats": "Wkts: 172, Econ: 7.24, Avg: 24.5",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Amit_Mishra.jpg/330px-Amit_Mishra.jpg",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -1667,7 +1667,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 84,
       "base_price": 2000000,
       "stats": "Runs: 5280 (SR 144.2), Dismissals: 126",
-      "img": "",
+      "img": "https://static.cricbuzz.com/a/img/v1/i1/c169694/sheldon-jackson.jpg?d=low&p=gthumb",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -1679,7 +1679,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 84,
       "base_price": 2000000,
       "stats": "Runs: 6920, Avg: 43.0, SR: 142.2",
-      "img": "",
+      "img": "https://static.cricbuzz.com/a/img/v1/i1/c226310/priyam-garg.jpg?d=low&p=gthumb",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -1691,7 +1691,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 84,
       "base_price": 5000000,
       "stats": "Runs: 5280 (SR 144.2), Dismissals: 126",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Matthew_Wade.jpg/330px-Matthew_Wade.jpg",
       "overseas": true,
       "country": "Australia",
       "retired": false
@@ -1703,7 +1703,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 84,
       "base_price": 5000000,
       "stats": "Wkts: 172, Econ: 7.24, Avg: 24.5",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/1_07_Jhye.jpg/330px-1_07_Jhye.jpg",
       "overseas": true,
       "country": "Australia",
       "retired": false
@@ -1715,7 +1715,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 84,
       "base_price": 2000000,
       "stats": "Runs: 6920, Avg: 43.0, SR: 142.2",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/1_37_Test_stars_Marcus_Harris_%28cropped%29_%28cropped%29.jpg/330px-1_37_Test_stars_Marcus_Harris_%28cropped%29_%28cropped%29.jpg",
       "overseas": true,
       "country": "Australia",
       "retired": false
@@ -1727,7 +1727,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 84,
       "base_price": 2000000,
       "stats": "Runs: 6920, Avg: 43.0, SR: 142.2",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/2018.02.03.20.04.13-AUSvNZL_T20_NZL_innings%2C_SCG_%2825557959457%29.jpg/330px-2018.02.03.20.04.13-AUSvNZL_T20_NZL_innings%2C_SCG_%2825557959457%29.jpg",
       "overseas": true,
       "country": "Australia",
       "retired": false
@@ -1739,7 +1739,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 84,
       "base_price": 5000000,
       "stats": "Wkts: 172, Econ: 7.24, Avg: 24.5",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/3_57_Rehan_Ahmed.jpg/330px-3_57_Rehan_Ahmed.jpg",
       "overseas": true,
       "country": "England",
       "retired": false
@@ -1751,7 +1751,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 84,
       "base_price": 7500000,
       "stats": "Runs: 3540 (SR 143.8), Wkts: 101 (Econ 7.84)",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dc/David_Willey_%2851223172836%29_%28cropped%29.jpg/330px-David_Willey_%2851223172836%29_%28cropped%29.jpg",
       "overseas": true,
       "country": "England",
       "retired": false
@@ -1763,7 +1763,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 84,
       "base_price": 3000000,
       "stats": "Wkts: 172, Econ: 7.24, Avg: 24.5",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/2_20_Saqib_Mahmood.jpg/330px-2_20_Saqib_Mahmood.jpg",
       "overseas": true,
       "country": "England",
       "retired": false
@@ -1775,7 +1775,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 84,
       "base_price": 7500000,
       "stats": "Wkts: 172, Econ: 7.24, Avg: 24.5",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/New_face_6-_Keshav_Maharaj.jpg/330px-New_face_6-_Keshav_Maharaj.jpg",
       "overseas": true,
       "country": "South Africa",
       "retired": false
@@ -1787,7 +1787,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 84,
       "base_price": 2000000,
       "stats": "Runs: 6920, Avg: 43.0, SR: 142.2",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Temba_Bavuma_Breaks_Silence_on_Injury_Comeback%2C_Brevis%E2%80%99_R16_5m_Shock_%26_SA20_Snub%21%2C_2025_%28cropped%29.png/330px-Temba_Bavuma_Breaks_Silence_on_Injury_Comeback%2C_Brevis%E2%80%99_R16_5m_Shock_%26_SA20_Snub%21%2C_2025_%28cropped%29.png",
       "overseas": true,
       "country": "South Africa",
       "retired": false
@@ -1799,7 +1799,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 84,
       "base_price": 7500000,
       "stats": "Runs: 5280 (SR 144.2), Dismissals: 126",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Shai_Hope.jpg/330px-Shai_Hope.jpg",
       "overseas": true,
       "country": "West Indies",
       "retired": false
@@ -1811,7 +1811,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 84,
       "base_price": 3000000,
       "stats": "Runs: 3540 (SR 143.8), Wkts: 101 (Econ 7.84)",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Roston_Chase_batting_at_Perth_Stadium%2C_First_Test_Australia_versus_West_Indies%2C_2_December_2022_09.jpg/330px-Roston_Chase_batting_at_Perth_Stadium%2C_First_Test_Australia_versus_West_Indies%2C_2_December_2022_09.jpg",
       "overseas": true,
       "country": "West Indies",
       "retired": false
@@ -1823,7 +1823,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 84,
       "base_price": 3000000,
       "stats": "Wkts: 172, Econ: 7.24, Avg: 24.5",
-      "img": "",
+      "img": "https://static.cricbuzz.com/a/img/v1/i1/c244723/obed-mccoy.jpg?d=low&p=gthumb",
       "overseas": true,
       "country": "West Indies",
       "retired": false
@@ -1835,7 +1835,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 84,
       "base_price": 7500000,
       "stats": "Runs: 6920, Avg: 43.0, SR: 142.2",
-      "img": "",
+      "img": "https://static.cricbuzz.com/a/img/v1/i1/c845498/finn-allen.jpg?d=low&p=gthumb",
       "overseas": true,
       "country": "New Zealand",
       "retired": false
@@ -1847,7 +1847,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 84,
       "base_price": 10000000,
       "stats": "Runs: 3540 (SR 143.8), Wkts: 101 (Econ 7.84)",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Kyle_Jamieson_2015_%28cropped%29.jpg/330px-Kyle_Jamieson_2015_%28cropped%29.jpg",
       "overseas": true,
       "country": "New Zealand",
       "retired": false
@@ -1859,7 +1859,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 84,
       "base_price": 3000000,
       "stats": "Runs: 6920, Avg: 43.0, SR: 142.2",
-      "img": "",
+      "img": "https://static.cricbuzz.com/a/img/v1/i1/c244750/hazratullah-zazai.jpg?d=low&p=gthumb",
       "overseas": true,
       "country": "Afghanistan",
       "retired": false
@@ -1871,7 +1871,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 84,
       "base_price": 2000000,
       "stats": "Runs: 5280 (SR 144.2), Dismissals: 126",
-      "img": "",
+      "img": "https://static.cricbuzz.com/a/img/v1/i1/c616557/ikram-alikhil.jpg?d=low&p=gthumb",
       "overseas": true,
       "country": "Afghanistan",
       "retired": false
@@ -1883,7 +1883,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 84,
       "base_price": 5000000,
       "stats": "Runs: 5280 (SR 144.2), Dismissals: 126",
-      "img": "",
+      "img": "https://static.cricbuzz.com/a/img/v1/i1/c847150/kusal-perera.jpg?d=low&p=gthumb",
       "overseas": true,
       "country": "Sri Lanka",
       "retired": false
@@ -1895,7 +1895,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 84,
       "base_price": 20000000,
       "stats": "Runs: 6920, Avg: 43.0, SR: 142.2",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Babar_azam_2023.jpg/330px-Babar_azam_2023.jpg",
       "overseas": true,
       "country": "Pakistan",
       "retired": false
@@ -1907,7 +1907,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 84,
       "base_price": 5000000,
       "stats": "Wkts: 172, Econ: 7.24, Avg: 24.5",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/Hasan_ali_%28cropped%29.jpg/330px-Hasan_ali_%28cropped%29.jpg",
       "overseas": true,
       "country": "Pakistan",
       "retired": false
@@ -1919,7 +1919,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 84,
       "base_price": 5000000,
       "stats": "Runs: 3540 (SR 143.8), Wkts: 101 (Econ 7.84)",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/Mahmudullah_Riyad_%282%29_%28cropped%29.jpg/330px-Mahmudullah_Riyad_%282%29_%28cropped%29.jpg",
       "overseas": true,
       "country": "Bangladesh",
       "retired": false
@@ -1931,7 +1931,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 83,
       "base_price": 5000000,
       "stats": "Wkts: 163, Econ: 7.48, Avg: 24.5",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Deepak_Chahar.jpg/330px-Deepak_Chahar.jpg",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -1943,7 +1943,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 83,
       "base_price": 5000000,
       "stats": "Wkts: 163, Econ: 7.48, Avg: 24.5",
-      "img": "",
+      "img": "https://static.cricbuzz.com/a/img/v1/i1/c594343/mohit-sharma.jpg?d=low&p=gthumb",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -1955,7 +1955,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 83,
       "base_price": 3000000,
       "stats": "Runs: 3380 (SR 147.6), Wkts: 96 (Econ 8.18)",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Vijay_Shankar_4.jpg/330px-Vijay_Shankar_4.jpg",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -1967,7 +1967,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 83,
       "base_price": 5000000,
       "stats": "Runs: 5060 (SR 142.4), Dismissals: 119",
-      "img": "",
+      "img": "https://static.cricbuzz.com/a/img/v1/i1/c591954/dhruv-jurel.jpg?d=low&p=gthumb",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -1979,7 +1979,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 83,
       "base_price": 3000000,
       "stats": "Runs: 5060 (SR 142.4), Dismissals: 119",
-      "img": "",
+      "img": "https://static.cricbuzz.com/a/img/v1/i1/c226515/prabhsimran-singh.jpg?d=low&p=gthumb",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -1991,7 +1991,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 83,
       "base_price": 3000000,
       "stats": "Runs: 5060 (SR 142.4), Dismissals: 119",
-      "img": "",
+      "img": "https://static.cricbuzz.com/a/img/v1/i1/c182026/abishek-porel.jpg?d=low&p=gthumb",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -2003,7 +2003,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 83,
       "base_price": 3000000,
       "stats": "Runs: 3380 (SR 147.6), Wkts: 96 (Econ 8.18)",
-      "img": "",
+      "img": "https://static.cricbuzz.com/a/img/v1/i1/c156045/krishnappa-gowtham.jpg?d=low&p=gthumb",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -2015,7 +2015,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 83,
       "base_price": 2000000,
       "stats": "Wkts: 163, Econ: 7.48, Avg: 24.5",
-      "img": "",
+      "img": "https://static.cricbuzz.com/a/img/v1/i1/c226389/shahbaz-nadeem.jpg?d=low&p=gthumb",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -2027,7 +2027,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 83,
       "base_price": 15000000,
       "stats": "Runs: 3380 (SR 147.6), Wkts: 96 (Econ 8.18)",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Glen_Maxwell_2026_%28cropped%29.jpg/330px-Glen_Maxwell_2026_%28cropped%29.jpg",
       "overseas": true,
       "country": "Australia",
       "retired": false
@@ -2039,7 +2039,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 83,
       "base_price": 3000000,
       "stats": "Wkts: 163, Econ: 7.48, Avg: 24.5",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/2018.02.03.19.21.13-AUSvNZL_T20_NZL_innings%2C_SCG-0002_%2840429045331%29_%28cropped%29.jpg/330px-2018.02.03.19.21.13-AUSvNZL_T20_NZL_innings%2C_SCG-0002_%2840429045331%29_%28cropped%29.jpg",
       "overseas": true,
       "country": "Australia",
       "retired": false
@@ -2051,7 +2051,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 83,
       "base_price": 2000000,
       "stats": "Runs: 5060 (SR 142.4), Dismissals: 119",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Peter_Handscomb_20251017.jpg/330px-Peter_Handscomb_20251017.jpg",
       "overseas": true,
       "country": "Australia",
       "retired": false
@@ -2063,7 +2063,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 83,
       "base_price": 2000000,
       "stats": "Wkts: 163, Econ: 7.48, Avg: 24.5",
-      "img": "",
+      "img": "https://static.cricbuzz.com/a/img/v1/i1/c156210/joel-paris.jpg?d=low&p=gthumb",
       "overseas": true,
       "country": "Australia",
       "retired": false
@@ -2075,7 +2075,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 83,
       "base_price": 7500000,
       "stats": "Wkts: 163, Econ: 7.48, Avg: 24.5",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/3/34/Reece_Topley_%28cropped%29.png",
       "overseas": true,
       "country": "England",
       "retired": false
@@ -2087,7 +2087,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 83,
       "base_price": 2000000,
       "stats": "Wkts: 163, Econ: 7.48, Avg: 24.5",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Richard_Gleeson.jpg/330px-Richard_Gleeson.jpg",
       "overseas": true,
       "country": "England",
       "retired": false
@@ -2099,7 +2099,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 83,
       "base_price": 15000000,
       "stats": "Runs: 6640, Avg: 42.0, SR: 148.6",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/David_Miller_2025_interview_%28cropped%29.png/330px-David_Miller_2025_interview_%28cropped%29.png",
       "overseas": true,
       "country": "South Africa",
       "retired": false
@@ -2111,7 +2111,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 83,
       "base_price": 15000000,
       "stats": "Runs: 6640, Avg: 42.0, SR: 148.6",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Faf_du_Plessis_2019_Boxing_Day.jpg/330px-Faf_du_Plessis_2019_Boxing_Day.jpg",
       "overseas": true,
       "country": "South Africa",
       "retired": false
@@ -2123,7 +2123,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 83,
       "base_price": 2000000,
       "stats": "Runs: 6640, Avg: 42.0, SR: 148.6",
-      "img": "",
+      "img": "https://static.cricbuzz.com/a/img/v1/i1/c597838/matthew-breetzke.jpg?d=low&p=gthumb",
       "overseas": true,
       "country": "South Africa",
       "retired": false
@@ -2135,7 +2135,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 83,
       "base_price": 2000000,
       "stats": "Runs: 6640, Avg: 42.0, SR: 148.6",
-      "img": "",
+      "img": "https://static.cricbuzz.com/a/img/v1/i1/c171078/colin-ingram.jpg?d=low&p=gthumb",
       "overseas": true,
       "country": "South Africa",
       "retired": false
@@ -2147,7 +2147,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 83,
       "base_price": 15000000,
       "stats": "Wkts: 163, Econ: 7.48, Avg: 24.5",
-      "img": "",
+      "img": "https://static.cricbuzz.com/a/img/v1/i1/c845522/shamar-joseph.jpg?d=low&p=gthumb",
       "overseas": true,
       "country": "West Indies",
       "retired": false
@@ -2159,7 +2159,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 83,
       "base_price": 2000000,
       "stats": "Wkts: 163, Econ: 7.48, Avg: 24.5",
-      "img": "",
+      "img": "https://static.cricbuzz.com/a/img/v1/i1/c170824/oshane-thomas.jpg?d=low&p=gthumb",
       "overseas": true,
       "country": "West Indies",
       "retired": false
@@ -2171,7 +2171,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 83,
       "base_price": 5000000,
       "stats": "Wkts: 163, Econ: 7.48, Avg: 24.5",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/2018.02.03.20.52.20-AUSvNZL_T20_NZL_innings%2C_SCG_%2838618201470%29_%28Sodhi_cropped%29.jpg/330px-2018.02.03.20.52.20-AUSvNZL_T20_NZL_innings%2C_SCG_%2838618201470%29_%28Sodhi_cropped%29.jpg",
       "overseas": true,
       "country": "New Zealand",
       "retired": false
@@ -2183,7 +2183,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 83,
       "base_price": 2000000,
       "stats": "Runs: 6640, Avg: 42.0, SR: 148.6",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/1_52_Young_faces_Rauf_%28cropped%29.jpg/330px-1_52_Young_faces_Rauf_%28cropped%29.jpg",
       "overseas": true,
       "country": "New Zealand",
       "retired": false
@@ -2207,7 +2207,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 83,
       "base_price": 3000000,
       "stats": "Runs: 6640, Avg: 42.0, SR: 148.6",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Hashmatullah_Shahidi.jpg/330px-Hashmatullah_Shahidi.jpg",
       "overseas": true,
       "country": "Afghanistan",
       "retired": false
@@ -2219,7 +2219,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 83,
       "base_price": 15000000,
       "stats": "Runs: 3380 (SR 147.6), Wkts: 96 (Econ 8.18)",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Waniya.jpg/330px-Waniya.jpg",
       "overseas": true,
       "country": "Sri Lanka",
       "retired": false
@@ -2231,7 +2231,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 83,
       "base_price": 3000000,
       "stats": "Runs: 5060 (SR 142.4), Dismissals: 119",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Dinesh_Chandimal_2.JPG/330px-Dinesh_Chandimal_2.JPG",
       "overseas": true,
       "country": "Sri Lanka",
       "retired": false
@@ -2243,7 +2243,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 83,
       "base_price": 5000000,
       "stats": "Runs: 3380 (SR 147.6), Wkts: 96 (Econ 8.18)",
-      "img": "",
+      "img": "https://static.cricbuzz.com/a/img/v1/i1/c352421/iftikhar-ahmed.jpg?d=low&p=gthumb",
       "overseas": true,
       "country": "Pakistan",
       "retired": false
@@ -2255,7 +2255,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 83,
       "base_price": 3000000,
       "stats": "Wkts: 163, Econ: 7.48, Avg: 24.5",
-      "img": "",
+      "img": "https://static.cricbuzz.com/a/img/v1/i1/c352429/mohammad-wasim-jr.jpg?d=low&p=gthumb",
       "overseas": true,
       "country": "Pakistan",
       "retired": false
@@ -2267,7 +2267,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 83,
       "base_price": 2000000,
       "stats": "Runs: 3380 (SR 147.6), Wkts: 96 (Econ 8.18)",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Soumya_Sarkar_%281%29_%28cropped%29.jpg/330px-Soumya_Sarkar_%281%29_%28cropped%29.jpg",
       "overseas": true,
       "country": "Bangladesh",
       "retired": false
@@ -2279,7 +2279,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 82,
       "base_price": 7500000,
       "stats": "Runs: 3220 (SR 145.4), Wkts: 91 (Econ 8.07)",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Washington_Sundar.jpg/330px-Washington_Sundar.jpg",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -2303,7 +2303,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 82,
       "base_price": 3000000,
       "stats": "Runs: 6360, Avg: 40.9, SR: 146.6",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/Abdul_Samad.png/330px-Abdul_Samad.png",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -2327,7 +2327,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 82,
       "base_price": 3000000,
       "stats": "Runs: 4840 (SR 140.7), Dismissals: 112",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Wriddhiman_Saha.jpg/330px-Wriddhiman_Saha.jpg",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -2351,7 +2351,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 82,
       "base_price": 3000000,
       "stats": "Wkts: 155, Econ: 7.43, Avg: 24.5",
-      "img": "",
+      "img": "https://static.cricbuzz.com/a/img/v1/i1/c226471/harpreet-brar.jpg?d=low&p=gthumb",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -2375,7 +2375,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 82,
       "base_price": 3000000,
       "stats": "Runs: 6360, Avg: 40.9, SR: 146.6",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Mandeep_Singh_2019.jpg/330px-Mandeep_Singh_2019.jpg",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -2387,7 +2387,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 82,
       "base_price": 2000000,
       "stats": "Wkts: 155, Econ: 7.43, Avg: 24.5",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/M_Ashwin.jpg/330px-M_Ashwin.jpg",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -2399,7 +2399,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 82,
       "base_price": 5000000,
       "stats": "Wkts: 155, Econ: 7.43, Avg: 24.5",
-      "img": "",
+      "img": "https://static.cricbuzz.com/a/img/v1/i1/c226510/mayank-markande.jpg?d=low&p=gthumb",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -2423,7 +2423,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 82,
       "base_price": 10000000,
       "stats": "Runs: 6360, Avg: 40.9, SR: 146.6",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/Joe_Root_HIP1487_%28cropped%29.jpg/330px-Joe_Root_HIP1487_%28cropped%29.jpg",
       "overseas": true,
       "country": "England",
       "retired": false
@@ -2435,7 +2435,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 82,
       "base_price": 7500000,
       "stats": "Runs: 6360, Avg: 40.9, SR: 146.6",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/Jason_Roy_with_the_Sydney_Sixers.jpg/330px-Jason_Roy_with_the_Sydney_Sixers.jpg",
       "overseas": true,
       "country": "England",
       "retired": false
@@ -2447,7 +2447,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 82,
       "base_price": 3000000,
       "stats": "Wkts: 155, Econ: 7.43, Avg: 24.5",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Tom_Craddock_%28left%29_and_Tymal_Mills_%28right%29_%28cropped%29.jpg/330px-Tom_Craddock_%28left%29_and_Tymal_Mills_%28right%29_%28cropped%29.jpg",
       "overseas": true,
       "country": "England",
       "retired": false
@@ -2459,7 +2459,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 82,
       "base_price": 15000000,
       "stats": "Runs: 3220 (SR 145.4), Wkts: 91 (Econ 8.07)",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Marco_Jansen_2022.jpg/330px-Marco_Jansen_2022.jpg",
       "overseas": true,
       "country": "South Africa",
       "retired": false
@@ -2495,7 +2495,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 82,
       "base_price": 7500000,
       "stats": "Runs: 6360, Avg: 40.9, SR: 146.6",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/16/RILEE_ROSSOUW_%2815706681502%29.jpg/330px-RILEE_ROSSOUW_%2815706681502%29.jpg",
       "overseas": true,
       "country": "South Africa",
       "retired": false
@@ -2531,7 +2531,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 82,
       "base_price": 10000000,
       "stats": "Wkts: 155, Econ: 7.43, Avg: 24.5",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Lockie_Ferguson.jpg/330px-Lockie_Ferguson.jpg",
       "overseas": true,
       "country": "New Zealand",
       "retired": false
@@ -2555,7 +2555,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 82,
       "base_price": 3000000,
       "stats": "Runs: 4840 (SR 140.7), Dismissals: 112",
-      "img": "",
+      "img": "https://static.cricbuzz.com/a/img/v1/i1/c845504/tim-seifert.jpg?d=low&p=gthumb",
       "overseas": true,
       "country": "New Zealand",
       "retired": false
@@ -2567,7 +2567,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 82,
       "base_price": 2000000,
       "stats": "Runs: 6360, Avg: 40.9, SR: 146.6",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Rahmat_Shah.jpg/330px-Rahmat_Shah.jpg",
       "overseas": true,
       "country": "Afghanistan",
       "retired": false
@@ -2579,7 +2579,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 82,
       "base_price": 5000000,
       "stats": "Runs: 6360, Avg: 40.9, SR: 146.6",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/2_14_Shafique_mugshot.jpg/330px-2_14_Shafique_mugshot.jpg",
       "overseas": true,
       "country": "Pakistan",
       "retired": false
@@ -2591,7 +2591,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 82,
       "base_price": 3000000,
       "stats": "Wkts: 155, Econ: 7.43, Avg: 24.5",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/Tanzim_Hasan_Sakib_in_2024.jpg/330px-Tanzim_Hasan_Sakib_in_2024.jpg",
       "overseas": true,
       "country": "Bangladesh",
       "retired": false
@@ -2603,7 +2603,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 82,
       "base_price": 5000000,
       "stats": "Runs: 6360, Avg: 40.9, SR: 146.6",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/RR_team_2.jpg/330px-RR_team_2.jpg",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -2615,7 +2615,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 82,
       "base_price": 3000000,
       "stats": "Runs: 3220 (SR 145.4), Wkts: 91 (Econ 8.07)",
-      "img": "",
+      "img": "https://static.cricbuzz.com/a/img/v1/i1/c182026/nathan-rossouw.jpg?d=low&p=gthumb",
       "overseas": true,
       "country": "Afghanistan",
       "retired": false
@@ -2627,7 +2627,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 82,
       "base_price": 5000000,
       "stats": "Runs: 4840 (SR 140.7), Dismissals: 112",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/en/thumb/d/d4/Punjab_Kings_Logo.svg/330px-Punjab_Kings_Logo.svg.png",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -2651,7 +2651,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 81,
       "base_price": 15000000,
       "stats": "Runs: 6080, Avg: 39.9, SR: 144.6",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Ruturaj_Gaikwad.jpeg/330px-Ruturaj_Gaikwad.jpeg",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -2663,7 +2663,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 81,
       "base_price": 7500000,
       "stats": "Wkts: 146, Econ: 7.37, Avg: 24.4",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/T_Natarajan.jpg/330px-T_Natarajan.jpg",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -2687,7 +2687,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 81,
       "base_price": 5000000,
       "stats": "Wkts: 146, Econ: 7.37, Avg: 24.4",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/Ishant_Sharma_4.jpg/330px-Ishant_Sharma_4.jpg",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -2747,7 +2747,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 81,
       "base_price": 2000000,
       "stats": "Runs: 6080, Avg: 39.9, SR: 144.6",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/MananVohra_Magic_book_of_record.jpg/330px-MananVohra_Magic_book_of_record.jpg",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -2771,7 +2771,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 81,
       "base_price": 3000000,
       "stats": "Runs: 3060 (SR 143.2), Wkts: 86 (Econ 7.96)",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Daniel_Sams_Batting.jpg/330px-Daniel_Sams_Batting.jpg",
       "overseas": true,
       "country": "Australia",
       "retired": false
@@ -2795,7 +2795,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 81,
       "base_price": 2000000,
       "stats": "Wkts: 146, Econ: 7.37, Avg: 24.4",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Todd_Murphy_01_20251017.jpg/330px-Todd_Murphy_01_20251017.jpg",
       "overseas": true,
       "country": "Australia",
       "retired": false
@@ -2807,7 +2807,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 81,
       "base_price": 5000000,
       "stats": "Wkts: 146, Econ: 7.37, Avg: 24.4",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/The_Prime_Minister_welcomes_the_World_Cup_winning_cricketers_%2852764885608%29.jpg/330px-The_Prime_Minister_welcomes_the_World_Cup_winning_cricketers_%2852764885608%29.jpg",
       "overseas": true,
       "country": "England",
       "retired": false
@@ -2819,7 +2819,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 81,
       "base_price": 5000000,
       "stats": "Runs: 6080, Avg: 39.9, SR: 144.6",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/REEZA_HENDRICKS_%2815519916117%29.jpg/330px-REEZA_HENDRICKS_%2815519916117%29.jpg",
       "overseas": true,
       "country": "South Africa",
       "retired": false
@@ -2867,7 +2867,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 81,
       "base_price": 5000000,
       "stats": "Runs: 3060 (SR 143.2), Wkts: 86 (Econ 7.96)",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Carlos_Brathwaite.jpg/330px-Carlos_Brathwaite.jpg",
       "overseas": true,
       "country": "West Indies",
       "retired": false
@@ -2879,7 +2879,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 81,
       "base_price": 10000000,
       "stats": "Wkts: 146, Econ: 7.37, Avg: 24.4",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Matt_Henry.jpg/330px-Matt_Henry.jpg",
       "overseas": true,
       "country": "New Zealand",
       "retired": false
@@ -2903,7 +2903,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 81,
       "base_price": 2000000,
       "stats": "Runs: 3060 (SR 143.2), Wkts: 86 (Econ 7.96)",
-      "img": "",
+      "img": "https://static.cricbuzz.com/a/img/v1/i1/c244771/sharafuddin-ashraf.jpg?d=low&p=gthumb",
       "overseas": true,
       "country": "Afghanistan",
       "retired": false
@@ -2939,7 +2939,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 81,
       "base_price": 3000000,
       "stats": "Wkts: 146, Econ: 7.37, Avg: 24.4",
-      "img": "",
+      "img": "https://static.cricbuzz.com/a/img/v1/i1/c594262/vijayakanth-viyaskanth.jpg?d=low&p=gthumb",
       "overseas": true,
       "country": "Sri Lanka",
       "retired": false
@@ -2951,7 +2951,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 81,
       "base_price": 5000000,
       "stats": "Runs: 6080, Avg: 39.9, SR: 144.6",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/1_37_Saud_Shakeel.jpg/330px-1_37_Saud_Shakeel.jpg",
       "overseas": true,
       "country": "Pakistan",
       "retired": false
@@ -2963,7 +2963,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 81,
       "base_price": 3000000,
       "stats": "Wkts: 146, Econ: 7.37, Avg: 24.4",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/b/b7/Hasan_Mahmud_%28cricketer%29%2C_2024_%28cropped%29.jpg",
       "overseas": true,
       "country": "Bangladesh",
       "retired": false
@@ -2987,7 +2987,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 80,
       "base_price": 15000000,
       "stats": "Runs: 2900 (SR 141.0), Wkts: 81 (Econ 8.3)",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/PM_Shri_Narendra_Modi_with_Ravindra_Jadeja_%28Cropped%29.jpg/330px-PM_Shri_Narendra_Modi_with_Ravindra_Jadeja_%28Cropped%29.jpg",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -2999,7 +2999,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 80,
       "base_price": 10000000,
       "stats": "Runs: 2900 (SR 141.0), Wkts: 81 (Econ 8.3)",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Axar_Patel_in_PMO_New_Delhi.jpg/330px-Axar_Patel_in_PMO_New_Delhi.jpg",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -3011,7 +3011,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 80,
       "base_price": 7500000,
       "stats": "Runs: 2900 (SR 141.0), Wkts: 81 (Econ 8.3)",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Abhishek_Sharma_in_action_in_Asia_Cup_2025.png/330px-Abhishek_Sharma_in_action_in_Asia_Cup_2025.png",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -3047,7 +3047,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 80,
       "base_price": 5000000,
       "stats": "Wkts: 138, Econ: 7.62, Avg: 24.4",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/2_29_Khaleel_mugshot.jpg/330px-2_29_Khaleel_mugshot.jpg",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -3071,7 +3071,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 80,
       "base_price": 7500000,
       "stats": "Runs: 2900 (SR 141.0), Wkts: 81 (Econ 8.3)",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Venkatesh_Iyer.png/330px-Venkatesh_Iyer.png",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -3083,7 +3083,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 80,
       "base_price": 5000000,
       "stats": "Wkts: 138, Econ: 7.62, Avg: 24.4",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Umesh_Yadav.jpg/330px-Umesh_Yadav.jpg",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -3131,7 +3131,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 80,
       "base_price": 3000000,
       "stats": "Wkts: 138, Econ: 7.62, Avg: 24.4",
-      "img": "",
+      "img": "https://static.cricbuzz.com/a/img/v1/i1/c781085/mukesh-choudhary.jpg?d=low&p=gthumb",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -3143,7 +3143,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 80,
       "base_price": 5000000,
       "stats": "Runs: 5800, Avg: 38.8, SR: 142.6",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/e/ef/Brisbane_Heat_vs_Melbourne_Stars_T20_7_%28cropped%29.jpg",
       "overseas": true,
       "country": "Australia",
       "retired": false
@@ -3167,7 +3167,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 80,
       "base_price": 2000000,
       "stats": "Wkts: 138, Econ: 7.62, Avg: 24.4",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/8/82/Mitchell_Swepson.png",
       "overseas": true,
       "country": "Australia",
       "retired": false
@@ -3179,7 +3179,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 80,
       "base_price": 3000000,
       "stats": "Wkts: 138, Econ: 7.62, Avg: 24.4",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Scott_Boland_01_20251017.jpg/330px-Scott_Boland_01_20251017.jpg",
       "overseas": true,
       "country": "Australia",
       "retired": false
@@ -3191,7 +3191,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 80,
       "base_price": 10000000,
       "stats": "Runs: 2900 (SR 141.0), Wkts: 81 (Econ 8.3)",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Chris_Woakes_2022.jpg/330px-Chris_Woakes_2022.jpg",
       "overseas": true,
       "country": "England",
       "retired": false
@@ -3203,7 +3203,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 80,
       "base_price": 7500000,
       "stats": "Runs: 5800, Avg: 38.8, SR: 142.6",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/3_03_Malan_continues_%28cropped%29.jpg/330px-3_03_Malan_continues_%28cropped%29.jpg",
       "overseas": true,
       "country": "England",
       "retired": false
@@ -3215,7 +3215,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 80,
       "base_price": 3000000,
       "stats": "Runs: 5800, Avg: 38.8, SR: 142.6",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/Dan_Lawrence_May_2026.jpg/330px-Dan_Lawrence_May_2026.jpg",
       "overseas": true,
       "country": "England",
       "retired": false
@@ -3239,7 +3239,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 80,
       "base_price": 3000000,
       "stats": "Wkts: 138, Econ: 7.62, Avg: 24.4",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/WAYNE_PARNELL_%2815520474620%29.jpg/330px-WAYNE_PARNELL_%2815520474620%29.jpg",
       "overseas": true,
       "country": "South Africa",
       "retired": false
@@ -3275,7 +3275,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 80,
       "base_price": 2000000,
       "stats": "Runs: 4400 (SR 137.2), Dismissals: 99",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/Tom_Blundell_in_February_2018_%28cropped%29.jpg/330px-Tom_Blundell_in_February_2018_%28cropped%29.jpg",
       "overseas": true,
       "country": "New Zealand",
       "retired": false
@@ -3299,7 +3299,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 80,
       "base_price": 5000000,
       "stats": "Runs: 5800, Avg: 38.8, SR: 142.6",
-      "img": "",
+      "img": "https://static.cricbuzz.com/a/img/v1/i1/c244846/bhanuka-rajapaksa.jpg?d=low&p=gthumb",
       "overseas": true,
       "country": "Sri Lanka",
       "retired": false
@@ -3311,7 +3311,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 80,
       "base_price": 2000000,
       "stats": "Wkts: 138, Econ: 7.62, Avg: 24.4",
-      "img": "",
+      "img": "https://static.cricbuzz.com/a/img/v1/i1/c582352/asitha-fernando.jpg?d=low&p=gthumb",
       "overseas": true,
       "country": "Sri Lanka",
       "retired": false
@@ -3323,7 +3323,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 80,
       "base_price": 3000000,
       "stats": "Wkts: 138, Econ: 7.62, Avg: 24.4",
-      "img": "",
+      "img": "https://static.cricbuzz.com/a/img/v1/i1/c182026/zaman-khan.jpg?d=low&p=gthumb",
       "overseas": true,
       "country": "Pakistan",
       "retired": false
@@ -3335,7 +3335,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 80,
       "base_price": 5000000,
       "stats": "Wkts: 138, Econ: 7.62, Avg: 24.4",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/8/83/Shoriful_Islam%2C_2024_%28cropped%29.jpg",
       "overseas": true,
       "country": "Bangladesh",
       "retired": false
@@ -3359,7 +3359,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 80,
       "base_price": 3000000,
       "stats": "Runs: 2900 (SR 141.0), Wkts: 81 (Econ 8.3)",
-      "img": "",
+      "img": "https://static.cricbuzz.com/a/img/v1/i1/c170695/dwaine-pretorius.jpg?d=low&p=gthumb",
       "overseas": true,
       "country": "Afghanistan",
       "retired": false
@@ -3371,7 +3371,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 79,
       "base_price": 10000000,
       "stats": "Runs: 3540 (SR 144.8), Wkts: 90 (Econ 8.19)",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/63/Shivam_Dube_in_PMO_New_Delhi.jpg/330px-Shivam_Dube_in_PMO_New_Delhi.jpg",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -3395,7 +3395,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 79,
       "base_price": 3000000,
       "stats": "Runs: 3540 (SR 144.8), Wkts: 90 (Econ 8.19)",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Shahrukh_Khan.jpg/330px-Shahrukh_Khan.jpg",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -3407,7 +3407,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 79,
       "base_price": 5000000,
       "stats": "Runs: 6720, Avg: 40.2, SR: 140.6",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/Cheteshwar_Pujara.jpg/330px-Cheteshwar_Pujara.jpg",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -3431,7 +3431,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 79,
       "base_price": 3000000,
       "stats": "Runs: 3540 (SR 144.8), Wkts: 90 (Econ 8.19)",
-      "img": "",
+      "img": "https://static.cricbuzz.com/a/img/v1/i1/c182026/mayank-dagar.jpg?d=low&p=gthumb",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -3443,7 +3443,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 79,
       "base_price": 2000000,
       "stats": "Wkts: 179, Econ: 7.57, Avg: 25.4",
-      "img": "",
+      "img": "https://static.cricbuzz.com/a/img/v1/i1/c155144/barinder-sran.jpg?d=low&p=gthumb",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -3455,7 +3455,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 79,
       "base_price": 15000000,
       "stats": "Runs: 6720, Avg: 40.2, SR: 140.6",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/DAVID_WARNER_%2811704782453%29.jpg/330px-DAVID_WARNER_%2811704782453%29.jpg",
       "overseas": true,
       "country": "Australia",
       "retired": false
@@ -3467,7 +3467,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 79,
       "base_price": 5000000,
       "stats": "Runs: 3540 (SR 144.8), Wkts: 90 (Econ 8.19)",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/2018.02.03.20.31.23-AUSvNZL_T20_NZL_innings%2C_SCG-0002_%2838618210190%29_%28Agar_cropped%29.jpg/330px-2018.02.03.20.31.23-AUSvNZL_T20_NZL_innings%2C_SCG-0002_%2838618210190%29_%28Agar_cropped%29.jpg",
       "overseas": true,
       "country": "Australia",
       "retired": false
@@ -3479,7 +3479,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 79,
       "base_price": 5000000,
       "stats": "Wkts: 179, Econ: 7.57, Avg: 25.4",
-      "img": "",
+      "img": "https://static.cricbuzz.com/a/img/v1/i1/c845764/nathan-ellis.jpg?d=low&p=gthumb",
       "overseas": true,
       "country": "Australia",
       "retired": false
@@ -3491,7 +3491,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 79,
       "base_price": 2000000,
       "stats": "Runs: 6720, Avg: 40.2, SR: 140.6",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/ASHTON_TURNER_%2815520068750%29.jpg/330px-ASHTON_TURNER_%2815520068750%29.jpg",
       "overseas": true,
       "country": "Australia",
       "retired": false
@@ -3503,7 +3503,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 79,
       "base_price": 3000000,
       "stats": "Runs: 3540 (SR 144.8), Wkts: 90 (Econ 8.19)",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/20251224_Michael_Neser_01.jpg/330px-20251224_Michael_Neser_01.jpg",
       "overseas": true,
       "country": "Australia",
       "retired": false
@@ -3515,7 +3515,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 79,
       "base_price": 5000000,
       "stats": "Runs: 6720, Avg: 40.2, SR: 140.6",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/3_31_Another_four_%28Ben_Duckett_cropped%29.jpg/330px-3_31_Another_four_%28Ben_Duckett_cropped%29.jpg",
       "overseas": true,
       "country": "England",
       "retired": false
@@ -3527,7 +3527,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 79,
       "base_price": 3000000,
       "stats": "Wkts: 179, Econ: 7.57, Avg: 25.4",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/2_14_Matthew_Potts_mugshot.jpg/330px-2_14_Matthew_Potts_mugshot.jpg",
       "overseas": true,
       "country": "England",
       "retired": false
@@ -3539,7 +3539,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 79,
       "base_price": 5000000,
       "stats": "Runs: 3540 (SR 144.8), Wkts: 90 (Econ 8.19)",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Tom_Curran_cricketer.jpg/330px-Tom_Curran_cricketer.jpg",
       "overseas": true,
       "country": "England",
       "retired": false
@@ -3551,7 +3551,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 79,
       "base_price": 5000000,
       "stats": "Wkts: 179, Econ: 7.57, Avg: 25.4",
-      "img": "",
+      "img": "https://static.cricbuzz.com/a/img/v1/i1/c616020/nandre-burger.jpg?d=low&p=gthumb",
       "overseas": true,
       "country": "South Africa",
       "retired": false
@@ -3587,7 +3587,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 79,
       "base_price": 2000000,
       "stats": "Runs: 3540 (SR 144.8), Wkts: 90 (Econ 8.19)",
-      "img": "",
+      "img": "https://static.cricbuzz.com/a/img/v1/i1/c244724/odean-smith.jpg?d=low&p=gthumb",
       "overseas": true,
       "country": "West Indies",
       "retired": false
@@ -3599,7 +3599,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 79,
       "base_price": 5000000,
       "stats": "Runs: 6720, Avg: 40.2, SR: 140.6",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Colin_Munro_with_the_Sydney_Sixers.jpg/330px-Colin_Munro_with_the_Sydney_Sixers.jpg",
       "overseas": true,
       "country": "New Zealand",
       "retired": false
@@ -3611,7 +3611,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 79,
       "base_price": 3000000,
       "stats": "Wkts: 179, Econ: 7.57, Avg: 25.4",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/1_33_Ajaz_Patel.jpg/330px-1_33_Ajaz_Patel.jpg",
       "overseas": true,
       "country": "New Zealand",
       "retired": false
@@ -3623,7 +3623,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 79,
       "base_price": 3000000,
       "stats": "Wkts: 179, Econ: 7.57, Avg: 25.4",
-      "img": "",
+      "img": "https://static.cricbuzz.com/a/img/v1/i1/c244762/qais-ahmad.jpg?d=low&p=gthumb",
       "overseas": true,
       "country": "Afghanistan",
       "retired": false
@@ -3635,7 +3635,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 79,
       "base_price": 3000000,
       "stats": "Wkts: 179, Econ: 7.57, Avg: 25.4",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/1_11_Rajitha_mugshot.jpg/330px-1_11_Rajitha_mugshot.jpg",
       "overseas": true,
       "country": "Sri Lanka",
       "retired": false
@@ -3647,7 +3647,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 79,
       "base_price": 5000000,
       "stats": "Wkts: 179, Econ: 7.57, Avg: 25.4",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Abrar_Ahmed_bowling_2023_%28cropped%29.jpg/330px-Abrar_Ahmed_bowling_2023_%28cropped%29.jpg",
       "overseas": true,
       "country": "Pakistan",
       "retired": false
@@ -3659,7 +3659,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 79,
       "base_price": 7500000,
       "stats": "Wkts: 179, Econ: 7.57, Avg: 25.4",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/4/43/Taskin_Ahmed_in_2024_%28cropped%29.jpg",
       "overseas": true,
       "country": "Bangladesh",
       "retired": false
@@ -3683,7 +3683,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 78,
       "base_price": 5000000,
       "stats": "Runs: 3380 (SR 142.6), Wkts: 85 (Econ 8.08)",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Nitish_Kumar_Reddy_BGT_2024_%28cropped%29_2.jpg/330px-Nitish_Kumar_Reddy_BGT_2024_%28cropped%29_2.jpg",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -3707,7 +3707,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 78,
       "base_price": 5000000,
       "stats": "Runs: 3380 (SR 142.6), Wkts: 85 (Econ 8.08)",
-      "img": "",
+      "img": "https://static.cricbuzz.com/a/img/v1/i1/c196288/rahul-tewatia.jpg?d=low&p=gthumb",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -3719,7 +3719,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 78,
       "base_price": 10000000,
       "stats": "Runs: 6440, Avg: 39.2, SR: 138.6",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/SHIKHAR_DHAWAN_%2816005494418%29.jpg/330px-SHIKHAR_DHAWAN_%2816005494418%29.jpg",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -3743,7 +3743,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 78,
       "base_price": 3000000,
       "stats": "Wkts: 170, Econ: 7.51, Avg: 25.3",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/a/ae/Suyash_Sharma.png",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -3755,7 +3755,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 78,
       "base_price": 3000000,
       "stats": "Wkts: 170, Econ: 7.51, Avg: 25.3",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Rajasthan_Royals_player_Shreyas_Gopal_in_a_post-match_presentation_during_2019_Indian_Premier_League.png/330px-Rajasthan_Royals_player_Shreyas_Gopal_in_a_post-match_presentation_during_2019_Indian_Premier_League.png",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -3767,7 +3767,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 78,
       "base_price": 3000000,
       "stats": "Runs: 3380 (SR 142.6), Wkts: 85 (Econ 8.08)",
-      "img": "",
+      "img": "https://static.cricbuzz.com/a/img/v1/i1/c151723/rishi-dhawan.jpg?d=low&p=gthumb",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -3779,7 +3779,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 78,
       "base_price": 7500000,
       "stats": "Wkts: 170, Econ: 7.51, Avg: 25.3",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Jason_behrendorff.jpg/330px-Jason_behrendorff.jpg",
       "overseas": true,
       "country": "Australia",
       "retired": false
@@ -3791,7 +3791,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 78,
       "base_price": 2000000,
       "stats": "Runs: 3380 (SR 142.6), Wkts: 85 (Econ 8.08)",
-      "img": "",
+      "img": "https://static.cricbuzz.com/a/img/v1/i1/c226259/hilton-cartwright.jpg?d=low&p=gthumb",
       "overseas": true,
       "country": "Australia",
       "retired": false
@@ -3803,7 +3803,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 78,
       "base_price": 3000000,
       "stats": "Wkts: 170, Econ: 7.51, Avg: 25.3",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/a/af/2018.02.03.20.38.56-AUSvNZL_T20_NZL_innings%2C_SCG-0001_%2838618205890%29_%28Tye_cropped%29.jpg",
       "overseas": true,
       "country": "Australia",
       "retired": false
@@ -3815,7 +3815,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 78,
       "base_price": 20000000,
       "stats": "Runs: 3380 (SR 142.6), Wkts: 85 (Econ 8.08)",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/The_Prime_Minister_welcomes_the_World_Cup_winning_cricketers_%2852764650104%29_-_Sam_Curran_%28cropped%29.jpg/330px-The_Prime_Minister_welcomes_the_World_Cup_winning_cricketers_%2852764650104%29_-_Sam_Curran_%28cropped%29.jpg",
       "overseas": true,
       "country": "England",
       "retired": false
@@ -3827,7 +3827,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 78,
       "base_price": 5000000,
       "stats": "Runs: 6440, Avg: 39.2, SR: 138.6",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/1_03_Zak_Crawley_%28cropped%29.jpg/330px-1_03_Zak_Crawley_%28cropped%29.jpg",
       "overseas": true,
       "country": "England",
       "retired": false
@@ -3839,7 +3839,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 78,
       "base_price": 2000000,
       "stats": "Wkts: 170, Econ: 7.51, Avg: 25.3",
-      "img": "",
+      "img": "https://static.cricbuzz.com/a/img/v1/i1/c717785/shoaib-bashir.jpg?d=low&p=gthumb",
       "overseas": true,
       "country": "England",
       "retired": false
@@ -3875,7 +3875,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 78,
       "base_price": 3000000,
       "stats": "Runs: 4960 (SR 139.2), Dismissals: 125",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/2_40_Ryan_Rickleton.jpg/330px-2_40_Ryan_Rickleton.jpg",
       "overseas": true,
       "country": "South Africa",
       "retired": false
@@ -3887,7 +3887,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 78,
       "base_price": 2000000,
       "stats": "Runs: 3380 (SR 142.6), Wkts: 85 (Econ 8.08)",
-      "img": "",
+      "img": "https://static.cricbuzz.com/a/img/v1/i1/c597841/donovan-ferreira.jpg?d=low&p=gthumb",
       "overseas": true,
       "country": "South Africa",
       "retired": false
@@ -3899,7 +3899,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 78,
       "base_price": 15000000,
       "stats": "Runs: 3380 (SR 142.6), Wkts: 85 (Econ 8.08)",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Sunil_Narine.jpg/330px-Sunil_Narine.jpg",
       "overseas": true,
       "country": "West Indies",
       "retired": false
@@ -3911,7 +3911,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 78,
       "base_price": 10000000,
       "stats": "Runs: 3380 (SR 142.6), Wkts: 85 (Econ 8.08)",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Jason_Holder.jpg/330px-Jason_Holder.jpg",
       "overseas": true,
       "country": "West Indies",
       "retired": false
@@ -3923,7 +3923,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 78,
       "base_price": 2000000,
       "stats": "Runs: 6440, Avg: 39.2, SR: 138.6",
-      "img": "",
+      "img": "https://static.cricbuzz.com/a/img/v1/i1/c170790/darren-bravo.jpg?d=low&p=gthumb",
       "overseas": true,
       "country": "West Indies",
       "retired": false
@@ -3935,7 +3935,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 78,
       "base_price": 2000000,
       "stats": "Runs: 3380 (SR 142.6), Wkts: 85 (Econ 8.08)",
-      "img": "",
+      "img": "https://static.cricbuzz.com/a/img/v1/i1/c170794/fabian-allen.jpg?d=low&p=gthumb",
       "overseas": true,
       "country": "West Indies",
       "retired": false
@@ -3947,7 +3947,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 78,
       "base_price": 2000000,
       "stats": "Runs: 6440, Avg: 39.2, SR: 138.6",
-      "img": "",
+      "img": "https://static.cricbuzz.com/a/img/v1/i1/c170745/henry-nicholls.jpg?d=low&p=gthumb",
       "overseas": true,
       "country": "New Zealand",
       "retired": false
@@ -3959,7 +3959,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 78,
       "base_price": 2000000,
       "stats": "Wkts: 170, Econ: 7.51, Avg: 25.3",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/1_03_Blair_Tickner.jpg/330px-1_03_Blair_Tickner.jpg",
       "overseas": true,
       "country": "New Zealand",
       "retired": false
@@ -3971,7 +3971,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 78,
       "base_price": 5000000,
       "stats": "Runs: 3380 (SR 142.6), Wkts: 85 (Econ 8.08)",
-      "img": "",
+      "img": "https://static.cricbuzz.com/a/img/v1/i1/c847184/dunith-wellalage.jpg?d=low&p=gthumb",
       "overseas": true,
       "country": "Sri Lanka",
       "retired": false
@@ -3983,7 +3983,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 78,
       "base_price": 2000000,
       "stats": "Wkts: 170, Econ: 7.51, Avg: 25.3",
-      "img": "",
+      "img": "https://static.cricbuzz.com/a/img/v1/i1/c717699/akila-dananjaya.jpg?d=low&p=gthumb",
       "overseas": true,
       "country": "Sri Lanka",
       "retired": false
@@ -3995,7 +3995,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 78,
       "base_price": 5000000,
       "stats": "Runs: 6440, Avg: 39.2, SR: 138.6",
-      "img": "",
+      "img": "https://static.cricbuzz.com/a/img/v1/i1/c846070/usman-khan.jpg?d=low&p=gthumb",
       "overseas": true,
       "country": "Pakistan",
       "retired": false
@@ -4019,7 +4019,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 78,
       "base_price": 5000000,
       "stats": "Runs: 6440, Avg: 39.2, SR: 138.6",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Towhid_Hridoy.jpg/330px-Towhid_Hridoy.jpg",
       "overseas": true,
       "country": "Bangladesh",
       "retired": false
@@ -4079,7 +4079,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 77,
       "base_price": 5000000,
       "stats": "Runs: 6160, Avg: 38.1, SR: 136.6",
-      "img": "",
+      "img": "https://static.cricbuzz.com/a/img/v1/i1/c760758/rajat-patidar.jpg?d=low&p=gthumb",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -4175,7 +4175,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 77,
       "base_price": 15000000,
       "stats": "Runs: 3220 (SR 140.4), Wkts: 80 (Econ 8.42)",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Cameron_Green_fielding_Boxing_Day_2022_%28cropped%29.jpg/330px-Cameron_Green_fielding_Boxing_Day_2022_%28cropped%29.jpg",
       "overseas": true,
       "country": "Australia",
       "retired": false
@@ -4187,7 +4187,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 77,
       "base_price": 15000000,
       "stats": "Runs: 3220 (SR 140.4), Wkts: 80 (Econ 8.42)",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Mitchell_Marsh.jpg/330px-Mitchell_Marsh.jpg",
       "overseas": true,
       "country": "Australia",
       "retired": false
@@ -4247,7 +4247,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 77,
       "base_price": 7500000,
       "stats": "Runs: 4740 (SR 137.5), Dismissals: 118",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/3_48_Jamie_Smith.jpg/330px-3_48_Jamie_Smith.jpg",
       "overseas": true,
       "country": "England",
       "retired": false
@@ -4319,7 +4319,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 77,
       "base_price": 2000000,
       "stats": "Wkts: 162, Econ: 7.76, Avg: 25.3",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/1_01_Jacob_Duffy.jpg/330px-1_01_Jacob_Duffy.jpg",
       "overseas": true,
       "country": "New Zealand",
       "retired": false
@@ -4391,7 +4391,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 77,
       "base_price": 5000000,
       "stats": "Runs: 3220 (SR 140.4), Wkts: 80 (Econ 8.42)",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/%E0%A6%AE%E0%A7%87%E0%A6%B9%E0%A7%87%E0%A6%A6%E0%A7%80_%E0%A6%B9%E0%A6%BE%E0%A6%B8%E0%A6%BE%E0%A6%A8_%E0%A6%AE%E0%A6%BF%E0%A6%B0%E0%A6%BE%E0%A6%9C_%28cropped%29.jpg/330px-%E0%A6%AE%E0%A7%87%E0%A6%B9%E0%A7%87%E0%A6%A6%E0%A7%80_%E0%A6%B9%E0%A6%BE%E0%A6%B8%E0%A6%BE%E0%A6%A8_%E0%A6%AE%E0%A6%BF%E0%A6%B0%E0%A6%BE%E0%A6%9C_%28cropped%29.jpg",
       "overseas": true,
       "country": "Bangladesh",
       "retired": false
@@ -4487,7 +4487,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 76,
       "base_price": 5000000,
       "stats": "Runs: 5880, Avg: 37.1, SR: 143.0",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Manish_Pandey_%283%29.jpg/330px-Manish_Pandey_%283%29.jpg",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -4535,7 +4535,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 76,
       "base_price": 5000000,
       "stats": "Wkts: 153, Econ: 7.7, Avg: 25.3",
-      "img": "",
+      "img": "https://static.cricbuzz.com/a/img/v1/i1/c845954/xavier-bartlett.jpg?d=low&p=gthumb",
       "overseas": true,
       "country": "Australia",
       "retired": false
@@ -4595,7 +4595,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 76,
       "base_price": 5000000,
       "stats": "Wkts: 153, Econ: 7.7, Avg: 25.3",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Lungi_Ngidi_2022.jpg/330px-Lungi_Ngidi_2022.jpg",
       "overseas": true,
       "country": "South Africa",
       "retired": false
@@ -4619,7 +4619,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 76,
       "base_price": 15000000,
       "stats": "Runs: 3060 (SR 138.2), Wkts: 75 (Econ 8.31)",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/Andre_Russell_%281%29.jpg/330px-Andre_Russell_%281%29.jpg",
       "overseas": true,
       "country": "West Indies",
       "retired": false
@@ -4775,7 +4775,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 75,
       "base_price": 7500000,
       "stats": "Wkts: 145, Econ: 7.65, Avg: 25.2",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Bhuvneshwar_kumar_With_Rashid_Zirak_%28Bhuvneshwar_Kumar_cropped%29.jpg/330px-Bhuvneshwar_kumar_With_Rashid_Zirak_%28Bhuvneshwar_Kumar_cropped%29.jpg",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -4811,7 +4811,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 75,
       "base_price": 5000000,
       "stats": "Runs: 5600, Avg: 36.0, SR: 141.0",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Prithvi_shaw.png/330px-Prithvi_shaw.png",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -4823,7 +4823,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 75,
       "base_price": 7500000,
       "stats": "Runs: 5600, Avg: 36.0, SR: 141.0",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/9/96/Ajinkya_Rahane_2016_%28cropped%29.jpg",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -4895,7 +4895,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 75,
       "base_price": 5000000,
       "stats": "Runs: 4300 (SR 134.0), Dismissals: 105",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Alex_Carey_wicket-keeping_Ashes_2021_%28cropped_2%29.jpg/330px-Alex_Carey_wicket-keeping_Ashes_2021_%28cropped_2%29.jpg",
       "overseas": true,
       "country": "Australia",
       "retired": false
@@ -5147,7 +5147,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 74,
       "base_price": 7500000,
       "stats": "Runs: 5320, Avg: 37.4, SR: 139.0",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Tilak_Varma_in_March_2026.png/330px-Tilak_Varma_in_March_2026.png",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -5183,7 +5183,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 74,
       "base_price": 15000000,
       "stats": "Runs: 2740 (SR 139.8), Wkts: 79 (Econ 8.54)",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/Rachin_Ravindra.jpg/330px-Rachin_Ravindra.jpg",
       "overseas": true,
       "country": "New Zealand",
       "retired": false
@@ -5243,7 +5243,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 73,
       "base_price": 7500000,
       "stats": "Runs: 2580 (SR 137.6), Wkts: 74 (Econ 8.43)",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/4_20_Will_Jacks.jpg/330px-4_20_Will_Jacks.jpg",
       "overseas": true,
       "country": "England",
       "retired": false
@@ -5303,7 +5303,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 72,
       "base_price": 10000000,
       "stats": "Runs: 4760, Avg: 35.3, SR: 135.0",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Shimron_Hetmyer.jpg/330px-Shimron_Hetmyer.jpg",
       "overseas": true,
       "country": "West Indies",
       "retired": false
@@ -5315,7 +5315,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 72,
       "base_price": 7500000,
       "stats": "Runs: 2420 (SR 135.4), Wkts: 69 (Econ 8.32)",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Sikandar_Raza_2022.jpg/330px-Sikandar_Raza_2022.jpg",
       "overseas": true,
       "country": "Zimbabwe",
       "retired": false
@@ -5375,7 +5375,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 70,
       "base_price": 2000000,
       "stats": "Wkts: 102, Econ: 7.98, Avg: 26.1",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/IG_20231222_080959.jpg/330px-IG_20231222_080959.jpg",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -5411,7 +5411,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 70,
       "base_price": 15000000,
       "stats": "Runs: 2100 (SR 137.0), Wkts: 59 (Econ 8.55)",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/2018.01.21.15.22.25-Stoinis_%2839081521620%29.jpg/330px-2018.01.21.15.22.25-Stoinis_%2839081521620%29.jpg",
       "overseas": true,
       "country": "Australia",
       "retired": false
@@ -5519,7 +5519,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 69,
       "base_price": 2000000,
       "stats": "Wkts: 143, Econ: 7.93, Avg: 27.1",
-      "img": "",
+      "img": "https://static.cricbuzz.com/a/img/v1/i1/c731465/anshul-kamboj.jpg?d=low&p=gthumb",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -5531,7 +5531,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 69,
       "base_price": 2000000,
       "stats": "Runs: 2740 (SR 134.8), Wkts: 68 (Econ 8.44)",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/0/05/Sachin_Tendulkar_family_%28cropped%29.jpg",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -5555,7 +5555,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 69,
       "base_price": 10000000,
       "stats": "Runs: 2740 (SR 134.8), Wkts: 68 (Econ 8.44)",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/2018.01.06.17.47.32-Moeen_Ali_%2838876905344%29_%28cropped%29.jpg/330px-2018.01.06.17.47.32-Moeen_Ali_%2838876905344%29_%28cropped%29.jpg",
       "overseas": true,
       "country": "England",
       "retired": false
@@ -5591,7 +5591,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 68,
       "base_price": 7500000,
       "stats": "Runs: 2580 (SR 132.6), Wkts: 63 (Econ 8.78)",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/b/b3/Krunal_Pandya_and_Hardik_Pandya_%28cropped%29_%28cropped%29.jpg",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -5687,7 +5687,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 67,
       "base_price": 15000000,
       "stats": "Runs: 2420 (SR 136.4), Wkts: 58 (Econ 8.67)",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Kieron_Pollard.jpg/330px-Kieron_Pollard.jpg",
       "overseas": true,
       "country": "West Indies",
       "retired": true
@@ -5843,7 +5843,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 80,
       "base_price": 2000000,
       "stats": "Wickets: 0, Econ: 8.00",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/3/3f/Ashish_Nehra_%286160488612%29_%28cropped%29.jpg",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -5881,7 +5881,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 82,
       "base_price": 7500000,
       "stats": "Runs: 2900 (SR 141.0), Wkts: 81 (Econ 8.3)",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Abhishek_Sharma_in_action_in_Asia_Cup_2025.png/330px-Abhishek_Sharma_in_action_in_Asia_Cup_2025.png",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -5893,7 +5893,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 84,
       "base_price": 15000000,
       "stats": "Runs: 3700 (SR 146.0), Wkts: 92 (Econ 7.95)",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Aiden_Markram_interview_after_WTC_final_2025_%28cropped%29.png/330px-Aiden_Markram_interview_after_WTC_final_2025_%28cropped%29.png",
       "overseas": true,
       "country": "South Africa",
       "retired": false
@@ -5905,7 +5905,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 82,
       "base_price": 7500000,
       "stats": "Runs: 5600, Avg: 36.0, SR: 141.0",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/9/96/Ajinkya_Rahane_2016_%28cropped%29.jpg",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -5941,7 +5941,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 85,
       "base_price": 5000000,
       "stats": "Runs: 4300 (SR 134.0), Dismissals: 105",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Alex_Carey_wicket-keeping_Ashes_2021_%28cropped_2%29.jpg/330px-Alex_Carey_wicket-keeping_Ashes_2021_%28cropped_2%29.jpg",
       "overseas": true,
       "country": "Australia",
       "retired": false
@@ -5965,7 +5965,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 83,
       "base_price": 15000000,
       "stats": "Runs: 3060 (SR 138.2), Wkts: 75 (Econ 8.31)",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/Andre_Russell_%281%29.jpg/330px-Andre_Russell_%281%29.jpg",
       "overseas": true,
       "country": "West Indies",
       "retired": false
@@ -6001,7 +6001,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 82,
       "base_price": 15000000,
       "stats": "Wkts: 191, Econ: 7.07, Avg: 22.8",
-      "img": "",
+      "img": "https://static.cricbuzz.com/a/img/v1/i1/c846100/anrich-nortje.jpg?d=low&p=gthumb",
       "overseas": true,
       "country": "South Africa",
       "retired": false
@@ -6013,7 +6013,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 65,
       "base_price": 2000000,
       "stats": "Runs: 2740 (SR 134.8), Wkts: 68 (Econ 8.44)",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/0/05/Sachin_Tendulkar_family_%28cropped%29.jpg",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -6025,7 +6025,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 82,
       "base_price": 10000000,
       "stats": "Wkts: 215, Econ: 7.21, Avg: 23.7",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Prime_Minister_Of_Bharat_Shri_Narendra_Damodardas_Modi_with_Arshdeep_Singh_Family_%28Cropped%29.jpg/330px-Prime_Minister_Of_Bharat_Shri_Narendra_Damodardas_Modi_with_Arshdeep_Singh_Family_%28Cropped%29.jpg",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -6073,7 +6073,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 79,
       "base_price": 10000000,
       "stats": "Runs: 3700 (SR 151.0), Wkts: 103 (Econ 7.6)",
-      "img": "",
+      "img": "https://static.cricbuzz.com/a/img/v1/i1/c845424/azmatullah-omarzai.jpg?d=low&p=gthumb",
       "overseas": true,
       "country": "Afghanistan",
       "retired": false
@@ -6085,7 +6085,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 90,
       "base_price": 20000000,
       "stats": "Runs: 6920, Avg: 43.0, SR: 142.2",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Babar_azam_2023.jpg/330px-Babar_azam_2023.jpg",
       "overseas": true,
       "country": "Pakistan",
       "retired": false
@@ -6097,7 +6097,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 85,
       "base_price": 20000000,
       "stats": "Runs: 3860 (SR 153.2), Wkts: 108 (Econ 7.71)",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/3_14_Captain_Ben_%28cropped%29_%28cropped%29.jpg/330px-3_14_Captain_Ben_%28cropped%29_%28cropped%29.jpg",
       "overseas": true,
       "country": "England",
       "retired": false
@@ -6109,7 +6109,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 83,
       "base_price": 7500000,
       "stats": "Wkts: 145, Econ: 7.65, Avg: 25.2",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Bhuvneshwar_kumar_With_Rashid_Zirak_%28Bhuvneshwar_Kumar_cropped%29.jpg/330px-Bhuvneshwar_kumar_With_Rashid_Zirak_%28Bhuvneshwar_Kumar_cropped%29.jpg",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -6133,7 +6133,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 86,
       "base_price": 15000000,
       "stats": "Runs: 3220 (SR 140.4), Wkts: 80 (Econ 8.42)",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Cameron_Green_fielding_Boxing_Day_2022_%28cropped%29.jpg/330px-Cameron_Green_fielding_Boxing_Day_2022_%28cropped%29.jpg",
       "overseas": true,
       "country": "Australia",
       "retired": false
@@ -6153,7 +6153,7 @@ window.ALL_PLAYERS_DATA = {
     {
       "id": 15024,
       "name": "Craig Overton",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/Craig_Overton.jpg/330px-Craig_Overton.jpg",
       "stats": "",
       "overseas": false,
       "country": "India",
@@ -6181,7 +6181,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 87,
       "base_price": 15000000,
       "stats": "Runs: 6640, Avg: 42.0, SR: 148.6",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/David_Miller_2025_interview_%28cropped%29.png/330px-David_Miller_2025_interview_%28cropped%29.png",
       "overseas": true,
       "country": "South Africa",
       "retired": false
@@ -6193,7 +6193,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 89,
       "base_price": 15000000,
       "stats": "Runs: 6720, Avg: 40.2, SR: 140.6",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/DAVID_WARNER_%2811704782453%29.jpg/330px-DAVID_WARNER_%2811704782453%29.jpg",
       "overseas": true,
       "country": "Australia",
       "retired": false
@@ -6205,7 +6205,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 78,
       "base_price": 5000000,
       "stats": "Wkts: 163, Econ: 7.48, Avg: 24.5",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Deepak_Chahar.jpg/330px-Deepak_Chahar.jpg",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -6229,7 +6229,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 88,
       "base_price": 15000000,
       "stats": "Runs: 6040 (SR 147.1), Dismissals: 140",
-      "img": "",
+      "img": "https://static.cricbuzz.com/a/img/v1/i1/c845526/devon-conway.jpg?d=low&p=gthumb",
       "overseas": true,
       "country": "New Zealand",
       "retired": false
@@ -6253,7 +6253,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 80,
       "base_price": 5000000,
       "stats": "Runs: 5060 (SR 142.4), Dismissals: 119",
-      "img": "",
+      "img": "https://static.cricbuzz.com/a/img/v1/i1/c591954/dhruv-jurel.jpg?d=low&p=gthumb",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -6285,7 +6285,7 @@ window.ALL_PLAYERS_DATA = {
     {
       "id": 15035,
       "name": "Dwayne Bravo",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Bravo_at_IIFA_2017_Green_Carpet.jpg/330px-Bravo_at_IIFA_2017_Green_Carpet.jpg",
       "stats": "",
       "overseas": false,
       "country": "India",
@@ -6301,7 +6301,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 83,
       "base_price": 15000000,
       "stats": "Runs: 6640, Avg: 42.0, SR: 148.6",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Faf_du_Plessis_2019_Boxing_Day.jpg/330px-Faf_du_Plessis_2019_Boxing_Day.jpg",
       "overseas": true,
       "country": "South Africa",
       "retired": false
@@ -6313,7 +6313,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 86,
       "base_price": 7500000,
       "stats": "Runs: 6920, Avg: 43.0, SR: 142.2",
-      "img": "",
+      "img": "https://static.cricbuzz.com/a/img/v1/i1/c845498/finn-allen.jpg?d=low&p=gthumb",
       "overseas": true,
       "country": "New Zealand",
       "retired": false
@@ -6337,7 +6337,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 85,
       "base_price": 15000000,
       "stats": "Runs: 3380 (SR 147.6), Wkts: 96 (Econ 8.18)",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Glen_Maxwell_2026_%28cropped%29.jpg/330px-Glen_Maxwell_2026_%28cropped%29.jpg",
       "overseas": true,
       "country": "Australia",
       "retired": false
@@ -6349,7 +6349,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 87,
       "base_price": 10000000,
       "stats": "Runs: 7760, Avg: 43.7, SR: 148.2",
-      "img": "",
+      "img": "https://static.cricbuzz.com/a/img/v1/i1/c845521/glenn-phillips.jpg?d=low&p=gthumb",
       "overseas": true,
       "country": "New Zealand",
       "retired": false
@@ -6361,7 +6361,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 86,
       "base_price": 20000000,
       "stats": "Runs: 4020 (SR 149.4), Wkts: 113 (Econ 7.82)",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Hardik_Pandya_in_PMO_New_Delhi.jpg/330px-Hardik_Pandya_in_PMO_New_Delhi.jpg",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -6373,7 +6373,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 78,
       "base_price": 3000000,
       "stats": "Wkts: 155, Econ: 7.43, Avg: 24.5",
-      "img": "",
+      "img": "https://static.cricbuzz.com/a/img/v1/i1/c226471/harpreet-brar.jpg?d=low&p=gthumb",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -6397,7 +6397,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 86,
       "base_price": 20000000,
       "stats": "Runs: 6700 (SR 146.8), Dismissals: 161",
-      "img": "",
+      "img": "https://static.cricbuzz.com/a/img/v1/i1/c619866/heinrich-klaasen.jpg?d=low&p=gthumb",
       "overseas": true,
       "country": "South Africa",
       "retired": false
@@ -6409,7 +6409,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 85,
       "base_price": 10000000,
       "stats": "Runs: 5500 (SR 140.4), Dismissals: 133",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Ishan_Kishan.jpg/330px-Ishan_Kishan.jpg",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -6445,7 +6445,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 83,
       "base_price": 2000000,
       "stats": "Wkts: 162, Econ: 7.76, Avg: 25.3",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/1_01_Jacob_Duffy.jpg/330px-1_01_Jacob_Duffy.jpg",
       "overseas": true,
       "country": "New Zealand",
       "retired": false
@@ -6457,7 +6457,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 80,
       "base_price": 15000000,
       "stats": "Runs: 7760, Avg: 43.7, SR: 148.2",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/260328_D3_Jake_Fraser-McGurk_01.jpg/330px-260328_D3_Jake_Fraser-McGurk_01.jpg",
       "overseas": true,
       "country": "Australia",
       "retired": false
@@ -6465,7 +6465,7 @@ window.ALL_PLAYERS_DATA = {
     {
       "id": 15050,
       "name": "James Anderson",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/JIMMY_ANDERSON.jpg/330px-JIMMY_ANDERSON.jpg",
       "stats": "",
       "overseas": false,
       "country": "India",
@@ -6481,7 +6481,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 82,
       "base_price": 10000000,
       "stats": "Runs: 3380 (SR 142.6), Wkts: 85 (Econ 8.08)",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Jason_Holder.jpg/330px-Jason_Holder.jpg",
       "overseas": true,
       "country": "West Indies",
       "retired": false
@@ -6493,7 +6493,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 91,
       "base_price": 20000000,
       "stats": "Wkts: 225, Econ: 6.68, Avg: 21.9",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Jasprit_Bumrah_in_PMO_New_Delhi.jpg/330px-Jasprit_Bumrah_in_PMO_New_Delhi.jpg",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -6505,7 +6505,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 77,
       "base_price": 5000000,
       "stats": "Runs: 5280 (SR 144.2), Dismissals: 126",
-      "img": "",
+      "img": "https://static.cricbuzz.com/a/img/v1/i1/c226474/jitesh-sharma.jpg?d=low&p=gthumb",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -6517,7 +6517,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 91,
       "base_price": 10000000,
       "stats": "Runs: 6360, Avg: 40.9, SR: 146.6",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/Joe_Root_HIP1487_%28cropped%29.jpg/330px-Joe_Root_HIP1487_%28cropped%29.jpg",
       "overseas": true,
       "country": "England",
       "retired": false
@@ -6529,7 +6529,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 85,
       "base_price": 20000000,
       "stats": "Wkts: 191, Econ: 7.07, Avg: 22.8",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/d/de/Jofra_Archer_%283%29.jpg",
       "overseas": true,
       "country": "England",
       "retired": false
@@ -6541,7 +6541,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 86,
       "base_price": 15000000,
       "stats": "Runs: 6380 (SR 147.4), Dismissals: 160",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/2_05_Bairstow_out.jpg/330px-2_05_Bairstow_out.jpg",
       "overseas": true,
       "country": "England",
       "retired": false
@@ -6549,7 +6549,7 @@ window.ALL_PLAYERS_DATA = {
     {
       "id": 15057,
       "name": "Jordan Cox",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/JordanCox.jpg/330px-JordanCox.jpg",
       "stats": "",
       "overseas": false,
       "country": "India",
@@ -6565,7 +6565,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 87,
       "base_price": 20000000,
       "stats": "Runs: 7140 (SR 150.3), Dismissals: 174",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/Jos_Buttler_in_2023.jpg/330px-Jos_Buttler_in_2023.jpg",
       "overseas": true,
       "country": "England",
       "retired": false
@@ -6577,7 +6577,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 88,
       "base_price": 15000000,
       "stats": "Wkts: 215, Econ: 7.21, Avg: 23.7",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/2018_Josh_Hazlewood_%28cropped%29.jpg/330px-2018_Josh_Hazlewood_%28cropped%29.jpg",
       "overseas": true,
       "country": "Australia",
       "retired": false
@@ -6589,7 +6589,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 84,
       "base_price": 7500000,
       "stats": "Runs: 6160 (SR 145.6), Dismissals: 153",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Josh_Inglis_The_Test_clip.png/330px-Josh_Inglis_The_Test_clip.png",
       "overseas": true,
       "country": "Australia",
       "retired": false
@@ -6601,7 +6601,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 88,
       "base_price": 20000000,
       "stats": "Wkts: 251, Econ: 6.55, Avg: 22.0",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Kingdom_Kome_co-founders_Kagiso_Rabada_and_Cameron_Scott_at_the_first_private_screening_of_The_Ring_of_Beasts_%28cropped%29.jpg/330px-Kingdom_Kome_co-founders_Kagiso_Rabada_and_Cameron_Scott_at_the_first_private_screening_of_The_Ring_of_Beasts_%28cropped%29.jpg",
       "overseas": true,
       "country": "South Africa",
       "retired": false
@@ -6613,7 +6613,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 91,
       "base_price": 20000000,
       "stats": "Runs: 7200, Avg: 41.6, SR: 144.2",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Kane_Williamson_in_2019.jpg/330px-Kane_Williamson_in_2019.jpg",
       "overseas": true,
       "country": "New Zealand",
       "retired": false
@@ -6637,7 +6637,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 83,
       "base_price": 7500000,
       "stats": "Wkts: 172, Econ: 7.24, Avg: 24.5",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/New_face_6-_Keshav_Maharaj.jpg/330px-New_face_6-_Keshav_Maharaj.jpg",
       "overseas": true,
       "country": "South Africa",
       "retired": false
@@ -6649,7 +6649,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 83,
       "base_price": 15000000,
       "stats": "Runs: 2420 (SR 136.4), Wkts: 58 (Econ 8.67)",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Kieron_Pollard.jpg/330px-Kieron_Pollard.jpg",
       "overseas": true,
       "country": "West Indies",
       "retired": false
@@ -6661,7 +6661,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 87,
       "base_price": 15000000,
       "stats": "Runs: 8040, Avg: 44.8, SR: 150.2",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/6/69/KL_Rahul_at_Femina_Miss_India_2018_Grand_Finale_%28cropped%29.jpg",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -6673,7 +6673,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 77,
       "base_price": 7500000,
       "stats": "Runs: 2580 (SR 132.6), Wkts: 63 (Econ 8.78)",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/b/b3/Krunal_Pandya_and_Hardik_Pandya_%28cropped%29_%28cropped%29.jpg",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -6685,7 +6685,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 86,
       "base_price": 10000000,
       "stats": "Wkts: 198, Econ: 7.1, Avg: 23.6",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Kuldeep_Yadav_in_PMO_New_Delhi.jpg/330px-Kuldeep_Yadav_in_PMO_New_Delhi.jpg",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -6697,7 +6697,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 84,
       "base_price": 10000000,
       "stats": "Runs: 3540 (SR 143.8), Wkts: 101 (Econ 7.84)",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Kyle_Jamieson_2015_%28cropped%29.jpg/330px-Kyle_Jamieson_2015_%28cropped%29.jpg",
       "overseas": true,
       "country": "New Zealand",
       "retired": false
@@ -6721,7 +6721,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 83,
       "base_price": 10000000,
       "stats": "Wkts: 155, Econ: 7.43, Avg: 24.5",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Lockie_Ferguson.jpg/330px-Lockie_Ferguson.jpg",
       "overseas": true,
       "country": "New Zealand",
       "retired": false
@@ -6733,7 +6733,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 87,
       "base_price": 5000000,
       "stats": "Wkts: 153, Econ: 7.7, Avg: 25.3",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Lungi_Ngidi_2022.jpg/330px-Lungi_Ngidi_2022.jpg",
       "overseas": true,
       "country": "South Africa",
       "retired": false
@@ -6741,7 +6741,7 @@ window.ALL_PLAYERS_DATA = {
     {
       "id": 15073,
       "name": "Mahendra Singh Dhoni",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/MS_Dhoni_%28Prabhav_%2723_-_RiGI_2023%29.jpg/330px-MS_Dhoni_%28Prabhav_%2723_-_RiGI_2023%29.jpg",
       "stats": "",
       "overseas": false,
       "country": "India",
@@ -6757,7 +6757,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 59,
       "base_price": 10000000,
       "stats": "Wkts: 189, Econ: 7.34, Avg: 23.6",
-      "img": "",
+      "img": "https://static.cricbuzz.com/a/img/v1/i1/c847197/maheesh-theekshana.jpg?d=low&p=gthumb",
       "overseas": true,
       "country": "Sri Lanka",
       "retired": false
@@ -6765,7 +6765,7 @@ window.ALL_PLAYERS_DATA = {
     {
       "id": 15075,
       "name": "Mangesh Yadav",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/MS_Dhoni_%28Prabhav_%2723_-_RiGI_2023%29.jpg/330px-MS_Dhoni_%28Prabhav_%2723_-_RiGI_2023%29.jpg",
       "stats": "",
       "overseas": false,
       "country": "India",
@@ -6781,7 +6781,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 80,
       "base_price": 5000000,
       "stats": "Runs: 5880, Avg: 37.1, SR: 143.0",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Manish_Pandey_%283%29.jpg/330px-Manish_Pandey_%283%29.jpg",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -6793,7 +6793,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 83,
       "base_price": 15000000,
       "stats": "Runs: 3220 (SR 145.4), Wkts: 91 (Econ 8.07)",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Marco_Jansen_2022.jpg/330px-Marco_Jansen_2022.jpg",
       "overseas": true,
       "country": "South Africa",
       "retired": false
@@ -6805,7 +6805,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 87,
       "base_price": 15000000,
       "stats": "Runs: 2100 (SR 137.0), Wkts: 59 (Econ 8.55)",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/2018.01.21.15.22.25-Stoinis_%2839081521620%29.jpg/330px-2018.01.21.15.22.25-Stoinis_%2839081521620%29.jpg",
       "overseas": true,
       "country": "Australia",
       "retired": false
@@ -6817,7 +6817,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 84,
       "base_price": 15000000,
       "stats": "Wkts: 182, Econ: 7.01, Avg: 22.7",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/Mark_wood_bowling_boxing_day_test.jpg/330px-Mark_wood_bowling_boxing_day_test.jpg",
       "overseas": true,
       "country": "England",
       "retired": false
@@ -6825,7 +6825,7 @@ window.ALL_PLAYERS_DATA = {
     {
       "id": 15080,
       "name": "Marnus Labuschagne",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/20251224_Marnus_Labuschagne_02.jpg/330px-20251224_Marnus_Labuschagne_02.jpg",
       "stats": "",
       "overseas": false,
       "country": "India",
@@ -6841,7 +6841,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 81,
       "base_price": 15000000,
       "stats": "Wkts: 242, Econ: 6.79, Avg: 21.9",
-      "img": "",
+      "img": "https://static.cricbuzz.com/a/img/v1/i1/c847143/matheesha-pathirana.jpg?d=low&p=gthumb",
       "overseas": true,
       "country": "Sri Lanka",
       "retired": false
@@ -6853,7 +6853,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 88,
       "base_price": 10000000,
       "stats": "Wkts: 146, Econ: 7.37, Avg: 24.4",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Matt_Henry.jpg/330px-Matt_Henry.jpg",
       "overseas": true,
       "country": "New Zealand",
       "retired": false
@@ -6861,7 +6861,7 @@ window.ALL_PLAYERS_DATA = {
     {
       "id": 15083,
       "name": "Matthew Short",
-      "img": "",
+      "img": "https://static.cricbuzz.com/a/img/v1/i1/c619877/matthew-short.jpg?d=low&p=gthumb",
       "stats": "",
       "overseas": false,
       "country": "India",
@@ -6877,7 +6877,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 82,
       "base_price": 5000000,
       "stats": "Wkts: 155, Econ: 7.43, Avg: 24.5",
-      "img": "",
+      "img": "https://static.cricbuzz.com/a/img/v1/i1/c226510/mayank-markande.jpg?d=low&p=gthumb",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -6901,7 +6901,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 77,
       "base_price": 5000000,
       "stats": "Runs: 3220 (SR 140.4), Wkts: 80 (Econ 8.42)",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/%E0%A6%AE%E0%A7%87%E0%A6%B9%E0%A7%87%E0%A6%A6%E0%A7%80_%E0%A6%B9%E0%A6%BE%E0%A6%B8%E0%A6%BE%E0%A6%A8_%E0%A6%AE%E0%A6%BF%E0%A6%B0%E0%A6%BE%E0%A6%9C_%28cropped%29.jpg/330px-%E0%A6%AE%E0%A7%87%E0%A6%B9%E0%A7%87%E0%A6%A6%E0%A7%80_%E0%A6%B9%E0%A6%BE%E0%A6%B8%E0%A6%BE%E0%A6%A8_%E0%A6%AE%E0%A6%BF%E0%A6%B0%E0%A6%BE%E0%A6%9C_%28cropped%29.jpg",
       "overseas": true,
       "country": "Bangladesh",
       "retired": false
@@ -6925,7 +6925,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 77,
       "base_price": 15000000,
       "stats": "Runs: 3220 (SR 140.4), Wkts: 80 (Econ 8.42)",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Mitchell_Marsh.jpg/330px-Mitchell_Marsh.jpg",
       "overseas": true,
       "country": "Australia",
       "retired": false
@@ -6949,7 +6949,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 87,
       "base_price": 20000000,
       "stats": "Wkts: 217, Econ: 6.93, Avg: 21.9",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Mitchell_Starc_2023.jpg/330px-Mitchell_Starc_2023.jpg",
       "overseas": true,
       "country": "Australia",
       "retired": false
@@ -6961,7 +6961,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 80,
       "base_price": 10000000,
       "stats": "Runs: 2740 (SR 134.8), Wkts: 68 (Econ 8.44)",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/2018.01.06.17.47.32-Moeen_Ali_%2838876905344%29_%28cropped%29.jpg/330px-2018.01.06.17.47.32-Moeen_Ali_%2838876905344%29_%28cropped%29.jpg",
       "overseas": true,
       "country": "England",
       "retired": false
@@ -6973,7 +6973,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 92,
       "base_price": 10000000,
       "stats": "Runs: 4020 (SR 149.4), Wkts: 113 (Econ 7.82)",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/4/49/Mohammad_Nabi-Australia.jpg",
       "overseas": true,
       "country": "Afghanistan",
       "retired": false
@@ -6985,7 +6985,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 75,
       "base_price": 15000000,
       "stats": "Runs: 6700 (SR 146.8), Dismissals: 161",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/M_Rizwan.jpg/330px-M_Rizwan.jpg",
       "overseas": true,
       "country": "Pakistan",
       "retired": false
@@ -6997,7 +6997,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 85,
       "base_price": 15000000,
       "stats": "Wkts: 182, Econ: 7.01, Avg: 22.7",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/Mohammed_Shami_Arjuna_Award_%28cropped%29.jpg/330px-Mohammed_Shami_Arjuna_Award_%28cropped%29.jpg",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -7009,7 +7009,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 83,
       "base_price": 10000000,
       "stats": "Wkts: 191, Econ: 7.07, Avg: 22.8",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Prime_Minister_Of_Bharat_Shri_Narendra_Damodardas_Modi_with_Mohammad_Siraj_%28cropped%29.jpg/330px-Prime_Minister_Of_Bharat_Shri_Narendra_Damodardas_Modi_with_Mohammad_Siraj_%28cropped%29.jpg",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -7021,7 +7021,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 88,
       "base_price": 10000000,
       "stats": "Wkts: 206, Econ: 7.15, Avg: 23.6",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Mujeeb_Ur_Rahman_celebrating.jpg/330px-Mujeeb_Ur_Rahman_celebrating.jpg",
       "overseas": true,
       "country": "Afghanistan",
       "retired": false
@@ -7081,7 +7081,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 87,
       "base_price": 20000000,
       "stats": "Runs: 7580 (SR 153.8), Dismissals: 188",
-      "img": "",
+      "img": "https://static.cricbuzz.com/a/img/v1/i1/c244722/nicholas-pooran.jpg?d=low&p=gthumb",
       "overseas": true,
       "country": "West Indies",
       "retired": false
@@ -7093,7 +7093,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 75,
       "base_price": 5000000,
       "stats": "Runs: 3380 (SR 142.6), Wkts: 85 (Econ 8.08)",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Nitish_Kumar_Reddy_BGT_2024_%28cropped%29_2.jpg/330px-Nitish_Kumar_Reddy_BGT_2024_%28cropped%29_2.jpg",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -7117,7 +7117,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 74,
       "base_price": 10000000,
       "stats": "Wkts: 206, Econ: 7.15, Avg: 23.6",
-      "img": "",
+      "img": "https://static.cricbuzz.com/a/img/v1/i1/c616569/noor-ahmad.jpg?d=low&p=gthumb",
       "overseas": true,
       "country": "Afghanistan",
       "retired": false
@@ -7129,7 +7129,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 93,
       "base_price": 7500000,
       "stats": "Wkts: 182, Econ: 7.01, Avg: 22.7",
-      "img": "",
+      "img": "https://static.cricbuzz.com/a/img/v1/i1/c226338/nuwan-thushara.jpg?d=low&p=gthumb",
       "overseas": true,
       "country": "Sri Lanka",
       "retired": false
@@ -7141,7 +7141,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 89,
       "base_price": 20000000,
       "stats": "Wkts: 225, Econ: 6.68, Avg: 21.9",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Pat_Cummins_The_Test_clip.png/330px-Pat_Cummins_The_Test_clip.png",
       "overseas": true,
       "country": "Australia",
       "retired": false
@@ -7153,7 +7153,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 83,
       "base_price": 7500000,
       "stats": "Runs: 7680, Avg: 45.5, SR: 147.8",
-      "img": "",
+      "img": "https://static.cricbuzz.com/a/img/v1/i1/c847160/pathum-nissanka.jpg?d=low&p=gthumb",
       "overseas": true,
       "country": "Sri Lanka",
       "retired": false
@@ -7165,7 +7165,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 87,
       "base_price": 15000000,
       "stats": "Runs: 5940 (SR 143.9), Dismissals: 146",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/2_02_Phil_Salt.jpg/330px-2_02_Phil_Salt.jpg",
       "overseas": true,
       "country": "England",
       "retired": false
@@ -7177,7 +7177,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 78,
       "base_price": 3000000,
       "stats": "Runs: 5060 (SR 142.4), Dismissals: 119",
-      "img": "",
+      "img": "https://static.cricbuzz.com/a/img/v1/i1/c226515/prabhsimran-singh.jpg?d=low&p=gthumb",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -7213,7 +7213,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 81,
       "base_price": 5000000,
       "stats": "Runs: 5600, Avg: 36.0, SR: 141.0",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Prithvi_shaw.png/330px-Prithvi_shaw.png",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -7237,7 +7237,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 84,
       "base_price": 15000000,
       "stats": "Runs: 6160 (SR 145.6), Dismissals: 153",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/QUINTON_DE_KOCK_%2815681398316%29.jpg/330px-QUINTON_DE_KOCK_%2815681398316%29.jpg",
       "overseas": true,
       "country": "South Africa",
       "retired": false
@@ -7245,7 +7245,7 @@ window.ALL_PLAYERS_DATA = {
     {
       "id": 15115,
       "name": "R. Sai Kishore",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/4_15_Sai_Kishore.jpg/330px-4_15_Sai_Kishore.jpg",
       "stats": "",
       "overseas": false,
       "country": "India",
@@ -7261,7 +7261,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 82,
       "base_price": 15000000,
       "stats": "Runs: 2740 (SR 139.8), Wkts: 79 (Econ 8.54)",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/Rachin_Ravindra.jpg/330px-Rachin_Ravindra.jpg",
       "overseas": true,
       "country": "New Zealand",
       "retired": false
@@ -7285,7 +7285,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 77,
       "base_price": 10000000,
       "stats": "Runs: 5500 (SR 140.4), Dismissals: 133",
-      "img": "",
+      "img": "https://static.cricbuzz.com/a/img/v1/i1/c616556/rahmanullah-gurbaz.jpg?d=low&p=gthumb",
       "overseas": true,
       "country": "Afghanistan",
       "retired": false
@@ -7297,7 +7297,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 76,
       "base_price": 5000000,
       "stats": "Runs: 6160, Avg: 38.1, SR: 136.6",
-      "img": "",
+      "img": "https://static.cricbuzz.com/a/img/v1/i1/c760758/rajat-patidar.jpg?d=low&p=gthumb",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -7321,7 +7321,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 84,
       "base_price": 15000000,
       "stats": "Wkts: 242, Econ: 6.79, Avg: 21.9",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Rashid_Khan.jpg/330px-Rashid_Khan.jpg",
       "overseas": true,
       "country": "Afghanistan",
       "retired": false
@@ -7333,7 +7333,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 65,
       "base_price": 2000000,
       "stats": "Wkts: 102, Econ: 7.98, Avg: 26.1",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/IG_20231222_080959.jpg/330px-IG_20231222_080959.jpg",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -7357,7 +7357,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 71,
       "base_price": 10000000,
       "stats": "Runs: 3700 (SR 146.0), Wkts: 92 (Econ 7.95)",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/The_Minister_of_State_for_Youth_Affairs_and_Sports_%28Independent_Charge%29%2C_Shri_Sarbananda_Sonowal_conferring_the_Arjuna_Award_on_cricketer_Ravichandran_Ashwin%2C_in_New_Delhi_on_July_31%2C_2015_cropped.jpg/330px-thumbnail.jpg",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -7369,7 +7369,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 80,
       "base_price": 15000000,
       "stats": "Runs: 2900 (SR 141.0), Wkts: 81 (Econ 8.3)",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/PM_Shri_Narendra_Modi_with_Ravindra_Jadeja_%28Cropped%29.jpg/330px-PM_Shri_Narendra_Modi_with_Ravindra_Jadeja_%28Cropped%29.jpg",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -7381,7 +7381,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 83,
       "base_price": 2000000,
       "stats": "Wkts: 163, Econ: 7.48, Avg: 24.5",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Richard_Gleeson.jpg/330px-Richard_Gleeson.jpg",
       "overseas": true,
       "country": "England",
       "retired": false
@@ -7405,7 +7405,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 87,
       "base_price": 20000000,
       "stats": "Runs: 6260 (SR 148.8), Dismissals: 147",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Rishabh_Pant.jpg/330px-Rishabh_Pant.jpg",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -7417,7 +7417,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 79,
       "base_price": 7500000,
       "stats": "Runs: 4020 (SR 149.4), Wkts: 113 (Econ 7.82)",
-      "img": "",
+      "img": "https://static.cricbuzz.com/a/img/v1/i1/c156160/riyan-parag.jpg?d=low&p=gthumb",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -7429,7 +7429,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 87,
       "base_price": 20000000,
       "stats": "Runs: 9080, Avg: 48.3, SR: 157.8",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Prime_Minister_Of_Bharat_Shri_Narendra_Damodardas_Modi_with_Shri_Rohit_Gurunath_Sharma_%28Cropped%29.jpg/330px-Prime_Minister_Of_Bharat_Shri_Narendra_Damodardas_Modi_with_Shri_Rohit_Gurunath_Sharma_%28Cropped%29.jpg",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -7453,7 +7453,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 84,
       "base_price": 15000000,
       "stats": "Runs: 6080, Avg: 39.9, SR: 144.6",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Ruturaj_Gaikwad.jpeg/330px-Ruturaj_Gaikwad.jpeg",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -7465,7 +7465,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 75,
       "base_price": 7500000,
       "stats": "Runs: 7200, Avg: 41.6, SR: 144.2",
-      "img": "",
+      "img": "https://static.cricbuzz.com/a/img/v1/i1/c717782/sai-sudharsan.jpg?d=low&p=gthumb",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -7477,7 +7477,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 80,
       "base_price": 20000000,
       "stats": "Runs: 3380 (SR 142.6), Wkts: 85 (Econ 8.08)",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/The_Prime_Minister_welcomes_the_World_Cup_winning_cricketers_%2852764650104%29_-_Sam_Curran_%28cropped%29.jpg/330px-The_Prime_Minister_welcomes_the_World_Cup_winning_cricketers_%2852764650104%29_-_Sam_Curran_%28cropped%29.jpg",
       "overseas": true,
       "country": "England",
       "retired": false
@@ -7501,7 +7501,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 88,
       "base_price": 15000000,
       "stats": "Runs: 5600 (SR 143.6), Dismissals: 127",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/Sanju_Samson_in_PMO_New_Delhi.jpg/330px-Sanju_Samson_in_PMO_New_Delhi.jpg",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -7513,7 +7513,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 84,
       "base_price": 3000000,
       "stats": "Wkts: 138, Econ: 7.62, Avg: 24.4",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Scott_Boland_01_20251017.jpg/330px-Scott_Boland_01_20251017.jpg",
       "overseas": true,
       "country": "Australia",
       "retired": false
@@ -7525,7 +7525,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 86,
       "base_price": 20000000,
       "stats": "Wkts: 208, Econ: 6.88, Avg: 22.8",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Shaheen_Afridi_jogging_Sri_Lanka_vs_Pakistan_-_2nd_TEST_Match_-_SSC%2C_Colombo_%28cropped%29.jpg/330px-Shaheen_Afridi_jogging_Sri_Lanka_vs_Pakistan_-_2nd_TEST_Match_-_SSC%2C_Colombo_%28cropped%29.jpg",
       "overseas": true,
       "country": "Pakistan",
       "retired": false
@@ -7537,7 +7537,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 84,
       "base_price": 7500000,
       "stats": "Runs: 5280 (SR 144.2), Dismissals: 126",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Shai_Hope.jpg/330px-Shai_Hope.jpg",
       "overseas": true,
       "country": "West Indies",
       "retired": false
@@ -7549,7 +7549,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 83,
       "base_price": 15000000,
       "stats": "Runs: 4180 (SR 151.6), Wkts: 118 (Econ 7.48)",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/Shakib_Al_Hasan_2023_03.jpg/330px-Shakib_Al_Hasan_2023_03.jpg",
       "overseas": true,
       "country": "Bangladesh",
       "retired": false
@@ -7585,7 +7585,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 78,
       "base_price": 10000000,
       "stats": "Runs: 6440, Avg: 39.2, SR: 138.6",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/SHIKHAR_DHAWAN_%2816005494418%29.jpg/330px-SHIKHAR_DHAWAN_%2816005494418%29.jpg",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -7597,7 +7597,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 84,
       "base_price": 10000000,
       "stats": "Runs: 4760, Avg: 35.3, SR: 135.0",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Shimron_Hetmyer.jpg/330px-Shimron_Hetmyer.jpg",
       "overseas": true,
       "country": "West Indies",
       "retired": false
@@ -7609,7 +7609,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 82,
       "base_price": 10000000,
       "stats": "Runs: 3540 (SR 144.8), Wkts: 90 (Econ 8.19)",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/63/Shivam_Dube_in_PMO_New_Delhi.jpg/330px-Shivam_Dube_in_PMO_New_Delhi.jpg",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -7621,7 +7621,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 88,
       "base_price": 10000000,
       "stats": "Runs: 7200, Avg: 41.6, SR: 144.2",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Shreyas_Iyer_snapped_at_the_airport_%28Cropped%29.jpg/330px-Shreyas_Iyer_snapped_at_the_airport_%28Cropped%29.jpg",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -7633,7 +7633,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 88,
       "base_price": 15000000,
       "stats": "Runs: 7960, Avg: 46.5, SR: 149.8",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/3/34/Shubman_Gill_2023_%28cropped%29.jpg",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -7645,7 +7645,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 85,
       "base_price": 7500000,
       "stats": "Runs: 2420 (SR 135.4), Wkts: 69 (Econ 8.32)",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Sikandar_Raza_2022.jpg/330px-Sikandar_Raza_2022.jpg",
       "overseas": true,
       "country": "Zimbabwe",
       "retired": false
@@ -7653,7 +7653,7 @@ window.ALL_PLAYERS_DATA = {
     {
       "id": 15149,
       "name": "Steve Smith",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/STEVE_SMITH_%2811705303043%29.jpg/330px-STEVE_SMITH_%2811705303043%29.jpg",
       "stats": "",
       "overseas": false,
       "country": "India",
@@ -7665,7 +7665,7 @@ window.ALL_PLAYERS_DATA = {
     {
       "id": 15150,
       "name": "Stuart Broad",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/Stuart_broad.jpg/330px-Stuart_broad.jpg",
       "stats": "",
       "overseas": false,
       "country": "India",
@@ -7681,7 +7681,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 75,
       "base_price": 15000000,
       "stats": "Runs: 3380 (SR 142.6), Wkts: 85 (Econ 8.08)",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Sunil_Narine.jpg/330px-Sunil_Narine.jpg",
       "overseas": true,
       "country": "West Indies",
       "retired": false
@@ -7693,7 +7693,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 88,
       "base_price": 15000000,
       "stats": "Runs: 8240, Avg: 47.6, SR: 151.8",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Suryakumar_Yadav_in_PMO_New_Delhi.jpg/330px-Suryakumar_Yadav_in_PMO_New_Delhi.jpg",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -7705,7 +7705,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 72,
       "base_price": 3000000,
       "stats": "Wkts: 170, Econ: 7.51, Avg: 25.3",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/a/ae/Suyash_Sharma.png",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -7713,7 +7713,7 @@ window.ALL_PLAYERS_DATA = {
     {
       "id": 15154,
       "name": "T. Natarajan",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/T_Natarajan.jpg/330px-T_Natarajan.jpg",
       "stats": "",
       "overseas": false,
       "country": "India",
@@ -7729,7 +7729,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 88,
       "base_price": 2000000,
       "stats": "Runs: 6920, Avg: 43.0, SR: 142.2",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Temba_Bavuma_Breaks_Silence_on_Injury_Comeback%2C_Brevis%E2%80%99_R16_5m_Shock_%26_SA20_Snub%21%2C_2025_%28cropped%29.png/330px-Temba_Bavuma_Breaks_Silence_on_Injury_Comeback%2C_Brevis%E2%80%99_R16_5m_Shock_%26_SA20_Snub%21%2C_2025_%28cropped%29.png",
       "overseas": true,
       "country": "South Africa",
       "retired": false
@@ -7741,7 +7741,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 81,
       "base_price": 7500000,
       "stats": "Runs: 5320, Avg: 37.4, SR: 139.0",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Tilak_Varma_in_March_2026.png/330px-Tilak_Varma_in_March_2026.png",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -7765,7 +7765,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 83,
       "base_price": 3000000,
       "stats": "Runs: 4840 (SR 140.7), Dismissals: 112",
-      "img": "",
+      "img": "https://static.cricbuzz.com/a/img/v1/i1/c845504/tim-seifert.jpg?d=low&p=gthumb",
       "overseas": true,
       "country": "New Zealand",
       "retired": false
@@ -7777,7 +7777,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 89,
       "base_price": 15000000,
       "stats": "Runs: 7480, Avg: 42.7, SR: 146.2",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Travis_Head_bowling_at_Perth_Stadium%2C_First_Test_Australia_versus_West_Indies%2C_2_December_2022_03_%28cropped%29.jpg/330px-Travis_Head_bowling_at_Perth_Stadium%2C_First_Test_Australia_versus_West_Indies%2C_2_December_2022_03_%28cropped%29.jpg",
       "overseas": true,
       "country": "Australia",
       "retired": false
@@ -7789,7 +7789,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 82,
       "base_price": 20000000,
       "stats": "Wkts: 199, Econ: 6.82, Avg: 22.8",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/2018.02.03.22.23.14-AUSvNZL_T20_AUS_innings%2C_SCG_%2839533156665%29.jpg/330px-2018.02.03.22.23.14-AUSvNZL_T20_AUS_innings%2C_SCG_%2839533156665%29.jpg",
       "overseas": true,
       "country": "New Zealand",
       "retired": false
@@ -7801,7 +7801,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 83,
       "base_price": 15000000,
       "stats": "Runs: 5600 (SR 143.6), Dismissals: 127",
-      "img": "",
+      "img": "https://static.cricbuzz.com/a/img/v1/i1/c846116/tristan-stubbs.jpg?d=low&p=gthumb",
       "overseas": true,
       "country": "South Africa",
       "retired": false
@@ -7813,7 +7813,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 91,
       "base_price": 7500000,
       "stats": "Wkts: 182, Econ: 7.01, Avg: 22.7",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Tushar_Deshpande.jpg/330px-Tushar_Deshpande.jpg",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -7825,7 +7825,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 76,
       "base_price": 5000000,
       "stats": "Wkts: 138, Econ: 7.62, Avg: 24.4",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Umesh_Yadav.jpg/330px-Umesh_Yadav.jpg",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -7849,7 +7849,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 81,
       "base_price": 10000000,
       "stats": "Wkts: 191, Econ: 7.07, Avg: 22.8",
-      "img": "",
+      "img": "https://static.cricbuzz.com/a/img/v1/i1/c846040/varun-chakaravarthy.jpg?d=low&p=gthumb",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -7861,7 +7861,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 80,
       "base_price": 7500000,
       "stats": "Runs: 2900 (SR 141.0), Wkts: 81 (Econ 8.3)",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Venkatesh_Iyer.png/330px-Venkatesh_Iyer.png",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -7873,7 +7873,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 90,
       "base_price": 20000000,
       "stats": "Runs: 9640, Avg: 50.4, SR: 153.4",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/Virat_Kohli_in_PMO_New_Delhi.jpg/330px-Virat_Kohli_in_PMO_New_Delhi.jpg",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -7885,7 +7885,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 78,
       "base_price": 15000000,
       "stats": "Runs: 3380 (SR 147.6), Wkts: 96 (Econ 8.18)",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Waniya.jpg/330px-Waniya.jpg",
       "overseas": true,
       "country": "Sri Lanka",
       "retired": false
@@ -7897,7 +7897,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 81,
       "base_price": 7500000,
       "stats": "Runs: 3220 (SR 145.4), Wkts: 91 (Econ 8.07)",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Washington_Sundar.jpg/330px-Washington_Sundar.jpg",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -7909,7 +7909,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 83,
       "base_price": 7500000,
       "stats": "Runs: 2580 (SR 137.6), Wkts: 74 (Econ 8.43)",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/4_20_Will_Jacks.jpg/330px-4_20_Will_Jacks.jpg",
       "overseas": true,
       "country": "England",
       "retired": false
@@ -7921,7 +7921,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 76,
       "base_price": 5000000,
       "stats": "Wkts: 153, Econ: 7.7, Avg: 25.3",
-      "img": "",
+      "img": "https://static.cricbuzz.com/a/img/v1/i1/c845954/xavier-bartlett.jpg?d=low&p=gthumb",
       "overseas": true,
       "country": "Australia",
       "retired": false
@@ -7933,7 +7933,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 76,
       "base_price": 5000000,
       "stats": "Wkts: 172, Econ: 7.24, Avg: 24.5",
-      "img": "",
+      "img": "https://static.cricbuzz.com/a/img/v1/i1/c182026/yash-dayal.jpg?d=low&p=gthumb",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -7945,7 +7945,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 88,
       "base_price": 15000000,
       "stats": "Runs: 7760, Avg: 43.7, SR: 148.2",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Yashasvi_Jaiswal_in_PMO_New_Delhi.jpg/330px-Yashasvi_Jaiswal_in_PMO_New_Delhi.jpg",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -7957,7 +7957,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 82,
       "base_price": 10000000,
       "stats": "Wkts: 206, Econ: 7.15, Avg: 23.6",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/Yuzvendra_Chahal_in_PMO_New_Delhi.jpg/330px-Yuzvendra_Chahal_in_PMO_New_Delhi.jpg",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -7981,7 +7981,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 70,
       "base_price": 2000000,
       "stats": "",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Vaibhav_Suryavanshi_meets_PM_Modi.jpg/330px-Vaibhav_Suryavanshi_meets_PM_Modi.jpg",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -8005,7 +8005,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 82,
       "base_price": 10000000,
       "stats": "Runs: 2900 (SR 141.0), Wkts: 81 (Econ 8.3)",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Axar_Patel_in_PMO_New_Delhi.jpg/330px-Axar_Patel_in_PMO_New_Delhi.jpg",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -8017,7 +8017,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 75,
       "base_price": 3000000,
       "stats": "Runs: 6360, Avg: 40.9, SR: 146.6",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/Abdul_Samad.png/330px-Abdul_Samad.png",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -8041,7 +8041,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 78,
       "base_price": 3000000,
       "stats": "Runs: 5060 (SR 142.4), Dismissals: 119",
-      "img": "",
+      "img": "https://static.cricbuzz.com/a/img/v1/i1/c182026/abishek-porel.jpg?d=low&p=gthumb",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -8089,7 +8089,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 80,
       "base_price": 2000000,
       "stats": "Wickets: 0, Econ: 8.00",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/3/3f/Ashish_Nehra_%286160488612%29_%28cropped%29.jpg",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -8125,7 +8125,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 84,
       "base_price": 20000000,
       "stats": "Runs: 3860 (SR 148.2), Wkts: 97 (Econ 8.06)",
-      "img": "",
+      "img": "https://static.cricbuzz.com/a/img/v1/i1/c845511/daryl-mitchell.jpg?d=low&p=gthumb",
       "overseas": true,
       "country": "New Zealand",
       "retired": false
@@ -8137,7 +8137,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 84,
       "base_price": 7500000,
       "stats": "Runs: 4740 (SR 137.5), Dismissals: 118",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/3_48_Jamie_Smith.jpg/330px-3_48_Jamie_Smith.jpg",
       "overseas": true,
       "country": "England",
       "retired": false
@@ -8173,7 +8173,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 80,
       "base_price": 5000000,
       "stats": "Wkts: 163, Econ: 7.48, Avg: 24.5",
-      "img": "",
+      "img": "https://static.cricbuzz.com/a/img/v1/i1/c594343/mohit-sharma.jpg?d=low&p=gthumb",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -8185,7 +8185,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 83,
       "base_price": 10000000,
       "stats": "Wkts: 182, Econ: 7.01, Avg: 22.7",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Mustafizur_Rahman_%284%29_%28cropped%29.jpg/330px-Mustafizur_Rahman_%284%29_%28cropped%29.jpg",
       "overseas": true,
       "country": "Bangladesh",
       "retired": false
@@ -8197,7 +8197,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 78,
       "base_price": 5000000,
       "stats": "Wkts: 174, Econ: 6.96, Avg: 22.7",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Piyush_Chawla_2019.jpg/330px-Piyush_Chawla_2019.jpg",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -8209,7 +8209,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 73,
       "base_price": 3000000,
       "stats": "Wkts: 170, Econ: 7.51, Avg: 25.3",
-      "img": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Rajasthan_Royals_player_Shreyas_Gopal_in_a_post-match_presentation_during_2019_Indian_Premier_League.png/330px-Rajasthan_Royals_player_Shreyas_Gopal_in_a_post-match_presentation_during_2019_Indian_Premier_League.png",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -8221,7 +8221,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 72,
       "base_price": 2000000,
       "stats": "Wkts: 143, Econ: 7.93, Avg: 27.1",
-      "img": "",
+      "img": "https://static.cricbuzz.com/a/img/v1/i1/c731465/anshul-kamboj.jpg?d=low&p=gthumb",
       "overseas": false,
       "country": "India",
       "retired": false
