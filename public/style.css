@@ -1495,7 +1495,8 @@ h1, h2, h3, h4 {
 }
 
 .hidden-retired,
-.hidden-search {
+.hidden-search,
+.hidden-filter {
     display: none !important;
 }
 
@@ -1714,6 +1715,185 @@ h1, h2, h3, h4 {
 .scheduled-auction-item:hover {
     background: rgba(255, 255, 255, 0.06);
     border-color: rgba(255, 255, 255, 0.15);
+}
+
+/* ==========================================
+   Advanced UI & User-Friendly Features styles
+   ========================================== */
+
+/* Checklist Filters */
+.filter-tag {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--text-secondary);
+    padding: 0.35rem 0.85rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.filter-tag:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.2);
+    color: white;
+    transform: translateY(-1px);
+}
+
+.filter-tag.active {
+    background: linear-gradient(135deg, #a100ff, #7f00ff);
+    color: white;
+    border-color: transparent;
+    box-shadow: 0 0 10px rgba(161, 0, 255, 0.35);
+}
+
+/* Bid Timeline Wrapper */
+.bid-timeline-wrapper {
+    margin-top: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    padding-top: 0.75rem;
+    width: 100%;
+    text-align: left;
+}
+
+.timeline-title {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--text-secondary);
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.bid-history-timeline {
+    max-height: 85px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    padding-right: 0.25rem;
+}
+
+/* Individual Timeline Items */
+.bid-timeline-item {
+    font-size: 0.78rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 6px;
+    padding: 0.35rem 0.55rem;
+    animation: slideInBid 0.25s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.bid-timeline-item.active {
+    background: rgba(0, 242, 254, 0.06);
+    border-color: rgba(0, 242, 254, 0.15);
+}
+
+.bid-timeline-item .bid-team {
+    font-weight: 600;
+    color: white;
+}
+
+.bid-timeline-item .bid-amount {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    color: var(--accent-cyan);
+}
+
+@keyframes slideInBid {
+    from {
+        opacity: 0;
+        transform: translateY(-5px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Rating Tier Badges */
+.tier-gold {
+    color: var(--accent-gold);
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.4);
+}
+.tier-silver {
+    color: #e0e0e0;
+    text-shadow: 0 0 10px rgba(224, 224, 224, 0.4);
+}
+.tier-bronze {
+    color: #cd7f32;
+    text-shadow: 0 0 10px rgba(205, 127, 50, 0.4);
+}
+
+/* High Bidder Highlight */
+.high-bidder-highlight {
+    border: 2px solid var(--accent-cyan) !important;
+    box-shadow: var(--shadow-glow-cyan) !important;
+    animation: pulseCyan 2s infinite ease-in-out;
+}
+
+@keyframes pulseCyan {
+    0%, 100% {
+        box-shadow: 0 0 10px rgba(0, 242, 254, 0.2);
+    }
+    50% {
+        box-shadow: 0 0 22px rgba(0, 242, 254, 0.55);
+    }
+}
+
+/* Visual Progress Bars for Budgets */
+.budget-progress-bar {
+    width: 100%;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 2px;
+    margin-top: 0.5rem;
+    overflow: hidden;
+}
+
+.budget-progress-fill {
+    height: 100%;
+    border-radius: 2px;
+    transition: width 0.4s ease;
+}
+
+.budget-fill-safe {
+    background: linear-gradient(90deg, #00e676, #00c6ff);
+}
+
+.budget-fill-warning {
+    background: linear-gradient(90deg, #ffd700, #ff7600);
+}
+
+.budget-fill-danger {
+    background: linear-gradient(90deg, #ff3366, #c2003b);
+}
+
+/* Low Timer Warning state */
+.timer-pulse-critical {
+    animation: timerPulse 0.5s infinite alternate;
+}
+
+@keyframes timerPulse {
+    from {
+        box-shadow: 0 0 5px rgba(255, 51, 102, 0.3);
+        border-color: rgba(255, 51, 102, 0.4);
+    }
+    to {
+        box-shadow: 0 0 25px rgba(255, 51, 102, 0.85);
+        border-color: rgba(255, 51, 102, 1);
+        background-color: rgba(255, 51, 102, 0.08);
+    }
 }
 
 

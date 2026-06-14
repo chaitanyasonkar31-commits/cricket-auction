@@ -19,6 +19,144 @@ let currentTimerVal = 0;
 let localTimerInterval = null;
 let allPresetsData = window.ALL_PLAYERS_DATA || {};
 let presetsLoaded = false;
+
+let currentChecklistFilter = 'All';
+let isAudioMuted = localStorage.getItem('auction_audio_muted') === 'true';
+let audioCtx = null;
+let lastWarningSec = -1;
+
+// Browser Native Audio Synthesizer
+function playAuctionSound(type) {
+    if (isAudioMuted) return;
+    try {
+        if (!audioCtx) {
+            audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+        }
+        if (audioCtx.state === 'suspended') {
+            audioCtx.resume();
+        }
+        
+        const osc = audioCtx.createOscillator();
+        const gain = audioCtx.createGain();
+        osc.connect(gain);
+        gain.connect(audioCtx.destination);
+        
+        const now = audioCtx.currentTime;
+        
+        if (type === 'bid') {
+            // High chime/pop sound
+            osc.type = 'sine';
+            osc.frequency.setValueAtTime(800, now);
+            osc.frequency.exponentialRampToValueAtTime(1400, now + 0.08);
+            gain.gain.setValueAtTime(0.15, now);
+            gain.gain.exponentialRampToValueAtTime(0.001, now + 0.08);
+            osc.start(now);
+            osc.stop(now + 0.08);
+        } else if (type === 'sold') {
+            // Victory major chord arpeggio
+            const playTone = (freq, startTime, duration, vol) => {
+                const o = audioCtx.createOscillator();
+                const g = audioCtx.createGain();
+                o.connect(g);
+                g.connect(audioCtx.destination);
+                o.type = 'triangle';
+                o.frequency.setValueAtTime(freq, startTime);
+                g.gain.setValueAtTime(vol, startTime);
+                g.gain.exponentialRampToValueAtTime(0.001, startTime + duration);
+                o.start(startTime);
+                o.stop(startTime + duration);
+            };
+            playTone(523.25, now, 0.15, 0.12);        // C5
+            playTone(659.25, now + 0.08, 0.15, 0.12);  // E5
+            playTone(783.99, now + 0.16, 0.15, 0.12);  // G5
+            playTone(1046.50, now + 0.24, 0.35, 0.15); // C6
+        } else if (type === 'unsold') {
+            // Downward double thud
+            osc.type = 'sawtooth';
+            osc.frequency.setValueAtTime(180, now);
+            osc.frequency.linearRampToValueAtTime(60, now + 0.3);
+            gain.gain.setValueAtTime(0.18, now);
+            gain.gain.exponentialRampToValueAtTime(0.001, now + 0.3);
+            osc.start(now);
+            osc.stop(now + 0.3);
+        } else if (type === 'warning') {
+            // Short wooden tick
+            osc.type = 'triangle';
+            osc.frequency.setValueAtTime(160, now);
+            gain.gain.setValueAtTime(0.2, now);
+            gain.gain.exponentialRampToValueAtTime(0.001, now + 0.04);
+            osc.start(now);
+            osc.stop(now + 0.04);
+        }
+    } catch (e) {
+        console.warn("Audio Context failed to play sound: ", e);
+    }
+}
+
+function toggleAudio() {
+    isAudioMuted = !isAudioMuted;
+    localStorage.setItem('auction_audio_muted', isAudioMuted);
+    updateAudioToggleUI();
+}
+
+function updateAudioToggleUI() {
+    const btn = document.getElementById('btn-toggle-audio');
+    if (!btn) return;
+    
+    if (isAudioMuted) {
+        btn.style.color = 'var(--text-secondary)';
+        btn.style.borderColor = 'rgba(255,255,255,0.15)';
+        btn.style.background = 'rgba(255,255,255,0.02)';
+        btn.innerHTML = '<i class="fa-solid fa-volume-xmark"></i> <span id="audio-toggle-text">Sound: Off</span>';
+    } else {
+        btn.style.color = 'var(--accent-gold)';
+        btn.style.borderColor = 'rgba(255, 215, 0, 0.3)';
+        btn.style.background = 'rgba(255, 215, 0, 0.08)';
+        btn.innerHTML = '<i class="fa-solid fa-volume-high"></i> <span id="audio-toggle-text">Sound: On</span>';
+    }
+}
+
+// Checklist Filtering Actions
+function setChecklistFilter(category) {
+    currentChecklistFilter = category;
+    
+    // Update active class on filter tags
+    const container = document.querySelector('.checklist-filters-container');
+    if (container) {
+        container.querySelectorAll('.filter-tag').forEach(btn => {
+            if (btn.innerText.includes(category) || 
+                (category === 'All' && btn.innerText === 'All') || 
+                (category === 'Batsman' && btn.innerText === 'Batsmen') || 
+                (category === 'Bowler' && btn.innerText === 'Bowlers') || 
+                (category === 'All-Rounder' && btn.innerText === 'All-Rounders') || 
+                (category === 'Wicket-Keeper' && btn.innerText === 'Wicket-Keepers') ||
+                (category === 'Overseas' && btn.innerText.includes('Overseas')) ||
+                (category === 'Indian' && btn.innerText.includes('Indian'))) {
+                btn.classList.add('active');
+            } else {
+                btn.classList.remove('active');
+            }
+        });
+    }
+    
+    // Dynamically toggle class names to preserve checked/unchecked inputs and input ratings
+    allPresetPlayers.forEach(p => {
+        const cb = document.getElementById(`check-p-${p.id}`);
+        const item = cb ? cb.closest('.checklist-item') : null;
+        if (item) {
+            const isFilterHidden = category !== 'All' && (
+                category === 'Overseas' ? !p.overseas :
+                category === 'Indian' ? p.overseas :
+                p.role !== category
+            );
+            if (isFilterHidden) {
+                item.classList.add('hidden-filter');
+            } else {
+                item.classList.remove('hidden-filter');
+            }
+        }
+    });
+}
 let allPresetPlayers = [
     {"id": 1, "name": "Virat Kohli", "role": "Batsman", "rating": 96, "base_price": 20000000, "stats": "Runs: 7624, Avg: 38.7, SR: 130.7", "img": "https://img1.hscicdn.com/image/upload/f_auto,t_ds_square_w_320,q_50/lsci/db/PICTURES/CMS/316600/316605.png", "overseas": false, "country": "India"},
     {"id": 2, "name": "MS Dhoni", "role": "Wicket-Keeper", "rating": 95, "base_price": 20000000, "stats": "Runs: 5243, Avg: 39.1, SR: 137.5, Catch/Stump: 192", "img": "https://img1.hscicdn.com/image/upload/f_auto,t_ds_square_w_320,q_50/lsci/db/PICTURES/CMS/319900/319946.png", "overseas": false, "country": "India"},
@@ -251,6 +389,9 @@ window.addEventListener('DOMContentLoaded', async () => {
             e.target.value = e.target.value.toUpperCase();
         });
     }
+
+    // Initialize audio toggle button state
+    updateAudioToggleUI();
 
     const authToken = localStorage.getItem('auth_token');
     const authUsername = localStorage.getItem('auth_username');
@@ -752,15 +893,26 @@ function renderPlayersChecklist() {
         const label = document.createElement('div');
         const isRetiredHidden = p.retired && excludeRetired;
         const isSearchHidden = query !== '' && !p.name.toLowerCase().includes(query);
+        const isFilterHidden = currentChecklistFilter !== 'All' && (
+            currentChecklistFilter === 'Overseas' ? !p.overseas :
+            currentChecklistFilter === 'Indian' ? p.overseas :
+            p.role !== currentChecklistFilter
+        );
         
         let classes = ['checklist-item'];
         if (isRetiredHidden) classes.push('hidden-retired');
         if (isSearchHidden) classes.push('hidden-search');
+        if (isFilterHidden) classes.push('hidden-filter');
         
         label.className = classes.join(' ');
         
         const countryLabel = p.country ? p.country : (p.overseas ? 'Overseas' : 'India');
-        const isChecked = isRetiredHidden ? false : true;
+        const isChecked = (isRetiredHidden || isFilterHidden) ? false : true;
+        
+        const ratingVal = p.rating || 0;
+        let tierClass = 'tier-bronze';
+        if (ratingVal >= 90) tierClass = 'tier-gold';
+        else if (ratingVal >= 80) tierClass = 'tier-silver';
         
         label.innerHTML = `
             <input type="checkbox" id="check-p-${p.id}" value="${p.id}" ${isChecked ? 'checked' : ''}>
@@ -773,7 +925,7 @@ function renderPlayersChecklist() {
                 </div>
             </div>
             <div class="checklist-rating-input" style="display: flex; flex-direction: column; align-items: flex-end; gap: 0.15rem;">
-                <span style="font-size: 0.6rem; color: var(--text-secondary); text-transform: uppercase;">Rating</span>
+                <span class="${tierClass}" style="font-size: 0.8rem; font-weight: 700;"><i class="fa-solid fa-award"></i> ${ratingVal}</span>
                 <input type="number" id="rating-p-${p.id}" placeholder="${p.rating}" min="1" max="99" style="width: 50px; height: 26px; padding: 0.2rem; background: rgba(0,0,0,0.3); border: 1px solid var(--border-color); color: white; border-radius: 4px; text-align: center; font-size: 0.8rem;">
             </div>
         `;
@@ -783,7 +935,7 @@ function renderPlayersChecklist() {
 
 // Helper to select/deselect all checklist checkboxes
 function toggleAllChecklist(checked) {
-    const checkboxes = document.querySelectorAll('.checklist-item:not(.hidden-retired):not(.hidden-search) input[type="checkbox"]');
+    const checkboxes = document.querySelectorAll('.checklist-item:not(.hidden-retired):not(.hidden-search):not(.hidden-filter) input[type="checkbox"]');
     checkboxes.forEach(cb => cb.checked = checked);
 }
 
@@ -1061,6 +1213,9 @@ function connectEvents(code) {
         const payload = JSON.parse(e.data);
         roomState = payload.room;
         
+        // Play sound pop
+        playAuctionSound('bid');
+        
         // Highlight active card
         const card = document.getElementById('active-player-card');
         if (card) {
@@ -1089,6 +1244,9 @@ function connectEvents(code) {
         const payload = JSON.parse(e.data);
         roomState = payload.room;
         
+        // Play sold fanfare chord
+        playAuctionSound('sold');
+        
         // Trigger visual confetti
         triggerConfetti();
         
@@ -1112,6 +1270,9 @@ function connectEvents(code) {
     eventSource.addEventListener('player_unsold', (e) => {
         const payload = JSON.parse(e.data);
         roomState = payload.room;
+        
+        // Play unsold thud
+        playAuctionSound('unsold');
         
         const stamp = document.getElementById('player-sale-stamp');
         if (stamp) {
@@ -1160,6 +1321,8 @@ function updateTimerProgressBar(val) {
             bar.style.width = "100%";
             bar.classList.remove('warning');
         }
+        const timerContainer = document.querySelector('.timer-section');
+        if (timerContainer) timerContainer.classList.remove('timer-pulse-critical');
         return;
     }
     
@@ -1172,8 +1335,22 @@ function updateTimerProgressBar(val) {
         
         if (val <= 5) {
             bar.classList.add('warning');
+            const timerContainer = document.querySelector('.timer-section');
+            if (timerContainer) timerContainer.classList.add('timer-pulse-critical');
+            
+            // Play countdown ticking sound warning
+            if (val > 0 && roomState.status === 'active' && roomState.timer_active && lastWarningSec !== val) {
+                lastWarningSec = val;
+                playAuctionSound('warning');
+            }
         } else {
             bar.classList.remove('warning');
+            const timerContainer = document.querySelector('.timer-section');
+            if (timerContainer) timerContainer.classList.remove('timer-pulse-critical');
+        }
+        
+        if (val > 5) {
+            lastWarningSec = -1; // Reset when above 5
         }
     }
 }
@@ -1423,10 +1600,11 @@ function renderAuctionDashboard() {
         
         const disableBidding = !isEligible || isHighBidder || budget < minRequired || exceedsOS || isSquadFull;
         
+        const baseForAdd = roomState.current_bid === 0 ? activePlayer.base_price : roomState.current_bid;
         minBtn.disabled = disableBidding;
-        add20L.disabled = disableBidding || (roomState.current_bid === 0 && budget < (activePlayer.base_price + 2000000));
-        add50L.disabled = disableBidding || (roomState.current_bid === 0 && budget < (activePlayer.base_price + 5000000));
-        add1Cr.disabled = disableBidding || (roomState.current_bid === 0 && budget < (activePlayer.base_price + 10000000));
+        add20L.disabled = disableBidding || budget < (baseForAdd + 2000000);
+        add50L.disabled = disableBidding || budget < (baseForAdd + 5000000);
+        add1Cr.disabled = disableBidding || budget < (baseForAdd + 10000000);
         
         // Apply helper tips for managers
         if (isHighBidder && isEligible) {
@@ -1573,7 +1751,10 @@ function renderAuctionDashboard() {
     teamKeys.forEach(tName => {
         const team = roomState.teams[tName];
         const row = document.createElement('div');
-        row.className = "leaderboard-row";
+        
+        // Highlight active bidder
+        const isHighBidder = roomState.current_bidder === tName && roomState.current_bid > 0;
+        row.className = "leaderboard-row" + (isHighBidder ? " high-bidder-highlight" : "");
         row.onclick = () => openRosterModal(tName);
         
         let kickBtnHtml = '';
@@ -1585,19 +1766,32 @@ function renderAuctionDashboard() {
             `;
         }
         
+        const startingBudget = roomState.settings.budget || 1000000000;
+        const percentage = Math.max(0, Math.min(100, (team.budget / startingBudget) * 100));
+        let progressClass = 'budget-fill-safe';
+        if (percentage < 25) progressClass = 'budget-fill-danger';
+        else if (percentage < 55) progressClass = 'budget-fill-warning';
+        
         row.innerHTML = `
-            <div class="leader-team-info">
-                <div class="leader-team-icon"><i class="fa-solid fa-shield-halved"></i></div>
-                <div>
-                    <span class="leader-team-name">${tName}</span>
-                    <span class="leader-manager-name">Mgr: ${team.manager}</span>
+            <div style="display: flex; flex-direction: column; width: 100%; gap: 0.35rem;">
+                <div style="display: flex; align-items: center; justify-content: space-between; width: 100%;">
+                    <div class="leader-team-info">
+                        <div class="leader-team-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                        <div>
+                            <span class="leader-team-name">${tName}</span>
+                            <span class="leader-manager-name">Mgr: ${team.manager}</span>
+                        </div>
+                    </div>
+                    <div class="leader-team-stats">
+                        <span class="leader-team-count">${team.players.length} Players</span>
+                        <span class="leader-team-budget" style="font-weight: 700; color: ${isHighBidder ? 'var(--accent-cyan)' : 'var(--text-primary)'}">${formatCurrency(team.budget)}</span>
+                        <i class="fa-solid fa-eye" title="View Squad Roster" style="margin-left: 0.5rem; color: var(--text-secondary); opacity: 0.7;"></i>
+                        ${kickBtnHtml}
+                    </div>
                 </div>
-            </div>
-            <div class="leader-team-stats">
-                <span class="leader-team-count">${team.players.length} Players</span>
-                <span class="leader-team-budget">${formatCurrency(team.budget)}</span>
-                <i class="fa-solid fa-eye" title="View Squad Roster" style="margin-left: 0.5rem; color: var(--text-secondary); opacity: 0.7;"></i>
-                ${kickBtnHtml}
+                <div class="budget-progress-bar">
+                    <div class="budget-progress-fill ${progressClass}" style="width: ${percentage}%;"></div>
+                </div>
             </div>
         `;
         leaderboardGrid.appendChild(row);
@@ -1626,6 +1820,83 @@ function renderAuctionDashboard() {
         } else {
             saveBtn.style.display = 'none';
         }
+    }
+    
+    // Update audio toggle state button
+    updateAudioToggleUI();
+    
+    // Rebuild bid timeline from server logs
+    rebuildBidTimeline();
+}
+
+// Rebuild Bids Timeline on Card
+function rebuildBidTimeline() {
+    const timeline = document.getElementById('bid-history-timeline');
+    const wrapper = document.getElementById('bid-timeline-wrapper');
+    if (!timeline || !wrapper || !roomState || !roomState.logs) return;
+    
+    timeline.innerHTML = '';
+    
+    const idx = roomState.current_player_index;
+    if (idx < 0 || idx >= roomState.players.length || roomState.status === 'finished') {
+        wrapper.classList.add('hidden');
+        return;
+    }
+    
+    const activePlayer = roomState.players[idx];
+    const activePlayerName = activePlayer.name;
+    let bidsFound = [];
+    
+    // Find where the active player went up for bidding in logs
+    let activePlayerStartIndex = -1;
+    for (let i = roomState.logs.length - 1; i >= 0; i--) {
+        const log = roomState.logs[i];
+        if (log.includes("up for bidding") && log.includes(activePlayerName)) {
+            activePlayerStartIndex = i;
+            break;
+        }
+    }
+    
+    // Fallback if index not found
+    if (activePlayerStartIndex === -1) {
+        for (let i = roomState.logs.length - 1; i >= 0; i--) {
+            if (roomState.logs[i].includes("up for bidding")) {
+                activePlayerStartIndex = i;
+                break;
+            }
+        }
+    }
+    
+    const startIdx = activePlayerStartIndex !== -1 ? activePlayerStartIndex : 0;
+    
+    // Extract all bids after the start index
+    for (let i = startIdx; i < roomState.logs.length; i++) {
+        const log = roomState.logs[i];
+        if (log.includes("placed a bid of")) {
+            const match = log.match(/<b>(.*?)<\/b>\s+placed a bid of\s+<b>(.*?)<\/b>/);
+            if (match) {
+                bidsFound.push({
+                    bidder: match[1],
+                    amount: match[2]
+                });
+            }
+        }
+    }
+    
+    if (bidsFound.length > 0) {
+        wrapper.classList.remove('hidden');
+        bidsFound.reverse(); // newest first
+        bidsFound.forEach((b, index) => {
+            const item = document.createElement('div');
+            item.className = 'bid-timeline-item' + (index === 0 ? ' active' : '');
+            item.innerHTML = `
+                <span class="bid-team">${b.bidder}</span>
+                <span class="bid-amount">${b.amount}</span>
+            `;
+            timeline.appendChild(item);
+        });
+    } else {
+        wrapper.classList.add('hidden');
     }
 }
 
