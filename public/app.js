@@ -530,7 +530,7 @@ function addCustomPlayerRow() {
         <td class="s-no" style="font-weight: bold; text-align: center; color: var(--text-secondary);">${nextSNo}</td>
         <td style="text-align: center; vertical-align: middle; position: relative;">
             <div class="cp-img-wrapper" style="width: 40px; height: 40px; border-radius: 50%; overflow: hidden; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.15); display: inline-block; cursor: pointer; position: relative;" onclick="triggerRowImgInput(this)" title="Click to upload player photo">
-                <img class="cp-img-preview" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'><circle cx='50' cy='40' r='25' fill='%23555'/><path d='M15 85 C15 65 30 55 50 55 C70 55 85 65 85 85' fill='%23555'/></svg>" style="width: 100%; height: 100%; object-fit: cover;">
+                <img class="cp-img-preview" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'><circle cx='50' cy='40' r='25' fill='%23555'/><path d='M15 85 C15 65 30 55 50 55 C70 55 85 65 85 85' fill='%23555'/></svg>" style="width: 100%; height: 100%; object-fit: cover; object-position: center 15%;">
                 <div style="position: absolute; bottom: 0; left: 0; right: 0; background: rgba(0,0,0,0.6); font-size: 8px; color: white; text-align: center; padding: 2px 0; opacity: 0; transition: opacity 0.2s;" class="upload-hover">UP</div>
             </div>
             <input type="file" class="cp-img-file-input" accept="image/*" style="display: none;" onchange="handleRowImgUpload(this)">
@@ -930,7 +930,7 @@ function renderPlayersChecklist() {
         const avatarUrl = p.img || getPlayerAvatar(p.name);
         label.innerHTML = `
             <input type="checkbox" id="check-p-${p.id}" value="${p.id}" ${isChecked ? 'checked' : ''}>
-            <img src="${avatarUrl}" style="width: 32px; height: 32px; border-radius: 50%; object-fit: cover; border: 1px solid rgba(255,255,255,0.12); margin-left: 0.5rem; margin-right: 0.25rem; flex-shrink: 0;">
+            <img src="${avatarUrl}" style="width: 32px; height: 32px; border-radius: 50%; object-fit: cover; object-position: center 15%; border: 1px solid rgba(255,255,255,0.12); margin-left: 0.5rem; margin-right: 0.25rem; flex-shrink: 0;">
             <div class="checklist-item-meta" style="flex-grow: 1;">
                 <span class="checklist-item-name">${p.name} <span class="flag-icon" style="font-size: 0.75rem; color: var(--text-secondary);">(${countryLabel})</span></span>
                 <div class="checklist-item-sub">
@@ -2085,7 +2085,7 @@ function openRosterModal(tName) {
             tr.innerHTML = `
                 <td>
                     <div style="display: flex; align-items: center; gap: 0.5rem;">
-                        <img src="${avatarUrl}" style="width: 28px; height: 28px; border-radius: 50%; object-fit: cover; border: 1px solid rgba(255,255,255,0.15); flex-shrink: 0;">
+                        <img src="${avatarUrl}" style="width: 28px; height: 28px; border-radius: 50%; object-fit: cover; object-position: center 15%; border: 1px solid rgba(255,255,255,0.15); flex-shrink: 0;">
                         <strong>${p.name} ${p.overseas ? '✈️' : ''}</strong>
                     </div>
                 </td>
@@ -2192,7 +2192,7 @@ function renderQueueList() {
             : `<span class="queue-price">Base: ${formatCurrency(p.base_price)}</span>`;
         row.innerHTML = `
             <div class="queue-player-info" style="flex-direction: row; align-items: center; gap: 0.65rem;">
-                <img src="${avatarUrl}" style="width: 30px; height: 30px; border-radius: 50%; object-fit: cover; border: 1px solid rgba(255,255,255,0.12); flex-shrink: 0;">
+                <img src="${avatarUrl}" style="width: 30px; height: 30px; border-radius: 50%; object-fit: cover; object-position: center 15%; border: 1px solid rgba(255,255,255,0.12); flex-shrink: 0;">
                 <div style="display: flex; flex-direction: column; gap: 0.15rem;">
                     <strong>${p.name} ${p.overseas ? '✈️' : ''}</strong>
                     <span>${p.role} • Rating: ${p.rating}</span>
@@ -2651,7 +2651,7 @@ function addCustomPlayerRowWithData(name, role, style, rating, price, overseas, 
         <td class="s-no" style="font-weight: bold; text-align: center; color: var(--text-secondary);">${nextSNo}</td>
         <td style="text-align: center; vertical-align: middle; position: relative;">
             <div class="cp-img-wrapper" style="width: 40px; height: 40px; border-radius: 50%; overflow: hidden; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.15); display: inline-block; cursor: pointer; position: relative;" onclick="triggerRowImgInput(this)" title="Click to upload player photo">
-                <img class="cp-img-preview" src="${img || (name ? getPlayerAvatar(name) : "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'><circle cx='50' cy='40' r='25' fill='%23555'/><path d='M15 85 C15 65 30 55 50 55 C70 55 85 65 85 85' fill='%23555'/></svg>")}" style="width: 100%; height: 100%; object-fit: cover;">
+                <img class="cp-img-preview" src="${img || (name ? getPlayerAvatar(name) : "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'><circle cx='50' cy='40' r='25' fill='%23555'/><path d='M15 85 C15 65 30 55 50 55 C70 55 85 65 85 85' fill='%23555'/></svg>")}" style="width: 100%; height: 100%; object-fit: cover; object-position: center 15%;">
                 <div style="position: absolute; bottom: 0; left: 0; right: 0; background: rgba(0,0,0,0.6); font-size: 8px; color: white; text-align: center; padding: 2px 0; opacity: 0; transition: opacity 0.2s;" class="upload-hover">UP</div>
             </div>
             <input type="file" class="cp-img-file-input" accept="image/*" style="display: none;" onchange="handleRowImgUpload(this)">
