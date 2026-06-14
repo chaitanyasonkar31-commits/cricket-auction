@@ -1738,6 +1738,8 @@ button.filter-tag,
     gap: 0.25rem !important;
     outline: none !important;
     box-shadow: none !important;
+    user-select: none !important;
+    -webkit-user-select: none !important;
 }
 
 button.filter-tag:hover,

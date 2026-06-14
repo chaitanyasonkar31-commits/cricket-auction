@@ -251,13 +251,13 @@
 
                         <!-- Checklist Category Filter Buttons -->
                         <div class="checklist-filters-container" style="display: flex; gap: 0.5rem; margin-bottom: 1rem; flex-wrap: wrap;">
-                            <button type="button" class="filter-tag active" onclick="setChecklistFilter('All')">All</button>
-                            <button type="button" class="filter-tag" onclick="setChecklistFilter('Batsman')">Batsmen</button>
-                            <button type="button" class="filter-tag" onclick="setChecklistFilter('Bowler')">Bowlers</button>
-                            <button type="button" class="filter-tag" onclick="setChecklistFilter('All-Rounder')">All-Rounders</button>
-                            <button type="button" class="filter-tag" onclick="setChecklistFilter('Wicket-Keeper')">Wicket-Keepers</button>
-                            <button type="button" class="filter-tag" onclick="setChecklistFilter('Overseas')">Overseas ✈️</button>
-                            <button type="button" class="filter-tag" onclick="setChecklistFilter('Indian')">Indian 🇮🇳</button>
+                            <button type="button" class="filter-tag active" data-filter="All" onclick="setChecklistFilter('All')">All</button>
+                            <button type="button" class="filter-tag" data-filter="Batsman" onclick="setChecklistFilter('Batsman')">Batsmen</button>
+                            <button type="button" class="filter-tag" data-filter="Bowler" onclick="setChecklistFilter('Bowler')">Bowlers</button>
+                            <button type="button" class="filter-tag" data-filter="All-Rounder" onclick="setChecklistFilter('All-Rounder')">All-Rounders</button>
+                            <button type="button" class="filter-tag" data-filter="Wicket-Keeper" onclick="setChecklistFilter('Wicket-Keeper')">Wicket-Keepers</button>
+                            <button type="button" class="filter-tag" data-filter="Overseas" onclick="setChecklistFilter('Overseas')">Overseas ✈️</button>
+                            <button type="button" class="filter-tag" data-filter="Indian" onclick="setChecklistFilter('Indian')">Indian 🇮🇳</button>
                         </div>
 
                         <div id="players-checklist" class="players-checklist-grid">

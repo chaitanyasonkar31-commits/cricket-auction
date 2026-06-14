@@ -120,18 +120,12 @@ function updateAudioToggleUI() {
 function setChecklistFilter(category) {
     currentChecklistFilter = category;
     
-    // Update active class on filter tags
+    // Update active class on filter tags using robust data-filter attributes
     const container = document.querySelector('.checklist-filters-container');
     if (container) {
         container.querySelectorAll('.filter-tag').forEach(btn => {
-            if (btn.innerText.includes(category) || 
-                (category === 'All' && btn.innerText === 'All') || 
-                (category === 'Batsman' && btn.innerText === 'Batsmen') || 
-                (category === 'Bowler' && btn.innerText === 'Bowlers') || 
-                (category === 'All-Rounder' && btn.innerText === 'All-Rounders') || 
-                (category === 'Wicket-Keeper' && btn.innerText === 'Wicket-Keepers') ||
-                (category === 'Overseas' && btn.innerText.includes('Overseas')) ||
-                (category === 'Indian' && btn.innerText.includes('Indian'))) {
+            const filterVal = btn.getAttribute('data-filter') || btn.innerText.trim();
+            if (filterVal === category) {
                 btn.classList.add('active');
             } else {
                 btn.classList.remove('active');
