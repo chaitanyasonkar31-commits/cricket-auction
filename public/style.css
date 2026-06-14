@@ -1896,4 +1896,415 @@ h1, h2, h3, h4 {
     }
 }
 
+/* ==========================================
+   Background Music Player (BGM) Widget Styles
+   ========================================== */
+.bgm-player-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 9999;
+    font-family: var(--font-heading);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Collapsed State: Show only the rotating vinyl button */
+.bgm-player-container.collapsed .bgm-expanded-card {
+    opacity: 0;
+    pointer-events: none;
+    transform: scale(0.8) translateY(20px);
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    position: absolute;
+}
+
+.bgm-player-container.collapsed .bgm-disc-btn {
+    display: flex;
+}
+
+/* Expanded State: Show card, hide mini button */
+.bgm-player-container.expanded .bgm-disc-btn {
+    opacity: 0;
+    pointer-events: none;
+    transform: scale(0.6) rotate(-180deg);
+    display: none;
+}
+
+.bgm-player-container.expanded .bgm-expanded-card {
+    opacity: 1;
+    pointer-events: auto;
+    transform: scale(1) translateY(0);
+}
+
+/* Spinning Vinyl Mini Button */
+.bgm-disc-btn {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: none;
+    background: rgba(18, 18, 18, 0.85);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5), 0 0 10px rgba(161, 0, 255, 0.4);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    transition: all 0.3s ease;
+    border: 2px solid rgba(161, 0, 255, 0.3);
+}
+
+.bgm-disc-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6), 0 0 15px rgba(161, 0, 255, 0.7);
+    border-color: rgba(161, 0, 255, 0.6);
+}
+
+.music-note-icon {
+    font-size: 1.25rem;
+    color: var(--accent-gold);
+    z-index: 3;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.5));
+    animation: musicBounce 1.5s infinite alternate ease-in-out;
+}
+
+.vinyl-disc-mini {
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    right: 4px;
+    bottom: 4px;
+    background: radial-gradient(circle, #2d2d2d 20%, #151515 40%, #000 80%);
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.vinyl-groove {
+    position: absolute;
+    top: 10%; left: 10%; right: 10%; bottom: 10%;
+    border: 1px double rgba(255,255,255,0.06);
+    border-radius: 50%;
+}
+
+.vinyl-center {
+    position: absolute;
+    top: 35%; left: 35%; right: 35%; bottom: 35%;
+    background: var(--accent-gold);
+    border-radius: 50%;
+    z-index: 2;
+    border: 1px solid rgba(0,0,0,0.2);
+}
+
+/* Vinyl rotation animation when playing */
+.bgm-playing .vinyl-disc-mini {
+    animation: spinVinyl 3s linear infinite;
+}
+
+/* Floating Expanded Card styling */
+.bgm-expanded-card {
+    width: 290px;
+    background: rgba(18, 18, 30, 0.85);
+    backdrop-filter: blur(24px) saturate(160%);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    box-shadow: var(--shadow-elevated), 0 10px 30px rgba(0, 0, 0, 0.6), 0 0 20px rgba(161, 0, 255, 0.15);
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.bgm-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(161, 0, 255, 0.15);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    padding: 0.65rem 1rem;
+}
+
+.bgm-header-title {
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.bgm-header-title i {
+    color: var(--accent-gold);
+}
+
+.bgm-close-btn {
+    background: none;
+    border: none;
+    color: var(--text-secondary);
+    cursor: pointer;
+    font-size: 0.85rem;
+    transition: color 0.2s ease;
+}
+
+.bgm-close-btn:hover {
+    color: white;
+}
+
+.bgm-body {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+/* Track description panel */
+.bgm-track-info {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.bgm-track-title {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: white;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.bgm-track-artist {
+    font-size: 0.72rem;
+    color: var(--text-secondary);
+    margin-top: 0.15rem;
+}
+
+/* visual Equalizer */
+.bgm-equalizer {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 3px;
+    height: 18px;
+    margin: 0.2rem auto;
+}
+
+.eq-bar {
+    width: 3px;
+    height: 2px;
+    background: var(--accent-gold);
+    border-radius: 1px;
+    transition: height 0.15s ease;
+}
+
+/* Play state animates visualizer bars */
+.bgm-playing .eq-bar {
+    animation: equalizing 0.8s ease-in-out infinite alternate;
+}
+
+.bgm-playing .eq-bar:nth-child(1) { animation-delay: 0.1s; }
+.bgm-playing .eq-bar:nth-child(2) { animation-delay: 0.3s; animation-duration: 0.6s; }
+.bgm-playing .eq-bar:nth-child(3) { animation-delay: 0.0s; animation-duration: 0.9s; }
+.bgm-playing .eq-bar:nth-child(4) { animation-delay: 0.4s; animation-duration: 0.7s; }
+.bgm-playing .eq-bar:nth-child(5) { animation-delay: 0.2s; }
+
+/* Custom URL Input Panel */
+.bgm-custom-loader {
+    display: flex;
+    gap: 0.35rem;
+    margin-top: 0.2rem;
+}
+
+.bgm-custom-loader input {
+    flex-grow: 1;
+    height: 28px;
+    background: rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 4px;
+    padding: 0 0.5rem;
+    color: white;
+    font-size: 0.72rem;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.bgm-custom-loader input:focus {
+    border-color: rgba(161, 0, 255, 0.4);
+}
+
+.bgm-custom-loader button {
+    height: 28px;
+    width: 28px;
+    background: rgba(161, 0, 255, 0.15);
+    border: 1px solid rgba(161, 0, 255, 0.3);
+    border-radius: 4px;
+    color: var(--accent-gold);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+}
+
+.bgm-custom-loader button:hover {
+    background: rgba(161, 0, 255, 0.35);
+    color: white;
+}
+
+/* Timeline scrubber track */
+.bgm-timeline-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+    margin-top: 0.2rem;
+}
+
+.time-label {
+    font-size: 0.68rem;
+    color: var(--text-secondary);
+    min-width: 26px;
+}
+
+.bgm-timeline-slider {
+    flex-grow: 1;
+    -webkit-appearance: none;
+    height: 4px;
+    border-radius: 2px;
+    background: rgba(255, 255, 255, 0.12);
+    outline: none;
+    cursor: pointer;
+}
+
+.bgm-timeline-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--accent-gold);
+    cursor: pointer;
+    box-shadow: 0 0 5px rgba(255, 215, 0, 0.5);
+    transition: transform 0.1s;
+}
+
+.bgm-timeline-slider::-webkit-slider-thumb:hover {
+    transform: scale(1.3);
+}
+
+/* Controls */
+.bgm-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.75rem;
+    margin: 0.3rem 0;
+}
+
+.bgm-btn {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    color: var(--text-secondary);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    transition: all 0.2s;
+}
+
+.bgm-btn:hover {
+    color: white;
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.15);
+    transform: translateY(-1px);
+}
+
+.bgm-play-btn {
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, #a100ff, #7f00ff);
+    border: none;
+    color: white;
+    font-size: 0.95rem;
+    box-shadow: 0 3px 10px rgba(161, 0, 255, 0.35);
+}
+
+.bgm-play-btn:hover {
+    transform: scale(1.06) translateY(-1px);
+    box-shadow: 0 4px 15px rgba(161, 0, 255, 0.55);
+}
+
+/* Volume Track styles */
+.bgm-volume-container {
+    display: flex;
+    align-items: center;
+    gap: 0.45rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    padding-top: 0.75rem;
+    margin-top: 0.2rem;
+}
+
+.bgm-volume-btn {
+    background: none;
+    border: none;
+    color: var(--text-secondary);
+    cursor: pointer;
+    font-size: 0.8rem;
+    display: flex;
+    align-items: center;
+    transition: color 0.2s;
+}
+
+.bgm-volume-btn:hover {
+    color: white;
+}
+
+.bgm-volume-slider {
+    flex-grow: 1;
+    -webkit-appearance: none;
+    height: 3px;
+    border-radius: 1.5px;
+    background: rgba(255, 255, 255, 0.1);
+    outline: none;
+    cursor: pointer;
+}
+
+.bgm-volume-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: white;
+    cursor: pointer;
+}
+
+/* Animations */
+@keyframes spinVinyl {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+@keyframes musicBounce {
+    from { transform: translateY(0); }
+    to { transform: translateY(-3px); }
+}
+
+@keyframes equalizing {
+    from { height: 2px; }
+    to { height: 16px; }
+}
+
+/* Mobile viewport modifications */
+@media (max-width: 768px) {
+    .bgm-player-container {
+        bottom: 15px;
+        right: 15px;
+    }
+    .bgm-expanded-card {
+        width: 260px;
+    }
+}
+
 

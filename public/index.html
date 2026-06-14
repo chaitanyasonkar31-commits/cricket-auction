@@ -685,6 +685,77 @@ Yashasvi Jaiswal, Batsman, 91, 10000000, Runs: 720 Avg: 41.2, , false" style="fo
         </div>
     </div>
 
+    <!-- Floating Background Music Player Widget -->
+    <div id="bgm-player-container" class="bgm-player-container collapsed">
+        <audio id="bgm-audio" loop></audio>
+        
+        <!-- Collapsed Mini Disc Button -->
+        <button id="bgm-toggle-expand" class="bgm-disc-btn" onclick="toggleBgmPlayer()" title="Open Music Player">
+            <i class="fa-solid fa-music music-note-icon"></i>
+            <div class="vinyl-disc-mini">
+                <div class="vinyl-groove"></div>
+                <div class="vinyl-center"></div>
+            </div>
+        </button>
+
+        <!-- Expanded Player Card -->
+        <div class="bgm-expanded-card">
+            <div class="bgm-header">
+                <span class="bgm-header-title"><i class="fa-solid fa-compact-disc"></i> Arena Music BGM</span>
+                <button class="bgm-close-btn" onclick="toggleBgmPlayer()" title="Minimize">
+                    <i class="fa-solid fa-chevron-down"></i>
+                </button>
+            </div>
+            
+            <div class="bgm-body">
+                <!-- Track Details -->
+                <div class="bgm-track-info">
+                    <span id="bgm-track-title" class="bgm-track-title">SoundHelix Song 1</span>
+                    <span id="bgm-track-artist" class="bgm-track-artist">Ambient Electronic Mix</span>
+                </div>
+                
+                <!-- Equalizer Visualizer animation -->
+                <div class="bgm-equalizer" id="bgm-equalizer">
+                    <div class="eq-bar"></div>
+                    <div class="eq-bar"></div>
+                    <div class="eq-bar"></div>
+                    <div class="eq-bar"></div>
+                    <div class="eq-bar"></div>
+                </div>
+
+                <!-- Custom Audio URL Loader -->
+                <div class="bgm-custom-loader">
+                    <input type="text" id="bgm-custom-url" placeholder="Paste custom MP3 URL here...">
+                    <button onclick="loadCustomBgmUrl()" title="Load Custom Song"><i class="fa-solid fa-plus"></i></button>
+                </div>
+
+                <!-- Audio Scrubber Timeline -->
+                <div class="bgm-timeline-container">
+                    <span id="bgm-time-current" class="time-label">0:00</span>
+                    <input type="range" id="bgm-timeline" class="bgm-timeline-slider" min="0" max="100" value="0" oninput="seekBgm(this.value)">
+                    <span id="bgm-time-duration" class="time-label">0:00</span>
+                </div>
+                
+                <!-- BGM Controls Panel -->
+                <div class="bgm-controls">
+                    <button class="bgm-btn" onclick="prevBgmTrack()" title="Previous Track"><i class="fa-solid fa-backward-step"></i></button>
+                    <button class="bgm-btn bgm-play-btn" id="bgm-play-pause-btn" onclick="toggleBgmPlay()" title="Play"><i class="fa-solid fa-play"></i></button>
+                    <button class="bgm-btn" onclick="stopBgm()" title="Stop"><i class="fa-solid fa-stop"></i></button>
+                    <button class="bgm-btn" onclick="nextBgmTrack()" title="Next Track"><i class="fa-solid fa-forward-step"></i></button>
+                </div>
+
+                <!-- Volume Panel -->
+                <div class="bgm-volume-container">
+                    <button id="bgm-volume-btn" onclick="toggleBgmMute()" class="bgm-volume-btn" title="Mute/Unmute">
+                        <i class="fa-solid fa-volume-high"></i>
+                    </button>
+                    <input type="range" id="bgm-volume-slider" class="bgm-volume-slider" min="0" max="100" value="70" oninput="changeBgmVolume(this.value)">
+                    <span id="bgm-volume-percent" style="font-size: 0.75rem; color: var(--text-secondary); width: 30px; text-align: right;">70%</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Canvas Confetti Library from jsDelivr -->
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
     <!-- Players Fallback Database -->

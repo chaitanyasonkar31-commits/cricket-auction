@@ -393,6 +393,9 @@ window.addEventListener('DOMContentLoaded', async () => {
     // Initialize audio toggle button state
     updateAudioToggleUI();
 
+    // Initialize background music system (BGM) player
+    initBgmPlayer();
+
     const authToken = localStorage.getItem('auth_token');
     const authUsername = localStorage.getItem('auth_username');
 
@@ -2903,4 +2906,232 @@ async function handleHostPlayerImgUpload(input) {
         }
     };
     reader.readAsDataURL(file);
+}
+
+// --- Inbuilt Background Music (BGM) Player System ---
+let currentBgmIndex = parseInt(localStorage.getItem('bgm_track_index')) || 0;
+let bgmVolume = parseInt(localStorage.getItem('bgm_volume')) || 70;
+let isBgmMuted = localStorage.getItem('bgm_muted') === 'true';
+let isBgmPlayerExpanded = localStorage.getItem('bgm_expanded') === 'true';
+
+const bgmPlaylist = [
+    { title: "SoundHelix Song 1", artist: "Energetic Electronica", url: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" },
+    { title: "SoundHelix Song 4", artist: "Synthwave Chill", url: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-4.mp3" },
+    { title: "SoundHelix Song 8", artist: "Arena Rock Beats", url: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-8.mp3" }
+];
+
+function initBgmPlayer() {
+    const audio = document.getElementById('bgm-audio');
+    const container = document.getElementById('bgm-player-container');
+    const timeline = document.getElementById('bgm-timeline');
+    const volSlider = document.getElementById('bgm-volume-slider');
+    
+    if (!audio || !container) return;
+    
+    // Load persisted expansion state
+    if (isBgmPlayerExpanded) {
+        container.classList.remove('collapsed');
+        container.classList.add('expanded');
+    } else {
+        container.classList.add('collapsed');
+        container.classList.remove('expanded');
+    }
+    
+    // Load persisted volume & mute
+    audio.volume = isBgmMuted ? 0 : (bgmVolume / 100);
+    if (volSlider) {
+        volSlider.value = bgmVolume;
+        document.getElementById('bgm-volume-percent').innerText = bgmVolume + "%";
+    }
+    updateBgmVolumeUI();
+    
+    // Load track
+    loadBgmTrack(currentBgmIndex, false);
+    
+    // Event listeners
+    audio.addEventListener('timeupdate', () => {
+        if (!audio.duration) return;
+        const pct = (audio.currentTime / audio.duration) * 100;
+        if (timeline) timeline.value = pct;
+        document.getElementById('bgm-time-current').innerText = formatBgmTime(audio.currentTime);
+    });
+    
+    audio.addEventListener('loadedmetadata', () => {
+        document.getElementById('bgm-time-duration').innerText = formatBgmTime(audio.duration);
+    });
+    
+    audio.addEventListener('ended', () => {
+        nextBgmTrack();
+    });
+    
+    audio.addEventListener('play', () => {
+        container.classList.add('bgm-playing');
+        updateBgmPlayBtnUI(true);
+    });
+    
+    audio.addEventListener('pause', () => {
+        container.classList.remove('bgm-playing');
+        updateBgmPlayBtnUI(false);
+    });
+}
+
+function toggleBgmPlayer() {
+    const container = document.getElementById('bgm-player-container');
+    if (!container) return;
+    
+    isBgmPlayerExpanded = !isBgmPlayerExpanded;
+    localStorage.setItem('bgm_expanded', isBgmPlayerExpanded);
+    
+    if (isBgmPlayerExpanded) {
+        container.classList.remove('collapsed');
+        container.classList.add('expanded');
+    } else {
+        container.classList.add('collapsed');
+        container.classList.remove('expanded');
+    }
+}
+
+function loadBgmTrack(index, autoPlay = true) {
+    const audio = document.getElementById('bgm-audio');
+    if (!audio || index < 0 || index >= bgmPlaylist.length) return;
+    
+    currentBgmIndex = index;
+    localStorage.setItem('bgm_track_index', currentBgmIndex);
+    
+    const track = bgmPlaylist[currentBgmIndex];
+    audio.src = track.url;
+    audio.load();
+    
+    document.getElementById('bgm-track-title').innerText = track.title;
+    document.getElementById('bgm-track-artist').innerText = track.artist;
+    
+    if (autoPlay) {
+        audio.play().catch(err => console.log("BGM Autoplay blocked: ", err));
+    }
+}
+
+function toggleBgmPlay() {
+    const audio = document.getElementById('bgm-audio');
+    if (!audio) return;
+    
+    if (audio.paused) {
+        audio.play().catch(err => {
+            console.warn("BGM playback gesture requirement failed:", err);
+            showNotification("Click anywhere on page first, then play music", "warning");
+        });
+    } else {
+        audio.pause();
+    }
+}
+
+function stopBgm() {
+    const audio = document.getElementById('bgm-audio');
+    if (!audio) return;
+    audio.pause();
+    audio.currentTime = 0;
+}
+
+function nextBgmTrack() {
+    let nextIndex = currentBgmIndex + 1;
+    if (nextIndex >= bgmPlaylist.length) nextIndex = 0;
+    loadBgmTrack(nextIndex, true);
+}
+
+function prevBgmTrack() {
+    let prevIndex = currentBgmIndex - 1;
+    if (prevIndex < 0) prevIndex = bgmPlaylist.length - 1;
+    loadBgmTrack(prevIndex, true);
+}
+
+function changeBgmVolume(val) {
+    const audio = document.getElementById('bgm-audio');
+    if (!audio) return;
+    
+    bgmVolume = parseInt(val);
+    localStorage.setItem('bgm_volume', bgmVolume);
+    document.getElementById('bgm-volume-percent').innerText = bgmVolume + "%";
+    
+    if (!isBgmMuted) {
+        audio.volume = bgmVolume / 100;
+    }
+    updateBgmVolumeUI();
+}
+
+function toggleBgmMute() {
+    const audio = document.getElementById('bgm-audio');
+    if (!audio) return;
+    
+    isBgmMuted = !isBgmMuted;
+    localStorage.setItem('bgm_muted', isBgmMuted);
+    
+    audio.volume = isBgmMuted ? 0 : (bgmVolume / 100);
+    updateBgmVolumeUI();
+}
+
+function updateBgmVolumeUI() {
+    const btn = document.getElementById('bgm-volume-btn');
+    if (!btn) return;
+    
+    if (isBgmMuted || bgmVolume === 0) {
+        btn.innerHTML = '<i class="fa-solid fa-volume-xmark"></i>';
+        btn.title = "Unmute";
+    } else if (bgmVolume < 40) {
+        btn.innerHTML = '<i class="fa-solid fa-volume-low"></i>';
+        btn.title = "Mute";
+    } else {
+        btn.innerHTML = '<i class="fa-solid fa-volume-high"></i>';
+        btn.title = "Mute";
+    }
+}
+
+function updateBgmPlayBtnUI(playing) {
+    const btn = document.getElementById('bgm-play-pause-btn');
+    if (!btn) return;
+    
+    if (playing) {
+        btn.innerHTML = '<i class="fa-solid fa-pause"></i>';
+        btn.title = "Pause";
+    } else {
+        btn.innerHTML = '<i class="fa-solid fa-play"></i>';
+        btn.title = "Play";
+    }
+}
+
+function seekBgm(pct) {
+    const audio = document.getElementById('bgm-audio');
+    if (!audio || !audio.duration) return;
+    audio.currentTime = (parseFloat(pct) / 100) * audio.duration;
+}
+
+function loadCustomBgmUrl() {
+    const input = document.getElementById('bgm-custom-url');
+    if (!input || !input.value.trim()) return;
+    
+    const url = input.value.trim();
+    if (!url.startsWith('http://') && !url.startsWith('https://')) {
+        showNotification("Invalid URL. Must start with http:// or https://", "warning");
+        return;
+    }
+    
+    // Add custom track to playlist
+    const customTrack = {
+        title: "User Custom Stream",
+        artist: "Web MP3 Link",
+        url: url
+    };
+    
+    bgmPlaylist.push(customTrack);
+    const newIdx = bgmPlaylist.length - 1;
+    loadBgmTrack(newIdx, true);
+    
+    // Clear input
+    input.value = "";
+    showNotification("Custom track loaded successfully!", "success");
+}
+
+function formatBgmTime(secs) {
+    if (isNaN(secs)) return "0:00";
+    const minutes = Math.floor(secs / 60);
+    const seconds = Math.floor(secs % 60);
+    return minutes + ":" + (seconds < 10 ? "0" : "") + seconds;
 }
