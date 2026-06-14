@@ -1634,6 +1634,12 @@ function renderAuctionDashboard() {
     if (role === 'host') {
         hostConsole.classList.remove('hidden');
         
+        // Sync the host filter select value with the active room filter
+        const hostRoleFilter = document.getElementById('host-role-filter');
+        if (hostRoleFilter && roomState.current_role_filter) {
+            hostRoleFilter.value = roomState.current_role_filter;
+        }
+        
         let modeIndicator = document.getElementById('host-mode-indicator');
         if (!modeIndicator) {
             modeIndicator = document.createElement('div');
@@ -2162,6 +2168,12 @@ function renderQueueList() {
     } else if (activeQueueFilter === 'unsold') {
         // Unsold: players that actually went unsold (passed) during drafting
         filtered = players.filter(p => p.status === 'passed');
+    }
+
+    // Apply host draft category filter if set
+    const activeRoleFilter = roomState.current_role_filter || 'All';
+    if (activeRoleFilter !== 'All') {
+        filtered = filtered.filter(p => p.role === activeRoleFilter);
     }
     
     if (filtered.length === 0) {
