@@ -1073,7 +1073,11 @@ class AuctionHTTPHandler(SimpleHTTPRequestHandler):
                 if not success:
                     self.send_json_response(400, {"error": msg})
                     return
-                    
+            elif action == "open_dashboard":
+                room["status"] = "active"
+                room["current_player_index"] = -1
+                room["timer_active"] = False
+                room["logs"].append("🎬 Draft session started! Host is setting up the first player...")
             elif action == "pause":
                 room["timer_active"] = False
                 room["logs"].append("⏸️ Auction timer paused by Host.")

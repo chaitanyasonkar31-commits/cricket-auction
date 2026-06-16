@@ -1519,6 +1519,47 @@ async function startAuction() {
     }
 }
 
+// Enter the draft room from lobby (moves everyone to dashboard without starting auction)
+async function enterDraftRoom() {
+    if (role !== 'host') return;
+    try {
+        await apiPost('/api/control', {
+            room_code: roomCode,
+            host_id: hostId,
+            action: 'open_dashboard'
+        });
+    } catch (err) {
+        console.error(err);
+    }
+}
+
+// Start player auction from the dashboard host administration card
+async function dashboardStartAuction() {
+    if (role !== 'host') return;
+    
+    const filterEl = document.getElementById('dashboard-role-filter');
+    const roleFilter = filterEl ? filterEl.value : 'All';
+    const playerSelect = document.getElementById('dashboard-specific-player');
+    const playerId = playerSelect ? playerSelect.value : '';
+    
+    const params = {
+        room_code: roomCode,
+        host_id: hostId,
+        action: 'start',
+        role_filter: roleFilter
+    };
+    
+    if (playerId) {
+        params.player_id = playerId;
+    }
+    
+    try {
+        await apiPost('/api/control', params);
+    } catch (err) {
+        console.error(err);
+    }
+}
+
 // Function to generate unique hash of current teams budget and squads
 function getTeamsStateHash() {
     if (!roomState || !roomState.teams) return '';
@@ -1634,8 +1675,12 @@ function renderAuctionDashboard() {
     const idx = roomState.current_player_index;
     const stamp = document.getElementById('player-sale-stamp');
     const card = document.getElementById('active-player-card');
+    const playerInfoContainer = document.getElementById('active-player-info-container');
+    const hostSetupContainer = document.getElementById('host-setup-container');
     
     if (idx >= 0 && idx < roomState.players.length) {
+        if (playerInfoContainer) playerInfoContainer.classList.remove('hidden');
+        if (hostSetupContainer) hostSetupContainer.classList.add('hidden');
         const player = roomState.players[idx];
         
         document.getElementById('player-card-role').innerText = player.role;
@@ -1696,18 +1741,59 @@ function renderAuctionDashboard() {
             if (card) card.className = "player-card glass-panel";
         }
     } else {
-        // Finished or waiting
-        document.getElementById('player-card-role').innerText = "ROLE";
-        document.getElementById('player-card-rating').innerText = "--";
-        document.getElementById('player-card-name').innerText = roomState.status === 'finished' ? "Draft Finished!" : "Waiting to Begin";
-        document.getElementById('player-card-stats').innerText = roomState.status === 'finished' ? "All players have been auctioned." : "Wait for host to introduce player.";
-        document.getElementById('player-card-base').innerText = "--";
-        document.getElementById('player-card-current').innerText = "--";
-        document.getElementById('player-card-bidder').innerText = "--";
-        const natEl = document.getElementById('player-card-nationality');
-        if (natEl) natEl.classList.add('hidden');
-        if (stamp) stamp.classList.add('hidden');
-        if (card) card.className = "player-card glass-panel";
+        if (roomState.status === 'finished') {
+            if (playerInfoContainer) playerInfoContainer.classList.remove('hidden');
+            if (hostSetupContainer) hostSetupContainer.classList.add('hidden');
+            document.getElementById('player-card-role').innerText = "ROLE";
+            document.getElementById('player-card-rating').innerText = "--";
+            document.getElementById('player-card-name').innerText = "Draft Finished!";
+            document.getElementById('player-card-stats').innerText = "All players have been auctioned.";
+            document.getElementById('player-card-base').innerText = "--";
+            document.getElementById('player-card-current').innerText = "--";
+            document.getElementById('player-card-bidder').innerText = "--";
+            const natEl = document.getElementById('player-card-nationality');
+            if (natEl) natEl.classList.add('hidden');
+            if (stamp) stamp.classList.add('hidden');
+            if (card) card.className = "player-card glass-panel";
+        } else {
+            // idx is -1 and room is not finished -> Setup/waiting phase
+            if (role === 'host') {
+                if (playerInfoContainer) playerInfoContainer.classList.add('hidden');
+                if (hostSetupContainer) hostSetupContainer.classList.remove('hidden');
+                
+                // Populate the specific player select dropdown inside the dashboard card
+                const dashboardSpecificSelect = document.getElementById('dashboard-specific-player');
+                if (dashboardSpecificSelect) {
+                    const currentSelected = dashboardSpecificSelect.value;
+                    dashboardSpecificSelect.innerHTML = '<option value="">-- Sequential / Next Up --</option>';
+                    const unsoldPlayers = roomState.players.filter(p => p.status !== 'sold' && !p.bought_by);
+                    unsoldPlayers.sort((a, b) => a.name.localeCompare(b.name));
+                    unsoldPlayers.forEach(p => {
+                        const opt = document.createElement('option');
+                        opt.value = p.id;
+                        opt.textContent = `${p.name} (${p.role} - ${formatCurrency(p.base_price)})`;
+                        if (p.id.toString() === currentSelected) {
+                            opt.selected = true;
+                        }
+                        dashboardSpecificSelect.appendChild(opt);
+                    });
+                }
+            } else {
+                if (playerInfoContainer) playerInfoContainer.classList.remove('hidden');
+                if (hostSetupContainer) hostSetupContainer.classList.add('hidden');
+                document.getElementById('player-card-role').innerText = "ROLE";
+                document.getElementById('player-card-rating').innerText = "--";
+                document.getElementById('player-card-name').innerText = "Waiting to Begin";
+                document.getElementById('player-card-stats').innerText = "Wait for host to introduce player.";
+                document.getElementById('player-card-base').innerText = "--";
+                document.getElementById('player-card-current').innerText = "--";
+                document.getElementById('player-card-bidder').innerText = "--";
+                const natEl = document.getElementById('player-card-nationality');
+                if (natEl) natEl.classList.add('hidden');
+                if (stamp) stamp.classList.add('hidden');
+                if (card) card.className = "player-card glass-panel";
+            }
+        }
     }
     
     // 2. Bidding Buttons Controls Display
