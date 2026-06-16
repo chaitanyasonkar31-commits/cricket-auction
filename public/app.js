@@ -14,6 +14,16 @@ let hostId = localStorage.getItem('auction_host_id') || '';
 let teamName = localStorage.getItem('auction_team_name') || '';
 let managerName = localStorage.getItem('auction_manager_name') || '';
 let roomState = null;
+let lastRendered = {
+    currentPlayerIndex: -2,
+    roomStatus: '',
+    queueFilter: '',
+    roleFilter: '',
+    logsCount: 0,
+    teamsHash: '',
+    currentBid: -1,
+    currentBidder: ''
+};
 let eventSource = null;
 let currentTimerVal = 0;
 let localTimerInterval = null;
@@ -1189,6 +1199,18 @@ function connectEvents(code) {
         eventSource.close();
     }
     
+    // Reset render cache on new connection/reconnection to force full initial paint
+    lastRendered = {
+        currentPlayerIndex: -2,
+        roomStatus: '',
+        queueFilter: '',
+        roleFilter: '',
+        logsCount: 0,
+        teamsHash: '',
+        currentBid: -1,
+        currentBidder: ''
+    };
+    
     const url = `/events?room=${code}&clientId=${clientId}`;
     eventSource = new EventSource(url);
     
@@ -1450,20 +1472,141 @@ function renderLobby() {
             grid.appendChild(div);
         });
     }
+    
+    // Populate lobby-specific-player dropdown with unsold players for the host
+    const lobbyPlayerSelect = document.getElementById('lobby-specific-player');
+    if (lobbyPlayerSelect && roomState && roomState.players) {
+        const currentSelected = lobbyPlayerSelect.value;
+        lobbyPlayerSelect.innerHTML = '<option value="">-- Sequential / Next Up --</option>';
+        const unsoldPlayers = roomState.players.filter(p => p.status !== 'sold' && !p.bought_by);
+        unsoldPlayers.sort((a, b) => a.name.localeCompare(b.name));
+        unsoldPlayers.forEach(p => {
+            const opt = document.createElement('option');
+            opt.value = p.id;
+            opt.textContent = `${p.name} (${p.role} - ${formatCurrency(p.base_price)})`;
+            if (p.id.toString() === currentSelected) {
+                opt.selected = true;
+            }
+            lobbyPlayerSelect.appendChild(opt);
+        });
+    }
 }
 
 // Start the drafting
 async function startAuction() {
     if (role !== 'host') return;
+    
+    const filterEl = document.getElementById('lobby-role-filter');
+    const roleFilter = filterEl ? filterEl.value : 'All';
+    const playerSelect = document.getElementById('lobby-specific-player');
+    const playerId = playerSelect ? playerSelect.value : '';
+    
+    const params = {
+        room_code: roomCode,
+        host_id: hostId,
+        action: 'start',
+        role_filter: roleFilter
+    };
+    
+    if (playerId) {
+        params.player_id = playerId;
+    }
+    
     try {
-        await apiPost('/api/control', {
-            room_code: roomCode,
-            host_id: hostId,
-            action: 'start'
-        });
+        await apiPost('/api/control', params);
     } catch (err) {
         console.error(err);
     }
+}
+
+// Function to generate unique hash of current teams budget and squads
+function getTeamsStateHash() {
+    if (!roomState || !roomState.teams) return '';
+    return Object.keys(roomState.teams).map(tName => {
+        const team = roomState.teams[tName];
+        return `${tName}:${team.budget}:${team.players.length}`;
+    }).join('|');
+}
+
+// Full rebuild of Leaderboard DOM
+function renderLeaderboard() {
+    const leaderboardGrid = document.getElementById('leaderboard-container');
+    if (!leaderboardGrid || !roomState || !roomState.teams) return;
+    leaderboardGrid.innerHTML = '';
+    
+    const teamKeys = Object.keys(roomState.teams);
+    // Sort teams by budget descending
+    teamKeys.sort((a, b) => roomState.teams[b].budget - roomState.teams[a].budget);
+    
+    teamKeys.forEach(tName => {
+        const team = roomState.teams[tName];
+        const row = document.createElement('div');
+        
+        // Highlight active bidder
+        const isHighBidder = roomState.current_bidder === tName && roomState.current_bid > 0;
+        row.className = "leaderboard-row" + (isHighBidder ? " high-bidder-highlight" : "");
+        row.onclick = () => openRosterModal(tName);
+        
+        let kickBtnHtml = '';
+        if (role === 'host') {
+            kickBtnHtml = `
+                <button class="btn-kick" onclick="event.stopPropagation(); kickTeam('${tName}')" title="Kick Team">
+                    <i class="fa-solid fa-user-slash"></i>
+                </button>
+            `;
+        }
+        
+        const startingBudget = roomState.settings.budget || 1000000000;
+        const percentage = Math.max(0, Math.min(100, (team.budget / startingBudget) * 100));
+        let progressClass = 'budget-fill-safe';
+        if (percentage < 25) progressClass = 'budget-fill-danger';
+        else if (percentage < 55) progressClass = 'budget-fill-warning';
+        
+        row.innerHTML = `
+            <div style="display: flex; flex-direction: column; width: 100%; gap: 0.35rem;">
+                <div style="display: flex; align-items: center; justify-content: space-between; width: 100%;">
+                    <div class="leader-team-info">
+                        <div class="leader-team-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                        <div>
+                            <span class="leader-team-name">${tName}</span>
+                            <span class="leader-manager-name">Mgr: ${team.manager}</span>
+                        </div>
+                    </div>
+                    <div class="leader-team-stats">
+                        <span class="leader-team-count">${team.players.length} Players</span>
+                        <span class="leader-team-budget" style="font-weight: 700; color: ${isHighBidder ? 'var(--accent-cyan)' : 'var(--text-primary)'}">${formatCurrency(team.budget)}</span>
+                        <i class="fa-solid fa-eye" title="View Squad Roster" style="margin-left: 0.5rem; color: var(--text-secondary); opacity: 0.7;"></i>
+                        ${kickBtnHtml}
+                    </div>
+                </div>
+                <div class="budget-progress-bar">
+                    <div class="budget-progress-fill ${progressClass}" style="width: ${percentage}%;"></div>
+                </div>
+            </div>
+        `;
+        leaderboardGrid.appendChild(row);
+    });
+}
+
+// In-place update of Leaderboard active bidder highlights
+function updateLeaderboardHighlights() {
+    if (!roomState || !roomState.teams) return;
+    const rows = document.querySelectorAll('.leaderboard-row');
+    rows.forEach(row => {
+        const teamNameSpan = row.querySelector('.leader-team-name');
+        if (teamNameSpan) {
+            const tName = teamNameSpan.textContent.trim();
+            const isHighBidder = roomState.current_bidder === tName && roomState.current_bid > 0;
+            const budgetSpan = row.querySelector('.leader-team-budget');
+            if (isHighBidder) {
+                row.classList.add('high-bidder-highlight');
+                if (budgetSpan) budgetSpan.style.color = 'var(--accent-cyan)';
+            } else {
+                row.classList.remove('high-bidder-highlight');
+                if (budgetSpan) budgetSpan.style.color = 'var(--text-primary)';
+            }
+        }
+    });
 }
 
 // Render Auction Section
@@ -1740,6 +1883,24 @@ function renderAuctionDashboard() {
                     budgetTeamSelect.appendChild(opt);
                 });
             }
+
+            // Populate the specific player select dropdown for host controls
+            const specificPlayerSelect = document.getElementById('host-specific-player');
+            if (specificPlayerSelect) {
+                const currentSelected = specificPlayerSelect.value;
+                specificPlayerSelect.innerHTML = '<option value="">-- Sequential / Next Up --</option>';
+                const unsoldPlayers = roomState.players.filter(p => p.status !== 'sold' && !p.bought_by);
+                unsoldPlayers.sort((a, b) => a.name.localeCompare(b.name));
+                unsoldPlayers.forEach(p => {
+                    const opt = document.createElement('option');
+                    opt.value = p.id;
+                    opt.textContent = `${p.name} (${p.role} - ${formatCurrency(p.base_price)})`;
+                    if (p.id.toString() === currentSelected) {
+                        opt.selected = true;
+                    }
+                    specificPlayerSelect.appendChild(opt);
+                });
+            }
             
             // Toggle Undo button disabled status based on whether there's a last completed player
             const undoBtn = document.getElementById('host-btn-undo');
@@ -1760,78 +1921,62 @@ function renderAuctionDashboard() {
         }
     }
     
-    // 4. Render Leaderboard List
-    const leaderboardGrid = document.getElementById('leaderboard-container');
-    leaderboardGrid.innerHTML = '';
-    
-    const teamKeys = Object.keys(roomState.teams);
-    
-    // Sort teams by budget descending
-    teamKeys.sort((a, b) => roomState.teams[b].budget - roomState.teams[a].budget);
-    
-    teamKeys.forEach(tName => {
-        const team = roomState.teams[tName];
-        const row = document.createElement('div');
-        
-        // Highlight active bidder
-        const isHighBidder = roomState.current_bidder === tName && roomState.current_bid > 0;
-        row.className = "leaderboard-row" + (isHighBidder ? " high-bidder-highlight" : "");
-        row.onclick = () => openRosterModal(tName);
-        
-        let kickBtnHtml = '';
-        if (role === 'host') {
-            kickBtnHtml = `
-                <button class="btn-kick" onclick="event.stopPropagation(); kickTeam('${tName}')" title="Kick Team">
-                    <i class="fa-solid fa-user-slash"></i>
-                </button>
-            `;
-        }
-        
-        const startingBudget = roomState.settings.budget || 1000000000;
-        const percentage = Math.max(0, Math.min(100, (team.budget / startingBudget) * 100));
-        let progressClass = 'budget-fill-safe';
-        if (percentage < 25) progressClass = 'budget-fill-danger';
-        else if (percentage < 55) progressClass = 'budget-fill-warning';
-        
-        row.innerHTML = `
-            <div style="display: flex; flex-direction: column; width: 100%; gap: 0.35rem;">
-                <div style="display: flex; align-items: center; justify-content: space-between; width: 100%;">
-                    <div class="leader-team-info">
-                        <div class="leader-team-icon"><i class="fa-solid fa-shield-halved"></i></div>
-                        <div>
-                            <span class="leader-team-name">${tName}</span>
-                            <span class="leader-manager-name">Mgr: ${team.manager}</span>
-                        </div>
-                    </div>
-                    <div class="leader-team-stats">
-                        <span class="leader-team-count">${team.players.length} Players</span>
-                        <span class="leader-team-budget" style="font-weight: 700; color: ${isHighBidder ? 'var(--accent-cyan)' : 'var(--text-primary)'}">${formatCurrency(team.budget)}</span>
-                        <i class="fa-solid fa-eye" title="View Squad Roster" style="margin-left: 0.5rem; color: var(--text-secondary); opacity: 0.7;"></i>
-                        ${kickBtnHtml}
-                    </div>
-                </div>
-                <div class="budget-progress-bar">
-                    <div class="budget-progress-fill ${progressClass}" style="width: ${percentage}%;"></div>
-                </div>
-            </div>
-        `;
-        leaderboardGrid.appendChild(row);
-    });
+    // 4. Render or Update Leaderboard List using change detection
+    const currentTeamsHash = getTeamsStateHash();
+    if (lastRendered.teamsHash !== currentTeamsHash) {
+        renderLeaderboard();
+        lastRendered.teamsHash = currentTeamsHash;
+    } else {
+        updateLeaderboardHighlights();
+    }
 
-    // Render the player queue list
-    renderQueueList();
+    // Render the player queue list using change detection
+    const currentQueueFilter = activeQueueFilter;
+    const currentRoleFilter = roomState.current_role_filter || 'All';
+    const currentIdx = roomState.current_player_index;
+    const currentStatus = roomState.status;
+
+    if (lastRendered.currentPlayerIndex !== currentIdx ||
+        lastRendered.roomStatus !== currentStatus ||
+        lastRendered.queueFilter !== currentQueueFilter ||
+        lastRendered.roleFilter !== currentRoleFilter) {
+        
+        renderQueueList();
+        
+        lastRendered.currentPlayerIndex = currentIdx;
+        lastRendered.roomStatus = currentStatus;
+        lastRendered.queueFilter = currentQueueFilter;
+        lastRendered.roleFilter = currentRoleFilter;
+    }
     
-    // 5. Append Live Log Feed
+    // 5. Append Live Log Feed using change detection
     const logBox = document.getElementById('log-feed');
-    logBox.innerHTML = '';
-    roomState.logs.forEach(msg => {
-        const item = document.createElement('div');
-        item.className = "feed-item";
-        item.innerHTML = msg;
-        logBox.appendChild(item);
-    });
-    // Auto Scroll Logs to Bottom
-    logBox.scrollTop = logBox.scrollHeight;
+    if (logBox) {
+        const currentCount = roomState.logs.length;
+        if (lastRendered.logsCount !== currentCount) {
+            // If cache was reset or logs cleared, build from scratch
+            if (lastRendered.logsCount === 0 || logBox.children.length === 0) {
+                logBox.innerHTML = '';
+                roomState.logs.forEach(msg => {
+                    const item = document.createElement('div');
+                    item.className = "feed-item";
+                    item.innerHTML = msg;
+                    logBox.appendChild(item);
+                });
+            } else {
+                // Append only the new log entries
+                for (let i = lastRendered.logsCount; i < currentCount; i++) {
+                    const item = document.createElement('div');
+                    item.className = "feed-item";
+                    item.innerHTML = roomState.logs[i];
+                    logBox.appendChild(item);
+                }
+            }
+            // Auto Scroll Logs to Bottom
+            logBox.scrollTop = logBox.scrollHeight;
+            lastRendered.logsCount = currentCount;
+        }
+    }
     
     // Toggle Save Room button for host only
     const saveBtn = document.getElementById('btn-save-auction');
@@ -1846,8 +1991,12 @@ function renderAuctionDashboard() {
     // Update audio toggle state button
     updateAudioToggleUI();
     
-    // Rebuild bid timeline from server logs
-    rebuildBidTimeline();
+    // Rebuild bid timeline from server logs only if bid amount or bidder changed
+    if (lastRendered.currentBid !== roomState.current_bid || lastRendered.currentBidder !== roomState.current_bidder) {
+        rebuildBidTimeline();
+        lastRendered.currentBid = roomState.current_bid;
+        lastRendered.currentBidder = roomState.current_bidder;
+    }
 }
 
 // Rebuild Bids Timeline on Card
@@ -1984,6 +2133,17 @@ async function hostAction(action, extraParams = {}) {
     if (role !== 'host') return;
     const filterEl = document.getElementById('host-role-filter');
     const roleFilter = filterEl ? filterEl.value : 'All';
+    
+    // Read specific player ID if introducing a player
+    if (action === 'start' || action === 'next') {
+        const playerSelect = document.getElementById('host-specific-player');
+        if (playerSelect && playerSelect.value) {
+            extraParams.player_id = playerSelect.value;
+            // Reset select dropdown to sequential for the next round
+            playerSelect.value = "";
+        }
+    }
+    
     try {
         await apiPost('/api/control', {
             room_code: roomCode,

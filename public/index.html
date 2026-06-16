@@ -11,7 +11,7 @@
     <!-- FontAwesome for Premium Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Custom CSS Stylesheet -->
-    <link rel="stylesheet" href="style.css?v=1.1.6">
+    <link rel="stylesheet" href="style.css?v=1.2.0">
 </head>
 <body>
     <!-- Persistent User Badge at Top-Right -->
@@ -386,9 +386,29 @@ Yashasvi Jaiswal, Batsman, 91, 10000000, Runs: 720 Avg: 41.2, , false" style="fo
                         </div>
                     </div>
 
-                    <div class="host-start-panel" id="host-start-panel" class="hidden">
+                    <div class="host-start-panel hidden" id="host-start-panel">
                         <h3>Host Administration</h3>
                         <p>When all managers are connected to the room, initiate the draft.</p>
+                        
+                        <div class="form-group" style="margin-bottom: 1rem; width: 100%; text-align: left;">
+                            <label for="lobby-role-filter" style="font-size: 0.8rem; color: var(--text-secondary); margin-bottom: 0.25rem; display: block;"><i class="fa-solid fa-filter"></i> First Draft Category Set</label>
+                            <select id="lobby-role-filter" style="width: 100%; height: 38px; padding: 0.25rem 0.5rem; background: rgba(0,0,0,0.3); border: 1px solid var(--border-color); border-radius: 6px; color: white;">
+                                <option value="All">All Categories (Standard Queue)</option>
+                                <option value="Batsman">Batsmen Only</option>
+                                <option value="All-Rounder">All-Rounders Only</option>
+                                <option value="Bowler">Bowlers Only</option>
+                                <option value="Wicket-Keeper">Wicket-Keepers Only</option>
+                                <option value="Unsold">Unsold Players (Second Chance)</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group" style="margin-bottom: 1.25rem; width: 100%; text-align: left;">
+                            <label for="lobby-specific-player" style="font-size: 0.8rem; color: var(--text-secondary); margin-bottom: 0.25rem; display: block;"><i class="fa-solid fa-user-tag"></i> First Player of Auction (Optional)</label>
+                            <select id="lobby-specific-player" style="width: 100%; height: 38px; padding: 0.25rem 0.5rem; background: rgba(0,0,0,0.3); border: 1px solid var(--border-color); border-radius: 6px; color: white;">
+                                <option value="">-- Sequential / Next Up --</option>
+                            </select>
+                        </div>
+
                         <button class="btn btn-primary btn-large" onclick="startAuction()"><i class="fa-solid fa-play"></i> Start Player Auction</button>
                     </div>
                 </div>
@@ -542,7 +562,6 @@ Yashasvi Jaiswal, Batsman, 91, 10000000, Runs: 720 Avg: 41.2, , false" style="fo
                     </div>
                 </div>
 
-                <!-- RIGHT COLUMN: LEADERBOARD, LIVE FEED & ROSTERS -->
                 <div class="col-right">
                     
                     <!-- Host Console (Only visible to the Host) -->
@@ -557,6 +576,14 @@ Yashasvi Jaiswal, Batsman, 91, 10000000, Runs: 720 Avg: 41.2, , false" style="fo
                                 <option value="All-Rounder">All-Rounders Only</option>
                                 <option value="Bowler">Bowlers Only</option>
                                 <option value="Wicket-Keeper">Wicket-Keepers Only</option>
+                                <option value="Unsold">Unsold Players (Second Chance)</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group" style="margin-bottom: 1rem; width: 100%;">
+                            <label for="host-specific-player" style="font-size: 0.8rem; color: var(--text-secondary); margin-bottom: 0.25rem; display: block;"><i class="fa-solid fa-user-tag"></i> Select Specific Player (Optional)</label>
+                            <select id="host-specific-player" style="width: 100%; height: 38px; padding: 0.25rem 0.5rem; background: rgba(0,0,0,0.3); border: 1px solid var(--border-color); border-radius: 6px; color: white;">
+                                <option value="">-- Sequential / Next Up --</option>
                             </select>
                         </div>
 
@@ -763,13 +790,208 @@ Yashasvi Jaiswal, Batsman, 91, 10000000, Runs: 720 Avg: 41.2, , false" style="fo
                 </div>
             </div>
         </div>
+                            
+                            <!-- Instant Sold / Skip -->
+                            <button id="host-btn-sell" class="btn btn-accent" onclick="hostAction('sell')"><i class="fa-solid fa-gavel"></i> Declare Sold</button>
+                            <button id="host-btn-unsold" class="btn btn-danger" onclick="hostAction('unsold')"><i class="fa-solid fa-xmark"></i> Unsold (Skip)</button>
+                            
+                            <!-- Reset Bidding -->
+                            <button id="host-btn-reset" class="btn btn-warning" onclick="hostAction('reset_player')"><i class="fa-solid fa-rotate-left"></i> Re-open Bid</button>
+                            
+                            <!-- Undo Last Action -->
+                            <button id="host-btn-undo" class="btn btn-secondary" onclick="hostAction('undo')" title="Undo the last sold/unsold decision" style="background: var(--border-color); border: 1px solid rgba(255,255,255,0.1);"><i class="fa-solid fa-arrow-rotate-left"></i> Undo Last Action</button>
+                        </div>
+                        
+                        <!-- Budget adjustment option for Host -->
+                        <div id="host-budget-adjuster" style="margin-top: 1.25rem; padding-top: 1rem; border-top: 1px dashed var(--border-color); width: 100%;">
+                            <h4 style="font-size: 0.9rem; margin-bottom: 0.75rem; color: var(--accent-cyan); display: flex; align-items: center; gap: 0.5rem; margin-top: 0;">
+                                <i class="fa-solid fa-wallet"></i> Adjust Team Budget
+                            </h4>
+                            <div style="display: flex; flex-direction: column; gap: 0.5rem; width: 100%;">
+                                <div style="display: flex; gap: 0.5rem; width: 100%;">
+                                    <select id="host-budget-team" style="flex: 2; height: 38px; padding: 0.25rem 0.5rem; background: rgba(0,0,0,0.3); border: 1px solid var(--border-color); border-radius: 6px; color: white;">
+                                        <option value="">-- Select Team --</option>
+                                    </select>
+                                    <select id="host-budget-unit" style="flex: 1; height: 38px; padding: 0.25rem 0.5rem; background: rgba(0,0,0,0.3); border: 1px solid var(--border-color); border-radius: 6px; color: white;">
+                                        <option value="Lakh">Lakhs (L)</option>
+                                        <option value="Crore" selected>Crores (Cr)</option>
+                                        <option value="Raw">Rupees</option>
+                                    </select>
+                                </div>
+                                <div style="display: flex; gap: 0.5rem; width: 100%;">
+                                    <input type="number" id="host-budget-amount" placeholder="e.g. 5 or -2" style="flex: 2; height: 38px; padding: 0.25rem 0.5rem; background: rgba(0,0,0,0.3); border: 1px solid var(--border-color); border-radius: 6px; color: white;">
+                                    <button class="btn btn-warning" onclick="adjustTeamBudget()" style="flex: 1; height: 38px; padding: 0; display: flex; align-items: center; justify-content: center; gap: 0.25rem;">
+                                        <i class="fa-solid fa-plus-minus"></i> Update
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tabbed Teams and Player Queue Panel -->
+                    <div class="glass-panel tabbed-panel">
+                        <div class="panel-tabs">
+                            <button id="tab-leaderboard" class="panel-tab-btn active" onclick="switchDashboardTab('leaderboard')">
+                                <i class="fa-solid fa-ranking-star text-cyan"></i> Team Budgets & Squads
+                            </button>
+                            <button id="tab-players" class="panel-tab-btn" onclick="switchDashboardTab('players')">
+                                <i class="fa-solid fa-users text-purple"></i> Player Queue
+                            </button>
+                        </div>
+                        
+                        <!-- Teams / Leaderboard Tab Content -->
+                        <div id="tab-content-leaderboard" class="tab-content">
+                            <div id="leaderboard-container" class="leaderboard-container">
+                                <!-- Loaded dynamically -->
+                            </div>
+                            <span class="help-text" style="display: block; margin-top: 0.75rem; text-align: center; width: 100%;">
+                                <i class="fa-solid fa-circle-info"></i> Click any team card to inspect their detailed roster & balance slots
+                            </span>
+                        </div>
+                        
+                        <!-- Player Queue Tab Content -->
+                        <div id="tab-content-players" class="tab-content hidden">
+                            <div class="queue-filters">
+                                <button id="filter-btn-upcoming" class="filter-btn active" onclick="filterQueue('upcoming')">Upcoming</button>
+                                <button id="filter-btn-sold" class="filter-btn" onclick="filterQueue('sold')">Sold</button>
+                                <button id="filter-btn-unsold" class="filter-btn" onclick="filterQueue('unsold')">Unsold</button>
+                            </div>
+                            <div id="queue-container" class="queue-container">
+                                <!-- Loaded dynamically -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Live Feed Log -->
+                    <div class="feed-section glass-panel">
+                        <h3><i class="fa-solid fa-comment-dots"></i> Live Auction Activity Feed</h3>
+                        <div id="log-feed" class="log-feed">
+                            <!-- Dynamic log feed messages -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. ROSTER OVERLAY MODAL -->
+        <div id="roster-modal" class="modal-overlay hidden" onclick="closeRosterModal()">
+            <div class="modal-content glass-card" onclick="event.stopPropagation()">
+                <div class="modal-header">
+                    <h2><i class="fa-solid fa-shield-halved text-purple"></i> Team Roster: <span id="modal-team-name">-</span></h2>
+                    <button class="btn-close" onclick="closeRosterModal()">&times;</button>
+                </div>
+                <div class="modal-stats">
+                    <div>
+                        <span class="m-label">BUDGET REMAINING</span>
+                        <span class="m-val" id="modal-team-budget">-</span>
+                    </div>
+                    <div>
+                        <span class="m-label">PLAYERS BOUGHT</span>
+                        <span class="m-val" id="modal-player-count">0</span>
+                    </div>
+                    <div class="slots-bar">
+                        <span class="slot-count badge Batsman">BAT: <span id="slot-bat">0</span></span>
+                        <span class="slot-count badge Bowler">BOWL: <span id="slot-bowl">0</span></span>
+                        <span class="slot-count badge All-Rounder">AR: <span id="slot-ar">0</span></span>
+                        <span class="slot-count badge Wicket-Keeper">WK: <span id="slot-wk">0</span></span>
+                        <span class="slot-count badge overseas-badge" style="margin-left: auto;">OVERSEAS: <span id="slot-os">0</span></span>
+                    </div>
+                </div>
+                <div class="roster-table-container">
+                    <table class="roster-table">
+                        <thead>
+                            <tr>
+                                <th>Player Name</th>
+                                <th>Category</th>
+                                <th>Rating</th>
+                                <th style="text-align: right;">Price Paid</th>
+                            </tr>
+                        </thead>
+                        <tbody id="modal-roster-rows">
+                            <!-- Dynamic roster rows -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Floating Background Music Player Widget -->
+    <div id="bgm-player-container" class="bgm-player-container collapsed">
+        <audio id="bgm-audio" loop></audio>
+        
+        <!-- Collapsed Mini Disc Button -->
+        <button id="bgm-toggle-expand" class="bgm-disc-btn" onclick="toggleBgmPlayer()" title="Open Music Player">
+            <i class="fa-solid fa-music music-note-icon"></i>
+            <div class="vinyl-disc-mini">
+                <div class="vinyl-groove"></div>
+                <div class="vinyl-center"></div>
+            </div>
+        </button>
+
+        <!-- Expanded Player Card -->
+        <div class="bgm-expanded-card">
+            <div class="bgm-header">
+                <span class="bgm-header-title"><i class="fa-solid fa-compact-disc"></i> Arena Music BGM</span>
+                <button class="bgm-close-btn" onclick="toggleBgmPlayer()" title="Minimize">
+                    <i class="fa-solid fa-chevron-down"></i>
+                </button>
+            </div>
+            
+            <div class="bgm-body">
+                <!-- Track Details -->
+                <div class="bgm-track-info">
+                    <span id="bgm-track-title" class="bgm-track-title">SoundHelix Song 1</span>
+                    <span id="bgm-track-artist" class="bgm-track-artist">Ambient Electronic Mix</span>
+                </div>
+                
+                <!-- Equalizer Visualizer animation -->
+                <div class="bgm-equalizer" id="bgm-equalizer">
+                    <div class="eq-bar"></div>
+                    <div class="eq-bar"></div>
+                    <div class="eq-bar"></div>
+                    <div class="eq-bar"></div>
+                    <div class="eq-bar"></div>
+                </div>
+
+                <!-- Custom Audio URL Loader -->
+                <div class="bgm-custom-loader">
+                    <input type="text" id="bgm-custom-url" placeholder="Paste custom MP3 URL here...">
+                    <button onclick="loadCustomBgmUrl()" title="Load Custom Song"><i class="fa-solid fa-plus"></i></button>
+                </div>
+
+                <!-- Audio Scrubber Timeline -->
+                <div class="bgm-timeline-container">
+                    <span id="bgm-time-current" class="time-label">0:00</span>
+                    <input type="range" id="bgm-timeline" class="bgm-timeline-slider" min="0" max="100" value="0" oninput="seekBgm(this.value)">
+                    <span id="bgm-time-duration" class="time-label">0:00</span>
+                </div>
+                
+                <!-- BGM Controls Panel -->
+                <div class="bgm-controls">
+                    <button class="bgm-btn" onclick="prevBgmTrack()" title="Previous Track"><i class="fa-solid fa-backward-step"></i></button>
+                    <button class="bgm-btn bgm-play-btn" id="bgm-play-pause-btn" onclick="toggleBgmPlay()" title="Play"><i class="fa-solid fa-play"></i></button>
+                    <button class="bgm-btn" onclick="stopBgm()" title="Stop"><i class="fa-solid fa-stop"></i></button>
+                    <button class="bgm-btn" onclick="nextBgmTrack()" title="Next Track"><i class="fa-solid fa-forward-step"></i></button>
+                </div>
+
+                <!-- Volume Panel -->
+                <div class="bgm-volume-container">
+                    <button id="bgm-volume-btn" onclick="toggleBgmMute()" class="bgm-volume-btn" title="Mute/Unmute">
+                        <i class="fa-solid fa-volume-high"></i>
+                    </button>
+                    <input type="range" id="bgm-volume-slider" class="bgm-volume-slider" min="0" max="100" value="70" oninput="changeBgmVolume(this.value)">
+                    <span id="bgm-volume-percent" style="font-size: 0.75rem; color: var(--text-secondary); width: 30px; text-align: right;">70%</span>
+                </div>
+            </div>
+        </div>
     </div>
 
     <!-- Canvas Confetti Library from jsDelivr -->
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
     <!-- Players Fallback Database -->
-    <script src="players-data.js?v=1.1.6"></script>
+    <script src="players-data.js?v=1.2.0"></script>
     <!-- Frontend JS logic script -->
-    <script src="app.js?v=1.1.6"></script>
+    <script src="app.js?v=1.2.0"></script>
 </body>
 </html>

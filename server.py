@@ -328,6 +328,43 @@ print(f"Loaded {len(users)} registered user accounts from database.")
 sessions = {}
 sessions_lock = threading.Lock()
 
+# Background Database Save Worker to serialize SQLite writes asynchronously
+db_save_queue = queue.Queue()
+
+def db_save_worker():
+    while True:
+        try:
+            item = db_save_queue.get()
+            if item is None:
+                break
+            room_code, state_json, host_username, created_at, status = item
+            
+            conn = db.get_connection()
+            cursor = conn.cursor()
+            try:
+                if db.is_postgres:
+                    cursor.execute(
+                        "INSERT INTO rooms (room_code, host_username, created_at, status, state_json) VALUES (%s, %s, %s, %s, %s) ON CONFLICT (room_code) DO UPDATE SET status = EXCLUDED.status, state_json = EXCLUDED.state_json",
+                        (room_code, host_username, created_at, status, state_json)
+                    )
+                else:
+                    cursor.execute(
+                        "INSERT OR REPLACE INTO rooms (room_code, host_username, created_at, status, state_json) VALUES (?, ?, ?, ?, ?)",
+                        (room_code, host_username, created_at, status, state_json)
+                    )
+                conn.commit()
+            except Exception as e:
+                print(f"Error in background db save for room {room_code}: {e}")
+            finally:
+                conn.close()
+                db_save_queue.task_done()
+        except Exception as ex:
+            print(f"Error in db_save_worker: {ex}")
+
+# Start the background SQLite writer thread
+save_thread = threading.Thread(target=db_save_worker, daemon=True)
+save_thread.start()
+
 def hash_password(password, salt=None):
     if salt is None:
         salt = os.urandom(16).hex()
@@ -362,7 +399,13 @@ def format_currency_python(val):
 def save_room_to_disk(room_code):
     if room_code not in rooms:
         return
-    db.save_room(room_code, rooms[room_code])
+    room = rooms[room_code]
+    serializable = get_serializable_room(room)
+    state_json = json.dumps(serializable)
+    host_username = room.get("host_username", "")
+    created_at = room.get("created_at", "")
+    status = room.get("status", "lobby")
+    db_save_queue.put((room_code, state_json, host_username, created_at, status))
 
 def load_all_rooms():
     global rooms
@@ -376,9 +419,12 @@ def broadcast(room_code, event_type, data):
     if room_code not in rooms:
         return
     room = rooms[room_code]
+    
+    # Pre-serialize to JSON once to avoid redundant string serialization in each client thread
+    data_json = json.dumps(data)
     payload = {
         "type": event_type,
-        "data": data,
+        "data_json": data_json,
         "timestamp": time.time()
     }
     
@@ -466,38 +512,63 @@ def unsold_current_player(room_code):
         "room": get_serializable_room(room)
     })
 
-def advance_to_next_player(room_code, role_filter="All"):
+def advance_to_next_player(room_code, role_filter="All", player_id=None):
     room = rooms[room_code]
     idx = room["current_player_index"]
     next_unsold = -1
     
-    # If starting for the first time
-    if idx == -1:
-        # Find first unsold player matching role_filter
-        for i, p in enumerate(room["players"]):
-            if p.get("status", "unsold") == "unsold" and p.get("bought_by") is None:
-                if not role_filter or role_filter == "All" or p.get("role") == role_filter:
-                    next_unsold = i
-                    break
-        action_msg = "🎬 Auction started!"
-    else:
-        # Search starting after current index
-        for i in range(idx + 1, len(room["players"])):
-            p = room["players"][i]
-            if p.get("status", "unsold") == "unsold" and p.get("bought_by") is None:
-                if not role_filter or role_filter == "All" or p.get("role") == role_filter:
-                    next_unsold = i
-                    break
-                    
-        # Wrap around if not found
-        if next_unsold == -1:
-            for i in range(0, idx + 1):
-                p = room["players"][i]
-                if p.get("status", "unsold") == "unsold" and p.get("bought_by") is None:
-                    if not role_filter or role_filter == "All" or p.get("role") == role_filter:
+    # Helper to check if player matches the active filter (role or unsold status)
+    def matches_filter(p):
+        if p.get("bought_by") is not None or p.get("status") == "sold":
+            return False
+        if role_filter == "Unsold":
+            return p.get("status") == "passed"
+        else:
+            if p.get("status", "unsold") != "unsold":
+                return False
+            return role_filter == "All" or not role_filter or p.get("role") == role_filter
+
+    # If a specific player is requested by the host
+    if player_id is not None:
+        try:
+            player_id_int = int(player_id)
+            for i, p in enumerate(room["players"]):
+                if p["id"] == player_id_int:
+                    # Verify player is unsold and not bought
+                    if p.get("status", "unsold") != "sold" and p.get("bought_by") is None:
                         next_unsold = i
                         break
-        action_msg = "🏏 Next up:"
+        except (ValueError, TypeError):
+            pass
+            
+    # Fallback to sequential/filtered search if no specific player was found or requested
+    if next_unsold == -1:
+        # If starting for the first time
+        if idx == -1:
+            # Find first unsold player matching role_filter
+            for i, p in enumerate(room["players"]):
+                if matches_filter(p):
+                    next_unsold = i
+                    break
+            action_msg = "🎬 Auction started!"
+        else:
+            # Search starting after current index
+            for i in range(idx + 1, len(room["players"])):
+                p = room["players"][i]
+                if matches_filter(p):
+                    next_unsold = i
+                    break
+                        
+            # Wrap around if not found
+            if next_unsold == -1:
+                for i in range(0, idx + 1):
+                    p = room["players"][i]
+                    if matches_filter(p):
+                        next_unsold = i
+                        break
+            action_msg = "🏏 Next up:"
+    else:
+        action_msg = "🎯 Host introduced:"
 
     if next_unsold == -1:
         if role_filter and role_filter != "All":
@@ -616,7 +687,7 @@ class AuctionHTTPHandler(SimpleHTTPRequestHandler):
                 # Immediately push initial room status to this client
                 init_payload = {
                     "type": "init",
-                    "data": get_serializable_room(room),
+                    "data_json": json.dumps(get_serializable_room(room)),
                     "timestamp": time.time()
                 }
                 q.put(init_payload)
@@ -627,7 +698,7 @@ class AuctionHTTPHandler(SimpleHTTPRequestHandler):
                     try:
                         # Wait for a new event with 5s timeout to send heartbeat keep-alive
                         msg = q.get(timeout=5.0)
-                        event_str = f"event: {msg['type']}\ndata: {json.dumps(msg['data'])}\n\n"
+                        event_str = f"event: {msg['type']}\ndata: {msg['data_json']}\n\n"
                         self.wfile.write(event_str.encode('utf-8'))
                         self.wfile.flush()
                     except queue.Empty:
@@ -997,7 +1068,8 @@ class AuctionHTTPHandler(SimpleHTTPRequestHandler):
                 role_filter = room.get("current_role_filter", "All")
                 
             if action in ("start", "next"):
-                success, msg = advance_to_next_player(room_code, role_filter)
+                player_id = data.get('player_id')
+                success, msg = advance_to_next_player(room_code, role_filter, player_id=player_id)
                 if not success:
                     self.send_json_response(400, {"error": msg})
                     return
