@@ -5875,6 +5875,30 @@ window.ALL_PLAYERS_DATA = {
   ],
   "h_liga": [
     {
+      "id": 47,
+      "name": "Abdul Samad",
+      "role": "Batsman",
+      "rating": 75,
+      "base_price": 3000000,
+      "stats": "Runs: 6360, Avg: 40.9, SR: 146.6",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/Abdul_Samad.png/330px-Abdul_Samad.png",
+      "overseas": false,
+      "country": "India",
+      "retired": false
+    },
+    {
+      "id": 15178,
+      "name": "Abhinav Manohar",
+      "role": "Batsman",
+      "rating": 76,
+      "base_price": 2000000,
+      "stats": "Runs: 0, Avg: 0, SR: 0",
+      "img": "",
+      "overseas": false,
+      "country": "India",
+      "retired": false
+    },
+    {
       "id": 22,
       "name": "Abhishek Sharma",
       "role": "Batsman",
@@ -5882,6 +5906,18 @@ window.ALL_PLAYERS_DATA = {
       "base_price": 7500000,
       "stats": "Runs: 2900 (SR 141.0), Wkts: 81 (Econ 8.3)",
       "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Abhishek_Sharma_in_action_in_Asia_Cup_2025.png/330px-Abhishek_Sharma_in_action_in_Asia_Cup_2025.png",
+      "overseas": false,
+      "country": "India",
+      "retired": false
+    },
+    {
+      "id": 108,
+      "name": "Abishek Porel",
+      "role": "Wicket-Keeper",
+      "rating": 78,
+      "base_price": 3000000,
+      "stats": "Runs: 5060 (SR 142.4), Dismissals: 119",
+      "img": "https://static.cricbuzz.com/a/img/v1/i1/c182026/abishek-porel.jpg?d=low&p=gthumb",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -5906,6 +5942,18 @@ window.ALL_PLAYERS_DATA = {
       "base_price": 7500000,
       "stats": "Runs: 5600, Avg: 36.0, SR: 141.0",
       "img": "https://upload.wikimedia.org/wikipedia/commons/9/96/Ajinkya_Rahane_2016_%28cropped%29.jpg",
+      "overseas": false,
+      "country": "India",
+      "retired": false
+    },
+    {
+      "id": 73,
+      "name": "Akash Deep",
+      "role": "Bowler",
+      "rating": 74,
+      "base_price": 3000000,
+      "stats": "Wkts: 170, Econ: 7.51, Avg: 25.3",
+      "img": "",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -6007,6 +6055,42 @@ window.ALL_PLAYERS_DATA = {
       "retired": false
     },
     {
+      "id": 104,
+      "name": "Anshul Kamboj",
+      "role": "Bowler",
+      "rating": 72,
+      "base_price": 2000000,
+      "stats": "Wkts: 143, Econ: 7.93, Avg: 27.1",
+      "img": "https://static.cricbuzz.com/a/img/v1/i1/c731465/anshul-kamboj.jpg?d=low&p=gthumb",
+      "overseas": false,
+      "country": "India",
+      "retired": false
+    },
+    {
+      "id": 15179,
+      "name": "Anuj Rawat",
+      "role": "Wicket-Keeper",
+      "rating": 74,
+      "base_price": 2000000,
+      "stats": "Wickets: 0, Econ: 8.00",
+      "img": "",
+      "overseas": false,
+      "country": "India",
+      "retired": false
+    },
+    {
+      "id": 86,
+      "name": "Anukul Roy",
+      "role": "All-Rounder",
+      "rating": 71,
+      "base_price": 2000000,
+      "stats": "Runs: 3060 (SR 143.2), Wkts: 86 (Econ 7.96)",
+      "img": "",
+      "overseas": false,
+      "country": "India",
+      "retired": false
+    },
+    {
       "id": 114,
       "name": "Arjun Tendulkar",
       "role": "All-Rounder",
@@ -6031,12 +6115,36 @@ window.ALL_PLAYERS_DATA = {
       "retired": false
     },
     {
+      "id": 15180,
+      "name": "Ashish Nehra",
+      "role": "Bowler",
+      "rating": 80,
+      "base_price": 2000000,
+      "stats": "Wickets: 0, Econ: 8.00",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/3/3f/Ashish_Nehra_%286160488612%29_%28cropped%29.jpg",
+      "overseas": false,
+      "country": "India",
+      "retired": false
+    },
+    {
       "id": 91,
       "name": "Ashutosh Sharma",
       "role": "Batsman",
       "rating": 76,
       "base_price": 3000000,
       "stats": "Runs: 5880, Avg: 37.1, SR: 143.0",
+      "img": "",
+      "overseas": false,
+      "country": "India",
+      "retired": false
+    },
+    {
+      "id": 89,
+      "name": "Atharva Taide",
+      "role": "Batsman",
+      "rating": 70,
+      "base_price": 2000000,
+      "stats": "Runs: 5320, Avg: 37.4, SR: 139.0",
       "img": "",
       "overseas": false,
       "country": "India",
@@ -6050,6 +6158,30 @@ window.ALL_PLAYERS_DATA = {
       "base_price": 5000000,
       "stats": "Wkts: 170, Econ: 7.51, Avg: 25.3",
       "img": "",
+      "overseas": false,
+      "country": "India",
+      "retired": false
+    },
+    {
+      "id": 15181,
+      "name": "Avinash Rao",
+      "role": "Wicket-Keeper",
+      "rating": 67,
+      "base_price": 2000000,
+      "stats": "Wickets: 0, Econ: 8.00",
+      "img": "",
+      "overseas": false,
+      "country": "India",
+      "retired": false
+    },
+    {
+      "id": 17,
+      "name": "Axar Patel",
+      "role": "All-Rounder",
+      "rating": 82,
+      "base_price": 10000000,
+      "stats": "Runs: 2900 (SR 141.0), Wkts: 81 (Econ 8.3)",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Axar_Patel_in_PMO_New_Delhi.jpg/330px-Axar_Patel_in_PMO_New_Delhi.jpg",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -6161,6 +6293,18 @@ window.ALL_PLAYERS_DATA = {
       "retired": false,
       "role": "Bowler",
       "rating": 75
+    },
+    {
+      "id": 361,
+      "name": "Daryl Mitchell",
+      "role": "All-Rounder",
+      "rating": 84,
+      "base_price": 20000000,
+      "stats": "Runs: 3860 (SR 148.2), Wkts: 97 (Econ 8.06)",
+      "img": "https://static.cricbuzz.com/a/img/v1/i1/c845511/daryl-mitchell.jpg?d=low&p=gthumb",
+      "overseas": true,
+      "country": "New Zealand",
+      "retired": false
     },
     {
       "id": 426,
@@ -6475,6 +6619,18 @@ window.ALL_PLAYERS_DATA = {
       "rating": 79
     },
     {
+      "id": 262,
+      "name": "Jamie Smith",
+      "role": "Wicket-Keeper",
+      "rating": 84,
+      "base_price": 7500000,
+      "stats": "Runs: 4740 (SR 137.5), Dismissals: 118",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/3_48_Jamie_Smith.jpg/330px-3_48_Jamie_Smith.jpg",
+      "overseas": true,
+      "country": "England",
+      "retired": false
+    },
+    {
       "id": 327,
       "name": "Jason Holder",
       "role": "All-Rounder",
@@ -6494,6 +6650,18 @@ window.ALL_PLAYERS_DATA = {
       "base_price": 20000000,
       "stats": "Wkts: 225, Econ: 6.68, Avg: 21.9",
       "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Jasprit_Bumrah_in_PMO_New_Delhi.jpg/330px-Jasprit_Bumrah_in_PMO_New_Delhi.jpg",
+      "overseas": false,
+      "country": "India",
+      "retired": false
+    },
+    {
+      "id": 15182,
+      "name": "Jayant Yadav",
+      "role": "All-Rounder",
+      "rating": 69,
+      "base_price": 2000000,
+      "stats": "Wickets: 0, Econ: 8.00",
+      "img": "",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -6691,6 +6859,18 @@ window.ALL_PLAYERS_DATA = {
       "retired": false
     },
     {
+      "id": 312,
+      "name": "Kwena Maphaka",
+      "role": "Bowler",
+      "rating": 79,
+      "base_price": 3000000,
+      "stats": "Wkts: 126, Econ: 8.12, Avg: 27.0",
+      "img": "",
+      "overseas": true,
+      "country": "South Africa",
+      "retired": false
+    },
+    {
       "id": 379,
       "name": "Kyle Jamieson",
       "role": "Bowler",
@@ -6739,18 +6919,6 @@ window.ALL_PLAYERS_DATA = {
       "retired": false
     },
     {
-      "id": 15073,
-      "name": "Mahendra Singh Dhoni",
-      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/MS_Dhoni_%28Prabhav_%2723_-_RiGI_2023%29.jpg/330px-MS_Dhoni_%28Prabhav_%2723_-_RiGI_2023%29.jpg",
-      "stats": "",
-      "overseas": false,
-      "country": "India",
-      "base_price": 2000000,
-      "retired": false,
-      "role": "Wicket-Keeper",
-      "rating": 84
-    },
-    {
       "id": 417,
       "name": "Maheesh Theekshana",
       "role": "Bowler",
@@ -6761,6 +6929,18 @@ window.ALL_PLAYERS_DATA = {
       "overseas": true,
       "country": "Sri Lanka",
       "retired": false
+    },
+    {
+      "id": 15073,
+      "name": "Mahendra Singh Dhoni",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/MS_Dhoni_%28Prabhav_%2723_-_RiGI_2023%29.jpg/330px-MS_Dhoni_%28Prabhav_%2723_-_RiGI_2023%29.jpg",
+      "stats": "",
+      "overseas": false,
+      "country": "India",
+      "base_price": 2000000,
+      "retired": false,
+      "role": "Wicket-Keeper",
+      "rating": 84
     },
     {
       "id": 15075,
@@ -7015,6 +7195,18 @@ window.ALL_PLAYERS_DATA = {
       "retired": false
     },
     {
+      "id": 38,
+      "name": "Mohit Sharma",
+      "role": "Bowler",
+      "rating": 80,
+      "base_price": 5000000,
+      "stats": "Wkts: 163, Econ: 7.48, Avg: 24.5",
+      "img": "https://static.cricbuzz.com/a/img/v1/i1/c594343/mohit-sharma.jpg?d=low&p=gthumb",
+      "overseas": false,
+      "country": "India",
+      "retired": false
+    },
+    {
       "id": 395,
       "name": "Mujeeb Ur Rahman",
       "role": "Bowler",
@@ -7036,6 +7228,18 @@ window.ALL_PLAYERS_DATA = {
       "img": "",
       "overseas": false,
       "country": "India",
+      "retired": false
+    },
+    {
+      "id": 470,
+      "name": "Mustafizur Rahman",
+      "role": "Bowler",
+      "rating": 83,
+      "base_price": 10000000,
+      "stats": "Wkts: 182, Econ: 7.01, Avg: 22.7",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Mustafizur_Rahman_%284%29_%28cropped%29.jpg/330px-Mustafizur_Rahman_%284%29_%28cropped%29.jpg",
+      "overseas": true,
+      "country": "Bangladesh",
       "retired": false
     },
     {
@@ -7171,6 +7375,18 @@ window.ALL_PLAYERS_DATA = {
       "retired": false
     },
     {
+      "id": 117,
+      "name": "Piyush Chawla",
+      "role": "Bowler",
+      "rating": 78,
+      "base_price": 5000000,
+      "stats": "Wkts: 174, Econ: 6.96, Avg: 22.7",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Piyush_Chawla_2019.jpg/330px-Piyush_Chawla_2019.jpg",
+      "overseas": false,
+      "country": "India",
+      "retired": false
+    },
+    {
       "id": 88,
       "name": "Prabhsimran Singh",
       "role": "Batsman",
@@ -7178,6 +7394,18 @@ window.ALL_PLAYERS_DATA = {
       "base_price": 3000000,
       "stats": "Runs: 5060 (SR 142.4), Dismissals: 119",
       "img": "https://static.cricbuzz.com/a/img/v1/i1/c226515/prabhsimran-singh.jpg?d=low&p=gthumb",
+      "overseas": false,
+      "country": "India",
+      "retired": false
+    },
+    {
+      "id": 15177,
+      "name": "Praful Hinge",
+      "role": "Bowler",
+      "rating": 75,
+      "base_price": 2000000,
+      "stats": "",
+      "img": "",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -7267,18 +7495,6 @@ window.ALL_PLAYERS_DATA = {
       "retired": false
     },
     {
-      "id": 15117,
-      "name": "Rahul Chahar",
-      "img": "",
-      "stats": "",
-      "overseas": false,
-      "country": "India",
-      "base_price": 2000000,
-      "retired": false,
-      "role": "Bowler",
-      "rating": 75
-    },
-    {
       "id": 392,
       "name": "Rahmanullah Gurbaz",
       "role": "Wicket-Keeper",
@@ -7289,6 +7505,18 @@ window.ALL_PLAYERS_DATA = {
       "overseas": true,
       "country": "Afghanistan",
       "retired": false
+    },
+    {
+      "id": 15117,
+      "name": "Rahul Chahar",
+      "img": "",
+      "stats": "",
+      "overseas": false,
+      "country": "India",
+      "base_price": 2000000,
+      "retired": false,
+      "role": "Bowler",
+      "rating": 75
     },
     {
       "id": 72,
@@ -7615,6 +7843,18 @@ window.ALL_PLAYERS_DATA = {
       "retired": false
     },
     {
+      "id": 113,
+      "name": "Shreyas Gopal",
+      "role": "Bowler",
+      "rating": 73,
+      "base_price": 3000000,
+      "stats": "Wkts: 170, Econ: 7.51, Avg: 25.3",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Rajasthan_Royals_player_Shreyas_Gopal_in_a_post-match_presentation_during_2019_Indian_Premier_League.png/330px-Rajasthan_Royals_player_Shreyas_Gopal_in_a_post-match_presentation_during_2019_Indian_Premier_League.png",
+      "overseas": false,
+      "country": "India",
+      "retired": false
+    },
+    {
       "id": 12,
       "name": "Shreyas Iyer",
       "role": "Batsman",
@@ -7648,6 +7888,18 @@ window.ALL_PLAYERS_DATA = {
       "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Sikandar_Raza_2022.jpg/330px-Sikandar_Raza_2022.jpg",
       "overseas": true,
       "country": "Zimbabwe",
+      "retired": false
+    },
+    {
+      "id": 15183,
+      "name": "Sir Don Happy",
+      "role": "All-Rounder",
+      "rating": 96,
+      "base_price": 20000000,
+      "stats": "Rating: 96, Premium All-Rounder",
+      "img": "",
+      "overseas": false,
+      "country": "India",
       "retired": false
     },
     {
@@ -7843,6 +8095,18 @@ window.ALL_PLAYERS_DATA = {
       "retired": false
     },
     {
+      "id": 15176,
+      "name": "Vaibhav Suryavanshi",
+      "role": "Batsman",
+      "rating": 70,
+      "base_price": 2000000,
+      "stats": "",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Vaibhav_Suryavanshi_meets_PM_Modi.jpg/330px-Vaibhav_Suryavanshi_meets_PM_Modi.jpg",
+      "overseas": false,
+      "country": "India",
+      "retired": false
+    },
+    {
       "id": 55,
       "name": "Varun Chakaravarthy",
       "role": "Bowler",
@@ -7973,258 +8237,6 @@ window.ALL_PLAYERS_DATA = {
       "retired": false,
       "role": "Bowler",
       "rating": 75
-    },
-    {
-      "id": 15176,
-      "name": "Vaibhav Suryavanshi",
-      "role": "Batsman",
-      "rating": 70,
-      "base_price": 2000000,
-      "stats": "",
-      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Vaibhav_Suryavanshi_meets_PM_Modi.jpg/330px-Vaibhav_Suryavanshi_meets_PM_Modi.jpg",
-      "overseas": false,
-      "country": "India",
-      "retired": false
-    },
-    {
-      "id": 15177,
-      "name": "Praful Hinge",
-      "role": "Bowler",
-      "rating": 75,
-      "base_price": 2000000,
-      "stats": "",
-      "img": "",
-      "overseas": false,
-      "country": "India",
-      "retired": false
-    },
-    {
-      "id": 17,
-      "name": "Axar Patel",
-      "role": "All-Rounder",
-      "rating": 82,
-      "base_price": 10000000,
-      "stats": "Runs: 2900 (SR 141.0), Wkts: 81 (Econ 8.3)",
-      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Axar_Patel_in_PMO_New_Delhi.jpg/330px-Axar_Patel_in_PMO_New_Delhi.jpg",
-      "overseas": false,
-      "country": "India",
-      "retired": false
-    },
-    {
-      "id": 47,
-      "name": "Abdul Samad",
-      "role": "Batsman",
-      "rating": 75,
-      "base_price": 3000000,
-      "stats": "Runs: 6360, Avg: 40.9, SR: 146.6",
-      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/Abdul_Samad.png/330px-Abdul_Samad.png",
-      "overseas": false,
-      "country": "India",
-      "retired": false
-    },
-    {
-      "id": 15178,
-      "name": "Abhinav Manohar",
-      "role": "Batsman",
-      "rating": 76,
-      "base_price": 2000000,
-      "stats": "Runs: 0, Avg: 0, SR: 0",
-      "img": "",
-      "overseas": false,
-      "country": "India",
-      "retired": false
-    },
-    {
-      "id": 108,
-      "name": "Abishek Porel",
-      "role": "Wicket-Keeper",
-      "rating": 78,
-      "base_price": 3000000,
-      "stats": "Runs: 5060 (SR 142.4), Dismissals: 119",
-      "img": "https://static.cricbuzz.com/a/img/v1/i1/c182026/abishek-porel.jpg?d=low&p=gthumb",
-      "overseas": false,
-      "country": "India",
-      "retired": false
-    },
-    {
-      "id": 73,
-      "name": "Akash Deep",
-      "role": "Bowler",
-      "rating": 74,
-      "base_price": 3000000,
-      "stats": "Wkts: 170, Econ: 7.51, Avg: 25.3",
-      "img": "",
-      "overseas": false,
-      "country": "India",
-      "retired": false
-    },
-    {
-      "id": 86,
-      "name": "Anukul Roy",
-      "role": "All-Rounder",
-      "rating": 71,
-      "base_price": 2000000,
-      "stats": "Runs: 3060 (SR 143.2), Wkts: 86 (Econ 7.96)",
-      "img": "",
-      "overseas": false,
-      "country": "India",
-      "retired": false
-    },
-    {
-      "id": 15179,
-      "name": "Anuj Rawat",
-      "role": "Wicket-Keeper",
-      "rating": 74,
-      "base_price": 2000000,
-      "stats": "Wickets: 0, Econ: 8.00",
-      "img": "",
-      "overseas": false,
-      "country": "India",
-      "retired": false
-    },
-    {
-      "id": 15180,
-      "name": "Ashish Nehra",
-      "role": "Bowler",
-      "rating": 80,
-      "base_price": 2000000,
-      "stats": "Wickets: 0, Econ: 8.00",
-      "img": "https://upload.wikimedia.org/wikipedia/commons/3/3f/Ashish_Nehra_%286160488612%29_%28cropped%29.jpg",
-      "overseas": false,
-      "country": "India",
-      "retired": false
-    },
-    {
-      "id": 89,
-      "name": "Atharva Taide",
-      "role": "Batsman",
-      "rating": 70,
-      "base_price": 2000000,
-      "stats": "Runs: 5320, Avg: 37.4, SR: 139.0",
-      "img": "",
-      "overseas": false,
-      "country": "India",
-      "retired": false
-    },
-    {
-      "id": 15181,
-      "name": "Avinash Rao",
-      "role": "Wicket-Keeper",
-      "rating": 67,
-      "base_price": 2000000,
-      "stats": "Wickets: 0, Econ: 8.00",
-      "img": "",
-      "overseas": false,
-      "country": "India",
-      "retired": false
-    },
-    {
-      "id": 361,
-      "name": "Daryl Mitchell",
-      "role": "All-Rounder",
-      "rating": 84,
-      "base_price": 20000000,
-      "stats": "Runs: 3860 (SR 148.2), Wkts: 97 (Econ 8.06)",
-      "img": "https://static.cricbuzz.com/a/img/v1/i1/c845511/daryl-mitchell.jpg?d=low&p=gthumb",
-      "overseas": true,
-      "country": "New Zealand",
-      "retired": false
-    },
-    {
-      "id": 262,
-      "name": "Jamie Smith",
-      "role": "Wicket-Keeper",
-      "rating": 84,
-      "base_price": 7500000,
-      "stats": "Runs: 4740 (SR 137.5), Dismissals: 118",
-      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/3_48_Jamie_Smith.jpg/330px-3_48_Jamie_Smith.jpg",
-      "overseas": true,
-      "country": "England",
-      "retired": false
-    },
-    {
-      "id": 15182,
-      "name": "Jayant Yadav",
-      "role": "All-Rounder",
-      "rating": 69,
-      "base_price": 2000000,
-      "stats": "Wickets: 0, Econ: 8.00",
-      "img": "",
-      "overseas": false,
-      "country": "India",
-      "retired": false
-    },
-    {
-      "id": 312,
-      "name": "Kwena Maphaka",
-      "role": "Bowler",
-      "rating": 79,
-      "base_price": 3000000,
-      "stats": "Wkts: 126, Econ: 8.12, Avg: 27.0",
-      "img": "",
-      "overseas": true,
-      "country": "South Africa",
-      "retired": false
-    },
-    {
-      "id": 38,
-      "name": "Mohit Sharma",
-      "role": "Bowler",
-      "rating": 80,
-      "base_price": 5000000,
-      "stats": "Wkts: 163, Econ: 7.48, Avg: 24.5",
-      "img": "https://static.cricbuzz.com/a/img/v1/i1/c594343/mohit-sharma.jpg?d=low&p=gthumb",
-      "overseas": false,
-      "country": "India",
-      "retired": false
-    },
-    {
-      "id": 470,
-      "name": "Mustafizur Rahman",
-      "role": "Bowler",
-      "rating": 83,
-      "base_price": 10000000,
-      "stats": "Wkts: 182, Econ: 7.01, Avg: 22.7",
-      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Mustafizur_Rahman_%284%29_%28cropped%29.jpg/330px-Mustafizur_Rahman_%284%29_%28cropped%29.jpg",
-      "overseas": true,
-      "country": "Bangladesh",
-      "retired": false
-    },
-    {
-      "id": 117,
-      "name": "Piyush Chawla",
-      "role": "Bowler",
-      "rating": 78,
-      "base_price": 5000000,
-      "stats": "Wkts: 174, Econ: 6.96, Avg: 22.7",
-      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Piyush_Chawla_2019.jpg/330px-Piyush_Chawla_2019.jpg",
-      "overseas": false,
-      "country": "India",
-      "retired": false
-    },
-    {
-      "id": 113,
-      "name": "Shreyas Gopal",
-      "role": "Bowler",
-      "rating": 73,
-      "base_price": 3000000,
-      "stats": "Wkts: 170, Econ: 7.51, Avg: 25.3",
-      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Rajasthan_Royals_player_Shreyas_Gopal_in_a_post-match_presentation_during_2019_Indian_Premier_League.png/330px-Rajasthan_Royals_player_Shreyas_Gopal_in_a_post-match_presentation_during_2019_Indian_Premier_League.png",
-      "overseas": false,
-      "country": "India",
-      "retired": false
-    },
-    {
-      "id": 104,
-      "name": "Anshul Kamboj",
-      "role": "Bowler",
-      "rating": 72,
-      "base_price": 2000000,
-      "stats": "Wkts: 143, Econ: 7.93, Avg: 27.1",
-      "img": "https://static.cricbuzz.com/a/img/v1/i1/c731465/anshul-kamboj.jpg?d=low&p=gthumb",
-      "overseas": false,
-      "country": "India",
-      "retired": false
     }
   ]
 };
