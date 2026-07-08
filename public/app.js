@@ -4304,7 +4304,9 @@ function renderDraftSummaryDashboard() {
             "Bowler": []
         };
         
-        teamPlayers.forEach(p => {
+        teamPlayers.forEach(tp => {
+            // Find player in master list to get latest image data
+            const p = roomState.players.find(x => x.id === tp.id) || tp;
             if (groups[p.role]) {
                 groups[p.role].push(p);
             } else {
@@ -4334,9 +4336,10 @@ function renderDraftSummaryDashboard() {
                 `;
                 
                 list.forEach(p => {
-                    const avatar = p.img ? `<img src="${p.img}" style="width: 24px; height: 24px; border-radius: 50%; object-fit: cover; border: 1px solid rgba(255,255,255,0.25);">` : `
-                        <div style="width: 24px; height: 24px; border-radius: 50%; background: rgba(255,255,255,0.07); display: flex; align-items: center; justify-content: center; font-size: 0.6rem; font-weight: bold; color: var(--text-secondary); border: 1px solid rgba(255,255,255,0.1);">
-                            ${p.name.charAt(0)}
+                    const initials = p.name.split(' ').map(n => n.charAt(0)).join('').substring(0, 2).toUpperCase();
+                    const avatar = p.img ? `<img src="${p.img}" style="width: 32px; height: 32px; border-radius: 50%; object-fit: cover; border: 1.5px solid var(--accent-purple); box-shadow: 0 0 8px rgba(187,134,252,0.15);">` : `
+                        <div style="width: 32px; height: 32px; border-radius: 50%; background: linear-gradient(135deg, rgba(187,134,252,0.12), rgba(0,242,254,0.12)); display: flex; align-items: center; justify-content: center; font-size: 0.75rem; font-weight: bold; color: var(--accent-cyan); border: 1.5px solid rgba(255,255,255,0.15); box-shadow: inset 0 0 6px rgba(255,255,255,0.05); text-transform: uppercase;">
+                            ${initials}
                         </div>
                     `;
                     
