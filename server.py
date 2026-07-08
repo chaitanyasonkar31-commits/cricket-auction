@@ -1,5 +1,7 @@
 import os
 import sys
+sys.stderr.write("🚀 [BACKEND] PYTHON PROCESS STARTING UP...\n")
+sys.stderr.flush()
 import json
 import time
 import random
@@ -91,13 +93,16 @@ class AuctionDB:
             try:
                 import psycopg2
                 self.is_postgres = True
-                print("Connecting to cloud PostgreSQL database...")
+                sys.stderr.write("🔌 Connecting to cloud PostgreSQL database...\n")
+                sys.stderr.flush()
             except ImportError:
-                print("Warning: DATABASE_URL is set but 'psycopg2' is not installed. Falling back to local SQLite.")
+                sys.stderr.write("⚠️ Warning: DATABASE_URL is set but 'psycopg2' is not installed. Falling back to local SQLite.\n")
+                sys.stderr.flush()
                 
         if not self.is_postgres:
             self.sqlite_path = os.path.join(persistent_dir, 'auction.db')
-            print(f"Connecting to local SQLite database at: {self.sqlite_path}")
+            sys.stderr.write(f"🔌 Connecting to local SQLite database at: {self.sqlite_path}\n")
+            sys.stderr.flush()
             
         self.init_db()
         self.migrate_json_data()
@@ -1708,9 +1713,9 @@ def run_server():
         try:
             server_address = ('', p)
             httpd = ThreadingHTTPServer(server_address, PublicDirectoryHTTPHandler)
-            print("\n=======================================================")
-            print("CRICKET MULTIPLAYER AUCTION SERVER RUNNING")
-            print(f"Access Port: {p}")
+            sys.stderr.write("\n=======================================================\n")
+            sys.stderr.write("CRICKET MULTIPLAYER AUCTION SERVER RUNNING\n")
+            sys.stderr.write(f"Access Port: {p}\n")
             
             # Attempt to output local network IP for Wi-Fi players
             import socket
@@ -1719,10 +1724,11 @@ def run_server():
                 s.connect(("8.8.8.8", 80))
                 ip = s.getsockname()[0]
                 s.close()
-                print(f"Multiplayer Network Access: http://{ip}:{p}")
+                sys.stderr.write(f"Multiplayer Network Access: http://{ip}:{p}\n")
             except Exception:
                 pass
-            print("=======================================================\n")
+            sys.stderr.write("=======================================================\n\n")
+            sys.stderr.flush()
             httpd.serve_forever()
             break
         except OSError as e:
