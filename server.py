@@ -73,7 +73,15 @@ if not os.path.exists(persistent_dir):
     try:
         os.makedirs(persistent_dir)
     except Exception as e:
-        print(f"Error creating persistent directory: {e}")
+        sys.stderr.write(f"⚠️ Error creating persistent directory {persistent_dir}: {e}. Falling back to /tmp/.cricket_auction\n")
+        sys.stderr.flush()
+        persistent_dir = "/tmp/.cricket_auction"
+        if not os.path.exists(persistent_dir):
+            try:
+                os.makedirs(persistent_dir)
+            except Exception as ex:
+                sys.stderr.write(f"❌ Failed to create /tmp fallback directory: {ex}\n")
+                sys.stderr.flush()
 
 def get_serializable_room(room):
     """Deep copies room state except clients list which has Queue objects."""
@@ -175,18 +183,23 @@ class AuctionDB:
 
     def get_connection(self):
         if self.is_postgres:
-            import psycopg2
-            url = self.db_url
-            if url.startswith('postgres://'):
-                url = url.replace('postgres://', 'postgresql://', 1)
-            return psycopg2.connect(url)
-        else:
-            return sqlite3.connect(self.sqlite_path)
+            try:
+                import psycopg2
+                url = self.db_url
+                if url.startswith('postgres://'):
+                    url = url.replace('postgres://', 'postgresql://', 1)
+                return psycopg2.connect(url)
+            except Exception as e:
+                sys.stderr.write(f"❌ PostgreSQL connection failed: {e}. Falling back to SQLite.\n")
+                sys.stderr.flush()
+                self.is_postgres = False
+        
+        return sqlite3.connect(self.sqlite_path)
 
     def init_db(self):
-        conn = self.get_connection()
-        cursor = conn.cursor()
         try:
+            conn = self.get_connection()
+            cursor = conn.cursor()
             if self.is_postgres:
                 cursor.execute("""
                     CREATE TABLE IF NOT EXISTS users (
@@ -222,8 +235,10 @@ class AuctionDB:
                     );
                 """)
             conn.commit()
-        finally:
             conn.close()
+        except Exception as e:
+            sys.stderr.write(f"❌ Database initialization error: {e}\n")
+            sys.stderr.flush()
 
     def load_users(self):
         conn = self.get_connection()
