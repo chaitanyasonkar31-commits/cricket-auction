@@ -12,73 +12,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Custom CSS Stylesheet -->
     <link rel="stylesheet" href="style.css?v=1.2.1">
-    <!-- Global JS Error Diagnostic Overlay -->
-    <script>
-        window.addEventListener('error', function(e) {
-            if (e.target && (e.target.tagName === 'SCRIPT' || e.target.tagName === 'LINK')) {
-                var div = document.getElementById('debug-error-banner');
-                if (!div) {
-                    div = document.createElement('div');
-                    div.id = 'debug-error-banner';
-                    div.style.position = 'fixed';
-                    div.style.top = '0';
-                    div.style.left = '0';
-                    div.style.right = '0';
-                    div.style.background = '#ff3366';
-                    div.style.color = '#fff';
-                    div.style.padding = '15px';
-                    div.style.zIndex = '9999999';
-                    div.style.fontFamily = 'monospace';
-                    div.style.fontSize = '12px';
-                    div.style.whiteSpace = 'pre-wrap';
-                    div.style.boxShadow = '0 5px 15px rgba(0,0,0,0.5)';
-                    document.body.appendChild(div);
-                }
-                div.innerHTML = '<strong>❌ Network Resource Load Error:</strong> Failed to download script/stylesheet: ' + (e.target.src || e.target.href);
-                return;
-            }
-            var div = document.getElementById('debug-error-banner');
-            if (!div) {
-                div = document.createElement('div');
-                div.id = 'debug-error-banner';
-                div.style.position = 'fixed';
-                div.style.top = '0';
-                div.style.left = '0';
-                div.style.right = '0';
-                div.style.background = '#ff3366';
-                div.style.color = '#fff';
-                div.style.padding = '15px';
-                div.style.zIndex = '9999999';
-                div.style.fontFamily = 'monospace';
-                div.style.fontSize = '12px';
-                div.style.whiteSpace = 'pre-wrap';
-                div.style.boxShadow = '0 5px 15px rgba(0,0,0,0.5)';
-                document.body.appendChild(div);
-            }
-            div.innerHTML = '<strong>⚠️ JavaScript Error:</strong> ' + e.message + '<br>at ' + e.filename + ':' + e.lineno + ':' + e.colno + '<br><br>Stack Trace:<br>' + (e.error ? e.error.stack : 'N/A');
-        }, true);
-        window.addEventListener('unhandledrejection', function(e) {
-            var div = document.getElementById('debug-rejection-banner');
-            if (!div) {
-                div = document.createElement('div');
-                div.id = 'debug-rejection-banner';
-                div.style.position = 'fixed';
-                div.style.top = '40%';
-                div.style.left = '0';
-                div.style.right = '0';
-                div.style.background = '#ff9800';
-                div.style.color = '#fff';
-                div.style.padding = '15px';
-                div.style.zIndex = '9999998';
-                div.style.fontFamily = 'monospace';
-                div.style.fontSize = '12px';
-                div.style.whiteSpace = 'pre-wrap';
-                div.style.boxShadow = '0 5px 15px rgba(0,0,0,0.5)';
-                document.body.appendChild(div);
-            }
-            div.innerHTML = '<strong>⚠️ Unhandled Promise Rejection:</strong><br>' + e.reason;
-        });
-    </script>
 </head>
 <body>
     <!-- Persistent User Badge at Top-Right -->
@@ -1005,8 +938,8 @@ Yashasvi Jaiswal, Batsman, 91, 10000000, Runs: 720 Avg: 41.2, , false" style="fo
     <!-- Canvas Confetti Library from jsDelivr -->
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
     <!-- Players Fallback Database -->
-    <script src="players-data.js?v=1.3.2"></script>
+    <script src="players-data.js?v=1.3.3"></script>
     <!-- Frontend JS logic script -->
-    <script src="app.js?v=1.3.2"></script>
+    <script src="app.js?v=1.3.3"></script>
 </body>
 </html>
