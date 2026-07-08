@@ -413,6 +413,10 @@ Yashasvi Jaiswal, Batsman, 91, 10000000, Runs: 720 Avg: 41.2, , false" style="fo
                 </div>
 
                 <div class="header-actions" style="display: flex; gap: 0.75rem; align-items: center; margin-left: auto;">
+                    <div class="video-bg-toggle-wrapper" style="display: flex; align-items: center; gap: 0.35rem; margin-right: 0.5rem;">
+                        <input type="checkbox" id="video-bg-checkbox" onchange="toggleVideoBackground(this.checked)" style="width: 15px; height: 15px; cursor: pointer; accent-color: var(--accent-cyan);">
+                        <label for="video-bg-checkbox" style="font-size: 0.75rem; color: var(--text-secondary); cursor: pointer; user-select: none; font-weight: 600;">Stadium Video BG</label>
+                    </div>
                     <div class="theme-select-wrapper" style="position: relative; display: flex; align-items: center;">
                         <i class="fa-solid fa-palette" style="position: absolute; left: 0.65rem; color: var(--accent-cyan); font-size: 0.8rem; pointer-events: none;"></i>
                         <select id="theme-selector" onchange="changeTheme(this.value)" style="padding: 0.45rem 0.65rem 0.45rem 1.65rem; font-size: 0.8rem; height: 32px; background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.15); border-radius: 6px; color: white; outline: none; cursor: pointer; transition: all 0.2s; font-weight: 600; -webkit-appearance: none; -moz-appearance: none; appearance: none; padding-right: 1.5rem;">

@@ -2405,6 +2405,201 @@ body.theme-midnight .bg-glow-2 {
 #retention-players-list::-webkit-scrollbar-thumb,
 #trades-list-container::-webkit-scrollbar-thumb,
 #host-standings-inputs::-webkit-scrollbar-thumb {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    color: var(--text-secondary);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    transition: all 0.2s;
+}
+
+.bgm-btn:hover {
+    color: white;
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.15);
+    transform: translateY(-1px);
+}
+
+.bgm-play-btn {
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, #a100ff, #7f00ff);
+    border: none;
+    color: white;
+    font-size: 0.95rem;
+    box-shadow: 0 3px 10px rgba(161, 0, 255, 0.35);
+}
+
+.bgm-play-btn:hover {
+    transform: scale(1.06) translateY(-1px);
+    box-shadow: 0 4px 15px rgba(161, 0, 255, 0.55);
+}
+
+/* Volume Track styles */
+.bgm-volume-container {
+    display: flex;
+    align-items: center;
+    gap: 0.45rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    padding-top: 0.75rem;
+    margin-top: 0.2rem;
+}
+
+.bgm-volume-btn {
+    background: none;
+    border: none;
+    color: var(--text-secondary);
+    cursor: pointer;
+    font-size: 0.8rem;
+    display: flex;
+    align-items: center;
+    transition: color 0.2s;
+}
+
+.bgm-volume-btn:hover {
+    color: white;
+}
+
+.bgm-volume-slider {
+    flex-grow: 1;
+    -webkit-appearance: none;
+    height: 3px;
+    border-radius: 1.5px;
+    background: rgba(255, 255, 255, 0.1);
+    outline: none;
+    cursor: pointer;
+}
+
+.bgm-volume-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: white;
+    cursor: pointer;
+}
+
+/* Animations */
+@keyframes spinVinyl {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+@keyframes musicBounce {
+    from { transform: translateY(0); }
+    to { transform: translateY(-3px); }
+}
+
+@keyframes equalizing {
+    from { height: 2px; }
+    to { height: 16px; }
+}
+
+/* Mobile viewport modifications */
+@media (max-width: 768px) {
+    .bgm-player-container {
+        bottom: 15px;
+        right: 15px;
+    }
+    .bgm-expanded-card {
+        width: 260px;
+    }
+}
+
+/* ==========================================
+   Theme Templates Overrides
+   ========================================== */
+
+/* Premier Gold (Championship Style) Theme */
+body.theme-gold {
+    --bg-dark: #0d0d0a;
+    --bg-card: rgba(26, 26, 20, 0.75);
+    --bg-card-hover: rgba(38, 38, 30, 0.9);
+    --border-color: rgba(255, 215, 0, 0.15);
+    
+    --accent-purple: #ffaa00; /* Amber Gold */
+    --accent-cyan: #ffc400;   /* Bright Gold */
+    --accent-gold: #ffffff;   /* Contrast Light */
+    --accent-green: #00e676;
+    --accent-red: #ff3366;
+    
+    --text-primary: #fdfdfa;
+    --text-secondary: #a0a094;
+    
+    --shadow-glow-purple: 0 0 20px rgba(255, 170, 0, 0.4);
+    --shadow-glow-cyan: 0 0 20px rgba(255, 196, 0, 0.45);
+    --shadow-glow-gold: 0 0 20px rgba(255, 255, 255, 0.35);
+}
+
+body.theme-gold .bg-glow-1 {
+    background: #ffaa00;
+}
+body.theme-gold .bg-glow-2 {
+    background: #ffc400;
+}
+
+/* Midnight Field (Sports Arena) Theme */
+body.theme-midnight {
+    --bg-dark: #040810;
+    --bg-card: rgba(12, 22, 38, 0.75);
+    --bg-card-hover: rgba(18, 32, 56, 0.9);
+    --border-color: rgba(0, 230, 118, 0.15);
+    
+    --accent-purple: #00e676; /* Emerald Green */
+    --accent-cyan: #00b0ff;   /* Field Blue */
+    --accent-gold: #ffea00;   /* Neon Yellow */
+    --accent-green: #00e676;
+    --accent-red: #ff1744;
+    
+    --text-primary: #f6f8fc;
+    --text-secondary: #8b9bb0;
+    
+    --shadow-glow-purple: 0 0 20px rgba(0, 230, 118, 0.4);
+    --shadow-glow-cyan: 0 0 20px rgba(0, 176, 255, 0.45);
+    --shadow-glow-gold: 0 0 20px rgba(255, 234, 0, 0.4);
+}
+
+body.theme-midnight .bg-glow-1 {
+    background: #00e676;
+}
+body.theme-midnight .bg-glow-2 {
+    background: #00b0ff;
+}
+
+/* Multi-Season Custom Styles */
+.trade-proposal-card {
+    transition: transform 0.2s ease, border-color 0.2s ease;
+}
+.trade-proposal-card:hover {
+    transform: translateY(-2px);
+    border-color: rgba(255, 255, 255, 0.15) !important;
+}
+.trade-proposal-card.status-pending {
+    border-left: 4px solid #ffc107 !important;
+}
+.trade-proposal-card.status-accepted {
+    border-left: 4px solid var(--accent-cyan) !important;
+}
+.trade-proposal-card.status-approved {
+    border-left: 4px solid #28a745 !important;
+}
+.trade-proposal-card.status-declined,
+.trade-proposal-card.status-rejected {
+    border-left: 4px solid #dc3545 !important;
+}
+
+#retention-players-list::-webkit-scrollbar,
+#trades-list-container::-webkit-scrollbar,
+#host-standings-inputs::-webkit-scrollbar {
+    width: 6px;
+}
+#retention-players-list::-webkit-scrollbar-thumb,
+#trades-list-container::-webkit-scrollbar-thumb,
+#host-standings-inputs::-webkit-scrollbar-thumb {
     background: rgba(255, 255, 255, 0.1);
     border-radius: 4px;
 }
@@ -2412,4 +2607,37 @@ body.theme-midnight .bg-glow-2 {
 #trades-list-container::-webkit-scrollbar-track,
 #host-standings-inputs::-webkit-scrollbar-track {
     background: transparent;
+}
+
+/* Stadium Video Background */
+.video-bg-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -100;
+    overflow: hidden;
+    display: none;
+    transition: opacity 0.5s ease-in-out;
+    opacity: 0;
+}
+.video-bg-container.active {
+    display: block;
+    opacity: 1;
+}
+#video-bg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    transform: translate(-50%, -50%);
+}
+.video-bg-overlay {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle, rgba(10, 12, 16, 0.75) 30%, rgba(4, 5, 8, 0.98) 100%);
+    z-index: 1;
 }

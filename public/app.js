@@ -4119,3 +4119,41 @@ function hostRejectTrade(tradeId) {
     .catch(err => showNotification("Failed to veto trade.", "danger"));
 }
 
+// ==========================================
+// STADIUM VIDEO BACKGROUND CONTROLLER
+// ==========================================
+
+function toggleVideoBackground(enabled) {
+    let container = document.getElementById('video-bg-container');
+    if (!container) {
+        container = document.createElement('div');
+        container.id = 'video-bg-container';
+        container.className = 'video-bg-container';
+        container.innerHTML = `
+            <video id="video-bg" autoplay loop muted playsinline>
+                <source src="https://assets.mixkit.co/videos/preview/mixkit-cricket-player-hitting-a-ball-40439-large.mp4" type="video/mp4">
+            </video>
+            <div class="video-bg-overlay"></div>
+        `;
+        document.body.appendChild(container);
+    }
+    
+    if (enabled) {
+        container.classList.add('active');
+        localStorage.setItem('stadium_video_bg', 'true');
+    } else {
+        container.classList.remove('active');
+        localStorage.setItem('stadium_video_bg', 'false');
+    }
+}
+
+// Init Video BG preference on DOMContentLoaded
+window.addEventListener('DOMContentLoaded', () => {
+    const savedVideoBg = localStorage.getItem('stadium_video_bg');
+    const videoBgCheckbox = document.getElementById('video-bg-checkbox');
+    if (savedVideoBg === 'true') {
+        if (videoBgCheckbox) videoBgCheckbox.checked = true;
+        toggleVideoBackground(true);
+    }
+});
+
