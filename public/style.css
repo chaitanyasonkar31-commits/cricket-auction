@@ -2375,4 +2375,41 @@ body.theme-midnight .bg-glow-2 {
     background: #00b0ff;
 }
 
+/* Multi-Season Custom Styles */
+.trade-proposal-card {
+    transition: transform 0.2s ease, border-color 0.2s ease;
+}
+.trade-proposal-card:hover {
+    transform: translateY(-2px);
+    border-color: rgba(255, 255, 255, 0.15) !important;
+}
+.trade-proposal-card.status-pending {
+    border-left: 4px solid #ffc107 !important;
+}
+.trade-proposal-card.status-accepted {
+    border-left: 4px solid var(--accent-cyan) !important;
+}
+.trade-proposal-card.status-approved {
+    border-left: 4px solid #28a745 !important;
+}
+.trade-proposal-card.status-declined,
+.trade-proposal-card.status-rejected {
+    border-left: 4px solid #dc3545 !important;
+}
 
+#retention-players-list::-webkit-scrollbar,
+#trades-list-container::-webkit-scrollbar,
+#host-standings-inputs::-webkit-scrollbar {
+    width: 6px;
+}
+#retention-players-list::-webkit-scrollbar-thumb,
+#trades-list-container::-webkit-scrollbar-thumb,
+#host-standings-inputs::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+}
+#retention-players-list::-webkit-scrollbar-track,
+#trades-list-container::-webkit-scrollbar-track,
+#host-standings-inputs::-webkit-scrollbar-track {
+    background: transparent;
+}

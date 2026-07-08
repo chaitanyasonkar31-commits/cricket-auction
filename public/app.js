@@ -1652,7 +1652,40 @@ function updateLeaderboardHighlights() {
 
 // Render Auction Section
 function renderAuctionDashboard() {
-    document.getElementById('dash-room-info').innerText = "ROOM: " + roomCode;
+    const isRetention = roomState.status === 'retention';
+    const retentionPanel = document.getElementById('retention-panel');
+    const hostRetentionDesk = document.getElementById('host-retention-desk');
+    const playerInfoContainer = document.getElementById('active-player-info-container');
+    const hostSetupContainer = document.getElementById('host-setup-container');
+    const bidPanel = document.getElementById('bidding-controls-panel');
+    const hostConsole = document.getElementById('host-admin-panel');
+
+    if (isRetention) {
+        if (playerInfoContainer) playerInfoContainer.classList.add('hidden');
+        if (hostSetupContainer) hostSetupContainer.classList.add('hidden');
+        if (bidPanel) bidPanel.classList.add('hidden');
+        if (hostConsole) hostConsole.classList.add('hidden');
+        
+        if (role === 'host') {
+            if (retentionPanel) retentionPanel.classList.add('hidden');
+            if (hostRetentionDesk) {
+                hostRetentionDesk.classList.remove('hidden');
+                renderHostRetentionDesk();
+            }
+        } else {
+            if (hostRetentionDesk) hostRetentionDesk.classList.add('hidden');
+            if (retentionPanel) {
+                retentionPanel.classList.remove('hidden');
+                renderRetentionPanel();
+            }
+        }
+    } else {
+        if (retentionPanel) retentionPanel.classList.add('hidden');
+        if (hostRetentionDesk) hostRetentionDesk.classList.add('hidden');
+        if (bidPanel) bidPanel.classList.remove('hidden');
+    }
+
+    document.getElementById('dash-room-info').innerText = "ROOM: " + roomCode + " (Season " + (roomState.season || 1) + ")";
     
     if (roomState && roomState.auction_name) {
         document.getElementById('dash-auction-name').innerText = roomState.auction_name;
@@ -1669,6 +1702,10 @@ function renderAuctionDashboard() {
         document.getElementById('my-budget-val').innerText = formatCurrency(myBudget);
     } else {
         idBanner.classList.add('hidden');
+    }
+    
+    if (isRetention) {
+        return; // Stop further rendering since we are in retention phase
     }
     
     // Active player mapping
@@ -1741,13 +1778,33 @@ function renderAuctionDashboard() {
             if (card) card.className = "player-card glass-panel";
         }
     } else {
-        if (roomState.status === 'finished') {
+        if (roomState.status === 'finished' || roomState.status === 'tournament_ended') {
             if (playerInfoContainer) playerInfoContainer.classList.remove('hidden');
             if (hostSetupContainer) hostSetupContainer.classList.add('hidden');
-            document.getElementById('player-card-role').innerText = "ROLE";
-            document.getElementById('player-card-rating').innerText = "--";
-            document.getElementById('player-card-name').innerText = "Draft Finished!";
-            document.getElementById('player-card-stats').innerText = "All players have been auctioned.";
+            document.getElementById('player-card-role').innerText = "SEASON COMPLETE";
+            document.getElementById('player-card-rating').innerText = roomState.season || 1;
+            
+            const nameEl = document.getElementById('player-card-name');
+            const statsEl = document.getElementById('player-card-stats');
+            
+            if (roomState.status === 'finished') {
+                nameEl.innerText = "Draft Finished!";
+                if (role === 'host') {
+                    statsEl.innerHTML = `
+                        <p style="margin-bottom: 1rem; color: var(--text-secondary);">All players have been auctioned. You can input standings/points in the Standings tab, and click below to advance to the next season or close the draft.</p>
+                        <div style="display: flex; gap: 0.5rem; justify-content: center; width: 100%; margin-top: 0.5rem;">
+                            <button class="btn btn-accent btn-sm" onclick="hostAction('end_season')" style="height: 34px; padding: 0 0.75rem; border-radius: 6px; font-size: 0.8rem;"><i class="fa-solid fa-forward-step"></i> Next Season</button>
+                            <button class="btn btn-secondary btn-sm" onclick="hostAction('end_tournament')" style="height: 34px; padding: 0 0.75rem; border-radius: 6px; font-size: 0.8rem; background: rgba(255,255,255,0.05);"><i class="fa-solid fa-trophy"></i> End Tournament</button>
+                        </div>
+                    `;
+                } else {
+                    statsEl.innerHTML = `<p style="color: var(--text-secondary);">All players have been auctioned. Please wait for the Host to initiate the next season or end the tournament.</p>`;
+                }
+            } else {
+                nameEl.innerText = "Tournament Ended!";
+                statsEl.innerHTML = `<p style="color: var(--text-secondary);">The host has ended the tournament. View the final Standings Table and team rosters.</p>`;
+            }
+            
             document.getElementById('player-card-base').innerText = "--";
             document.getElementById('player-card-current').innerText = "--";
             document.getElementById('player-card-bidder').innerText = "--";
@@ -2083,6 +2140,14 @@ function renderAuctionDashboard() {
         lastRendered.currentBid = roomState.current_bid;
         lastRendered.currentBidder = roomState.current_bidder;
     }
+    
+    // Update Standings and Trade views if active
+    if (document.getElementById('tab-standings').classList.contains('active')) {
+        renderStandings();
+    }
+    if (document.getElementById('tab-trade').classList.contains('active')) {
+        renderTradeCenter();
+    }
 }
 
 // Rebuild Bids Timeline on Card
@@ -2383,10 +2448,20 @@ let activeQueueFilter = 'upcoming';
 function switchDashboardTab(tabName) {
     document.getElementById('tab-leaderboard').classList.toggle('active', tabName === 'leaderboard');
     document.getElementById('tab-players').classList.toggle('active', tabName === 'players');
+    document.getElementById('tab-standings').classList.toggle('active', tabName === 'standings');
+    document.getElementById('tab-trade').classList.toggle('active', tabName === 'trade');
+    
     document.getElementById('tab-content-leaderboard').classList.toggle('hidden', tabName !== 'leaderboard');
-    document.getElementById('tab-content-players').classList.toggle('hidden', tabName === 'leaderboard');
+    document.getElementById('tab-content-players').classList.toggle('hidden', tabName !== 'players');
+    document.getElementById('tab-content-standings').classList.toggle('hidden', tabName !== 'standings');
+    document.getElementById('tab-content-trade').classList.toggle('hidden', tabName !== 'trade');
+    
     if (tabName === 'players') {
         renderQueueList();
+    } else if (tabName === 'standings') {
+        renderStandings();
+    } else if (tabName === 'trade') {
+        renderTradeCenter();
     }
 }
 
@@ -2399,6 +2474,20 @@ function filterQueue(filterName) {
 }
 
 function renderQueueList() {
+    const upcomingBtn = document.getElementById('filter-btn-upcoming');
+    if (upcomingBtn) {
+        if (role !== 'host') {
+            upcomingBtn.style.display = 'none';
+            if (activeQueueFilter === 'upcoming') {
+                activeQueueFilter = 'sold';
+                document.getElementById('filter-btn-sold').classList.add('active');
+                upcomingBtn.classList.remove('active');
+            }
+        } else {
+            upcomingBtn.style.display = 'inline-block';
+        }
+    }
+
     const container = document.getElementById('queue-container');
     if (!container || !roomState) return;
     container.innerHTML = '';
@@ -3492,4 +3581,541 @@ function updateCustomPlayerAvatarPreview(input) {
             preview.src = "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'><circle cx='50' cy='40' r='25' fill='%23555'/><path d='M15 85 C15 65 30 55 50 55 C70 55 85 65 85 85' fill='%23555'/></svg>";
         }
     }
+function updateCustomPlayerAvatarPreview(input) {
+    const parent = input.closest('tr');
+    if (!parent) return;
+    const preview = parent.querySelector('.cp-img-preview');
+    const hiddenBase64 = parent.querySelector('.cp-img-base64');
+    
+    // If the user has already uploaded a custom file, do not override it
+    if (hiddenBase64 && hiddenBase64.value && hiddenBase64.value.startsWith('data:image')) {
+        return;
+    }
+    
+    if (preview) {
+        const nameVal = input.value.trim();
+        if (nameVal) {
+            preview.src = getPlayerAvatar(nameVal);
+        } else {
+            preview.src = "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'><circle cx='50' cy='40' r='25' fill='%23555'/><path d='M15 85 C15 65 30 55 50 55 C70 55 85 65 85 85' fill='%23555'/></svg>";
+        }
+    }
 }
+
+// ==========================================
+// MULTI-SEASON STANDINGS, TRADES, & RETENTIONS
+// ==========================================
+
+function renderStandings() {
+    const container = document.getElementById('standings-table-container');
+    if (!container || !roomState) return;
+    
+    // Sort teams by points (descending), then won, then NRR (descending)
+    const teamsList = Object.keys(roomState.teams).map(tName => {
+        const std = roomState.standings && roomState.standings[tName] ? roomState.standings[tName] : {played: 0, won: 0, lost: 0, points: 0, nrr: 0.0};
+        return {
+            name: tName,
+            manager: roomState.teams[tName].manager,
+            ...std
+        };
+    });
+    
+    teamsList.sort((a, b) => {
+        if (b.points !== a.points) return b.points - a.points;
+        if (b.won !== a.won) return b.won - a.won;
+        return b.nrr - a.nrr;
+    });
+    
+    let html = `
+        <table class="roster-table" style="width: 100%; border-collapse: collapse;">
+            <thead>
+                <tr>
+                    <th style="padding: 0.5rem; text-align: left;">Rank</th>
+                    <th style="padding: 0.5rem; text-align: left;">Franchise</th>
+                    <th style="padding: 0.5rem; text-align: center;">P</th>
+                    <th style="padding: 0.5rem; text-align: center;">W</th>
+                    <th style="padding: 0.5rem; text-align: center;">L</th>
+                    <th style="padding: 0.5rem; text-align: center; color: var(--accent-cyan);">Pts</th>
+                    <th style="padding: 0.5rem; text-align: right;">NRR</th>
+                </tr>
+            </thead>
+            <tbody>
+    `;
+    
+    if (teamsList.length === 0) {
+        html += `<tr><td colspan="7" style="text-align: center; padding: 1.5rem; color: var(--text-secondary);">No franchises in this room yet.</td></tr>`;
+    } else {
+        teamsList.forEach((t, i) => {
+            html += `
+                <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                    <td style="padding: 0.65rem 0.5rem; font-weight: bold;">${i + 1}</td>
+                    <td style="padding: 0.65rem 0.5rem; font-weight: 600; color: #fff;">${t.name} <span style="font-size: 0.75rem; color: var(--text-secondary); font-weight: normal;">(Mgr: ${t.manager})</span></td>
+                    <td style="padding: 0.65rem 0.5rem; text-align: center;">${t.played}</td>
+                    <td style="padding: 0.65rem 0.5rem; text-align: center;">${t.won}</td>
+                    <td style="padding: 0.65rem 0.5rem; text-align: center;">${t.lost}</td>
+                    <td style="padding: 0.65rem 0.5rem; text-align: center; font-weight: bold; color: var(--accent-cyan);">${t.points}</td>
+                    <td style="padding: 0.65rem 0.5rem; text-align: right; font-family: monospace;">${t.nrr >= 0 ? '+' : ''}${t.nrr.toFixed(3)}</td>
+                </tr>
+            `;
+        });
+    }
+    
+    html += `
+            </tbody>
+        </table>
+    `;
+    container.innerHTML = html;
+    
+    // Handle host inputs
+    const hostControls = document.getElementById('host-standings-controls');
+    if (role === 'host') {
+        hostControls.classList.remove('hidden');
+        const inputsContainer = document.getElementById('host-standings-inputs');
+        inputsContainer.innerHTML = '';
+        
+        Object.keys(roomState.teams).forEach(tName => {
+            const std = roomState.standings && roomState.standings[tName] ? roomState.standings[tName] : {played: 0, won: 0, lost: 0, points: 0, nrr: 0.0};
+            const div = document.createElement('div');
+            div.style.display = 'flex';
+            div.style.alignItems = 'center';
+            div.style.gap = '0.5rem';
+            div.style.borderBottom = '1px solid rgba(255,255,255,0.05)';
+            div.style.paddingBottom = '0.5rem';
+            div.style.flexWrap = 'wrap';
+            
+            div.innerHTML = `
+                <span style="font-weight: 600; width: 120px; text-overflow: ellipsis; overflow: hidden; white-space: nowrap; color: white;">${tName}</span>
+                <div style="display: flex; gap: 0.35rem; align-items: center;">
+                    <span style="font-size: 0.75rem; color: var(--text-secondary);">W:</span>
+                    <input type="number" id="std-w-${tName}" value="${std.won}" min="0" style="width: 45px; height: 28px; background: rgba(0,0,0,0.3); border: 1px solid var(--border-color); border-radius: 4px; color: white; text-align: center; font-size: 0.8rem;">
+                    <span style="font-size: 0.75rem; color: var(--text-secondary);">L:</span>
+                    <input type="number" id="std-l-${tName}" value="${std.lost}" min="0" style="width: 45px; height: 28px; background: rgba(0,0,0,0.3); border: 1px solid var(--border-color); border-radius: 4px; color: white; text-align: center; font-size: 0.8rem;">
+                    <span style="font-size: 0.75rem; color: var(--text-secondary);">Pts:</span>
+                    <input type="number" id="std-pts-${tName}" value="${std.points}" min="0" style="width: 45px; height: 28px; background: rgba(0,0,0,0.3); border: 1px solid var(--border-color); border-radius: 4px; color: white; text-align: center; font-size: 0.8rem;">
+                    <span style="font-size: 0.75rem; color: var(--text-secondary);">NRR:</span>
+                    <input type="number" id="std-nrr-${tName}" value="${std.nrr}" step="0.001" style="width: 70px; height: 28px; background: rgba(0,0,0,0.3); border: 1px solid var(--border-color); border-radius: 4px; color: white; text-align: center; font-size: 0.8rem;">
+                </div>
+            `;
+            inputsContainer.appendChild(div);
+        });
+    } else {
+        hostControls.classList.add('hidden');
+    }
+}
+
+function submitStandingsUpdate() {
+    const standingsData = {};
+    Object.keys(roomState.teams).forEach(tName => {
+        const won = parseInt(document.getElementById(`std-w-${tName}`).value) || 0;
+        const lost = parseInt(document.getElementById(`std-l-${tName}`).value) || 0;
+        const points = parseInt(document.getElementById(`std-pts-${tName}`).value) || 0;
+        const nrr = parseFloat(document.getElementById(`std-nrr-${tName}`).value) || 0.0;
+        standingsData[tName] = {
+            played: won + lost,
+            won: won,
+            lost: lost,
+            points: points,
+            nrr: nrr
+        };
+    });
+    
+    fetch('/api/control', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+            room_code: roomCode,
+            host_id: hostId,
+            action: 'update_standings',
+            standings: standingsData
+        })
+    })
+    .then(res => res.json())
+    .then(data => {
+        if (data.error) showNotification(data.error, "danger");
+        else showNotification("Points Table updated!", "success");
+    })
+    .catch(err => showNotification("Failed to update standings.", "danger"));
+}
+
+function renderTradeCenter() {
+    const container = document.getElementById('trades-list-container');
+    if (!container || !roomState) return;
+    container.innerHTML = '';
+    
+    const trades = roomState.trades || [];
+    
+    if (trades.length === 0) {
+        container.innerHTML = '<div class="help-text" style="text-align: center; padding: 1.5rem; color: var(--text-secondary);"><i class="fa-solid fa-circle-info"></i> No trade proposals yet. Click "Propose Trade" to begin.</div>';
+        return;
+    }
+    
+    trades.slice().reverse().forEach(trade => {
+        const card = document.createElement('div');
+        card.className = `trade-proposal-card status-${trade.status}`;
+        card.style.background = 'rgba(255,255,255,0.02)';
+        card.style.border = '1px solid var(--border-color)';
+        card.style.borderRadius = '8px';
+        card.style.padding = '0.75rem';
+        card.style.display = 'flex';
+        card.style.flexDirection = 'column';
+        card.style.gap = '0.5rem';
+        card.style.marginBottom = '0.5rem';
+        
+        let pName = "Unknown Player";
+        for (let p of roomState.players) {
+            if (p.id === trade.player_id) {
+                pName = p.name;
+                break;
+            }
+        }
+        
+        let detailsHtml = '';
+        if (trade.type === 'cash') {
+            detailsHtml = `Receive budget: <span style="color: var(--accent-cyan); font-weight: 600;">${formatCurrency(parseInt(trade.value))}</span>`;
+        } else {
+            let swapPName = "Unknown Player";
+            for (let p of roomState.players) {
+                if (p.id === parseInt(trade.value)) {
+                    swapPName = p.name;
+                    break;
+                }
+            }
+            detailsHtml = `Swap for Player: <span style="color: var(--accent-purple); font-weight: 600;">${swapPName}</span>`;
+        }
+        
+        let statusBadge = '';
+        let btnHtml = '';
+        
+        if (trade.status === 'pending') {
+            statusBadge = `<span class="badge" style="background: rgba(255, 193, 7, 0.15); color: #ffc107; border: 1px solid rgba(255, 193, 7, 0.3);">Pending counterparty</span>`;
+            if (role === 'manager' && teamName === trade.to_team) {
+                btnHtml = `
+                    <div style="display: flex; gap: 0.5rem; margin-top: 0.25rem;">
+                        <button class="btn btn-accent btn-sm" onclick="respondToTrade('${trade.id}', 'accept')" style="height: 28px; padding: 0 0.5rem; border-radius: 4px; font-size: 0.75rem;">Accept</button>
+                        <button class="btn btn-secondary btn-sm" onclick="respondToTrade('${trade.id}', 'decline')" style="height: 28px; padding: 0 0.5rem; border-radius: 4px; font-size: 0.75rem; background: rgba(255,255,255,0.05);">Decline</button>
+                    </div>
+                `;
+            }
+        } else if (trade.status === 'accepted') {
+            statusBadge = `<span class="badge" style="background: rgba(0, 242, 254, 0.15); color: var(--accent-cyan); border: 1px solid rgba(0, 242, 254, 0.3);">Awaiting Host Approval</span>`;
+            if (role === 'host') {
+                btnHtml = `
+                    <div style="display: flex; gap: 0.5rem; margin-top: 0.25rem;">
+                        <button class="btn btn-accent btn-sm" onclick="hostApproveTrade('${trade.id}')" style="height: 28px; padding: 0 0.5rem; border-radius: 4px; font-size: 0.75rem;"><i class="fa-solid fa-check"></i> Approve</button>
+                        <button class="btn btn-secondary btn-sm" onclick="hostRejectTrade('${trade.id}')" style="height: 28px; padding: 0 0.5rem; border-radius: 4px; font-size: 0.75rem; background: rgba(255,255,255,0.05);"><i class="fa-solid fa-xmark"></i> Veto</button>
+                    </div>
+                `;
+            }
+        } else if (trade.status === 'approved') {
+            statusBadge = `<span class="badge" style="background: rgba(40, 167, 69, 0.15); color: #28a745; border: 1px solid rgba(40, 167, 69, 0.3);">Trade Completed</span>`;
+        } else if (trade.status === 'declined') {
+            statusBadge = `<span class="badge" style="background: rgba(220, 53, 69, 0.15); color: #dc3545; border: 1px solid rgba(220, 53, 69, 0.3);">Declined</span>`;
+        } else if (trade.status === 'rejected') {
+            statusBadge = `<span class="badge" style="background: rgba(220, 53, 69, 0.15); color: #dc3545; border: 1px solid rgba(220, 53, 69, 0.3);">Vetoed by Host</span>`;
+        }
+        
+        card.innerHTML = `
+            <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                <div>
+                    <div style="font-size: 0.8rem; color: var(--text-secondary); margin-bottom: 0.15rem;">Offer from: <strong style="color: white;">${trade.from_team}</strong> to <strong style="color: white;">${trade.to_team}</strong></div>
+                    <div style="font-size: 0.95rem; font-weight: bold; color: white; margin-bottom: 0.25rem;">Trade away: <span style="color: var(--accent-cyan);">${pName}</span></div>
+                    <div style="font-size: 0.85rem; color: var(--text-secondary);">${detailsHtml}</div>
+                </div>
+                ${statusBadge}
+            </div>
+            ${btnHtml}
+        `;
+        container.appendChild(card);
+    });
+}
+
+function renderRetentionPanel() {
+    const listContainer = document.getElementById('retention-players-list');
+    if (!listContainer || !roomState) return;
+    listContainer.innerHTML = '';
+    
+    const myTeam = roomState.teams[teamName];
+    if (!myTeam) return;
+    
+    const selectedRetentions = roomState.retentions && roomState.retentions[teamName] ? roomState.retentions[teamName] : [];
+    const isLocked = roomState.retention_locked && roomState.retention_locked[teamName];
+    
+    // Calculate cost
+    let cost = 0;
+    selectedRetentions.forEach(pid => {
+        const p = roomState.players.find(x => x.id === pid);
+        if (p) cost += p.price || 0;
+    });
+    
+    const basePurse = roomState.settings.budget;
+    const projectedPurse = basePurse - cost;
+    document.getElementById('retention-starting-purse').innerText = `Projected starting budget: ${formatCurrency(projectedPurse)}`;
+    
+    if (myTeam.players.length === 0) {
+        listContainer.innerHTML = '<div style="color: var(--text-secondary); font-size: 0.85rem;">Your squad has no players to retain.</div>';
+    } else {
+        myTeam.players.forEach(p => {
+            const div = document.createElement('div');
+            div.style.display = 'flex';
+            div.style.alignItems = 'center';
+            div.style.justifyContent = 'space-between';
+            div.style.padding = '0.5rem';
+            div.style.borderBottom = '1px solid rgba(255,255,255,0.05)';
+            
+            const isChecked = selectedRetentions.includes(p.id);
+            const disableCheckbox = isLocked || (!isChecked && selectedRetentions.length >= 3);
+            
+            div.innerHTML = `
+                <div style="display: flex; align-items: center; gap: 0.5rem;">
+                    <input type="checkbox" id="retain-chk-${p.id}" ${isChecked ? 'checked' : ''} ${disableCheckbox ? 'disabled' : ''} onchange="togglePlayerRetention(${p.id})" style="width: 16px; height: 16px; cursor: pointer;">
+                    <span style="font-weight: 600; color: white;">${p.name} <span style="font-size: 0.75rem; color: var(--text-secondary); font-weight: normal;">(${p.role})</span></span>
+                </div>
+                <span style="font-family: monospace; color: var(--accent-cyan); font-weight: bold;">${formatCurrency(p.price || 0)}</span>
+            `;
+            listContainer.appendChild(div);
+        });
+    }
+    
+    const lockBtn = document.getElementById('btn-lock-retentions');
+    if (lockBtn) {
+        lockBtn.innerText = isLocked ? "Unlock Retentions" : "Lock Retentions";
+        lockBtn.className = isLocked ? "btn btn-secondary" : "btn btn-primary";
+    }
+}
+
+function renderHostRetentionDesk() {
+    const statusContainer = document.getElementById('host-retention-status-list');
+    if (!statusContainer || !roomState) return;
+    statusContainer.innerHTML = '';
+    
+    Object.keys(roomState.teams).forEach(tName => {
+        const team = roomState.teams[tName];
+        const isLocked = roomState.retention_locked && roomState.retention_locked[tName];
+        const retList = roomState.retentions && roomState.retentions[tName] ? roomState.retentions[tName] : [];
+        
+        const div = document.createElement('div');
+        div.style.display = 'flex';
+        div.style.alignItems = 'center';
+        div.style.justifyContent = 'space-between';
+        div.style.padding = '0.5rem';
+        div.style.borderBottom = '1px solid rgba(255,255,255,0.05)';
+        
+        const lockIcon = isLocked ? `<i class="fa-solid fa-lock text-green" title="Locked" style="color: #28a745;"></i>` : `<i class="fa-solid fa-lock-open text-gray" title="Unlocked" style="color: #6c757d;"></i>`;
+        div.innerHTML = `
+            <div style="display: flex; align-items: center; gap: 0.5rem;">
+                ${lockIcon}
+                <span style="font-weight: 600; color: white;">${tName}</span>
+            </div>
+            <span style="font-size: 0.85rem; color: var(--text-secondary);">${retList.length} players retained</span>
+        `;
+        statusContainer.appendChild(div);
+    });
+}
+
+function togglePlayerRetention(pid) {
+    fetch('/api/trade', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+            room_code: roomCode,
+            team_name: teamName,
+            action: 'toggle_retain',
+            player_id: pid
+        })
+    })
+    .then(res => res.json())
+    .then(data => {
+        if (data.error) {
+            showNotification(data.error, "danger");
+            renderRetentionPanel();
+        }
+    })
+    .catch(err => showNotification("Failed to update retention.", "danger"));
+}
+
+function toggleRetentionLock() {
+    const isLocked = roomState.retention_locked && roomState.retention_locked[teamName];
+    fetch('/api/trade', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+            room_code: roomCode,
+            team_name: teamName,
+            action: 'lock_retentions',
+            lock: !isLocked
+        })
+    })
+    .then(res => res.json())
+    .then(data => {
+        if (data.error) showNotification(data.error, "danger");
+    })
+    .catch(err => showNotification("Failed to toggle lock.", "danger"));
+}
+
+function openProposeTradeModal() {
+    const myTeam = roomState.teams[teamName];
+    if (!myTeam) return;
+    
+    const myPlayerSelect = document.getElementById('trade-my-player');
+    myPlayerSelect.innerHTML = '';
+    myTeam.players.forEach(p => {
+        const opt = document.createElement('option');
+        opt.value = p.id;
+        opt.textContent = `${p.name} (${p.role})`;
+        myPlayerSelect.appendChild(opt);
+    });
+    
+    const targetTeamSelect = document.getElementById('trade-target-team');
+    targetTeamSelect.innerHTML = '<option value="">-- Select Team --</option>';
+    Object.keys(roomState.teams).forEach(tName => {
+        if (tName !== teamName) {
+            const opt = document.createElement('option');
+            opt.value = tName;
+            opt.textContent = tName;
+            targetTeamSelect.appendChild(opt);
+        }
+    });
+    
+    document.getElementById('trade-offer-type').value = 'cash';
+    toggleTradeTypeInputs();
+    
+    document.getElementById('trade-modal').classList.remove('hidden');
+}
+
+function closeTradeModal() {
+    document.getElementById('trade-modal').classList.add('hidden');
+}
+
+function toggleTradeTypeInputs() {
+    const tradeType = document.getElementById('trade-offer-type').value;
+    document.getElementById('trade-input-cash-container').classList.toggle('hidden', tradeType !== 'cash');
+    document.getElementById('trade-input-player-container').classList.toggle('hidden', tradeType !== 'player');
+}
+
+function updateTradeTargetPlayers() {
+    const targetTeamName = document.getElementById('trade-target-team').value;
+    const targetPlayerSelect = document.getElementById('trade-target-player');
+    targetPlayerSelect.innerHTML = '';
+    
+    if (targetTeamName && roomState.teams[targetTeamName]) {
+        roomState.teams[targetTeamName].players.forEach(p => {
+            const opt = document.createElement('option');
+            opt.value = p.id;
+            opt.textContent = `${p.name} (${p.role})`;
+            targetPlayerSelect.appendChild(opt);
+        });
+    }
+}
+
+function submitTradeProposal() {
+    const targetTeam = document.getElementById('trade-target-team').value;
+    const playerId = document.getElementById('trade-my-player').value;
+    const tradeType = document.getElementById('trade-offer-type').value;
+    
+    if (!targetTeam) {
+        showNotification("Please select a target team.", "warning");
+        return;
+    }
+    if (!playerId) {
+        showNotification("Please select a player to trade.", "warning");
+        return;
+    }
+    
+    let tradeValue = null;
+    if (tradeType === 'cash') {
+        tradeValue = parseInt(document.getElementById('trade-cash-value').value) || 0;
+        if (tradeValue <= 0) {
+            showNotification("Please enter a valid transfer price.", "warning");
+            return;
+        }
+    } else {
+        tradeValue = document.getElementById('trade-target-player').value;
+        if (!tradeValue) {
+            showNotification("Please select a player to swap.", "warning");
+            return;
+        }
+    }
+    
+    fetch('/api/trade', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+            room_code: roomCode,
+            team_name: teamName,
+            action: 'propose',
+            to_team: targetTeam,
+            player_id: parseInt(playerId),
+            type: tradeType,
+            value: tradeValue
+        })
+    })
+    .then(res => res.json())
+    .then(data => {
+        if (data.error) {
+            showNotification(data.error, "danger");
+        } else {
+            showNotification("Trade proposal sent successfully!", "success");
+            closeTradeModal();
+        }
+    })
+    .catch(err => showNotification("Failed to send trade proposal.", "danger"));
+}
+
+function respondToTrade(tradeId, response) {
+    fetch('/api/trade', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+            room_code: roomCode,
+            team_name: teamName,
+            action: 'respond',
+            trade_id: tradeId,
+            response: response
+        })
+    })
+    .then(res => res.json())
+    .then(data => {
+        if (data.error) showNotification(data.error, "danger");
+        else showNotification(response === 'accept' ? "Trade proposal accepted!" : "Trade proposal declined.", "success");
+    })
+    .catch(err => showNotification("Failed to respond to trade.", "danger"));
+}
+
+function hostApproveTrade(tradeId) {
+    fetch('/api/control', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+            room_code: roomCode,
+            host_id: hostId,
+            action: 'approve_trade',
+            trade_id: tradeId
+        })
+    })
+    .then(res => res.json())
+    .then(data => {
+        if (data.error) showNotification(data.error, "danger");
+        else showNotification("Trade proposal approved!", "success");
+    })
+    .catch(err => showNotification("Failed to approve trade.", "danger"));
+}
+
+function hostRejectTrade(tradeId) {
+    fetch('/api/control', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+            room_code: roomCode,
+            host_id: hostId,
+            action: 'reject_trade',
+            trade_id: tradeId
+        })
+    })
+    .then(res => res.json())
+    .then(data => {
+        if (data.error) showNotification(data.error, "danger");
+        else showNotification("Trade proposal vetoed.", "success");
+    })
+    .catch(err => showNotification("Failed to veto trade.", "danger"));
+}
+

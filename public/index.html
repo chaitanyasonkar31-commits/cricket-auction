@@ -535,12 +535,38 @@ Yashasvi Jaiswal, Batsman, 91, 10000000, Runs: 720 Avg: 41.2, , false" style="fo
                                     <option value="">-- Sequential / Next Up --</option>
                                 </select>
                             </div>
-
                             <button class="btn btn-primary btn-large" onclick="dashboardStartAuction()" style="padding: 0.75rem 2rem; font-size: 1.1rem; width: 100%; max-width: 400px; display: flex; align-items: center; justify-content: center; gap: 0.5rem; border-radius: 8px;"><i class="fa-solid fa-play"></i> START PLAYER AUCTION</button>
                         </div>
-                    </div>
 
-                    <!-- Bidding Controls Panel -->
+                        <!-- Retention Panel (Shown during post-season retention phase) -->
+                        <div id="retention-panel" class="hidden" style="padding: 1.5rem; display: flex; flex-direction: column; justify-content: space-between; height: 100%; width: 100%; min-height: 350px; text-align: left;">
+                            <div>
+                                <h2 style="font-family: 'Outfit', sans-serif; font-size: 1.6rem; margin-bottom: 0.25rem; color: var(--accent-purple);" id="retention-title">Season Retention Phase</h2>
+                                <p style="color: var(--text-secondary); margin-bottom: 1rem; font-size: 0.85rem;" id="retention-subtitle">Retain up to 3 players. Each retention costs their previous sold price.</p>
+                                <div id="retention-starting-purse" style="font-size: 1rem; font-weight: 600; color: var(--accent-cyan); margin-bottom: 1rem;">Projected Purse: --</div>
+                                <div id="retention-players-list" style="display: flex; flex-direction: column; gap: 0.5rem; max-height: 180px; overflow-y: auto; padding-right: 0.25rem;">
+                                    <!-- Renders checkboxes dynamically -->
+                                </div>
+                            </div>
+                            <div style="margin-top: 1rem; display: flex; gap: 1rem;">
+                                <button id="btn-lock-retentions" class="btn btn-primary" onclick="toggleRetentionLock()" style="flex: 1; height: 40px; border-radius: 8px;">Lock Retentions</button>
+                            </div>
+                        </div>
+
+                        <!-- Host Retention Controller Desk -->
+                        <div id="host-retention-desk" class="hidden" style="padding: 1.5rem; display: flex; flex-direction: column; justify-content: space-between; height: 100%; width: 100%; min-height: 350px; text-align: left;">
+                            <div>
+                                <h2 style="font-family: 'Outfit', sans-serif; font-size: 1.6rem; margin-bottom: 0.25rem; color: var(--accent-purple);">Host Retention Desk</h2>
+                                <p style="color: var(--text-secondary); margin-bottom: 1rem; font-size: 0.85rem;">Monitor franchise retentions and start the next season once ready.</p>
+                                <div id="host-retention-status-list" style="display: flex; flex-direction: column; gap: 0.5rem; max-height: 180px; overflow-y: auto;">
+                                    <!-- Renders team list showing who locked retentions -->
+                                </div>
+                            </div>
+                            <div style="margin-top: 1rem;">
+                                <button class="btn btn-accent" onclick="hostAction('lock_season_retentions')" style="width: 100%; height: 40px; border-radius: 8px;">Start Next Season Draft</button>
+                            </div>
+                        </div>
+                    </div>                    <!-- Bidding Controls Panel -->
                     <div id="bidding-controls-panel" class="bidding-panel glass-panel">
                         <div id="bid-buttons-section">
                             <h3>Place Real-Time Bid</h3>
@@ -652,6 +678,12 @@ Yashasvi Jaiswal, Batsman, 91, 10000000, Runs: 720 Avg: 41.2, , false" style="fo
                             <button id="tab-players" class="panel-tab-btn" onclick="switchDashboardTab('players')">
                                 <i class="fa-solid fa-users text-purple"></i> Player Queue
                             </button>
+                            <button id="tab-standings" class="panel-tab-btn" onclick="switchDashboardTab('standings')">
+                                <i class="fa-solid fa-table text-gold"></i> Standings
+                            </button>
+                            <button id="tab-trade" class="panel-tab-btn" onclick="switchDashboardTab('trade')">
+                                <i class="fa-solid fa-handshake text-green"></i> Trade Center
+                            </button>
                         </div>
                         
                         <!-- Teams / Leaderboard Tab Content -->
@@ -672,6 +704,31 @@ Yashasvi Jaiswal, Batsman, 91, 10000000, Runs: 720 Avg: 41.2, , false" style="fo
                                 <button id="filter-btn-unsold" class="filter-btn" onclick="filterQueue('unsold')">Unsold</button>
                             </div>
                             <div id="queue-container" class="queue-container">
+                                <!-- Loaded dynamically -->
+                        </div>
+                        
+                        <!-- Standings Tab Content -->
+                        <div id="tab-content-standings" class="tab-content hidden">
+                            <div id="standings-table-container">
+                                <!-- Rendered dynamically -->
+                            </div>
+                            <!-- Host controls to edit points table -->
+                            <div id="host-standings-controls" class="host-standings-controls hidden" style="margin-top: 1rem; border-top: 1px solid var(--border-color); padding-top: 1rem;">
+                                <h4 style="color: var(--accent-cyan); margin-bottom: 0.5rem;"><i class="fa-solid fa-edit"></i> Edit Season Standings</h4>
+                                <div id="host-standings-inputs" style="display: flex; flex-direction: column; gap: 0.5rem; max-height: 180px; overflow-y: auto;">
+                                    <!-- Input rows rendered dynamically for each team -->
+                                </div>
+                                <button class="btn btn-accent" onclick="submitStandingsUpdate()" style="margin-top: 1rem; width: 100%; height: 38px; border-radius: 8px;">Update Standings</button>
+                            </div>
+                        </div>
+                        
+                        <!-- Trade Center Tab Content -->
+                        <div id="tab-content-trade" class="tab-content hidden">
+                            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; flex-wrap: wrap; gap: 0.5rem;">
+                                <h4 style="color: var(--accent-cyan); margin: 0;"><i class="fa-solid fa-handshake"></i> Franchise Trade Center</h4>
+                                <button id="btn-propose-trade-modal" class="btn btn-accent btn-sm" onclick="openProposeTradeModal()" style="height: 30px; padding: 0 0.75rem; border-radius: 6px;"><i class="fa-solid fa-plus"></i> Propose Trade</button>
+                            </div>
+                            <div id="trades-list-container" style="display: flex; flex-direction: column; gap: 0.75rem; max-height: 350px; overflow-y: auto;">
                                 <!-- Loaded dynamically -->
                             </div>
                         </div>
@@ -726,6 +783,53 @@ Yashasvi Jaiswal, Batsman, 91, 10000000, Runs: 720 Avg: 41.2, , false" style="fo
                             <!-- Dynamic roster rows -->
                         </tbody>
                     </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- 5. TRADE PROPOSAL MODAL -->
+        <div id="trade-modal" class="modal-overlay hidden" onclick="closeTradeModal()">
+            <div class="modal-content glass-card" onclick="event.stopPropagation()" style="max-width: 500px;">
+                <div class="modal-header">
+                    <h2><i class="fa-solid fa-handshake text-green"></i> Propose a Player Trade</h2>
+                    <button class="btn-close" onclick="closeTradeModal()">&times;</button>
+                </div>
+                <div style="padding: 1.5rem; display: flex; flex-direction: column; gap: 1rem;">
+                    <div class="form-group">
+                        <label for="trade-my-player" style="font-size: 0.8rem; color: var(--text-secondary); margin-bottom: 0.25rem; display: block;">Select Player to Trade away</label>
+                        <select id="trade-my-player" style="width: 100%; height: 38px; padding: 0.25rem 0.5rem; background: rgba(0,0,0,0.3); border: 1px solid var(--border-color); border-radius: 6px; color: white;">
+                            <!-- Filled dynamically -->
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="trade-target-team" style="font-size: 0.8rem; color: var(--text-secondary); margin-bottom: 0.25rem; display: block;">Target Franchise</label>
+                        <select id="trade-target-team" onchange="updateTradeTargetPlayers()" style="width: 100%; height: 38px; padding: 0.25rem 0.5rem; background: rgba(0,0,0,0.3); border: 1px solid var(--border-color); border-radius: 6px; color: white;">
+                            <!-- Filled dynamically -->
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="trade-offer-type" style="font-size: 0.8rem; color: var(--text-secondary); margin-bottom: 0.25rem; display: block;">Trade Proposal Type</label>
+                        <select id="trade-offer-type" onchange="toggleTradeTypeInputs()" style="width: 100%; height: 38px; padding: 0.25rem 0.5rem; background: rgba(0,0,0,0.3); border: 1px solid var(--border-color); border-radius: 6px; color: white;">
+                            <option value="cash">Trade for Cash (Budget transfer)</option>
+                            <option value="player">Trade for Player (Swap)</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group" id="trade-input-cash-container">
+                        <label for="trade-cash-value" style="font-size: 0.8rem; color: var(--text-secondary); margin-bottom: 0.25rem; display: block;">Transfer Price (in Rupees)</label>
+                        <input type="number" id="trade-cash-value" placeholder="e.g. 5000000 for 50 Lakhs" style="width: 100%; height: 38px; padding: 0.25rem 0.75rem; background: rgba(0,0,0,0.3); border: 1px solid var(--border-color); border-radius: 6px; color: white;">
+                    </div>
+
+                    <div class="form-group hidden" id="trade-input-player-container">
+                        <label for="trade-target-player" style="font-size: 0.8rem; color: var(--text-secondary); margin-bottom: 0.25rem; display: block;">Request Player in Swap</label>
+                        <select id="trade-target-player" style="width: 100%; height: 38px; padding: 0.25rem 0.5rem; background: rgba(0,0,0,0.3); border: 1px solid var(--border-color); border-radius: 6px; color: white;">
+                            <!-- Filled dynamically -->
+                        </select>
+                    </div>
+
+                    <button class="btn btn-accent" onclick="submitTradeProposal()" style="width: 100%; height: 40px; margin-top: 0.5rem; border-radius: 8px;">Send Trade Proposal</button>
                 </div>
             </div>
         </div>

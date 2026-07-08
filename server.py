@@ -270,6 +270,16 @@ class AuctionDB:
                     room_data["clients"] = []
                     room_data["bot_delay"] = 0
                     room_data["timer_active"] = False
+                    if "season" not in room_data:
+                        room_data["season"] = 1
+                    if "standings" not in room_data:
+                        room_data["standings"] = {}
+                    if "trades" not in room_data:
+                        room_data["trades"] = []
+                    if "retentions" not in room_data:
+                        room_data["retentions"] = {}
+                    if "retention_locked" not in room_data:
+                        room_data["retention_locked"] = {}
                     rooms_dict[room_code] = room_data
                 except Exception as ex:
                     print(f"Error parsing JSON for room {room_code}: {ex}")
@@ -741,6 +751,8 @@ class AuctionHTTPHandler(SimpleHTTPRequestHandler):
                 self.handle_bid(data)
             elif path == '/api/control':
                 self.handle_control(data)
+            elif path == '/api/trade':
+                self.handle_trade(data)
             elif path == '/api/presets':
                 self.send_json_response(200, PRESETS)
             elif path == '/api/auth/register':
@@ -898,6 +910,11 @@ class AuctionHTTPHandler(SimpleHTTPRequestHandler):
                 "status": "lobby",
                 "current_role_filter": "All",
                 "bot_delay": 0,
+                "season": 1,
+                "standings": {},
+                "trades": [],
+                "retentions": {},
+                "retention_locked": {},
                 "last_completed_player_index": None
             }
             save_room_to_disk(room_code)
@@ -1211,7 +1228,346 @@ class AuctionHTTPHandler(SimpleHTTPRequestHandler):
                 else:
                     self.send_json_response(400, {"error": "No active player to update image."})
                     return
+
+            elif action == "update_standings":
+                new_standings = data.get('standings', {})
+                for team_name, stats in new_standings.items():
+                    if team_name in room["teams"]:
+                        room["standings"][team_name] = {
+                            "played": int(stats.get('played', 0)),
+                            "won": int(stats.get('won', 0)),
+                            "lost": int(stats.get('lost', 0)),
+                            "points": int(stats.get('points', 0)),
+                            "nrr": float(stats.get('nrr', 0.0))
+                        }
+                room["logs"].append("📊 Host updated the Season Standings / Points Table.")
+
+            elif action == "end_season":
+                room["status"] = "retention"
+                room["trades"] = []
+                room["retentions"] = {team: [] for team in room["teams"]}
+                room["retention_locked"] = {team: False for team in room["teams"]}
+                room["logs"].append(f"🏁 Season {room.get('season', 1)} has officially ended! Host opened the Retention & Trading Window for Season {room.get('season', 1) + 1}.")
+
+            elif action == "lock_season_retentions":
+                prev_season = room.get("season", 1)
+                next_season = prev_season + 1
+                room["season"] = next_season
+                
+                retained_player_ids = set()
+                for team_name, p_ids in room["retentions"].items():
+                    for pid in p_ids:
+                        retained_player_ids.add(int(pid))
+                        
+                for player in room["players"]:
+                    pid = int(player["id"])
+                    if pid in retained_player_ids:
+                        retained_by_team = None
+                        for team_name, p_ids in room["retentions"].items():
+                            if pid in p_ids:
+                                retained_by_team = team_name
+                                break
+                        player["bought_by"] = retained_by_team
+                        player["status"] = "sold"
+                    else:
+                        player["status"] = "unsold"
+                        player["bought_by"] = None
+                        player["price"] = 0
+                        if "passed" in player:
+                            del player["passed"]
+                            
+                for team_name, team in room["teams"].items():
+                    team_retained_ids = room["retentions"].get(team_name, [])
+                    team_retained_players = []
+                    retained_cost = 0
+                    new_slots = {"Batsman": 0, "Bowler": 0, "All-Rounder": 0, "Wicket-Keeper": 0}
                     
+                    for player in room["players"]:
+                        if int(player["id"]) in team_retained_ids:
+                            retained_cost += player.get("price", 0)
+                            team_retained_players.append(player)
+                            role = player["role"]
+                            if role in new_slots:
+                                new_slots[role] += 1
+                                
+                    team["players"] = team_retained_players
+                    team["slots"] = new_slots
+                    team["budget"] = room["settings"]["budget"] - retained_cost
+                    
+                room["current_player_index"] = -1
+                room["current_bid"] = 0
+                room["current_bidder"] = None
+                room["timer"] = room["settings"]["timer_duration"]
+                room["timer_active"] = False
+                room["status"] = "active"
+                
+                room["trades"] = []
+                room["retentions"] = {}
+                room["retention_locked"] = {}
+                
+                room["logs"].append(f"🚀 Season {next_season} draft has officially started! Budgets re-calculated and released players returned to the pool.")
+
+            elif action == "approve_trade":
+                trade_id = data.get('trade_id')
+                trade = None
+                for t in room.get("trades", []):
+                    if t["id"] == trade_id:
+                        trade = t
+                        break
+                if not trade:
+                    self.send_json_response(404, {"error": "Trade not found."})
+                    return
+                if trade["status"] != "accepted":
+                    self.send_json_response(400, {"error": "Trade is not in accepted state."})
+                    return
+                    
+                from_team_name = trade["from_team"]
+                to_team_name = trade["to_team"]
+                player_id = int(trade["player_id"])
+                
+                if from_team_name not in room["teams"] or to_team_name not in room["teams"]:
+                    self.send_json_response(400, {"error": "One of the teams in the trade no longer exists."})
+                    return
+                    
+                from_team = room["teams"][from_team_name]
+                to_team = room["teams"][to_team_name]
+                
+                player = None
+                for p in room["players"]:
+                    if int(p["id"]) == player_id:
+                        player = p
+                        break
+                if not player or player.get("bought_by") != from_team_name:
+                    self.send_json_response(400, {"error": "Player is no longer owned by the selling team."})
+                    return
+                    
+                if trade["type"] == "cash":
+                    if len(to_team["players"]) >= 16:
+                        self.send_json_response(400, {"error": f"Cannot approve. Team '{to_team_name}' has 16 players."})
+                        return
+                    cash_value = int(trade["value"])
+                    if to_team["budget"] < cash_value:
+                        self.send_json_response(400, {"error": f"Cannot approve. Team '{to_team_name}' has insufficient budget."})
+                        return
+                        
+                    to_team["budget"] -= cash_value
+                    from_team["budget"] += cash_value
+                    
+                    player["bought_by"] = to_team_name
+                    from_team["players"] = [p for p in from_team["players"] if int(p["id"]) != player_id]
+                    to_team["players"].append(player)
+                    
+                    role = player["role"]
+                    if role in from_team["slots"] and from_team["slots"][role] > 0:
+                        from_team["slots"][role] -= 1
+                    if role in to_team["slots"]:
+                        to_team["slots"][role] += 1
+                        
+                    trade["status"] = "approved"
+                    trade_msg = f"🤝 TRADE APPROVED: {player['name']} transferred from {from_team_name} to {to_team_name} for {format_currency_python(cash_value)}."
+                    room["logs"].append(trade_msg)
+                    
+                elif trade["type"] == "player":
+                    swap_player_id = int(trade["value"])
+                    swap_player = None
+                    for p in room["players"]:
+                        if int(p["id"]) == swap_player_id:
+                            swap_player = p
+                            break
+                    if not swap_player or swap_player.get("bought_by") != to_team_name:
+                        self.send_json_response(400, {"error": "Offered swap player is no longer owned by target team."})
+                        return
+                        
+                    player["bought_by"] = to_team_name
+                    swap_player["bought_by"] = from_team_name
+                    
+                    from_team["players"] = [p for p in from_team["players"] if int(p["id"]) != player_id]
+                    to_team["players"] = [p for p in to_team["players"] if int(p["id"]) != swap_player_id]
+                    
+                    from_team["players"].append(swap_player)
+                    to_team["players"].append(player)
+                    
+                    for t in (from_team, to_team):
+                        t["slots"] = {"Batsman": 0, "Bowler": 0, "All-Rounder": 0, "Wicket-Keeper": 0}
+                        for p in t["players"]:
+                            role = p["role"]
+                            if role in t["slots"]:
+                                t["slots"][role] += 1
+                                
+                    trade["status"] = "approved"
+                    trade_msg = f"🤝 TRADE APPROVED: Swap completed! {player['name']} moved to {to_team_name}, and {swap_player['name']} moved to {from_team_name}."
+                    room["logs"].append(trade_msg)
+
+            elif action == "reject_trade":
+                trade_id = data.get('trade_id')
+                trade = None
+                for t in room.get("trades", []):
+                    if t["id"] == trade_id:
+                        trade = t
+                        break
+                if not trade:
+                    self.send_json_response(404, {"error": "Trade not found."})
+                    return
+                trade["status"] = "rejected"
+                room["logs"].append("❌ Trade proposal rejected by Host.")
+
+            elif action == "end_tournament":
+                room["status"] = "tournament_ended"
+                room["logs"].append("🏆 Host has officially ended the tournament! Standings are now finalized.")
+                     
+            save_room_to_disk(room_code)
+            broadcast(room_code, "state_update", get_serializable_room(room))
+            
+        self.send_json_response(200, {"success": True, "room_state": get_serializable_room(room)})
+
+    def handle_trade(self, data):
+        room_code = data.get('room_code', '').upper()
+        team_name = data.get('team_name', '')
+        action = data.get('action', '')
+        
+        if room_code not in rooms:
+            self.send_json_response(404, {"error": "Room not found"})
+            return
+            
+        with rooms_lock:
+            room = rooms[room_code]
+            if team_name not in room["teams"]:
+                self.send_json_response(403, {"error": "Unauthorized. Team not in room."})
+                return
+                
+            if action == "propose":
+                to_team = data.get('to_team', '')
+                player_id = int(data.get('player_id', 0))
+                trade_type = data.get('type', '')
+                trade_value = data.get('value')
+                
+                if to_team not in room["teams"] or to_team == team_name:
+                    self.send_json_response(400, {"error": "Invalid target team."})
+                    return
+                    
+                player = None
+                for p in room["players"]:
+                    if int(p["id"]) == player_id:
+                        player = p
+                        break
+                if not player or player.get("bought_by") != team_name:
+                    self.send_json_response(400, {"error": "You do not own this player."})
+                    return
+                    
+                if trade_type == "player":
+                    swap_player_id = int(trade_value)
+                    swap_player = None
+                    for p in room["players"]:
+                        if int(p["id"]) == swap_player_id:
+                            swap_player = p
+                            break
+                    if not swap_player or swap_player.get("bought_by") != to_team:
+                        self.send_json_response(400, {"error": "Target team does not own requested player."})
+                        return
+                    trade_desc = f"offered swap for {swap_player['name']}"
+                elif trade_type == "cash":
+                    cash_val = int(trade_value)
+                    if cash_val <= 0:
+                        self.send_json_response(400, {"error": "Trade cash value must be positive."})
+                        return
+                    if room["teams"][to_team]["budget"] < cash_val:
+                        self.send_json_response(400, {"error": "Target team cannot afford this trade."})
+                        return
+                    trade_desc = f"for {format_currency_python(cash_val)}"
+                else:
+                    self.send_json_response(400, {"error": "Invalid trade type."})
+                    return
+                    
+                trade_id = str(uuid.uuid4())[:8]
+                new_trade = {
+                    "id": trade_id,
+                    "from_team": team_name,
+                    "to_team": to_team,
+                    "player_id": player_id,
+                    "type": trade_type,
+                    "value": trade_value,
+                    "status": "pending"
+                }
+                if "trades" not in room:
+                    room["trades"] = []
+                room["trades"].append(new_trade)
+                room["logs"].append(f"🤝 TRADE OFFER: {team_name} proposed trading {player['name']} to {to_team} {trade_desc}.")
+                
+            elif action == "respond":
+                trade_id = data.get('trade_id', '')
+                response = data.get('response', '')
+                
+                trade = None
+                for t in room.get("trades", []):
+                    if t["id"] == trade_id:
+                        trade = t
+                        break
+                if not trade:
+                    self.send_json_response(404, {"error": "Trade proposal not found."})
+                    return
+                if trade["to_team"] != team_name:
+                    self.send_json_response(403, {"error": "Unauthorized."})
+                    return
+                if trade["status"] != "pending":
+                    self.send_json_response(400, {"error": "Trade is no longer pending."})
+                    return
+                    
+                player_name = "Player"
+                for p in room["players"]:
+                    if int(p["id"]) == int(trade["player_id"]):
+                        player_name = p["name"]
+                        break
+                        
+                if response == "accept":
+                    trade["status"] = "accepted"
+                    room["logs"].append(f"✅ TRADE ACCEPTED: {team_name} accepted {trade['from_team']}'s trade for {player_name}. Awaiting Host Approval.")
+                else:
+                    trade["status"] = "declined"
+                    room["logs"].append(f"❌ TRADE DECLINED: {team_name} declined {trade['from_team']}'s trade for {player_name}.")
+                    
+            elif action == "toggle_retain":
+                player_id = int(data.get('player_id', 0))
+                if room["status"] != "retention":
+                    self.send_json_response(400, {"error": "Retentions only allowed in Retention Phase."})
+                    return
+                if room["retention_locked"].get(team_name, False):
+                    self.send_json_response(400, {"error": "Your retentions are locked!"})
+                    return
+                    
+                player = None
+                for p in room["players"]:
+                    if int(p["id"]) == player_id:
+                        player = p
+                        break
+                if not player or player.get("bought_by") != team_name:
+                    self.send_json_response(400, {"error": "Player is not in your squad."})
+                    return
+                    
+                if team_name not in room["retentions"]:
+                    room["retentions"][team_name] = []
+                    
+                if player_id in room["retentions"][team_name]:
+                    room["retentions"][team_name].remove(player_id)
+                    room["logs"].append(f"ℹ️ {team_name} removed {player['name']} from retentions.")
+                else:
+                    if len(room["retentions"][team_name]) >= 3:
+                        self.send_json_response(400, {"error": "Maximum 3 players can be retained."})
+                        return
+                    room["retentions"][team_name].append(player_id)
+                    room["logs"].append(f"📌 {team_name} marked {player['name']} to be retained.")
+                    
+            elif action == "lock_retentions":
+                lock = bool(data.get('lock', False))
+                if room["status"] != "retention":
+                    self.send_json_response(400, {"error": "Not in retention phase."})
+                    return
+                room["retention_locked"][team_name] = lock
+                status_word = "locked" if lock else "unlocked"
+                room["logs"].append(f"🔒 {team_name} {status_word} their retentions.")
+            else:
+                self.send_json_response(400, {"error": "Invalid action."})
+                return
+                
             save_room_to_disk(room_code)
             broadcast(room_code, "state_update", get_serializable_room(room))
             
