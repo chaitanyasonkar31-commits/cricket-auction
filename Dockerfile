@@ -1,18 +1,26 @@
 FROM python:3.9-slim
 
-WORKDIR /app
+# Set up a new user named "user" with UID 1000
+RUN useradd -m -u 1000 user
 
-# Install dependencies
+WORKDIR /home/user/app
+
+# Install dependencies as root to cache them
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Copy the rest of the application
-COPY . .
+# Switch to the non-root user
+USER user
+ENV HOME=/home/user \
+    PATH=/home/user/.local/bin:$PATH \
+    PYTHONUNBUFFERED=1 \
+    PORT=7860
 
-# Hugging Face Spaces expects the app to bind to port 7860
+# Copy application files and set ownership to "user"
+COPY --chown=user . .
+
+# Expose port
 EXPOSE 7860
-ENV PORT=7860
-ENV PYTHONUNBUFFERED=1
 
 # Run the python server
 CMD ["python", "server.py"]
