@@ -1791,11 +1791,27 @@ function renderAuctionDashboard() {
             // Active bidding card
             if (stamp) stamp.classList.add('hidden');
             if (card) card.className = "player-card glass-panel";
+            
+            // Restore player details & footer, hide summary
+            document.querySelector('.player-image-container')?.classList.remove('hidden');
+            document.querySelector('.player-card-footer')?.classList.remove('hidden');
+            document.getElementById('draft-summary-roster-dashboard')?.classList.add('hidden');
         }
     } else {
         if (roomState.status === 'finished' || roomState.status === 'post_draft_standings' || roomState.status === 'tournament_ended') {
             if (playerInfoContainer) playerInfoContainer.classList.remove('hidden');
             if (hostSetupContainer) hostSetupContainer.classList.add('hidden');
+            
+            // Hide player details & footer during completed phases
+            document.querySelector('.player-image-container')?.classList.add('hidden');
+            document.querySelector('.player-card-footer')?.classList.add('hidden');
+            
+            const summaryDashboard = document.getElementById('draft-summary-roster-dashboard');
+            if (summaryDashboard) {
+                summaryDashboard.classList.remove('hidden');
+                renderDraftSummaryDashboard();
+            }
+            
             document.getElementById('player-card-role').innerText = "SEASON COMPLETE";
             document.getElementById('player-card-rating').innerText = roomState.season || 1;
             
@@ -4267,5 +4283,99 @@ async function submitNextSeasonSettings() {
     } catch (e) {
         showNotification("Failed to configure next season: " + e.message, "danger");
     }
+}
+
+// RENDER FRANCHISE ROSTERS GROUPED BY ROLE IN COMPLETED PHASES
+function renderDraftSummaryDashboard() {
+    const container = document.getElementById('draft-summary-teams-container');
+    if (!container || !roomState) return;
+    container.innerHTML = '';
+    
+    Object.keys(roomState.teams).forEach(tName => {
+        const team = roomState.teams[tName];
+        const teamPlayers = team.players || [];
+        
+        // Group players by role
+        const groups = {
+            "Batsman": [],
+            "Wicket-Keeper": [],
+            "All-Rounder": [],
+            "Bowler": []
+        };
+        
+        teamPlayers.forEach(p => {
+            if (groups[p.role]) {
+                groups[p.role].push(p);
+            } else {
+                groups["Batsman"].push(p);
+            }
+        });
+        
+        const teamCard = document.createElement('div');
+        teamCard.className = 'glass-card';
+        teamCard.style.padding = '1rem';
+        teamCard.style.background = 'rgba(255,255,255,0.01)';
+        teamCard.style.border = '1px solid rgba(255,255,255,0.07)';
+        teamCard.style.borderRadius = '8px';
+        teamCard.style.marginBottom = '0.5rem';
+        
+        let rolesHtml = '';
+        Object.keys(groups).forEach(roleKey => {
+            const list = groups[roleKey];
+            if (list.length > 0) {
+                rolesHtml += `
+                    <div style="margin-top: 0.75rem;">
+                        <h4 style="font-size: 0.75rem; text-transform: uppercase; color: var(--accent-purple); border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 0.2rem; margin-bottom: 0.35rem; display: flex; justify-content: space-between; font-weight: bold; letter-spacing: 0.5px;">
+                            <span>${roleKey}s</span>
+                            <span style="font-size: 0.65rem; color: var(--text-secondary); font-weight: normal;">Count: ${list.length}</span>
+                        </h4>
+                        <div style="display: flex; flex-direction: column; gap: 0.35rem;">
+                `;
+                
+                list.forEach(p => {
+                    const avatar = p.img ? `<img src="${p.img}" style="width: 24px; height: 24px; border-radius: 50%; object-fit: cover; border: 1px solid rgba(255,255,255,0.25);">` : `
+                        <div style="width: 24px; height: 24px; border-radius: 50%; background: rgba(255,255,255,0.07); display: flex; align-items: center; justify-content: center; font-size: 0.6rem; font-weight: bold; color: var(--text-secondary); border: 1px solid rgba(255,255,255,0.1);">
+                            ${p.name.charAt(0)}
+                        </div>
+                    `;
+                    
+                    rolesHtml += `
+                        <div style="display: flex; align-items: center; justify-content: space-between; padding: 0.3rem 0.5rem; background: rgba(0,0,0,0.15); border-radius: 4px; font-size: 0.85rem;">
+                            <div style="display: flex; align-items: center; gap: 0.5rem;">
+                                ${avatar}
+                                <span style="font-weight: 600; color: white;">${p.name}</span>
+                                <span style="font-size: 0.65rem; color: var(--accent-gold); background: rgba(255,215,0,0.08); padding: 1px 4px; border-radius: 3px; border: 1px solid rgba(255,215,0,0.2); font-weight: bold;">★ ${p.rating}</span>
+                            </div>
+                            <span style="font-family: monospace; font-weight: bold; color: var(--accent-cyan); font-size: 0.8rem;">${formatCurrency(p.price || 0)}</span>
+                        </div>
+                    `;
+                });
+                
+                rolesHtml += `
+                        </div>
+                    </div>
+                `;
+            }
+        });
+        
+        if (teamPlayers.length === 0) {
+            rolesHtml = `<div style="color: var(--text-secondary); font-size: 0.8rem; text-align: center; margin-top: 0.5rem;"><i class="fa-solid fa-circle-exclamation"></i> No players drafted yet.</div>`;
+        }
+        
+        teamCard.innerHTML = `
+            <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(255,255,255,0.08); padding-bottom: 0.5rem;">
+                <div>
+                    <h3 style="margin: 0; font-size: 1.05rem; font-weight: bold; color: white;">${tName}</h3>
+                    <span style="font-size: 0.75rem; color: var(--text-secondary);">Manager: <strong style="color: rgba(255,255,255,0.85);">${team.manager}</strong></span>
+                </div>
+                <div style="text-align: right;">
+                    <div style="font-size: 0.85rem; font-weight: bold; color: var(--accent-green);">${formatCurrency(team.budget)}</div>
+                    <span style="font-size: 0.75rem; color: var(--text-secondary);">Players: <strong style="color: white;">${teamPlayers.length}</strong></span>
+                </div>
+            </div>
+            ${rolesHtml}
+        `;
+        container.appendChild(teamCard);
+    });
 }
 
