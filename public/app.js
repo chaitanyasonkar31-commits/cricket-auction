@@ -3580,25 +3580,6 @@ function updateCustomPlayerAvatarPreview(input) {
             preview.src = "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'><circle cx='50' cy='40' r='25' fill='%23555'/><path d='M15 85 C15 65 30 55 50 55 C70 55 85 65 85 85' fill='%23555'/></svg>";
         }
     }
-function updateCustomPlayerAvatarPreview(input) {
-    const parent = input.closest('tr');
-    if (!parent) return;
-    const preview = parent.querySelector('.cp-img-preview');
-    const hiddenBase64 = parent.querySelector('.cp-img-base64');
-    
-    // If the user has already uploaded a custom file, do not override it
-    if (hiddenBase64 && hiddenBase64.value && hiddenBase64.value.startsWith('data:image')) {
-        return;
-    }
-    
-    if (preview) {
-        const nameVal = input.value.trim();
-        if (nameVal) {
-            preview.src = getPlayerAvatar(nameVal);
-        } else {
-            preview.src = "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'><circle cx='50' cy='40' r='25' fill='%23555'/><path d='M15 85 C15 65 30 55 50 55 C70 55 85 65 85 85' fill='%23555'/></svg>";
-        }
-    }
 }
 
 // ==========================================
