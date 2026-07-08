@@ -1729,7 +1729,8 @@ function renderAuctionDashboard() {
     const stamp = document.getElementById('player-sale-stamp');
     const card = document.getElementById('active-player-card');
     
-    if (idx >= 0 && idx < roomState.players.length) {
+    const isCompleted = roomState.status === 'finished' || roomState.status === 'post_draft_standings' || roomState.status === 'tournament_ended';
+    if (idx >= 0 && idx < roomState.players.length && !isCompleted) {
         if (playerInfoContainer) playerInfoContainer.classList.remove('hidden');
         if (hostSetupContainer) hostSetupContainer.classList.add('hidden');
         const player = roomState.players[idx];
