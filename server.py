@@ -871,6 +871,9 @@ class AuctionHTTPHandler(SimpleHTTPRequestHandler):
             self.send_json_response(400, {"error": "No players specified"})
             return
             
+        # Randomize draft order by shuffling the players pool
+        random.shuffle(players)
+            
         budget = int(settings.get('budget', 1500000000))
         min_increment = int(settings.get('min_increment', 500000))
         timer_duration = int(settings.get('timer_duration', 15))

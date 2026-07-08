@@ -2446,7 +2446,7 @@ function showNotification(message, type = 'success') {
 }
 
 // Tabbed Panel and Player Queue Controller Logic
-let activeQueueFilter = 'upcoming';
+let activeQueueFilter = 'sold';
 
 function switchDashboardTab(tabName) {
     document.getElementById('tab-leaderboard').classList.toggle('active', tabName === 'leaderboard');
@@ -2479,15 +2479,11 @@ function filterQueue(filterName) {
 function renderQueueList() {
     const upcomingBtn = document.getElementById('filter-btn-upcoming');
     if (upcomingBtn) {
-        if (role !== 'host') {
-            upcomingBtn.style.display = 'none';
-            if (activeQueueFilter === 'upcoming') {
-                activeQueueFilter = 'sold';
-                document.getElementById('filter-btn-sold').classList.add('active');
-                upcomingBtn.classList.remove('active');
-            }
-        } else {
-            upcomingBtn.style.display = 'inline-block';
+        upcomingBtn.style.display = 'none';
+        if (activeQueueFilter === 'upcoming') {
+            activeQueueFilter = 'sold';
+            document.getElementById('filter-btn-sold').classList.add('active');
+            upcomingBtn.classList.remove('active');
         }
     }
 
