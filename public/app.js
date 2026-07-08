@@ -1686,6 +1686,21 @@ function renderAuctionDashboard() {
         if (bidPanel) bidPanel.classList.remove('hidden');
     }
 
+    const tradeTabBtn = document.getElementById('tab-trade');
+    if (tradeTabBtn) {
+        const season = roomState.season || 1;
+        const isPostSeason = roomState.status === 'retention';
+        if (season === 1 && !isPostSeason) {
+            tradeTabBtn.classList.add('hidden');
+            const activeTab = document.querySelector('.panel-tab-btn.active')?.id;
+            if (activeTab === 'tab-trade') {
+                switchDashboardTab('leaderboard');
+            }
+        } else {
+            tradeTabBtn.classList.remove('hidden');
+        }
+    }
+
     document.getElementById('dash-room-info').innerText = "ROOM: " + roomCode + " (Season " + (roomState.season || 1) + ")";
     
     if (roomState && roomState.auction_name) {
@@ -1792,7 +1807,7 @@ function renderAuctionDashboard() {
                     statsEl.innerHTML = `
                         <p style="margin-bottom: 1rem; color: var(--text-secondary);">All players have been auctioned. You can input standings/points in the Standings tab, and click below to advance to the next season or close the draft.</p>
                         <div style="display: flex; gap: 0.5rem; justify-content: center; width: 100%; margin-top: 0.5rem;">
-                            <button class="btn btn-accent btn-sm" onclick="hostAction('end_season')" style="height: 34px; padding: 0 0.75rem; border-radius: 6px; font-size: 0.8rem;"><i class="fa-solid fa-forward-step"></i> Next Season</button>
+                            <button class="btn btn-accent btn-sm" onclick="openNextSeasonSettingsModal()" style="height: 34px; padding: 0 0.75rem; border-radius: 6px; font-size: 0.8rem;"><i class="fa-solid fa-forward-step"></i> Continue to Next Season</button>
                             <button class="btn btn-secondary btn-sm" onclick="hostAction('end_tournament')" style="height: 34px; padding: 0 0.75rem; border-radius: 6px; font-size: 0.8rem; background: rgba(255,255,255,0.05);"><i class="fa-solid fa-trophy"></i> End Tournament</button>
                         </div>
                     `;
@@ -3841,6 +3856,9 @@ function renderRetentionPanel() {
     const myTeam = roomState.teams[teamName];
     if (!myTeam) return;
     
+    const retentionsEnabled = (roomState.settings && typeof roomState.settings.retentions_enabled !== 'undefined') ? roomState.settings.retentions_enabled : true;
+    const retLimit = (roomState.settings && typeof roomState.settings.retention_limit !== 'undefined') ? roomState.settings.retention_limit : 3;
+    
     const selectedRetentions = roomState.retentions && roomState.retentions[teamName] ? roomState.retentions[teamName] : [];
     const isLocked = roomState.retention_locked && roomState.retention_locked[teamName];
     
@@ -3855,6 +3873,22 @@ function renderRetentionPanel() {
     const projectedPurse = basePurse - cost;
     document.getElementById('retention-starting-purse').innerText = `Projected starting budget: ${formatCurrency(projectedPurse)}`;
     
+    const lockBtn = document.getElementById('btn-lock-retentions');
+    if (lockBtn) {
+        if (!retentionsEnabled) {
+            lockBtn.style.display = 'none';
+        } else {
+            lockBtn.style.display = 'inline-block';
+            lockBtn.innerText = isLocked ? "Unlock Retentions" : "Lock Retentions";
+            lockBtn.className = isLocked ? "btn btn-secondary" : "btn btn-primary";
+        }
+    }
+    
+    if (!retentionsEnabled) {
+        listContainer.innerHTML = '<div style="color: var(--accent-red); font-size: 0.85rem; padding: 1.5rem; text-align: center;"><i class="fa-solid fa-lock"></i> Player retentions are disabled by the Host for this season.</div>';
+        return;
+    }
+    
     if (myTeam.players.length === 0) {
         listContainer.innerHTML = '<div style="color: var(--text-secondary); font-size: 0.85rem;">Your squad has no players to retain.</div>';
     } else {
@@ -3867,7 +3901,7 @@ function renderRetentionPanel() {
             div.style.borderBottom = '1px solid rgba(255,255,255,0.05)';
             
             const isChecked = selectedRetentions.includes(p.id);
-            const disableCheckbox = isLocked || (!isChecked && selectedRetentions.length >= 3);
+            const disableCheckbox = isLocked || (!isChecked && selectedRetentions.length >= retLimit);
             
             div.innerHTML = `
                 <div style="display: flex; align-items: center; gap: 0.5rem;">
@@ -3878,12 +3912,6 @@ function renderRetentionPanel() {
             `;
             listContainer.appendChild(div);
         });
-    }
-    
-    const lockBtn = document.getElementById('btn-lock-retentions');
-    if (lockBtn) {
-        lockBtn.innerText = isLocked ? "Unlock Retentions" : "Lock Retentions";
-        lockBtn.className = isLocked ? "btn btn-secondary" : "btn btn-primary";
     }
 }
 
@@ -4171,4 +4199,59 @@ window.addEventListener('DOMContentLoaded', () => {
         toggleVideoBackground(true);
     }
 });
+
+// MULTI-SEASON TRANSITION MODAL MANAGEMENT
+function openNextSeasonSettingsModal() {
+    const nextSeason = (roomState.season || 1) + 1;
+    const label = document.getElementById('next-season-num-label');
+    if (label) label.innerText = nextSeason;
+    
+    // Set defaults
+    const tradeToggle = document.getElementById('next-season-trade-toggle');
+    const rentToggle = document.getElementById('next-season-retention-toggle');
+    const rentLimitSelect = document.getElementById('next-season-retention-limit');
+    
+    if (tradeToggle) tradeToggle.checked = true;
+    if (rentToggle) rentToggle.checked = true;
+    if (rentLimitSelect) rentLimitSelect.value = "3";
+    
+    const limitContainer = document.getElementById('next-season-retention-limit-container');
+    if (limitContainer) limitContainer.classList.remove('hidden');
+    
+    document.getElementById('next-season-settings-modal')?.classList.remove('hidden');
+}
+
+function closeNextSeasonSettingsModal() {
+    document.getElementById('next-season-settings-modal')?.classList.add('hidden');
+}
+
+async function submitNextSeasonSettings() {
+    const tradeToggle = document.getElementById('next-season-trade-toggle')?.checked || false;
+    const rentToggle = document.getElementById('next-season-retention-toggle')?.checked || false;
+    const rentLimit = parseInt(document.getElementById('next-season-retention-limit')?.value) || 3;
+    
+    closeNextSeasonSettingsModal();
+    showNotification("Configuring next season...", "success");
+    
+    try {
+        const token = localStorage.getItem('auth_token');
+        const res = await apiPost('/api/control', {
+            auth_token: token,
+            room_code: roomCode,
+            action: 'end_season',
+            post_season_settings: {
+                trade_window_open: tradeToggle,
+                retentions_enabled: rentToggle,
+                retention_limit: rentLimit
+            }
+        });
+        if (res.success) {
+            showNotification(`Season completed! Post-season window launched.`, "success");
+        } else {
+            showNotification(res.error || "Failed to complete season settings.", "danger");
+        }
+    } catch (e) {
+        showNotification("Failed to configure next season: " + e.message, "danger");
+    }
+}
 

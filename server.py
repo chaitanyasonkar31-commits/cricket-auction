@@ -1270,11 +1270,24 @@ class AuctionHTTPHandler(SimpleHTTPRequestHandler):
                 room["logs"].append("📊 Host updated the Season Standings / Points Table.")
 
             elif action == "end_season":
+                post_season_settings = data.get("post_season_settings", {})
+                trade_window_open = bool(post_season_settings.get("trade_window_open", True))
+                retentions_enabled = bool(post_season_settings.get("retentions_enabled", True))
+                retention_limit = int(post_season_settings.get("retention_limit", 3))
+                
                 room["status"] = "retention"
                 room["trades"] = []
                 room["retentions"] = {team: [] for team in room["teams"]}
                 room["retention_locked"] = {team: False for team in room["teams"]}
-                room["logs"].append(f"🏁 Season {room.get('season', 1)} has officially ended! Host opened the Retention & Trading Window for Season {room.get('season', 1) + 1}.")
+                room["trade_window_open"] = trade_window_open
+                
+                # Apply these settings in settings dict
+                room["settings"]["retentions_enabled"] = retentions_enabled
+                room["settings"]["retention_limit"] = retention_limit
+                
+                status_str = "OPEN" if trade_window_open else "CLOSED"
+                ret_str = f"ENABLED (Max {retention_limit} players)" if retentions_enabled else "DISABLED"
+                room["logs"].append(f"🏁 Season {room.get('season', 1)} has officially ended! Host opened the Retention & Trading Window for Season {room.get('season', 1) + 1}. Settings: Trade Window: {status_str}, Retentions: {ret_str}.")
 
             elif action == "lock_season_retentions":
                 prev_season = room.get("season", 1)
@@ -1579,6 +1592,12 @@ class AuctionHTTPHandler(SimpleHTTPRequestHandler):
                     self.send_json_response(400, {"error": "Your retentions are locked!"})
                     return
                     
+                # Check if retentions are enabled
+                ret_enabled = room["settings"].get("retentions_enabled", True)
+                if not ret_enabled:
+                    self.send_json_response(400, {"error": "Player retentions are disabled by the Host for this season."})
+                    return
+                    
                 player = None
                 for p in room["players"]:
                     if int(p["id"]) == player_id:
@@ -1595,8 +1614,9 @@ class AuctionHTTPHandler(SimpleHTTPRequestHandler):
                     room["retentions"][team_name].remove(player_id)
                     room["logs"].append(f"ℹ️ {team_name} removed {player['name']} from retentions.")
                 else:
-                    if len(room["retentions"][team_name]) >= 3:
-                        self.send_json_response(400, {"error": "Maximum 3 players can be retained."})
+                    ret_limit = room["settings"].get("retention_limit", 3)
+                    if len(room["retentions"][team_name]) >= ret_limit:
+                        self.send_json_response(400, {"error": f"Maximum {ret_limit} players can be retained."})
                         return
                     room["retentions"][team_name].append(player_id)
                     room["logs"].append(f"📌 {team_name} marked {player['name']} to be retained.")

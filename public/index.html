@@ -862,6 +862,55 @@ Yashasvi Jaiswal, Batsman, 91, 10000000, Runs: 720 Avg: 41.2, , false" style="fo
                 </div>
             </div>
         </div>
+
+        <!-- 6. NEXT SEASON SETTINGS MODAL -->
+        <div id="next-season-settings-modal" class="modal-overlay hidden" onclick="closeNextSeasonSettingsModal()">
+            <div class="modal-content glass-card" onclick="event.stopPropagation()" style="max-width: 500px;">
+                <div class="modal-header">
+                    <h2><i class="fa-solid fa-gears text-purple"></i> Next Season Settings</h2>
+                    <button class="btn-close" onclick="closeNextSeasonSettingsModal()">&times;</button>
+                </div>
+                <div style="padding: 1.5rem; display: flex; flex-direction: column; gap: 1.25rem;">
+                    <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 0.25rem;">
+                        Before launching Season <span id="next-season-num-label" style="font-weight: bold; color: white;">2</span>, configure the post-season draft preparation options:
+                    </p>
+
+                    <!-- Trade Window Toggle -->
+                    <div style="display: flex; align-items: center; justify-content: space-between; padding: 0.75rem; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.05); border-radius: 8px;">
+                        <div>
+                            <span style="font-weight: bold; color: white; display: block;">Open Trading Window</span>
+                            <span style="font-size: 0.75rem; color: var(--text-secondary);">Allow managers to propose player trades.</span>
+                        </div>
+                        <input type="checkbox" id="next-season-trade-toggle" checked style="width: 18px; height: 18px; accent-color: var(--accent-purple); cursor: pointer;">
+                    </div>
+
+                    <!-- Retentions Toggle -->
+                    <div style="display: flex; align-items: center; justify-content: space-between; padding: 0.75rem; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.05); border-radius: 8px;">
+                        <div>
+                            <span style="font-weight: bold; color: white; display: block;">Enable Player Retentions</span>
+                            <span style="font-size: 0.75rem; color: var(--text-secondary);">Allow franchises to retain players from their roster.</span>
+                        </div>
+                        <input type="checkbox" id="next-season-retention-toggle" checked onchange="document.getElementById('next-season-retention-limit-container').classList.toggle('hidden', !this.checked)" style="width: 18px; height: 18px; accent-color: var(--accent-purple); cursor: pointer;">
+                    </div>
+
+                    <!-- Retention Limit -->
+                    <div class="form-group" id="next-season-retention-limit-container">
+                        <label for="next-season-retention-limit" style="font-size: 0.8rem; color: var(--text-secondary); margin-bottom: 0.25rem; display: block;">Maximum Retentions per Team</label>
+                        <select id="next-season-retention-limit" style="width: 100%; height: 38px; padding: 0.25rem 0.5rem; background: rgba(0,0,0,0.3); border: 1px solid var(--border-color); border-radius: 6px; color: white;">
+                            <option value="1">1 Player</option>
+                            <option value="2">2 Players</option>
+                            <option value="3" selected>3 Players (Recommended)</option>
+                            <option value="4">4 Players</option>
+                            <option value="5">5 Players</option>
+                        </select>
+                    </div>
+
+                    <button class="btn btn-accent" onclick="submitNextSeasonSettings()" style="width: 100%; height: 40px; margin-top: 0.5rem; border-radius: 8px; font-weight: bold; display: flex; align-items: center; justify-content: center; gap: 0.5rem;">
+                        <i class="fa-solid fa-flag-checkered"></i> Launch Post-Season Window
+                    </button>
+                </div>
+            </div>
+        </div>
     </div>
 
     <!-- Floating Background Music Player Widget -->
