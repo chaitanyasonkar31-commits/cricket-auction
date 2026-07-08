@@ -12,6 +12,7 @@ COPY . .
 # Hugging Face Spaces expects the app to bind to port 7860
 EXPOSE 7860
 ENV PORT=7860
+ENV PYTHONUNBUFFERED=1
 
 # Run the python server
 CMD ["python", "server.py"]
