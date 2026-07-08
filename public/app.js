@@ -1792,7 +1792,7 @@ function renderAuctionDashboard() {
             if (card) card.className = "player-card glass-panel";
         }
     } else {
-        if (roomState.status === 'finished' || roomState.status === 'tournament_ended') {
+        if (roomState.status === 'finished' || roomState.status === 'post_draft_standings' || roomState.status === 'tournament_ended') {
             if (playerInfoContainer) playerInfoContainer.classList.remove('hidden');
             if (hostSetupContainer) hostSetupContainer.classList.add('hidden');
             document.getElementById('player-card-role').innerText = "SEASON COMPLETE";
@@ -1807,12 +1807,25 @@ function renderAuctionDashboard() {
                     statsEl.innerHTML = `
                         <p style="margin-bottom: 1rem; color: var(--text-secondary);">All players have been auctioned. You can input standings/points in the Standings tab, and click below to advance to the next season or close the draft.</p>
                         <div style="display: flex; gap: 0.5rem; justify-content: center; width: 100%; margin-top: 0.5rem;">
-                            <button class="btn btn-accent btn-sm" onclick="openNextSeasonSettingsModal()" style="height: 34px; padding: 0 0.75rem; border-radius: 6px; font-size: 0.8rem;"><i class="fa-solid fa-forward-step"></i> Continue to Next Season</button>
+                            <button class="btn btn-accent btn-sm" onclick="hostAction('start_intermission')" style="height: 34px; padding: 0 0.75rem; border-radius: 6px; font-size: 0.8rem;"><i class="fa-solid fa-forward-step"></i> Continue to Next Season</button>
                             <button class="btn btn-secondary btn-sm" onclick="hostAction('end_tournament')" style="height: 34px; padding: 0 0.75rem; border-radius: 6px; font-size: 0.8rem; background: rgba(255,255,255,0.05);"><i class="fa-solid fa-trophy"></i> End Tournament</button>
                         </div>
                     `;
                 } else {
                     statsEl.innerHTML = `<p style="color: var(--text-secondary);">All players have been auctioned. Please wait for the Host to initiate the next season or end the tournament.</p>`;
+                }
+            } else if (roomState.status === 'post_draft_standings') {
+                nameEl.innerText = "Season Intermission";
+                if (role === 'host') {
+                    statsEl.innerHTML = `
+                        <p style="margin-bottom: 1rem; color: var(--text-secondary);">Standings are saved. You can adjust league points in the Standings tab. Click below to open the retentions and player trading window for all users.</p>
+                        <div style="display: flex; gap: 0.5rem; justify-content: center; width: 100%; margin-top: 0.5rem;">
+                            <button class="btn btn-accent btn-sm" onclick="openNextSeasonSettingsModal()" style="height: 34px; padding: 0 0.75rem; border-radius: 6px; font-size: 0.8rem;"><i class="fa-solid fa-lock-open"></i> Open Retentions & Trading Window</button>
+                            <button class="btn btn-secondary btn-sm" onclick="hostAction('end_tournament')" style="height: 34px; padding: 0 0.75rem; border-radius: 6px; font-size: 0.8rem; background: rgba(255,255,255,0.05);"><i class="fa-solid fa-trophy"></i> End Tournament</button>
+                        </div>
+                    `;
+                } else {
+                    statsEl.innerHTML = `<p style="color: var(--text-secondary);">Season draft standings saved. Please wait for the Host to open the post-season retentions and trading window.</p>`;
                 }
             } else {
                 nameEl.innerText = "Tournament Ended!";
@@ -1991,8 +2004,8 @@ function renderAuctionDashboard() {
             document.getElementById('host-btn-sell').disabled = true;
             document.getElementById('host-btn-unsold').disabled = true;
             document.getElementById('host-btn-reset').disabled = false; // Allow reopening the bid if needed
-        } else if (roomState.status === 'finished') {
-            // Completed drafting
+        } else if (roomState.status === 'finished' || roomState.status === 'post_draft_standings' || roomState.status === 'retention') {
+            // Completed drafting or post-season phases
             startBtn.classList.add('hidden');
             nextBtn.classList.add('hidden');
             pauseBtn.classList.add('hidden');

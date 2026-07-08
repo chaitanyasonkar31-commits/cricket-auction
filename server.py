@@ -1269,6 +1269,17 @@ class AuctionHTTPHandler(SimpleHTTPRequestHandler):
                         }
                 room["logs"].append("📊 Host updated the Season Standings / Points Table.")
 
+            elif action == "force_end_auction":
+                room["status"] = "finished"
+                room["timer_active"] = False
+                room["current_bid"] = 0
+                room["current_bidder"] = None
+                room["logs"].append("🏁 Host manually ended the active auction draft.")
+
+            elif action == "start_intermission":
+                room["status"] = "post_draft_standings"
+                room["logs"].append(f"📊 Season {room.get('season', 1)} draft stands saved! Room transitioned to Standings Intermission.")
+
             elif action == "end_season":
                 post_season_settings = data.get("post_season_settings", {})
                 trade_window_open = bool(post_season_settings.get("trade_window_open", True))
