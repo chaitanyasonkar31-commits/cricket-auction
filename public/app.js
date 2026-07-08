@@ -4268,6 +4268,7 @@ async function submitNextSeasonSettings() {
         const res = await apiPost('/api/control', {
             auth_token: token,
             room_code: roomCode,
+            host_id: hostId,
             action: 'end_season',
             post_season_settings: {
                 trade_window_open: tradeToggle,
