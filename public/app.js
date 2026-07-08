@@ -3737,6 +3737,7 @@ function submitStandingsUpdate() {
 }
 
 function renderTradeCenter() {
+    if (!roomState) return;
     // 1. Update Trade Window Status & Controls
     const windowOpen = roomState.trade_window_open || false;
     const badge = document.getElementById('trade-window-status-badge');
