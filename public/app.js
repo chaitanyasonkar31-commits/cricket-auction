@@ -1713,8 +1713,6 @@ function renderAuctionDashboard() {
     const idx = roomState.current_player_index;
     const stamp = document.getElementById('player-sale-stamp');
     const card = document.getElementById('active-player-card');
-    const playerInfoContainer = document.getElementById('active-player-info-container');
-    const hostSetupContainer = document.getElementById('host-setup-container');
     
     if (idx >= 0 && idx < roomState.players.length) {
         if (playerInfoContainer) playerInfoContainer.classList.remove('hidden');
