@@ -1026,8 +1026,9 @@ class AuctionHTTPHandler(SimpleHTTPRequestHandler):
             team = room["teams"][team_name]
             
             # Check maximum squad size
-            if len(team["players"]) >= 16:
-                self.send_json_response(400, {"error": "Squad is full! Maximum 16 players allowed per team."})
+            squad_limit = room["settings"].get("squad_limit", 16)
+            if len(team["players"]) >= squad_limit:
+                self.send_json_response(400, {"error": f"Squad is full! Maximum {squad_limit} players allowed per team."})
                 return
                 
             # Calculate minimum required bid amount
@@ -1350,8 +1351,9 @@ class AuctionHTTPHandler(SimpleHTTPRequestHandler):
                     return
                     
                 if trade["type"] == "cash":
-                    if len(to_team["players"]) >= 16:
-                        self.send_json_response(400, {"error": f"Cannot approve. Team '{to_team_name}' has 16 players."})
+                    squad_limit = room["settings"].get("squad_limit", 16)
+                    if len(to_team["players"]) >= squad_limit:
+                        self.send_json_response(400, {"error": f"Cannot approve. Team '{to_team_name}' has reached the squad limit of {squad_limit} players."})
                         return
                     cash_value = int(trade["value"])
                     if to_team["budget"] < cash_value:

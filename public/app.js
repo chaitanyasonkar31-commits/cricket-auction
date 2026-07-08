@@ -1107,7 +1107,8 @@ async function createRoom() {
         min_increment: incrementVal,
         timer_duration: timerVal,
         overseas_limit: 999,
-        bot_auctioneer: document.getElementById('auctioneer-mode').value === 'bot'
+        bot_auctioneer: document.getElementById('auctioneer-mode').value === 'bot',
+        squad_limit: parseInt(document.getElementById('squad-limit').value) || 16
     };
     
     try {
@@ -1887,9 +1888,10 @@ function renderAuctionDashboard() {
         // Check overseas limits (disabled)
         const exceedsOS = false;
         
-        // Check squad capacity limit (max 16 players)
+        // Check squad capacity limit
         const teamPlayers = roomState.teams[teamName] ? roomState.teams[teamName].players : [];
-        const isSquadFull = teamPlayers.length >= 16;
+        const squadLimit = (roomState.settings && roomState.settings.squad_limit) ? roomState.settings.squad_limit : 16;
+        const isSquadFull = teamPlayers.length >= squadLimit;
         
         // Apply enable/disable criteria
         const minBtn = document.getElementById('btn-bid-min');
@@ -2363,15 +2365,16 @@ function openRosterModal(tName) {
     const countEl = document.getElementById('modal-player-count');
     const pCount = team.players.length;
     countEl.innerText = pCount;
-    if (pCount < 16) {
+    const squadLimit = (roomState.settings && roomState.settings.squad_limit) ? roomState.settings.squad_limit : 16;
+    if (pCount < squadLimit) {
         countEl.style.color = 'var(--accent-gold)';
-        countEl.title = "Under squad limit of 16 players";
-    } else if (pCount > 16) {
+        countEl.title = `Under squad limit of ${squadLimit} players`;
+    } else if (pCount > squadLimit) {
         countEl.style.color = 'var(--accent-red)';
-        countEl.title = "Over maximum squad limit of 16 players";
+        countEl.title = `Over maximum squad limit of ${squadLimit} players`;
     } else {
         countEl.style.color = 'var(--accent-green)';
-        countEl.title = "Squad is complete (Exactly 16 players)";
+        countEl.title = `Squad is complete (Exactly ${squadLimit} players)`;
     }
     
     // Reset category slot text numbers
