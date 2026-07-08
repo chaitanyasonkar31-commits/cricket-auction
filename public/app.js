@@ -1853,7 +1853,6 @@ function renderAuctionDashboard() {
     }
     
     // 2. Bidding Buttons Controls Display
-    const bidPanel = document.getElementById('bidding-controls-panel');
     const bidButtonsSection = document.getElementById('bid-buttons-section');
     if (role === 'host') {
         if (bidButtonsSection) bidButtonsSection.classList.add('hidden');
@@ -1918,7 +1917,6 @@ function renderAuctionDashboard() {
     }
     
     // 3. Render Host Controls Console
-    const hostConsole = document.getElementById('host-admin-panel');
     if (role === 'host') {
         hostConsole.classList.remove('hidden');
         
