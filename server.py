@@ -1030,19 +1030,19 @@ class AuctionHTTPHandler(SimpleHTTPRequestHandler):
                 self.send_json_response(400, {"error": "Squad is full! Maximum 16 players allowed per team."})
                 return
                 
-            # Check budget
-            if amount > team["budget"]:
-                self.send_json_response(400, {"error": f"Insufficient budget! Your budget is {format_currency_python(team['budget'])}."})
-                return
-                
-            # Verify minimum bid amount
+            # Calculate minimum required bid amount
             if room["current_bid"] == 0:
                 min_req = player["base_price"]
             else:
                 min_req = room["current_bid"] + room["settings"]["min_increment"]
                 
+            # If concurrent bids were sent, auto-adjust to the new minimum increment
             if amount < min_req:
-                self.send_json_response(400, {"error": f"Bid must be at least {format_currency_python(min_req)}!"})
+                amount = min_req
+
+            # Check budget with the final adjusted amount
+            if amount > team["budget"]:
+                self.send_json_response(400, {"error": f"Insufficient budget! Your budget is {format_currency_python(team['budget'])}."})
                 return
                 
             if team_name == room["current_bidder"]:

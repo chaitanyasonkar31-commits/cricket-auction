@@ -4169,11 +4169,18 @@ function toggleVideoBackground(enabled) {
         document.body.appendChild(container);
     }
     
+    const video = container.querySelector('video');
     if (enabled) {
         container.classList.add('active');
+        if (video) {
+            video.play().catch(err => console.log("Video autoplay blocked:", err));
+        }
         localStorage.setItem('stadium_video_bg', 'true');
     } else {
         container.classList.remove('active');
+        if (video) {
+            video.pause();
+        }
         localStorage.setItem('stadium_video_bg', 'false');
     }
 }
