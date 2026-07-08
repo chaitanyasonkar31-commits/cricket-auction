@@ -285,6 +285,8 @@ class AuctionDB:
                         room_data["retentions"] = {}
                     if "retention_locked" not in room_data:
                         room_data["retention_locked"] = {}
+                    if "trade_window_open" not in room_data:
+                        room_data["trade_window_open"] = False
                     rooms_dict[room_code] = room_data
                 except Exception as ex:
                     print(f"Error parsing JSON for room {room_code}: {ex}")
@@ -920,6 +922,7 @@ class AuctionHTTPHandler(SimpleHTTPRequestHandler):
                 "trades": [],
                 "retentions": {},
                 "retention_locked": {},
+                "trade_window_open": False,
                 "last_completed_player_index": None
             }
             save_room_to_disk(room_code)
@@ -1416,6 +1419,14 @@ class AuctionHTTPHandler(SimpleHTTPRequestHandler):
                 trade["status"] = "rejected"
                 room["logs"].append("❌ Trade proposal rejected by Host.")
 
+            elif action == "open_trade_window":
+                room["trade_window_open"] = True
+                room["logs"].append("🚪 Host opened the Franchise Trade Window!")
+                
+            elif action == "close_trade_window":
+                room["trade_window_open"] = False
+                room["logs"].append("🔒 Host closed the Franchise Trade Window!")
+
             elif action == "end_tournament":
                 room["status"] = "tournament_ended"
                 room["logs"].append("🏆 Host has officially ended the tournament! Standings are now finalized.")
@@ -1440,11 +1451,20 @@ class AuctionHTTPHandler(SimpleHTTPRequestHandler):
                 self.send_json_response(403, {"error": "Unauthorized. Team not in room."})
                 return
                 
+            if action in ("propose", "respond"):
+                if not room.get("trade_window_open"):
+                    self.send_json_response(400, {"error": "The Trade Window is currently closed by the Host."})
+                    return
+
             if action == "propose":
                 to_team = data.get('to_team', '')
                 player_id = int(data.get('player_id', 0))
                 trade_type = data.get('type', '')
                 trade_value = data.get('value')
+                
+                if trade_type == "cash":
+                    self.send_json_response(400, {"error": "Cash trades are disabled. Only player swaps are permitted."})
+                    return
                 
                 if to_team not in room["teams"] or to_team == team_name:
                     self.send_json_response(400, {"error": "Invalid target team."})

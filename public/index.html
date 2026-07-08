@@ -728,9 +728,20 @@ Yashasvi Jaiswal, Batsman, 91, 10000000, Runs: 720 Avg: 41.2, , false" style="fo
                         
                         <!-- Trade Center Tab Content -->
                         <div id="tab-content-trade" class="tab-content hidden">
+                            <!-- Trade Status Info and Host Controls -->
+                            <div style="background: rgba(255,255,255,0.03); border: 1px solid var(--border-color); padding: 0.75rem 1rem; border-radius: 8px; margin-bottom: 1rem; display: flex; justify-content: space-between; align-items: center; gap: 0.5rem; flex-wrap: wrap;">
+                                <div style="display: flex; align-items: center; gap: 0.5rem;">
+                                    <span style="font-size: 0.85rem; color: var(--text-secondary); font-weight: 600;">Trade Window:</span>
+                                    <span id="trade-window-status-badge" class="badge" style="background: rgba(255,51,102,0.15); color: var(--accent-red); font-size: 0.75rem; border: 1px solid rgba(255,51,102,0.3);">CLOSED</span>
+                                </div>
+                                <div id="host-trade-window-controls" class="hidden" style="display: flex; gap: 0.5rem;">
+                                    <button class="btn btn-accent btn-sm" onclick="hostAction('open_trade_window')" style="height: 28px; padding: 0 0.5rem; font-size: 0.75rem; border-radius: 5px; background: rgba(0,242,254,0.1); border-color: rgba(0,242,254,0.3); color: var(--accent-cyan);"><i class="fa-solid fa-lock-open"></i> Open</button>
+                                    <button class="btn btn-secondary btn-sm" onclick="hostAction('close_trade_window')" style="height: 28px; padding: 0 0.5rem; font-size: 0.75rem; border-radius: 5px; background: rgba(255,255,255,0.05);"><i class="fa-solid fa-lock"></i> Close</button>
+                                </div>
+                            </div>
                             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; flex-wrap: wrap; gap: 0.5rem;">
                                 <h4 style="color: var(--accent-cyan); margin: 0;"><i class="fa-solid fa-handshake"></i> Franchise Trade Center</h4>
-                                <button id="btn-propose-trade-modal" class="btn btn-accent btn-sm" onclick="openProposeTradeModal()" style="height: 30px; padding: 0 0.75rem; border-radius: 6px;"><i class="fa-solid fa-plus"></i> Propose Trade</button>
+                                <button id="btn-propose-trade-modal" class="btn btn-accent btn-sm" onclick="openProposeTradeModal()" style="height: 30px; padding: 0 0.75rem; border-radius: 6px;" disabled><i class="fa-solid fa-plus"></i> Propose Trade</button>
                             </div>
                             <div id="trades-list-container" style="display: flex; flex-direction: column; gap: 0.75rem; max-height: 350px; overflow-y: auto;">
                                 <!-- Loaded dynamically -->
@@ -813,15 +824,14 @@ Yashasvi Jaiswal, Batsman, 91, 10000000, Runs: 720 Avg: 41.2, , false" style="fo
                         </select>
                     </div>
 
-                    <div class="form-group">
+                    <div class="form-group" style="display: none;">
                         <label for="trade-offer-type" style="font-size: 0.8rem; color: var(--text-secondary); margin-bottom: 0.25rem; display: block;">Trade Proposal Type</label>
                         <select id="trade-offer-type" onchange="toggleTradeTypeInputs()" style="width: 100%; height: 38px; padding: 0.25rem 0.5rem; background: rgba(0,0,0,0.3); border: 1px solid var(--border-color); border-radius: 6px; color: white;">
-                            <option value="cash">Trade for Cash (Budget transfer)</option>
-                            <option value="player">Trade for Player (Swap)</option>
+                            <option value="player" selected>Trade for Player (Swap)</option>
                         </select>
                     </div>
 
-                    <div class="form-group" id="trade-input-cash-container">
+                    <div class="form-group hidden" id="trade-input-cash-container">
                         <label for="trade-cash-value" style="font-size: 0.8rem; color: var(--text-secondary); margin-bottom: 0.25rem; display: block;">Transfer Price (in Rupees)</label>
                         <input type="number" id="trade-cash-value" placeholder="e.g. 5000000 for 50 Lakhs" style="width: 100%; height: 38px; padding: 0.25rem 0.75rem; background: rgba(0,0,0,0.3); border: 1px solid var(--border-color); border-radius: 6px; color: white;">
                     </div>

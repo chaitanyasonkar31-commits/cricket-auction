@@ -3738,6 +3738,33 @@ function submitStandingsUpdate() {
 }
 
 function renderTradeCenter() {
+    // 1. Update Trade Window Status & Controls
+    const windowOpen = roomState.trade_window_open || false;
+    const badge = document.getElementById('trade-window-status-badge');
+    if (badge) {
+        if (windowOpen) {
+            badge.innerText = "OPEN";
+            badge.style.background = "rgba(0, 230, 118, 0.15)";
+            badge.style.color = "var(--accent-green)";
+            badge.style.borderColor = "rgba(0, 230, 118, 0.3)";
+        } else {
+            badge.innerText = "CLOSED";
+            badge.style.background = "rgba(255, 51, 102, 0.15)";
+            badge.style.color = "var(--accent-red)";
+            badge.style.borderColor = "rgba(255, 51, 102, 0.3)";
+        }
+    }
+    
+    const hostControls = document.getElementById('host-trade-window-controls');
+    if (hostControls) {
+        hostControls.classList.toggle('hidden', role !== 'host');
+    }
+    
+    const proposeBtn = document.getElementById('btn-propose-trade-modal');
+    if (proposeBtn) {
+        proposeBtn.disabled = !windowOpen || role !== 'manager';
+    }
+
     const container = document.getElementById('trades-list-container');
     if (!container || !roomState) return;
     container.innerHTML = '';
@@ -3976,7 +4003,7 @@ function openProposeTradeModal() {
         }
     });
     
-    document.getElementById('trade-offer-type').value = 'cash';
+    document.getElementById('trade-offer-type').value = 'player';
     toggleTradeTypeInputs();
     
     document.getElementById('trade-modal').classList.remove('hidden');
@@ -4062,6 +4089,10 @@ function submitTradeProposal() {
 }
 
 function respondToTrade(tradeId, response) {
+    if (!roomState || !roomState.trade_window_open) {
+        showNotification("The Trade Window is currently closed by the Host.", "danger");
+        return;
+    }
     fetch('/api/trade', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
