@@ -937,7 +937,7 @@ function renderPlayersChecklist() {
         if (ratingVal >= 90) tierClass = 'tier-gold';
         else if (ratingVal >= 80) tierClass = 'tier-silver';
         
-        const avatarUrl = p.img || getPlayerAvatar(p.name);
+        const avatarUrl = (p.img && p.img.trim() !== '' && !p.img.includes('unsplash.com')) ? p.img : getPlayerAvatar(p);
         label.innerHTML = `
             <input type="checkbox" id="check-p-${p.id}" value="${p.id}" ${isChecked ? 'checked' : ''}>
             <img src="${avatarUrl}" style="width: 32px; height: 32px; border-radius: 50%; object-fit: cover; object-position: center 15%; border: 1px solid rgba(255,255,255,0.12); margin-left: 0.5rem; margin-right: 0.25rem; flex-shrink: 0;">
@@ -1753,10 +1753,10 @@ function renderAuctionDashboard() {
         
         // Image source fallback
         const imgEl = document.getElementById('player-card-img');
-        if (player.img && player.img.trim() !== '') {
+        if (player.img && player.img.trim() !== '' && !player.img.includes('unsplash.com')) {
             imgEl.src = player.img;
         } else {
-            imgEl.src = getPlayerAvatar(player.name);
+            imgEl.src = getPlayerAvatar(player);
         }
         
         // Active bidding price formats
@@ -2436,7 +2436,7 @@ function openRosterModal(tName) {
     } else {
         team.players.forEach(p => {
             const tr = document.createElement('tr');
-            const avatarUrl = p.img || getPlayerAvatar(p.name);
+            const avatarUrl = (p.img && p.img.trim() !== '' && !p.img.includes('unsplash.com')) ? p.img : getPlayerAvatar(p);
             tr.innerHTML = `
                 <td>
                     <div style="display: flex; align-items: center; gap: 0.5rem;">
@@ -2561,7 +2561,7 @@ function renderQueueList() {
     filtered.forEach(p => {
         const row = document.createElement('div');
         row.className = "queue-row";
-        const avatarUrl = p.img || getPlayerAvatar(p.name);
+        const avatarUrl = (p.img && p.img.trim() !== '' && !p.img.includes('unsplash.com')) ? p.img : getPlayerAvatar(p);
         let detailsHtml = p.status === 'sold' || p.bought_by
             ? `<span class="queue-sold-info">${p.bought_by} (${formatCurrency(p.price || p.base_price)})</span>`
             : `<span class="queue-price">Base: ${formatCurrency(p.base_price)}</span>`;
@@ -3560,11 +3560,16 @@ function changeTheme(theme) {
 }
 
 // --- Dynamic SVG Initials-Based Avatar Generator ---
-function getPlayerAvatar(name) {
-    if (!name) {
+function getPlayerAvatar(p) {
+    if (!p) {
         return "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'><circle cx='50' cy='40' r='25' fill='%23555'/><path d='M15 85 C15 65 30 55 50 55 C70 55 85 65 85 85' fill='%23555'/></svg>";
     }
     
+    // Support either a player object or a name string
+    const name = typeof p === 'object' ? p.name : p;
+    const role = typeof p === 'object' ? p.role : 'All-Rounder';
+    const rating = typeof p === 'object' ? p.rating : 85;
+
     // Extract initials
     const initials = name.split(' ')
                          .filter(n => n.length > 0)
@@ -3579,23 +3584,66 @@ function getPlayerAvatar(name) {
         hash = name.charCodeAt(i) + ((hash << 5) - hash);
     }
     
-    // Select base color hue from themes
+    // Choose neon theme colors based on hash
     const hues = [280, 205, 45, 145, 335, 18, 220, 165]; // Purple, Cyan, Gold, Green, Pink, Orange, Blue, Emerald
-    const hue = hues[Math.abs(hash) % hues.length];
+    const hue1 = hues[Math.abs(hash) % hues.length];
+    const hue2 = (hue1 + 60) % 360;
     
-    // Generate clean modern vector initials avatar matching the theme colors
+    // Select icon based on role
+    let roleIcon = '';
+    if (role === 'Batsman') {
+        roleIcon = `
+            <path d="M70,120 L130,60" stroke="#ffeb3b" stroke-width="8" stroke-linecap="round" />
+            <path d="M130,120 L70,60" stroke="#ffeb3b" stroke-width="8" stroke-linecap="round" />
+            <circle cx="100" cy="90" r="16" fill="rgba(255,255,255,0.15)" stroke="#ffeb3b" stroke-width="2" />
+        `;
+    } else if (role === 'Bowler') {
+        roleIcon = `
+            <circle cx="100" cy="90" r="24" fill="#f44336" stroke="#ffffff" stroke-width="2" />
+            <path d="M85,90 Q100,75 115,90 M85,90 Q100,105 115,90" stroke="#ffffff" stroke-dasharray="2,2" stroke-width="2" fill="none" />
+        `;
+    } else if (role === 'Wicket-Keeper') {
+        roleIcon = `
+            <rect x="85" y="70" width="8" height="40" fill="#ffeb3b" rx="2" />
+            <rect x="96" y="70" width="8" height="40" fill="#ffeb3b" rx="2" />
+            <rect x="107" y="70" width="8" height="40" fill="#ffeb3b" rx="2" />
+            <rect x="80" y="66" width="40" height="6" fill="#ff9800" rx="2" />
+        `;
+    } else {
+        roleIcon = `
+            <path d="M65,125 L125,65" stroke="#ffeb3b" stroke-width="8" stroke-linecap="round" />
+            <circle cx="120" cy="115" r="16" fill="#f44336" stroke="#ffffff" stroke-width="2" />
+            <path d="M110,115 Q120,105 130,115 M110,115 Q120,125 130,115" stroke="#ffffff" stroke-dasharray="2,2" stroke-width="1.5" fill="none" />
+        `;
+    }
+    
     const svg = `
         <svg xmlns='http://www.w3.org/2000/svg' width='200' height='200' viewBox='0 0 200 200'>
             <defs>
                 <linearGradient id='avatar-grad-${Math.abs(hash)}' x1='0%' y1='0%' x2='100%' y2='100%'>
-                    <stop offset='0%' stop-color='hsl(${hue}, 80%, 55%)' />
-                    <stop offset='100%' stop-color='hsl(${(hue + 45) % 360}, 85%, 40%)' />
+                    <stop offset='0%' stop-color='hsl(${hue1}, 80%, 45%)' />
+                    <stop offset='100%' stop-color='hsl(${hue2}, 85%, 20%)' />
                 </linearGradient>
+                <filter id='neon-glow'>
+                    <feGaussianBlur stdDeviation='3' result='coloredBlur'/>
+                    <feMerge>
+                        <feMergeNode in='coloredBlur'/>
+                        <feMergeNode in='SourceGraphic'/>
+                    </feMerge>
+                </filter>
             </defs>
-            <rect width='200' height='200' rx='100' fill='url(#avatar-grad-${Math.abs(hash)})' />
-            <text x='50%' y='53%' dominant-baseline='middle' text-anchor='middle' fill='#ffffff' font-family='Outfit, Arial, sans-serif' font-weight='800' font-size='72' letter-spacing='-1px'>
+            <rect x="10" y="10" width="180" height="180" rx="90" fill="url(#avatar-grad-${Math.abs(hash)})" stroke="rgba(255,255,255,0.15)" stroke-width="3" />
+            <rect x="15" y="15" width="170" height="170" rx="85" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="1.5" />
+            <g opacity="0.6">${roleIcon}</g>
+            <text x='50%' y='52%' dominant-baseline='middle' text-anchor='middle' fill='#ffffff' font-family='Outfit, Arial, sans-serif' font-weight='900' font-size='60' letter-spacing='-1px' filter='url(#neon-glow)'>
                 ${initials}
             </text>
+            <g transform="translate(100, 150)">
+                <rect x="-24" y="-12" width="48" height="24" rx="12" fill="#121214" stroke="#ffd700" stroke-width="2" />
+                <text x="0" y="4" dominant-baseline='middle' text-anchor='middle' fill='#ffd700' font-family='Outfit, Arial, sans-serif' font-weight='800' font-size='14'>
+                    ★${rating}
+                </text>
+            </g>
         </svg>
     `.trim();
     
@@ -4336,12 +4384,8 @@ function renderDraftSummaryDashboard() {
                 `;
                 
                 list.forEach(p => {
-                    const initials = p.name.split(' ').map(n => n.charAt(0)).join('').substring(0, 2).toUpperCase();
-                    const avatar = p.img ? `<img src="${p.img}" style="width: 32px; height: 32px; border-radius: 50%; object-fit: cover; border: 1.5px solid var(--accent-purple); box-shadow: 0 0 8px rgba(187,134,252,0.15);">` : `
-                        <div style="width: 32px; height: 32px; border-radius: 50%; background: linear-gradient(135deg, rgba(187,134,252,0.12), rgba(0,242,254,0.12)); display: flex; align-items: center; justify-content: center; font-size: 0.75rem; font-weight: bold; color: var(--accent-cyan); border: 1.5px solid rgba(255,255,255,0.15); box-shadow: inset 0 0 6px rgba(255,255,255,0.05); text-transform: uppercase;">
-                            ${initials}
-                        </div>
-                    `;
+                    const avatarUrl = (p.img && p.img.trim() !== '' && !p.img.includes('unsplash.com')) ? p.img : getPlayerAvatar(p);
+                    const avatar = `<img src="${avatarUrl}" style="width: 32px; height: 32px; border-radius: 50%; object-fit: cover; border: 1.5px solid var(--accent-purple); box-shadow: 0 0 8px rgba(187,134,252,0.15);">`;
                     
                     rolesHtml += `
                         <div style="display: flex; align-items: center; justify-content: space-between; padding: 0.3rem 0.5rem; background: rgba(0,0,0,0.15); border-radius: 4px; font-size: 0.85rem;">
