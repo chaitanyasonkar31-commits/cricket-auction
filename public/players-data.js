@@ -1451,7 +1451,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 86,
       "base_price": 5000000,
       "stats": "Runs: 5720 (SR 142.1), Dismissals: 139",
-      "img": "",
+      "img": "https://images.unsplash.com/photo-1531415074968-036ba1b575da?w=300&auto=format&fit=crop&q=60",
       "overseas": true,
       "country": "South Africa",
       "retired": false
@@ -2195,7 +2195,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 83,
       "base_price": 5000000,
       "stats": "Runs: 6640, Avg: 42.0, SR: 148.6",
-      "img": "",
+      "img": "https://images.unsplash.com/photo-1531415074968-036ba1b575da?w=300&auto=format&fit=crop&q=60",
       "overseas": true,
       "country": "Afghanistan",
       "retired": false
@@ -2291,7 +2291,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 82,
       "base_price": 5000000,
       "stats": "Wkts: 155, Econ: 7.43, Avg: 24.5",
-      "img": "",
+      "img": "https://images.unsplash.com/photo-1531415074968-036ba1b575da?w=300&auto=format&fit=crop&q=60",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -2315,7 +2315,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 82,
       "base_price": 5000000,
       "stats": "Runs: 6360, Avg: 40.9, SR: 146.6",
-      "img": "",
+      "img": "https://images.unsplash.com/photo-1531415074968-036ba1b575da?w=300&auto=format&fit=crop&q=60",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -2339,7 +2339,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 82,
       "base_price": 3000000,
       "stats": "Wkts: 155, Econ: 7.43, Avg: 24.5",
-      "img": "",
+      "img": "https://images.unsplash.com/photo-1531415074968-036ba1b575da?w=300&auto=format&fit=crop&q=60",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -2363,7 +2363,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 82,
       "base_price": 2000000,
       "stats": "Wkts: 155, Econ: 7.43, Avg: 24.5",
-      "img": "",
+      "img": "https://images.unsplash.com/photo-1531415074968-036ba1b575da?w=300&auto=format&fit=crop&q=60",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -2411,7 +2411,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 82,
       "base_price": 3000000,
       "stats": "Wkts: 155, Econ: 7.43, Avg: 24.5",
-      "img": "",
+      "img": "https://images.unsplash.com/photo-1531415074968-036ba1b575da?w=300&auto=format&fit=crop&q=60",
       "overseas": true,
       "country": "Australia",
       "retired": false
@@ -2471,7 +2471,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 82,
       "base_price": 5000000,
       "stats": "Runs: 6360, Avg: 40.9, SR: 146.6",
-      "img": "",
+      "img": "https://images.unsplash.com/photo-1531415074968-036ba1b575da?w=300&auto=format&fit=crop&q=60",
       "overseas": true,
       "country": "South Africa",
       "retired": false
@@ -2483,7 +2483,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 82,
       "base_price": 3000000,
       "stats": "Runs: 6360, Avg: 40.9, SR: 146.6",
-      "img": "",
+      "img": "https://images.unsplash.com/photo-1531415074968-036ba1b575da?w=300&auto=format&fit=crop&q=60",
       "overseas": true,
       "country": "South Africa",
       "retired": false
@@ -2507,7 +2507,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 82,
       "base_price": 5000000,
       "stats": "Wkts: 155, Econ: 7.43, Avg: 24.5",
-      "img": "",
+      "img": "https://images.unsplash.com/photo-1531415074968-036ba1b575da?w=300&auto=format&fit=crop&q=60",
       "overseas": true,
       "country": "West Indies",
       "retired": false
@@ -2519,7 +2519,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 82,
       "base_price": 2000000,
       "stats": "Wkts: 155, Econ: 7.43, Avg: 24.5",
-      "img": "",
+      "img": "https://images.unsplash.com/photo-1531415074968-036ba1b575da?w=300&auto=format&fit=crop&q=60",
       "overseas": true,
       "country": "West Indies",
       "retired": false
@@ -2543,7 +2543,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 82,
       "base_price": 3000000,
       "stats": "Wkts: 155, Econ: 7.43, Avg: 24.5",
-      "img": "",
+      "img": "https://images.unsplash.com/photo-1531415074968-036ba1b575da?w=300&auto=format&fit=crop&q=60",
       "overseas": true,
       "country": "New Zealand",
       "retired": false
@@ -2639,7 +2639,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 82,
       "base_price": 5000000,
       "stats": "Runs: 3220 (SR 145.4), Wkts: 91 (Econ 8.07)",
-      "img": "",
+      "img": "https://images.unsplash.com/photo-1531415074968-036ba1b575da?w=300&auto=format&fit=crop&q=60",
       "overseas": true,
       "country": "South Africa",
       "retired": false
@@ -2675,7 +2675,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 81,
       "base_price": 3000000,
       "stats": "Runs: 6080, Avg: 39.9, SR: 144.6",
-      "img": "",
+      "img": "https://images.unsplash.com/photo-1531415074968-036ba1b575da?w=300&auto=format&fit=crop&q=60",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -2699,7 +2699,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 81,
       "base_price": 3000000,
       "stats": "Wkts: 146, Econ: 7.37, Avg: 24.4",
-      "img": "",
+      "img": "https://images.unsplash.com/photo-1531415074968-036ba1b575da?w=300&auto=format&fit=crop&q=60",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -2711,7 +2711,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 81,
       "base_price": 2000000,
       "stats": "Runs: 3060 (SR 143.2), Wkts: 86 (Econ 7.96)",
-      "img": "",
+      "img": "https://images.unsplash.com/photo-1531415074968-036ba1b575da?w=300&auto=format&fit=crop&q=60",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -2723,7 +2723,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 81,
       "base_price": 3000000,
       "stats": "Runs: 3060 (SR 143.2), Wkts: 86 (Econ 7.96)",
-      "img": "",
+      "img": "https://images.unsplash.com/photo-1531415074968-036ba1b575da?w=300&auto=format&fit=crop&q=60",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -2735,7 +2735,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 81,
       "base_price": 2000000,
       "stats": "Wkts: 146, Econ: 7.37, Avg: 24.4",
-      "img": "",
+      "img": "https://images.unsplash.com/photo-1531415074968-036ba1b575da?w=300&auto=format&fit=crop&q=60",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -2759,7 +2759,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 81,
       "base_price": 2000000,
       "stats": "Wkts: 146, Econ: 7.37, Avg: 24.4",
-      "img": "",
+      "img": "https://images.unsplash.com/photo-1531415074968-036ba1b575da?w=300&auto=format&fit=crop&q=60",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -2783,7 +2783,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 81,
       "base_price": 3000000,
       "stats": "Wkts: 146, Econ: 7.37, Avg: 24.4",
-      "img": "",
+      "img": "https://images.unsplash.com/photo-1531415074968-036ba1b575da?w=300&auto=format&fit=crop&q=60",
       "overseas": true,
       "country": "Australia",
       "retired": false
@@ -2831,7 +2831,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 81,
       "base_price": 2000000,
       "stats": "Wkts: 146, Econ: 7.37, Avg: 24.4",
-      "img": "",
+      "img": "https://images.unsplash.com/photo-1531415074968-036ba1b575da?w=300&auto=format&fit=crop&q=60",
       "overseas": true,
       "country": "South Africa",
       "retired": false
@@ -2843,7 +2843,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 81,
       "base_price": 3000000,
       "stats": "Runs: 3060 (SR 143.2), Wkts: 86 (Econ 7.96)",
-      "img": "",
+      "img": "https://images.unsplash.com/photo-1531415074968-036ba1b575da?w=300&auto=format&fit=crop&q=60",
       "overseas": true,
       "country": "South Africa",
       "retired": false
@@ -2855,7 +2855,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 81,
       "base_price": 5000000,
       "stats": "Wkts: 146, Econ: 7.37, Avg: 24.4",
-      "img": "",
+      "img": "https://images.unsplash.com/photo-1531415074968-036ba1b575da?w=300&auto=format&fit=crop&q=60",
       "overseas": true,
       "country": "West Indies",
       "retired": false
@@ -2891,7 +2891,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 81,
       "base_price": 3000000,
       "stats": "Runs: 3060 (SR 143.2), Wkts: 86 (Econ 7.96)",
-      "img": "",
+      "img": "https://images.unsplash.com/photo-1531415074968-036ba1b575da?w=300&auto=format&fit=crop&q=60",
       "overseas": true,
       "country": "New Zealand",
       "retired": false
@@ -2915,7 +2915,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 81,
       "base_price": 5000000,
       "stats": "Runs: 4620 (SR 138.9), Dismissals: 105",
-      "img": "",
+      "img": "https://images.unsplash.com/photo-1531415074968-036ba1b575da?w=300&auto=format&fit=crop&q=60",
       "overseas": true,
       "country": "Sri Lanka",
       "retired": false
@@ -2927,7 +2927,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 81,
       "base_price": 5000000,
       "stats": "Runs: 3060 (SR 143.2), Wkts: 86 (Econ 7.96)",
-      "img": "",
+      "img": "https://images.unsplash.com/photo-1531415074968-036ba1b575da?w=300&auto=format&fit=crop&q=60",
       "overseas": true,
       "country": "Sri Lanka",
       "retired": false
@@ -2975,7 +2975,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 81,
       "base_price": 3000000,
       "stats": "Wkts: 146, Econ: 7.37, Avg: 24.4",
-      "img": "",
+      "img": "https://images.unsplash.com/photo-1531415074968-036ba1b575da?w=300&auto=format&fit=crop&q=60",
       "overseas": true,
       "country": "England",
       "retired": false
@@ -3011,7 +3011,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 80,
       "base_price": 7500000,
       "stats": "Runs: 2900 (SR 141.0), Wkts: 81 (Econ 8.3)",
-      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Abhishek_Sharma_in_action_in_Asia_Cup_2025.png/330px-Abhishek_Sharma_in_action_in_Asia_Cup_2025.png",
+      "img": "https://static.cricbuzz.com/a/img/v1/150x150/i1/c13494/abhishek-sharma.jpg",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -3023,7 +3023,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 80,
       "base_price": 7500000,
       "stats": "Runs: 5800, Avg: 38.8, SR: 142.6",
-      "img": "",
+      "img": "https://images.unsplash.com/photo-1531415074968-036ba1b575da?w=300&auto=format&fit=crop&q=60",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -3035,7 +3035,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 80,
       "base_price": 7500000,
       "stats": "Runs: 2900 (SR 141.0), Wkts: 81 (Econ 8.3)",
-      "img": "",
+      "img": "https://images.unsplash.com/photo-1531415074968-036ba1b575da?w=300&auto=format&fit=crop&q=60",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -3059,7 +3059,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 80,
       "base_price": 3000000,
       "stats": "Runs: 5800, Avg: 38.8, SR: 142.6",
-      "img": "",
+      "img": "https://images.unsplash.com/photo-1531415074968-036ba1b575da?w=300&auto=format&fit=crop&q=60",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -3095,7 +3095,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 80,
       "base_price": 3000000,
       "stats": "Wkts: 138, Econ: 7.62, Avg: 24.4",
-      "img": "",
+      "img": "https://images.unsplash.com/photo-1531415074968-036ba1b575da?w=300&auto=format&fit=crop&q=60",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -3107,7 +3107,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 80,
       "base_price": 5000000,
       "stats": "Wkts: 138, Econ: 7.62, Avg: 24.4",
-      "img": "",
+      "img": "https://images.unsplash.com/photo-1531415074968-036ba1b575da?w=300&auto=format&fit=crop&q=60",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -3119,7 +3119,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 80,
       "base_price": 2000000,
       "stats": "Wkts: 138, Econ: 7.62, Avg: 24.4",
-      "img": "",
+      "img": "https://images.unsplash.com/photo-1531415074968-036ba1b575da?w=300&auto=format&fit=crop&q=60",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -3155,7 +3155,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 80,
       "base_price": 2000000,
       "stats": "Wkts: 138, Econ: 7.62, Avg: 24.4",
-      "img": "",
+      "img": "https://images.unsplash.com/photo-1531415074968-036ba1b575da?w=300&auto=format&fit=crop&q=60",
       "overseas": true,
       "country": "Australia",
       "retired": false
@@ -3227,7 +3227,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 80,
       "base_price": 3000000,
       "stats": "Runs: 2900 (SR 141.0), Wkts: 81 (Econ 8.3)",
-      "img": "",
+      "img": "https://images.unsplash.com/photo-1531415074968-036ba1b575da?w=300&auto=format&fit=crop&q=60",
       "overseas": true,
       "country": "South Africa",
       "retired": false
@@ -3251,7 +3251,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 80,
       "base_price": 2000000,
       "stats": "Runs: 4400 (SR 137.2), Dismissals: 99",
-      "img": "",
+      "img": "https://images.unsplash.com/photo-1531415074968-036ba1b575da?w=300&auto=format&fit=crop&q=60",
       "overseas": true,
       "country": "West Indies",
       "retired": false
@@ -3263,7 +3263,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 80,
       "base_price": 2000000,
       "stats": "Runs: 2900 (SR 141.0), Wkts: 81 (Econ 8.3)",
-      "img": "",
+      "img": "https://images.unsplash.com/photo-1531415074968-036ba1b575da?w=300&auto=format&fit=crop&q=60",
       "overseas": true,
       "country": "West Indies",
       "retired": false
@@ -3287,7 +3287,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 80,
       "base_price": 2000000,
       "stats": "Wkts: 138, Econ: 7.62, Avg: 24.4",
-      "img": "",
+      "img": "https://images.unsplash.com/photo-1531415074968-036ba1b575da?w=300&auto=format&fit=crop&q=60",
       "overseas": true,
       "country": "Afghanistan",
       "retired": false
@@ -3347,7 +3347,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 80,
       "base_price": 2000000,
       "stats": "Wkts: 138, Econ: 7.62, Avg: 24.4",
-      "img": "",
+      "img": "https://images.unsplash.com/photo-1531415074968-036ba1b575da?w=300&auto=format&fit=crop&q=60",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -3383,7 +3383,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 79,
       "base_price": 5000000,
       "stats": "Wkts: 179, Econ: 7.57, Avg: 25.4",
-      "img": "",
+      "img": "https://images.unsplash.com/photo-1531415074968-036ba1b575da?w=300&auto=format&fit=crop&q=60",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -3419,7 +3419,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 79,
       "base_price": 5000000,
       "stats": "Wkts: 179, Econ: 7.57, Avg: 25.4",
-      "img": "",
+      "img": "https://images.unsplash.com/photo-1531415074968-036ba1b575da?w=300&auto=format&fit=crop&q=60",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -3563,7 +3563,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 79,
       "base_price": 2000000,
       "stats": "Runs: 3540 (SR 144.8), Wkts: 90 (Econ 8.19)",
-      "img": "",
+      "img": "https://images.unsplash.com/photo-1531415074968-036ba1b575da?w=300&auto=format&fit=crop&q=60",
       "overseas": true,
       "country": "South Africa",
       "retired": false
@@ -3575,7 +3575,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 79,
       "base_price": 5000000,
       "stats": "Runs: 3540 (SR 144.8), Wkts: 90 (Econ 8.19)",
-      "img": "",
+      "img": "https://images.unsplash.com/photo-1531415074968-036ba1b575da?w=300&auto=format&fit=crop&q=60",
       "overseas": true,
       "country": "West Indies",
       "retired": false
@@ -3671,7 +3671,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 78,
       "base_price": 5000000,
       "stats": "Wkts: 170, Econ: 7.51, Avg: 25.3",
-      "img": "",
+      "img": "https://images.unsplash.com/photo-1531415074968-036ba1b575da?w=300&auto=format&fit=crop&q=60",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -3695,7 +3695,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 78,
       "base_price": 3000000,
       "stats": "Runs: 3380 (SR 142.6), Wkts: 85 (Econ 8.08)",
-      "img": "",
+      "img": "https://images.unsplash.com/photo-1531415074968-036ba1b575da?w=300&auto=format&fit=crop&q=60",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -3731,7 +3731,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 78,
       "base_price": 3000000,
       "stats": "Wkts: 170, Econ: 7.51, Avg: 25.3",
-      "img": "",
+      "img": "https://images.unsplash.com/photo-1531415074968-036ba1b575da?w=300&auto=format&fit=crop&q=60",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -3851,7 +3851,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 78,
       "base_price": 3000000,
       "stats": "Runs: 3380 (SR 142.6), Wkts: 85 (Econ 8.08)",
-      "img": "",
+      "img": "https://images.unsplash.com/photo-1531415074968-036ba1b575da?w=300&auto=format&fit=crop&q=60",
       "overseas": true,
       "country": "England",
       "retired": false
@@ -3863,7 +3863,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 78,
       "base_price": 5000000,
       "stats": "Runs: 6440, Avg: 39.2, SR: 138.6",
-      "img": "",
+      "img": "https://images.unsplash.com/photo-1531415074968-036ba1b575da?w=300&auto=format&fit=crop&q=60",
       "overseas": true,
       "country": "South Africa",
       "retired": false
@@ -4007,7 +4007,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 78,
       "base_price": 3000000,
       "stats": "Runs: 3380 (SR 142.6), Wkts: 85 (Econ 8.08)",
-      "img": "",
+      "img": "https://images.unsplash.com/photo-1531415074968-036ba1b575da?w=300&auto=format&fit=crop&q=60",
       "overseas": true,
       "country": "Pakistan",
       "retired": false
@@ -4043,7 +4043,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 77,
       "base_price": 7500000,
       "stats": "Wkts: 162, Econ: 7.76, Avg: 25.3",
-      "img": "",
+      "img": "https://images.unsplash.com/photo-1531415074968-036ba1b575da?w=300&auto=format&fit=crop&q=60",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -4055,7 +4055,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 77,
       "base_price": 7500000,
       "stats": "Runs: 6160, Avg: 38.1, SR: 136.6",
-      "img": "",
+      "img": "https://images.unsplash.com/photo-1531415074968-036ba1b575da?w=300&auto=format&fit=crop&q=60",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -4091,7 +4091,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 77,
       "base_price": 2000000,
       "stats": "Wkts: 162, Econ: 7.76, Avg: 25.3",
-      "img": "",
+      "img": "https://images.unsplash.com/photo-1531415074968-036ba1b575da?w=300&auto=format&fit=crop&q=60",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -4115,7 +4115,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 77,
       "base_price": 3000000,
       "stats": "Runs: 3220 (SR 140.4), Wkts: 80 (Econ 8.42)",
-      "img": "",
+      "img": "https://images.unsplash.com/photo-1531415074968-036ba1b575da?w=300&auto=format&fit=crop&q=60",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -4331,7 +4331,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 77,
       "base_price": 2000000,
       "stats": "Runs: 3220 (SR 140.4), Wkts: 80 (Econ 8.42)",
-      "img": "",
+      "img": "https://images.unsplash.com/photo-1531415074968-036ba1b575da?w=300&auto=format&fit=crop&q=60",
       "overseas": true,
       "country": "Afghanistan",
       "retired": false
@@ -4427,7 +4427,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 76,
       "base_price": 5000000,
       "stats": "Wkts: 153, Econ: 7.7, Avg: 25.3",
-      "img": "",
+      "img": "https://images.unsplash.com/photo-1531415074968-036ba1b575da?w=300&auto=format&fit=crop&q=60",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -4475,7 +4475,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 76,
       "base_price": 3000000,
       "stats": "Runs: 5880, Avg: 37.1, SR: 143.0",
-      "img": "",
+      "img": "https://images.unsplash.com/photo-1531415074968-036ba1b575da?w=300&auto=format&fit=crop&q=60",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -4523,7 +4523,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 76,
       "base_price": 10000000,
       "stats": "Runs: 5880, Avg: 37.1, SR: 143.0",
-      "img": "",
+      "img": "https://images.unsplash.com/photo-1531415074968-036ba1b575da?w=300&auto=format&fit=crop&q=60",
       "overseas": true,
       "country": "Australia",
       "retired": false
@@ -4607,7 +4607,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 76,
       "base_price": 2000000,
       "stats": "Wkts: 153, Econ: 7.7, Avg: 25.3",
-      "img": "",
+      "img": "https://images.unsplash.com/photo-1531415074968-036ba1b575da?w=300&auto=format&fit=crop&q=60",
       "overseas": true,
       "country": "South Africa",
       "retired": false
@@ -4847,7 +4847,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 75,
       "base_price": 3000000,
       "stats": "Wkts: 145, Econ: 7.65, Avg: 25.2",
-      "img": "",
+      "img": "https://images.unsplash.com/photo-1531415074968-036ba1b575da?w=300&auto=format&fit=crop&q=60",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -4907,7 +4907,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 75,
       "base_price": 10000000,
       "stats": "Wkts: 145, Econ: 7.65, Avg: 25.2",
-      "img": "",
+      "img": "https://images.unsplash.com/photo-1531415074968-036ba1b575da?w=300&auto=format&fit=crop&q=60",
       "overseas": true,
       "country": "Australia",
       "retired": false
@@ -4979,7 +4979,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 75,
       "base_price": 10000000,
       "stats": "Wkts: 145, Econ: 7.65, Avg: 25.2",
-      "img": "",
+      "img": "https://images.unsplash.com/photo-1531415074968-036ba1b575da?w=300&auto=format&fit=crop&q=60",
       "overseas": true,
       "country": "South Africa",
       "retired": false
@@ -5159,7 +5159,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 74,
       "base_price": 2000000,
       "stats": "Runs: 5320, Avg: 37.4, SR: 139.0",
-      "img": "",
+      "img": "https://images.unsplash.com/photo-1531415074968-036ba1b575da?w=300&auto=format&fit=crop&q=60",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -5207,7 +5207,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 74,
       "base_price": 5000000,
       "stats": "Runs: 4080 (SR 137.8), Dismissals: 98",
-      "img": "",
+      "img": "https://images.unsplash.com/photo-1531415074968-036ba1b575da?w=300&auto=format&fit=crop&q=60",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -5255,7 +5255,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 73,
       "base_price": 7500000,
       "stats": "Runs: 2580 (SR 137.6), Wkts: 74 (Econ 8.43)",
-      "img": "",
+      "img": "https://images.unsplash.com/photo-1531415074968-036ba1b575da?w=300&auto=format&fit=crop&q=60",
       "overseas": true,
       "country": "West Indies",
       "retired": false
@@ -5291,7 +5291,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 72,
       "base_price": 10000000,
       "stats": "Runs: 2420 (SR 135.4), Wkts: 69 (Econ 8.32)",
-      "img": "",
+      "img": "https://images.unsplash.com/photo-1531415074968-036ba1b575da?w=300&auto=format&fit=crop&q=60",
       "overseas": true,
       "country": "England",
       "retired": false
@@ -5423,7 +5423,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 70,
       "base_price": 2000000,
       "stats": "Runs: 2100 (SR 137.0), Wkts: 59 (Econ 8.55)",
-      "img": "",
+      "img": "https://images.unsplash.com/photo-1531415074968-036ba1b575da?w=300&auto=format&fit=crop&q=60",
       "overseas": true,
       "country": "England",
       "retired": false
@@ -5435,7 +5435,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 70,
       "base_price": 7500000,
       "stats": "Runs: 2100 (SR 137.0), Wkts: 59 (Econ 8.55)",
-      "img": "",
+      "img": "https://images.unsplash.com/photo-1531415074968-036ba1b575da?w=300&auto=format&fit=crop&q=60",
       "overseas": true,
       "country": "New Zealand",
       "retired": false
@@ -5495,7 +5495,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 69,
       "base_price": 2000000,
       "stats": "Runs: 5120, Avg: 34.6, SR: 137.4",
-      "img": "",
+      "img": "https://images.unsplash.com/photo-1531415074968-036ba1b575da?w=300&auto=format&fit=crop&q=60",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -5675,7 +5675,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 67,
       "base_price": 3000000,
       "stats": "Wkts: 126, Econ: 8.12, Avg: 27.0",
-      "img": "",
+      "img": "https://images.unsplash.com/photo-1531415074968-036ba1b575da?w=300&auto=format&fit=crop&q=60",
       "overseas": true,
       "country": "South Africa",
       "retired": false
@@ -5699,7 +5699,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 67,
       "base_price": 5000000,
       "stats": "Runs: 2420 (SR 136.4), Wkts: 58 (Econ 8.67)",
-      "img": "",
+      "img": "https://images.unsplash.com/photo-1531415074968-036ba1b575da?w=300&auto=format&fit=crop&q=60",
       "overseas": true,
       "country": "New Zealand",
       "retired": false
@@ -5747,7 +5747,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 66,
       "base_price": 3000000,
       "stats": "Wkts: 117, Econ: 8.06, Avg: 27.0",
-      "img": "",
+      "img": "https://images.unsplash.com/photo-1531415074968-036ba1b575da?w=300&auto=format&fit=crop&q=60",
       "overseas": true,
       "country": "Afghanistan",
       "retired": false
@@ -5759,7 +5759,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 65,
       "base_price": 2000000,
       "stats": "Wkts: 109, Econ: 8.31, Avg: 26.9",
-      "img": "",
+      "img": "https://images.unsplash.com/photo-1531415074968-036ba1b575da?w=300&auto=format&fit=crop&q=60",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -5819,7 +5819,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 76,
       "base_price": 2000000,
       "stats": "Runs: 0, Avg: 0, SR: 0",
-      "img": "",
+      "img": "https://images.unsplash.com/photo-1531415074968-036ba1b575da?w=300&auto=format&fit=crop&q=60",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -5831,7 +5831,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 74,
       "base_price": 2000000,
       "stats": "Wickets: 0, Econ: 8.00",
-      "img": "",
+      "img": "https://images.unsplash.com/photo-1531415074968-036ba1b575da?w=300&auto=format&fit=crop&q=60",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -5855,7 +5855,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 67,
       "base_price": 2000000,
       "stats": "Wickets: 0, Econ: 8.00",
-      "img": "",
+      "img": "https://images.unsplash.com/photo-1531415074968-036ba1b575da?w=300&auto=format&fit=crop&q=60",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -5867,7 +5867,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 69,
       "base_price": 2000000,
       "stats": "Wickets: 0, Econ: 8.00",
-      "img": "",
+      "img": "https://images.unsplash.com/photo-1531415074968-036ba1b575da?w=300&auto=format&fit=crop&q=60",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -5893,7 +5893,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 76,
       "base_price": 2000000,
       "stats": "Runs: 0, Avg: 0, SR: 0",
-      "img": "",
+      "img": "https://images.unsplash.com/photo-1531415074968-036ba1b575da?w=300&auto=format&fit=crop&q=60",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -5905,7 +5905,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 82,
       "base_price": 7500000,
       "stats": "Runs: 2900 (SR 141.0), Wkts: 81 (Econ 8.3)",
-      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Abhishek_Sharma_in_action_in_Asia_Cup_2025.png/330px-Abhishek_Sharma_in_action_in_Asia_Cup_2025.png",
+      "img": "https://static.cricbuzz.com/a/img/v1/150x150/i1/c13494/abhishek-sharma.jpg",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -5953,7 +5953,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 74,
       "base_price": 3000000,
       "stats": "Wkts: 170, Econ: 7.51, Avg: 25.3",
-      "img": "",
+      "img": "https://images.unsplash.com/photo-1531415074968-036ba1b575da?w=300&auto=format&fit=crop&q=60",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -5965,7 +5965,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 80,
       "base_price": 5000000,
       "stats": "Wkts: 138, Econ: 7.62, Avg: 24.4",
-      "img": "",
+      "img": "https://images.unsplash.com/photo-1531415074968-036ba1b575da?w=300&auto=format&fit=crop&q=60",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -5977,7 +5977,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 84,
       "base_price": 5000000,
       "stats": "Wkts: 146, Econ: 7.37, Avg: 24.4",
-      "img": "",
+      "img": "https://images.unsplash.com/photo-1531415074968-036ba1b575da?w=300&auto=format&fit=crop&q=60",
       "overseas": true,
       "country": "West Indies",
       "retired": false
@@ -6001,7 +6001,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 66,
       "base_price": 3000000,
       "stats": "Wkts: 117, Econ: 8.06, Avg: 27.0",
-      "img": "",
+      "img": "https://images.unsplash.com/photo-1531415074968-036ba1b575da?w=300&auto=format&fit=crop&q=60",
       "overseas": true,
       "country": "Afghanistan",
       "retired": false
@@ -6025,7 +6025,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 75,
       "base_price": 2000000,
       "stats": "Runs: 5120, Avg: 34.6, SR: 137.4",
-      "img": "",
+      "img": "https://images.unsplash.com/photo-1531415074968-036ba1b575da?w=300&auto=format&fit=crop&q=60",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -6033,7 +6033,7 @@ window.ALL_PLAYERS_DATA = {
     {
       "id": 15010,
       "name": "Aniket Verma",
-      "img": "",
+      "img": "https://images.unsplash.com/photo-1531415074968-036ba1b575da?w=300&auto=format&fit=crop&q=60",
       "stats": "",
       "overseas": false,
       "country": "India",
@@ -6073,7 +6073,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 74,
       "base_price": 2000000,
       "stats": "Wickets: 0, Econ: 8.00",
-      "img": "",
+      "img": "https://images.unsplash.com/photo-1531415074968-036ba1b575da?w=300&auto=format&fit=crop&q=60",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -6085,7 +6085,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 71,
       "base_price": 2000000,
       "stats": "Runs: 3060 (SR 143.2), Wkts: 86 (Econ 7.96)",
-      "img": "",
+      "img": "https://images.unsplash.com/photo-1531415074968-036ba1b575da?w=300&auto=format&fit=crop&q=60",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -6133,7 +6133,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 76,
       "base_price": 3000000,
       "stats": "Runs: 5880, Avg: 37.1, SR: 143.0",
-      "img": "",
+      "img": "https://images.unsplash.com/photo-1531415074968-036ba1b575da?w=300&auto=format&fit=crop&q=60",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -6145,7 +6145,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 70,
       "base_price": 2000000,
       "stats": "Runs: 5320, Avg: 37.4, SR: 139.0",
-      "img": "",
+      "img": "https://images.unsplash.com/photo-1531415074968-036ba1b575da?w=300&auto=format&fit=crop&q=60",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -6157,7 +6157,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 66,
       "base_price": 5000000,
       "stats": "Wkts: 170, Econ: 7.51, Avg: 25.3",
-      "img": "",
+      "img": "https://images.unsplash.com/photo-1531415074968-036ba1b575da?w=300&auto=format&fit=crop&q=60",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -6169,7 +6169,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 67,
       "base_price": 2000000,
       "stats": "Wickets: 0, Econ: 8.00",
-      "img": "",
+      "img": "https://images.unsplash.com/photo-1531415074968-036ba1b575da?w=300&auto=format&fit=crop&q=60",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -6189,7 +6189,7 @@ window.ALL_PLAYERS_DATA = {
     {
       "id": 15016,
       "name": "Ayush Mhatre",
-      "img": "",
+      "img": "https://images.unsplash.com/photo-1531415074968-036ba1b575da?w=300&auto=format&fit=crop&q=60",
       "stats": "",
       "overseas": false,
       "country": "India",
@@ -6249,7 +6249,7 @@ window.ALL_PLAYERS_DATA = {
     {
       "id": 15021,
       "name": "Blessing Muzarabani",
-      "img": "",
+      "img": "https://images.unsplash.com/photo-1531415074968-036ba1b575da?w=300&auto=format&fit=crop&q=60",
       "stats": "",
       "overseas": false,
       "country": "India",
@@ -6277,7 +6277,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 75,
       "base_price": 2000000,
       "stats": "Runs: 3540 (SR 144.8), Wkts: 90 (Econ 8.19)",
-      "img": "",
+      "img": "https://images.unsplash.com/photo-1531415074968-036ba1b575da?w=300&auto=format&fit=crop&q=60",
       "overseas": true,
       "country": "South Africa",
       "retired": false
@@ -6313,7 +6313,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 81,
       "base_price": 5000000,
       "stats": "Runs: 3060 (SR 143.2), Wkts: 86 (Econ 7.96)",
-      "img": "",
+      "img": "https://images.unsplash.com/photo-1531415074968-036ba1b575da?w=300&auto=format&fit=crop&q=60",
       "overseas": true,
       "country": "Sri Lanka",
       "retired": false
@@ -6361,7 +6361,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 80,
       "base_price": 5000000,
       "stats": "Runs: 6360, Avg: 40.9, SR: 146.6",
-      "img": "",
+      "img": "https://images.unsplash.com/photo-1531415074968-036ba1b575da?w=300&auto=format&fit=crop&q=60",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -6385,7 +6385,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 77,
       "base_price": 5000000,
       "stats": "Runs: 6440, Avg: 39.2, SR: 138.6",
-      "img": "",
+      "img": "https://images.unsplash.com/photo-1531415074968-036ba1b575da?w=300&auto=format&fit=crop&q=60",
       "overseas": true,
       "country": "South Africa",
       "retired": false
@@ -6405,7 +6405,7 @@ window.ALL_PLAYERS_DATA = {
     {
       "id": 15033,
       "name": "Digvesh Rathi",
-      "img": "",
+      "img": "https://images.unsplash.com/photo-1531415074968-036ba1b575da?w=300&auto=format&fit=crop&q=60",
       "stats": "",
       "overseas": false,
       "country": "India",
@@ -6417,7 +6417,7 @@ window.ALL_PLAYERS_DATA = {
     {
       "id": 15034,
       "name": "Donavon Ferreira",
-      "img": "",
+      "img": "https://images.unsplash.com/photo-1531415074968-036ba1b575da?w=300&auto=format&fit=crop&q=60",
       "stats": "",
       "overseas": false,
       "country": "India",
@@ -6469,7 +6469,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 82,
       "base_price": 10000000,
       "stats": "Wkts: 145, Econ: 7.65, Avg: 25.2",
-      "img": "",
+      "img": "https://images.unsplash.com/photo-1531415074968-036ba1b575da?w=300&auto=format&fit=crop&q=60",
       "overseas": true,
       "country": "South Africa",
       "retired": false
@@ -6525,7 +6525,7 @@ window.ALL_PLAYERS_DATA = {
     {
       "id": 15043,
       "name": "Harshal Patel",
-      "img": "",
+      "img": "https://images.unsplash.com/photo-1531415074968-036ba1b575da?w=300&auto=format&fit=crop&q=60",
       "stats": "",
       "overseas": false,
       "country": "India",
@@ -6561,7 +6561,7 @@ window.ALL_PLAYERS_DATA = {
     {
       "id": 15046,
       "name": "Ishan Malinga",
-      "img": "",
+      "img": "https://images.unsplash.com/photo-1531415074968-036ba1b575da?w=300&auto=format&fit=crop&q=60",
       "stats": "",
       "overseas": false,
       "country": "India",
@@ -6577,7 +6577,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 76,
       "base_price": 2000000,
       "stats": "Runs: 2100 (SR 137.0), Wkts: 59 (Econ 8.55)",
-      "img": "",
+      "img": "https://images.unsplash.com/photo-1531415074968-036ba1b575da?w=300&auto=format&fit=crop&q=60",
       "overseas": true,
       "country": "England",
       "retired": false
@@ -6661,7 +6661,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 69,
       "base_price": 2000000,
       "stats": "Wickets: 0, Econ: 8.00",
-      "img": "",
+      "img": "https://images.unsplash.com/photo-1531415074968-036ba1b575da?w=300&auto=format&fit=crop&q=60",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -6793,7 +6793,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 82,
       "base_price": 3000000,
       "stats": "Wkts: 155, Econ: 7.43, Avg: 24.5",
-      "img": "",
+      "img": "https://images.unsplash.com/photo-1531415074968-036ba1b575da?w=300&auto=format&fit=crop&q=60",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -6865,7 +6865,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 79,
       "base_price": 3000000,
       "stats": "Wkts: 126, Econ: 8.12, Avg: 27.0",
-      "img": "",
+      "img": "https://images.unsplash.com/photo-1531415074968-036ba1b575da?w=300&auto=format&fit=crop&q=60",
       "overseas": true,
       "country": "South Africa",
       "retired": false
@@ -6889,7 +6889,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 72,
       "base_price": 10000000,
       "stats": "Runs: 2420 (SR 135.4), Wkts: 69 (Econ 8.32)",
-      "img": "",
+      "img": "https://images.unsplash.com/photo-1531415074968-036ba1b575da?w=300&auto=format&fit=crop&q=60",
       "overseas": true,
       "country": "England",
       "retired": false
@@ -7069,7 +7069,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 81,
       "base_price": 5000000,
       "stats": "Wkts: 153, Econ: 7.7, Avg: 25.3",
-      "img": "",
+      "img": "https://images.unsplash.com/photo-1531415074968-036ba1b575da?w=300&auto=format&fit=crop&q=60",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -7093,7 +7093,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 84,
       "base_price": 5000000,
       "stats": "Runs: 2420 (SR 136.4), Wkts: 58 (Econ 8.67)",
-      "img": "",
+      "img": "https://images.unsplash.com/photo-1531415074968-036ba1b575da?w=300&auto=format&fit=crop&q=60",
       "overseas": true,
       "country": "New Zealand",
       "retired": false
@@ -7117,7 +7117,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 84,
       "base_price": 7500000,
       "stats": "Runs: 2100 (SR 137.0), Wkts: 59 (Econ 8.55)",
-      "img": "",
+      "img": "https://images.unsplash.com/photo-1531415074968-036ba1b575da?w=300&auto=format&fit=crop&q=60",
       "overseas": true,
       "country": "New Zealand",
       "retired": false
@@ -7225,7 +7225,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 79,
       "base_price": 5000000,
       "stats": "Wkts: 179, Econ: 7.57, Avg: 25.4",
-      "img": "",
+      "img": "https://images.unsplash.com/photo-1531415074968-036ba1b575da?w=300&auto=format&fit=crop&q=60",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -7249,7 +7249,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 73,
       "base_price": 3000000,
       "stats": "Runs: 3220 (SR 140.4), Wkts: 80 (Econ 8.42)",
-      "img": "",
+      "img": "https://images.unsplash.com/photo-1531415074968-036ba1b575da?w=300&auto=format&fit=crop&q=60",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -7257,7 +7257,7 @@ window.ALL_PLAYERS_DATA = {
     {
       "id": 15099,
       "name": "Navdeep Saini",
-      "img": "",
+      "img": "https://images.unsplash.com/photo-1531415074968-036ba1b575da?w=300&auto=format&fit=crop&q=60",
       "stats": "",
       "overseas": false,
       "country": "India",
@@ -7273,7 +7273,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 75,
       "base_price": 3000000,
       "stats": "Runs: 6080, Avg: 39.9, SR: 144.6",
-      "img": "",
+      "img": "https://images.unsplash.com/photo-1531415074968-036ba1b575da?w=300&auto=format&fit=crop&q=60",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -7309,7 +7309,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 77,
       "base_price": 7500000,
       "stats": "Runs: 6160, Avg: 38.1, SR: 136.6",
-      "img": "",
+      "img": "https://images.unsplash.com/photo-1531415074968-036ba1b575da?w=300&auto=format&fit=crop&q=60",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -7405,7 +7405,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 75,
       "base_price": 2000000,
       "stats": "",
-      "img": "",
+      "img": "https://images.unsplash.com/photo-1531415074968-036ba1b575da?w=300&auto=format&fit=crop&q=60",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -7417,7 +7417,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 80,
       "base_price": 5000000,
       "stats": "Wkts: 179, Econ: 7.57, Avg: 25.4",
-      "img": "",
+      "img": "https://images.unsplash.com/photo-1531415074968-036ba1b575da?w=300&auto=format&fit=crop&q=60",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -7425,7 +7425,7 @@ window.ALL_PLAYERS_DATA = {
     {
       "id": 15111,
       "name": "Prince Yadav",
-      "img": "",
+      "img": "https://images.unsplash.com/photo-1531415074968-036ba1b575da?w=300&auto=format&fit=crop&q=60",
       "stats": "",
       "overseas": false,
       "country": "India",
@@ -7449,7 +7449,7 @@ window.ALL_PLAYERS_DATA = {
     {
       "id": 15113,
       "name": "Priyansh Arya",
-      "img": "",
+      "img": "https://images.unsplash.com/photo-1531415074968-036ba1b575da?w=300&auto=format&fit=crop&q=60",
       "stats": "",
       "overseas": false,
       "country": "India",
@@ -7509,7 +7509,7 @@ window.ALL_PLAYERS_DATA = {
     {
       "id": 15117,
       "name": "Rahul Chahar",
-      "img": "",
+      "img": "https://images.unsplash.com/photo-1531415074968-036ba1b575da?w=300&auto=format&fit=crop&q=60",
       "stats": "",
       "overseas": false,
       "country": "India",
@@ -7537,7 +7537,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 73,
       "base_price": 3000000,
       "stats": "Runs: 3380 (SR 142.6), Wkts: 85 (Econ 8.08)",
-      "img": "",
+      "img": "https://images.unsplash.com/photo-1531415074968-036ba1b575da?w=300&auto=format&fit=crop&q=60",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -7573,7 +7573,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 82,
       "base_price": 7500000,
       "stats": "Wkts: 162, Econ: 7.76, Avg: 25.3",
-      "img": "",
+      "img": "https://images.unsplash.com/photo-1531415074968-036ba1b575da?w=300&auto=format&fit=crop&q=60",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -7621,7 +7621,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 84,
       "base_price": 7500000,
       "stats": "Runs: 5800, Avg: 38.8, SR: 142.6",
-      "img": "",
+      "img": "https://images.unsplash.com/photo-1531415074968-036ba1b575da?w=300&auto=format&fit=crop&q=60",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -7669,7 +7669,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 83,
       "base_price": 7500000,
       "stats": "Runs: 2580 (SR 137.6), Wkts: 74 (Econ 8.43)",
-      "img": "",
+      "img": "https://images.unsplash.com/photo-1531415074968-036ba1b575da?w=300&auto=format&fit=crop&q=60",
       "overseas": true,
       "country": "West Indies",
       "retired": false
@@ -7717,7 +7717,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 75,
       "base_price": 5000000,
       "stats": "Wkts: 155, Econ: 7.43, Avg: 24.5",
-      "img": "",
+      "img": "https://images.unsplash.com/photo-1531415074968-036ba1b575da?w=300&auto=format&fit=crop&q=60",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -7789,7 +7789,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 82,
       "base_price": 7500000,
       "stats": "Runs: 2900 (SR 141.0), Wkts: 81 (Econ 8.3)",
-      "img": "",
+      "img": "https://images.unsplash.com/photo-1531415074968-036ba1b575da?w=300&auto=format&fit=crop&q=60",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -7801,7 +7801,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 79,
       "base_price": 5000000,
       "stats": "Runs: 3540 (SR 144.8), Wkts: 90 (Econ 8.19)",
-      "img": "",
+      "img": "https://images.unsplash.com/photo-1531415074968-036ba1b575da?w=300&auto=format&fit=crop&q=60",
       "overseas": true,
       "country": "West Indies",
       "retired": false
@@ -7897,7 +7897,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 96,
       "base_price": 20000000,
       "stats": "Rating: 96, Premium All-Rounder",
-      "img": "",
+      "img": "https://images.unsplash.com/photo-1531415074968-036ba1b575da?w=300&auto=format&fit=crop&q=60",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -8005,7 +8005,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 84,
       "base_price": 10000000,
       "stats": "Runs: 5880, Avg: 37.1, SR: 143.0",
-      "img": "",
+      "img": "https://images.unsplash.com/photo-1531415074968-036ba1b575da?w=300&auto=format&fit=crop&q=60",
       "overseas": true,
       "country": "Australia",
       "retired": false
@@ -8089,7 +8089,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 76,
       "base_price": 3000000,
       "stats": "Wkts: 146, Econ: 7.37, Avg: 24.4",
-      "img": "",
+      "img": "https://images.unsplash.com/photo-1531415074968-036ba1b575da?w=300&auto=format&fit=crop&q=60",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -8229,7 +8229,7 @@ window.ALL_PLAYERS_DATA = {
     {
       "id": 15175,
       "name": "Zeeshan Ansari",
-      "img": "",
+      "img": "https://images.unsplash.com/photo-1531415074968-036ba1b575da?w=300&auto=format&fit=crop&q=60",
       "stats": "",
       "overseas": false,
       "country": "India",
