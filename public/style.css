@@ -1,9 +1,9 @@
 /* Global Reset & Typography */
 :root {
-    --bg-dark: #0a0c10;
-    --bg-card: rgba(22, 28, 41, 0.65);
-    --bg-card-hover: rgba(32, 41, 60, 0.85);
-    --border-color: rgba(255, 255, 255, 0.08);
+    --bg-dark: #05070a;
+    --bg-card: rgba(10, 15, 26, 0.45);
+    --bg-card-hover: rgba(18, 25, 41, 0.7);
+    --border-color: rgba(255, 255, 255, 0.07);
     
     --accent-purple: #a100ff;
     --accent-cyan: #00f2fe;
@@ -12,15 +12,18 @@
     --accent-red: #ff3366;
     
     --text-primary: #f5f6f8;
-    --text-secondary: #90a4ae;
+    --text-secondary: #8a9ba8;
     
-    --font-heading: 'Outfit', sans-serif;
-    --font-body: 'Inter', sans-serif;
+    --font-heading: 'Orbitron', 'Outfit', sans-serif;
+    --font-body: 'Outfit', 'Inter', sans-serif;
     
-    --shadow-glow-purple: 0 0 20px rgba(161, 0, 255, 0.35);
-    --shadow-glow-cyan: 0 0 20px rgba(0, 242, 254, 0.35);
-    --shadow-glow-gold: 0 0 20px rgba(255, 215, 0, 0.35);
-    --shadow-glow-green: 0 0 20px rgba(0, 230, 118, 0.35);
+    --shadow-glow-purple: 0 0 25px rgba(161, 0, 255, 0.45);
+    --shadow-glow-cyan: 0 0 25px rgba(0, 242, 254, 0.45);
+    --shadow-glow-gold: 0 0 25px rgba(255, 215, 0, 0.45);
+    --shadow-glow-green: 0 0 25px rgba(0, 230, 118, 0.45);
+    
+    --glass-blur: blur(16px) saturate(180%);
+    --gradient-glow: linear-gradient(135deg, var(--accent-purple), var(--accent-cyan));
 }
 
 * {
@@ -2698,3 +2701,263 @@ body.theme-midnight .bg-glow-2 {
     background: radial-gradient(circle, rgba(10, 12, 16, 0.75) 30%, rgba(4, 5, 8, 0.98) 100%);
     z-index: 1;
 }
+
+
+/* ==========================================================================
+   PREMIUM WEB3 / CYBERPUNK STYLING OVERRIDES & ANIMATIONS
+   ========================================================================== */
+
+/* Google Authentication & Fullscreen Auth Wall */
+.login-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: radial-gradient(circle at center, rgba(161, 0, 255, 0.12) 0%, rgba(5, 7, 10, 0.98) 75%) !important;
+    backdrop-filter: blur(12px) !important;
+    -webkit-backdrop-filter: blur(12px) !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.login-card {
+    width: 95%;
+    max-width: 420px;
+    padding: 2.5rem !important;
+    border-radius: 16px !important;
+    background: rgba(10, 15, 26, 0.65) !important;
+    backdrop-filter: blur(20px) saturate(180%) !important;
+    -webkit-backdrop-filter: blur(20px) saturate(180%) !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6), 0 0 30px rgba(161, 0, 255, 0.2) !important;
+    text-align: center;
+    animation: fadeInScale 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes fadeInScale {
+    from { opacity: 0; transform: scale(0.95) translateY(10px); }
+    to { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+.login-card input[type="text"], 
+.login-card input[type="password"] {
+    background: rgba(0, 0, 0, 0.5) !important;
+    border: 1px solid rgba(255, 255, 255, 0.12) !important;
+    border-radius: 8px !important;
+    color: #ffffff !important;
+    padding: 0.5rem 1rem !important;
+    font-size: 0.9rem !important;
+    transition: all 0.25s ease !important;
+}
+
+.login-card input[type="text"]:focus, 
+.login-card input[type="password"]:focus {
+    outline: none !important;
+    border-color: var(--accent-purple) !important;
+    box-shadow: 0 0 15px rgba(161, 0, 255, 0.25) !important;
+    background: rgba(0, 0, 0, 0.6) !important;
+}
+
+.auth-tab {
+    transition: all 0.2s ease;
+}
+.auth-tab.active {
+    border-bottom: 2px solid var(--accent-purple) !important;
+    color: #ffffff !important;
+    text-shadow: 0 0 8px rgba(161, 0, 255, 0.5);
+}
+.auth-tab:not(.active):hover {
+    color: #ffffff !important;
+    opacity: 0.8;
+}
+
+/* Glassmorphism Cards & Panels */
+.glass-card {
+    background: rgba(10, 15, 26, 0.45) !important;
+    backdrop-filter: var(--glass-blur) !important;
+    -webkit-backdrop-filter: var(--glass-blur) !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5) !important;
+    transition: all 0.3s ease !important;
+}
+
+.glass-card:hover {
+    border-color: rgba(255, 255, 255, 0.15) !important;
+    box-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.6) !important;
+}
+
+/* Headings & Title Typography */
+h1, h2, h3, h4, .dashboard-title, .lobby-title, #lobby-room-code, .logo-medium {
+    font-family: var(--font-heading) !important;
+    letter-spacing: 1px !important;
+}
+
+.text-purple {
+    color: var(--accent-purple) !important;
+    text-shadow: 0 0 10px rgba(161, 0, 255, 0.4) !important;
+}
+
+.text-cyan {
+    color: var(--accent-cyan) !important;
+    text-shadow: 0 0 10px rgba(0, 242, 254, 0.4) !important;
+}
+
+/* Active Bidding Player Card Glow */
+.player-card.active-bidding {
+    border-color: rgba(0, 242, 254, 0.65) !important;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5), 0 0 25px rgba(0, 242, 254, 0.35) !important;
+    animation: activeCardPulseGradient 3s infinite ease-in-out !important;
+}
+
+@keyframes activeCardPulseGradient {
+    0% {
+        border-color: rgba(161, 0, 255, 0.5);
+        box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5), 0 0 15px rgba(161, 0, 255, 0.2);
+    }
+    50% {
+        border-color: rgba(0, 242, 254, 0.85);
+        box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5), 0 0 35px rgba(0, 242, 254, 0.5);
+    }
+    100% {
+        border-color: rgba(161, 0, 255, 0.5);
+        box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5), 0 0 15px rgba(161, 0, 255, 0.2);
+    }
+}
+
+/* SOLD / UNSOLD Stamp Scale Animation */
+.sale-stamp {
+    animation: stampScaleIn 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.35) forwards !important;
+    text-shadow: 0 0 12px currentColor !important;
+}
+
+@keyframes stampScaleIn {
+    0% {
+        transform: translate(-50%, -50%) rotate(-15deg) scale(3);
+        opacity: 0;
+        filter: blur(5px);
+    }
+    100% {
+        transform: translate(-50%, -50%) rotate(-15deg) scale(1);
+        opacity: 1;
+        filter: blur(0);
+    }
+}
+
+/* Transient Bid Updates Animations */
+.price-flash {
+    animation: textFlash 0.45s ease-out !important;
+}
+
+@keyframes textFlash {
+    0% {
+        color: #ffffff;
+        text-shadow: 0 0 20px rgba(0, 242, 254, 0.8);
+        transform: scale(1.15);
+    }
+    100% {
+        color: var(--accent-cyan);
+        text-shadow: none;
+        transform: scale(1);
+    }
+}
+
+.bidder-slide {
+    animation: slideInBidder 0.3s ease-out !important;
+}
+
+@keyframes slideInBidder {
+    0% {
+        transform: translateY(10px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Premium Buttons Transform & Sheen */
+.btn {
+    border-radius: 8px !important;
+    overflow: hidden !important;
+    position: relative !important;
+    transition: all 0.25s cubic-bezier(0.25, 0.8, 0.25, 1) !important;
+}
+
+.btn::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -50%;
+    width: 200%;
+    height: 100%;
+    background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.1), transparent);
+    transform: skewX(-25deg);
+    transition: 0.75s;
+}
+
+.btn:hover::after {
+    left: 125%;
+}
+
+.btn:active {
+    transform: scale(0.96) translateY(0) !important;
+}
+
+/* Live Indicator Status Pulse */
+.pulse-live {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.pulse-live::before {
+    content: '';
+    width: 8px;
+    height: 8px;
+    background-color: var(--accent-red);
+    border-radius: 50%;
+    display: inline-block;
+    box-shadow: 0 0 10px var(--accent-red);
+    animation: livePulseDot 1.5s infinite ease-in-out;
+}
+
+@keyframes livePulseDot {
+    0% { transform: scale(1); opacity: 1; box-shadow: 0 0 0 0 rgba(255, 51, 102, 0.7); }
+    70% { transform: scale(1.1); opacity: 0.8; box-shadow: 0 0 0 8px rgba(255, 51, 102, 0); }
+    100% { transform: scale(1); opacity: 1; box-shadow: 0 0 0 0 rgba(255, 51, 102, 0); }
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(161, 0, 255, 0.25);
+    border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(161, 0, 255, 0.45);
+}
+
+/* Chat Message Slide-in */
+.chat-message {
+    animation: slideInMsg 0.25s ease-out forwards;
+}
+
+@keyframes slideInMsg {
+    from { transform: translateY(10px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+

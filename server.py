@@ -633,6 +633,72 @@ def timer_worker():
         with rooms_lock:
             for room_code, room in list(rooms.items()):
                 if room["status"] == "active" and room["timer_active"]:
+                    # Bot Bidding Engine (places bids on behalf of bots in Single Player mode)
+                    is_single_player = room.get("is_single_player", False)
+                    bots = [name for name, t in room["teams"].items() if t.get("is_bot", False)]
+                    
+                    if is_single_player and bots and room["timer"] > 0:
+                        # Shuffle bot bidders to ensure fairness
+                        random.shuffle(bots)
+                        idx = room["current_player_index"]
+                        if 0 <= idx < len(room["players"]):
+                            player = room["players"][idx]
+                            base_price = player.get("base_price", 1000000)
+                            rating = player.get("rating", 80)
+                            
+                            # Decide price willingness thresholds based on rating
+                            if rating >= 95:
+                                max_mult = 2.6
+                            elif rating >= 90:
+                                max_mult = 2.1
+                            elif rating >= 80:
+                                max_mult = 1.6
+                            else:
+                                max_mult = 1.2
+                                
+                            next_bid = player["base_price"] if room["current_bid"] == 0 else room["current_bid"] + room["settings"]["min_increment"]
+                            
+                            # Check if any bot wants to bid in this second
+                            for bot_name in bots:
+                                bot_team = room["teams"][bot_name]
+                                squad_limit = room["settings"].get("squad_limit", 16)
+                                
+                                # Basic validations
+                                if len(bot_team["players"]) >= squad_limit:
+                                    continue
+                                if next_bid > bot_team["budget"]:
+                                    continue
+                                if bot_name == room["current_bidder"]:
+                                    continue
+                                    
+                                # Calculate custom valuation modifier based on bot name and player ID
+                                bot_hash = sum(ord(c) for c in bot_name) + player.get("id", 0)
+                                modifier = 1.0 + (bot_hash % 100) / 100.0 * (max_mult - 1.0)
+                                max_willing = int(base_price * modifier)
+                                
+                                if next_bid <= max_willing:
+                                    # 35% chance to bid in this second to simulate human hesitation
+                                    if random.random() < 0.35:
+                                        room["current_bid"] = next_bid
+                                        room["current_bidder"] = bot_name
+                                        # Reset timer
+                                        room["timer"] = room["settings"]["timer_duration"]
+                                        
+                                        # Broadcast bid
+                                        bid_payload = {
+                                            "room": get_serializable_room(room),
+                                            "bidder": bot_name,
+                                            "amount": next_bid,
+                                            "timer": room["timer"]
+                                        }
+                                        # Log the bid
+                                        bid_msg = f"⚡ {bot_name} bid {format_currency_python(next_bid)}"
+                                        room["logs"].append(bid_msg)
+                                        
+                                        save_room_to_disk(room_code)
+                                        broadcast(room_code, "bid_placed", bid_payload)
+                                        break # Only one bot bid per second
+
                     if room["timer"] > 0:
                         room["timer"] -= 1
                         # Broadcast timer tick
@@ -897,6 +963,10 @@ class AuctionHTTPHandler(SimpleHTTPRequestHandler):
         custom_players = data.get('players', [])
         preset_key = data.get('preset', 'ipl_legends')
         
+        is_single_player = bool(data.get('is_single_player', False))
+        user_team = data.get('user_team')
+        bots = data.get('bots', [])
+        
         # Resolve players (preset or custom)
         players = []
         if preset_key in PRESETS and not custom_players:
@@ -933,12 +1003,46 @@ class AuctionHTTPHandler(SimpleHTTPRequestHandler):
                 
             host_id = ''.join(random.choices(string.ascii_lowercase + string.digits, k=12))
             
+            # Pre-populate teams if single player mode is active
+            teams_dict = {}
+            logs_list = [f"🏏 Room {room_code} created by {host_name}."]
+            
+            if is_single_player:
+                if user_team:
+                    u_team_name = user_team.get("team", "User Team").strip()
+                    u_mgr_name = user_team.get("manager", "Manager Pro").strip()
+                    teams_dict[u_team_name] = {
+                        "username": username,
+                        "manager": u_mgr_name,
+                        "budget": budget,
+                        "players": [],
+                        "slots": {"Batsman": 0, "Bowler": 0, "All-Rounder": 0, "Wicket-Keeper": 0}
+                    }
+                    logs_list.append(f"👋 {u_team_name} (Manager: {u_mgr_name}) joined the draft.")
+                
+                for bot in bots:
+                    b_team_name = bot.get("team", "").strip()
+                    b_mgr_name = bot.get("manager", "").strip()
+                    if b_team_name and b_mgr_name:
+                        teams_dict[b_team_name] = {
+                            "username": "bot_user",
+                            "manager": b_mgr_name,
+                            "budget": budget,
+                            "players": [],
+                            "slots": {"Batsman": 0, "Bowler": 0, "All-Rounder": 0, "Wicket-Keeper": 0},
+                            "is_bot": True
+                        }
+                        logs_list.append(f"🤖 Bot Franchise {b_team_name} (Manager: {b_mgr_name}) entered the lobby.")
+            else:
+                logs_list.append("🏏 Waiting for managers to join...")
+
             rooms[room_code] = {
                 "host_username": username,
                 "created_at": time.strftime("%Y-%m-%d %H:%M:%S"),
                 "auction_name": auction_name,
                 "host_name": host_name,
                 "host_id": host_id,
+                "is_single_player": is_single_player,
                 "settings": {
                     "budget": budget,
                     "min_increment": min_increment,
@@ -952,8 +1056,8 @@ class AuctionHTTPHandler(SimpleHTTPRequestHandler):
                 "current_bidder": None,
                 "timer": timer_duration,
                 "timer_active": False,
-                "teams": {},
-                "logs": [f"🏏 Room {room_code} created by {host_name}.", "🏏 Waiting for managers to join..."],
+                "teams": teams_dict,
+                "logs": logs_list,
                 "clients": [],
                 "status": "lobby",
                 "current_role_filter": "All",

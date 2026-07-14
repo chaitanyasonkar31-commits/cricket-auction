@@ -498,7 +498,12 @@ function selectPreset(presetName) {
     
     allPresetPlayers = rawList.map(p => {
         const playerCopy = JSON.parse(JSON.stringify(p));
-        playerCopy.source = presetName === 'ipl_legends' ? 'IPL' : (presetName === 'all_time_legends' ? 'Legend' : (presetName === 'h_liga' ? 'H-LIGA' : 'Full Pool'));
+        playerCopy.source = presetName === 'ipl_legends' ? 'IPL' : 
+                            (presetName === 'all_time_legends' ? 'Legend' : 
+                            (presetName === 'h_liga' ? 'H-LIGA' : 
+                            (presetName === 'wc_2023' ? '2023 WC' : 
+                            (presetName === 'wc_2024' ? '2024 WC' : 
+                            (presetName === 'ipl_2026' ? 'IPL 2026' : 'Full Pool')))));
         playerCopy.country = p.country || (p.overseas ? 'Overseas' : 'India');
         return playerCopy;
     });
@@ -1111,6 +1116,36 @@ async function createRoom() {
         squad_limit: parseInt(document.getElementById('squad-limit').value) || 16
     };
     
+    const isSinglePlayer = document.getElementById('single-player-mode')?.checked || false;
+    const userTeamNameVal = document.getElementById('single-player-team-name')?.value.trim() || '';
+    const userManagerNameVal = document.getElementById('single-player-manager-name')?.value.trim() || '';
+    
+    if (isSinglePlayer) {
+        if (!userTeamNameVal || !userManagerNameVal) {
+            showNotification("Franchise and Manager name are required for Single Player mode!", "warning");
+            return;
+        }
+        // Force Automatic Bot Auctioneer in Single Player mode
+        settings.bot_auctioneer = true;
+    }
+    
+    const botsList = [];
+    if (isSinglePlayer) {
+        const botTeamInputs = document.querySelectorAll('.bot-team-input');
+        const botManagerInputs = document.querySelectorAll('.bot-manager-input');
+        for (let i = 0; i < botTeamInputs.length; i++) {
+            const teamNameVal = botTeamInputs[i].value.trim();
+            const managerNameVal = botManagerInputs[i].value.trim();
+            if (teamNameVal && managerNameVal) {
+                botsList.push({ team: teamNameVal, manager: managerNameVal });
+            }
+        }
+        if (botsList.length === 0) {
+            showNotification("At least one Bot Franchise is required!", "warning");
+            return;
+        }
+    }
+
     try {
         const res = await apiPost('/api/create', {
             auth_token: localStorage.getItem('auth_token'),
@@ -1118,7 +1153,10 @@ async function createRoom() {
             auction_name: auctionNameVal,
             settings: settings,
             preset: presetChoice,
-            players: playersList
+            players: playersList,
+            is_single_player: isSinglePlayer,
+            user_team: isSinglePlayer ? { team: userTeamNameVal, manager: userManagerNameVal } : null,
+            bots: botsList
         });
         
         // Save state variables
@@ -1127,6 +1165,13 @@ async function createRoom() {
         roomCode = res.room_code;
         hostId = res.host_id;
         roomState = res.room_state;
+        
+        if (isSinglePlayer) {
+            teamName = userTeamNameVal;
+            managerName = userManagerNameVal;
+            localStorage.setItem('auction_team_name', teamName);
+            localStorage.setItem('auction_manager_name', managerName);
+        }
 
         // Save to scheduled auctions in localStorage so host can host/rejoin later
         try {
@@ -1711,7 +1756,8 @@ function renderAuctionDashboard() {
     
     // Header panel managers statistics
     const idBanner = document.getElementById('manager-identity-banner');
-    if (role === 'manager') {
+    const isSinglePlayer = roomState && roomState.is_single_player;
+    if (role === 'manager' || isSinglePlayer) {
         idBanner.classList.remove('hidden');
         document.getElementById('my-team-name-val').innerText = teamName;
         const myBudget = roomState.teams[teamName] ? roomState.teams[teamName].budget : 0;
@@ -1767,9 +1813,30 @@ function renderAuctionDashboard() {
             document.getElementById('player-card-bidder').classList.remove('bidder-name');
         } else {
             document.getElementById('current-bid-label').innerText = "CURRENT BID";
-            document.getElementById('player-card-current').innerText = formatCurrency(roomState.current_bid);
-            document.getElementById('player-card-bidder').innerText = roomState.current_bidder;
-            document.getElementById('player-card-bidder').classList.add('bidder-name');
+            const priceEl = document.getElementById('player-card-current');
+            const newBidFormatted = formatCurrency(roomState.current_bid);
+            if (priceEl && priceEl.innerText !== newBidFormatted) {
+                priceEl.innerText = newBidFormatted;
+                priceEl.classList.remove('price-flash');
+                void priceEl.offsetWidth; // Trigger reflow
+                priceEl.classList.add('price-flash');
+            }
+            
+            const bidderEl = document.getElementById('player-card-bidder');
+            if (bidderEl) {
+                if (roomState.current_bidder) {
+                    if (bidderEl.innerText !== roomState.current_bidder) {
+                        bidderEl.innerText = roomState.current_bidder;
+                        bidderEl.classList.remove('bidder-slide');
+                        void bidderEl.offsetWidth; // Trigger reflow
+                        bidderEl.classList.add('bidder-slide');
+                    }
+                    bidderEl.classList.add('bidder-name');
+                } else {
+                    bidderEl.innerText = "None";
+                    bidderEl.classList.remove('bidder-name');
+                }
+            }
         }
         
         // Manage sold/unsold pause stamp displays
@@ -1899,7 +1966,8 @@ function renderAuctionDashboard() {
     
     // 2. Bidding Buttons Controls Display
     const bidButtonsSection = document.getElementById('bid-buttons-section');
-    if (role === 'host') {
+    const isSinglePlayer = roomState && roomState.is_single_player;
+    if (role === 'host' && !isSinglePlayer) {
         if (bidButtonsSection) bidButtonsSection.classList.add('hidden');
         bidPanel.classList.remove('hidden');
     } else {
@@ -2266,7 +2334,7 @@ function rebuildBidTimeline() {
 
 // Bidding Trigger POST
 async function placeBid(type, value) {
-    if (role !== 'manager') return;
+    if (role !== 'manager' && !(role === 'host' && roomState && roomState.is_single_player)) return;
     
     const idx = roomState.current_player_index;
     const activePlayer = roomState.players[idx];
@@ -4427,3 +4495,80 @@ function renderDraftSummaryDashboard() {
     });
 }
 
+
+
+/* ==========================================================================
+   SINGLE PLAYER & BOT MANAGER HELPER FUNCTIONS
+   ========================================================================== */
+
+function toggleSinglePlayerBots(isEnabled) {
+    const details = document.getElementById('bot-config-details');
+    if (details) {
+        if (isEnabled) {
+            details.classList.remove('hidden');
+            updateBotNamesFields(document.getElementById('bot-count').value);
+        } else {
+            details.classList.add('hidden');
+        }
+    }
+}
+
+function updateBotNamesFields(count) {
+    const container = document.getElementById('bot-names-inputs-grid');
+    if (!container) return;
+    container.innerHTML = '';
+    
+    const defaultBots = [
+        { team: "Chennai Champions", manager: "Bot Dhoni" },
+        { team: "Bangalore Bold", manager: "Bot Kohli" },
+        { team: "Mumbai Masters", manager: "Bot Rohit" },
+        { team: "Kolkata Knights", manager: "Bot Gambhir" },
+        { team: "Delhi Dynamos", manager: "Bot Pant" },
+        { team: "Rajasthan Royals", manager: "Bot Samson" },
+        { team: "Gujarat Titans", manager: "Bot Gill" },
+        { team: "Punjab Kings", manager: "Bot Dhawan" },
+        { team: "Sunrisers Hyderabad", manager: "Bot Cummins" }
+    ];
+    
+    for (let i = 0; i < count; i++) {
+        const div = document.createElement('div');
+        div.style.display = 'flex';
+        div.style.flexDirection = 'column';
+        div.style.gap = '0.25rem';
+        
+        const label = document.createElement('label');
+        label.style.fontSize = '0.75rem';
+        label.style.color = 'var(--text-secondary)';
+        label.innerText = `Bot Franchise ${i+1}`;
+        
+        const inputTeam = document.createElement('input');
+        inputTeam.type = 'text';
+        inputTeam.className = 'bot-team-input';
+        inputTeam.placeholder = `Bot Team ${i+1}`;
+        inputTeam.value = defaultBots[i]?.team || `Bot Team ${i+1}`;
+        inputTeam.style.height = '36px';
+        inputTeam.style.padding = '0.25rem 0.5rem';
+        inputTeam.style.background = 'rgba(0,0,0,0.3)';
+        inputTeam.style.border = '1px solid var(--border-color)';
+        inputTeam.style.borderRadius = '6px';
+        inputTeam.style.color = 'white';
+        
+        const inputManager = document.createElement('input');
+        inputManager.type = 'text';
+        inputManager.className = 'bot-manager-input';
+        inputManager.placeholder = `Bot Manager ${i+1}`;
+        inputManager.value = defaultBots[i]?.manager || `Bot Manager ${i+1}`;
+        inputManager.style.height = '36px';
+        inputManager.style.padding = '0.25rem 0.5rem';
+        inputManager.style.background = 'rgba(0,0,0,0.3)';
+        inputManager.style.border = '1px solid var(--border-color)';
+        inputManager.style.borderRadius = '6px';
+        inputManager.style.color = 'white';
+        inputManager.style.marginTop = '0.25rem';
+        
+        div.appendChild(label);
+        div.appendChild(inputTeam);
+        div.appendChild(inputManager);
+        container.appendChild(div);
+    }
+}
