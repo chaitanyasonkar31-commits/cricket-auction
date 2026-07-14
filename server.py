@@ -724,9 +724,32 @@ class AuctionHTTPHandler(SimpleHTTPRequestHandler):
                 }
                 q.put(init_payload)
             
+            # Enable aggressive TCP keepalive on this persistent socket to detect client drops quickly
+            import socket
+            try:
+                self.connection.setsockopt(socket.SOL_SOCKET, socket.SO_KEEPALIVE, 1)
+                # Platform-specific TCP keep-alive settings (10 seconds idle, 5 seconds interval, 3 probes)
+                if hasattr(socket, 'TCP_KEEPIDLE'):
+                    self.connection.setsockopt(socket.IPPROTO_TCP, socket.TCP_KEEPIDLE, 10)
+                if hasattr(socket, 'TCP_KEEPINTVL'):
+                    self.connection.setsockopt(socket.IPPROTO_TCP, socket.TCP_KEEPINTVL, 5)
+                if hasattr(socket, 'TCP_KEEPCNT'):
+                    self.connection.setsockopt(socket.IPPROTO_TCP, socket.TCP_KEEPCNT, 3)
+            except Exception:
+                pass
+            
             # Streaming loop
             try:
                 while True:
+                    # Thread Leak Prevention: Check if this connection's queue is still registered.
+                    # If it has been replaced (e.g. page refresh) or room was deleted, exit the thread.
+                    with rooms_lock:
+                        if room_code not in rooms:
+                            break
+                        active_queues = [c[1] for c in rooms[room_code]["clients"]]
+                        if q not in active_queues:
+                            break
+                            
                     try:
                         # Wait for a new event with 5s timeout to send heartbeat keep-alive
                         msg = q.get(timeout=5.0)
