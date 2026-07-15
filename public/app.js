@@ -1967,7 +1967,6 @@ function renderAuctionDashboard() {
     
     // 2. Bidding Buttons Controls Display
     const bidButtonsSection = document.getElementById('bid-buttons-section');
-    const isSinglePlayer = roomState && roomState.is_single_player;
     if (role === 'host' && !isSinglePlayer) {
         if (bidButtonsSection) bidButtonsSection.classList.add('hidden');
         bidPanel.classList.remove('hidden');
