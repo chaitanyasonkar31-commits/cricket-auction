@@ -5893,7 +5893,7 @@ window.ALL_PLAYERS_DATA = {
       "rating": 76,
       "base_price": 2000000,
       "stats": "Runs: 0, Avg: 0, SR: 0",
-      "img": "https://images.unsplash.com/photo-1531415074968-036ba1b575da?w=300&auto=format&fit=crop&q=60",
+      "img": "https://static.cricbuzz.com/a/img/v1/i1/c10499/abhinav-manohar.jpg?d=low&p=gthumb",
       "overseas": false,
       "country": "India",
       "retired": false
@@ -8821,4 +8821,4 @@ window.ALL_PLAYERS_DATA = {
       "retired": false
     }
   ]
-};\n
+};

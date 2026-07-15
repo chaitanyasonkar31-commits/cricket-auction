@@ -322,9 +322,10 @@ function renderUserProfile(username) {
     const avatarEl = document.getElementById('user-profile-avatar');
     
     if (badge && nameEl) {
-        nameEl.innerText = username;
+        const displayUsername = username || 'User';
+        nameEl.innerText = displayUsername;
         if (avatarEl) {
-            avatarEl.innerText = username.charAt(0).toUpperCase();
+            avatarEl.innerText = displayUsername.charAt(0).toUpperCase();
         }
         badge.classList.remove('hidden');
     }
