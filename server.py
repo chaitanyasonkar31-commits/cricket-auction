@@ -654,13 +654,13 @@ def timer_worker():
                             
                             # Decide price willingness thresholds based on rating
                             if rating >= 95:
-                                max_mult = 2.6
+                                max_mult = 8.5
                             elif rating >= 90:
-                                max_mult = 2.1
+                                max_mult = 6.0
                             elif rating >= 80:
-                                max_mult = 1.6
+                                max_mult = 3.8
                             else:
-                                max_mult = 1.2
+                                max_mult = 2.2
                                 
                             next_bid = player["base_price"] if room["current_bid"] == 0 else room["current_bid"] + room["settings"]["min_increment"]
                             
@@ -668,19 +668,35 @@ def timer_worker():
                             for bot_name in bots:
                                 bot_team = room["teams"][bot_name]
                                 squad_limit = room["settings"].get("squad_limit", 16)
+                                remaining_slots = squad_limit - len(bot_team["players"])
                                 
                                 # Basic validations
-                                if len(bot_team["players"]) >= squad_limit:
+                                if remaining_slots <= 0:
                                     continue
                                 if next_bid > bot_team["budget"]:
                                     continue
                                 if bot_name == room["current_bidder"]:
                                     continue
                                     
-                                # Calculate custom valuation modifier based on bot name and player ID
+                                # Calculate deterministic valuation modifier based on bot name and player ID
                                 bot_hash = sum(ord(c) for c in bot_name) + player.get("id", 0)
-                                modifier = 1.0 + (bot_hash % 100) / 100.0 * (max_mult - 1.0)
-                                max_willing = int(base_price * modifier)
+                                modifier = 1.2 + (bot_hash % 100) / 100.0 * (max_mult - 1.2)
+                                
+                                # Adjust modifier based on budget abundance:
+                                # Bots with more budget per remaining slot bid more aggressively!
+                                starting_budget = room["settings"].get("budget", 1000000000)
+                                starting_budget_per_slot = starting_budget / squad_limit
+                                current_budget_per_slot = bot_team["budget"] / remaining_slots
+                                
+                                budget_factor = current_budget_per_slot / starting_budget_per_slot
+                                budget_factor = max(0.6, min(1.8, budget_factor))
+                                
+                                max_willing = int(base_price * modifier * budget_factor)
+                                
+                                # Limit bots from overcommitting too early on a single player
+                                budget_cap = bot_team["budget"] * (0.65 if rating >= 90 else 0.40)
+                                if max_willing > budget_cap:
+                                    max_willing = int(budget_cap)
                                 
                                 if next_bid <= max_willing:
                                     # 35% chance to bid in this second to simulate human hesitation
