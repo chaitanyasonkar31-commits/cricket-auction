@@ -1184,7 +1184,7 @@ class AuctionHTTPHandler(SimpleHTTPRequestHandler):
                 
             # Reject the bid if it is lower than the minimum required amount
             if amount < min_req:
-                self.send_json_response(400, {"error": f"Bid too low! Minimum required is {format_currency_python(min_req)}."})
+                self.send_json_response(400, {"error": "Poor network connection. Please try again."})
                 return
 
             # Check budget with the final adjusted amount
