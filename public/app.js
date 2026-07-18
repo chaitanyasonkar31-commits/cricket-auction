@@ -2333,7 +2333,27 @@ function rebuildBidTimeline() {
 }
 
 // Bidding Trigger POST
+let isBidPending = false;
+
+function setBiddingButtonsState(enabled) {
+    const bidButtons = document.querySelectorAll('.btn-bid');
+    bidButtons.forEach(btn => {
+        btn.disabled = !enabled;
+        if (!enabled) {
+            btn.classList.add('btn-disabled');
+            btn.style.opacity = '0.5';
+            btn.style.pointerEvents = 'none';
+        } else {
+            btn.classList.remove('btn-disabled');
+            btn.style.opacity = '1';
+            btn.style.pointerEvents = 'auto';
+        }
+    });
+}
+
 async function placeBid(type, value) {
+    if (isBidPending) return;
+    
     if (role !== 'manager' && !(role === 'host' && roomState && roomState.is_single_player)) return;
     
     const idx = roomState.current_player_index;
@@ -2356,6 +2376,9 @@ async function placeBid(type, value) {
         bidAmount = base + Number(value);
     }
     
+    setBiddingButtonsState(false);
+    isBidPending = true;
+    
     try {
         await apiPost('/api/bid', {
             room_code: roomCode,
@@ -2364,6 +2387,10 @@ async function placeBid(type, value) {
         });
     } catch (err) {
         console.error(err);
+        showNotification(err.message || "Failed to place bid.", "danger");
+    } finally {
+        isBidPending = false;
+        setBiddingButtonsState(true);
     }
 }
 

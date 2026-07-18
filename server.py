@@ -1182,9 +1182,10 @@ class AuctionHTTPHandler(SimpleHTTPRequestHandler):
             else:
                 min_req = room["current_bid"] + room["settings"]["min_increment"]
                 
-            # If concurrent bids were sent, auto-adjust to the new minimum increment
+            # Reject the bid if it is lower than the minimum required amount
             if amount < min_req:
-                amount = min_req
+                self.send_json_response(400, {"error": f"Bid too low! Minimum required is {format_currency_python(min_req)}."})
+                return
 
             # Check budget with the final adjusted amount
             if amount > team["budget"]:
