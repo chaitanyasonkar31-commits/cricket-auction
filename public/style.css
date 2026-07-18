@@ -852,11 +852,17 @@ h1, h2, h3, h4 {
 
 .player-card-body {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
     gap: 1.5rem;
     align-items: center;
     margin: 1.5rem 0;
-    text-align: center;
+    text-align: left;
+}
+
+.player-details {
+    flex-grow: 1;
+    min-width: 200px;
 }
 
 
