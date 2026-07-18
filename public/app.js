@@ -2523,11 +2523,22 @@ function openRosterModal(tName) {
     const osCount = team.players.filter(p => p.overseas).length;
     document.getElementById('slot-os').innerText = osCount;
     
+    const tableHeader = document.querySelector('.roster-table thead tr');
+    if (tableHeader) {
+        tableHeader.innerHTML = `
+            <th>Player Name</th>
+            <th>Category</th>
+            <th>Rating</th>
+            <th style="text-align: right;">Price Paid</th>
+            ${role === 'host' ? '<th style="text-align: center;">Action</th>' : ''}
+        `;
+    }
+
     const tableBody = document.getElementById('modal-roster-rows');
     tableBody.innerHTML = '';
     
     if (team.players.length === 0) {
-        tableBody.innerHTML = `<tr><td colspan="4" style="text-align: center; color: var(--text-secondary);">No players purchased yet.</td></tr>`;
+        tableBody.innerHTML = `<tr><td colspan="${role === 'host' ? 5 : 4}" style="text-align: center; color: var(--text-secondary);">No players purchased yet.</td></tr>`;
     } else {
         team.players.forEach(p => {
             const tr = document.createElement('tr');
@@ -2542,6 +2553,13 @@ function openRosterModal(tName) {
                 <td><span class="badge ${p.role}">${p.role}</span></td>
                 <td>${p.rating}</td>
                 <td style="text-align: right; font-weight: 700; color: var(--accent-gold);">${formatCurrency(p.price)}</td>
+                ${role === 'host' ? `
+                <td style="text-align: center;">
+                    <button class="btn btn-secondary" onclick="removePlayerFromSquad('${tName}', ${p.id})" style="padding: 0.2rem 0.5rem; font-size: 0.75rem; background: rgba(255, 51, 102, 0.15); border-color: rgba(255, 51, 102, 0.3); color: var(--accent-red);" title="Remove player from squad">
+                        <i class="fa-solid fa-trash-can"></i> Remove
+                    </button>
+                </td>
+                ` : ''}
             `;
             tableBody.appendChild(tr);
         });
@@ -4597,5 +4615,29 @@ function updateBotNamesFields(count) {
         div.appendChild(inputTeam);
         div.appendChild(inputManager);
         container.appendChild(div);
+    }
+}
+
+async function removePlayerFromSquad(tName, playerId) {
+    if (!confirm(`Are you sure you want to remove this player from ${tName}'s squad?`)) return;
+    
+    try {
+        const res = await apiPost('/api/control', {
+            room_code: roomCode,
+            host_id: hostId,
+            action: 'remove_squad_player',
+            team_name: tName,
+            player_id: playerId
+        });
+        
+        if (res.success) {
+            roomState = res.room_state;
+            renderState();
+            openRosterModal(tName);
+            showNotification("Player successfully removed from squad.", "success");
+        }
+    } catch (err) {
+        console.error(err);
+        showNotification(err.message || "Failed to remove player.", "danger");
     }
 }

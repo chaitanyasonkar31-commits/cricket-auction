@@ -478,6 +478,9 @@ def sell_current_player(room_code):
         return
         
     room["last_completed_player_index"] = idx
+    if "completed_players_history" not in room:
+        room["completed_players_history"] = []
+    room["completed_players_history"].append(idx)
     player = room["players"][idx]
     bidder = room["current_bidder"]
     price = room["current_bid"]
@@ -526,6 +529,9 @@ def unsold_current_player(room_code):
         return
         
     room["last_completed_player_index"] = idx
+    if "completed_players_history" not in room:
+        room["completed_players_history"] = []
+    room["completed_players_history"].append(idx)
     player = room["players"][idx]
     player["status"] = "passed"
     
@@ -1068,7 +1074,8 @@ class AuctionHTTPHandler(SimpleHTTPRequestHandler):
                 "retentions": {},
                 "retention_locked": {},
                 "trade_window_open": False,
-                "last_completed_player_index": None
+                "last_completed_player_index": None,
+                "completed_players_history": []
             }
             save_room_to_disk(room_code)
             
@@ -1339,7 +1346,16 @@ class AuctionHTTPHandler(SimpleHTTPRequestHandler):
                     return
                     
             elif action == "undo":
-                idx = room.get("last_completed_player_index")
+                if "completed_players_history" not in room:
+                    room["completed_players_history"] = []
+                
+                idx = None
+                if room["completed_players_history"]:
+                    idx = room["completed_players_history"].pop()
+                elif room.get("last_completed_player_index") is not None:
+                    idx = room.get("last_completed_player_index")
+                    room["last_completed_player_index"] = None
+                    
                 if idx is not None and 0 <= idx < len(room["players"]):
                     player = room["players"][idx]
                     
@@ -1350,9 +1366,9 @@ class AuctionHTTPHandler(SimpleHTTPRequestHandler):
                         if prev_bidder and prev_bidder in room["teams"]:
                             room["teams"][prev_bidder]["budget"] += prev_price
                             room["teams"][prev_bidder]["players"] = [p for p in room["teams"][prev_bidder]["players"] if p["id"] != player["id"]]
-                            role = player["role"]
-                            if role in room["teams"][prev_bidder]["slots"] and room["teams"][prev_bidder]["slots"][role] > 0:
-                                room["teams"][prev_bidder]["slots"][role] -= 1
+                            role_type = player["role"]
+                            if role_type in room["teams"][prev_bidder]["slots"] and room["teams"][prev_bidder]["slots"][role_type] > 0:
+                                room["teams"][prev_bidder]["slots"][role_type] -= 1
                                 
                     player["status"] = "unsold"
                     player["bought_by"] = None
@@ -1368,9 +1384,74 @@ class AuctionHTTPHandler(SimpleHTTPRequestHandler):
                     
                     undo_msg = f"🔄 UNDO: Host reverted the last action. Bidding reopened for {player['name']} (Base: {format_currency_python(player['base_price'])})."
                     room["logs"].append(undo_msg)
-                    room["last_completed_player_index"] = None
+                    
+                    # Set last_completed_player_index to top of history stack for client indicator compatibility
+                    if room["completed_players_history"]:
+                        room["last_completed_player_index"] = room["completed_players_history"][-1]
+                    else:
+                        room["last_completed_player_index"] = None
+                        
+                    save_room_to_disk(room_code)
+                    broadcast(room_code, "state_update", get_serializable_room(room))
+                    self.send_json_response(200, {"success": True, "room_state": get_serializable_room(room)})
+                    return
                 else:
                     self.send_json_response(400, {"error": "No recent sold/unsold action available to undo."})
+                    return
+
+            elif action == "remove_squad_player":
+                team_name = data.get('team_name')
+                player_id = data.get('player_id')
+                if not team_name or not player_id:
+                    self.send_json_response(400, {"error": "Missing team_name or player_id."})
+                    return
+                    
+                if team_name in room["teams"]:
+                    team = room["teams"][team_name]
+                    player_to_remove = None
+                    try:
+                        p_id_int = int(player_id)
+                        for p in team["players"]:
+                            if p["id"] == p_id_int:
+                                player_to_remove = p
+                                break
+                    except (ValueError, TypeError):
+                        pass
+                        
+                    if player_to_remove:
+                        # Revert player properties in master pool
+                        for master_player in room["players"]:
+                            if master_player["id"] == player_to_remove["id"]:
+                                master_player["status"] = "unsold"
+                                master_player["bought_by"] = None
+                                master_player["price"] = 0
+                                break
+                                
+                        # Refund the budget
+                        price_paid = player_to_remove.get("price", 0)
+                        team["budget"] += price_paid
+                        
+                        # Remove from squad roster list
+                        team["players"] = [p for p in team["players"] if p["id"] != player_to_remove["id"]]
+                        
+                        # Decrement category slots count
+                        role_type = player_to_remove.get("role")
+                        if role_type in team["slots"] and team["slots"][role_type] > 0:
+                            team["slots"][role_type] -= 1
+                            
+                        # Log message
+                        log_msg = f"🔄 REMOVAL: Host removed {player_to_remove['name']} from {team_name}'s squad (refunded {format_currency_python(price_paid)})."
+                        room["logs"].append(log_msg)
+                        
+                        save_room_to_disk(room_code)
+                        broadcast(room_code, "state_update", get_serializable_room(room))
+                        self.send_json_response(200, {"success": True, "room_state": get_serializable_room(room)})
+                        return
+                    else:
+                        self.send_json_response(400, {"error": "Player not found in this team's squad."})
+                        return
+                else:
+                    self.send_json_response(400, {"error": "Team not found."})
                     return
                     
             elif action == "update_player_image":
