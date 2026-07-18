@@ -859,12 +859,7 @@ h1, h2, h3, h4 {
     text-align: center;
 }
 
-@media (min-width: 500px) {
-    .player-card-body {
-        flex-direction: row;
-        text-align: left;
-    }
-}
+
 
 .player-image-container {
     width: 110px;
